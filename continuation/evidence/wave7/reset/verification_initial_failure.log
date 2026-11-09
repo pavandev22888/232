@@ -1,0 +1,3 @@
+COMMAND: python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT: 1
+FAIL: unexpected reset body store at 0x415debf0
