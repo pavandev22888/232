@@ -1,0 +1,172 @@
+{
+  "task": "GAP01",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_base": "0x412a0000",
+    "va_to_file_offset": "VA - conditional_base; validated against selected bytes"
+  },
+  "result": {
+    "all_three_positive_origins_closed": false,
+    "new_cpp_helper_added": false,
+    "reason_no_cpp_helper": "No newly proven positive typed setter; implementing one would encode an unsupported source/meaning."
+  },
+  "findings": [
+    {
+      "field": "Point+26",
+      "status": "open",
+      "closed": false,
+      "downstream_chain_already_supported": {
+        "artifact": "workspace/orchestration/v5/baseline_source_chains.json",
+        "path": "selected Point record copied into T+70; Point+26 therefore propagates to T+96; selected-target path passes it as the fifth chance argument",
+        "limit": "Propagation and use do not establish the first positive write to Point+26."
+      },
+      "best_existing_candidate": {
+        "artifact": "workspace/orchestration/v5/target_builder_walk.json",
+        "va": "0x4149bb92",
+        "bytes": "8340256a",
+        "instruction": "add DWORD PTR [eax+0x25],0x6a",
+        "width": 4,
+        "overlap": "The write spans +25..+28 and overlaps byte +26; this is not a typed Point store by itself.",
+        "pointer_source": {
+          "va": "0x4149bb7a",
+          "bytes": "a14c004b42",
+          "instruction": "mov eax,ds:0x424b004c",
+          "follow_up": "EAX is saved in the target_builder stack frame; the same root is later indexed with stride 0x10940. No Point alias is shown."
+        },
+        "guard": {
+          "compare_va": "0x4149bb8c",
+          "compare_bytes": "83fb41",
+          "compare": "cmp ebx,0x41",
+          "branch_va": "0x4149bb8f",
+          "branch_bytes": "7218",
+          "branch": "jb 0x4149bba9",
+          "condition_for_reaching_store": "EBX >= 65 (unsigned); additional post-store flag-dependent control flow remains unresolved."
+        },
+        "disposition": "Rejected as proof of Point+26 origin, not claimed impossible as an indirect/embedded alias."
+      },
+      "typed_initialization_only": {
+        "artifact": "workspace/orchestration/v3/point_allocate_walk.json",
+        "record_step": "0x50",
+        "zero_write_va": "0x41478448",
+        "zero_write_bytes": "0f11440720",
+        "zero_write": "movups XMMWORD PTR [edi+eax*1+0x20],xmm0",
+        "sentinel_va": "0x41478456",
+        "sentinel_bytes": "c744072cffffffff",
+        "sentinel_write": "mov DWORD PTR [edi+eax*1+0x2c],0xffffffff",
+        "limit": "The broad zeroing covers +26 but is initialization, not a positive runtime source."
+      }
+    },
+    {
+      "field": "T+F4",
+      "status": "open",
+      "closed": false,
+      "typed_object": {
+        "constructor": "0x4148b3b0",
+        "this_register": "EDI receives ECX at 0x4148b3c7",
+        "record_step": "0x170, computed in target_population_walk before the constructor call"
+      },
+      "initialization_only": {
+        "artifact": "workspace/orchestration/v5/target_constructor_walk.json",
+        "va": "0x4148b48e",
+        "bytes": "0f1187ec000000",
+        "instruction": "movups XMMWORD PTR [edi+0xec],xmm0",
+        "effect": "Zeroing block includes T+F4; it is not a positive setter."
+      },
+      "best_existing_candidate": {
+        "artifact": "workspace/orchestration/v5/support_target_coordinator_walk.json",
+        "va": "0x4147f648",
+        "bytes": "c786f40000008f65ca6f",
+        "instruction": "mov DWORD PTR [esi+0xf4],0x6fca658f",
+        "identity": "At function entry ESI=ESP after a 0x510-byte local frame allocation; this is stack scratch, not a T base.",
+        "lifecycle": "The literal is copied from local +F4 to local +3C, local +F0 is overwritten, then local +F4 is zeroed at 0x4147f674.",
+        "disposition": "Rejected as proof of T+F4 setter."
+      },
+      "typed_consumer": {
+        "artifact": "workspace/orchestration/v7/support_selector_walk.json",
+        "ordered_checks": [
+          {
+            "va": "0x41477e83",
+            "bytes": "8b82f0000000",
+            "instruction": "mov eax,DWORD PTR [edx+0xf0]"
+          },
+          {
+            "va": "0x41477e89",
+            "bytes": "398431f0000000",
+            "instruction": "cmp DWORD PTR [ecx+esi*1+0xf0],eax"
+          },
+          {
+            "va": "0x41477e90",
+            "bytes": "0f857e000000",
+            "instruction": "jne 0x41477f14"
+          },
+          {
+            "va": "0x41477e96",
+            "bytes": "8b82f4000000",
+            "instruction": "mov eax,DWORD PTR [edx+0xf4]"
+          },
+          {
+            "va": "0x41477e9c",
+            "bytes": "398431f4000000",
+            "instruction": "cmp DWORD PTR [ecx+esi*1+0xf4],eax"
+          },
+          {
+            "va": "0x41477ea3",
+            "bytes": "756f",
+            "instruction": "jne 0x41477f14"
+          }
+        ],
+        "condition": "F0 equality is checked first, then F4 equality; a mismatch at F4 takes the rejection branch. This identifies a consumer, not the field's meaning or setter."
+      },
+      "adjacent_field_not_conflated": {
+        "artifact": "workspace/orchestration/v7/support_target_scan_walk.json",
+        "va": "0x414a8dbb",
+        "bytes": "8981f0000000",
+        "instruction": "mov DWORD PTR [ecx+0xf0],eax",
+        "limit": "This is T+F0, not T+F4."
+      }
+    },
+    {
+      "field": "G425009BC (старый +BC)",
+      "status": "open",
+      "closed": false,
+      "known_direct_writes_in_v7_census": [
+        {
+          "artifact": "workspace/orchestration/v5/command_preparation_walk.json",
+          "va": "0x41595497",
+          "bytes": "c605bc09504200",
+          "instruction": "mov BYTE PTR ds:0x425009bc,0x0"
+        },
+        {
+          "artifact": "workspace/orchestration/v5/historical_reset_block_walk.json",
+          "va": "0x415decee",
+          "bytes": "c605bc09504200",
+          "instruction": "mov BYTE PTR ds:0x425009bc,0x0"
+        }
+      ],
+      "observed_consumers": [
+        {
+          "artifact": "workspace/orchestration/v5/stop_complete_walk.json",
+          "va": "0x4148cbf0",
+          "bytes": "0a05bc095042",
+          "instruction": "or al,BYTE PTR ds:0x425009bc",
+          "next": "0x4148cbf6: jne 0x4148d7b7"
+        },
+        {
+          "artifact": "workspace/orchestration/v5/support_target_coordinator_walk.json",
+          "va": "0x4147adae",
+          "bytes": "803dbc09504200",
+          "instruction": "cmp BYTE PTR ds:0x425009bc,0x0",
+          "next": "0x4147adb5: jne 0x4147adc6; otherwise call 0x41b6cf80 is reached subject to earlier guards"
+        }
+      ],
+      "disposition": "No positive setter in the supplied direct-store census; calculated-address aliases and unobserved/runtime updates remain open."
+    }
+  ],
+  "negative_claim_limits": [
+    "The saved static walks over-approximate conditional paths and do not prove runtime reachability.",
+    "Offset overlap is not object identity.",
+    "No absence claim is made for computed aliases, other unwalked paths, runtime writes, or hidden external providers.",
+    "The original DLL was read as bytes only; it was not loaded, executed, emulated, modified, or connected to a game."
+  ]
+}
