@@ -60,8 +60,9 @@ HistorySlotResolution resolve_existing_history_slot(HistorySlotArrayView& view) 
     const std::uint32_t masked_index = view.field_0c & mask;
     view.field_0c = masked_index;
 
-    std::uint32_t index = masked_index == 0 ? view.field_08 : masked_index;
-    index = (index - std::uint32_t{1}) & mask;
+    const std::uint32_t cursor_base = masked_index == 0 ? view.field_08 : masked_index;
+    const std::uint32_t cursor = cursor_base - std::uint32_t{1};
+    const std::uint32_t index = cursor & mask;
 
     if (view.entries == nullptr || static_cast<std::size_t>(index) >= view.entries_size)
         return {HistorySlotStatus::invalid_view, index, {nullptr, 0}};
@@ -74,21 +75,21 @@ HistorySlotResolution resolve_existing_history_slot(HistorySlotArrayView& view) 
         return {HistorySlotStatus::invalid_view, index, {nullptr, 0}};
 
     initialize_record(record.data);
-    view.field_0c = index;
+    view.field_0c = cursor;
     view.field_10 = next_count;
     return {HistorySlotStatus::resolved_existing_slot, index, record};
 }
 
 HistorySlotConsumerStatus copy_history_slot_record(
-    const HistorySlotResolution& slot,
+    std::optional<HistoryPostCallSlotObservation> post_call_slot,
     HistorySourceBytes source,
     std::optional<std::uint32_t> local_word_observation) noexcept
 {
-    if (slot.status != HistorySlotStatus::resolved_existing_slot)
-        return HistorySlotConsumerStatus::unresolved_slot;
+    if (!post_call_slot.has_value())
+        return HistorySlotConsumerStatus::slot_unavailable;
     if (!local_word_observation.has_value())
         return HistorySlotConsumerStatus::observation_unavailable;
-    if (copy_history_store_prefix(source, slot.record, *local_word_observation) !=
+    if (copy_history_store_prefix(source, post_call_slot->record, *local_word_observation) !=
         HistorySliceStatus::copied)
         return HistorySlotConsumerStatus::invalid_view;
     return HistorySlotConsumerStatus::copied;

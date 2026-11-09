@@ -35,21 +35,25 @@ struct HistorySlotResolution {
 // Models only the no-growth, already-present-slot branch of 0x413F88F0.
 // field_08/0c/10 are raw DWORD observations at those ECX-relative offsets.
 // entries is an offline mapping of the 32-bit pointer table, not its ABI layout.
-// Invalid views are rejected before touching record bytes; unresolved allocator
-// paths are not executed or assigned ownership/lifetime semantics.
+// The view, entries array, and selected record need stable, pairwise non-aliasing
+// storage; modeled +0x0c/+0x10 fields are updated. Allocator paths stay unresolved.
 HistorySlotResolution resolve_existing_history_slot(HistorySlotArrayView& view) noexcept;
+
+struct HistoryPostCallSlotObservation {
+    HistoryDestinationBytes record;
+};
 
 enum class HistorySlotConsumerStatus {
     copied,
-    unresolved_slot,
+    slot_unavailable,
     observation_unavailable,
     invalid_view
 };
 
-// Applies the known 0x413F6DE0 record stores after the caller supplies its
-// post-0x41B70930 source and DWORD observations; this does not invoke that helper.
+// Requires a distinct explicit slot observation made after opaque 0x41B70930;
+// it never assumes the pre-call resolution still identifies the consumer slot.
 HistorySlotConsumerStatus copy_history_slot_record(
-    const HistorySlotResolution& slot,
+    std::optional<HistoryPostCallSlotObservation> post_call_slot,
     HistorySourceBytes source,
     std::optional<std::uint32_t> local_word_observation) noexcept;
 

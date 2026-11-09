@@ -60,6 +60,7 @@ def main():
     check_anchor(image, 0x413F88FE, bytes.fromhex("770c"))
     check_anchor(image, 0x413F8904, bytes.fromhex("e887afffff"))
     check_anchor(image, 0x413F8914, bytes.fromhex("897e0c0f44f84f21fb"))
+    check_anchor(image, 0x413F891A, bytes.fromhex("4f21fb"))
     check_anchor(image, 0x413F8925, bytes.fromhex("751b"))
     check_anchor(image, 0x413F8927, bytes.fromhex("6a2068c0f00000e879f29a00"))
     check_anchor(image, 0x413F8945, bytes.fromhex("0f294030"))
@@ -72,7 +73,7 @@ def main():
     print(f"PASS nl.bin sha256={NL_SHA256} size={len(image)}")
     print(f"PASS neverlose.dll sha256={dll_hash}")
     print(f"PASS resolver VA=0x413f88f0 length=0xc0 sha256={RESOLVER_SHA256}")
-    print("PASS resolver branch/index/init/return anchors and 413f6de0 caller/consumer anchors")
+    print("PASS resolver cursor/index (DEC EDI; AND EBX,EDI; store EDI), init/return, and caller/consumer anchors")
     print("PASS initializer vector VA=0x4205afd0 bytes=0000000000000000ffffffffffffffff")
 
 

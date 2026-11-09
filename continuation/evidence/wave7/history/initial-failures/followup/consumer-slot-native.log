@@ -1,0 +1,5 @@
+COMMAND: g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -I continuation/include continuation/src/history_slice.cpp continuation/src/history_slot_slice.cpp continuation/tests/test_history_slot_slice.cpp -o /tmp/w7-history-followup/test_history_slot_slice
+COMPILE_EXIT_CODE=0
+FAIL line 110: buffers[1].bytes[0xb4] == 0xff
+TEST_COMMAND: /tmp/w7-history-followup/test_history_slot_slice
+TEST_EXIT_CODE=1
