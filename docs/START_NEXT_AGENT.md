@@ -9,8 +9,9 @@
 закрытие неизвестных формальными done-статусами.
 
 Репозиторий: https://github.com/pavandev22888/232
-Ветка: hoplite/sikyon-46eee495
-PR: https://github.com/pavandev22888/232/pull/1
+Ветка: hoplite/tanagra-adb72df5
+Предыдущий PR https://github.com/pavandev22888/232/pull/1 слит в main 2026-11-09.
+Текущий PR определяется по этой ветке; старый слитый PR не обновлять.
 Политика: без merge, merge queue и auto-merge.
 
 Цель — восстановить полную ОРИГИНАЛЬНУЮ логику Ragebot на её ИСХОДНОМ ЯЗЫКЕ
@@ -21,8 +22,8 @@ C01–C04 superseded: не продолжай их как обязательну
 
 Сразу приступай:
 1. Получи актуальный HEAD этой ветки, не одного main; не уничтожай существующие
-   изменения. Отправная точка принятой W5 — 897b4bf51b1931fd1b80f178d40b7478ce251959,
-   документы передачи добавлены поверх неё. Проверь фактических владельцев задач.
+   изменения. Main содержит W1–W7, продолжение W8 и его проверяемая история —
+   в указанной ветке. Проверь фактических владельцев задач.
 2. Прочитай AGENTS.md, docs/HANDOFF.md, docs/GOAL.md, docs/SOURCE_INDEX.md,
    continuation/STATUS.json, docs/TASKS.json, docs/BOOTSTRAP.md и
    docs/AGENT_WORKFLOW.md. В HANDOFF.md есть все 24 известные области, закрытые
@@ -88,7 +89,8 @@ C01–C04 superseded: не продолжай их как обязательну
 - Обнови STATUS.json, TASKS.json, SOURCE_INDEX, DECISIONS и новые evidence:
   sources/hashes/addresses/bytes, assumptions, реальные команды/exit codes,
   reviewer SHA и точный остаток. Старые evidence не переписывай.
-- Commit/push в существующую ветку явным refspec, обнови существующий PR #1.
+- Commit/push в существующую ветку явным refspec, обнови её открытый PR
+  (или создай новый, если открытого нет); уже слитый PR #1 не переиспользовать.
   Убедись в live remote SHA, checks/review threads, отсутствии queue/auto-merge.
   Не сливай PR. Недоступную публикацию/проверку обозначь blocker, не успех.
 - Итог по-русски: что реально реализовано/доказано, что закрыто только локально,

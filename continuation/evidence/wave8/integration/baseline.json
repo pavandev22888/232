@@ -1,0 +1,23 @@
+{
+  "tested_inherited_code": "514479c145689639dfac89ea902fe4da7d01070b",
+  "worktree_head_at_ready_gate": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+  "note": "No code/evidence-verifier/Makefile changes between inherited code and ready gate; assignment metadata only.",
+  "checks": [
+    {
+      "name": "w8-baseline",
+      "command": "make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w8-baseline/build",
+      "exit_code": 2,
+      "log": "runs/w8-baseline/check.log",
+      "log_sha256": "dd298a6a48e0fcd0929fff114171f11e002d1f705ef7c511c97244ec508a0393",
+      "interpretation": "Launched before bootstrap atomic restore completed; missing nl.bin, not a code failure"
+    },
+    {
+      "name": "w8-baseline-ready",
+      "command": "make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w8-baseline-ready/build",
+      "exit_code": 0,
+      "log": "runs/w8-baseline-ready/check.log",
+      "log_sha256": "43891889924d91de2d3b46ca801515db3b9572ddf2a19ac000cd1f8fc7b603e9",
+      "interpretation": "Fresh complete inherited-code gate after successful bootstrap"
+    }
+  ]
+}

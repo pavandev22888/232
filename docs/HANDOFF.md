@@ -19,8 +19,10 @@ existing-slot history resolver, movement caller и hitgroup-3 damage arm.
 ## 1. Точка передачи и источники истины
 
 - Репозиторий: <https://github.com/pavandev22888/232>.
-- Рабочая ветка: `hoplite/sikyon-46eee495`; [PR #1](https://github.com/pavandev22888/232/pull/1).
-  **Без merge, merge queue и auto-merge. Не начинать с одного `main`.**
+- Рабочая ветка продолжения: `hoplite/tanagra-adb72df5`.
+  [PR #1](https://github.com/pavandev22888/232/pull/1) уже слит 2026-11-09;
+  `main` содержит W1–W7 (`0fe371b`), а новая ветка — продолжение W8 и полную
+  исходную историю. Новый PR — **без merge, merge queue и auto-merge**.
 - Снимок результата W5: `897b4bf51b1931fd1b80f178d40b7478ce251959`, 2026-11-09.
   Документы передачи добавляются поверх него; при старте получить актуальный remote HEAD.
 - Интегрированный код, проверенный тремя рецензентами:

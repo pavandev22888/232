@@ -9,7 +9,7 @@
 Для **нового** клона (существующий рабочий каталог не перезаписывать):
 
 ```sh
-git clone --branch hoplite/sikyon-46eee495 https://github.com/pavandev22888/232.git 232
+git clone --branch hoplite/tanagra-adb72df5 https://github.com/pavandev22888/232.git 232
 cd 232
 set -eu
 export PYTHONOPTIMIZE=0 PYTHONDONTWRITEBYTECODE=1
@@ -17,14 +17,15 @@ git status --short --branch
 git rev-parse HEAD
 ```
 
-`main` пока не содержит всего продолжения: PR #1 оставлен без слияния.
+PR #1 слит 2026-11-09: `main` содержит W1–W7 squash-коммитом `0fe371b`.
+Ветка выше содержит продолжение W8 и исходную историю для baseline-проверок.
 В существующей среде оставайтесь на назначенной ветке. Baseline-review вызывает
 `git show` для `ed9df79c028e63ca56fc191a226f5fe2f221df64` — одного shallow HEAD мало:
 
 ```sh
 if ! git cat-file -e ed9df79c028e63ca56fc191a226f5fe2f221df64^{commit} 2>/dev/null; then
   if test "$(git rev-parse --is-shallow-repository)" = true; then
-    git fetch --deepen=100 origin hoplite/sikyon-46eee495
+    git fetch --deepen=100 origin hoplite/tanagra-adb72df5
   else
     printf '%s\n' 'Baseline отсутствует в полной истории: проверьте репозиторий/ветку.' >&2
     exit 1
