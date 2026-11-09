@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "task_id": "W6-REVIEW-EVIDENCE-FOLLOWUP",
+  "assignment_commit": "b869125873217d955cf56788219fc7e2879b17f4",
+  "reviewed_sha": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+  "comparison_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+  "branch": "hoplite/sikyon-46eee495--w6-review-evidence-followup",
+  "worktree": "/tmp/hoplite/232-w6-review-evidence-followup",
+  "handoff": {
+    "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "access": "read-only"
+  },
+  "result": "F1_resolved_documentation_only",
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624,
+    "conditional_raw_base": "0x412a0000"
+  },
+  "f1_confirmation": {
+    "readme": {
+      "path": "continuation/evidence/wave6/history/README.md",
+      "sha256": "512f4fd2d3168bcc5a989867302609171fbfdfb53fa04bedbfdabcf1066aebfa"
+    },
+    "verification": {
+      "path": "continuation/evidence/wave6/history/verification.txt",
+      "sha256": "dedf1cab2c3ac6108f7909d330b4cd3f3c5c11688e2b6a3118e8c0eaf27e5cbe"
+    },
+    "anchors": [
+      {
+        "va": "0x413f70fd",
+        "bytes": "e82e987700",
+        "decode": "call 0x41b70930"
+      },
+      {
+        "va": "0x413f7102",
+        "bytes": "8b55d8",
+        "decode": "mov edx,DWORD PTR [ebp-0x28]; source pointer load"
+      },
+      {
+        "va": "0x413f71a1",
+        "bytes": "8b4dc8",
+        "decode": "mov ecx,DWORD PTR [ebp-0x38]; local DWORD read"
+      },
+      {
+        "va": "0x413f71a4",
+        "bytes": "894b3c",
+        "decode": "mov DWORD PTR [ebx+0x3c],ecx; destination +0x3C store"
+      }
+    ],
+    "conclusion": "README and verification.txt correctly distinguish 0x413F7102 source-pointer load from the 0x413F71A1 local DWORD read and following 0x413F71A4 store. F1 is resolved; no F1-specific blocker remains."
+  },
+  "unchanged_review_material": {
+    "w6_implementation_tests_makefile_and_six_static_gates_unchanged_vs_comparison_sha": true,
+    "comparison_log": "continuation/evidence/wave6/review-integrated-evidence/followup/w6-unchanged-vs-d99dd375.log",
+    "comparison_log_sha256": "75951f2abeb2ea70c3268fdce7df3f15f1a71f9fcfa6594feb1eeb30298dbf5e",
+    "compared_paths": [
+      "continuation/Makefile",
+      "continuation/include/rage/bounded_aggregation.hpp",
+      "continuation/include/rage/history_slice.hpp",
+      "continuation/include/rage/release_state_slice.hpp",
+      "continuation/include/rage/reset_predecessor.hpp",
+      "continuation/src/bounded_aggregation.cpp",
+      "continuation/src/history_slice.cpp",
+      "continuation/src/release_state_slice.cpp",
+      "continuation/src/reset_predecessor.cpp",
+      "continuation/tests/test_bounded_aggregation.cpp",
+      "continuation/tests/test_history_slice.cpp",
+      "continuation/tests/test_release_state_slice.cpp",
+      "continuation/tests/test_reset_predecessor.cpp",
+      "continuation/evidence/wave6/aggregate/verify_callback.py",
+      "continuation/evidence/wave6/modes/verify_release.py",
+      "continuation/evidence/wave6/message/verify_message_frontier.py",
+      "continuation/evidence/wave6/reset/verify_reset_predecessor.py",
+      "continuation/evidence/wave6/geometry/verify_geometry.py",
+      "continuation/evidence/wave6/history/verify_source_bytes.py"
+    ],
+    "original_review_report_path": "continuation/evidence/wave6/review-integrated-evidence/report.json",
+    "original_review_report_sha256": "69355a2af097688e9592d0b7c83968a938401c422791212919eca2c2e7a19658",
+    "report_hash_log": "continuation/evidence/wave6/review-integrated-evidence/followup/original-report-hash.log",
+    "report_hash_log_sha256": "17a5406581ad5146467f1c307adb9dfc0bcdc0baca2bd0c3790e6fd57c918876"
+  },
+  "commands": [
+    {
+      "command": "python3 -B continuation/evidence/wave6/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/history-verifier.log",
+      "log_sha256": "b2be366a742edb9294851e20801bae7020676ba1d97530a8810e581a0fb0ebbd",
+      "result": "Pinned nl.bin and source DLL/resource match; 14 raw anchors and producer/resolver/consumer/constructor walks fresh-check (28/11/47/40 instructions)."
+    },
+    {
+      "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f70fd --stop-address=0x413f7208 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/history-fresh-objdump.log",
+      "log_sha256": "2d595b3bdc20c8aff2d29e9174668b4c33da54627008427d9aae3267c2470e1e"
+    },
+    {
+      "command": "git diff --exit-code d99dd375160c7fccfd489598942232430d78da2f..HEAD -- continuation/Makefile continuation/include/rage/bounded_aggregation.hpp continuation/include/rage/history_slice.hpp continuation/include/rage/release_state_slice.hpp continuation/include/rage/reset_predecessor.hpp continuation/src/bounded_aggregation.cpp continuation/src/history_slice.cpp continuation/src/release_state_slice.cpp continuation/src/reset_predecessor.cpp continuation/tests/test_bounded_aggregation.cpp continuation/tests/test_history_slice.cpp continuation/tests/test_release_state_slice.cpp continuation/tests/test_reset_predecessor.cpp continuation/evidence/wave6/aggregate/verify_callback.py continuation/evidence/wave6/modes/verify_release.py continuation/evidence/wave6/message/verify_message_frontier.py continuation/evidence/wave6/reset/verify_reset_predecessor.py continuation/evidence/wave6/geometry/verify_geometry.py continuation/evidence/wave6/history/verify_source_bytes.py",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/w6-unchanged-vs-d99dd375.log",
+      "log_sha256": "75951f2abeb2ea70c3268fdce7df3f15f1a71f9fcfa6594feb1eeb30298dbf5e"
+    },
+    {
+      "command": "sh -c 'sed -n \"7p\" continuation/evidence/wave6/history/README.md && sed -n \"17,19p\" continuation/evidence/wave6/history/verification.txt && sha256sum continuation/evidence/wave6/history/README.md continuation/evidence/wave6/history/verification.txt /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin'",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/f1-prose-review.log",
+      "log_sha256": "62b2b19939ef392f47933ba0945a4c4e6ea3f6eba9c3b8744a3c03bc72b8afe9"
+    },
+    {
+      "command": "sh -c 'git show HEAD:continuation/evidence/wave6/review-integrated-evidence/report.json | sha256sum && sha256sum continuation/evidence/wave6/review-integrated-evidence/report.json && git diff --exit-code HEAD -- continuation/evidence/wave6/review-integrated-evidence/report.json'",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/original-report-hash.log",
+      "log_sha256": "17a5406581ad5146467f1c307adb9dfc0bcdc0baca2bd0c3790e6fd57c918876"
+    },
+    {
+      "command": "sh -c 'python3 --version; objdump --version | head -n 1'",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/followup/versions.log",
+      "log_sha256": "053f52e2a5f82bf2312a71e85216f4289e94af15d8c4d76d9fb07db0637471cb",
+      "result": "Python 3.12.3; GNU Binutils objdump 2.42"
+    }
+  ],
+  "verification_limits": {
+    "full_make_or_test_suite_run": false,
+    "bundle_or_integrity_checks_run": false,
+    "reason": "Coordinator explicitly owns the fresh final gate; only the assigned history verifier and static disassembly were required here.",
+    "original_loading_execution_emulation": false,
+    "external_audit": false,
+    "original_language_or_abi_established": false,
+    "full_gap_closed": false,
+    "remaining_unrelated_frontiers": "Provider/stack identity, aliasing, helper allocation and slot lifetime, scheduling/reachability and following matrix path remain outside F1 and are not resolved by this documentation review."
+  },
+  "changes": "Only this followup evidence directory; no source, tests, Makefile, six static gates, prior review report, or shared docs were edited."
+}
