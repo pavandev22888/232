@@ -1,0 +1,5 @@
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS 14 raw-byte anchors; offsets=0x156de0,0x156e1a,0x156e20,0x157054,0x157062,0x157068,0x1570f3,0x1570fd,0x157102,0x157201,0x15723d,0x1588f0,0x158904,0x15892e
+PASS saved walks match fresh bytes: producer=28, resolver=11, consumer=47, constructor=40
