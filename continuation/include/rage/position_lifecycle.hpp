@@ -32,12 +32,21 @@ enum class ActorGuardOutcome {
     exit_clear_marker
 };
 
+struct ActorSide50Output {
+    // External initialized scalar, disjoint from N and both position sinks.
+    // May share the external scalar used by marker_output.
+    float* value = nullptr;
+    bool age_ramp_enabled = false; // Resolved selected cfg +274/+275 byte.
+    float now = 0.0f; // Resolved float behind 0x4223CA04.
+};
+
 struct ActorConsumerInputs {
     bool reader_result_al; // Not derived from PositionRead::status.
     ActorGuardOutcome guard_outcome;
     bool geometry_option_enabled; // Selected configuration byte is nonzero.
     std::optional<Vec3> traced_position; // Resolved three-axis provider result.
     float* marker_output; // Optional N+48 output.
+    ActorSide50Output side50_output{};
 };
 
 struct ActorConsumerResult {
@@ -47,7 +56,8 @@ struct ActorConsumerResult {
     Vec3* actor_position_sink;
 };
 
-// Replays the bounded consumer slice at 414FD8xx..414FDB37 after resolved guards.
+// Replays the bounded consumer slice at 414FD8xx..414FDB4C after resolved guards.
+// Missing trace observations leave side50_output untouched (not an original exit).
 ActorConsumerResult update_actor_consumer(const ActorRecordBinding& binding,
                                           const ActorConsumerInputs& inputs);
 

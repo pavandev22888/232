@@ -34,6 +34,20 @@ float opaque_float(const PositionRecord& record, std::size_t offset)
     return value;
 }
 
+std::uint32_t float_bits(float value)
+{
+    std::uint32_t bits;
+    std::memcpy(&bits, &value, sizeof(bits));
+    return bits;
+}
+
+float float_from_bits(std::uint32_t bits)
+{
+    float value;
+    std::memcpy(&value, &bits, sizeof(value));
+    return value;
+}
+
 ActorConsumerInputs inputs(bool reader_al = true,
                            ActorGuardOutcome guards = ActorGuardOutcome::passed,
                            bool geometry = false,
@@ -276,6 +290,168 @@ void marker_producer_and_connected_chain()
     CHECK(opaque_float(record, 0x54) == 0.0f);
     CHECK(std::isnan(record.validity_marker));
 }
+
+void side50_age_ramp_and_trace()
+{
+    PositionRecord record{};
+    record.active = 1;
+    record.position = {1.0f, 2.0f, 3.0f};
+    record.validity_marker = 0.25f;
+    set_opaque_float(record, 0x50, -1.0f);
+    const PositionRead read{&record, ReadStatus::usable};
+    int owner = 0;
+    Vec3 actor{};
+    const float nan = std::numeric_limits<float>::quiet_NaN();
+    const float infinity = std::numeric_limits<float>::infinity();
+    for (const auto& [now, reference, expected] : {
+             std::tuple<float, float, float>{9.0f, 10.0f, 0.0f},
+             {10.0f, 10.0f, 0.0f},
+             {10.375f, 10.0f, 0.5f},
+             {10.75f, 10.0f, 1.0f},
+             {11.0f, 10.0f, 1.0f},
+             {infinity, 10.0f, 1.0f},
+             {-infinity, 10.0f, 0.0f},
+             {-0.0f, 0.0f, -0.0f},
+             {nan, 10.0f, nan},
+             {10.0f, nan, nan}}) {
+        set_opaque_float(record, 0x14, reference);
+        float output = 77.0f;
+        auto input = inputs();
+        input.side50_output = {&output, true, now};
+        const auto result = update_actor_consumer({&owner, read, actor}, input);
+        CHECK(result.transition == ActorTransition::copied_record_position);
+        CHECK(std::isnan(expected) ? std::isnan(output)
+                                   : float_bits(output) == float_bits(expected));
+        CHECK(same_vec3(actor, record.position));
+        CHECK(opaque_float(record, 0x50) == -1.0f);
+        CHECK(record.validity_marker == 0.25f);
+    }
+
+    float output = -99.0f;
+    auto input = inputs(true, ActorGuardOutcome::passed, true, Vec3{4.0f, 5.0f, 6.0f});
+    input.side50_output = {&output, false, nan};
+    const auto result = update_actor_consumer({&owner, read, actor}, input);
+    CHECK(result.transition == ActorTransition::traced_position_applied);
+    CHECK(same_vec3(actor, *input.traced_position));
+    CHECK(output == 1.0f);
+
+    input.side50_output = {nullptr, true, nan};
+    CHECK(update_actor_consumer({&owner, read, actor}, input).transition ==
+          ActorTransition::traced_position_applied);
+}
+
+void side50_exit_gates_and_missing_observation()
+{
+    for (const auto& [guard, active, reader_al, marker, expected] : {
+             std::tuple<ActorGuardOutcome, std::uint8_t, bool, float, ActorTransition>{
+                 ActorGuardOutcome::exit_copy_marker, 1, true, 0.25f,
+                 ActorTransition::guard_exit_copy_marker},
+             {ActorGuardOutcome::passed, 0, true, 0.25f, ActorTransition::inactive_record},
+             {ActorGuardOutcome::passed, 1, false, -0.0f,
+                 ActorTransition::marker_gate_rejected},
+             {ActorGuardOutcome::exit_clear_marker, 1, true, 0.25f,
+                 ActorTransition::guard_exit_clear_marker}}) {
+        PositionRecord record{};
+        record.active = active;
+        record.validity_marker = marker;
+        record.actor_position = {1.0f, 2.0f, 3.0f};
+        set_opaque_float(record, 0x50, 0.5f);
+        const PositionRecord old_record = record;
+        const PositionRead read{&record, ReadStatus::usable};
+        Vec3 actor{4.0f, 5.0f, 6.0f};
+        const Vec3 old_actor = actor;
+        float marker_output = 99.0f;
+        float output = -1.0f;
+        auto input = inputs(reader_al, guard, false, std::nullopt, &marker_output);
+        input.side50_output = {&output, true, std::numeric_limits<float>::quiet_NaN()};
+        const auto result = update_actor_consumer({nullptr, read, actor}, input);
+        CHECK(result.transition == expected);
+        CHECK(output == (guard == ActorGuardOutcome::exit_clear_marker ? -1.0f : 0.5f));
+        CHECK(float_bits(marker_output) == float_bits(
+            guard == ActorGuardOutcome::exit_clear_marker ? 0.0f : marker));
+        CHECK(std::memcmp(&record, &old_record, sizeof(record)) == 0);
+        CHECK(same_vec3(actor, old_actor));
+    }
+
+    Vec3 actor{};
+    float output = -1.0f;
+    float marker = 99.0f;
+    auto input = inputs(true, ActorGuardOutcome::passed, false, std::nullopt, &marker);
+    input.side50_output = {&output, false, 0.0f};
+    const PositionRead missing{nullptr, ReadStatus::outside_supported_domain};
+    CHECK(update_actor_consumer({nullptr, missing, actor}, input).transition ==
+          ActorTransition::no_record);
+    CHECK(output == -1.0f);
+    CHECK(marker == 0.0f);
+
+    PositionRecord record{};
+    record.active = 1;
+    record.validity_marker = 0.75f;
+    set_opaque_float(record, 0x50, 4.0f);
+    const PositionRead read{&record, ReadStatus::usable};
+    input.geometry_option_enabled = true;
+    CHECK(update_actor_consumer({nullptr, read, actor}, input).transition ==
+          ActorTransition::trace_observation_missing);
+    CHECK(output == -1.0f);
+    CHECK(marker == 0.75f);
+}
+
+void side50_maxss_operand_order_and_output_alias()
+{
+    const float nan_a = float_from_bits(0x7fc01234u);
+    const float nan_b = float_from_bits(0x7fc05678u);
+    for (const auto& [field, initial, expected] : {
+             std::tuple<float, float, float>{0.75f, 0.25f, 0.75f},
+             {0.25f, 0.75f, 0.75f},
+             {nan_a, 0.75f, 0.75f},
+             {0.75f, nan_b, nan_b},
+             {nan_a, nan_b, nan_b},
+             {0.0f, -0.0f, -0.0f},
+             {-0.0f, 0.0f, 0.0f}}) {
+        PositionRecord record{};
+        set_opaque_float(record, 0x50, field);
+        const PositionRead read{&record, ReadStatus::inactive};
+        Vec3 actor{};
+        float output = initial;
+        auto input = inputs(true, ActorGuardOutcome::exit_copy_marker);
+        input.side50_output = {&output, false, 0.0f};
+        CHECK(update_actor_consumer({nullptr, read, actor}, input).transition ==
+              ActorTransition::guard_exit_copy_marker);
+        CHECK(float_bits(output) == float_bits(expected));
+        CHECK(float_bits(opaque_float(record, 0x50)) == float_bits(field));
+    }
+
+    PositionRecord record{};
+    record.active = 1;
+    const auto effect = produce_resolved_validity_marker(
+        record, {true, 0.5f, 8, false, MarkerSideValues{0.5f, 0.25f}});
+    CHECK(effect == MarkerProduction::derived_marker_stored);
+    CHECK(record.validity_marker == 0.28125f);
+    const PositionRead read{&record, ReadStatus::usable};
+    Vec3 actor{};
+    float shared_output = -1.0f;
+    auto input = inputs(true, ActorGuardOutcome::passed, false, std::nullopt, &shared_output);
+    input.side50_output = {&shared_output, false, 0.0f};
+    CHECK(update_actor_consumer({nullptr, read, actor}, input).transition ==
+          ActorTransition::copied_record_position);
+    // The preliminary 1.0 store is overwritten by N+48 before MAXSS reads it.
+    CHECK(shared_output == 0.5f);
+    CHECK(record.validity_marker == 0.28125f);
+
+    record.validity_marker = nan_a;
+    CHECK(update_actor_consumer({nullptr, read, actor}, input).transition ==
+          ActorTransition::copied_record_position);
+    CHECK(float_bits(shared_output) == float_bits(nan_a));
+    CHECK(float_bits(record.validity_marker) == float_bits(nan_a));
+
+    input = inputs(true, ActorGuardOutcome::passed, false, std::nullopt,
+                   &record.validity_marker);
+    input.side50_output = {&shared_output, false, 0.0f};
+    CHECK(update_actor_consumer({nullptr, read, actor}, input).transition ==
+          ActorTransition::copied_record_position);
+    CHECK(shared_output == 1.0f);
+    CHECK(float_bits(record.validity_marker) == float_bits(nan_a));
+}
 } // namespace
 
 int main()
@@ -285,5 +461,8 @@ int main()
     distance_and_resolved_trace_paths();
     early_gates_and_missing_record();
     marker_producer_and_connected_chain();
+    side50_age_ramp_and_trace();
+    side50_exit_gates_and_missing_observation();
+    side50_maxss_operand_order_and_output_alias();
     std::cout << "position_lifecycle: " << assertions << " assertions passed\n";
 }
