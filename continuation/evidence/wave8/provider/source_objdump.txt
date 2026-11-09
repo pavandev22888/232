@@ -1,0 +1,152 @@
+$ objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41c5bda0 --stop-address=0x41c5bdfa ${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41c5bda0 <.data+0x9bbda0>:
+41c5bda0:	55                                              	push   ebp
+41c5bda1:	89 e5                                           	mov    ebp,esp
+41c5bda3:	53                                              	push   ebx
+41c5bda4:	57                                              	push   edi
+41c5bda5:	56                                              	push   esi
+41c5bda6:	83 e4 f0                                        	and    esp,0xfffffff0
+41c5bda9:	81 ec b0 00 00 00                               	sub    esp,0xb0
+41c5bdaf:	89 e6                                           	mov    esi,esp
+41c5bdb1:	89 ae 98 00 00 00                               	mov    DWORD PTR [esi+0x98],ebp
+41c5bdb7:	89 cf                                           	mov    edi,ecx
+41c5bdb9:	89 a6 9c 00 00 00                               	mov    DWORD PTR [esi+0x9c],esp
+41c5bdbf:	c7 86 a8 00 00 00 ff ff ff ff                   	mov    DWORD PTR [esi+0xa8],0xffffffff
+41c5bdc9:	8d 86 a0 00 00 00                               	lea    eax,[esi+0xa0]
+41c5bdcf:	c7 86 a4 00 00 00 10 97 c7 41                   	mov    DWORD PTR [esi+0xa4],0x41c79710
+41c5bdd9:	64 8b 0d 00 00 00 00                            	mov    ecx,DWORD PTR fs:0x0
+41c5bde0:	89 8e a0 00 00 00                               	mov    DWORD PTR [esi+0xa0],ecx
+41c5bde6:	64 a3 00 00 00 00                               	mov    fs:0x0,eax
+41c5bdec:	8d 4f 08                                        	lea    ecx,[edi+0x8]
+41c5bdef:	89 8e 94 00 00 00                               	mov    DWORD PTR [esi+0x94],ecx
+41c5bdf5:	e8 a6 52 00 00                                  	call   0x41c610a0
+EXIT 0
+
+$ objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41c610a0 --stop-address=0x41c610d1 ${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41c610a0 <.data+0x9c10a0>:
+41c610a0:	55                                              	push   ebp
+41c610a1:	89 e5                                           	mov    ebp,esp
+41c610a3:	56                                              	push   esi
+41c610a4:	83 e4 f0                                        	and    esp,0xfffffff0
+41c610a7:	83 ec 30                                        	sub    esp,0x30
+41c610aa:	89 ce                                           	mov    esi,ecx
+41c610ac:	68 20 15 00 00                                  	push   0x1520
+41c610b1:	6a 00                                           	push   0x0
+41c610b3:	51                                              	push   ecx
+41c610b4:	e8 67 be 3a 00                                  	call   0x4200cf20
+41c610b9:	83 c4 0c                                        	add    esp,0xc
+41c610bc:	c7 46 08 00 00 80 bf                            	mov    DWORD PTR [esi+0x8],0xbf800000
+41c610c3:	c7 46 0c 00 00 80 bf                            	mov    DWORD PTR [esi+0xc],0xbf800000
+41c610ca:	c7 46 1c 89 88 88 3c                            	mov    DWORD PTR [esi+0x1c],0x3c888889
+EXIT 0
+
+$ objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4200cf20 --stop-address=0x4200d07a ${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+${HANDOFF}/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4200cf20 <.data+0xd6cf20>:
+4200cf20:	8b 4c 24 0c                                     	mov    ecx,DWORD PTR [esp+0xc]
+4200cf24:	0f b6 44 24 08                                  	movzx  eax,BYTE PTR [esp+0x8]
+4200cf29:	8b d7                                           	mov    edx,edi
+4200cf2b:	8b 7c 24 04                                     	mov    edi,DWORD PTR [esp+0x4]
+4200cf2f:	85 c9                                           	test   ecx,ecx
+4200cf31:	0f 84 3c 01 00 00                               	je     0x4200d073
+4200cf37:	69 c0 01 01 01 01                               	imul   eax,eax,0x1010101
+4200cf3d:	83 f9 20                                        	cmp    ecx,0x20
+4200cf40:	0f 86 df 00 00 00                               	jbe    0x4200d025
+4200cf46:	81 f9 80 00 00 00                               	cmp    ecx,0x80
+4200cf4c:	0f 82 8b 00 00 00                               	jb     0x4200cfdd
+4200cf52:	0f ba 25 18 39 52 42 01                         	bt     DWORD PTR ds:0x42523918,0x1
+4200cf5a:	73 09                                           	jae    0x4200cf65
+4200cf5c:	f3 aa                                           	rep stos BYTE PTR es:[edi],al
+4200cf5e:	8b 44 24 04                                     	mov    eax,DWORD PTR [esp+0x4]
+4200cf62:	8b fa                                           	mov    edi,edx
+4200cf64:	c3                                              	ret
+4200cf65:	0f ba 25 8c a0 4a 42 01                         	bt     DWORD PTR ds:0x424aa08c,0x1
+4200cf6d:	0f 83 b2 00 00 00                               	jae    0x4200d025
+4200cf73:	66 0f 6e c0                                     	movd   xmm0,eax
+4200cf77:	66 0f 70 c0 00                                  	pshufd xmm0,xmm0,0x0
+4200cf7c:	03 cf                                           	add    ecx,edi
+4200cf7e:	0f 11 07                                        	movups XMMWORD PTR [edi],xmm0
+4200cf81:	83 c7 10                                        	add    edi,0x10
+4200cf84:	83 e7 f0                                        	and    edi,0xfffffff0
+4200cf87:	2b cf                                           	sub    ecx,edi
+4200cf89:	81 f9 80 00 00 00                               	cmp    ecx,0x80
+4200cf8f:	76 4c                                           	jbe    0x4200cfdd
+4200cf91:	8d a4 24 00 00 00 00                            	lea    esp,[esp+0x0]
+4200cf98:	8d a4 24 00 00 00 00                            	lea    esp,[esp+0x0]
+4200cf9f:	90                                              	nop
+4200cfa0:	66 0f 7f 07                                     	movdqa XMMWORD PTR [edi],xmm0
+4200cfa4:	66 0f 7f 47 10                                  	movdqa XMMWORD PTR [edi+0x10],xmm0
+4200cfa9:	66 0f 7f 47 20                                  	movdqa XMMWORD PTR [edi+0x20],xmm0
+4200cfae:	66 0f 7f 47 30                                  	movdqa XMMWORD PTR [edi+0x30],xmm0
+4200cfb3:	66 0f 7f 47 40                                  	movdqa XMMWORD PTR [edi+0x40],xmm0
+4200cfb8:	66 0f 7f 47 50                                  	movdqa XMMWORD PTR [edi+0x50],xmm0
+4200cfbd:	66 0f 7f 47 60                                  	movdqa XMMWORD PTR [edi+0x60],xmm0
+4200cfc2:	66 0f 7f 47 70                                  	movdqa XMMWORD PTR [edi+0x70],xmm0
+4200cfc7:	8d bf 80 00 00 00                               	lea    edi,[edi+0x80]
+4200cfcd:	81 e9 80 00 00 00                               	sub    ecx,0x80
+4200cfd3:	f7 c1 00 ff ff ff                               	test   ecx,0xffffff00
+4200cfd9:	75 c5                                           	jne    0x4200cfa0
+4200cfdb:	eb 13                                           	jmp    0x4200cff0
+4200cfdd:	0f ba 25 8c a0 4a 42 01                         	bt     DWORD PTR ds:0x424aa08c,0x1
+4200cfe5:	73 3e                                           	jae    0x4200d025
+4200cfe7:	66 0f 6e c0                                     	movd   xmm0,eax
+4200cfeb:	66 0f 70 c0 00                                  	pshufd xmm0,xmm0,0x0
+4200cff0:	83 f9 20                                        	cmp    ecx,0x20
+4200cff3:	72 1c                                           	jb     0x4200d011
+4200cff5:	f3 0f 7f 07                                     	movdqu XMMWORD PTR [edi],xmm0
+4200cff9:	f3 0f 7f 47 10                                  	movdqu XMMWORD PTR [edi+0x10],xmm0
+4200cffe:	83 c7 20                                        	add    edi,0x20
+4200d001:	83 e9 20                                        	sub    ecx,0x20
+4200d004:	83 f9 20                                        	cmp    ecx,0x20
+4200d007:	73 ec                                           	jae    0x4200cff5
+4200d009:	f7 c1 1f 00 00 00                               	test   ecx,0x1f
+4200d00f:	74 62                                           	je     0x4200d073
+4200d011:	8d 7c 0f e0                                     	lea    edi,[edi+ecx*1-0x20]
+4200d015:	f3 0f 7f 07                                     	movdqu XMMWORD PTR [edi],xmm0
+4200d019:	f3 0f 7f 47 10                                  	movdqu XMMWORD PTR [edi+0x10],xmm0
+4200d01e:	8b 44 24 04                                     	mov    eax,DWORD PTR [esp+0x4]
+4200d022:	8b fa                                           	mov    edi,edx
+4200d024:	c3                                              	ret
+4200d025:	f7 c1 03 00 00 00                               	test   ecx,0x3
+4200d02b:	74 0e                                           	je     0x4200d03b
+4200d02d:	88 07                                           	mov    BYTE PTR [edi],al
+4200d02f:	47                                              	inc    edi
+4200d030:	83 e9 01                                        	sub    ecx,0x1
+4200d033:	f7 c1 03 00 00 00                               	test   ecx,0x3
+4200d039:	75 f2                                           	jne    0x4200d02d
+4200d03b:	f7 c1 04 00 00 00                               	test   ecx,0x4
+4200d041:	74 08                                           	je     0x4200d04b
+4200d043:	89 07                                           	mov    DWORD PTR [edi],eax
+4200d045:	83 c7 04                                        	add    edi,0x4
+4200d048:	83 e9 04                                        	sub    ecx,0x4
+4200d04b:	f7 c1 f8 ff ff ff                               	test   ecx,0xfffffff8
+4200d051:	74 20                                           	je     0x4200d073
+4200d053:	8d a4 24 00 00 00 00                            	lea    esp,[esp+0x0]
+4200d05a:	8d 9b 00 00 00 00                               	lea    ebx,[ebx+0x0]
+4200d060:	89 07                                           	mov    DWORD PTR [edi],eax
+4200d062:	89 47 04                                        	mov    DWORD PTR [edi+0x4],eax
+4200d065:	83 c7 08                                        	add    edi,0x8
+4200d068:	83 e9 08                                        	sub    ecx,0x8
+4200d06b:	f7 c1 f8 ff ff ff                               	test   ecx,0xfffffff8
+4200d071:	75 ed                                           	jne    0x4200d060
+4200d073:	8b 44 24 04                                     	mov    eax,DWORD PTR [esp+0x4]
+4200d077:	8b fa                                           	mov    edi,edx
+4200d079:	c3                                              	ret
+EXIT 0
