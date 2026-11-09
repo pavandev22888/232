@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "task_id": "W5-REVIEW-CODE",
+  "review_kind": "independent_fixed_integrated_sha_agent_review",
+  "external_audit": false,
+  "reviewed_sha": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+  "comparison_base": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "worktree": "/tmp/hoplite/232-w5-review-code",
+  "assignment_registry": "/tmp/hoplite/workspace/runs/wave5/reviews.json",
+  "decision": "accept_with_explicit_frontiers",
+  "blocking_findings": [],
+  "scope": {
+    "modules": [
+      "bounded_aggregation",
+      "charge_state full-local-reset delta only",
+      "lifecycle_seed_slice",
+      "bounded_message_fields"
+    ],
+    "source_directories": [
+      "continuation/include/rage/",
+      "continuation/src/",
+      "continuation/tests/"
+    ],
+    "evidence_directories": [
+      "continuation/evidence/wave5/aggregate/",
+      "continuation/evidence/wave5/charge/",
+      "continuation/evidence/wave5/lifecycle/",
+      "continuation/evidence/wave5/messages/"
+    ],
+    "implementation_changes_by_reviewer": false,
+    "existing_api_signatures_preserved": true,
+    "shared_coordinator_docs_status_pending_is_not_a_defect": true,
+    "inaccurate_new_contract_closure_claims_found": false
+  },
+  "full_check": {
+    "cwd": "/tmp/hoplite/232-w5-review-code",
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONOPTIMIZE=0 make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/232-w5-review-code/runs/w5-review-code/build",
+    "exit_code": 0,
+    "programs_per_mode": 10,
+    "assertions_per_mode": 23354,
+    "modes": [
+      "native",
+      "ASan+UBSan"
+    ],
+    "per_program_assertions_each_mode": {
+      "actor_scalar_pipeline": 119,
+      "bounded_aggregation": 64,
+      "bounded_message_fields": 352,
+      "charge_state": 3490,
+      "lifecycle_seed_slice": 2820,
+      "marker_pipeline": 13255,
+      "position_lifecycle": 208,
+      "position_pipeline": 392,
+      "position_records": 2601,
+      "resolved_scalar_helper": 53
+    },
+    "python_invocations": 31,
+    "python_unit_tests": {
+      "wave2_gap06": 8,
+      "wave5_esi": 5
+    },
+    "sanitizer_diagnostics_observed": false,
+    "log": "runs/w5-review-code/make-check.full.log",
+    "log_sha256": "eb404b0e7df1c0550564eeac83861d92d7452e45f1d6e87cf8d662c09f13993a"
+  },
+  "focused_evidence_in_own_full_check": {
+    "aggregate": {
+      "fresh_instruction_anchors": 58,
+      "constants": 1
+    },
+    "charge": {
+      "fresh_stores": 11,
+      "byte_stores": 3,
+      "dword_stores": 8
+    },
+    "lifecycle": {
+      "reference_pins": 6,
+      "fresh_instructions": 179,
+      "bytes": 739,
+      "constants": 4
+    },
+    "messages": {
+      "fresh_windows": 8,
+      "instruction_anchors": 354,
+      "constants": 3
+    }
+  },
+  "independent_static_inspection": {
+    "original_image": "HANDOFF/workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_sha256_before_and_after": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_size": 55578624,
+    "base": "0x412a0000",
+    "mapping": "raw[VA-base:end-base]",
+    "command_template": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=<start> runs/w5-review-code/<name>.final.bin",
+    "exact_commands_and_decodes": "runs/w5-review-code/final-static.full.log",
+    "log_sha256": "1aad85cebcfa77b53ea6bd3cfb834becc4b1bb71bacd0c98c2df593db66502f5",
+    "windows": [
+      {
+        "name": "aggregate-count-branch",
+        "start": "0x4149e790",
+        "end_exclusive": "0x4149e7c0"
+      },
+      {
+        "name": "aggregate-float-prefix",
+        "start": "0x4149e96c",
+        "end_exclusive": "0x4149e998"
+      },
+      {
+        "name": "aggregate-finalizer",
+        "start": "0x414a8d96",
+        "end_exclusive": "0x414a8dc1"
+      },
+      {
+        "name": "aggregate-context",
+        "start": "0x414a8361",
+        "end_exclusive": "0x414a838c"
+      },
+      {
+        "name": "charge-reset",
+        "start": "0x415decee",
+        "end_exclusive": "0x415ded53"
+      },
+      {
+        "name": "lifecycle-seed",
+        "start": "0x414f8459",
+        "end_exclusive": "0x414f84b3"
+      },
+      {
+        "name": "lifecycle-tail",
+        "start": "0x414f868b",
+        "end_exclusive": "0x414f87c2"
+      },
+      {
+        "name": "message-caller",
+        "start": "0x415128c1",
+        "end_exclusive": "0x41512bed"
+      },
+      {
+        "name": "coordinate-reader",
+        "start": "0x41b87230",
+        "end_exclusive": "0x41b873e9"
+      },
+      {
+        "name": "word-reader",
+        "start": "0x41b87580",
+        "end_exclusive": "0x41b875e7"
+      },
+      {
+        "name": "aggregate-selector",
+        "start": "0x41477e83",
+        "end_exclusive": "0x41477ea5"
+      },
+      {
+        "name": "aggregate-unknown-index",
+        "start": "0x4149e7eb",
+        "end_exclusive": "0x4149e7fa"
+      },
+      {
+        "name": "aggregate-unknown-exit",
+        "start": "0x4149ec2d",
+        "end_exclusive": "0x4149ec33"
+      },
+      {
+        "name": "aggregate-target-binding",
+        "start": "0x414a557a",
+        "end_exclusive": "0x414a557d"
+      },
+      {
+        "name": "aggregate-call-one",
+        "start": "0x414a8603",
+        "end_exclusive": "0x414a860e"
+      },
+      {
+        "name": "aggregate-call-two",
+        "start": "0x414a8d5f",
+        "end_exclusive": "0x414a8d6d"
+      },
+      {
+        "name": "message-reader-setup",
+        "start": "0x41511d0d",
+        "end_exclusive": "0x41511d1f"
+      },
+      {
+        "name": "message-reader-constructor",
+        "start": "0x41b873f0",
+        "end_exclusive": "0x41b87421"
+      },
+      {
+        "name": "message-mask-initializer",
+        "start": "0x41b87430",
+        "end_exclusive": "0x41b87550"
+      }
+    ],
+    "objdump_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "constant_spans": 7,
+    "archived_contracts_read": [
+      "HANDOFF/workspace/orchestration/v7/proof_spec.json",
+      "HANDOFF/workspace/orchestration/v7/score_model.c",
+      "HANDOFF/workspace/orchestration/v9/test_contracts.py"
+    ],
+    "archived_models_executed_by_reviewer": false
+  },
+  "accepted_local_obligations": {
+    "aggregation": [
+      "raw +1C values 2/3 only; other values unresolved, not rollback",
+      "uint32 INC wrap and signed-positive finalizer count",
+      "binary32 multiply/multiply/add/divide ordering, qNaN/Inf/signed-zero/subnormal value behavior",
+      "masked CVTT indefinite INT32_MIN without out-of-range C++ cast; count-to-float rounding"
+    ],
+    "charge": [
+      "11 contiguous zero stores represented at original raw widths and source order",
+      "separate raw snapshot, not runtime layout or synchronized ChargeState",
+      "legacy reset/latch/gate composition unchanged; high-bit/all-one inputs and idempotence covered"
+    ],
+    "lifecycle": [
+      "now minus N+0C, quarter scale, ordered clamp masks, MINSS second-operand equality/unordered behavior",
+      "selected AL!=0 path only; NaN seed calculation ends at finite 0.8 cap",
+      "existing marker tail reused with current-vs-target and two independent later fallback snapshots",
+      "missing-observation transaction is offline-only, not original rollback"
+    ],
+    "messages": [
+      "32/7/32 fields, wrapping SUB/NEG/CMOVS including INT_MIN and signed tolerance",
+      "coordinate order z/y/x then extra7; valid logical LSB-first reader only",
+      "integer+1 after truncated 14-bit read, sign-xor negative zero, sticky overflow and early-exit precedence",
+      "ready selects local consumer-call gate only; unread fields zero by offline convention"
+    ]
+  },
+  "explicit_frontiers": {
+    "aggregation": "continuation/evidence/wave5/aggregate/contract.json: api_boundary/preconditions/unresolved; non-direct CFG, callback tail, actual enumeration/scheduling, initial sum, T+F4 and full selection remain open; sNaN payload/traps/flags excluded.",
+    "charge": "continuation/evidence/wave5/charge/full_reset_evidence.json: contract; reset entry/reachability, callers/order, identity/lifetime, other writers and complete automaton remain open.",
+    "lifecycle": "continuation/evidence/wave5/lifecycle/seed_path.json: selected_path/preconditions/frontier L1-L7; guards, time/provider owners, other seed branches, opaque side54 CFG and full N lifecycle remain open.",
+    "messages": "continuation/evidence/wave5/messages/byte_anchors.json: conditional_contract; expected-word/reference/tolerance observations, initialized masks, logical-vs-padded reader ABI, intervening identity, outer CFG, consumer acceptance, framing/sender/tuple-to-packet remain open."
+  },
+  "additional_checks": [
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --exit-code 3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b HEAD -- continuation/src/marker_pipeline.cpp continuation/include/rage/marker_pipeline.hpp continuation/src/position_records.cpp continuation/include/rage/position_records.hpp continuation/src/resolved_scalar_helper.cpp continuation/include/rage/resolved_scalar_helper.hpp",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --exit-code -- RAGEBOT_V10_*.zip",
+      "exit_code": 0
+    }
+  ],
+  "read_only_boundary": {
+    "handoff_input_work_and_archives_written": false,
+    "original_loaded_executed_or_emulated": false,
+    "game_process_or_network_integration": false,
+    "integrity_evidence": "original image before/after hash; verifier source pins; clean archive worktree diff; no claim of an exhaustive rehash of all 64087 input/work records"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "g++": "13.3.0",
+    "make": "4.3",
+    "objdump": "2.42",
+    "log_sha256": "922df84942dad50cc9eb47ab291c7bdf17e549e96ab95ed528ff57a8400c4246"
+  },
+  "published_excerpts": {
+    "make-check.excerpt.log": "a84323f1f3c8dd63755e0e8b864ec4569d57478a1d872ccea71faf7024bd9185",
+    "static.excerpt.log": "2ff45a9b81005d7e13f92612cce47ae4350ec6d700e95813bbe9ffe64230584d"
+  },
+  "not_claimed": [
+    "full Ragebot reconstruction",
+    "runtime reachability or full original equivalence",
+    "original source language/ABI established by the current C++17 build",
+    "external audit",
+    "independent pefile historical leaf rerun (separate review scope)"
+  ]
+}
