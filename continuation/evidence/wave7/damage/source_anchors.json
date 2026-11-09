@@ -1,0 +1,71 @@
+{
+  "source": {
+    "image": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_size": 55578624,
+    "va_base": "0x412a0000",
+    "container": "workspace/input/dll/neverlose.dll",
+    "container_sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "resource_offset": "0x629b10",
+    "resource_size": 55578624
+  },
+  "instructions": [
+    {"va":"0x4136e09e","bytes":"e8fd1e0000","decoded":"call 0x4136ffa0"},
+    {"va":"0x4136ffa0","bytes":"55","decoded":"push ebp"},
+    {"va":"0x413700e6","bytes":"ff5014","decoded":"call DWORD PTR [eax+0x14]"},
+    {"va":"0x4136f0ed","bytes":"e81e160000","decoded":"call 0x41370710"},
+    {"va":"0x4136f0f5","bytes":"d99e48010000","decoded":"fstp DWORD PTR [esi+0x148]"},
+    {"va":"0x41370710","bytes":"55","decoded":"push ebp"},
+    {"va":"0x41370719","bytes":"8b5d0c","decoded":"mov ebx,DWORD PTR [ebp+0xc]"},
+    {"va":"0x41370780","bytes":"8b7d08","decoded":"mov edi,DWORD PTR [ebp+0x8]"},
+    {"va":"0x413708da","bytes":"ff5030","decoded":"call DWORD PTR [eax+0x30]"},
+    {"va":"0x413708dd","bytes":"d95dd0","decoded":"fstp DWORD PTR [ebp-0x30]"},
+    {"va":"0x413708e0","bytes":"4b","decoded":"dec ebx"},
+    {"va":"0x413708e1","bytes":"83fb07","decoded":"cmp ebx,0x7"},
+    {"va":"0x413708e4","bytes":"0f87de000000","decoded":"ja 0x413709c8"},
+    {"va":"0x413708ea","bytes":"f30f104dd0","decoded":"movss xmm1,DWORD PTR [ebp-0x30]"},
+    {"va":"0x413708ef","bytes":"ff249d2cdc0642","decoded":"jmp DWORD PTR [ebx*4+0x4206dc2c]"},
+    {"va":"0x413709bb","bytes":"f30f590d5cdb0642","decoded":"mulss xmm1,DWORD PTR ds:0x4206db5c"},
+    {"va":"0x413709c3","bytes":"e9d0000000","decoded":"jmp 0x41370a98"},
+    {"va":"0x41370a98","bytes":"8b45e8","decoded":"mov eax,DWORD PTR [ebp-0x18]"},
+    {"va":"0x41370aa1","bytes":"f30f114dd8","decoded":"movss DWORD PTR [ebp-0x28],xmm1"},
+    {"va":"0x41370aa6","bytes":"d945d8","decoded":"fld DWORD PTR [ebp-0x28]"},
+    {"va":"0x41370ab0","bytes":"c3","decoded":"ret"}
+  ],
+  "data": [
+    {
+      "va":"0x4206dc2c",
+      "bytes":"03093741980a3741bb093741980a3741980a3741f6083741f6083741980a3741",
+      "entries":["0x41370903","0x41370a98","0x413709bb","0x41370a98","0x41370a98","0x413708f6","0x413708f6","0x41370a98"]
+    },
+    {"va":"0x4206db5c","bytes":"0000a03f","float32":1.25}
+  ],
+  "scope": {
+    "selected_hitgroup": 3,
+    "switch_index": 2,
+    "body_target": "0x413709bb",
+    "preconditions": [
+      "The 41370710 prologue and early guards permit reaching the resolved-provider call and switch.",
+      "The indirect provider at 413708da returns a value stored by FSTP to binary32 at [EBP-0x30].",
+      "The second stack argument is 32-bit integer 3; DEC then leaves unsigned table index 2 and the JA range guard is not taken."
+    ],
+    "input_types": [
+      "original stack argument [EBP+0x8]: 32-bit entity/record pointer-like value, not part of the local arithmetic API",
+      "original stack argument [EBP+0xc]: 32-bit integer hitgroup",
+      "original stack argument [EBP+0x10]: binary32 float on other arms; the selected arm does not read it",
+      "selected arm arithmetic input: binary32 value returned by the unresolved indirect [vtable+0x30] provider"
+    ],
+    "float_order": [
+      "provider ST0 -> FSTP [EBP-0x30] (binary32 rounding)",
+      "MOVSS [EBP-0x30] -> XMM1",
+      "MULSS XMM1,[0x4206db5c] where the constant is binary32 1.25",
+      "JMP 41370a98 -> MOVSS [EBP-0x28],XMM1 -> FLD [EBP-0x28] -> RET",
+      "caller FSTP [ESI+0x148] at 4136f0f5"
+    ],
+    "unresolved": [
+      "Provider object identity, initialization and effects at [vtable+0x30].",
+      "4136ffa0 is reached at callsite 4136e09e and calls an unresolved trace interface at [vtable+0x14]; no dataflow link from its trace output to the later 41370710 branch is established.",
+      "Early guards, team/global bindings, other hitgroup arms, armor, weapon/surface parameters and whole damage-loop semantics."
+    ]
+  }
+}
