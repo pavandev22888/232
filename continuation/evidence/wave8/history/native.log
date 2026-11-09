@@ -1,0 +1,3 @@
+$ runs/w8-history-build/test_history_slot_slice
+PASS test_history_slot_slice assertions=4351
+EXIT=0

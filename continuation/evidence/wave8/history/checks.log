@@ -1,0 +1,20 @@
+$ pwd; git rev-parse HEAD; git branch --show-current
+/tmp/hoplite/232-w8-history
+9b2a75fbd2856fd4966cb6bf6c4933077c51bf41
+hoplite/tanagra-adb72df5--w8-history
+$ python3 --version; g++ --version; make --version; objdump --version; git --version
+Python 3.12.3
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+GNU Make 4.3
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+git version 2.43.0
+$ git diff --check
+EXIT=0
+$ sha256sum continuation/include/rage/history_slot_slice.hpp continuation/src/history_slot_slice.cpp continuation/tests/test_history_slot_slice.cpp
+9828974c41ac7592b9982d98cde6609c2fd415df766d901e3106132ec2f76d0a  continuation/include/rage/history_slot_slice.hpp
+93fb8505cb56faccff35b27a773e9eacd99088fe364768b99fc9ccadff305de0  continuation/src/history_slot_slice.cpp
+b631f59d11b5e9580d3629e67fdf8f1101a276209557777a2fe8a5912a360b95  continuation/tests/test_history_slot_slice.cpp
+$ git diff --name-only
+continuation/include/rage/history_slot_slice.hpp
+continuation/src/history_slot_slice.cpp
+continuation/tests/test_history_slot_slice.cpp

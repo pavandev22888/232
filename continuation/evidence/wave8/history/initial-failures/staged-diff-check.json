@@ -1,0 +1,6 @@
+{
+  "command": "git diff --cached --check",
+  "exit_code": 2,
+  "stdout": "continuation/evidence/wave8/history/source_disassembly.txt:270: trailing whitespace.\n+4200c9d8:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:274: trailing whitespace.\n+4200c9eb:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:286: trailing whitespace.\n+4200ca09:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:289: trailing whitespace.\n+4200ca17:\t00 \ncontinuation/evidence/wave8/history/source_disassembly.txt:466: trailing whitespace.\n+4200cc6a:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:716: trailing whitespace.\n+4200cf59:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:723: trailing whitespace.\n+4200cf6c:\t01 \ncontinuation/evidence/wave8/history/source_disassembly.txt:751: trailing whitespace.\n+4200cfe4:\t01 \n",
+  "stderr": ""
+}
