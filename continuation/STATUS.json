@@ -1,5 +1,5 @@
 {
-  "stage": "W6 bounded callback/reset/release/history contracts accepted after fixed-SHA reviews and fresh gates; full reconstruction remains open",
+  "stage": "W6 bounded contracts accepted; W7 independent local dependency slices in progress; full reconstruction remains open",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -348,21 +348,13 @@
     }
   },
   "current_continuation": {
-    "task": "W6",
-    "status": "accepted_bounded_scope",
-    "code_commits": [
-      "35b8ada",
-      "47af79a",
-      "14cc881",
-      "46c1738"
-    ],
-    "report": "evidence/wave6/verification.json",
+    "task": "W7",
+    "status": "in_progress",
+    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "report": "evidence/wave7/assignment.json",
     "full_tasks_closed": [],
     "external_audit": false,
-    "original_language_established": false,
-    "integrated_reviewed_commit": "d99dd375160c7fccfd489598942232430d78da2f",
-    "corrected_documentation_reviewed_commit": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
-    "fresh_gate_head": "b869125873217d955cf56788219fc7e2879b17f4"
+    "original_language_established": false
   },
   "previous_verification_w5": {
     "report": "evidence/wave5/verification.json",
