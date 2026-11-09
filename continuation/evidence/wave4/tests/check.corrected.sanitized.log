@@ -1,0 +1,120 @@
+SANITIZED_COMMAND_OUTPUT: JSON inventories/build chatter omitted; commands, C++/Python results and static-check boundaries retained.
+PRIOR_LOG_SHA256=56c4e56297310f1be000b2c52d36f201c659fc40a25c34b6b8522a060079e510
+SANITIZER_ENV_FROM_UNCHANGED_MAKEFILE: ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1
+TESTED_SOURCE_SHA=52c513e2b83761b6ea2d758483a4d883907b4341
+EVIDENCE_HEAD=6d6211fffbc819adef545529734617898bbab523
+CWD=/tmp/hoplite/worktrees/sikyon-w4-tests
+BRANCH=hoplite/sikyon-46eee495--w4-tests
+ENV: PYTHONPATH unset; PYTHONDONTWRITEBYTECODE=1; TMPDIR=$CWD/continuation/build/w4-tests/tmp
+ALLOWED_HANDOFF_PARSER=workspace/orchestration/v7/pe_data.py
+ALLOWED_PARSER_SHA256=e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b
+PRIOR_ATTEMPT: exit 2; preserved unchanged; broad no-import review restriction blocked pinned parser; not a PASS.
+COMMAND: env -u PYTHONPATH PYTHONDONTWRITEBYTECODE=1 TMPDIR="$PWD/continuation/build/w4-tests/tmp" make -C continuation -j2 check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=build/w4-tests
+RUN build/w4-tests/test_actor_scalar_pipeline
+RUN build/w4-tests/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/w4-tests/test_charge_state
+PASS: 3274 charge-state checks
+RUN build/w4-tests/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build/w4-tests/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build/w4-tests/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/w4-tests/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/w4-tests/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+python3 tests/verify_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/w4-tests/test_charge_state_sanitize
+PASS: 3274 charge-state checks
+RUN build/w4-tests/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build/w4-tests/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build/w4-tests/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/w4-tests/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/w4-tests/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+python3 evidence/gap01/verify_gap01.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 evidence/gap03/verify_charge_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+python3 evidence/gap04/check_bindings.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+UNRESOLVED runtime base, module ownership, target identity, and execution/reachability
+python3 evidence/gap05/replay_position_lifecycle.py "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+python3 evidence/gap06/verify_h01_replay.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave2/code01/review_baseline.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave2/gap01/verify_gap01_wave2.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave2/gap02/verify_inventory.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave2/gap03/verify_reset_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings
+python3 -B evidence/wave2/gap04/verify_scalar_helper.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+python3 -B evidence/wave2/gap05/verify_optional_output.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+python3 -B evidence/wave2/gap06/verify_remaining_h01.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v
+test_archived_pass_cannot_become_fresh_success (test_verify_remaining_h01.RemainingH01Tests.test_archived_pass_cannot_become_fresh_success) ... ok
+test_bias_model_is_bounded_and_checks_constant (test_verify_remaining_h01.RemainingH01Tests.test_bias_model_is_bounded_and_checks_constant) ... ok
+test_changed_pinned_source_is_rejected (test_verify_remaining_h01.RemainingH01Tests.test_changed_pinned_source_is_rejected) ... ok
+test_descriptor_must_match_actual_bytes (test_verify_remaining_h01.RemainingH01Tests.test_descriptor_must_match_actual_bytes) ... ok
+test_manifest_partition (test_verify_remaining_h01.RemainingH01Tests.test_manifest_partition) ... ok
+test_modular_model_and_count_masking (test_verify_remaining_h01.RemainingH01Tests.test_modular_model_and_count_masking) ... ok
+test_new_failure_is_not_promoted (test_verify_remaining_h01.RemainingH01Tests.test_new_failure_is_not_promoted) ... ok
+test_only_file_backed_executable_targets (test_verify_remaining_h01.RemainingH01Tests.test_only_file_backed_executable_targets) ... ok
+Ran 8 tests in 0.003s
+OK
+python3 -B evidence/wave3/marker/verify_composition.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS marker composition: 3 evidence pins; 19 producer anchors; 25 fresh decoded instructions; 2 producer constants
+BOUNDARY: supplied independent snapshots; transactional no-change is offline API convention, not original rollback; runtime reachability/owners remain unresolved
+python3 -B evidence/wave3/source/verify_source.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Read-only: no output files, imports from handoff, original loading, execution or emulation.
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+MAKE_CHECK_EXIT=0
+
+CPP_COUNTS_PER_MODE (identical named results observed twice; both targets succeeded in full make check):
+{"asan_ubsan": {"checks": 19902, "executables": 7}, "native": {"checks": 19902, "executables": 7}, "per_binary_each_mode": {"actor_scalar_pipeline": 119, "charge_state": 3274, "marker_pipeline": 13255, "position_lifecycle": 208, "position_pipeline": 392, "position_records": 2601, "resolved_scalar_helper": 53}}
+H01_RESULT_FIELDS (extracted from fresh command output):
+{
+  "all_209_repeated": false,
+  "disposition_counts": {
+    "freshly_rechecked": 33,
+    "historical_only": 12,
+    "model_only": 2,
+    "unresolved": 0
+  },
+  "external_independent_audit": false,
+  "inputs_unchanged_during_this_replay_only": true,
+  "new_evaluation_passes": {
+    "freshly_rechecked": 33,
+    "model_only": 2
+  },
+  "original_execution_or_emulation": false,
+  "scope": "47 non-instruction H01 entries; archived pass flags/counts are not success inputs.",
+  "strict_old_protocol_repeated": false,
+  "supported_checks_passed": true,
+  "unresolved_gates": [
+    "Original producer script and exact tool/block-input protocol are not available via the cited paths/ledger; the archived check list is not an executable protocol.",
+    "Named pefile/LIEF, Rizin and five VEX checks are not rerun.",
+    "The original audit before/after interval cannot be recreated.",
+    "Models do not establish live behavior, full equivalence or actual x87 rounding."
+  ]
+}
+SANITIZER_DIAGNOSTIC_LINES=[]
