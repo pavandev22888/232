@@ -35,7 +35,9 @@
         "continuation/c17/include/rage/resolved_scalar_helper.h",
         "continuation/c17/src/resolved_scalar_helper.c",
         "continuation/c17/tests/test_resolved_scalar_helper.c",
-        "continuation/evidence/c17/scalar/"
+        "continuation/evidence/c17/scalar/",
+        "continuation/c17/tests/test_resolved_scalar_helper_differential.cpp",
+        "continuation/c17/Makefile"
       ],
       "read_first": [
         "docs/GOAL.md",
