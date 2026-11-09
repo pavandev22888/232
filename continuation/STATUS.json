@@ -1,5 +1,5 @@
 {
-  "stage": "W7 bounded contracts accepted after fixed-SHA reviews and integrated gate; full reconstruction remains open",
+  "stage": "W7 accepted; W8 connected dependency reconstruction in progress; full reconstruction remains open",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -356,19 +356,13 @@
     }
   },
   "current_continuation": {
-    "task": "W7",
-    "status": "accepted_bounded_scope",
-    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
-    "report": "evidence/wave7/verification.json",
+    "task": "W8",
+    "status": "in_progress",
+    "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+    "report": "evidence/wave8/assignment.json",
     "full_tasks_closed": [],
     "external_audit": false,
-    "original_language_established": false,
-    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "coordinator_gate": "passed_at_candidate",
-    "review_reports": [
-      "evidence/wave7/review-state/README.md",
-      "evidence/wave7/review-flow/report.json"
-    ]
+    "original_language_established": false
   },
   "previous_verification_w5": {
     "report": "evidence/wave5/verification.json",

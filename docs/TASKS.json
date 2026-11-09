@@ -1975,6 +1975,181 @@
         "verification": "continuation/evidence/wave7/verification.json",
         "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
       }
+    },
+    {
+      "id": "W8-DAMAGE",
+      "owner": "w8-damage",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-damage",
+      "branch": "hoplite/sikyon-46eee495--w8-damage",
+      "write_paths": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/evidence/wave8/damage/"
+      ],
+      "scope": "Extend 0x41370710 beyond hitgroup3: prove actual dispatch and other local arithmetic/return arms as one readable conditional computation, preserving provider observations. Boundaries armor/trace remain distinct; do not implement guessed weapon model.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-MOVEMENT",
+      "owner": "w8-movement",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-movement",
+      "branch": "hoplite/sikyon-46eee495--w8-movement",
+      "write_paths": [
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp",
+        "continuation/evidence/wave8/movement/"
+      ],
+      "scope": "Reconstruct source-backed numeric predicate/return chain inside 0x414A5130 beyond W7 caller, with explicit unknown upstream observations, faithful FP order and special cases. Never relabel 0x414B2930 as stop helper.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-HISTORY",
+      "owner": "w8-history",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-history",
+      "branch": "hoplite/sikyon-46eee495--w8-history",
+      "write_paths": [
+        "continuation/include/rage/history_slot_slice.hpp",
+        "continuation/src/history_slot_slice.cpp",
+        "continuation/tests/test_history_slot_slice.cpp",
+        "continuation/evidence/wave8/history/"
+      ],
+      "scope": "Resolve one missing concrete growth/index/allocator prerequisite beyond W7 0x413F88F0 by inspecting direct growth helper 0x413F3890; implement proved local body, no fake allocation/lifetime, preserve explicit post-provider observation.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-RESET",
+      "owner": "w8-reset",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-reset",
+      "branch": "hoplite/sikyon-46eee495--w8-reset",
+      "write_paths": [
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_predecessor.cpp",
+        "continuation/evidence/wave8/reset/"
+      ],
+      "scope": "Extend 0x415DEB00 to established entry/EAX initial value and bounded loop around accepted 25-store record body; reconstruct all local proved predicates/iteration bounds without guessing scheduling or external providers.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-CALLBACK",
+      "owner": "w8-callback",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-callback",
+      "branch": "hoplite/sikyon-46eee495--w8-callback",
+      "write_paths": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/evidence/wave8/callback/"
+      ],
+      "scope": "Resolve callback dependency: inspect immediate handler 0x4149EC2D and actual owner+4/B0 producer-to-consumer link from 0x414A8D68 caller. Implement proved connected behavior or precise source frontier, do not redo accepted ranking or broad first-positive scans.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-ANGLES",
+      "owner": "w8-angles",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-angles",
+      "branch": "hoplite/sikyon-46eee495--w8-angles",
+      "write_paths": [
+        "continuation/include/rage/angle_slice.hpp",
+        "continuation/src/angle_slice.cpp",
+        "continuation/tests/test_angle_slice.cpp",
+        "continuation/evidence/wave8/angles/"
+      ],
+      "scope": "Reconstruct one coherent numeric correction path from 0x414AE770 / 0x414AF1A5..0x414AF1CC and its source/consumer, including FP classification, subtraction/remainder/clamps if source proves them. No invented math/environment or entry guards.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
+    },
+    {
+      "id": "W8-SHOT",
+      "owner": "w8-shot",
+      "status": "in_progress",
+      "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
+      "worktree": "/tmp/hoplite/232-w8-shot",
+      "branch": "hoplite/sikyon-46eee495--w8-shot",
+      "write_paths": [
+        "continuation/include/rage/shot_result_slice.hpp",
+        "continuation/src/shot_result_slice.cpp",
+        "continuation/tests/test_shot_result_slice.cpp",
+        "continuation/evidence/wave8/shot/"
+      ],
+      "scope": "Reconstruct one connected local shot-record update/classification path around 0x414C0A50 with explicit R/Cring distinction, 0x98 stride/modulo150 and 0xF1A0 R only where proved; no server-result claims.",
+      "dependencies": [
+        "W7-REVIEW-STATE",
+        "W7-REVIEW-FLOW"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes, source-transform-consumer; explicit preconditions and unknowns.",
+        "Readable non-stub local body and native/ASan+UBSan tests if source suffices; --handoff static gate; preserve existing APIs.",
+        "Independent fixed integrated SHA review and coordinator full gate before acceptance."
+      ],
+      "stop_condition": "Complete the named connected local body or a concrete newly evidenced frontier; no invented providers, original execution/loading/emulation, or endless repeated scans."
     }
   ],
   "goal_correction": {
@@ -2005,15 +2180,12 @@
     "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a"
   },
   "current_continuation": {
-    "id": "W7",
-    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "id": "W8",
+    "base_commit": "514479c145689639dfac89ea902fe4da7d01070b",
     "coordinator": "primary-coordinator",
-    "status": "accepted_bounded_scope",
-    "ownership_check": "Only current running thread visible; no active children or registry tasks at start; clean checkout matches remote.",
-    "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "full_tasks_closed": [],
-    "manifest": "continuation/evidence/wave7/assignment.json",
-    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "verification": "continuation/evidence/wave7/verification.json"
+    "status": "in_progress",
+    "ownership_check": "Only current thread listed; clean published W7 head matches origin; no active registry tasks.",
+    "manifest": "continuation/evidence/wave8/assignment.json",
+    "full_tasks_closed": []
   }
 }
