@@ -48,7 +48,17 @@ writer fallback-указателя, не готовый provider и не нов�
 закрепляют интегрированный SHA: полный `make check` сохранил 19 902 assertions
 на режим, 8 Python-тестов и целостность исходников. R03 остаётся frontier.
 
-## Продолжение W7
+## Продолжение W8
+
+Восстановлены callback/raw32 dependency reads, damage switch, movement predicate,
+message receiver-prefix, geometry consumer, history growth, шесть reset-записей,
+локальная ESI-связь, а также ограниченные angle/shot/queue slices. Аудит закрепляет
+93 доступных коммита и 14 refs; лишь два PushEvent доступны, не полный push-журнал.
+[W8: реализованное и остаток](continuation/evidence/wave8/README.md),
+[gate и независимые ревью](continuation/evidence/wave8/verification.json).
+Исправлена обнаруженная ревью MXCSR/LTO-регрессия; полные GAP не закрыты.
+
+## Историческое продолжение W7
 
 Добавлены normal callback ranking/replacement tail, локальная ECX/EDX-связь,
 25-store raw reset snapshot, no-growth history slot resolver, movement caller

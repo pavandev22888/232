@@ -1,6 +1,8 @@
 # Карта материалов и текущего знания
 
-Принятый ограниченный код W7: `562d1c78f2df1343cf9a9e3e3f91a115be2069ac`; приёмка — в
+Текущая W8-интеграция и точные границы — [сводка](../continuation/evidence/wave8/README.md)
+и [приёмка](../continuation/evidence/wave8/verification.json).
+Исторический принятый ограниченный код W7: `562d1c78f2df1343cf9a9e3e3f91a115be2069ac`; приёмка — в
 [W7 verification](../continuation/evidence/wave7/verification.json).
 Ниже W6 и более ранние снимки отделены от текущих приращений.
 Исторический интегрированный код W6: `d99dd375160c7fccfd489598942232430d78da2f`.
@@ -29,21 +31,26 @@
 | [resolved_scalar_helper](../continuation/src/resolved_scalar_helper.cpp) | float-helper 0x41C784B0 с явным fallback | [scalar contract](../continuation/evidence/wave2/gap04/contract.md) |
 | [marker_pipeline](../continuation/src/marker_pipeline.cpp) | N+50/+54 helper calls → N+48 producer | [composition](../continuation/evidence/wave3/marker/composition.json), [W3 spec](../continuation/SPEC_NEXT.md) |
 | [actor_scalar_pipeline](../continuation/src/actor_scalar_pipeline.cpp) | независимые X/Y/Z observations; pure resolver, не решает guards | [provenance](../continuation/evidence/wave3/actor/provenance.json) |
-| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, T+F0; tail statistics, initial copy и normal ranking/replacement tail | [W5](../continuation/evidence/wave5/aggregate/contract.json), [W6](../continuation/evidence/wave6/aggregate/contract.json), [W7](../continuation/evidence/wave7/rank/contract.json) |
+| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Callback context/raw32 reads, direct/non-direct и ranking tail; error-chain frontier | [W8](../continuation/evidence/wave8/aggregate/contract.json) |
 | [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
-| [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
+| [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, slot-byte gate и условный receiver prefix; не sender | [W8](../continuation/evidence/wave8/message/byte_anchors.json) |
 | [release_state_slice](../continuation/src/release_state_slice.cpp) | Отдельные post-call observations, latch stores и условный DWORD increment; не автомат DT/HS | [контракт W6](../continuation/evidence/wave6/modes/contract.json) |
-| [reset_predecessor](../continuation/src/reset_predecessor.cpp) | 25 DWORD stores в raw 0xC8 snapshot; ADD/CMP/JNE, четыре fallthrough stores и прежняя 11-store проекция; не полный цикл | [W6](../continuation/evidence/wave6/reset/reset_predecessor_evidence.json), [W7](../continuation/evidence/wave7/reset/reset_projection_evidence.json) |
+| [reset_predecessor](../continuation/src/reset_predecessor.cpp) | Шесть raw 0xC8-записей, predecessor и global fallthrough; не полный DT/HS loop | [W8](../continuation/evidence/wave8/reset/README.md) |
 | [history_slice](../continuation/src/history_slice.cpp) | 21 ordered raw-word copy, DWORD observation и zero store после неизвестного вызова; не selector/matrix path | [контракт W6](../continuation/evidence/wave6/history/README.md) |
-| [history_slot_slice](../continuation/src/history_slot_slice.cpp) | No-growth existing-slot resolver, отдельные cursor/index, init и независимо наблюдаемый post-call slot | [W7](../continuation/evidence/wave7/history/README.md) |
-| [movement_slice](../continuation/src/movement_slice.cpp) | Caller selector/bit0 gate, raw float argument и наблюдаемый AL; не тело helper | [W7](../continuation/evidence/wave7/movement/receipt.json) |
-| [damage_slice](../continuation/src/damage_slice.cpp) | Только hitgroup 3: observed provider float × 1.25f; не trace/armor/provider | [W7](../continuation/evidence/wave7/damage/README.md) |
+| [history_slot_slice](../continuation/src/history_slot_slice.cpp) | Existing-slot resolver и growth request/header/copy/zero/release/publication; allocator и lifetime неизвестны | [W8](../continuation/evidence/wave8/history/contract.json) |
+| [movement_slice](../continuation/src/movement_slice.cpp) | Caller и guarded 0x414A5130 predicate; отдельные provider observations | [W8](../continuation/evidence/wave8/movement/verification.json) |
+| [damage_slice](../continuation/src/damage_slice.cpp) | Switch, guarded hitgroup-1 и ordered SSE stores; не полная armor/trace цепочка | [W8](../continuation/evidence/wave8/damage/contract.json) |
+| [geometry_slice](../continuation/src/geometry_slice.cpp) | Post-call SSE result consumer; producer неизвестен | [W8](../continuation/evidence/wave8/geometry/contract.md) |
+| [angle_slice](../continuation/src/angle_slice.cpp) | AX guards, ordered wrap/clamp, две записи; math calls наблюдаются отдельно | [W8](../continuation/evidence/wave8/angle/source_anchors.json) |
+| [shot_result_slice](../continuation/src/shot_result_slice.cpp) | Signed modulo 150/stride 0x98 и отдельный postcall consumer; не hit/miss semantics | [W8](../continuation/evidence/wave8/shot/contract.json) |
+| [queue_context_slice](../continuation/src/queue_context_slice.cpp) | Raw context/task и одна worker claim projection; не scheduler/lifetime proof | [W8](../continuation/evidence/wave8/queue/anchors.json) |
 
-Дополнительный `test_position_pipeline.cpp` проверяет связки. Успешные тесты
+Дополнительный `test_position_pipeline.cpp` проверяет связки; `test_reset_table.cpp` —
+таблицу reset. `make mxcsr` отдельно проверяет unity/LTO damage-регрессию. Успешные тесты
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное
 сохранение N при `unresolved` — соглашение офлайн API, не доказанный rollback оригинала.
 
-## W7: текущая ограниченная интеграция
+## W7: историческая ограниченная интеграция
 
 [Сводка W7](../continuation/evidence/wave7/README.md) фиксирует шесть участков,
 исправления cursor/index и reset snapshot, тесты и независимые ревью.
