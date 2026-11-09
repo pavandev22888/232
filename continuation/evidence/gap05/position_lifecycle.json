@@ -1,0 +1,137 @@
+{
+  "task": "GAP05: bounded N+48 actor consumer continuation",
+  "result": "consumer update modeled; marker producer remains unresolved",
+  "image": {
+    "handoff_relative_path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624,
+    "format": "raw byte image, not PE",
+    "image_base": "0x412a0000",
+    "mapping": "file offset = VA - image_base"
+  },
+  "source_walks": [
+    {
+      "path": "workspace/orchestration/v10/record_actor_enrichment_walk.json",
+      "range": ["0x414f8330", "0x414f8d00"],
+      "instruction_records": 505,
+      "record_pointer": "EDI after reader call 0x414f83bd; local out-pointer load at 0x414f83c2"
+    },
+    {
+      "path": "workspace/orchestration/v10/record_actor_update_walk.json",
+      "range": ["0x414fd800", "0x414fea00"],
+      "instruction_records": 190,
+      "record_pointer": "EBP after reader call 0x414fd82d"
+    },
+    {
+      "path": "workspace/orchestration/v10/manager_reference_calls.json",
+      "reference_anchors": 28,
+      "relevant_calls": ["0x414f69e4", "0x4150537f", "0x41505483"]
+    }
+  ],
+  "anchors": [
+    {"va": "0x414fd82d", "bytes": "e80ee60000", "instruction": "call 0x4150be40", "fact": "reader output supplies the consumer record pointer"},
+    {"va": "0x414f83bd", "bytes": "e87e3a0100", "instruction": "call 0x4150be40", "fact": "enrichment uses the same reader"},
+    {"va": "0x414f83c2", "bytes": "8b7dc8", "instruction": "mov edi,DWORD PTR [ebp-0x38]", "fact": "enrichment receives its record pointer in EDI"},
+    {"va": "0x414fd835", "bytes": "8b6c241c", "instruction": "mov ebp,DWORD PTR [esp+0x1c]", "fact": "consumer receives its record pointer in EBP"},
+    {"va": "0x414fd841", "bytes": "89c3", "instruction": "mov ebx,eax", "fact": "reader AL is kept separately from the returned record pointer"},
+    {"va": "0x414fd905", "bytes": "84db", "instruction": "test bl,bl", "fact": "reader result controls the following marker gate"},
+    {"va": "0x414fd909", "bytes": "0f57c0", "instruction": "xorps xmm0,xmm0", "fact": "left operand of the N+48 compare is zero"},
+    {"va": "0x414fd90c", "bytes": "0f2e4548", "instruction": "ucomiss xmm0,DWORD PTR [ebp+0x48]", "fact": "reads N+48"},
+    {"va": "0x414fd910", "bytes": "0f8318020000", "instruction": "jae 0x414fdb2e", "fact": "ordered 0 >= N+48 exits; unordered comparison does not take JAE"},
+    {"va": "0x414fd92e", "bytes": "803c0800", "instruction": "cmp BYTE PTR [eax+ecx*1],0x0", "fact": "resolved selected setting chooses geometry or fallback"},
+    {"va": "0x414fd96d", "bytes": "0f2e0dc0cd0642", "instruction": "ucomiss xmm1,DWORD PTR ds:0x4206cdc0", "fact": "compares distance with the float at 0x4206cdc0"},
+    {"va": "0x414fd9bd", "bytes": "e8eeaa7700", "instruction": "call 0x41c784b0", "fact": "first unresolved component trace call"},
+    {"va": "0x414fda04", "bytes": "e8a7aa7700", "instruction": "call 0x41c784b0", "fact": "second unresolved component trace call"},
+    {"va": "0x414fda47", "bytes": "e864aa7700", "instruction": "call 0x41c784b0", "fact": "third unresolved component trace call"},
+    {"va": "0x414fda92", "bytes": "0f134530", "instruction": "movlps QWORD PTR [ebp+0x30],xmm0", "fact": "writes N+30 x/y on the record-position fallback"},
+    {"va": "0x414fda99", "bytes": "f30f114d38", "instruction": "movss DWORD PTR [ebp+0x38],xmm1", "fact": "writes N+30 z on the record-position fallback"},
+    {"va": "0x414fda9e", "bytes": "f30f1106", "instruction": "movss DWORD PTR [esi],xmm0", "fact": "writes x through the caller-provided actor-position sink"},
+    {"va": "0x414fdb32", "bytes": "f30f104548", "instruction": "movss xmm0,DWORD PTR [ebp+0x48]", "fact": "loads N+48 for optional output"},
+    {"va": "0x414fdb37", "bytes": "f30f1107", "instruction": "movss DWORD PTR [edi],xmm0", "fact": "copies N+48 through the optional output pointer"},
+    {"va": "0x414f8420", "bytes": "0f2e6748", "instruction": "ucomiss xmm4,DWORD PTR [edi+0x48]", "fact": "enrichment walk also reads N+48"},
+    {"va": "0x414f85cd", "bytes": "f30f104f48", "instruction": "movss xmm1,DWORD PTR [edi+0x48]", "fact": "enrichment walk reads N+48"},
+    {"va": "0x414f85d2", "bytes": "f30f114f4c", "instruction": "movss DWORD PTR [edi+0x4c],xmm1", "fact": "copies N+48 into N+4C; does not produce N+48"},
+    {"va": "0x41505374", "bytes": "8d4630", "instruction": "lea eax,[esi+0x30]", "fact": "caller passes its +0x30 vector as the actor-position sink"},
+    {"va": "0x4150537f", "bytes": "e87c84ffff", "instruction": "call 0x414fd800", "fact": "manager caller reaches the actor consumer"},
+    {"va": "0x41505483", "bytes": "e87883ffff", "instruction": "call 0x414fd800", "fact": "second manager path reaches the same actor consumer"},
+    {"va": "0x414f69e4", "bytes": "e847190000", "instruction": "call 0x414f8330", "fact": "manager caller reaches the record enrichment walk"},
+    {"va": "0x4206cdc0", "bytes": "0000c842", "instruction": "little-endian float 100.0", "fact": "distance fallback threshold"}
+  ],
+  "decode_windows": [
+    {
+      "start": "0x414fd905",
+      "end_exclusive": "0x414fd916",
+      "instructions": [
+        ["0x414fd905", "test bl,bl"],
+        ["0x414fd907", "jne 0x414fd916"],
+        ["0x414fd909", "xorps xmm0,xmm0"],
+        ["0x414fd90c", "ucomiss xmm0,DWORD PTR [ebp+0x48]"],
+        ["0x414fd910", "jae 0x414fdb2e"]
+      ]
+    },
+    {
+      "start": "0x414fda92",
+      "end_exclusive": "0x414fdab4",
+      "instructions": [
+        ["0x414fda92", "movlps QWORD PTR [ebp+0x30],xmm0"],
+        ["0x414fda99", "movss DWORD PTR [ebp+0x38],xmm1"],
+        ["0x414fda9e", "movss DWORD PTR [esi],xmm0"],
+        ["0x414fdaa6", "movss DWORD PTR [esi+0x4],xmm0"],
+        ["0x414fdaaf", "movss DWORD PTR [esi+0x8],xmm0"]
+      ]
+    },
+    {
+      "start": "0x414fdb2e",
+      "end_exclusive": "0x414fdb50",
+      "instructions": [
+        ["0x414fdb32", "movss xmm0,DWORD PTR [ebp+0x48]"],
+        ["0x414fdb37", "movss DWORD PTR [edi],xmm0"]
+      ]
+    },
+    {
+      "start": "0x414f85cd",
+      "end_exclusive": "0x414f85d9",
+      "instructions": [
+        ["0x414f85cd", "movss xmm1,DWORD PTR [edi+0x48]"],
+        ["0x414f85d2", "movss DWORD PTR [edi+0x4c],xmm1"]
+      ]
+    },
+    {
+      "start": "0x41505374",
+      "end_exclusive": "0x41505384",
+      "instructions": [
+        ["0x41505374", "lea eax,[esi+0x30]"],
+        ["0x4150537f", "call 0x414fd800"]
+      ]
+    }
+  ],
+  "derived_constant": {
+    "address": "0x4206cdc0",
+    "bytes": "0000c842",
+    "float": 100.0
+  },
+  "producer_scan": {
+    "scope": "direct writes to N+0x48 through EDI in the enrichment walk and EBP in the actor-update walk only",
+    "direct_writes_found": [],
+    "limit": "Does not rule out writes through other aliases, callees, other functions, or runtime paths."
+  },
+  "model_assumptions": [
+    "The raw image base and VA-to-file-offset map are the values recorded by the current continuation byte anchors; the image hash is checked again by replay.",
+    "EBP/EDI identify the reader-returned N pointer in their respective local walks; no same-offset identity is inferred across other objects.",
+    "The actor owner pointer and Vec3 sink are caller-resolved; the model carries their pointer identity but does not derive a network index or actor ID.",
+    "The reader AL, virtual-call guards, selected setting byte, and three-axis trace result are supplied observations; none is inferred from PositionRead::status or replaced with a live provider.",
+    "The position-distance calculation follows the visible x/y/z subtract-square-sum-square-root path; fast-math is not used."
+  ],
+  "tests": [
+    "reader result AL remains separate from PositionRead::status while reusing the reader's borrowed record pointer",
+    "ordered zero-versus-marker JAE cases include zero, negative, positive, NaN, and reader-AL bypass",
+    "fallback copy, threshold equality, unordered-distance trace path, missing trace observation, inactive and rejected guards",
+    "actor owner, record pointer, and Vec3 sink identities remain paired"
+  ],
+  "unresolved": [
+    "No proven producer/write of N+48 was found in the supplied actor-enrichment or actor-update walks; its full lifecycle remains open.",
+    "The geometry provider at 0x41C784B0, TLS/FS guards, configuration source and remaining N+50 output are not implemented.",
+    "No packet format, sender, live runtime binding, original DLL execution, or server/game outcome is claimed.",
+    "The slice is not a complete function-equivalence proof or independent audit."
+  ]
+}
