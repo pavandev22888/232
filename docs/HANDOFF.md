@@ -23,7 +23,13 @@ W8 расширяет callback, damage, movement, message, geometry, history, re
 - Рабочая ветка продолжения: `hoplite/tanagra-adb72df5`.
   [PR #1](https://github.com/pavandev22888/232/pull/1) уже слит 2026-11-09;
   `main` содержит W1–W7 (`0fe371b`), а новая ветка — продолжение W8 и полную
-  исходную историю. Новый PR — **без merge, merge queue и auto-merge**.
+  исходную историю. Продолжение опубликовано в [PR #2](https://github.com/pavandev22888/232/pull/2)
+  — **без merge, merge queue и auto-merge**. Начальный snapshot `d3e526f`:
+  PR OPEN/MERGEABLE, GitHub checks/Actions/reviews и незакрытых review threads нет;
+  это не зелёный CI. Подписка на обновления активна, task auto-merge выключен.
+  Snapshot и повторный gate `d3e526f` сохранены в W8 verification; точный финальный
+  опубликованный SHA и проверки после metadata-коммита — в разделе Verification PR #2.
+  При следующем старте сверить live состояние, не считать этот snapshot текущим.
 - Снимок результата W5: `897b4bf51b1931fd1b80f178d40b7478ce251959`, 2026-11-09.
   Документы передачи добавляются поверх него; при старте получить актуальный remote HEAD.
 - Интегрированный код, проверенный тремя рецензентами:

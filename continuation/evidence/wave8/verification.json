@@ -97,5 +97,58 @@
   "original_dll_loading": false,
   "original_emulation": false,
   "input_and_work_modified": false,
-  "publication_head_gate": "After final metadata commit repeat all four gates on the exact HEAD; publish the receipt in the new PR, without merging or queueing."
+  "publication_head_gate": "After this metadata-only receipt commit repeat all gates on its exact HEAD and put the final SHA, commands and exit codes in PR #2. A committed receipt cannot name its own commit SHA; no merge or queue is authorized.",
+  "publication_candidate_gate": {
+    "tested_head": "d3e526faf2a0053b14547b05bded41ff0972f8e8",
+    "commands": [
+      {
+        "command": "make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w8-final-check/build",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/check.log",
+        "log_sha256": "5411f6f95da041de7a85fe11c0e76dd20fddae97857511bc34d371c0cfdfd7bc"
+      },
+      {
+        "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "command": "git diff --check",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "log_retention": "Complete logs retained in the ignored workspace runs/w8-publication directory; hashes recorded here. Earlier committed integration logs retain their original tested SHA.",
+    "reviewed_code_identity": "git diff --exit-code bc89d9d851d710208659fc702f1094a317023ab4 d3e526faf2a0053b14547b05bded41ff0972f8e8 -- continuation/src continuation/include continuation/tests continuation/Makefile: exit 0",
+    "committed_diff_check": "git diff --check origin/main HEAD at d3e526faf2a0053b14547b05bded41ff0972f8e8: exit 0"
+  },
+  "publication_snapshot": {
+    "observed_at_utc": "2026-11-09T19:20:40.140387+00:00",
+    "url": "https://github.com/pavandev22888/232/pull/2",
+    "state": "OPEN",
+    "observed_head": "d3e526faf2a0053b14547b05bded41ff0972f8e8",
+    "base_head": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+    "mergeable": "MERGEABLE",
+    "merge_state_status": "CLEAN",
+    "github_check_count": 0,
+    "github_actions_run_count": 0,
+    "github_review_count": 0,
+    "unresolved_review_threads": 0,
+    "github_auto_merge_request": null,
+    "thread_review_loop": {
+      "enabled": true,
+      "autoMerge": false,
+      "source": "thread_link_pull_request after PR creation"
+    },
+    "merge_or_queue_performed": false,
+    "scope": "Initial publication snapshot, not a live status. No GitHub CI/checks were present; local PASS is not a green GitHub CI result."
+  }
 }
