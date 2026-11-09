@@ -1,0 +1,35 @@
+Fixed review SHA: 35b8ada917cdfa018d0f259b1e930d9bc44f5e07
+Worktree: /tmp/hoplite/232-review-callback
+Toolchain:
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Python 3.12.3
+
+$ python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "instructions": 175,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local static windows, not runtime bindings or whole callback"
+}
+exit=0
+
+$ g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/*.cpp continuation/tests/test_bounded_aggregation.cpp -o <tmp>/native && <tmp>/native
+16392 bounded aggregation assertions passed
+exit=0
+
+$ g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined continuation/src/*.cpp continuation/tests/test_bounded_aggregation.cpp -o <tmp>/sanitize && ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 <tmp>/sanitize
+16392 bounded aggregation assertions passed
+exit=0
+
+$ git diff --check 180616d..35b8ada -- <reviewed paths>
+exit=0
+
+Pinned input hashes:
+682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_best_point_update_walk.json
+Reviewed source hashes:
+1c212b6e2dd358d24354d134f97dfaa072806488e1ffbe21580ba645f2821ce6  continuation/src/bounded_aggregation.cpp
+5ac3c490b25d2967915944bdb7b3af4991462440f4aa55ffbcf643058692e145  continuation/tests/test_bounded_aggregation.cpp
+0ba20fbe3d54f0aae49fa0103e37bcb0526365dcb2b3ea2b4e6c9ba75f56206b  continuation/evidence/wave6/aggregate/anchors.json
