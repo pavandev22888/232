@@ -1,0 +1,48 @@
+HEAD=562d1c78f2df1343cf9a9e3e3f91a115be2069ac
+HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 (read-only)
+GATE_ROOT=/tmp/hoplite/w7-review-flow-gates.EEWajj (temporary exact copy of current wave7 evidence)
+
+$ make -C continuation BUILD=/tmp/hoplite/232-w7-review-flow-build /tmp/hoplite/232-w7-review-flow-build/test_bounded_aggregation /tmp/hoplite/232-w7-review-flow-build/test_movement_slice /tmp/hoplite/232-w7-review-flow-build/test_damage_slice /tmp/hoplite/232-w7-review-flow-build/test_bounded_aggregation_sanitize /tmp/hoplite/232-w7-review-flow-build/test_movement_slice_sanitize /tmp/hoplite/232-w7-review-flow-build/test_damage_slice_sanitize
+exit_code=0
+
+$ /tmp/hoplite/232-w7-review-flow-build/test_bounded_aggregation
+exit_code=0
+
+$ /tmp/hoplite/232-w7-review-flow-build/test_movement_slice
+exit_code=0
+
+$ /tmp/hoplite/232-w7-review-flow-build/test_damage_slice
+exit_code=0
+
+$ env ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w7-review-flow-build/test_bounded_aggregation_sanitize
+exit_code=0
+
+$ env ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w7-review-flow-build/test_movement_slice_sanitize
+exit_code=0
+
+$ env ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w7-review-flow-build/test_damage_slice_sanitize
+exit_code=0
+
+$ python3 -B /tmp/hoplite/w7-review-flow-gates.EEWajj/continuation/evidence/wave7/rank/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+
+$ python3 -B /tmp/hoplite/w7-review-flow-gates.EEWajj/continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+
+$ python3 -B /tmp/hoplite/w7-review-flow-gates.EEWajj/continuation/evidence/wave7/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+
+$ python3 -B /tmp/hoplite/w7-review-flow-gates.EEWajj/continuation/evidence/wave7/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+
+$ objdump -D -b binary -m i386 -Mintel --adjust-vma=0x412a0000 --start-address=0x4148cc40 --stop-address=0x4148cc8c /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+exit_code=0
+
+$ objdump -D -b binary -m i386 -Mintel --adjust-vma=0x412a0000 --start-address=0x414a52b7 --stop-address=0x414a52ca /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+exit_code=0
+
+$ python3 -B /tmp/hoplite/w7-review-flow-gates.EEWajj/continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+
+$ git diff --quiet 1380fca28d4a267f82656fc9362e8148a1d2d88d HEAD -- continuation/include/rage/bounded_aggregation.hpp continuation/src/bounded_aggregation.cpp continuation/tests/test_bounded_aggregation.cpp
+exit_code=0

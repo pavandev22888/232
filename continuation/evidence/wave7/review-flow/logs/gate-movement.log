@@ -1,0 +1,49 @@
+{
+  "caller_branch_targets": {
+    "guard_bit_set": "0x4148cc8c",
+    "predicate_al_zero": "0x4148d7b7",
+    "selector_0x1f": "0x4148d7b9",
+    "selector_0x40": "0x4148d7b9"
+  },
+  "direct_call": {
+    "displacement": "+0x184af",
+    "site": "0x4148cc7c",
+    "target": "0x414a5130"
+  },
+  "image_base": "0x412a0000",
+  "pins": [
+    {
+      "bytes": "0fb7043031db83f81f0f84660b000083f8400f845d0b0000f605b8525042017527660f6e05dc525042c745f0ffffffff83ec04660f7e0424e8af84010083c40484c00f842b0b0000",
+      "label": "caller selector, guard, float push and AL consumer",
+      "length": 72,
+      "va": "0x4148cc44"
+    },
+    {
+      "bytes": "5383ec0ca10027264231e089442408",
+      "label": "predicate entry and frame allocation",
+      "length": 15,
+      "va": "0x414a5130"
+    },
+    {
+      "bytes": "f30f104c24140f540d40a505420f2ec80f96c3",
+      "label": "predicate float load, mask, comparison and SETBE",
+      "length": 19,
+      "va": "0x414a52b7"
+    },
+    {
+      "bytes": "8b4c240831e1e88729900089d883c40c5bc3",
+      "label": "predicate AL return path",
+      "length": 18,
+      "va": "0x414a52ca"
+    },
+    {
+      "bytes": "5589e553575681ecac0200008965e4",
+      "label": "caller entry frame",
+      "length": 15,
+      "va": "0x4148cae0"
+    }
+  ],
+  "result": "passed",
+  "source": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+  "source_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+}

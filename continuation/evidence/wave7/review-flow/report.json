@@ -1,0 +1,110 @@
+{
+  "task": "W7-REVIEW-FLOW",
+  "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+  "branch": "hoplite/sikyon-46eee495--w7-review-flow",
+  "result": "no_blocking_findings_within_bounded_scope",
+  "findings": [],
+  "source_image": {
+    "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "image": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "loaded_executed_or_emulated": false
+  },
+  "reviewed_surfaces": [
+    {
+      "surface": "bounded_aggregation ranking tail",
+      "files": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/evidence/wave7/rank/"
+      ],
+      "pins": [
+        "0x4149E9BD..0x4149EC28 normal ranking CFG; handler at 0x4149EC2D excluded",
+        "0x4149E988..0x4149E9BD tail-statistics block, separately pinned by wave6/aggregate"
+      ],
+      "review": "Raw copy sizes/order and C0 preservation match the decoded stores. Signed +28/+2C ordering, modulo-32-bit +30 difference with signed-magnitude construction (including INT_MIN), float unordered/equality branches and MAXSS second-operand behavior are represented. Missing +4->+B0 flags remain unresolved only where read; they are not defaulted. The current rank header/source/test files have no diff from the prior reviewed 1380fca snapshot. This comparison is under the documented binary32, round-to-nearest, no-FTZ/DAZ, no-fast-math/no-contraction precondition; signaling-NaN exception/payload effects and observable FP flags are excluded."
+    },
+    {
+      "surface": "local caller/callee ABI observations",
+      "files": [
+        "continuation/evidence/wave7/abi/"
+      ],
+      "pins": [
+        "0x414A8D56..0x414A8D79 caller gate/call/continuation",
+        "0x4149E790..0x4149E7B1 callee entry and argument reads",
+        "0x4149EB28..0x4149EB30 normal epilogue"
+      ],
+      "review": "The bounded bytes support ECX/EDX inputs at this callsite, its local register/scratch behavior, and a normal bare-RET epilogue. No source calling-convention keyword, object identity, all-caller contract, or language/standard is inferred."
+    },
+    {
+      "surface": "movement caller gate",
+      "files": [
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp",
+        "continuation/evidence/wave7/movement/"
+      ],
+      "pins": [
+        "0x4148CC44..0x4148CC8C selector comparisons, guard bit, one raw 32-bit argument, direct call, and AL branch"
+      ],
+      "review": "The 16-bit selector and guard-bit tests match their branches; Float32Bits forwards exact bits, and absent argument/AL observations remain optional. This models only caller-visible edges, not selector meaning or the predicate/helper implementation."
+    },
+    {
+      "surface": "damage hitgroup-3 arm",
+      "files": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/evidence/wave7/damage/"
+      ],
+      "pins": [
+        "0x413708DA provider call and hitgroup dispatch",
+        "0x413709BB MULSS by binary32 1.25 at 0x4206DB5C",
+        "0x41370A98..0x41370AB0 common float return/store"
+      ],
+      "review": "The API takes an observed provider float, returns only the hitgroup-3 multiplication, and does not substitute results for unmodeled groups. No trace linkage or provider identity/effects are claimed."
+    }
+  ],
+  "verification": {
+    "focused_build_exit_code": 0,
+    "native_exit_codes": {
+      "bounded_aggregation": 0,
+      "movement_slice": 0,
+      "damage_slice": 0
+    },
+    "asan_ubsan_exit_codes": {
+      "bounded_aggregation": 0,
+      "movement_slice": 0,
+      "damage_slice": 0
+    },
+    "bounded_aggregation_assertions_per_mode": 23002,
+    "native_and_sanitizer_movement": "PASS",
+    "native_and_sanitizer_damage": "PASS",
+    "fresh_source_byte_gates": {
+      "wave7_rank": "PASS; 162 contiguous instruction decodes and two constant pins",
+      "wave7_abi": "PASS; 28 instruction pins",
+      "wave7_movement": "PASS; five source spans and caller branch targets",
+      "wave7_damage": "PASS; 21 instruction anchors, 16 decoded, jump table and multiplier",
+      "wave6_aggregate_supporting_tail_stats": "PASS; 175 instruction decodes"
+    },
+    "static_disassembly_exit_codes": {
+      "movement_caller": 0,
+      "movement_predicate_argument_excerpt": 0
+    },
+    "full_repository_check": "not run; coordinator owns it"
+  },
+  "remaining_unresolved": [
+    "Original source language/standard and complete ABI.",
+    "Runtime binding/reachability/lifetime and provider semantics, including rank owner flags and movement predicate.",
+    "Movement helper behavior beyond the caller gate.",
+    "Damage trace/provider dataflow, full damage loop, other hitgroups, armor and weapon/surface semantics.",
+    "Whole-program equivalence and all project GAPs.",
+    "Signaling-NaN exception/payload behavior and observable floating-point flags."
+  ],
+  "artifacts": {
+    "commands": "continuation/evidence/wave7/review-flow/commands.log",
+    "logs_directory": "continuation/evidence/wave7/review-flow/logs",
+    "movement_static_disassembly": "continuation/evidence/wave7/review-flow/logs/target-disassembly.log"
+  }
+}
