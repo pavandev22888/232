@@ -1,0 +1,20 @@
+W6-REVIEW-CODE — fixed-SHA independent review
+Worktree: /tmp/hoplite/232-w6-review-code
+Branch: hoplite/sikyon-46eee495--w6-review-code
+Comparison: 180616d1227235fc952ad07202cdd7529c0272e8..d99dd375160c7fccfd489598942232430d78da2f
+Pinned image SHA256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+
+Finding: W6RC-001 BLOCKING
+continuation/src/history_slice.cpp:51,96 maps record+0x40 to destination+0x40 then calls memcpy. The overlap test supplies the same array to both views (test_history_slice.cpp:156-169); its expected helper also uses memcpy. Identical overlapping ranges violate memcpy's contract, so neither implementation nor oracle defines the overlap result. The original pinned machine code uses a load to ECX then a store, which is defined for equal addresses. Ask coordinator to resolve the adapter's overlap contract; no code/test changes made here.
+
+Assessment: aggregate callback E8F0 and C0==0 E8AB paths are distinct; the withdrawn callback report is not a current blocker. Release route/helper and post-dispatch observation handling match bounded bytes; reset add/cmp/JNE and equality-only 11-store projection match; history order and explicit LE local-word serialization match aside from W6RC-001. Adapter-only input validation and unresolved provider/identity boundaries remain explicit.
+
+Command (cwd /tmp/hoplite/232-w6-review-code):
+make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=build-w6-review
+Exit: 0 (native + ASan/UBSan + static evidence gates).
+Tools: g++ Ubuntu 13.3.0-6ubuntu2~24.04.1; GNU Make 4.3; Python 3.12.3.
+Reviewed native/sanitizer results: bounded aggregation 16392 assertions; release state 21291; history slice 22; reset predecessor equality/non-equality/uint32 wrap PASS.
+Full output: continuation/evidence/wave6/review-integrated-code/full-check.log
+Full output bytes: 118049
+Full output SHA256: 719639bbd91a70c5fafe72b36af7a365ba856957a2149ebb2c10ac1ba9f4b9c7
+Original loading/execution/emulation: not performed. Full GAP/original language/ABI/external audit: not claimed.

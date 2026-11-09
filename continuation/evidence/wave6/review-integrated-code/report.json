@@ -1,0 +1,75 @@
+{
+  "task_id": "W6-REVIEW-CODE",
+  "review_scope": [
+    "bounded_aggregation non-direct/tail",
+    "release_state_slice",
+    "reset_predecessor",
+    "history_slice",
+    "their tests and Makefile integration"
+  ],
+  "comparison": {
+    "base_sha": "180616d1227235fc952ad07202cdd7529c0272e8",
+    "reviewed_code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+    "worktree": "/tmp/hoplite/232-w6-review-code",
+    "branch": "hoplite/sikyon-46eee495--w6-review-code",
+    "binary_image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "result": "blocked",
+  "summary": "The bounded branch mappings reviewed against pinned bytes and full make check pass, but history_slice advertises/tests overlapping views while its final same-address memcpy has undefined behavior. The overlap test and its expected-value helper both use that same undefined operation, so they do not establish the asserted behavior.",
+  "findings": [
+    {
+      "id": "W6RC-001",
+      "severity": "blocking",
+      "category": "undefined_behavior",
+      "path": "continuation/src/history_slice.cpp",
+      "lines": [51, 96],
+      "test_path": "continuation/tests/test_history_slice.cpp",
+      "test_lines": [156, 169],
+      "description": "The last store maps record+0x40 to destination+0x40. The public views carry no non-alias precondition, and overlapping_views_follow_store_order passes the same array as both source and destination. That makes the final std::memcpy copy between identical overlapping ranges, contrary to memcpy's non-overlap requirement. The expected-value apply_expected helper repeats the same operation with the same aliased pointers, so its comparison is also undefined and cannot serve as an oracle. A passing optimized/sanitized run does not resolve this language-level undefined behavior or guarantee the requested ordered-copy semantics.",
+      "action": "Define the intended overlap contract at this adapter boundary and make both implementation and oracle valid for it; alternatively, if the pinned caller contract proves non-overlap, state that precondition and remove the unsupported overlap acceptance test. No source/test change was made in this review worktree.",
+      "evidence": [
+        "history_slice.cpp:51 records source offset 0x40 and destination offset 0x40.",
+        "history_slice.cpp:87-96 performs the ordered loop and final memcpy.",
+        "test_history_slice.cpp:156-169 supplies actual.data() for both views.",
+        "The pinned consumer disassembly at 0x413F71F9..0x413F7201 loads [edx+0x40] into ECX and stores ECX to [ebx+0x40]; the machine-level load/store is defined even when the addresses match."
+      ]
+    }
+  ],
+  "bounded_assessment": {
+    "bounded_aggregation": "The non-direct callback prefix preserves the entry DWORD increment modulo 2^32 and retains unresolved settings observations. The distinct C0!=0/accumulator+6==0 path at 0x4149E8F0 uses incoming CL as modeled; the old report's E8AB edge is a sibling C0==0 path and is not a current blocker. Signed wrapped subtraction, score operation order, and MAXSS second-operand behavior have matching code/tests. The retracted callback finding was independently assessed against the pinned branch anchors.",
+    "release_state_slice": "The 0x415E01A0..0x415E01D2 route and post-helper writes match the pinned branches; the indirect dispatch at 0x415E01D9 remains a distinct unresolved boundary. The post-dispatch equality path preserves missing pointee observation as unresolved and increments the uint32 counter modulo 2^32 only when the observed field is nonzero.",
+    "reset_predecessor": "The uint32 add of 0xC8, equality comparison to 0x4250309C, JNE repeat branch, and equality-only eleven-store projection match the pinned local bytes. EAX provenance, loop writes, reachability, and scheduling remain outside the model.",
+    "history_slice": "The 23 ordered source/destination mappings, raw-byte preservation, explicit little-endian local DWORD serialization, and null/short adapter validation align with the bounded source evidence. Validation is an adapter constraint, not a recovered original branch. W6RC-001 blocks acceptance of the overlap behavior."
+  },
+  "code_sha256": {
+    "continuation/src/bounded_aggregation.cpp": "1c212b6e2dd358d24354d134f97dfaa072806488e1ffbe21580ba645f2821ce6",
+    "continuation/tests/test_bounded_aggregation.cpp": "5ac3c490b25d2967915944bdb7b3af4991462440f4aa55ffbcf643058692e145",
+    "continuation/src/release_state_slice.cpp": "dc5ddeaa4e8cfdc907ad8fcfa8eca20d19ad12611693ea3343789eaecfda0ad2",
+    "continuation/tests/test_release_state_slice.cpp": "c415b4896e7c28299ff20cc5527e5a0f0ddb7390b79bd16ad25bf45b1d0cbd3d",
+    "continuation/src/reset_predecessor.cpp": "6af0f089a4ae6b418cd754ab46fcf5464fbba0fdac825640cfcdb25e5666fe1c",
+    "continuation/tests/test_reset_predecessor.cpp": "7181fe967916d09bf8c9feaf2cdfb0ab20d7f514b4ec687000dcc6a1cec8214b",
+    "continuation/src/history_slice.cpp": "9b7511c1e794551979a8e186447d337f2a38c3fdbf5b0af865f097f5b930ce15",
+    "continuation/tests/test_history_slice.cpp": "126584544886a5c99d591ecb42353bc8aa87bf36b1e8501477d3bdb063154872"
+  },
+  "verification": {
+    "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=build-w6-review",
+    "cwd": "/tmp/hoplite/232-w6-review-code",
+    "exit_code": 0,
+    "tools": {
+      "g++": "Ubuntu 13.3.0-6ubuntu2~24.04.1",
+      "make": "GNU Make 4.3",
+      "python": "Python 3.12.3"
+    },
+    "coverage": "Full repository check target completed: native tests, ASan/UBSan tests, and static byte/evidence verifiers. The reviewed native and sanitizer tests reported 16392 bounded-aggregation assertions, 21291 release-state assertions, 22 history-slice assertions, and reset predecessor equality/non-equality/wrap PASS.",
+    "log": {
+      "path": "continuation/evidence/wave6/review-integrated-code/full-check.log",
+      "bytes": 118049,
+      "sha256": "719639bbd91a70c5fafe72b36af7a365ba856957a2149ebb2c10ac1ba9f4b9c7"
+    }
+  },
+  "limitations": [
+    "No original binary was loaded, executed, or emulated; no full Ragebot, full GAP, original-language, ABI, or external-audit claim is made.",
+    "Runtime settings/pointer providers, helper/indirect-call clobbers, source pointer identity, and original reachability remain unresolved as documented by the bounded evidence.",
+    "The HANDOFF was used read-only; no source, tests, Makefile, shared docs, or old evidence were changed."
+  ]
+}
