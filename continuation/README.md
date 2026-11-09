@@ -72,6 +72,8 @@ H01 33 перепроверяются статически, 2 — только �
 - [`ORCHESTRATION.md`](ORCHESTRATION.md) — распределение заданий и приёмка первой волны.
 - [`ORCHESTRATION_WAVE2.md`](ORCHESTRATION_WAVE2.md) — задания и приёмка второй волны
   с выбранной моделью `gpt-6.1-sol`; новые доказательства отделены в `evidence/wave2/`.
+- [`PLAN_NEXT.md`](PLAN_NEXT.md) и [`SPEC_NEXT.md`](SPEC_NEXT.md) — согласованные
+  план и спецификация следующих двух ограниченных волн в отдельных Git worktree.
 - `evidence/gap01/`, `gap03/`, `gap04/`, `gap05/`, `gap06/` — отчёты и
   воспроизводимые проверки каждого принятого направления.
 - `evidence/parallel_verification.json` — итог первой параллельной волны; прежние

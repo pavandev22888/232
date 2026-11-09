@@ -96,7 +96,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "No automatic next wave; unresolved field sources, full lifecycle, T consumer, runtime observations and historical gates remain open",
+  "next_task": "Wave 3 running in isolated worktrees; wave 4 peer acceptance follows integration",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -178,5 +178,26 @@
       "CODE01 target aggregation",
       "GAP02 threshold consumer"
     ]
+  },
+  "isolated_waves": {
+    "status": "wave3_running",
+    "plan": "PLAN_NEXT.md",
+    "specification": "SPEC_NEXT.md",
+    "orchestration": "ORCHESTRATION_WORKTREES.md",
+    "base_commit": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+    "model": "gpt-6.1-sol",
+    "effort_setting": "not_exposed_by_spawn_tool",
+    "fast_mode": "not_exposed_by_spawn_tool",
+    "user_priority": "balanced",
+    "user_scope": "multiple_bounded_waves",
+    "pull_request": "requested_without_merge",
+    "auto_merge_allowed": false,
+    "wave3_agents": [
+      "w3-marker-worktree",
+      "w3-actor-worktree",
+      "w3-source-worktree",
+      "w3-repro-worktree"
+    ],
+    "wave4": "pending_integrated_commit"
   }
 }
