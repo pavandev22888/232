@@ -1,0 +1,32 @@
++ git rev-parse HEAD
+bc89d9d851d710208659fc702f1094a317023ab4
++ git diff --exit-code f31fd6b HEAD -- continuation/include/rage/history_slot_slice.hpp continuation/src/history_slot_slice.cpp continuation/tests/test_history_slot_slice.cpp continuation/evidence/wave8/history
++ printf 'HISTORY_INTEGRATED_DIFF_EXIT=%s\n' 0
+HISTORY_INTEGRATED_DIFF_EXIT=0
++ git diff --exit-code ac04b9e HEAD -- continuation/include/rage/shot_result_slice.hpp continuation/src/shot_result_slice.cpp continuation/tests/test_shot_result_slice.cpp continuation/evidence/wave8/shot
++ printf 'SHOT_INTEGRATED_DIFF_EXIT=%s\n' 0
+SHOT_INTEGRATED_DIFF_EXIT=0
++ git diff --exit-code bc89d9d851d710208659fc702f1094a317023ab4 -- continuation/include continuation/src continuation/tests continuation/Makefile docs AGENTS.md README.md
++ printf 'SCOPED_CODE_UNCHANGED_EXIT=%s\n' 0
+SCOPED_CODE_UNCHANGED_EXIT=0
++ git diff --check
++ printf 'DIFF_CHECK_EXIT=%s\n' 0
+DIFF_CHECK_EXIT=0
++ git check-ignore continuation/evidence/wave8/final-review-state/build/test_history_slot_slice continuation/evidence/wave8/final-review-state/build/test_shot_result_slice_sanitize
+continuation/evidence/wave8/final-review-state/build/test_history_slot_slice
+continuation/evidence/wave8/final-review-state/build/test_shot_result_slice_sanitize
++ printf 'BUILD_IGNORED_EXIT=%s\n' 0
+BUILD_IGNORED_EXIT=0
++ python3 -B -
+LOG_SHA256 focused-tests.log 36c12e4959cbcf9525ac1e8458b33fdf1b2040b1f04da98c37e0d76412d57e20 5804
+LOG_SHA256 helpers-review.log 9930ef7f52346ed42ffa96b2bf4b031ee2ae25579cc37b1cb65ce6686e197502 43270
+LOG_SHA256 source-review.log 95d9cec7bcccb1e44211e5abca3678bfd8377f1fa6d33547026a86aedea32d2b 25860
+LOG_SHA256 static-gates.log e41337a5cd180ff71e692b4633ac92eb9810eb728cb5dfe21891b7a94d5ae466 2417
+REVIEWED_FILE_SHA256 continuation/include/rage/history_slot_slice.hpp 9828974c41ac7592b9982d98cde6609c2fd415df766d901e3106132ec2f76d0a
+REVIEWED_FILE_SHA256 continuation/src/history_slot_slice.cpp 93fb8505cb56faccff35b27a773e9eacd99088fe364768b99fc9ccadff305de0
+REVIEWED_FILE_SHA256 continuation/tests/test_history_slot_slice.cpp b631f59d11b5e9580d3629e67fdf8f1101a276209557777a2fe8a5912a360b95
+REVIEWED_FILE_SHA256 continuation/include/rage/shot_result_slice.hpp 6c317b6356f2426b2d4cda4f541d76145df434f044e8fb9b2f56e18814e2108e
+REVIEWED_FILE_SHA256 continuation/src/shot_result_slice.cpp 72023bc9fa7ec982f20d513979726a3e9cd27a58ff52ecdb47285df2a02e7e89
+REVIEWED_FILE_SHA256 continuation/tests/test_shot_result_slice.cpp 4c5785de4623a0159844b3521a7ce1a4a66f396de5c86683299f45f17e393f37
++ printf 'HASHES_EXIT=%s\n' 0
+HASHES_EXIT=0
