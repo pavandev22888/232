@@ -1,0 +1,5 @@
+make: Entering directory '/tmp/hoplite/232-w8-damage/continuation'
+make: *** No rule to make target 'evidence/wave8/damage/build/test_damage_slice'.  Stop.
+make: Leaving directory '/tmp/hoplite/232-w8-damage/continuation'
+
+exit_code=2

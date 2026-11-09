@@ -1,0 +1,5 @@
+PASS source identity: nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e, DLL resource bytes match
+PASS 21 exact instruction anchors; 16 decoded by objdump
+PASS hitgroup index 2 -> 0x413709bb; coefficient is binary32 1.25; return/store anchors match
+
+exit_code=0

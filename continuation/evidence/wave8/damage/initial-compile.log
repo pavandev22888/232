@@ -1,0 +1,7 @@
+continuation/src/damage_slice.cpp: In function ‘rage::offline::DamageSwitchResult rage::offline::evaluate_damage_switch(const DamageSwitchObservations&)’:
+continuation/src/damage_slice.cpp:49:74: error: missing initializer for member ‘rage::offline::DamageSwitchResult::result_slot_bits’ [-Werror=missing-field-initializers]
+   49 |     DamageSwitchResult result{DamageSwitchEdge::first_provider_unobserved};
+      |                                                                          ^
+cc1plus: all warnings being treated as errors
+
+exit_code=1
