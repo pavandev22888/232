@@ -1,0 +1,24 @@
+$ python3 -c 'from pathlib import Path
+import re,subprocess
+root=Path.cwd(); text=(root/'"'"'continuation/Makefile'"'"').read_text(); expected={'"'"'aggregate'"'"','"'"'damage'"'"','"'"'movement'"'"','"'"'message'"'"','"'"'geometry'"'"','"'"'provider'"'"','"'"'reset'"'"','"'"'history'"'"','"'"'shot'"'"','"'"'angle'"'"','"'"'queue'"'"'}
+actual=re.findall(r'"'"'^\t\$\(PYTHON\) -B evidence/wave8/([^/]+)/verify_source_bytes\.py --handoff "\$\(abspath \$\(HANDOFF\)\)"$'"'"',text,re.M)
+assert len(actual)==11 and set(actual)==expected
+assert set(p.parent.name for p in (root/'"'"'continuation/evidence/wave8'"'"').glob('"'"'*/verify_source_bytes.py'"'"'))==expected
+assert re.search(r'"'"'^check: test sanitize evidence mxcsr$'"'"',text,re.M)
+assert re.search(r'"'"'^mxcsr: \$\(BUILD\)/damage_mxcsr_lto\n\t\$<'"'"',text,re.M)
+assert re.search(r'"'"'^\$\(BUILD\)/damage_mxcsr_lto: tests/regression_damage_mxcsr\.cpp src/damage_slice\.cpp include/rage/damage_slice\.hpp Makefile \| \$\(BUILD\)\n\t\$\(CXX\).* -flto \$< -o \$@$'"'"',text,re.M)
+assert '"'"'-fno-fast-math -ffp-contract=off'"'"' in text
+assert '"'"'tests/test_*.cpp'"'"' in text and (root/'"'"'continuation/tests/test_queue_context_slice.cpp'"'"').exists()
+print('"'"'PASS check depends on test sanitize evidence mxcsr; all 11 W8 --handoff gates appear exactly once in evidence'"'"')
+print('"'"'W8 gates: '"'"'+'"'"', '"'"'.join(actual))
+print('"'"'PASS queue test included by wildcard; MXCSR unity/LTO target and strict FP build flags retained'"'"')
+fixed='"'"'bc89d9d851d710208659fc702f1094a317023ab4'"'"'; assert subprocess.check_output(['"'"'git'"'"','"'"'rev-parse'"'"','"'"'HEAD'"'"'],text=True).strip()==fixed
+assert not subprocess.check_output(['"'"'git'"'"','"'"'diff'"'"','"'"'--name-only'"'"',fixed,'"'"'--'"'"','"'"'.'"'"','"'"':(exclude)continuation/evidence/wave8/final-review-evidence/**'"'"'],text=True).strip()
+print('"'"'PASS fixed reviewed HEAD unchanged; all tracked implementation, Makefile, docs, archives and inherited evidence outside review directory preserved'"'"')
+'
+PASS check depends on test sanitize evidence mxcsr; all 11 W8 --handoff gates appear exactly once in evidence
+W8 gates: aggregate, damage, movement, message, geometry, provider, reset, history, shot, angle, queue
+PASS queue test included by wildcard; MXCSR unity/LTO target and strict FP build flags retained
+PASS fixed reviewed HEAD unchanged; all tracked implementation, Makefile, docs, archives and inherited evidence outside review directory preserved
+
+EXIT_CODE=0

@@ -1,0 +1,7 @@
+$ python3 -B continuation/evidence/wave8/angle/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source SHA-256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; DLL resource matches
+PASS 49 fresh decoded instructions, 224 contiguous bytes, 5 constant blocks
+PASS distinct AX guards, CVTSS2SD/FSTP32 boundary, ordered selections and two EDI stores
+LIMIT: no original loading/execution/emulation; unknown call bodies/providers remain open
+
+EXIT_CODE=0

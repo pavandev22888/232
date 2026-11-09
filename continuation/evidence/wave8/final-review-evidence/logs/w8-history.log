@@ -1,0 +1,13 @@
+$ python3 -B continuation/evidence/wave8/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; DLL sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c; resource equality
+PASS reference-only ZIP member functions/4200C9A0.c sha256=96e30f6e153f3acab209463625dd23252a97d5ac3725f208b3e1babd56cd71e7
+PASS reference-only ZIP member functions/4200CF20.c sha256=8e7a5e9f4b98f2e42194351dedbf8a37234e9e103eee7d2588810b0591427218
+PASS source ZIP bytes and nested/restored functions.zip equality
+PASS VA=0x413f3890 size=0x19f sha256=3197f4ffc416400aead67f2e07fb2f9a972735cb675068f8281bbb28d40131a5
+PASS VA=0x413f88f0 size=0xc0 sha256=b8d8206f38ea7844a1db06850dd6d6a098b2fc0e989946a045ca26ecff200a92
+PASS VA=0x4200c9a0 size=0x574 sha256=e0adef6a3c41b7d1197ddf0d70a2ad433ab76bf71e975e23817641c5533ec279
+PASS VA=0x4200cf20 size=0x15a sha256=a926212d42a287f420bd22d103ff89eb9f842d37a088c203a60a3d8c9b44c978
+PASS growth/reload/copy-order/release/publication/cursor/consumer anchors and jump-table data
+BOUNDARY allocation/release/failure calls, null-slot allocator and post-provider identity remain unresolved
+
+EXIT_CODE=0
