@@ -1,0 +1,5 @@
+COMMAND: python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: raw snapshot mutation contract distinct from metadata trace
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+UNRESOLVED: EAX provider/identity, initial table base, entry reachability, outer scheduling and reset-field semantics
+EXIT_CODE=0

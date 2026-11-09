@@ -1,0 +1,3 @@
+COMMAND: /tmp/hoplite/w7-review-state-build/test_reset_predecessor
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+EXIT_CODE=0
