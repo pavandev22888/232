@@ -75,5 +75,24 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Recover the N+48 producer and actor-consumer transitions without pruning unresolved guards"
+  "next_task": "Recover the N+48 producer and actor-consumer transitions without pruning unresolved guards",
+  "parallel_wave": {
+    "status": "running",
+    "baseline_commit": "20b7907",
+    "user_priority": "balanced",
+    "agents": [
+      "code01-readable-aggregation",
+      "gap01-positive-sources",
+      "gap02-threshold-consumer",
+      "gap03-charge-state",
+      "gap04-external-bindings",
+      "gap05-position-lifecycle",
+      "gap06-verification-audit"
+    ],
+    "acceptance": "Coordinator reruns checks and reviews changes before accepting claims",
+    "unperformed_tasks": {
+      "CODE01": "Assigned agent declined before inspection; no code or tests",
+      "GAP02": "Assigned agent declined before inspection; no code or tests"
+    }
+  }
 }
