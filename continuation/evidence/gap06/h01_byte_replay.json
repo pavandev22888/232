@@ -1,0 +1,1305 @@
+{
+  "passed": true,
+  "anchors": 162,
+  "resource": 143,
+  "client": 19,
+  "checks": [
+    {
+      "va": "0x41b6abfd",
+      "source": "resource",
+      "bytes": "a160fe2342",
+      "expected": "mov eax, dword ptr [0x4223fe60]",
+      "gnu": "mov eax,ds:0x4223fe60",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac02",
+      "source": "resource",
+      "bytes": "85c0",
+      "expected": "test eax, eax",
+      "gnu": "test eax,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac04",
+      "source": "resource",
+      "bytes": "7431",
+      "expected": "je 0x41b6ac37",
+      "gnu": "je 0x41b6ac37",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac06",
+      "source": "resource",
+      "bytes": "8b30",
+      "expected": "mov esi, dword ptr [eax]",
+      "gnu": "mov esi,DWORD PTR [eax]",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac08",
+      "source": "resource",
+      "bytes": "85f6",
+      "expected": "test esi, esi",
+      "gnu": "test esi,esi",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac0a",
+      "source": "resource",
+      "bytes": "742b",
+      "expected": "je 0x41b6ac37",
+      "gnu": "je 0x41b6ac37",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac29",
+      "source": "resource",
+      "bytes": "a1000c5042",
+      "expected": "mov eax, dword ptr [0x42500c00]",
+      "gnu": "mov eax,ds:0x42500c00",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac2e",
+      "source": "resource",
+      "bytes": "803c3000",
+      "expected": "cmp byte ptr [eax + esi], 0",
+      "gnu": "cmp BYTE PTR [eax+esi*1],0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac32",
+      "source": "resource",
+      "bytes": "0f95c0",
+      "expected": "setne al",
+      "gnu": "setne al",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac37",
+      "source": "resource",
+      "bytes": "31c0",
+      "expected": "xor eax, eax",
+      "gnu": "xor eax,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac88",
+      "source": "resource",
+      "bytes": "b9044b4f42",
+      "expected": "mov ecx, 0x424f4b04",
+      "gnu": "mov ecx,0x424f4b04",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac8f",
+      "source": "resource",
+      "bytes": "68b723f888",
+      "expected": "push 0x88f823b7",
+      "gnu": "push 0x88f823b7",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac94",
+      "source": "resource",
+      "bytes": "6859aeb489",
+      "expected": "push 0x89b4ae59",
+      "gnu": "push 0x89b4ae59",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ac99",
+      "source": "resource",
+      "bytes": "e862eb0100",
+      "expected": "call 0x41b89800",
+      "gnu": "call 0x41b89800",
+      "passed": true
+    },
+    {
+      "va": "0x41b6acd3",
+      "source": "resource",
+      "bytes": "a3000c5042",
+      "expected": "mov dword ptr [0x42500c00], eax",
+      "gnu": "mov ds:0x42500c00,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41b6ace8",
+      "source": "resource",
+      "bytes": "e93cffffff",
+      "expected": "jmp 0x41b6ac29",
+      "gnu": "jmp 0x41b6ac29",
+      "passed": true
+    },
+    {
+      "va": "0x41599a75",
+      "source": "resource",
+      "bytes": "e856115d00",
+      "expected": "call 0x41b6abd0",
+      "gnu": "call 0x41b6abd0",
+      "passed": true
+    },
+    {
+      "va": "0x41599a7a",
+      "source": "resource",
+      "bytes": "84c0",
+      "expected": "test al, al",
+      "gnu": "test al,al",
+      "passed": true
+    },
+    {
+      "va": "0x41599a7c",
+      "source": "resource",
+      "bytes": "0f856f010000",
+      "expected": "jne 0x41599bf1",
+      "gnu": "jne 0x41599bf1",
+      "passed": true
+    },
+    {
+      "va": "0x41b71cff",
+      "source": "resource",
+      "bytes": "b858618e9d",
+      "expected": "mov eax, 0x9d8e6158",
+      "gnu": "mov eax,0x9d8e6158",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d04",
+      "source": "resource",
+      "bytes": "05e76fa652",
+      "expected": "add eax, 0x52a66fe7",
+      "gnu": "add eax,0x52a66fe7",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d09",
+      "source": "resource",
+      "bytes": "c1c920",
+      "expected": "ror ecx, 0x20",
+      "gnu": "ror ecx,0x20",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d0c",
+      "source": "resource",
+      "bytes": "2d3ffdb62e",
+      "expected": "sub eax, 0x2eb6fd3f",
+      "gnu": "sub eax,0x2eb6fd3f",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d11",
+      "source": "resource",
+      "bytes": "c1c003",
+      "expected": "rol eax, 3",
+      "gnu": "rol eax,0x3",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d14",
+      "source": "resource",
+      "bytes": "c1cb20",
+      "expected": "ror ebx, 0x20",
+      "gnu": "ror ebx,0x20",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d17",
+      "source": "resource",
+      "bytes": "2d0636890b",
+      "expected": "sub eax, 0xb893606",
+      "gnu": "sub eax,0xb893606",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d1c",
+      "source": "resource",
+      "bytes": "c1c017",
+      "expected": "rol eax, 0x17",
+      "gnu": "rol eax,0x17",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d22",
+      "source": "resource",
+      "bytes": "890424",
+      "expected": "mov dword ptr [esp], eax",
+      "gnu": "mov DWORD PTR [esp],eax",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d25",
+      "source": "resource",
+      "bytes": "8b0424",
+      "expected": "mov eax, dword ptr [esp]",
+      "gnu": "mov eax,DWORD PTR [esp]",
+      "passed": true
+    },
+    {
+      "va": "0x41b71d28",
+      "source": "resource",
+      "bytes": "0fb61c08",
+      "expected": "movzx ebx, byte ptr [eax + ecx]",
+      "gnu": "movzx ebx,BYTE PTR [eax+ecx*1]",
+      "passed": true
+    },
+    {
+      "va": "0x41599ac3",
+      "source": "resource",
+      "bytes": "89c3",
+      "expected": "mov ebx, eax",
+      "gnu": "mov ebx,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41599ac5",
+      "source": "resource",
+      "bytes": "89c1",
+      "expected": "mov ecx, eax",
+      "gnu": "mov ecx,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41599ac7",
+      "source": "resource",
+      "bytes": "e824825d00",
+      "expected": "call 0x41b71cf0",
+      "gnu": "call 0x41b71cf0",
+      "passed": true
+    },
+    {
+      "va": "0x41599acc",
+      "source": "resource",
+      "bytes": "84c0",
+      "expected": "test al, al",
+      "gnu": "test al,al",
+      "passed": true
+    },
+    {
+      "va": "0x41599ace",
+      "source": "resource",
+      "bytes": "0f851d010000",
+      "expected": "jne 0x41599bf1",
+      "gnu": "jne 0x41599bf1",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffb6",
+      "source": "resource",
+      "bytes": "8b4f04",
+      "expected": "mov ecx, dword ptr [edi + 4]",
+      "gnu": "mov ecx,DWORD PTR [edi+0x4]",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffb9",
+      "source": "resource",
+      "bytes": "bab5814e1b",
+      "expected": "mov edx, 0x1b4e81b5",
+      "gnu": "mov edx,0x1b4e81b5",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffc0",
+      "source": "resource",
+      "bytes": "f7ea",
+      "expected": "imul edx",
+      "gnu": "imul edx",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffcc",
+      "source": "resource",
+      "bytes": "69c296000000",
+      "expected": "imul eax, edx, 0x96",
+      "gnu": "imul eax,edx,0x96",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffd6",
+      "source": "resource",
+      "bytes": "69fa98000000",
+      "expected": "imul edi, edx, 0x98",
+      "gnu": "imul edi,edx,0x98",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffdc",
+      "source": "resource",
+      "bytes": "398f987e4f42",
+      "expected": "cmp dword ptr [edi + 0x424f7e98], ecx",
+      "gnu": "cmp DWORD PTR [edi+0x424f7e98],ecx",
+      "passed": true
+    },
+    {
+      "va": "0x4143ffea",
+      "source": "resource",
+      "bytes": "8908",
+      "expected": "mov dword ptr [eax], ecx",
+      "gnu": "mov DWORD PTR [eax],ecx",
+      "passed": true
+    },
+    {
+      "va": "0x4144002a",
+      "source": "resource",
+      "bytes": "897e0c",
+      "expected": "mov dword ptr [esi + 0xc], edi",
+      "gnu": "mov DWORD PTR [esi+0xc],edi",
+      "passed": true
+    },
+    {
+      "va": "0x414406f6",
+      "source": "resource",
+      "bytes": "8b7e0c",
+      "expected": "mov edi, dword ptr [esi + 0xc]",
+      "gnu": "mov edi,DWORD PTR [esi+0xc]",
+      "passed": true
+    },
+    {
+      "va": "0x41440734",
+      "source": "resource",
+      "bytes": "a1d0034b42",
+      "expected": "mov eax, dword ptr [0x424b03d0]",
+      "gnu": "mov eax,ds:0x424b03d0",
+      "passed": true
+    },
+    {
+      "va": "0x41440739",
+      "source": "resource",
+      "bytes": "f30f10441808",
+      "expected": "movss xmm0, dword ptr [eax + ebx + 8]",
+      "gnu": "movss xmm0,DWORD PTR [eax+ebx*1+0x8]",
+      "passed": true
+    },
+    {
+      "va": "0x4144073f",
+      "source": "resource",
+      "bytes": "f30f1187b07e4f42",
+      "expected": "movss dword ptr [edi + 0x424f7eb0], xmm0",
+      "gnu": "movss DWORD PTR [edi+0x424f7eb0],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41440751",
+      "source": "resource",
+      "bytes": "89d9",
+      "expected": "mov ecx, ebx",
+      "gnu": "mov ecx,ebx",
+      "passed": true
+    },
+    {
+      "va": "0x41440753",
+      "source": "resource",
+      "bytes": "e8b8f77200",
+      "expected": "call 0x41b6ff10",
+      "gnu": "call 0x41b6ff10",
+      "passed": true
+    },
+    {
+      "va": "0x41440758",
+      "source": "resource",
+      "bytes": "84c0",
+      "expected": "test al, al",
+      "gnu": "test al,al",
+      "passed": true
+    },
+    {
+      "va": "0x4144075a",
+      "source": "resource",
+      "bytes": "741e",
+      "expected": "je 0x4144077a",
+      "gnu": "je 0x4144077a",
+      "passed": true
+    },
+    {
+      "va": "0x4144075c",
+      "source": "resource",
+      "bytes": "8d87b07e4f42",
+      "expected": "lea eax, [edi + 0x424f7eb0]",
+      "gnu": "lea eax,[edi+0x424f7eb0]",
+      "passed": true
+    },
+    {
+      "va": "0x41440766",
+      "source": "resource",
+      "bytes": "f30f5f0570ac0542",
+      "expected": "maxss xmm0, dword ptr [0x4205ac70]",
+      "gnu": "maxss xmm0,DWORD PTR ds:0x4205ac70",
+      "passed": true
+    },
+    {
+      "va": "0x4144076e",
+      "source": "resource",
+      "bytes": "f30f5d0574ac0542",
+      "expected": "minss xmm0, dword ptr [0x4205ac74]",
+      "gnu": "minss xmm0,DWORD PTR ds:0x4205ac74",
+      "passed": true
+    },
+    {
+      "va": "0x41440776",
+      "source": "resource",
+      "bytes": "f30f1100",
+      "expected": "movss dword ptr [eax], xmm0",
+      "gnu": "movss DWORD PTR [eax],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41441ad1",
+      "source": "resource",
+      "bytes": "b9044b4f42",
+      "expected": "mov ecx, 0x424f4b04",
+      "gnu": "mov ecx,0x424f4b04",
+      "passed": true
+    },
+    {
+      "va": "0x41441ad8",
+      "source": "resource",
+      "bytes": "689934aa42",
+      "expected": "push 0x42aa3499",
+      "gnu": "push 0x42aa3499",
+      "passed": true
+    },
+    {
+      "va": "0x41441add",
+      "source": "resource",
+      "bytes": "6824e11e80",
+      "expected": "push 0x801ee124",
+      "gnu": "push 0x801ee124",
+      "passed": true
+    },
+    {
+      "va": "0x41441ae2",
+      "source": "resource",
+      "bytes": "e8197d7400",
+      "expected": "call 0x41b89800",
+      "gnu": "call 0x41b89800",
+      "passed": true
+    },
+    {
+      "va": "0x41441b19",
+      "source": "resource",
+      "bytes": "a3d0034b42",
+      "expected": "mov dword ptr [0x424b03d0], eax",
+      "gnu": "mov ds:0x424b03d0,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41441b31",
+      "source": "resource",
+      "bytes": "e9feebffff",
+      "expected": "jmp 0x41440734",
+      "gnu": "jmp 0x41440734",
+      "passed": true
+    },
+    {
+      "va": "0x41446dd1",
+      "source": "resource",
+      "bytes": "f30f10443808",
+      "expected": "movss xmm0, dword ptr [eax + edi + 8]",
+      "gnu": "movss xmm0,DWORD PTR [eax+edi*1+0x8]",
+      "passed": true
+    },
+    {
+      "va": "0x41446dd7",
+      "source": "resource",
+      "bytes": "f30f1183b07e4f42",
+      "expected": "movss dword ptr [ebx + 0x424f7eb0], xmm0",
+      "gnu": "movss DWORD PTR [ebx+0x424f7eb0],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41449c65",
+      "source": "resource",
+      "bytes": "f30f10443808",
+      "expected": "movss xmm0, dword ptr [eax + edi + 8]",
+      "gnu": "movss xmm0,DWORD PTR [eax+edi*1+0x8]",
+      "passed": true
+    },
+    {
+      "va": "0x41449c6b",
+      "source": "resource",
+      "bytes": "f30f1183b07e4f42",
+      "expected": "movss dword ptr [ebx + 0x424f7eb0], xmm0",
+      "gnu": "movss DWORD PTR [ebx+0x424f7eb0],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x4139a197",
+      "source": "resource",
+      "bytes": "f30f1087b07e4f42",
+      "expected": "movss xmm0, dword ptr [edi + 0x424f7eb0]",
+      "gnu": "movss xmm0,DWORD PTR [edi+0x424f7eb0]",
+      "passed": true
+    },
+    {
+      "va": "0x4139a1c0",
+      "source": "resource",
+      "bytes": "8b0dd0034b42",
+      "expected": "mov ecx, dword ptr [0x424b03d0]",
+      "gnu": "mov ecx,DWORD PTR ds:0x424b03d0",
+      "passed": true
+    },
+    {
+      "va": "0x4139a1c6",
+      "source": "resource",
+      "bytes": "f30f11441108",
+      "expected": "movss dword ptr [ecx + edx + 8], xmm0",
+      "gnu": "movss DWORD PTR [ecx+edx*1+0x8],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41455e77",
+      "source": "resource",
+      "bytes": "f30f1082b07e4f42",
+      "expected": "movss xmm0, dword ptr [edx + 0x424f7eb0]",
+      "gnu": "movss xmm0,DWORD PTR [edx+0x424f7eb0]",
+      "passed": true
+    },
+    {
+      "va": "0x41455ea0",
+      "source": "resource",
+      "bytes": "8b0dd0034b42",
+      "expected": "mov ecx, dword ptr [0x424b03d0]",
+      "gnu": "mov ecx,DWORD PTR ds:0x424b03d0",
+      "passed": true
+    },
+    {
+      "va": "0x41455ea6",
+      "source": "resource",
+      "bytes": "f30f11441908",
+      "expected": "movss dword ptr [ecx + ebx + 8], xmm0",
+      "gnu": "movss DWORD PTR [ecx+ebx*1+0x8],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41448615",
+      "source": "resource",
+      "bytes": "8d93b07e4f42",
+      "expected": "lea edx, [ebx + 0x424f7eb0]",
+      "gnu": "lea edx,[ebx+0x424f7eb0]",
+      "passed": true
+    },
+    {
+      "va": "0x41448621",
+      "source": "resource",
+      "bytes": "f30f1002",
+      "expected": "movss xmm0, dword ptr [edx]",
+      "gnu": "movss xmm0,DWORD PTR [edx]",
+      "passed": true
+    },
+    {
+      "va": "0x41448625",
+      "source": "resource",
+      "bytes": "b8ff030000",
+      "expected": "mov eax, 0x3ff",
+      "gnu": "mov eax,0x3ff",
+      "passed": true
+    },
+    {
+      "va": "0x4144862a",
+      "source": "resource",
+      "bytes": "f30f100d8c050742",
+      "expected": "movss xmm1, dword ptr [0x4207058c]",
+      "gnu": "movss xmm1,DWORD PTR ds:0x4207058c",
+      "passed": true
+    },
+    {
+      "va": "0x41448635",
+      "source": "resource",
+      "bytes": "7226",
+      "expected": "jb 0x4144865d",
+      "gnu": "jb 0x4144865d",
+      "passed": true
+    },
+    {
+      "va": "0x4144863f",
+      "source": "resource",
+      "bytes": "721c",
+      "expected": "jb 0x4144865d",
+      "gnu": "jb 0x4144865d",
+      "passed": true
+    },
+    {
+      "va": "0x41448641",
+      "source": "resource",
+      "bytes": "f30f5905ac680742",
+      "expected": "mulss xmm0, dword ptr [0x420768ac]",
+      "gnu": "mulss xmm0,DWORD PTR ds:0x420768ac",
+      "passed": true
+    },
+    {
+      "va": "0x41448657",
+      "source": "resource",
+      "bytes": "df7e10",
+      "expected": "fistp qword ptr [esi + 0x10]",
+      "gnu": "fistp QWORD PTR [esi+0x10]",
+      "passed": true
+    },
+    {
+      "va": "0x4144865d",
+      "source": "resource",
+      "bytes": "660f6ec0",
+      "expected": "movd xmm0, eax",
+      "gnu": "movd xmm0,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41448661",
+      "source": "resource",
+      "bytes": "660feb0550b00542",
+      "expected": "por xmm0, xmmword ptr [0x4205b050]",
+      "gnu": "por xmm0,XMMWORD PTR ds:0x4205b050",
+      "passed": true
+    },
+    {
+      "va": "0x41448669",
+      "source": "resource",
+      "bytes": "f20f5c05b0a90542",
+      "expected": "subsd xmm0, qword ptr [0x4205a9b0]",
+      "gnu": "subsd xmm0,QWORD PTR ds:0x4205a9b0",
+      "passed": true
+    },
+    {
+      "va": "0x41448671",
+      "source": "resource",
+      "bytes": "f20f5ac0",
+      "expected": "cvtsd2ss xmm0, xmm0",
+      "gnu": "cvtsd2ss xmm0,xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x41448675",
+      "source": "resource",
+      "bytes": "f30f5905b0680742",
+      "expected": "mulss xmm0, dword ptr [0x420768b0]",
+      "gnu": "mulss xmm0,DWORD PTR ds:0x420768b0",
+      "passed": true
+    },
+    {
+      "va": "0x4144867d",
+      "source": "resource",
+      "bytes": "f30f104c0f08",
+      "expected": "movss xmm1, dword ptr [edi + ecx + 8]",
+      "gnu": "movss xmm1,DWORD PTR [edi+ecx*1+0x8]",
+      "passed": true
+    },
+    {
+      "va": "0x41448683",
+      "source": "resource",
+      "bytes": "0f2ec1",
+      "expected": "ucomiss xmm0, xmm1",
+      "gnu": "ucomiss xmm0,xmm1",
+      "passed": true
+    },
+    {
+      "va": "0x4144868c",
+      "source": "resource",
+      "bytes": "746d",
+      "expected": "je 0x414486fb",
+      "gnu": "je 0x414486fb",
+      "passed": true
+    },
+    {
+      "va": "0x414486a6",
+      "source": "resource",
+      "bytes": "f30f590dac680742",
+      "expected": "mulss xmm1, dword ptr [0x420768ac]",
+      "gnu": "mulss xmm1,DWORD PTR ds:0x420768ac",
+      "passed": true
+    },
+    {
+      "va": "0x414486bc",
+      "source": "resource",
+      "bytes": "df7e10",
+      "expected": "fistp qword ptr [esi + 0x10]",
+      "gnu": "fistp QWORD PTR [esi+0x10]",
+      "passed": true
+    },
+    {
+      "va": "0x414486da",
+      "source": "resource",
+      "bytes": "f30f590db0680742",
+      "expected": "mulss xmm1, dword ptr [0x420768b0]",
+      "gnu": "mulss xmm1,DWORD PTR ds:0x420768b0",
+      "passed": true
+    },
+    {
+      "va": "0x414486e2",
+      "source": "resource",
+      "bytes": "0f2ec1",
+      "expected": "ucomiss xmm0, xmm1",
+      "gnu": "ucomiss xmm0,xmm1",
+      "passed": true
+    },
+    {
+      "va": "0x414486e5",
+      "source": "resource",
+      "bytes": "7414",
+      "expected": "je 0x414486fb",
+      "gnu": "je 0x414486fb",
+      "passed": true
+    },
+    {
+      "va": "0x414486e7",
+      "source": "resource",
+      "bytes": "f30f10440f08",
+      "expected": "movss xmm0, dword ptr [edi + ecx + 8]",
+      "gnu": "movss xmm0,DWORD PTR [edi+ecx*1+0x8]",
+      "passed": true
+    },
+    {
+      "va": "0x414486ed",
+      "source": "resource",
+      "bytes": "f30f1102",
+      "expected": "movss dword ptr [edx], xmm0",
+      "gnu": "movss DWORD PTR [edx],xmm0",
+      "passed": true
+    },
+    {
+      "va": "0x414486f1",
+      "source": "resource",
+      "bytes": "b001",
+      "expected": "mov al, 1",
+      "gnu": "mov al,0x1",
+      "passed": true
+    },
+    {
+      "va": "0x414486fb",
+      "source": "resource",
+      "bytes": "c7862401000000000000",
+      "expected": "mov dword ptr [esi + 0x124], 0",
+      "gnu": "mov DWORD PTR [esi+0x124],0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41440f9a",
+      "source": "resource",
+      "bytes": "a120004b42",
+      "expected": "mov eax, dword ptr [0x424b0020]",
+      "gnu": "mov eax,ds:0x424b0020",
+      "passed": true
+    },
+    {
+      "va": "0x41440f9f",
+      "source": "resource",
+      "bytes": "8b0418",
+      "expected": "mov eax, dword ptr [eax + ebx]",
+      "gnu": "mov eax,DWORD PTR [eax+ebx*1]",
+      "passed": true
+    },
+    {
+      "va": "0x41440fa2",
+      "source": "resource",
+      "bytes": "8986dc000000",
+      "expected": "mov dword ptr [esi + 0xdc], eax",
+      "gnu": "mov DWORD PTR [esi+0xdc],eax",
+      "passed": true
+    },
+    {
+      "va": "0x41440fb2",
+      "source": "resource",
+      "bytes": "8d8edc000000",
+      "expected": "lea ecx, [esi + 0xdc]",
+      "gnu": "lea ecx,[esi+0xdc]",
+      "passed": true
+    },
+    {
+      "va": "0x41440fb8",
+      "source": "resource",
+      "bytes": "e82321edff",
+      "expected": "call 0x413130e0",
+      "gnu": "call 0x413130e0",
+      "passed": true
+    },
+    {
+      "va": "0x41440fbd",
+      "source": "resource",
+      "bytes": "85c0",
+      "expected": "test eax, eax",
+      "gnu": "test eax,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41440fbf",
+      "source": "resource",
+      "bytes": "0f8414050000",
+      "expected": "je 0x414414d9",
+      "gnu": "je 0x414414d9",
+      "passed": true
+    },
+    {
+      "va": "0x41440fc5",
+      "source": "resource",
+      "bytes": "89c3",
+      "expected": "mov ebx, eax",
+      "gnu": "mov ebx,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41440fcd",
+      "source": "resource",
+      "bytes": "8987a07e4f42",
+      "expected": "mov dword ptr [edi + 0x424f7ea0], eax",
+      "gnu": "mov DWORD PTR [edi+0x424f7ea0],eax",
+      "passed": true
+    },
+    {
+      "va": "0x41441405",
+      "source": "resource",
+      "bytes": "8b7e0c",
+      "expected": "mov edi, dword ptr [esi + 0xc]",
+      "gnu": "mov edi,DWORD PTR [esi+0xc]",
+      "passed": true
+    },
+    {
+      "va": "0x4144145f",
+      "source": "resource",
+      "bytes": "89d9",
+      "expected": "mov ecx, ebx",
+      "gnu": "mov ecx,ebx",
+      "passed": true
+    },
+    {
+      "va": "0x41441461",
+      "source": "resource",
+      "bytes": "e89af47200",
+      "expected": "call 0x41b70900",
+      "gnu": "call 0x41b70900",
+      "passed": true
+    },
+    {
+      "va": "0x41441466",
+      "source": "resource",
+      "bytes": "d99fdc7e4f42",
+      "expected": "fstp dword ptr [edi + 0x424f7edc]",
+      "gnu": "fstp DWORD PTR [edi+0x424f7edc]",
+      "passed": true
+    },
+    {
+      "va": "0x414414f6",
+      "source": "resource",
+      "bytes": "c787dc7e4f4200000000",
+      "expected": "mov dword ptr [edi + 0x424f7edc], 0",
+      "gnu": "mov DWORD PTR [edi+0x424f7edc],0x0",
+      "passed": true
+    },
+    {
+      "va": "0x4144150a",
+      "source": "resource",
+      "bytes": "c787a07e4f42ffffffff",
+      "expected": "mov dword ptr [edi + 0x424f7ea0], 0xffffffff",
+      "gnu": "mov DWORD PTR [edi+0x424f7ea0],0xffffffff",
+      "passed": true
+    },
+    {
+      "va": "0x41447aae",
+      "source": "resource",
+      "bytes": "e84d8e7200",
+      "expected": "call 0x41b70900",
+      "gnu": "call 0x41b70900",
+      "passed": true
+    },
+    {
+      "va": "0x41447ab3",
+      "source": "resource",
+      "bytes": "d99bdc7e4f42",
+      "expected": "fstp dword ptr [ebx + 0x424f7edc]",
+      "gnu": "fstp DWORD PTR [ebx+0x424f7edc]",
+      "passed": true
+    },
+    {
+      "va": "0x4144a942",
+      "source": "resource",
+      "bytes": "e8b95f7200",
+      "expected": "call 0x41b70900",
+      "gnu": "call 0x41b70900",
+      "passed": true
+    },
+    {
+      "va": "0x4144a947",
+      "source": "resource",
+      "bytes": "d99bdc7e4f42",
+      "expected": "fstp dword ptr [ebx + 0x424f7edc]",
+      "gnu": "fstp DWORD PTR [ebx+0x424f7edc]",
+      "passed": true
+    },
+    {
+      "va": "0x41b70900",
+      "source": "resource",
+      "bytes": "8b01",
+      "expected": "mov eax, dword ptr [ecx]",
+      "gnu": "mov eax,DWORD PTR [ecx]",
+      "passed": true
+    },
+    {
+      "va": "0x41b70902",
+      "source": "resource",
+      "bytes": "85c0",
+      "expected": "test eax, eax",
+      "gnu": "test eax,eax",
+      "passed": true
+    },
+    {
+      "va": "0x41b70904",
+      "source": "resource",
+      "bytes": "7406",
+      "expected": "je 0x41b7090c",
+      "gnu": "je 0x41b7090c",
+      "passed": true
+    },
+    {
+      "va": "0x41b70906",
+      "source": "resource",
+      "bytes": "ffa08c070000",
+      "expected": "jmp dword ptr [eax + 0x78c]",
+      "gnu": "jmp DWORD PTR [eax+0x78c]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f3e",
+      "source": "resource",
+      "bytes": "837dd800",
+      "expected": "cmp dword ptr [ebp - 0x28], 0",
+      "gnu": "cmp DWORD PTR [ebp-0x28],0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41495f42",
+      "source": "resource",
+      "bytes": "7433",
+      "expected": "je 0x41495f77",
+      "gnu": "je 0x41495f77",
+      "passed": true
+    },
+    {
+      "va": "0x41495f44",
+      "source": "resource",
+      "bytes": "803de909504200",
+      "expected": "cmp byte ptr [0x425009e9], 0",
+      "gnu": "cmp BYTE PTR ds:0x425009e9,0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41495f4b",
+      "source": "resource",
+      "bytes": "7415",
+      "expected": "je 0x41495f62",
+      "gnu": "je 0x41495f62",
+      "passed": true
+    },
+    {
+      "va": "0x41495f4d",
+      "source": "resource",
+      "bytes": "f30f1087b07e4f42",
+      "expected": "movss xmm0, dword ptr [edi + 0x424f7eb0]",
+      "gnu": "movss xmm0,DWORD PTR [edi+0x424f7eb0]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f58",
+      "source": "resource",
+      "bytes": "0f2e4018",
+      "expected": "ucomiss xmm0, dword ptr [eax + 0x18]",
+      "gnu": "ucomiss xmm0,DWORD PTR [eax+0x18]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f5c",
+      "source": "resource",
+      "bytes": "0f8241ffffff",
+      "expected": "jb 0x41495ea3",
+      "gnu": "jb 0x41495ea3",
+      "passed": true
+    },
+    {
+      "va": "0x41495f62",
+      "source": "resource",
+      "bytes": "f30f1087dc7e4f42",
+      "expected": "movss xmm0, dword ptr [edi + 0x424f7edc]",
+      "gnu": "movss xmm0,DWORD PTR [edi+0x424f7edc]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f6d",
+      "source": "resource",
+      "bytes": "0f2e4044",
+      "expected": "ucomiss xmm0, dword ptr [eax + 0x44]",
+      "gnu": "ucomiss xmm0,DWORD PTR [eax+0x44]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f71",
+      "source": "resource",
+      "bytes": "0f872cffffff",
+      "expected": "ja 0x41495ea3",
+      "gnu": "ja 0x41495ea3",
+      "passed": true
+    },
+    {
+      "va": "0x41495f77",
+      "source": "resource",
+      "bytes": "8d87987e4f42",
+      "expected": "lea eax, [edi + 0x424f7e98]",
+      "gnu": "lea eax,[edi+0x424f7e98]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f7d",
+      "source": "resource",
+      "bytes": "8945d8",
+      "expected": "mov dword ptr [ebp - 0x28], eax",
+      "gnu": "mov DWORD PTR [ebp-0x28],eax",
+      "passed": true
+    },
+    {
+      "va": "0x41495f80",
+      "source": "resource",
+      "bytes": "8975d0",
+      "expected": "mov dword ptr [ebp - 0x30], esi",
+      "gnu": "mov DWORD PTR [ebp-0x30],esi",
+      "passed": true
+    },
+    {
+      "va": "0x41495f88",
+      "source": "resource",
+      "bytes": "837dd800",
+      "expected": "cmp dword ptr [ebp - 0x28], 0",
+      "gnu": "cmp DWORD PTR [ebp-0x28],0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41495f8e",
+      "source": "resource",
+      "bytes": "803de909504200",
+      "expected": "cmp byte ptr [0x425009e9], 0",
+      "gnu": "cmp BYTE PTR ds:0x425009e9,0x0",
+      "passed": true
+    },
+    {
+      "va": "0x41495f95",
+      "source": "resource",
+      "bytes": "0f95c0",
+      "expected": "setne al",
+      "gnu": "setne al",
+      "passed": true
+    },
+    {
+      "va": "0x41495f98",
+      "source": "resource",
+      "bytes": "0a45e3",
+      "expected": "or al, byte ptr [ebp - 0x1d]",
+      "gnu": "or al,BYTE PTR [ebp-0x1d]",
+      "passed": true
+    },
+    {
+      "va": "0x41495f9b",
+      "source": "resource",
+      "bytes": "741a",
+      "expected": "je 0x41495fb7",
+      "gnu": "je 0x41495fb7",
+      "passed": true
+    },
+    {
+      "va": "0x41495fb7",
+      "source": "resource",
+      "bytes": "a10c044b42",
+      "expected": "mov eax, dword ptr [0x424b040c]",
+      "gnu": "mov eax,ds:0x424b040c",
+      "passed": true
+    },
+    {
+      "va": "0x41495fbc",
+      "source": "resource",
+      "bytes": "f30f1080e8000000",
+      "expected": "movss xmm0, dword ptr [eax + 0xe8]",
+      "gnu": "movss xmm0,DWORD PTR [eax+0xe8]",
+      "passed": true
+    },
+    {
+      "va": "0x41495fc4",
+      "source": "resource",
+      "bytes": "f30f590528a60542",
+      "expected": "mulss xmm0, dword ptr [0x4205a628]",
+      "gnu": "mulss xmm0,DWORD PTR ds:0x4205a628",
+      "passed": true
+    },
+    {
+      "va": "0x41495fcc",
+      "source": "resource",
+      "bytes": "31f6",
+      "expected": "xor esi, esi",
+      "gnu": "xor esi,esi",
+      "passed": true
+    },
+    {
+      "va": "0x41495fd1",
+      "source": "resource",
+      "bytes": "0f2e4044",
+      "expected": "ucomiss xmm0, dword ptr [eax + 0x44]",
+      "gnu": "ucomiss xmm0,DWORD PTR [eax+0x44]",
+      "passed": true
+    },
+    {
+      "va": "0x41495fd5",
+      "source": "resource",
+      "bytes": "0f4775d0",
+      "expected": "cmova esi, dword ptr [ebp - 0x30]",
+      "gnu": "cmova esi,DWORD PTR [ebp-0x30]",
+      "passed": true
+    },
+    {
+      "va": "0x10057cb4",
+      "source": "client",
+      "bytes": "b948bfe010",
+      "expected": "mov ecx, 0x10e0bf48",
+      "gnu": "mov ecx,0x10e0bf48",
+      "passed": true
+    },
+    {
+      "va": "0x10057cca",
+      "source": "client",
+      "bytes": "686c77c810",
+      "expected": "push 0x10c8776c",
+      "gnu": "push 0x10c8776c",
+      "passed": true
+    },
+    {
+      "va": "0x10057ccf",
+      "source": "client",
+      "bytes": "e82c669400",
+      "expected": "call 0x1099e300",
+      "gnu": "call 0x1099e300",
+      "passed": true
+    },
+    {
+      "va": "0x10057cf4",
+      "source": "client",
+      "bytes": "b9b0bfe010",
+      "expected": "mov ecx, 0x10e0bfb0",
+      "gnu": "mov ecx,0x10e0bfb0",
+      "passed": true
+    },
+    {
+      "va": "0x10057d0a",
+      "source": "client",
+      "bytes": "68cc77c810",
+      "expected": "push 0x10c877cc",
+      "gnu": "push 0x10c877cc",
+      "passed": true
+    },
+    {
+      "va": "0x10057d0f",
+      "source": "client",
+      "bytes": "e8ec659400",
+      "expected": "call 0x1099e300",
+      "gnu": "call 0x1099e300",
+      "passed": true
+    },
+    {
+      "va": "0x106a0acd",
+      "source": "client",
+      "bytes": "f30f10442414",
+      "expected": "movss xmm0, dword ptr [esp + 0x14]",
+      "gnu": "movss xmm0,DWORD PTR [esp+0x14]",
+      "passed": true
+    },
+    {
+      "va": "0x106a0ad3",
+      "source": "client",
+      "bytes": "0f2f05ac2ab710",
+      "expected": "comiss xmm0, dword ptr [0x10b72aac]",
+      "gnu": "comiss xmm0,DWORD PTR ds:0x10b72aac",
+      "passed": true
+    },
+    {
+      "va": "0x106a0ada",
+      "source": "client",
+      "bytes": "0f8691000000",
+      "expected": "jbe 0x106a0b71",
+      "gnu": "jbe 0x106a0b71",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b71",
+      "source": "client",
+      "bytes": "a1b0bfe010",
+      "expected": "mov eax, dword ptr [0x10e0bfb0]",
+      "gnu": "mov eax,ds:0x10e0bfb0",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b76",
+      "source": "client",
+      "bytes": "b9b0bfe010",
+      "expected": "mov ecx, 0x10e0bfb0",
+      "gnu": "mov ecx,0x10e0bfb0",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b7b",
+      "source": "client",
+      "bytes": "8b4034",
+      "expected": "mov eax, dword ptr [eax + 0x34]",
+      "gnu": "mov eax,DWORD PTR [eax+0x34]",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b7e",
+      "source": "client",
+      "bytes": "ffd0",
+      "expected": "call eax",
+      "gnu": "call eax",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b80",
+      "source": "client",
+      "bytes": "85c0",
+      "expected": "test eax, eax",
+      "gnu": "test eax,eax",
+      "passed": true
+    },
+    {
+      "va": "0x106a0b82",
+      "source": "client",
+      "bytes": "0f8596feffff",
+      "expected": "jne 0x106a0a1e",
+      "gnu": "jne 0x106a0a1e",
+      "passed": true
+    },
+    {
+      "va": "0x106a0bd3",
+      "source": "client",
+      "bytes": "f30f108740330000",
+      "expected": "movss xmm0, dword ptr [edi + 0x3340]",
+      "gnu": "movss xmm0,DWORD PTR [edi+0x3340]",
+      "passed": true
+    },
+    {
+      "va": "0x106a0f7d",
+      "source": "client",
+      "bytes": "f30f5d0570e1d210",
+      "expected": "minss xmm0, dword ptr [0x10d2e170]",
+      "gnu": "minss xmm0,DWORD PTR ds:0x10d2e170",
+      "passed": true
+    },
+    {
+      "va": "0x106a0f8b",
+      "source": "client",
+      "bytes": "d9442414",
+      "expected": "fld dword ptr [esp + 0x14]",
+      "gnu": "fld DWORD PTR [esp+0x14]",
+      "passed": true
+    },
+    {
+      "va": "0x106a0f92",
+      "source": "client",
+      "bytes": "c3",
+      "expected": "ret ",
+      "gnu": "ret",
+      "passed": true
+    }
+  ],
+  "scope": "162 stored byte/offset/instruction assertions, not all 209 checks or original multi-tool protocol"
+}
