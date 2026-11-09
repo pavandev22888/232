@@ -1,0 +1,313 @@
+{
+  "task_id": "NEXT-REVIEW-CALLBACK",
+  "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+  "comparison_base_sha": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "review_artifact_type": "fresh_cfg_correction",
+  "supersedes_finding_from": "continuation/evidence/wave6/review-callback/report.md",
+  "prior_report_commit": "5ca65dd0f7142da76fbe114487f3f894df762d56",
+  "prior_report_preserved": true,
+  "conclusion": "The reported mismatch is not present. The prior review conflated sibling paths; withdraw that blocking finding. No code or test changes are warranted for it.",
+  "exact_reachable_paths": [
+    {
+      "condition": "owner field C0 == 0",
+      "edge": "At 0x4149E7B3 compare byte [ESI+0xC0],0; 0x4149E7BA JE 0x4149E86B (bytes 0f84ab000000).",
+      "next": "At 0x4149E86B accumulator byte +6 is tested; zero branches directly to score tail 0x4149E96C at 0x4149E86F; nonzero falls through 0x4149E875 into this sibling settings path, which later reaches 0x4149E8AB."
+    },
+    {
+      "condition": "owner field C0 != 0 and (DWORD [ESI+0x8C] & 0xFFFFFFFE) == 2, i.e. 2 or 3, and accumulator byte +6 == 0",
+      "edge": "The nonzero-C0 path falls through 0x4149E7BA to 0x4149E7C0; mask/compare at 0x4149E7C6/0x4149E7C9 accepts 2/3; 0x4149E7D6 JE reaches 0x4149E8F0 (bytes 0f8414010000).",
+      "next": "At 0x4149E8F0 TEST CL,CL; if CL==0, 0x4149E8F2 JE 0x4149E941, where XOR ECX,ECX clears CL, then 0x4149E943 jumps to score tail 0x4149E96C. If CL!=0, execution falls through 0x4149E8F4, reads the settings chain through 0x4149E927, and then follows the flag/type gates through 0x4149E96A to the same score tail. No branch on this path targets 0x4149E8AB..0x4149E8EE."
+    }
+  ],
+  "the_alleged_e8ab_path": "The sibling path enters from C0==0 via 0x4149E7BA->0x4149E86B. Its acc6==0 edge at 0x4149E86F skips to 0x4149E96C; only acc6!=0 falls through settings lookup at 0x4149E875 and later reaches 0x4149E8AB. At 0x4149E8AE the flag-8 branch goes to 0x4149E8EB, restoring saved ECX before jumping to 0x4149E96C. Thus E8AB..E8EE is not descended from E8F0.",
+  "fresh_evidence": {
+    "image_path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "support_walk_path": "workspace/orchestration/v7/support_best_point_update_walk.json",
+    "support_walk_sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e",
+    "full_static_verifier": {
+      "command": "python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "output": "passed=true; instructions=175; image_sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; scope=Local static windows, not runtime bindings or whole callback"
+    },
+    "fresh_decode": {
+      "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x4149e7b1 <temporary slice of pinned image>",
+      "exit_code": 0,
+      "tool_version": "GNU objdump (GNU Binutils) 2.42",
+      "decoded_va_span": "[0x4149E7B1,0x4149E96C)",
+      "decoded_rows": 103,
+      "instruction_bytes_contiguous": true,
+      "assertions": "Exact expected bytes and destinations checked for E7BA->E86B, E7D6->E8F0, E8F2->E941, E8AE->E8EB; sequential instruction ends checked from E8F4 through E927; every branch target from E8F0..E96A checked not to land in E8AB..E8EE."
+    },
+    "decoded_instructions": [
+      [
+        "0x4149E7B3",
+        "80bec000000000",
+        "cmp BYTE PTR [esi+0xc0],0x0"
+      ],
+      [
+        "0x4149E7BA",
+        "0f84ab000000",
+        "je 0x4149e86b"
+      ],
+      [
+        "0x4149E7C0",
+        "8b9e8c000000",
+        "mov ebx,DWORD PTR [esi+0x8c]"
+      ],
+      [
+        "0x4149E7C6",
+        "83e3fe",
+        "and ebx,0xfffffffe"
+      ],
+      [
+        "0x4149E7C9",
+        "83fb02",
+        "cmp ebx,0x2"
+      ],
+      [
+        "0x4149E7CC",
+        "0f859a010000",
+        "jne 0x4149e96c"
+      ],
+      [
+        "0x4149E7D2",
+        "80780600",
+        "cmp BYTE PTR [eax+0x6],0x0"
+      ],
+      [
+        "0x4149E7D6",
+        "0f8414010000",
+        "je 0x4149e8f0"
+      ],
+      [
+        "0x4149E86B",
+        "80780600",
+        "cmp BYTE PTR [eax+0x6],0x0"
+      ],
+      [
+        "0x4149E86F",
+        "0f84f7000000",
+        "je 0x4149e96c"
+      ],
+      [
+        "0x4149E875",
+        "890c24",
+        "mov DWORD PTR [esp],ecx"
+      ],
+      [
+        "0x4149E8AB",
+        "f6c308",
+        "test bl,0x8"
+      ],
+      [
+        "0x4149E8AE",
+        "753b",
+        "jne 0x4149e8eb"
+      ],
+      [
+        "0x4149E8EB",
+        "8b0c24",
+        "mov ecx,DWORD PTR [esp]"
+      ],
+      [
+        "0x4149E8EE",
+        "eb7c",
+        "jmp 0x4149e96c"
+      ],
+      [
+        "0x4149E8F0",
+        "84c9",
+        "test cl,cl"
+      ],
+      [
+        "0x4149E8F2",
+        "744d",
+        "je 0x4149e941"
+      ],
+      [
+        "0x4149E8F4",
+        "8b0d9c634f42",
+        "mov ecx,DWORD PTR ds:0x424f639c"
+      ],
+      [
+        "0x4149E8FA",
+        "8b992c010100",
+        "mov ebx,DWORD PTR [ecx+0x1012c]"
+      ],
+      [
+        "0x4149E900",
+        "8b9bcc020000",
+        "mov ebx,DWORD PTR [ebx+0x2cc]"
+      ],
+      [
+        "0x4149E906",
+        "83fb10",
+        "cmp ebx,0x10"
+      ],
+      [
+        "0x4149E909",
+        "0f831e030000",
+        "jae 0x4149ec2d"
+      ],
+      [
+        "0x4149E90F",
+        "69dbd8050000",
+        "imul ebx,ebx,0x5d8"
+      ],
+      [
+        "0x4149E915",
+        "8d2c19",
+        "lea ebp,[ecx+ebx*1]"
+      ],
+      [
+        "0x4149E918",
+        "0fb68c192c040100",
+        "movzx ecx,BYTE PTR [ecx+ebx*1+0x1042c]"
+      ],
+      [
+        "0x4149E920",
+        "8b9c8d24040100",
+        "mov ebx,DWORD PTR [ebp+ecx*4+0x10424]"
+      ],
+      [
+        "0x4149E927",
+        "83ff01",
+        "cmp edi,0x1"
+      ],
+      [
+        "0x4149E92A",
+        "7519",
+        "jne 0x4149e945"
+      ],
+      [
+        "0x4149E92C",
+        "89d9",
+        "mov ecx,ebx"
+      ],
+      [
+        "0x4149E92E",
+        "83e108",
+        "and ecx,0x8"
+      ],
+      [
+        "0x4149E931",
+        "7412",
+        "je 0x4149e945"
+      ],
+      [
+        "0x4149E933",
+        "8b8ea0000000",
+        "mov ecx,DWORD PTR [esi+0xa0]"
+      ],
+      [
+        "0x4149E939",
+        "2b4a30",
+        "sub ecx,DWORD PTR [edx+0x30]"
+      ],
+      [
+        "0x4149E93C",
+        "83f901",
+        "cmp ecx,0x1"
+      ],
+      [
+        "0x4149E93F",
+        "7e04",
+        "jle 0x4149e945"
+      ],
+      [
+        "0x4149E941",
+        "31c9",
+        "xor ecx,ecx"
+      ],
+      [
+        "0x4149E943",
+        "eb27",
+        "jmp 0x4149e96c"
+      ],
+      [
+        "0x4149E945",
+        "b101",
+        "mov cl,0x1"
+      ],
+      [
+        "0x4149E947",
+        "83ff01",
+        "cmp edi,0x1"
+      ],
+      [
+        "0x4149E94A",
+        "7520",
+        "jne 0x4149e96c"
+      ],
+      [
+        "0x4149E94C",
+        "83e304",
+        "and ebx,0x4"
+      ],
+      [
+        "0x4149E94F",
+        "741b",
+        "je 0x4149e96c"
+      ],
+      [
+        "0x4149E951",
+        "807a2500",
+        "cmp BYTE PTR [edx+0x25],0x0"
+      ],
+      [
+        "0x4149E955",
+        "7415",
+        "je 0x4149e96c"
+      ],
+      [
+        "0x4149E957",
+        "80be3801000000",
+        "cmp BYTE PTR [esi+0x138],0x0"
+      ],
+      [
+        "0x4149E95E",
+        "0f95c1",
+        "setne cl"
+      ],
+      [
+        "0x4149E961",
+        "837a2803",
+        "cmp DWORD PTR [edx+0x28],0x3"
+      ],
+      [
+        "0x4149E965",
+        "0f9cc3",
+        "setl bl"
+      ],
+      [
+        "0x4149E968",
+        "20cb",
+        "and bl,cl"
+      ],
+      [
+        "0x4149E96A",
+        "89d9",
+        "mov ecx,ebx"
+      ]
+    ]
+  },
+  "code_correspondence": {
+    "implementation": "continuation/src/bounded_aggregation.cpp:70-104",
+    "tests": "continuation/tests/test_bounded_aggregation.cpp:151-198",
+    "source_sha256": {
+      "continuation/src/bounded_aggregation.cpp": "1c212b6e2dd358d24354d134f97dfaa072806488e1ffbe21580ba645f2821ce6",
+      "continuation/tests/test_bounded_aggregation.cpp": "5ac3c490b25d2967915944bdb7b3af4991462440f4aa55ffbcf643058692e145"
+    },
+    "unchanged_from_reviewed_sha": true,
+    "assessment": "The acc6==0/acc7==0 bypass models E8F0->E941 with CL cleared. For nonzero acc7, the optional-settings boundary is followed by the same wrapped SUB/signed-compare gate, CL clearing on signed diff>1, and CL boolean from owner+138 and signed point+28<3 as the decoded E8F0 path. The focused tests exercise these inputs and separate wrapped-difference edges."
+  },
+  "limits": [
+    "This corrects only the alleged CFG mismatch on fixed SHA 35b8ada.",
+    "Settings runtime-provider/lifetime bindings and unknown-index handler semantics remain unresolved.",
+    "Full callback/ranking, full GAP, original language and ABI are not established.",
+    "This is not the later integrated-SHA review.",
+    "No original DLL was loaded, executed, or emulated."
+  ],
+  "changed_code": false
+}
