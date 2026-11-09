@@ -38,6 +38,20 @@ evidence:
 	$(PYTHON) -B evidence/wave3/marker/verify_composition.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave3/source/verify_source.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/next/scalar-provider/verify_fallback_provider.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/aggregate/verify_contract.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/bindings/verify_resolution.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/charge/verify_full_reset.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/esi/verify_preservation.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/fallback24/verify_initializer.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/global9bc/verify_chain.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/guards/verify_guards.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/indirect/verify_indirect.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/lifecycle/verify_seed_path.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/messages/verify_message_fields.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/point26/verify_point26.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/tf4/verify_tf4.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave5/threshold/verify_threshold_frontier.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B -m unittest discover -s evidence/wave5/esi -p 'test_*.py' -v
 
 $(BUILD):
 	mkdir -p $@
