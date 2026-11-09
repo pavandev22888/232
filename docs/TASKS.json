@@ -2,7 +2,7 @@
   "schema_version": 1,
   "created_at": "2026-11-09",
   "created_from_commit": "a21c2ac8045617278280de8ffb33f67dbf743c87",
-  "goal": "Full original Ragebot and its necessary transitive dependencies as readable C17.",
+  "goal": "Recover the full original Ragebot logic and necessary dependencies in its original source language; mandatory C17 migration was withdrawn by the user.",
   "current_implementation_language": "C++17 (bounded offline modules); archived partial C helpers also exist.",
   "path_base": "repository root",
   "assignment_protocol": "docs/AGENT_WORKFLOW.md",
@@ -18,9 +18,9 @@
   "tasks": [
     {
       "id": "C01",
-      "title": "C17 pilot: scalar helper",
+      "title": "Superseded: C17 pilot: scalar helper",
       "kind": "implementation",
-      "status": "in_progress",
+      "status": "blocked",
       "owner": "primary-coordinator",
       "base_commit": "c8d44fa0946a222734b092f16247a3bd95eb84a9",
       "branch": "hoplite/sikyon-46eee495--c01-scalar",
@@ -30,15 +30,8 @@
         "GAP04"
       ],
       "depends_on": [],
-      "blocked_reason": null,
-      "write_paths": [
-        "continuation/c17/include/rage/resolved_scalar_helper.h",
-        "continuation/c17/src/resolved_scalar_helper.c",
-        "continuation/c17/tests/test_resolved_scalar_helper.c",
-        "continuation/evidence/c17/scalar/",
-        "continuation/c17/tests/test_resolved_scalar_helper_differential.cpp",
-        "continuation/c17/Makefile"
-      ],
+      "blocked_reason": "User corrected goal on 2026-11-09: recover original logic in original language, not a mandatory C17 port. Previous assignment is suspended; preserve work, do not continue without a fresh scope.",
+      "write_paths": [],
       "read_first": [
         "docs/GOAL.md",
         "continuation/include/rage/resolved_scalar_helper.hpp",
@@ -46,17 +39,35 @@
         "continuation/tests/test_resolved_scalar_helper.cpp",
         "continuation/evidence/wave2/gap04/contract.md"
       ],
-      "bounded_deliverable": "One C17 helper preserving the existing bounded contract and explicit optional fallback; no provider reconstruction.",
+      "bounded_deliverable": "Inactive historical migration card; replacement must target missing original logic under docs/GOAL.md.",
       "acceptance": [
-        "Strict C17 compilation by a C compiler; coordinator integrates build targets.",
-        "Native and ASan/UBSan; NaN, signed zero, ordering and missing fallback cases.",
-        "Bitwise differential checks against C++ within its documented domain; keep original tests.",
-        "Fixed-SHA peer review; no claim of equivalence to the original binary."
-      ]
+        "No completion claim for the superseded C17-port contract.",
+        "Any replacement needs a fresh bounded assignment and original-language/ABI evidence."
+      ],
+      "superseded_contract": {
+        "title": "C17 pilot: scalar helper",
+        "status": "in_progress",
+        "write_paths": [
+          "continuation/c17/include/rage/resolved_scalar_helper.h",
+          "continuation/c17/src/resolved_scalar_helper.c",
+          "continuation/c17/tests/test_resolved_scalar_helper.c",
+          "continuation/evidence/c17/scalar/",
+          "continuation/c17/tests/test_resolved_scalar_helper_differential.cpp",
+          "continuation/c17/Makefile"
+        ],
+        "bounded_deliverable": "One C17 helper preserving the existing bounded contract and explicit optional fallback; no provider reconstruction.",
+        "acceptance": [
+          "Strict C17 compilation by a C compiler; coordinator integrates build targets.",
+          "Native and ASan/UBSan; NaN, signed zero, ordering and missing fallback cases.",
+          "Bitwise differential checks against C++ within its documented domain; keep original tests.",
+          "Fixed-SHA peer review; no claim of equivalence to the original binary."
+        ]
+      },
+      "superseded": true
     },
     {
       "id": "C02",
-      "title": "C17 N layout, storage, update and reader",
+      "title": "Superseded: C17 N layout, storage, update and reader",
       "kind": "implementation",
       "status": "blocked",
       "owner": null,
@@ -72,29 +83,40 @@
       "depends_on": [
         "C01"
       ],
-      "blocked_reason": "C01 must establish the accepted C API/build/test pattern first.",
-      "write_paths": [
-        "continuation/c17/include/rage/position_records.h",
-        "continuation/c17/src/position_records.c",
-        "continuation/c17/tests/test_position_records.c",
-        "continuation/evidence/c17/records/"
-      ],
+      "blocked_reason": "User corrected goal on 2026-11-09: recover original logic in original language, not a mandatory C17 port. Previous assignment is suspended; preserve work, do not continue without a fresh scope.",
+      "write_paths": [],
       "read_first": [
         "continuation/include/rage/position_records.hpp",
         "continuation/src/position_records.cpp",
         "continuation/tests/test_position_records.cpp",
         "continuation/evidence/SOURCE_MAP.md"
       ],
-      "bounded_deliverable": "Port only the accepted N contract with explicit ownership and statuses; not target aggregation.",
+      "bounded_deliverable": "Inactive historical migration card; replacement must target missing original logic under docs/GOAL.md.",
       "acceptance": [
-        "C17 layout/size assertions and all existing bounded cases.",
-        "C/C++ state and bit comparisons, including unchanged bytes and outside-supported-domain results.",
-        "Native/sanitizer checks and peer review."
-      ]
+        "No completion claim for the superseded C17-port contract.",
+        "Any replacement needs a fresh bounded assignment and original-language/ABI evidence."
+      ],
+      "superseded_contract": {
+        "title": "C17 N layout, storage, update and reader",
+        "status": "blocked",
+        "write_paths": [
+          "continuation/c17/include/rage/position_records.h",
+          "continuation/c17/src/position_records.c",
+          "continuation/c17/tests/test_position_records.c",
+          "continuation/evidence/c17/records/"
+        ],
+        "bounded_deliverable": "Port only the accepted N contract with explicit ownership and statuses; not target aggregation.",
+        "acceptance": [
+          "C17 layout/size assertions and all existing bounded cases.",
+          "C/C++ state and bit comparisons, including unchanged bytes and outside-supported-domain results.",
+          "Native/sanitizer checks and peer review."
+        ]
+      },
+      "superseded": true
     },
     {
       "id": "C03",
-      "title": "C17 local charge state",
+      "title": "Superseded: C17 local charge state",
       "kind": "implementation",
       "status": "blocked",
       "owner": null,
@@ -108,13 +130,8 @@
       "depends_on": [
         "C01"
       ],
-      "blocked_reason": "C01 API/build/test pattern pending.",
-      "write_paths": [
-        "continuation/c17/include/rage/charge_state.h",
-        "continuation/c17/src/charge_state.c",
-        "continuation/c17/tests/test_charge_state.c",
-        "continuation/evidence/c17/charge/"
-      ],
+      "blocked_reason": "User corrected goal on 2026-11-09: recover original logic in original language, not a mandatory C17 port. Previous assignment is suspended; preserve work, do not continue without a fresh scope.",
+      "write_paths": [],
       "read_first": [
         "continuation/include/rage/charge_state.hpp",
         "continuation/src/charge_state.cpp",
@@ -122,16 +139,32 @@
         "continuation/evidence/gap03/condition_table.md",
         "continuation/evidence/wave2/gap03/reset_slice_contract.md"
       ],
-      "bounded_deliverable": "Port local capacity/latch/gate/reset projection, not an invented complete automaton.",
+      "bounded_deliverable": "Inactive historical migration card; replacement must target missing original logic under docs/GOAL.md.",
       "acceptance": [
-        "Raw AL values 0, 1, 2, 3, 254, 255 and branch semantics retained.",
-        "No assumed reset scheduling; compare only supported state projections.",
-        "C17/native/sanitizer checks and peer review."
-      ]
+        "No completion claim for the superseded C17-port contract.",
+        "Any replacement needs a fresh bounded assignment and original-language/ABI evidence."
+      ],
+      "superseded_contract": {
+        "title": "C17 local charge state",
+        "status": "blocked",
+        "write_paths": [
+          "continuation/c17/include/rage/charge_state.h",
+          "continuation/c17/src/charge_state.c",
+          "continuation/c17/tests/test_charge_state.c",
+          "continuation/evidence/c17/charge/"
+        ],
+        "bounded_deliverable": "Port local capacity/latch/gate/reset projection, not an invented complete automaton.",
+        "acceptance": [
+          "Raw AL values 0, 1, 2, 3, 254, 255 and branch semantics retained.",
+          "No assumed reset scheduling; compare only supported state projections.",
+          "C17/native/sanitizer checks and peer review."
+        ]
+      },
+      "superseded": true
     },
     {
       "id": "C04",
-      "title": "C17 lifecycle and scalar compositions",
+      "title": "Superseded: C17 lifecycle and scalar compositions",
       "kind": "implementation",
       "status": "blocked",
       "owner": null,
@@ -147,19 +180,8 @@
         "C01",
         "C02"
       ],
-      "blocked_reason": "Requires accepted C scalar helper and N representation.",
-      "write_paths": [
-        "continuation/c17/include/rage/position_lifecycle.h",
-        "continuation/c17/src/position_lifecycle.c",
-        "continuation/c17/include/rage/marker_pipeline.h",
-        "continuation/c17/src/marker_pipeline.c",
-        "continuation/c17/include/rage/actor_scalar_pipeline.h",
-        "continuation/c17/src/actor_scalar_pipeline.c",
-        "continuation/c17/tests/test_position_lifecycle.c",
-        "continuation/c17/tests/test_marker_pipeline.c",
-        "continuation/c17/tests/test_actor_scalar_pipeline.c",
-        "continuation/evidence/c17/compositions/"
-      ],
+      "blocked_reason": "User corrected goal on 2026-11-09: recover original logic in original language, not a mandatory C17 port. Previous assignment is suspended; preserve work, do not continue without a fresh scope.",
+      "write_paths": [],
       "read_first": [
         "continuation/SPEC_NEXT.md",
         "continuation/src/position_lifecycle.cpp",
@@ -167,12 +189,34 @@
         "continuation/src/actor_scalar_pipeline.cpp",
         "continuation/evidence/wave2/gap05/README.md"
       ],
-      "bounded_deliverable": "Port current producer/consumer/optional output and two compositions; coordinator may split into disjoint child tasks.",
+      "bounded_deliverable": "Inactive historical migration card; replacement must target missing original logic under docs/GOAL.md.",
       "acceptance": [
-        "Per-call observations, consumer bypasses, bounded aliases, float order and byte preservation retained.",
-        "Unresolved rollback labelled as offline API convention, not original behavior.",
-        "C17/native/sanitizer and C++ regression/differential checks; fixed-SHA review."
-      ]
+        "No completion claim for the superseded C17-port contract.",
+        "Any replacement needs a fresh bounded assignment and original-language/ABI evidence."
+      ],
+      "superseded_contract": {
+        "title": "C17 lifecycle and scalar compositions",
+        "status": "blocked",
+        "write_paths": [
+          "continuation/c17/include/rage/position_lifecycle.h",
+          "continuation/c17/src/position_lifecycle.c",
+          "continuation/c17/include/rage/marker_pipeline.h",
+          "continuation/c17/src/marker_pipeline.c",
+          "continuation/c17/include/rage/actor_scalar_pipeline.h",
+          "continuation/c17/src/actor_scalar_pipeline.c",
+          "continuation/c17/tests/test_position_lifecycle.c",
+          "continuation/c17/tests/test_marker_pipeline.c",
+          "continuation/c17/tests/test_actor_scalar_pipeline.c",
+          "continuation/evidence/c17/compositions/"
+        ],
+        "bounded_deliverable": "Port current producer/consumer/optional output and two compositions; coordinator may split into disjoint child tasks.",
+        "acceptance": [
+          "Per-call observations, consumer bypasses, bounded aliases, float order and byte preservation retained.",
+          "Unresolved rollback labelled as offline API convention, not original behavior.",
+          "C17/native/sanitizer and C++ regression/differential checks; fixed-SHA review."
+        ]
+      },
+      "superseded": true
     },
     {
       "id": "R01",
@@ -374,7 +418,7 @@
     },
     {
       "id": "I01",
-      "title": "Integrated bounded C17 library acceptance",
+      "title": "Integrated bounded original-logic reconstruction acceptance",
       "kind": "integration",
       "status": "blocked",
       "owner": null,
@@ -390,17 +434,13 @@
         "GAP06"
       ],
       "depends_on": [
-        "C01",
-        "C02",
-        "C03",
-        "C04",
         "R01"
       ],
-      "blocked_reason": "C ports and transitive scope inventory not yet accepted.",
+      "blocked_reason": "Transitive scope inventory and required missing original-logic implementations are not yet accepted.",
       "write_paths": [
         "continuation/Makefile",
-        "continuation/c17/tests/test_position_pipeline.c",
-        "continuation/evidence/c17/integration/"
+        "continuation/tests/test_position_pipeline.cpp",
+        "continuation/evidence/next/integration/"
       ],
       "read_first": [
         "docs/GOAL.md",
@@ -408,10 +448,10 @@
         "continuation/tests/test_position_pipeline.cpp",
         "continuation/Makefile"
       ],
-      "bounded_deliverable": "Coordinator integrates the C ports and bounded pipeline with an independent fixed-SHA acceptance; not the complete Ragebot.",
+      "bounded_deliverable": "Integrate accepted bounded original-logic slices with independent fixed-SHA acceptance; not the complete Ragebot and not mandatory language migration.",
       "acceptance": [
-        "C library builds as C17 without a C++ runtime dependency.",
-        "Existing C++ make check plus native/sanitized C tests and differential harness.",
+        "Language/ABI claims have source support; current C++17 is not automatically the original standard.",
+        "Existing make check, native/sanitizer and suitable original-logic regression/evidence checks.",
         "Input integrity unchanged; independent code/evidence and reproducibility reviews."
       ]
     },
@@ -442,19 +482,25 @@
         "R05",
         "V01"
       ],
-      "blocked_reason": "Full tasks remain open/partial; no full C port, full behavioral proof or external audit.",
+      "blocked_reason": "Full tasks remain open/partial; original-language identity, full logic, behavioral proof and external audit remain unestablished.",
       "write_paths": [],
       "read_first": [
         "docs/GOAL.md",
         "continuation/STATUS.json",
         "docs/SOURCE_INDEX.md"
       ],
-      "bounded_deliverable": "Close the actual complete transitive Ragebot contour in readable C, including tasks discovered by R01 and later evidence; no claim that the listed bounded cards alone suffice.",
+      "bounded_deliverable": "Close the actual complete transitive Ragebot contour in its established original source language, including tasks discovered by R01 and later evidence; no claim that the listed bounded cards alone suffice.",
       "acceptance": [
         "All criteria in docs/GOAL.md met; no critical unknown providers, branches or placeholder logic.",
         "Complete dependency/mode/environment map and reproducible behavioral protocol.",
         "Independent external audit and original-equivalence obligations actually satisfied, or completion remains blocked."
       ]
     }
-  ]
+  ],
+  "goal_correction": {
+    "date": "2026-11-09",
+    "mandatory_c17_port": false,
+    "original_source_language": "not established; current C++17 implementation and decompiler .c extensions do not prove it",
+    "historical_assignments": "C01-C04 suspended, not completed; existing owner/base retained for coordination, no authorization to continue the obsolete migration."
+  }
 }

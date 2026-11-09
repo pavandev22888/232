@@ -37,6 +37,7 @@ evidence:
 	$(PYTHON) -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v
 	$(PYTHON) -B evidence/wave3/marker/verify_composition.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave3/source/verify_source.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/next/scalar-provider/verify_fallback_provider.py --handoff "$(abspath $(HANDOFF))"
 
 $(BUILD):
 	mkdir -p $@
