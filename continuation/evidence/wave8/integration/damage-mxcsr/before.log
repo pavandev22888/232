@@ -1,0 +1,7 @@
+make: Entering directory '/tmp/hoplite/workspace/continuation'
+mkdir -p /tmp/hoplite/workspace/runs/w8-mxcsr-before/build
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto tests/regression_damage_mxcsr.cpp -o /tmp/hoplite/workspace/runs/w8-mxcsr-before/build/damage_mxcsr_lto
+/tmp/hoplite/workspace/runs/w8-mxcsr-before/build/damage_mxcsr_lto
+damage MXCSR: nearest=3fa00001, upward=3fa00001
+make: *** [Makefile:17: mxcsr] Error 1
+make: Leaving directory '/tmp/hoplite/workspace/continuation'

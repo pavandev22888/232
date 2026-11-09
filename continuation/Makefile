@@ -10,8 +10,14 @@ TEST_NAMES := $(patsubst tests/%.cpp,%,$(wildcard tests/test_*.cpp))
 NATIVE_TESTS := $(addprefix $(BUILD)/,$(TEST_NAMES))
 SANITIZED_TESTS := $(addsuffix _sanitize,$(NATIVE_TESTS))
 
-.PHONY: test sanitize evidence check clean
-check: test sanitize evidence
+.PHONY: test sanitize evidence check mxcsr clean
+check: test sanitize evidence mxcsr
+
+mxcsr: $(BUILD)/damage_mxcsr_lto
+	$<
+
+$(BUILD)/damage_mxcsr_lto: tests/regression_damage_mxcsr.cpp src/damage_slice.cpp include/rage/damage_slice.hpp Makefile | $(BUILD)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -flto $< -o $@
 
 test: $(NATIVE_TESTS)
 	@set -e; for test in $(NATIVE_TESTS); do echo "RUN $$test"; "$$test"; done

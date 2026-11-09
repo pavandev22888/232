@@ -46,7 +46,8 @@
     "Both ESI alternatives; PEB-field unsigned wrap; unknown/mismatched guards.",
     "Post-second-call signed TLS less/equal/greater and int32 extremes; missing byte and any-nonzero byte semantics.",
     "Binary32 NaN payloads/quieting and fixed operand order, infinity/invalid, positive/negative zero.",
-    "Subnormal witnesses prove 0.5 multiplication rounds before the final multiplication, not a fused/reassociated factor."
+    "Subnormal witnesses prove 0.5 multiplication rounds before the final multiplication, not a fused/reassociated factor.",
+    "Coordinator unity/LTO regression switches MXCSR round-to-nearest/upward between identical calls and restores the saved control state; volatile memory-barrier MULSS prevents reuse across those calls."
   ],
   "remaining_unknowns": [
     "Entry guards, initializers and first provider identity/effects/reachability before 0x413708dd.",

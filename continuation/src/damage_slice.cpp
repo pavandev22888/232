@@ -18,8 +18,8 @@ std::uint32_t multiply_binary32(std::uint32_t left, std::uint32_t right) noexcep
     float source;
     std::memcpy(&destination, &left, sizeof(left));
     std::memcpy(&source, &right, sizeof(right));
-    // MULSS operand order matters for NaN payloads; C++ multiplication may commute.
-    __asm__("mulss %1, %0" : "+x"(destination) : "x"(source));
+    // Preserve NaN operand order and observe the caller's current MXCSR.
+    __asm__ volatile("mulss %1, %0" : "+x"(destination) : "x"(source) : "memory");
     std::uint32_t result;
     std::memcpy(&result, &destination, sizeof(result));
     return result;
