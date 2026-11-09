@@ -1,0 +1,120 @@
+{
+  "task": "W7-REVIEW-RANK",
+  "reviewed_sha": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
+  "candidate_diff_base": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+  "disposition": "pass",
+  "blockers": [],
+  "scope": "Independent exact-byte CFG/code/test review of rank_callback_point local ranking tail only; no full provider, selector, or runtime reachability claim.",
+  "source_pin": {
+    "handoff_image": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_size": 55578624,
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_base": "0x412a0000",
+    "support_walk": {
+      "handoff_relative_path": "workspace/orchestration/v7/support_best_point_update_walk.json",
+      "size": 38382,
+      "sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e"
+    },
+    "span": {
+      "va_start_inclusive": "0x4149e9bd",
+      "va_end_exclusive": "0x4149ec2d",
+      "file_offset": "0x1fe9bd",
+      "size_bytes": 624,
+      "sha256": "0b96004a5db6d57b3e0175d418c2cb18e2fb1a496f53cc078ed38fe23877beb1",
+      "fresh_i386_decode_instructions": 162
+    },
+    "constants": [
+      {
+        "va": "0x4205a540",
+        "bytes": "ffffff7fffffff7fffffff7fffffff7f",
+        "sha256": "c66856d3622ef1af1acca8762554ca873b9ea946fc38967d2d42caba297dc8d7",
+        "meaning": "ANDPS sign-clear mask (low DWORD 0x7fffffff)"
+      },
+      {
+        "va": "0x4205ac84",
+        "bytes": "0000a040",
+        "sha256": "fca31f1667a6aa1bba12fca4e4ea1becd503379d80da3213af07f6cc5702828d",
+        "meaning": "binary32 5.0"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "area": "entry, C0 initialization, and ranking priorities",
+      "result": "pass",
+      "evidence": "At 0x4149e9bf-0x4149ea3a, C0==0 copies 0x50 point bytes and sets C0=1; nonzero C0 enters ranking. At 0x4149e9ca-0x4149ea5e, accumulator+08 gates the +4->+B0 bit-4 read; bit 4 swaps the raw +25 versus signed (+28>=3)/(saved +28<3) priority. The +25 winner is the raw candidate byte test, not boolean equality. Matches bounded_aggregation.cpp:142-191."
+    },
+    {
+      "area": "tail/direct and pair priorities",
+      "result": "pass",
+      "evidence": "At 0x4149ea60-0x4149eab3, incoming CL gates direct-class comparison ((DWORD+1c & 0xfffffffe)==2), followed by the conjunction (+23!=0 && +25!=0). A differing criterion selects the candidate boolean. Matches bounded_aggregation.cpp:193-200."
+    },
+    {
+      "area": "wrapped unsigned magnitude and damage",
+      "result": "pass",
+      "evidence": "0x4149eb4a-0x4149eb5c is SUB, NEG, CMOVS, then unsigned JBE against a 0/1 limit; this yields modulo-2^32 unsigned magnitude including 0x80000000. 0x4149eb5e-0x4149eb70 replaces only for ordered candidate damage greater. Matches bounded_aggregation.cpp:202-208."
+    },
+    {
+      "area": "chance threshold and FP unordered behavior",
+      "result": "pass",
+      "evidence": "0x4149eb72-0x4149eba4 computes one binary32 subtraction, clears its sign with ANDPS, then UCOMISS/JBE against 5.0; unordered enters tie handling, ordered abs(delta)>5 uses ordered candidate-chance greater. Matches bounded_aggregation.cpp:210-221."
+    },
+    {
+      "area": "tie-breaks and optional +B0 observation",
+      "result": "pass",
+      "evidence": "At 0x4149eba4-0x4149ebdc, bit 4 orders signed DWORD +28/+2c comparisons; JG uses the last differing CMP. 0x4149ebde-0x4149ec28 uses UCOMISS/JNE so unordered delta falls through like zero, then raw +21/+22 nonzero candidate-byte decisions, saved+38 >= candidate+38 retain (unordered falls through), and ordered damage greater. +B0 is read at 0x4149e9d4-0x4149e9d7 only when +08!=0, or at 0x4149eba4-0x4149ebae only after the earlier decision paths tie; absent observation returns unresolved at exactly these API read paths. Matches bounded_aggregation.cpp:176-239."
+    },
+    {
+      "area": "replacement copy and result contract",
+      "result": "pass",
+      "evidence": "0x4149eab9-0x4149eb28 copies six DWORDs (+00..+14), 16-byte blocks (+18/+28/+38), and QWORD +48: all 0x50 bytes, bitwise. rank_callback_point preserves nonzero C0 and copies all candidate bytes only on replace; C0==0 delegates to the accepted initializer. Tests cover raw payload/C0 preservation at test_bounded_aggregation.cpp:379-385."
+    }
+  ],
+  "verification": {
+    "working_tree_at_review": "clean at fixed SHA before report creation; no code/tests/shared files changed by reviewer",
+    "build": {
+      "command": "make -C continuation BUILD=/tmp/hoplite/232-w7-review-rank-build /tmp/hoplite/232-w7-review-rank-build/test_bounded_aggregation /tmp/hoplite/232-w7-review-rank-build/test_bounded_aggregation_sanitize",
+      "exit_code": 0,
+      "log": {
+        "path": "continuation/evidence/wave7/review-rank/logs/build.log",
+        "sha256": "028423c0be5042e87fa8ac30fe3829c483a1bd584b542d8526dfc99a92bf11e1"
+      }
+    },
+    "native": {
+      "command": "/tmp/hoplite/232-w7-review-rank-build/test_bounded_aggregation",
+      "exit_code": 0,
+      "assertions": 23002,
+      "log": {
+        "path": "continuation/evidence/wave7/review-rank/logs/native.log",
+        "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4"
+      }
+    },
+    "asan_ubsan": {
+      "command": "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w7-review-rank-build/test_bounded_aggregation_sanitize",
+      "exit_code": 0,
+      "assertions": 23002,
+      "log": {
+        "path": "continuation/evidence/wave7/review-rank/logs/sanitizer.log",
+        "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4"
+      }
+    },
+    "static_gate": {
+      "command": "python3 -B continuation/evidence/wave7/rank/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "result": "162 contiguous instruction decodes and both constant byte pins match fresh bytes from the pinned handoff image; source pins match.",
+      "log": {
+        "path": "continuation/evidence/wave7/review-rank/logs/static-gate.log",
+        "sha256": "d55acd0cde97a8e5726671721c0b41254f0bacb0ac6e62aca7bff4b5f110e5e0"
+      }
+    },
+    "commands_receipt": {
+      "path": "continuation/evidence/wave7/review-rank/commands.log",
+      "sha256": "2d1e22fd11243ce0b4803cabc8a1b56552a0f438681d4320b3815636950246b9"
+    }
+  },
+  "open_boundaries": [
+    "No runtime owner/flags provider is established; +4->+B0 remains an optional observation.",
+    "No full selector/enumeration/settings/index-handler contract or runtime reachability claim; successor at 0x4149ec2d is excluded.",
+    "Original execution/loading/emulation was not performed; sNaN payload/exception behavior and observable intermediate memory stores are outside this local snapshot contract."
+  ]
+}
