@@ -1,0 +1,550 @@
+{
+  "schema": 1,
+  "task": "W3-V isolated reproducibility acceptance",
+  "tested_revision": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+  "scope": "Fresh unchanged W3 starting code; separate explicitly rerun historical CODE01 baseline; no W3-M/W3-A integration acceptance.",
+  "result": "bounded_acceptance_passed; missing-HANDOFF negative gate unsupported as expected; full H01 gate not satisfied",
+  "isolation": {
+    "worktree": "/tmp/hoplite/worktrees/sikyon-w3-repro",
+    "branch": "hoplite/sikyon-46eee495--w3-repro",
+    "git_dir": "/tmp/hoplite/workspace/.git/worktrees/sikyon-w3-repro",
+    "git_common_dir": "/tmp/hoplite/workspace/.git",
+    "git_index": "/tmp/hoplite/workspace/.git/worktrees/sikyon-w3-repro/index",
+    "build": "/tmp/hoplite/worktrees/sikyon-w3-repro/continuation/build/w3-repro",
+    "initial_status_clean": true,
+    "post_checks_tracked_status_clean": true,
+    "applicable_AGENTS_or_CLAUDE_files": [],
+    "git_override_variables_present": []
+  },
+  "toolchain": {
+    "make": {
+      "command": [
+        "make",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "GNU Make 4.3"
+    },
+    "g++": {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+    },
+    "python3": {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "Python 3.12.3"
+    },
+    "objdump": {
+      "command": [
+        "objdump",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "GNU objdump (GNU Binutils for Ubuntu) 2.42"
+    },
+    "git": {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "git version 2.43.0"
+    },
+    "offline_sanitized_binary_dependencies": {
+      "command": [
+        "ldd",
+        "continuation/build/w3-repro/test_position_records_sanitize"
+      ],
+      "exit_code": 0,
+      "output": "\tlinux-vdso.so.1 (0x00002ba277f2f000)\n\tlibasan.so.8 => /lib/x86_64-linux-gnu/libasan.so.8 (0x00002ba277f92000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00002ba278663000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00002ba2788e1000)\n\tlibubsan.so.1 => /lib/x86_64-linux-gnu/libubsan.so.1 (0x00002ba2789ca000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00002ba278fe0000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00002ba279010000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000056484ec1d000)\n"
+    }
+  },
+  "platform": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "libc": [
+      "glibc",
+      "2.39"
+    ]
+  },
+  "fresh_check": {
+    "command": [
+      "make",
+      "-C",
+      "continuation",
+      "check",
+      "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "BUILD=build/w3-repro"
+    ],
+    "cwd": "/tmp/hoplite/worktrees/sikyon-w3-repro",
+    "base_revision": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+    "duration_seconds": 21.503888845443726,
+    "exit_code": 0,
+    "log_sha256": "363c0218edf57e2507549e4a5b37115d640f8a0206e55b121b2739abe0039100",
+    "log_path": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/check.log",
+    "started_utc": "2026-11-09T10:58:17.485687+00:00",
+    "current_offline_suites": {
+      "charge_state": 3274,
+      "position_lifecycle": 208,
+      "position_pipeline": 392,
+      "position_records": 2601,
+      "resolved_scalar_helper": 53
+    },
+    "assertions_per_native_or_sanitized_mode": 6528,
+    "native_suites": 5,
+    "sanitized_suites": 5,
+    "python_unit_tests": 8,
+    "ASAN_OPTIONS_from_Makefile": "detect_leaks=1",
+    "UBSAN_OPTIONS_from_Makefile": "halt_on_error=1",
+    "evidence_recipe_commands": [
+      {
+        "command": "python3 tests/verify_evidence.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "passed": true,
+          "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+          "instruction_bytes_and_fresh_decodes": 294,
+          "constants": 5,
+          "unchanged_inventory_files": 13,
+          "scope": "Bytes and instruction decoding only; not branch reachability or C++ equivalence."
+        }
+      },
+      {
+        "command": "python3 evidence/gap01/verify_gap01.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "passed": true,
+          "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+          "saved_rows_rechecked": 32,
+          "fresh_objdump_decodes": 32,
+          "point26_candidate_identity": false,
+          "point26_guard": "The EBX<65 branch skips this block.",
+          "g425009bc_known_direct_stores": 2,
+          "t96_origin_status": "propagation_verified_positive_origin_open",
+          "scope": "Selected bytes/provenance only; not full source absence, reachability, or runtime behavior."
+        }
+      },
+      {
+        "command": "python3 evidence/gap03/verify_charge_evidence.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 evidence/gap04/check_bindings.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 evidence/gap05/replay_position_lifecycle.py \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 evidence/gap06/verify_h01_replay.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "passed": true,
+          "command": "python3 continuation/evidence/gap06/verify_h01_replay.py --handoff <RAGEBOT_HANDOFF_V10>",
+          "scope": "Read-only hash, stored-byte, PE-offset and GNU objdump checks for the selected H01 subset; not a replay of all 209 checks or an independent external audit."
+        }
+      },
+      {
+        "command": "python3 -B evidence/wave2/code01/review_baseline.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+          "original_inventory_files": 13,
+          "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+          "contradictory_fixture_pairs_confirmed": 2,
+          "original_execution_loading_or_emulation": false
+        }
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap01/verify_gap01_wave2.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "passed": true,
+          "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+          "blocks_checked": 8,
+          "fresh_decoded_instructions": 118,
+          "saved_rows_rechecked": 68,
+          "bounded_hypotheses_checked": 2,
+          "positive_sources_proved": 0,
+          "all_three_positive_source_gates": "open",
+          "scope": "Static selected bytes, decode, local operands and widths; not full CFG, imports/TLS effects, runtime state, or global absence.",
+          "original_dll_loaded_executed_or_emulated": false
+        }
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap02/verify_inventory.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "passed": true,
+          "scope": "read_only_archival_record_and_hash_consistency_only",
+          "source_files_hashed": 104,
+          "json_sources_parsed": 96,
+          "baseline_git_blobs": 5,
+          "image_hashes": 4,
+          "proof_inventories": 4,
+          "proof_walk_references": 60,
+          "candidate_source_walks": 27,
+          "candidate_primary_records": 133,
+          "candidate_context_records": 1197,
+          "unique_primary_address_bytes": 122,
+          "selected_local_anchors": 2,
+          "fresh_behavioral_check": false,
+          "consumer_implemented": false,
+          "gap02_status": "open"
+        }
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap03/verify_reset_evidence.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap04/verify_scalar_helper.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap05/verify_optional_output.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 -B evidence/wave2/gap06/verify_remaining_h01.py --handoff \"/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+        "exit_code": 0,
+        "reported_scalars": {
+          "schema": 1,
+          "supported_checks_passed": true,
+          "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+          "verifier_sha256": "e8e545fb528c0f9e0d9a44d73f981892384a1d47f650a9a894f0298e05f8d979",
+          "manifest_sha256": "5f69cb4aee78a42b29f0b0cd816d5f1e530246d8808dcf1c10f5e60be9284d96",
+          "strict_old_protocol_repeated": false,
+          "all_209_repeated": false,
+          "external_independent_audit": false,
+          "original_execution_or_emulation": false,
+          "scope": "47 non-instruction H01 entries; archived pass flags/counts are not success inputs.",
+          "inputs_unchanged_during_this_replay_only": true
+        },
+        "disposition_counts": {
+          "freshly_rechecked": 33,
+          "model_only": 2,
+          "historical_only": 12,
+          "unresolved": 0
+        }
+      },
+      {
+        "command": "python3 -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v",
+        "exit_code": 0
+      }
+    ],
+    "fresh_output_lines": [
+      "RUN build/w3-repro/test_charge_state",
+      "PASS: 3274 charge-state checks",
+      "RUN build/w3-repro/test_position_lifecycle",
+      "position_lifecycle: 208 assertions passed",
+      "RUN build/w3-repro/test_position_pipeline",
+      "position_pipeline: 20 coherent offline scenarios, 392 assertions passed",
+      "RUN build/w3-repro/test_position_records",
+      "PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence",
+      "RUN build/w3-repro/test_resolved_scalar_helper",
+      "PASS resolved_scalar_helper: 53 assertions",
+      "RUN build/w3-repro/test_charge_state_sanitize",
+      "PASS: 3274 charge-state checks",
+      "RUN build/w3-repro/test_position_lifecycle_sanitize",
+      "position_lifecycle: 208 assertions passed",
+      "RUN build/w3-repro/test_position_pipeline_sanitize",
+      "position_pipeline: 20 coherent offline scenarios, 392 assertions passed",
+      "RUN build/w3-repro/test_position_records_sanitize",
+      "PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence",
+      "RUN build/w3-repro/test_resolved_scalar_helper_sanitize",
+      "PASS resolved_scalar_helper: 53 assertions",
+      "PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites",
+      "PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin",
+      "PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine",
+      "PASS 0x10076d60 wrapper call target: 0x108a6380",
+      "PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60",
+      "PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7",
+      "PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16",
+      "PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs",
+      "PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28",
+      "PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings",
+      "PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls",
+      "PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only",
+      "Ran 8 tests in 0.003s",
+      "OK"
+    ],
+    "h01_scope": {
+      "selected_byte_assertions": 162,
+      "other_entries": 47,
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0,
+      "all_209_repeated": false,
+      "strict_old_protocol_repeated": false,
+      "overlapping_checks_are_not_additive_independent_proofs": true
+    }
+  },
+  "historical_baseline_replay": {
+    "command": [
+      "python3",
+      "-B",
+      "continuation/evidence/wave2/code01/review_baseline.py",
+      "--handoff",
+      "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "--run-tests"
+    ],
+    "cwd": "/tmp/hoplite/worktrees/sikyon-w3-repro",
+    "environment_overrides": {
+      "TMPDIR": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp",
+      "ASAN_OPTIONS": "detect_leaks=1",
+      "UBSAN_OPTIONS": "halt_on_error=1"
+    },
+    "duration_seconds": 8.979975461959839,
+    "exit_code": 0,
+    "log_sha256": "ee1fb1d2b55109ad749e8538f907d662010176e4ffe85246d3760258bee656fe",
+    "log_path": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/pinned-baseline.log",
+    "started_utc": "2026-11-09T10:59:01.651923+00:00",
+    "baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "not_current_mutable_code": true,
+    "make_check_default_reviewer_does_not_run_baseline_tests": true,
+    "offline_files_extracted_to_task_owned_temporary_directory": [
+      {
+        "path": "continuation/Makefile",
+        "size": 1577,
+        "sha256": "e5ed2466bbdfac38e4f31c25852e7efaa42272c82dab639c0af5900e71296e83",
+        "lines": 41
+      },
+      {
+        "path": "continuation/include/rage/charge_state.hpp",
+        "size": 1363,
+        "sha256": "a176bce5e72bca17914efc0ee66da7c2cbbc8a8d912f7e3b30d91bd927df9558",
+        "lines": 55
+      },
+      {
+        "path": "continuation/include/rage/position_lifecycle.hpp",
+        "size": 2336,
+        "sha256": "b70e8e3e9e72b5e7f416e8af5c6a8b8152d6df1f49e4db9988c5342069d14d71",
+        "lines": 79
+      },
+      {
+        "path": "continuation/include/rage/position_records.hpp",
+        "size": 4898,
+        "sha256": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+        "lines": 151
+      },
+      {
+        "path": "continuation/src/charge_state.cpp",
+        "size": 3208,
+        "sha256": "3700344cfe178804c2f3d14e2fb670dfee46ac91e5104e9d778ab8c7e63a4ea4",
+        "lines": 109
+      },
+      {
+        "path": "continuation/src/position_lifecycle.cpp",
+        "size": 5377,
+        "sha256": "97001be1725726f55543d5d57ee1ee180e50811b8dd1335709e04a5f1ddbd0b0",
+        "lines": 134
+      },
+      {
+        "path": "continuation/src/position_records.cpp",
+        "size": 4994,
+        "sha256": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+        "lines": 133
+      },
+      {
+        "path": "continuation/tests/test_charge_state.cpp",
+        "size": 9055,
+        "sha256": "7f27ab24798945a6c411a80e41f39c3f46029e1a9f4d1b58710e81554d0f19bd",
+        "lines": 252
+      },
+      {
+        "path": "continuation/tests/test_position_lifecycle.cpp",
+        "size": 11870,
+        "sha256": "f0eb4c5b379b9f017ae4724f0cc5a683057f6d03dd7ab6b920dca0cf06025641",
+        "lines": 289
+      },
+      {
+        "path": "continuation/tests/test_position_records.cpp",
+        "size": 14184,
+        "sha256": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+        "lines": 367
+      }
+    ],
+    "native_suites": 3,
+    "sanitized_suites": 3,
+    "assertions_per_native_or_sanitized_mode": 5856,
+    "coherent_sanitized_probe_checks": 16,
+    "existing_reviewer_run_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "fresh_output_lines": [
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_charge_state",
+      "PASS: 3170 charge-state checks",
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_position_lifecycle",
+      "position_lifecycle: 85 assertions passed",
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_position_records",
+      "PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence",
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_charge_state_sanitize",
+      "PASS: 3170 charge-state checks",
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_position_lifecycle_sanitize",
+      "position_lifecycle: 85 assertions passed",
+      "RUN /tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/temp/code01-baseline-85xttgp8/build/test_position_records_sanitize",
+      "PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence",
+      "coherent normal-reader integration: 16 checks passed"
+    ],
+    "temporary_directory_removed": true
+  },
+  "integrity": {
+    "handoff": {
+      "root": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "files_before": 65550,
+      "files_after": 65550,
+      "total_bytes": 1300192247,
+      "file_set_content_size_mtime_unchanged": true,
+      "changed_paths": [],
+      "before_manifest_sha256": "7a0b06f050acac1160ce1ac45f206ca4dc00ab4bd98edeb23099d60402be997e",
+      "after_manifest_sha256": "7a0b06f050acac1160ce1ac45f206ca4dc00ab4bd98edeb23099d60402be997e",
+      "before_manifest_path": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/handoff-before.json",
+      "after_manifest_path": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/handoff-after.json",
+      "selected_input_pins": [
+        {
+          "path": "BUNDLE_CONTENTS.json",
+          "size": 743,
+          "sha256": "774dacea84fb4f1c4138224c7601195743a1544d1d2a5733be1b0344af84f8fc"
+        },
+        {
+          "path": "BUNDLE_MANIFEST.json",
+          "size": 169523,
+          "sha256": "ca9c8a2da45db3a4c7d8a71c721de7d5965590e2c8c3e85ce736744c426da433"
+        },
+        {
+          "path": "workspace/input/dll/client.dll",
+          "size": 16377192,
+          "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03"
+        },
+        {
+          "path": "workspace/input/dll/engine.dll",
+          "size": 6496616,
+          "sha256": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6"
+        },
+        {
+          "path": "workspace/input/dll/neverlose.dll",
+          "size": 62201344,
+          "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+        },
+        {
+          "path": "workspace/pe_data.py",
+          "size": 4272,
+          "sha256": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b"
+        },
+        {
+          "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+          "size": 55578624,
+          "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+        }
+      ]
+    },
+    "continuation": {
+      "tracked_files_checked_before_and_after": 71,
+      "unchanged": true,
+      "manifest_path": "continuation/evidence/wave3/repro/inputs.sha256",
+      "manifest_sha256": "588bd161ee24e5432b6dda13f6596ea0c44c506b2a14fcd04b927066504765db",
+      "manifest_excludes_new_W3_V_evidence": true
+    }
+  },
+  "portability": {
+    "external_absolute_handoff_from_separate_worktree_passed": true,
+    "default_handoff_present_in_worktree": false,
+    "second_physical_bundle_location_tested": false,
+    "internal_workspace_relative_paths_required": true,
+    "dependency_on_git_object": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "git_object_access_confirmed_by_complete_make_check": true,
+    "missing_history_negative_test_executed": false,
+    "missing_history_limit_source_locations": [
+      "continuation/evidence/wave2/code01/review_baseline.py:11,85-104",
+      "continuation/evidence/wave2/gap02/verify_inventory.py:47-51"
+    ],
+    "missing_handoff_negative_gate": {
+      "command": [
+        "make",
+        "-C",
+        "continuation",
+        "evidence",
+        "HANDOFF=/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/missing-handoff",
+        "BUILD=build/w3-repro"
+      ],
+      "cwd": "/tmp/hoplite/worktrees/sikyon-w3-repro",
+      "environment_overrides": {},
+      "duration_seconds": 0.059993743896484375,
+      "exit_code": 2,
+      "log_sha256": "58d3c3d160fe06c768fa3df388e9b2f13d756b134e269f2b0801a7554e5a95cb",
+      "log_path": "/tmp/hoplite/worktrees/sikyon-w3-repro/runs/w3-repro/missing-handoff.log",
+      "started_utc": "2026-11-09T10:59:10.632619+00:00",
+      "expected": true,
+      "outcome": "unsupported_missing_external_inputs",
+      "first_failure": "FileNotFoundError: workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "message_is_python_traceback_not_preflight": true
+    },
+    "BUILD_covers_cpp_binaries_not_all_evidence_temporaries": true,
+    "unchanged_verifiers_also_write_inside_this_worktree": [
+      "continuation/build/evidence_check.json",
+      "continuation/evidence/gap06/.h01-decode-* (temporary, removed)",
+      "runs/gap05/ (temporary decode directories removed)",
+      "runs/wave2/gap05/ (temporary decode directories removed)",
+      "runs/wave2/gap06/ (temporary decode and rejection fixtures removed)"
+    ],
+    "python_third_party_packages_required": false,
+    "offline_sanitized_elf_dependencies_resolved": true,
+    "other_OS_compilers_verified": false
+  },
+  "archive_provenance": {
+    "pinned_local_origin_main": "d7e41026d179e20fa9e93c1720645181f1686b69",
+    "not_a_fresh_remote_fetch": true,
+    "archives_already_present_on_upstream_main": [
+      {
+        "path": "RAGEBOT_V10_часть_01_из_06.zip",
+        "git_blob": "f503eda1aaadcaf9568a9a15e2b0f20a73a3a71d"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_02_из_06.zip",
+        "git_blob": "69d169bb166d842009ae1ae97545d45645a16ef4"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_03_из_06.zip",
+        "git_blob": "8db33440008b66d8f372a596fcf0ddd160802122"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_04_из_06.zip",
+        "git_blob": "549084b90d24a4743e7fc494291123032d60fc06"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_05_из_06.zip",
+        "git_blob": "8f8a907f96490d780bdd586b9ef8db8736c92998"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_06_из_06.zip",
+        "git_blob": "becbbfb7d86c2eb57eb321728cfc01806f6b1b3f"
+      }
+    ],
+    "archive_git_blobs_identical_in_tested_revision": true,
+    "no_new_archives_added_by_this_work": true
+  },
+  "safety_and_scope": {
+    "original_images_loaded_executed_or_emulated": false,
+    "game_connections_or_injection": false,
+    "DLLs_or_archives_copied_to_build_or_new_evidence": false,
+    "compiled_build_contains_original_DLL_or_archive_files": false,
+    "handoff_modified": false,
+    "production_or_Makefile_edits": false,
+    "new_tools_or_CI_added": false,
+    "original_MXCSR_or_runtime_reachability_proved": false,
+    "full_reconstruction_or_full_GAP06_closed": false,
+    "W4_integrated_revision_verification_still_required": true
+  }
+}
