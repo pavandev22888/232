@@ -1,0 +1,119 @@
+{
+  "task": "W3-A",
+  "date_utc": "2026-11-09",
+  "base_commit": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+  "branch": "hoplite/sikyon-46eee495--w3-actor",
+  "scope": "Pure offline composition of the existing scalar helper; no original execution or full consumer equivalence claim.",
+  "reused_files_sha256_relative_to_continuation": {
+    "evidence/wave2/gap04/scalar_helper.json": "545d274506c6c2328b50bc4855dd0d620efead620bed910c1638292bd468ae00",
+    "evidence/wave2/gap04/verify_scalar_helper.py": "08cf6191c300bf02ab424a8ff5456dc2fc19ceb3502a827cb6cfdb9b0b16882f",
+    "include/rage/resolved_scalar_helper.hpp": "7544e3598881c5a3f711563d18f4d19e656daee8109411ace8464a0068de0f04",
+    "src/resolved_scalar_helper.cpp": "cfde7d0df37d48489b5fe490a7a615ed24ee586069f86b57c443fdb1699b9ad1",
+    "include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "include/rage/position_lifecycle.hpp": "49d3426063fad5acfcfa887fd6bc7002ac6d95aba2726e661aba1cfc2f150801",
+    "src/position_lifecycle.cpp": "8b921a16ed73020b42b823eed29d21db00e494260de78ad2cef3756fe88630ae"
+  },
+  "new_code_sha256_relative_to_continuation": {
+    "include/rage/actor_scalar_pipeline.hpp": "7bbbfaaaeffd2b851b8a67883cdedbc6d3e25117485cf6bed3466ee44ec6e85e",
+    "src/actor_scalar_pipeline.cpp": "f1efd4d255673fa9857f405781f57c2378c608f891549be69670a32077090a83",
+    "tests/test_actor_scalar_pipeline.cpp": "f556481f9110034428e9278eef72f8ad54266f33952371f5178a27d01858e9d0"
+  },
+  "byte_provenance": {
+    "reuse": "Pinned existing wave2/gap04 verifier and proof, rerun against the external read-only handoff; no new disassembly ledger or inferred owner.",
+    "image": {
+      "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "size": 55578624,
+      "conditional_address_base": "0x412a0000",
+      "mapping": "Raw dump convention VA = offset + base; not an observed runtime module base."
+    },
+    "windows": [
+      {
+        "name": "scalar_helper",
+        "start": "0x41c784b0",
+        "end_exclusive": "0x41c7852c",
+        "sha256": "3206c3bcdb4a5faa2836bb1e234520f5083c2f554f3b1f674c81c267a0d38717"
+      },
+      {
+        "name": "actor_callers",
+        "start": "0x414fd938",
+        "end_exclusive": "0x414fda4c",
+        "sha256": "a8a7d6309bd46012ed76fa2652ed856e8fbb4937e5d51eb26b1211110b80a2d0"
+      }
+    ],
+    "calls": [
+      "0x414fd9bd",
+      "0x414fda04",
+      "0x414fda47"
+    ],
+    "decoder": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "fresh_result": "PASS: image hash, 3 reference hashes, 111 instruction bytes + fresh decodes, 3 constants, 5 direct calls."
+  },
+  "composition": {
+    "current_offsets": [
+      "0x30",
+      "0x34",
+      "0x38"
+    ],
+    "target_offsets": [
+      "0x24",
+      "0x28",
+      "0x2c"
+    ],
+    "order": [
+      "x",
+      "y",
+      "z"
+    ],
+    "divisor_bits": "0x3dae147b",
+    "bounds_bits": [
+      "0xff7fffff",
+      "0x7f7fffff"
+    ],
+    "requested_step_bits": "0xbf800000",
+    "observations": "Separate tolerance and optional fallback-step snapshots for each call, passed by value; no assumption of stable global contents between calls.",
+    "unresolved": "First axis whose helper actually needs a missing fallback. Variant contains no partial vector; inputs and external outputs are untouched.",
+    "consumer": "Tests pass a complete result through existing ActorConsumerInputs::resolved_position only in an explicit active, passed-guard, enabled-adjustment, distance-below-100 scenario. No automatic consumer integration or new guard policy.",
+    "api_boundary": "Local computation/all-or-unresolved is offline API behavior, not original rollback/error behavior. Consumer bypass tests call the unchanged consumer without resolving axes or supplying provider observations."
+  },
+  "verification": {
+    "working_directory": "/tmp/hoplite/worktrees/sikyon-w3-actor",
+    "commands": [
+      "python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "make -C continuation BUILD=evidence/wave3/actor/build evidence/wave3/actor/build/test_actor_scalar_pipeline evidence/wave3/actor/build/test_actor_scalar_pipeline_sanitize",
+      "continuation/evidence/wave3/actor/build/test_actor_scalar_pipeline",
+      "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 continuation/evidence/wave3/actor/build/test_actor_scalar_pipeline_sanitize",
+      "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 make -C continuation BUILD=evidence/wave3/actor/build test sanitize"
+    ],
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": "-std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off; sanitized additionally -O1 -fno-omit-frame-pointer -fsanitize=address,undefined",
+    "native": "PASS",
+    "asan_ubsan": "PASS with leak detection and halt-on-error; no diagnostics",
+    "assertions_per_mode": {
+      "actor_scalar_pipeline": 119,
+      "charge_state": 3274,
+      "position_lifecycle": 208,
+      "position_pipeline": 392,
+      "position_records": 2601,
+      "resolved_scalar_helper": 53
+    },
+    "total_assertions_per_mode": 6647,
+    "coverage": [
+      "Independent tolerance/fallback values on X/Y/Z and old-current/target direction",
+      "Equality/unordered early return without fallback; quiet NaN payloads and signed zeros",
+      "Missing X/Y/Z fallback, including tolerance infinity/NaN that would snap only after the fallback read",
+      "No partial vector or N mutation after successful earlier axes and later unresolved",
+      "Overflow bounds and MAXSS lower selection for NaN candidate; negative fallback",
+      "Coherent existing-reader/consumer composition and synthetic missing-provider behavior",
+      "No-record, copy/clear guards, inactive, marker gate, adjustment-off and distance >=100 bypass without observations"
+    ]
+  },
+  "remaining_unknowns": [
+    "Actual external tolerance and fallback values, owners and stability across calls.",
+    "Upstream guards, actor/record association, runtime mapping, reachability and other writers.",
+    "Signaling NaNs, observable FP traps/flags, nondefault rounding, FTZ/DAZ and original MXCSR.",
+    "No geometric trace semantics inferred; opaque fields remain opaque; unrelated gaps remain open.",
+    "Integrated-wave review, complete evidence/input-integrity check and publication remain coordinator work."
+  ],
+  "boundaries": "No source DLL loaded/executed/emulated, no game/process/injection access, no handoff or parent-workspace writes, no common documentation/Makefile edits, no push/merge/cherry-pick."
+}
