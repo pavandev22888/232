@@ -1,6 +1,7 @@
 # Карта материалов и текущего знания
 
-Снимок базы: `a21c2ac8045617278280de8ffb33f67dbf743c87`, 2026-11-09.
+Текущий код W5: `f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a`, 2026-11-09.
+Исторические снимки W3–W4/R03 сохранены; три агентных ревью приняли ограниченный W5.
 Актуальные статусы полного остатка — [STATUS.json](../continuation/STATUS.json),
 назначения следующей работы — [TASKS.json](TASKS.json). Пути ниже относительно
 корня Git, если явно не указан **HANDOFF**. Смещения `+14/+48/+50` здесь hex.
@@ -13,16 +14,19 @@
 
 Для каждого модуля есть `.hpp` в `continuation/include/rage/`, `.cpp` в
 `continuation/src/` и `test_<module>.cpp` в `continuation/tests/`.
-Все шесть — **C++17**, с явно переданными внешними observations.
+Все девять — **C++17**, с явно переданными внешними observations.
 
 | Модуль | Реализованный ограниченный контракт | Доказательства/контракт |
 |---|---|---|
 | [position_records](../continuation/src/position_records.cpp) | N размером 0x74, 2048 записей; update/snapshot, reader, item gate | [SOURCE_MAP](../continuation/evidence/SOURCE_MAP.md), [anchors](../continuation/evidence/byte_anchors.json) |
-| [charge_state](../continuation/src/charge_state.cpp) | capacity, raw-byte branch, latch/counter gate, проекция reset трёх полей | [conditions](../continuation/evidence/gap03/condition_table.md), [reset](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |
+| [charge_state](../continuation/src/charge_state.cpp) | capacity, raw-byte branch, latch/counter gate, проекция reset трёх полей и отдельный 11-store snapshot | [conditions](../continuation/evidence/gap03/condition_table.md), [reset](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |
 | [position_lifecycle](../continuation/src/position_lifecycle.cpp) | N+48 producer, условный actor-consumer, optional N+50 output | [lifecycle](../continuation/evidence/gap05/position_lifecycle.json), [optional output](../continuation/evidence/wave2/gap05/README.md) |
 | [resolved_scalar_helper](../continuation/src/resolved_scalar_helper.cpp) | float-helper 0x41C784B0 с явным fallback | [scalar contract](../continuation/evidence/wave2/gap04/contract.md) |
 | [marker_pipeline](../continuation/src/marker_pipeline.cpp) | N+50/+54 helper calls → N+48 producer | [composition](../continuation/evidence/wave3/marker/composition.json), [W3 spec](../continuation/SPEC_NEXT.md) |
 | [actor_scalar_pipeline](../continuation/src/actor_scalar_pipeline.cpp) | независимые X/Y/Z observations; pure resolver, не решает guards | [provenance](../continuation/evidence/wave3/actor/provenance.json) |
+| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Прямой +1C=2/3 score-prefix, отдельная запись T+F0 | [контракт](../continuation/evidence/wave5/aggregate/contract.json) |
+| [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
+| [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
 
 Дополнительный `test_position_pipeline.cpp` проверяет связки. Успешные тесты
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное
@@ -32,17 +36,17 @@
 
 | Полный ID | Состояние | Точная граница / куда смотреть |
 |---|---|---|
-| CODE01 | partial | Агрегация/выбор цели не реализованы; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
+| CODE01 | partial | Прямой score-prefix/T+F0 реализован; остальные ветви и полный выбор цели открыты; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
 | GAP01 | open | Первые положительные источники Point+26, T+F4, G425009BC; [W1](../continuation/evidence/gap01/RESULTS.md), [W2](../continuation/evidence/wave2/gap01/results.json) |
 | GAP02 | open | Типизированный T+68 consumer, связь того же T, сравнения, ветви и действия; [inventory](../continuation/evidence/wave2/gap02/README.md) |
-| GAP03 | partial | Полный автомат/entry predicate reset, остальные stores, реальное расписание; [reset contract](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |
+| GAP03 | partial | Полный автомат/entry predicate reset, смыслы дополнительных полей, реальное расписание; [reset contract](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |
 | GAP04 | open | Fallback/tolerance providers, runtime bindings, entity/weapon resolution, TLS/FS guards; [bindings](../continuation/evidence/gap04/README.md) |
 | GAP05 | partial | Upstream seeds, P/P+0, cross-call identity, полный lifecycle, формат сообщений/sender; [N+14 frontier](../continuation/evidence/wave3/source/README.md) |
 | GAP06 | partial | 12 historical-only H01, полный протокол и внешний аудит; [dispositions](../continuation/evidence/wave2/gap06/README.md) |
 
 Остаются также непрозрачный dispatch, exceptional paths, handler индекса вне
-поддержанного диапазона, остальные режимы/consumers. Не все области конечной
-цели уже имеют восстановленную карту: R01 в новом плане должен её систематизировать.
+поддержанного диапазона, остальные режимы/consumers. [Карта W5](../continuation/evidence/wave5/scope/coverage.json) содержит 24 области
+исправленной цели; это не полный call graph и не закрытие неизвестных зависимостей.
 
 **Не смешивать объекты:** N+68 — тип снимка N, не порог T+68. Point, T, N и P
 не становятся одним объектом из-за совпадающего смещения или глобального адреса.
@@ -50,7 +54,7 @@
 это не доказывает происхождение/положительность значения или равенство N между вызовами.
 Исследование этой границы не расширять без нового конкретного байтового основания.
 
-## Новая ограниченная граница R03
+## Историческая ограниченная граница R03 до W5
 
 [Контракт](../continuation/evidence/next/scalar-provider/contract.md) и
 [verifier](../continuation/evidence/next/scalar-provider/verify_fallback_provider.py)
@@ -62,6 +66,16 @@
 новое тело функции Ragebot не добавлено. Свежие проверки и fixed-SHA review:
 [verification](../continuation/evidence/next/scalar-provider-review/verification.json),
 [acceptance](../continuation/evidence/next/scalar-provider-review/acceptance.json).
+
+## Уточнения W5
+
+[Итоговая таблица](../continuation/evidence/wave5/README.md) разделяет код,
+статические условные связи и frontier. ESI save/restore доказан для локального
+обычного эпилога при явных nested-call/stack предпосылках; snapshot dispatch
+и кандидат инициализации +24 не устанавливают runtime provider, lifetime или
+writer-before-read. P/tolerance остаётся blocked. Полный локальный reset означает только
+11 локальных zero stores, не полный автомат. Новый pefile leaf не заменяет
+исходный H01 producer, остальные 11 gates или внешний аудит.
 
 ## Исходный handoff — не потерян и не заменён новыми отчётами
 

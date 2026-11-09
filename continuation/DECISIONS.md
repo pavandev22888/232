@@ -110,3 +110,27 @@
   без blockers, повторил полный check и целостность. Его замечание F01
   закрыто записью результата/остатка в registry, не ослаблением критериев.
   Новое тело алгоритма в этой волне не добавлено, исходники/DLL не исполнялись.
+
+## 2026-11-09 — W5: ограниченная реконструкция и независимая приёмка
+
+- 16 назначений `gpt-6.1-sol` изолированы по worktree/write paths; ledger
+  сохраняет исходные и интегрированные SHA. Три независимых рецензента приняли
+  `f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a` без blockers. Агентное ревью
+  не заменяет внешний аудит; дальнейшие изменения — отчёты и общие документы.
+- Добавлены direct score-prefix/отдельный T+F0 finalizer, 11-store reset snapshot,
+  quarter-decay seed и parser ограниченных полей. Существующие API сохранены.
+  Не добавлены фиктивные providers, полный selector, scheduling или sender.
+- Условные связи Point/T/N/P, ESI, snapshot dispatch и +24 initializer не
+  объявляются runtime binding/identity/lifetime. Отрицательный P/tolerance
+  результат — prerequisite stop, не доказательство отсутствия writers.
+- Карта содержит 24 области и 39 source pins. PE32/i386 и RTTI-подобный marker
+  не устанавливают исходный язык всего контура; обязательный C17-порт отменён.
+- Свежий pefile resource leaf №5 не восстанавливает old H01 producer/protocol.
+  47 archival dispositions, включая 12 historical-only, не переписаны.
+- Координаторский полный check: 10 программ, 23 354 assertions на каждый
+  native/sanitizer режим, 13 Python-тестов; целостность 960/64 087 и шести ZIP
+  подтверждена. Точные команды/хеши — `evidence/wave5/verification.json`.
+  Оригинальные DLL не загружались, не исполнялись и не эмулировались.
+- R01/R05/V01 и W5-карточки done только в пределах их bounded deliverable.
+  Полные CODE01/GAP01–GAP06 остаются open/partial; R02/R03/R04 blocked.
+  PR #1 остаётся без merge, очереди и auto-merge.

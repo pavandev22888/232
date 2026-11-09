@@ -1,0 +1,86 @@
+W5 coordinator verification excerpt (not the complete log)
+reviewed_code_sha=f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+check_head=238cdcb14f05ad86253ee909fc379a40947d739d
+Code/tests/Makefile match fixed reviewed SHA; final documentation was uncommitted at check time.
+
+$ make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+full_log_sha256=f050990a1ff92eec20ef689e3f62d0b3ba2da1fa26f6b8242d9d10a2237ccd4d
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+exit_code=0
+full_log_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+exit_code=0
+full_log_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+
+--- native/sanitizer excerpt ---
+make: Entering directory '/tmp/hoplite/workspace/continuation'
+RUN build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation
+64 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state
+PASS: 3490 charge-state checks
+RUN build/test_lifecycle_seed_slice
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation_sanitize
+64 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields_sanitize
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state_sanitize
+PASS: 3490 charge-state checks
+RUN build/test_lifecycle_seed_slice_sanitize
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+
+--- Python unit test summaries ---
+Ran 8 tests in 0.004s
+OK
+Ran 5 tests in 0.004s
+OK
+
+--- final integrity outputs ---
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+Six source ZIPs also match the baseline Git blobs; hashes are in verification.json.
+
+--- independent agent reviews ---
+W5-REVIEW-CODE: accept_with_explicit_frontiers; no blocking findings; fixed SHA f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+W5-REVIEW-EVIDENCE: bounded_acceptance; no blocking findings; fixed SHA f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+W5-REVIEW-PROVIDERS: bounded_acceptance; no blocking findings; fixed SHA f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+
+Not full original equivalence, original-language proof, runtime binding proof or external audit.
+No original DLL loading, execution or emulation.
