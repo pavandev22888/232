@@ -1552,6 +1552,25 @@
         "Fixed integrated SHA independent review."
       ],
       "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure."
+    },
+    {
+      "id": "NEXT-REVIEW-CALLBACK",
+      "owner": "review-callback",
+      "status": "in_progress",
+      "base_commit": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+      "worktree": "/tmp/hoplite/232-review-callback",
+      "branch": "hoplite/sikyon-46eee495--review-callback",
+      "write_paths": [
+        "continuation/evidence/wave6/review-callback/"
+      ],
+      "dependencies": [
+        "NEXT-AGGREGATE"
+      ],
+      "acceptance": [
+        "Independent read-only code and evidence review of integrated fixed SHA; fresh focused native/sanitizer/byte checks.",
+        "Check counter state before unresolved, arithmetic gates, MAXSS/UCOMISS NaNs/±0, raw copy and no invented ranking/provider."
+      ],
+      "stop_condition": "Report findings and exact reviewed SHA. No code edits, no external audit claim."
     }
   ],
   "goal_correction": {
