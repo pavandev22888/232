@@ -108,7 +108,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "C01 C17 scalar helper and R01 transitive scope map are assigned in isolated worktrees. These limited tasks do not close GAP04/CODE01/GAP02 or complete the Ragebot.",
+  "next_task": "L01: static original-language provenance audit. C17 is not the approved target; preserve existing C++17 model and isolated C01/R01 work without integrating them.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -226,12 +226,13 @@
     "publication_policy": "Existing PR #1; no merge or merge queue; auto-merge disabled"
   },
   "project_goal": {
-    "description": "Full original Ragebot and necessary transitive dependencies in readable C.",
-    "target_language": "C17",
+    "description": "Full original Ragebot and necessary dependencies in the original language; identify that language first.",
+    "target_language": "unknown / pending evidence",
     "current_root_implementation_language": "C++17",
-    "c17_port_started": false,
     "specification": "docs/GOAL.md",
-    "paths_relative_to": "repository root"
+    "paths_relative_to": "repository root",
+    "original_language": "unknown / pending evidence",
+    "c17_experiment": "C01 result in isolated branch, not integrated; further ports paused pending language evidence."
   },
   "agent_handoff": {
     "entrypoint": "README.md",
