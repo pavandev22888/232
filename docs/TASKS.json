@@ -2170,7 +2170,7 @@
     {
       "id": "W8-REVIEW-FLOW",
       "owner": "w8-review-flow",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
       "worktree": "/tmp/hoplite/232-w8-review-flow",
       "branch": "hoplite/tanagra-adb72df5--w8-review-flow",
@@ -2182,12 +2182,13 @@
         "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
         "Report blocking findings or bounded acceptance; never edit reviewed code."
       ],
-      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately."
     },
     {
       "id": "W8-REVIEW-STATE",
       "owner": "w8-review-state",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
       "worktree": "/tmp/hoplite/232-w8-review-state",
       "branch": "hoplite/tanagra-adb72df5--w8-review-state",
@@ -2199,12 +2200,13 @@
         "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
         "Report blocking findings or bounded acceptance; never edit reviewed code."
       ],
-      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately."
     },
     {
       "id": "W8-REVIEW-EVIDENCE",
       "owner": "w8-review-evidence",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
       "worktree": "/tmp/hoplite/232-w8-review-evidence",
       "branch": "hoplite/tanagra-adb72df5--w8-review-evidence",
@@ -2216,12 +2218,13 @@
         "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
         "Report blocking findings or bounded acceptance; never edit reviewed code."
       ],
-      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately."
     },
     {
       "id": "W8-ANGLE",
       "owner": "w8-angle",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
       "worktree": "/tmp/hoplite/232-w8-angle",
       "branch": "hoplite/tanagra-adb72df5--w8-angle",
@@ -2241,7 +2244,7 @@
     {
       "id": "W8-SHOT",
       "owner": "w8-shot",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
       "worktree": "/tmp/hoplite/232-w8-shot",
       "branch": "hoplite/tanagra-adb72df5--w8-shot",
@@ -2261,7 +2264,7 @@
     {
       "id": "W8-QUEUE",
       "owner": "w8-queue",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
       "worktree": "/tmp/hoplite/232-w8-queue",
       "branch": "hoplite/tanagra-adb72df5--w8-queue",
@@ -2277,6 +2280,57 @@
         "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
       ],
       "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits."
+    },
+    {
+      "id": "W8-FINAL-FLOW",
+      "owner": "w8-review-flow",
+      "status": "in_progress",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-flow",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-flow",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-flow/"
+      ],
+      "scope": "Review angle tail and coordinator damage MXCSR fix, unity/LTO regression and preserved prior flow contracts. No broad new reconstruction.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge."
+    },
+    {
+      "id": "W8-FINAL-STATE",
+      "owner": "w8-review-state",
+      "status": "in_progress",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-state",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-state",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-state/"
+      ],
+      "scope": "Review integrated history growth and shot raw index/store/postcall slice; exact widths, bounds, cursor distinction, postcall identity and stop boundaries.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge."
+    },
+    {
+      "id": "W8-FINAL-EVIDENCE",
+      "owner": "w8-review-evidence",
+      "status": "in_progress",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-evidence",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-evidence",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-evidence/"
+      ],
+      "scope": "Review integrated queue capture/task/worker snapshot chain, lifecycle/frontiers and all four new history/shot/angle/queue source gates; no implied scheduler or complete language/ABI.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge."
     }
   ],
   "goal_correction": {
