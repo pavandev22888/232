@@ -1408,7 +1408,7 @@
     {
       "id": "NEXT-AGGREGATE",
       "owner": "primary-coordinator",
-      "status": "in_review",
+      "status": "done",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1429,12 +1429,15 @@
       ],
       "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
       "result_commit": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
-      "remaining_frontier": "Settings provider, unknown index handler 4149EC2D and ranking for nonzero C0; whole callback remains partial."
+      "remaining_frontier": "Settings provider, unknown index handler 4149EC2D and ranking for nonzero C0; whole callback remains partial.",
+      "acceptance_result": "Accepted only the declared bounded contract after fixed-SHA code/evidence review, resolutions and fresh coordinator gate; remaining_frontier and full GAP stay open.",
+      "reviewed_code_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "verification": "continuation/evidence/wave6/verification.json"
     },
     {
       "id": "NEXT-RESET",
       "owner": "next-reset",
-      "status": "in_review",
+      "status": "done",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-reset",
       "branch": "hoplite/sikyon-46eee495--next-reset",
@@ -1464,7 +1467,10 @@
         "c5e496f"
       ],
       "result": "Local ADD/CMP/JNE and existing 11-store projection. Fresh full-encoding byte gate and native/sanitizer tests exit 0; initial failure preserved.",
-      "remaining_frontier": "EAX provenance, full entry predicate, loop effects, four fallthrough-prefix stores and scheduling not reconstructed."
+      "remaining_frontier": "EAX provenance, full entry predicate, loop effects, four fallthrough-prefix stores and scheduling not reconstructed.",
+      "acceptance_result": "Accepted only the declared bounded contract after fixed-SHA code/evidence review, resolutions and fresh coordinator gate; remaining_frontier and full GAP stay open.",
+      "reviewed_code_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "verification": "continuation/evidence/wave6/verification.json"
     },
     {
       "id": "NEXT-MESSAGE",
@@ -1493,7 +1499,8 @@
       "result_commit": "8faa0257be3ac7cf1f6c41a63eec98baf7c1875a",
       "integrated_commit": "a63b998421707648b86a7aeb176f93d91aba05c3",
       "completion_scope": "Fresh caller conditions/raw arguments and callee frontier only; no justified consumer body. Independent evidence review pending.",
-      "blocker": "FS-derived guard, unequal EDI jump, equal-edge runtime dereference 0x5325D3E8 outside nl.bin then indirect [eax+30]; semantic argument identity and provider effects unknown."
+      "blocker": "FS-derived guard, unequal EDI jump, equal-edge runtime dereference 0x5325D3E8 outside nl.bin then indirect [eax+30]; semantic argument identity and provider effects unknown.",
+      "evidence_review": "Bounded static frontier accepted by fixed-SHA evidence review; implementation remains blocked by the recorded runtime/provider prerequisite."
     },
     {
       "id": "NEXT-DAMAGE",
@@ -1547,12 +1554,13 @@
       "result_commit": "b9be3bd9bc5987ee08c65e12ddc20e622e3bd27d",
       "integrated_commit": "1215d91",
       "result": "Caller/input-output byte frontier recorded; no C++ geometry body. Static gate exit 0 after integration.",
-      "remaining_frontier": "0x289A6D60 provider/runtime base/ABI unresolved; preferred candidates 0x10876D60 and 0x103E6D60 remain separate."
+      "remaining_frontier": "0x289A6D60 provider/runtime base/ABI unresolved; preferred candidates 0x10876D60 and 0x103E6D60 remain separate.",
+      "evidence_review": "Bounded static frontier accepted by fixed-SHA evidence review; implementation remains blocked by the recorded runtime/provider prerequisite."
     },
     {
       "id": "NEXT-HISTORY",
       "owner": "next-history",
-      "status": "in_review",
+      "status": "done",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-history",
       "branch": "hoplite/sikyon-46eee495--next-history",
@@ -1577,7 +1585,10 @@
         "46c1738e9c483c9852f7cecefc10c05f0371d140"
       ],
       "result": "21 ordered record word copies, one independently observed local DWORD encoded little-endian, one zero store. Focused byte/native/sanitizer checks passed (22 assertions per test).",
-      "remaining_frontier": "Suitability/identity/slot lifetime, helpers 413F88F0 and 41B70930, subsequent matrix path and full history selection unknown."
+      "remaining_frontier": "Suitability/identity/slot lifetime, helpers 413F88F0 and 41B70930, subsequent matrix path and full history selection unknown.",
+      "acceptance_result": "Accepted only the declared bounded contract after fixed-SHA code/evidence review, resolutions and fresh coordinator gate; remaining_frontier and full GAP stay open.",
+      "reviewed_code_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "verification": "continuation/evidence/wave6/verification.json"
     },
     {
       "id": "NEXT-REVIEW-CALLBACK",
@@ -1605,7 +1616,7 @@
     {
       "id": "NEXT-MODES",
       "owner": "primary-coordinator",
-      "status": "in_review",
+      "status": "done",
       "base_commit": "553d2292393c2bb90283fd08dcd4150453a950a0",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1626,12 +1637,15 @@
       ],
       "stop_condition": "Stop at unproved helper/indirect call and pointer binding; no full DT/HS state machine claim.",
       "result_commit": "47af79a",
-      "remaining_frontier": "Independent post-call observations only; helpers, indirect dispatch, pointee identity, full state machine and scheduling unknown."
+      "remaining_frontier": "Independent post-call observations only; helpers, indirect dispatch, pointee identity, full state machine and scheduling unknown.",
+      "acceptance_result": "Accepted only the declared bounded contract after fixed-SHA code/evidence review, resolutions and fresh coordinator gate; remaining_frontier and full GAP stay open.",
+      "reviewed_code_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "verification": "continuation/evidence/wave6/verification.json"
     },
     {
       "id": "W6-REVIEW-CODE",
       "owner": "w6-review-code",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "d99dd375160c7fccfd489598942232430d78da2f",
       "worktree": "/tmp/hoplite/232-w6-review-code",
       "branch": "hoplite/sikyon-46eee495--w6-review-code",
@@ -1651,12 +1665,17 @@
         "Independent fixed-SHA source review and fresh commands/exit codes",
         "No full GAP/original-language/external-audit claim"
       ],
-      "stop_condition": "Commit report only; report actionable blockers, no source edits or push."
+      "stop_condition": "Commit report only; report actionable blockers, no source edits or push.",
+      "result": "Review completed; sole W6RC-001 finding withdrawn after checking independent memcpy calls. No code/test change required; no remaining bounded blocker.",
+      "reports": [
+        "continuation/evidence/wave6/review-integrated-code/report.json",
+        "continuation/evidence/wave6/review-integrated-code/resolution.json"
+      ]
     },
     {
       "id": "W6-REVIEW-EVIDENCE",
       "owner": "w6-review-evidence",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "d99dd375160c7fccfd489598942232430d78da2f",
       "worktree": "/tmp/hoplite/232-w6-review-evidence",
       "branch": "hoplite/sikyon-46eee495--w6-review-evidence",
@@ -1679,7 +1698,7 @@
       "stop_condition": "Commit report only; report actionable blockers, no source edits or push.",
       "followup_review": {
         "owner": "w6-review-evidence",
-        "status": "in_progress",
+        "status": "done",
         "base_commit": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
         "worktree": "/tmp/hoplite/232-w6-review-evidence-followup",
         "branch": "hoplite/sikyon-46eee495--w6-review-evidence-followup",
@@ -1687,8 +1706,17 @@
           "continuation/evidence/wave6/review-integrated-evidence/followup/"
         ],
         "scope": "Independently verify F1 history DWORD read/store correction and unchanged W6 code/tests/gates versus d99dd375160c7fccfd489598942232430d78da2f. Fresh history byte gate and objdump, no whole-GAP acceptance.",
-        "stop_condition": "Commit only followup report/logs with exact SHA, commands, exits and hashes; no implementation edits, push or merge."
-      }
+        "stop_condition": "Commit only followup report/logs with exact SHA, commands, exits and hashes; no implementation edits, push or merge.",
+        "report": "continuation/evidence/wave6/review-integrated-evidence/followup/report.json",
+        "source_commit": "ae86187b42f2a9a5b2aee3e96460ade7ca1b1916",
+        "integrated_commit": "4c513fc1d3c894bd5613b647ebd870f6bf400791",
+        "result": "F1 resolved; implementation/tests/Makefile/six static gates unchanged versus d99dd375."
+      },
+      "result": "Six gates and integrity passed at fixed integrated SHA; F1 history-address documentation corrected and independently verified at c8a78c9. No remaining bounded evidence blocker.",
+      "reports": [
+        "continuation/evidence/wave6/review-integrated-evidence/report.json",
+        "continuation/evidence/wave6/review-integrated-evidence/followup/report.json"
+      ]
     }
   ],
   "goal_correction": {
@@ -1724,8 +1752,12 @@
     "coordinator": "primary-coordinator",
     "ownership_check": "Only current thread visible; existing registry has 22 done / 9 blocked, no active tasks; clean current checkout.",
     "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "status": "in_review",
+    "status": "accepted_bounded_scope",
     "full_tasks_closed": [],
-    "review_base_commit": "d99dd375160c7fccfd489598942232430d78da2f"
+    "review_base_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+    "corrected_documentation_review_commit": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+    "fresh_gate_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "report": "continuation/evidence/wave6/verification.json",
+    "blocking_review_findings": 0
   }
 }

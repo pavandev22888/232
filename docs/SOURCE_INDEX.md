@@ -1,7 +1,9 @@
 # Карта материалов и текущего знания
 
-Текущий код W5: `f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a`, 2026-11-09.
-Исторические снимки W3–W4/R03 сохранены; три агентных ревью приняли ограниченный W5.
+Текущий интегрированный код W6: `d99dd375160c7fccfd489598942232430d78da2f`.
+Ограниченные контракты приняты после независимых fixed-SHA ревью; поправка
+документации отдельно проверена на `c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653`.
+Исторические снимки W3–W5/R03 и исходные замечания сохранены.
 Актуальные статусы полного остатка — [STATUS.json](../continuation/STATUS.json),
 назначения следующей работы — [TASKS.json](TASKS.json). Пути ниже относительно
 корня Git, если явно не указан **HANDOFF**. Смещения `+14/+48/+50` здесь hex.
@@ -24,7 +26,7 @@
 | [resolved_scalar_helper](../continuation/src/resolved_scalar_helper.cpp) | float-helper 0x41C784B0 с явным fallback | [scalar contract](../continuation/evidence/wave2/gap04/contract.md) |
 | [marker_pipeline](../continuation/src/marker_pipeline.cpp) | N+50/+54 helper calls → N+48 producer | [composition](../continuation/evidence/wave3/marker/composition.json), [W3 spec](../continuation/SPEC_NEXT.md) |
 | [actor_scalar_pipeline](../continuation/src/actor_scalar_pipeline.cpp) | независимые X/Y/Z observations; pure resolver, не решает guards | [provenance](../continuation/evidence/wave3/actor/provenance.json) |
-| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, отдельная запись T+F0; tail statistics и initial copy при C0=0 | [контракт](../continuation/evidence/wave5/aggregate/contract.json) |
+| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, отдельная запись T+F0; tail statistics и initial copy при C0=0 | [W5](../continuation/evidence/wave5/aggregate/contract.json), [W6](../continuation/evidence/wave6/aggregate/contract.json) |
 | [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
 | [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
 | [release_state_slice](../continuation/src/release_state_slice.cpp) | Отдельные post-call observations, latch stores и условный DWORD increment; не автомат DT/HS | [контракт W6](../continuation/evidence/wave6/modes/contract.json) |
@@ -35,7 +37,7 @@
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное
 сохранение N при `unresolved` — соглашение офлайн API, не доказанный rollback оригинала.
 
-## Продолжение W6 (приёмка ещё не завершена)
+## W6: принятые ограниченные контракты и открытые зависимости
 
 Новый [контракт callback](../continuation/evidence/wave6/aggregate/contract.json)
 сохраняет старые direct/F0 API и increment до non-direct ветви, не подставляет
@@ -46,8 +48,17 @@ settings providers и index handler. Реализованы statistics stores и
 локальные ветви/записи `415E01A0..415E0201` с отдельными observations после
 helper и indirect call: [контракт](../continuation/evidence/wave6/modes/contract.json).
 Это не полный автомат DT/HS; сохранность globals через вызовы не предполагается.
-Источники, hashes/bytes и свежие команды находятся в W6 evidence; финальная
-приёмка фиксированного интегрированного SHA отражается в STATUS/TASKS.
+Источники, hashes/bytes, решения по ревью и свежие команды — в
+[W6 verification](../continuation/evidence/wave6/verification.json). Координаторский
+полный gate на `b869125873217d955cf56788219fc7e2879b17f4` прошёл с exit 0.
+Проверка окончательного публикуемого SHA фиксируется отдельно в PR #1.
+
+History F1 исправлен: чтение `[ebp-0x38]` — `0x413F71A1`, запись в `+0x3C` —
+`0x413F71A4`; `0x413F7102` загружает указатель `[ebp-0x28]`.
+[Независимый follow-up](../continuation/evidence/wave6/review-integrated-evidence/followup/report.json)
+подтвердил поправку без изменения кода/тестов. Ошибочные callback/overlap замечания
+отозваны отдельными resolutions, исходные отчёты не переписаны. Message/geometry
+остаются static frontiers без providers; damage не получил реализации или новых доказательств.
 
 ## Что остаётся открытым
 

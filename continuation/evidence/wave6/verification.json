@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_independent_review",
+  "status": "accepted_bounded_scope",
   "baseline_head": "180616d1227235fc952ad07202cdd7529c0272e8",
   "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
   "restoration": {
@@ -299,12 +299,21 @@
     "h01_strict_old_protocol_repeated": false
   },
   "final_independent_reviews": {
-    "status": "in_progress",
+    "status": "accepted_bounded_scope_with_explicit_frontiers",
     "code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+    "corrected_documentation_sha": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
     "report_paths": [
       "review-integrated-code/report.json",
-      "review-integrated-evidence/report.json"
-    ]
+      "review-integrated-code/resolution.json",
+      "review-integrated-evidence/report.json",
+      "review-integrated-evidence/followup/report.json"
+    ],
+    "blocking_findings_remaining": 0,
+    "external_audit": false,
+    "code_finding": "W6RC-001 withdrawn by its reviewer: two distinct memcpy calls through a local word; source/tests unchanged.",
+    "evidence_finding": "F1 corrected in documentation only and independently verified on corrected_documentation_sha.",
+    "followup_source_commit": "ae86187b42f2a9a5b2aee3e96460ade7ca1b1916",
+    "followup_integration_commit": "4c513fc1d3c894bd5613b647ebd870f6bf400791"
   },
   "tools": {
     "python3": "Python 3.12.3",
@@ -315,8 +324,8 @@
   },
   "sanitized_log": {
     "path": "verification.log",
-    "sha256": "72b0d37c4e78bc2763abb8510a4a8930474834a13228f6735e52bb4d8fd5236a",
-    "scope": "Selected fresh outputs, not the complete raw check log."
+    "sha256": "fadcbdbcfb658e35c541f1df040b94bfc256ecc4b4c9cdde5e4d8bc6e34da129",
+    "scope": "Selected outputs from historical integrated gate and the separately labeled fresh post-correction candidate gate; not complete raw logs."
   },
   "review_corrections": [
     {
@@ -329,7 +338,80 @@
       "result": "Corrected history local DWORD read address to 413F71A1; store at 413F71A4, not source-pointer load at 413F7102",
       "code_tests_changed": false,
       "coordinator_history_gate_exit": 0,
-      "coordinator_fresh_objdump_exit": 0
+      "coordinator_fresh_objdump_exit": 0,
+      "independent_followup": "review-integrated-evidence/followup/report.json",
+      "reviewed_sha": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+      "status": "resolved"
     }
-  ]
+  ],
+  "fresh_candidate_gate": {
+    "tested_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "started_at": "2026-11-09T17:13:56.056050+00:00",
+    "working_tree_clean_at_start": true,
+    "commands": [
+      {
+        "name": "check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/check.log",
+        "log_sha256": "dd4f7b1eefce182e96e44e5b9c17a6e6f8fdf8b6f232777602da0ee57a3068f3"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T17:14:25.257564+00:00",
+    "working_tree_clean_at_end": true,
+    "scope": "Fresh complete gate after history address correction, on a clean fixed HEAD. Later acceptance/report-only changes require the separate clean publication-head gate recorded in PR #1.",
+    "implementation_tests_makefile_static_verifiers_unchanged_since": "d99dd375160c7fccfd489598942232430d78da2f"
+  },
+  "acceptance": {
+    "scope": "Only bounded callback gates/tail stores, reset predecessor, separate release observations and ordered history stores; message and geometry static frontiers accepted as evidence, not implemented providers.",
+    "fresh_gate": "fresh_candidate_gate",
+    "tested_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "later_changes": "Follow-up review artifacts and coordinator acceptance/status documents only. Publication HEAD must pass the same four commands again; its exact SHA, exit codes and log hashes are recorded in PR #1 to avoid a self-referential verification commit.",
+    "publication_receipt": "https://github.com/pavandev22888/232/pull/1",
+    "damage": "No implementation, tests or new source evidence; assignment remains unperformed.",
+    "full_tasks_closed": [],
+    "original_language_abi_established": false,
+    "external_audit": false
+  }
 }

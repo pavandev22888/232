@@ -172,3 +172,21 @@
   не изменялся. Это не подменяет финальное интеграционное ревью.
 - NEXT-DAMAGE не имеет кода, тестов или нового source evidence; невыполненное
   задание не объявляется доказательством неразрешимости исходников.
+
+## 2026-11-09 — W6: ограниченная приёмка и исправления ревью
+
+- Fixed-SHA code/evidence review выполнены на `d99dd375160c7fccfd489598942232430d78da2f`.
+  W6RC-001 отозван автором: локальный `word` разделяет два `memcpy`;
+  исходный отчёт сохранён отдельно, код и тесты не менялись.
+- Evidence F1 исправляет только адрес: `[ebp-0x38]` читается в `0x413F71A1`,
+  store в `+0x3C` — `0x413F71A4`, не source-pointer load `0x413F7102`.
+  Независимый follow-up на `c8a78c9` подтвердил байты и неизменность реализации.
+- Свежий чистый `b869125` прошёл `make check`, bundle, integrity и `git diff --check`
+  с exit 0. Точные команды/хеши и старый `d99dd37` прогон разведены в W6 ledger.
+  Публикуемый HEAD проверяется заново после metadata-коммита; receipt — в PR #1.
+- Приняты только callback gates/tail, reset predecessor, отдельные release
+  observations и history stores. Message/geometry — принятые static frontiers,
+  не providers. Damage по-прежнему не имеет реализации или новых доказательств.
+- Done в bounded-карточках не закрывает CODE01/GAP01–GAP06; язык/ABI оригинала,
+  runtime bindings, полный H01 protocol и внешний аудит не установлены.
+  PR остаётся только для просмотра: без merge, очереди и auto-merge.

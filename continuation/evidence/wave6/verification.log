@@ -99,3 +99,94 @@ Integrity: {
 }
 
 No originals loaded, executed or emulated; no full reconstruction or external-audit claim.
+
+
+=== Fresh post-correction candidate gate ===
+TESTED_HEAD: b869125873217d955cf56788219fc7e2879b17f4
+CLEAN_AT_START_AND_END: true
+COMMAND: make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT_CODE: 0
+FULL_LOG: runs/w6/fresh-candidate/check.log
+FULL_LOG_SHA256: dd4f7b1eefce182e96e44e5b9c17a6e6f8fdf8b6f232777602da0ee57a3068f3
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+EXIT_CODE: 0
+FULL_LOG: runs/w6/fresh-candidate/bundle.log
+FULL_LOG_SHA256: e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+EXIT_CODE: 0
+FULL_LOG: runs/w6/fresh-candidate/integrity.log
+FULL_LOG_SHA256: 3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+COMMAND: git diff --check
+EXIT_CODE: 0
+FULL_LOG: runs/w6/fresh-candidate/diff-check.log
+FULL_LOG_SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+--- selected fresh outputs (not the full check log) ---
+RUN build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation
+16392 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state
+PASS: 3490 charge-state checks
+RUN build/test_history_slice
+PASS history slice: 22 assertions
+RUN build/test_lifecycle_seed_slice
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_release_state_slice
+21291 release-state assertions passed
+RUN build/test_reset_predecessor
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation_sanitize
+16392 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields_sanitize
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state_sanitize
+PASS: 3490 charge-state checks
+RUN build/test_history_slice_sanitize
+PASS history slice: 22 assertions
+RUN build/test_lifecycle_seed_slice_sanitize
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_release_state_slice_sanitize
+21291 release-state assertions passed
+RUN build/test_reset_predecessor_sanitize
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+Ran 8 tests in 0.002s
+Ran 5 tests in 0.003s
+--- bundle output ---
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+--- integrity output ---
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
