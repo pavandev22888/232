@@ -18,7 +18,7 @@ test: $(NATIVE_TESTS)
 
 sanitize: $(SANITIZED_TESTS)
 	@set -e; for test in $(SANITIZED_TESTS); do echo "RUN $$test"; \
-	  ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=halt_on_error=1 "$$test"; done
+	  ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$$test"; done
 
 evidence:
 	$(PYTHON) tests/verify_evidence.py --handoff "$(HANDOFF)"
@@ -35,6 +35,8 @@ evidence:
 	$(PYTHON) -B evidence/wave2/gap05/verify_optional_output.py --handoff "$(HANDOFF)"
 	$(PYTHON) -B evidence/wave2/gap06/verify_remaining_h01.py --handoff "$(HANDOFF)"
 	$(PYTHON) -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v
+	$(PYTHON) -B evidence/wave3/marker/verify_composition.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave3/source/verify_source.py --handoff "$(abspath $(HANDOFF))"
 
 $(BUILD):
 	mkdir -p $@
