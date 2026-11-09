@@ -1,0 +1,4547 @@
+{
+  "format": 1,
+  "task": "GAP02",
+  "wave": 2,
+  "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "repository_root": "/tmp/hoplite/workspace",
+  "restored_workspace": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+  "result": {
+    "classification": "bounded_archival_evidence_inventory_only",
+    "gap02_status": "open",
+    "consumer_implemented": false,
+    "gap_closed": false,
+    "new_feature_code": false,
+    "consumer_trace_performed": false,
+    "original_execution": false,
+    "original_loading_as_code": false,
+    "original_emulation": false,
+    "injection": false,
+    "game_connection": false,
+    "fresh_behavioral_check": false,
+    "new_disassembly": false,
+    "original_file_access": "read_only_hashing_and_existing_record_reads"
+  },
+  "scope": [
+    "Только уже сохранённые утверждения, якоря, proof inventories и их согласованность.",
+    "Без восстановления нового пути потребителя, выбора/оценки целей или логики наведения.",
+    "Найденные совпадения адресов/смещений не превращаются в доказательство идентичности объектов.",
+    "Полнота проверки ограничена перечисленным корпусом; отсутствие доказательства не выведено из неудачного поиска."
+  ],
+  "baseline_context": [
+    {
+      "path": "/tmp/hoplite/workspace/continuation/STATUS.json",
+      "repository_path": "continuation/STATUS.json",
+      "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+      "sha256": "dbfce27e37711c2a5194f61ea5b595248e70540aa414bb752b30260c65872826",
+      "bytes": 4882,
+      "scope": "pinned_git_blob_not_current_worktree"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/PLAN.md",
+      "repository_path": "continuation/PLAN.md",
+      "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+      "sha256": "eaab0b3cee3ec1aadb09bf4f722c61100bdcd60b38c3efffc18ddaded038b2f6",
+      "bytes": 5612,
+      "scope": "pinned_git_blob_not_current_worktree"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/README.md",
+      "repository_path": "continuation/README.md",
+      "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+      "sha256": "936cbc936461596807be11bef47d754c83afa1208619708b3ff4d0653f868836",
+      "bytes": 7232,
+      "scope": "pinned_git_blob_not_current_worktree"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/evidence/SOURCE_MAP.md",
+      "repository_path": "continuation/evidence/SOURCE_MAP.md",
+      "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+      "sha256": "b466b805f83abe89d869418d3533af097c8987d53f9b70c9c0d36a2175f349e2",
+      "bytes": 11410,
+      "scope": "pinned_git_blob_not_current_worktree"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/evidence/byte_anchors.json",
+      "repository_path": "continuation/evidence/byte_anchors.json",
+      "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+      "sha256": "1784806e32a2ae149eb7b463485a53691383f16c140f861a0eda81c4d40712ba",
+      "bytes": 66589,
+      "scope": "pinned_git_blob_not_current_worktree"
+    }
+  ],
+  "authoritative_records": [
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/remaining_gaps.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/remaining_gaps.json",
+      "selector": "/1",
+      "support_scope": "Явный архивный статус и требуемая цепочка доказательства GAP02."
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/facts.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/facts.json",
+      "selector": "/module_status/1",
+      "support_scope": "Заявленный локальный производитель и прямо незакрытый потребитель."
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "selector": "sections 2 and 11; lines 45-73,168-170",
+      "support_scope": "Архивная область утверждений о производителе; не свежая трассировка."
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "selector": "line 62",
+      "support_scope": "V9 сохраняет открытый статус T+68."
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Новые_связи_и_остаток_работы_V10.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Новые_связи_и_остаток_работы_V10.md",
+      "selector": "line 33",
+      "support_scope": "Прямое различение позиционной структуры N и порога T."
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/wide_threshold_candidates.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/wide_threshold_candidates.json",
+      "selector": "/0../132",
+      "support_scope": "Широкие синтаксические кандидаты, а не типизированный реестр потребителей."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ARCHIVED_T_PRODUCER",
+      "status": "archival_named_contract_with_local_operand_support",
+      "authority": "v8/facts.json",
+      "selector": "/module_status/1",
+      "anchor": "T_PRODUCER_LOCAL",
+      "supports_object_identity": "archival_T_label_only_not_fresh_alias_chain",
+      "limit": "Producer proof is not consumer proof; raw walk has legacy name point_finalizer."
+    },
+    {
+      "id": "ARCHIVED_N_SNAPSHOT",
+      "status": "separate_archival_object",
+      "anchor": "N_SNAPSHOT_LOCAL",
+      "authority": "v10/remaining_gaps.json",
+      "selector": "/1/plain",
+      "baseline_context": "continuation/evidence/SOURCE_MAP.md:35-49",
+      "supports_object_identity": "separate_N_attribution_no_N_equals_T_claim"
+    },
+    {
+      "id": "STACK_68",
+      "status": "stack_expression_only",
+      "candidate_classification": "stack_relative",
+      "supports_object_identity": false,
+      "limit": "ESP/EBP-relative operand is not a typed T field; no stack-to-T alias is established here."
+    },
+    {
+      "id": "UNTYPED_68",
+      "status": "operand_offset_or_overlap_only",
+      "candidate_classifications": [
+        "direct_68_untyped",
+        "wide_overlap_68_untyped",
+        "adjacent_not_covering_68"
+      ],
+      "supports_object_identity": false,
+      "limit": "Filename, same VA, offset, overlap and nearby context do not prove the same logical object."
+    },
+    {
+      "id": "HISTORICAL_PASS",
+      "status": "historical_static_and_own_model_results_not_replayed",
+      "supports_object_identity": false,
+      "limit": "Old PASS and model counts are archival assertions, not fresh original behavior or an independent audit."
+    },
+    {
+      "id": "CONSUMER_OPEN",
+      "status": "explicitly_open_in_archive_and_baseline",
+      "authority": "v10/remaining_gaps.json",
+      "selector": "/1",
+      "baseline_selector": "continuation/STATUS.json#/open_tasks/2",
+      "supports_object_identity": false,
+      "consumer_implemented": false,
+      "gap_closed": false
+    }
+  ],
+  "selected_anchors": [
+    {
+      "id": "T_PRODUCER_LOCAL",
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_settings_walk.json",
+      "pointer": "/instructions/194",
+      "record": {
+        "va": "0x4149e315",
+        "bytes": "894768",
+        "size": 3,
+        "instruction": "mov DWORD PTR [edi+0x68],eax"
+      },
+      "identity_status": "T+68_archival_attribution_not_fresh_alias_proof",
+      "supports": "Архивный V8 называет поле T+68. Запись подтверждает локальный DWORD-store; сама строка не доказывает происхождение EDI или потребителя.",
+      "does_not_support": [
+        "fresh_original_behavior",
+        "complete_T+68_consumer",
+        "cross_object_identity_from_equal_offset"
+      ]
+    },
+    {
+      "id": "N_SNAPSHOT_LOCAL",
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_update_with_tls_tails_walk.json",
+      "pointer": "/instructions/618",
+      "record": {
+        "va": "0x4150b5e4",
+        "bytes": "39443b68",
+        "size": 4,
+        "instruction": "cmp DWORD PTR [ebx+edi*1+0x68],eax"
+      },
+      "identity_status": "N+68_archival_attribution_not_T_threshold",
+      "supports": "В SOURCE_MAP на базовом коммите поле отнесено к типу снимка N; V10 прямо отделяет N+68 от T+68. Само сравнение не доказывает тождество N и T.",
+      "does_not_support": [
+        "fresh_original_behavior",
+        "complete_T+68_consumer",
+        "cross_object_identity_from_equal_offset"
+      ]
+    }
+  ],
+  "candidate_inventory": {
+    "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/wide_threshold_candidates.json",
+    "record_count": 133,
+    "source_walk_count": 27,
+    "context_record_count": 1197,
+    "unique_primary_address_bytes": 122,
+    "duplicate_primary_records": 11,
+    "classification_counts": {
+      "adjacent_not_covering_68": 3,
+      "direct_68_untyped": 5,
+      "stack_relative": 9,
+      "wide_overlap_68_untyped": 116
+    },
+    "typed_T_consumer_proofs_accepted": 0,
+    "scope_note": "Zero accepted proofs is an audit outcome for this bounded corpus, not proof that no consumer exists.",
+    "records": [
+      {
+        "archive_pointer": "/0",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/geometry_builder_walk.json",
+        "source_pointer": "/instructions/207",
+        "record": {
+          "va": "0x413527f3",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/1",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/geometry_builder_walk.json",
+        "source_pointer": "/instructions/209",
+        "record": {
+          "va": "0x413527fa",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/2",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_evaluator_walk.json",
+        "source_pointer": "/instructions/286",
+        "record": {
+          "va": "0x4149cd02",
+          "bytes": "0f136660",
+          "size": 4,
+          "instruction": "movlps QWORD PTR [esi+0x60],xmm4"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": false,
+        "classification": "adjacent_not_covering_68",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/3",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_manager_walk.json",
+        "source_pointer": "/instructions/57",
+        "record": {
+          "va": "0x413f8ba4",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/4",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_manager_walk.json",
+        "source_pointer": "/instructions/59",
+        "record": {
+          "va": "0x413f8bab",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/5",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/resolver_walk.json",
+        "source_pointer": "/instructions/473",
+        "record": {
+          "va": "0x413ff09a",
+          "bytes": "0f294e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/6",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/resolver_walk.json",
+        "source_pointer": "/instructions/478",
+        "record": {
+          "va": "0x413ff0ae",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/7",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/resolver_walk.json",
+        "source_pointer": "/instructions/485",
+        "record": {
+          "va": "0x413ff0cc",
+          "bytes": "0f284e60",
+          "size": 4,
+          "instruction": "movaps xmm1,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/8",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+        "source_pointer": "/instructions/257",
+        "record": {
+          "va": "0x414ade0e",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/9",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+        "source_pointer": "/instructions/305",
+        "record": {
+          "va": "0x414adef6",
+          "bytes": "0f135e68",
+          "size": 4,
+          "instruction": "movlps QWORD PTR [esi+0x68],xmm3"
+        },
+        "memory_expression": "esi+0x68",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "direct_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/10",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+        "source_pointer": "/instructions/394",
+        "record": {
+          "va": "0x414ae080",
+          "bytes": "f20f104e68",
+          "size": 5,
+          "instruction": "movsd xmm1,QWORD PTR [esi+0x68]"
+        },
+        "memory_expression": "esi+0x68",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "direct_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/11",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+        "source_pointer": "/instructions/482",
+        "record": {
+          "va": "0x414ae234",
+          "bytes": "0f104660",
+          "size": 4,
+          "instruction": "movups xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/12",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_finalizer_walk.json",
+        "source_pointer": "/instructions/227",
+        "record": {
+          "va": "0x41490bf5",
+          "bytes": "0f114c2468",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x68],xmm1"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/13",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_finalizer_walk.json",
+        "source_pointer": "/instructions/275",
+        "record": {
+          "va": "0x41490cae",
+          "bytes": "0f116c2468",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x68],xmm5"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/14",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_finalizer_walk.json",
+        "source_pointer": "/instructions/331",
+        "record": {
+          "va": "0x41490d9f",
+          "bytes": "0f105c2468",
+          "size": 5,
+          "instruction": "movups xmm3,XMMWORD PTR [esp+0x68]"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/15",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/zone_builder_walk.json",
+        "source_pointer": "/instructions/62",
+        "record": {
+          "va": "0x414f467e",
+          "bytes": "0f284c2460",
+          "size": 5,
+          "instruction": "movaps xmm1,XMMWORD PTR [esp+0x60]"
+        },
+        "memory_expression": "esp+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/16",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+        "source_pointer": "/instructions/384",
+        "record": {
+          "va": "0x41353795",
+          "bytes": "f30f7f4764",
+          "size": 5,
+          "instruction": "movdqu XMMWORD PTR [edi+0x64],xmm0"
+        },
+        "memory_expression": "edi+0x64",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/17",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+        "source_pointer": "/instructions/1911",
+        "record": {
+          "va": "0x413555af",
+          "bytes": "0f294e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/18",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+        "source_pointer": "/instructions/1916",
+        "record": {
+          "va": "0x413555c7",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/19",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+        "source_pointer": "/instructions/1924",
+        "record": {
+          "va": "0x413555e8",
+          "bytes": "0f284e60",
+          "size": 4,
+          "instruction": "movaps xmm1,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/20",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+        "source_pointer": "/instructions/1972",
+        "record": {
+          "va": "0x413556c5",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/21",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_record_builder_walk.json",
+        "source_pointer": "/instructions/205",
+        "record": {
+          "va": "0x413fa140",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/22",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_record_builder_walk.json",
+        "source_pointer": "/instructions/207",
+        "record": {
+          "va": "0x413fa147",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/23",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/182",
+        "record": {
+          "va": "0x4134e9a1",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/24",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/184",
+        "record": {
+          "va": "0x4134e9a8",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/25",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/527",
+        "record": {
+          "va": "0x4134ef27",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/26",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/529",
+        "record": {
+          "va": "0x4134ef2e",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/27",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/730",
+        "record": {
+          "va": "0x4134f29f",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/28",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/732",
+        "record": {
+          "va": "0x4134f2a6",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/29",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/861",
+        "record": {
+          "va": "0x4134f503",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/30",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/863",
+        "record": {
+          "va": "0x4134f50a",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/31",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1241",
+        "record": {
+          "va": "0x4134fb8b",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/32",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1243",
+        "record": {
+          "va": "0x4134fb92",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/33",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1532",
+        "record": {
+          "va": "0x4134ffe5",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/34",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1534",
+        "record": {
+          "va": "0x4134ffec",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/35",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1696",
+        "record": {
+          "va": "0x41350297",
+          "bytes": "df7a64",
+          "size": 3,
+          "instruction": "fistp QWORD PTR [edx+0x64]"
+        },
+        "memory_expression": "edx+0x64",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/36",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1758",
+        "record": {
+          "va": "0x413503c2",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/37",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+        "source_pointer": "/instructions/1760",
+        "record": {
+          "va": "0x413503c9",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/38",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_record_constructor_walk.json",
+        "source_pointer": "/instructions/49",
+        "record": {
+          "va": "0x413f8996",
+          "bytes": "0f114064",
+          "size": 4,
+          "instruction": "movups XMMWORD PTR [eax+0x64],xmm0"
+        },
+        "memory_expression": "eax+0x64",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/39",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/384",
+        "record": {
+          "va": "0x41353795",
+          "bytes": "f30f7f4764",
+          "size": 5,
+          "instruction": "movdqu XMMWORD PTR [edi+0x64],xmm0"
+        },
+        "memory_expression": "edi+0x64",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/40",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/1911",
+        "record": {
+          "va": "0x413555af",
+          "bytes": "0f294e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/41",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/1916",
+        "record": {
+          "va": "0x413555c7",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/42",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/1924",
+        "record": {
+          "va": "0x413555e8",
+          "bytes": "0f284e60",
+          "size": 4,
+          "instruction": "movaps xmm1,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/43",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/1972",
+        "record": {
+          "va": "0x413556c5",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/44",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/3630",
+        "record": {
+          "va": "0x41357996",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/45",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/3636",
+        "record": {
+          "va": "0x413579ae",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/46",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/4191",
+        "record": {
+          "va": "0x413585da",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/47",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/4304",
+        "record": {
+          "va": "0x413587d2",
+          "bytes": "0f294e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/48",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/4429",
+        "record": {
+          "va": "0x41358a22",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/49",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/4431",
+        "record": {
+          "va": "0x41358a2a",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/50",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/4474",
+        "record": {
+          "va": "0x41358b00",
+          "bytes": "0f594e60",
+          "size": 4,
+          "instruction": "mulps xmm1,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/51",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5147",
+        "record": {
+          "va": "0x4135976d",
+          "bytes": "0f104168",
+          "size": 4,
+          "instruction": "movups xmm0,XMMWORD PTR [ecx+0x68]"
+        },
+        "memory_expression": "ecx+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "direct_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/52",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5432",
+        "record": {
+          "va": "0x41359cce",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/53",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5502",
+        "record": {
+          "va": "0x41359e74",
+          "bytes": "0f114268",
+          "size": 4,
+          "instruction": "movups XMMWORD PTR [edx+0x68],xmm0"
+        },
+        "memory_expression": "edx+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "direct_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/54",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5628",
+        "record": {
+          "va": "0x4135a125",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/55",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5644",
+        "record": {
+          "va": "0x4135a164",
+          "bytes": "0f295660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm2"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/56",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5646",
+        "record": {
+          "va": "0x4135a16d",
+          "bytes": "0f285660",
+          "size": 4,
+          "instruction": "movaps xmm2,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/57",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5653",
+        "record": {
+          "va": "0x4135a192",
+          "bytes": "0f295660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm2"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/58",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5699",
+        "record": {
+          "va": "0x4135a266",
+          "bytes": "0f285660",
+          "size": 4,
+          "instruction": "movaps xmm2,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/59",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5786",
+        "record": {
+          "va": "0x4135a3c6",
+          "bytes": "0f294e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/60",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/5810",
+        "record": {
+          "va": "0x4135a42f",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/61",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6161",
+        "record": {
+          "va": "0x4135ab9a",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/62",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6168",
+        "record": {
+          "va": "0x4135abc2",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/63",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6182",
+        "record": {
+          "va": "0x4135abfc",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/64",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6427",
+        "record": {
+          "va": "0x4135b1a5",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/65",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6436",
+        "record": {
+          "va": "0x4135b1dd",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/66",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6452",
+        "record": {
+          "va": "0x4135b226",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/67",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/6605",
+        "record": {
+          "va": "0x4135b527",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/68",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8561",
+        "record": {
+          "va": "0x4135d79d",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/69",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8570",
+        "record": {
+          "va": "0x4135d7d5",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/70",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8611",
+        "record": {
+          "va": "0x4135d87d",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/71",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8664",
+        "record": {
+          "va": "0x4135d94d",
+          "bytes": "0f295e60",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm3"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/72",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8674",
+        "record": {
+          "va": "0x4135d975",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/73",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+        "source_pointer": "/instructions/8707",
+        "record": {
+          "va": "0x4135da2e",
+          "bytes": "0f285e60",
+          "size": 4,
+          "instruction": "movaps xmm3,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/74",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_restore_candidate_walk.json",
+        "source_pointer": "/instructions/341",
+        "record": {
+          "va": "0x41344d36",
+          "bytes": "0f114060",
+          "size": 4,
+          "instruction": "movups XMMWORD PTR [eax+0x60],xmm0"
+        },
+        "memory_expression": "eax+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/75",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/target_coordinator_walk.json",
+        "source_pointer": "/instructions/3313",
+        "record": {
+          "va": "0x4147e161",
+          "bytes": "0f117e68",
+          "size": 4,
+          "instruction": "movups XMMWORD PTR [esi+0x68],xmm7"
+        },
+        "memory_expression": "esi+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "direct_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/76",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/target_coordinator_walk.json",
+        "source_pointer": "/instructions/3690",
+        "record": {
+          "va": "0x4147e7f7",
+          "bytes": "0f134e60",
+          "size": 4,
+          "instruction": "movlps QWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": false,
+        "classification": "adjacent_not_covering_68",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/77",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/target_coordinator_walk.json",
+        "source_pointer": "/instructions/3889",
+        "record": {
+          "va": "0x4147eb39",
+          "bytes": "0f134e60",
+          "size": 4,
+          "instruction": "movlps QWORD PTR [esi+0x60],xmm1"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 8,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": false,
+        "classification": "adjacent_not_covering_68",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/78",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/1170",
+        "record": {
+          "va": "0x4133e2e1",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/79",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/1355",
+        "record": {
+          "va": "0x4133e75a",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/80",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/1666",
+        "record": {
+          "va": "0x4133eefb",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/81",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/1668",
+        "record": {
+          "va": "0x4133ef02",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/82",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/2245",
+        "record": {
+          "va": "0x4133fcbe",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/83",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+        "source_pointer": "/instructions/2247",
+        "record": {
+          "va": "0x4133fcc5",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/84",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/variant_simulation_walk.json",
+        "source_pointer": "/instructions/147",
+        "record": {
+          "va": "0x41335a48",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/85",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/variant_simulation_walk.json",
+        "source_pointer": "/instructions/149",
+        "record": {
+          "va": "0x41335a50",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/86",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_constructor_walk.json",
+        "source_pointer": "/instructions/169",
+        "record": {
+          "va": "0x4148b6c5",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/87",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_constructor_walk.json",
+        "source_pointer": "/instructions/171",
+        "record": {
+          "va": "0x4148b6cc",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/88",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_builder_walk.json",
+        "source_pointer": "/instructions/204",
+        "record": {
+          "va": "0x4149ba05",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/89",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_builder_walk.json",
+        "source_pointer": "/instructions/206",
+        "record": {
+          "va": "0x4149ba0c",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/90",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/240",
+        "record": {
+          "va": "0x415c9991",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/91",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/242",
+        "record": {
+          "va": "0x415c9998",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/92",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/277",
+        "record": {
+          "va": "0x415c9a28",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/93",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/279",
+        "record": {
+          "va": "0x415c9a2f",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/94",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/319",
+        "record": {
+          "va": "0x415c9ac3",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/95",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/321",
+        "record": {
+          "va": "0x415c9aca",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/96",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/357",
+        "record": {
+          "va": "0x415c9b5a",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/97",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/359",
+        "record": {
+          "va": "0x415c9b61",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/98",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/398",
+        "record": {
+          "va": "0x415c9bfe",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/99",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/400",
+        "record": {
+          "va": "0x415c9c05",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/100",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/435",
+        "record": {
+          "va": "0x415c9c90",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/101",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/437",
+        "record": {
+          "va": "0x415c9c97",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/102",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/498",
+        "record": {
+          "va": "0x415c9d7e",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/103",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/500",
+        "record": {
+          "va": "0x415c9d85",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/104",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/570",
+        "record": {
+          "va": "0x415c9ea9",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/105",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/572",
+        "record": {
+          "va": "0x415c9eb0",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/106",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/619",
+        "record": {
+          "va": "0x415c9f5e",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/107",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/621",
+        "record": {
+          "va": "0x415c9f65",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/108",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/674",
+        "record": {
+          "va": "0x415ca023",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/109",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/676",
+        "record": {
+          "va": "0x415ca02a",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/110",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/736",
+        "record": {
+          "va": "0x415ca10a",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/111",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/738",
+        "record": {
+          "va": "0x415ca111",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/112",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/843",
+        "record": {
+          "va": "0x415ca2d6",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/113",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+        "source_pointer": "/instructions/845",
+        "record": {
+          "va": "0x415ca2dd",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/114",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/penetration_walk.json",
+        "source_pointer": "/instructions/47",
+        "record": {
+          "va": "0x41371db3",
+          "bytes": "0f11442464",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x64],xmm0"
+        },
+        "memory_expression": "esp+0x64",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/115",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/accuracy_aggregate_walk.json",
+        "source_pointer": "/instructions/427",
+        "record": {
+          "va": "0x4139d39a",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/116",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/accuracy_aggregate_walk.json",
+        "source_pointer": "/instructions/429",
+        "record": {
+          "va": "0x4139d3a2",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/117",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/record_settings_flags_walk.json",
+        "source_pointer": "/instructions/151",
+        "record": {
+          "va": "0x4148bfa4",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/118",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/record_settings_flags_walk.json",
+        "source_pointer": "/instructions/153",
+        "record": {
+          "va": "0x4148bfab",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/119",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+        "source_pointer": "/instructions/227",
+        "record": {
+          "va": "0x41490bf5",
+          "bytes": "0f114c2468",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x68],xmm1"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/120",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+        "source_pointer": "/instructions/275",
+        "record": {
+          "va": "0x41490cae",
+          "bytes": "0f116c2468",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x68],xmm5"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/121",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+        "source_pointer": "/instructions/331",
+        "record": {
+          "va": "0x41490d9f",
+          "bytes": "0f105c2468",
+          "size": 5,
+          "instruction": "movups xmm3,XMMWORD PTR [esp+0x68]"
+        },
+        "memory_expression": "esp+0x68",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x68",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/122",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+        "source_pointer": "/instructions/264",
+        "record": {
+          "va": "0x4200cd4d",
+          "bytes": "f30f6f7660",
+          "size": 5,
+          "instruction": "movdqu xmm6,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/123",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+        "source_pointer": "/instructions/272",
+        "record": {
+          "va": "0x4200cd74",
+          "bytes": "f30f7f7760",
+          "size": 5,
+          "instruction": "movdqu XMMWORD PTR [edi+0x60],xmm6"
+        },
+        "memory_expression": "edi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/124",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+        "source_pointer": "/instructions/329",
+        "record": {
+          "va": "0x4200ce40",
+          "bytes": "660f6f7660",
+          "size": 5,
+          "instruction": "movdqa xmm6,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/125",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+        "source_pointer": "/instructions/333",
+        "record": {
+          "va": "0x4200ce54",
+          "bytes": "660f7f7760",
+          "size": 5,
+          "instruction": "movdqa XMMWORD PTR [edi+0x60],xmm6"
+        },
+        "memory_expression": "edi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/126",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/penetration_with_materials_walk.json",
+        "source_pointer": "/instructions/47",
+        "record": {
+          "va": "0x41371db3",
+          "bytes": "0f11442464",
+          "size": 5,
+          "instruction": "movups XMMWORD PTR [esp+0x64],xmm0"
+        },
+        "memory_expression": "esp+0x64",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x64",
+        "syntactically_touches_0x68": true,
+        "classification": "stack_relative",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/127",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_walk.json",
+        "source_pointer": "/instructions/122",
+        "record": {
+          "va": "0x4136ce38",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/128",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_walk.json",
+        "source_pointer": "/instructions/124",
+        "record": {
+          "va": "0x4136ce3f",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/129",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+        "source_pointer": "/instructions/122",
+        "record": {
+          "va": "0x4136ce38",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/130",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+        "source_pointer": "/instructions/124",
+        "record": {
+          "va": "0x4136ce3f",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/131",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+        "source_pointer": "/instructions/302",
+        "record": {
+          "va": "0x4136d120",
+          "bytes": "0f284660",
+          "size": 4,
+          "instruction": "movaps xmm0,XMMWORD PTR [esi+0x60]"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      },
+      {
+        "archive_pointer": "/132",
+        "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+        "source_pointer": "/instructions/304",
+        "record": {
+          "va": "0x4136d127",
+          "bytes": "0f294660",
+          "size": 4,
+          "instruction": "movaps XMMWORD PTR [esi+0x60],xmm0"
+        },
+        "memory_expression": "esi+0x60",
+        "memory_width_bytes": 16,
+        "offset_hex": "0x60",
+        "syntactically_touches_0x68": true,
+        "classification": "wide_overlap_68_untyped",
+        "object_identity": "not_established_by_this_record",
+        "context_records_matched": 9,
+        "consumer_proof": false
+      }
+    ]
+  },
+  "proof_inventories": [
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+      "walk_count": 16,
+      "walks": [
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_population_walk.json",
+          "instruction_records": 192,
+          "archived_entry": {
+            "file": "target_population_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_growth_walk.json",
+          "instruction_records": 252,
+          "archived_entry": {
+            "file": "target_vector_growth_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_finalizer_walk.json",
+          "instruction_records": 330,
+          "archived_entry": {
+            "file": "point_finalizer_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_move_walk.json",
+          "instruction_records": 80,
+          "archived_entry": {
+            "file": "target_move_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_destructor_walk.json",
+          "instruction_records": 96,
+          "archived_entry": {
+            "file": "target_destructor_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_cleanup_walk.json",
+          "instruction_records": 18,
+          "archived_entry": {
+            "file": "target_vector_cleanup_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_two_shot_guard_walk.json",
+          "instruction_records": 25,
+          "archived_entry": {
+            "file": "point_two_shot_guard_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/record_settings_flags_walk.json",
+          "instruction_records": 398,
+          "archived_entry": {
+            "file": "record_settings_flags_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_point_collection_walk.json",
+          "instruction_records": 603,
+          "archived_entry": {
+            "file": "target_point_collection_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+          "instruction_records": 457,
+          "archived_entry": {
+            "file": "point_optional_context_extended_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+          "instruction_records": 404,
+          "archived_entry": {
+            "file": "header_copy_with_tables_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_scan_walk.json",
+          "instruction_records": 4475,
+          "archived_entry": {
+            "file": "support_target_scan_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_best_point_update_walk.json",
+          "instruction_records": 299,
+          "archived_entry": {
+            "file": "support_best_point_update_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_selector_walk.json",
+          "instruction_records": 517,
+          "archived_entry": {
+            "file": "support_selector_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_constructor_walk.json",
+          "instruction_records": 483,
+          "archived_entry": {
+            "file": "support_target_constructor_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_point_context.json",
+          "instruction_records": 32,
+          "archived_entry": {
+            "file": "support_point_context.json",
+            "new": false
+          },
+          "limits": null,
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        }
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+      "walk_count": 18,
+      "walks": [
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/penetration_with_materials_walk.json",
+          "instruction_records": 487,
+          "archived_entry": {
+            "file": "penetration_with_materials_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/hitgroup_with_cases_walk.json",
+          "instruction_records": 366,
+          "archived_entry": {
+            "file": "hitgroup_with_cases_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_scale_walk.json",
+          "instruction_records": 436,
+          "archived_entry": {
+            "file": "armor_scale_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_selection_filter_walk.json",
+          "instruction_records": 44,
+          "archived_entry": {
+            "file": "history_selection_filter_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_preference_walk.json",
+          "instruction_records": 21,
+          "archived_entry": {
+            "file": "history_preference_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/threshold_rounding_helper_walk.json",
+          "instruction_records": 68,
+          "archived_entry": {
+            "file": "threshold_rounding_helper_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_fallback_block_walk.json",
+          "instruction_records": 79,
+          "archived_entry": {
+            "file": "rounding_fallback_block_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_control_word_walk.json",
+          "instruction_records": 17,
+          "archived_entry": {
+            "file": "rounding_control_word_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/x87_round_integral_walk.json",
+          "instruction_records": 11,
+          "archived_entry": {
+            "file": "x87_round_integral_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+          "instruction_records": 841,
+          "archived_entry": {
+            "file": "armor_coverage_extended_walk.json",
+            "new": true
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_settings_walk.json",
+          "instruction_records": 330,
+          "archived_entry": {
+            "file": "support_target_settings_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_selector_walk.json",
+          "instruction_records": 517,
+          "archived_entry": {
+            "file": "support_selector_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_scan_walk.json",
+          "instruction_records": 4475,
+          "archived_entry": {
+            "file": "support_target_scan_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_point_evaluator_walk.json",
+          "instruction_records": 1224,
+          "archived_entry": {
+            "file": "support_point_evaluator_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_caller_walk.json",
+          "instruction_records": 774,
+          "archived_entry": {
+            "file": "support_chance_caller_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_damage_caller_walk.json",
+          "instruction_records": 1005,
+          "archived_entry": {
+            "file": "support_damage_caller_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_batch_dispatcher_walk.json",
+          "instruction_records": 144,
+          "archived_entry": {
+            "file": "support_batch_dispatcher_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_worker_walk.json",
+          "instruction_records": 592,
+          "archived_entry": {
+            "file": "support_chance_worker_walk.json",
+            "new": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        }
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+      "walk_count": 16,
+      "walks": [
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/movement_helper_walk.json",
+          "instruction_records": 115,
+          "archived_entry": {
+            "file": "movement_helper_walk.json",
+            "records": 115,
+            "calls": 3,
+            "indirect": 2,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/recoil_input_helper_walk.json",
+          "instruction_records": 78,
+          "archived_entry": {
+            "file": "recoil_input_helper_walk.json",
+            "records": 78,
+            "calls": 1,
+            "indirect": 0,
+            "range_exits": [
+              "0x4147a453",
+              "0x4147edd2",
+              "0x41483db6",
+              "0x4148531f"
+            ]
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/float_classification_walk.json",
+          "instruction_records": 37,
+          "archived_entry": {
+            "file": "float_classification_walk.json",
+            "records": 37,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_round_entry_walk.json",
+          "instruction_records": 2,
+          "archived_entry": {
+            "file": "math_round_entry_walk.json",
+            "records": 2,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": [
+              "0x42048809"
+            ]
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_double_remainder_dispatch_walk.json",
+          "instruction_records": 19,
+          "archived_entry": {
+            "file": "math_double_remainder_dispatch_walk.json",
+            "records": 19,
+            "calls": 4,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_error_dispatch_walk.json",
+          "instruction_records": 97,
+          "archived_entry": {
+            "file": "math_error_dispatch_walk.json",
+            "records": 97,
+            "calls": 1,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/double_classification_walk.json",
+          "instruction_records": 22,
+          "archived_entry": {
+            "file": "double_classification_walk.json",
+            "records": 22,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_remainder_kernel_extended_walk.json",
+          "instruction_records": 51,
+          "archived_entry": {
+            "file": "math_remainder_kernel_extended_walk.json",
+            "records": 51,
+            "calls": 1,
+            "indirect": 1,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_finite_case_walk.json",
+          "instruction_records": 8,
+          "archived_entry": {
+            "file": "remainder_finite_case_walk.json",
+            "records": 8,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_zero_case_walk.json",
+          "instruction_records": 7,
+          "archived_entry": {
+            "file": "remainder_zero_case_walk.json",
+            "records": 7,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/mask_table_initializer_walk.json",
+          "instruction_records": 69,
+          "archived_entry": {
+            "file": "mask_table_initializer_walk.json",
+            "records": 69,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_word_walk.json",
+          "instruction_records": 41,
+          "archived_entry": {
+            "file": "network_read_word_walk.json",
+            "records": 41,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_group_walk.json",
+          "instruction_records": 155,
+          "archived_entry": {
+            "file": "network_read_group_walk.json",
+            "records": 155,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_header_walk.json",
+          "instruction_records": 15,
+          "archived_entry": {
+            "file": "network_read_header_walk.json",
+            "records": 15,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/charge_small_gate_walk.json",
+          "instruction_records": 16,
+          "archived_entry": {
+            "file": "charge_small_gate_walk.json",
+            "records": 16,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/queued_batch_worker_walk.json",
+          "instruction_records": 33,
+          "archived_entry": {
+            "file": "queued_batch_worker_walk.json",
+            "records": 33,
+            "calls": 1,
+            "indirect": 0,
+            "range_exits": []
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        }
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json",
+      "walk_count": 10,
+      "walks": [
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_update_with_tls_tails_walk.json",
+          "instruction_records": 923,
+          "archived_entry": {
+            "file": "network_update_with_tls_tails_walk.json",
+            "records": 923,
+            "calls": 32,
+            "indirect": 2,
+            "range_exits": [
+              "0x4150bb49"
+            ],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_entity_lookup_extended_walk.json",
+          "instruction_records": 665,
+          "archived_entry": {
+            "file": "network_entity_lookup_extended_walk.json",
+            "records": 665,
+            "calls": 19,
+            "indirect": 4,
+            "range_exits": [],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_callsite_walk.json",
+          "instruction_records": 33,
+          "archived_entry": {
+            "file": "initializer_callsite_walk.json",
+            "records": 33,
+            "calls": 6,
+            "indirect": 0,
+            "range_exits": [
+              "0x42009d91"
+            ],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_array_runner_walk.json",
+          "instruction_records": 21,
+          "archived_entry": {
+            "file": "initializer_array_runner_walk.json",
+            "records": 21,
+            "calls": 2,
+            "indirect": 0,
+            "range_exits": [],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/default_indirect_transfer_guard_walk.json",
+          "instruction_records": 1,
+          "archived_entry": {
+            "file": "default_indirect_transfer_guard_walk.json",
+            "records": 1,
+            "calls": 0,
+            "indirect": 0,
+            "range_exits": [],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_manager_initializer_walk.json",
+          "instruction_records": 44,
+          "archived_entry": {
+            "file": "position_manager_initializer_walk.json",
+            "records": 44,
+            "calls": 3,
+            "indirect": 0,
+            "range_exits": [],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_record_reader_walk.json",
+          "instruction_records": 532,
+          "archived_entry": {
+            "file": "position_record_reader_walk.json",
+            "records": 532,
+            "calls": 17,
+            "indirect": 0,
+            "range_exits": [
+              "0x70d8a9dc"
+            ],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_reader_caller_anchor_walk.json",
+          "instruction_records": 68,
+          "archived_entry": {
+            "file": "position_reader_caller_anchor_walk.json",
+            "records": 68,
+            "calls": 2,
+            "indirect": 1,
+            "range_exits": [
+              "0x41365213",
+              "0x4136522f",
+              "0x41365a94"
+            ],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_enrichment_walk.json",
+          "instruction_records": 505,
+          "archived_entry": {
+            "file": "record_actor_enrichment_walk.json",
+            "records": 505,
+            "calls": 41,
+            "indirect": 1,
+            "range_exits": [],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        },
+        {
+          "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_update_walk.json",
+          "instruction_records": 190,
+          "archived_entry": {
+            "file": "record_actor_update_walk.json",
+            "records": 190,
+            "calls": 9,
+            "indirect": 0,
+            "range_exits": [
+              "0x82dfb4b5"
+            ],
+            "limit_reached": false
+          },
+          "limits": "Reachability is an over-approximation of both conditional sides. Calls are not followed. Range boundary is analytical, not a proof of full function extent.",
+          "identity_scope": "saved_walk_not_typed_object_proof"
+        }
+      ]
+    }
+  ],
+  "image_hash_expectations": [
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "proof_inventories": [
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json"
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/client.dll",
+      "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "proof_inventories": [
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json"
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/engine.dll",
+      "sha256": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+      "proof_inventories": [
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json"
+      ]
+    },
+    {
+      "source": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/neverlose.dll",
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "proof_inventories": [
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+        "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json"
+      ]
+    }
+  ],
+  "historical_results_not_replayed": {
+    "v8_models_cases": 6787,
+    "v8_models_scope": "Own bounded models and static formulas, not original binary execution, not independent-author audit. Valid vector shape and finite arithmetic inputs. Model inputs are not asserted reachable in game.",
+    "v10_models_cases": 6632,
+    "v10_models_scope": [
+      "Only own C/Python models. No original DLL or CPU emulation.",
+      "Model status means record-change fixture status, not a claimed return value of the original update routine.",
+      "Update model starts after external prerequisites are supplied; it does not reproduce virtual providers, TLS initialization or environment guards.",
+      "Initialization fixture assumes successful allocation and the preceding zero-fill completed.",
+      "Reader age model is only the final predicate, not the complete reader and its earlier clearing/configuration branches.",
+      "Same author for both implementations; synthetic states are not proven reachable in the game."
+    ],
+    "v10_static_checks": {
+      "input_hashes": 4,
+      "byte_records": 3106,
+      "fresh_GNU_decodes": 3106,
+      "constant_read_records": 9,
+      "initializer_slots": 189,
+      "initializer_nonzero_entries": 188,
+      "record_capacity": 2048,
+      "default_guard_file_target_return": true,
+      "accepted_walks": 10,
+      "saved_new_instruction_records": 2982,
+      "matched_metadata_lookup_names": 4,
+      "own_model_cases": 6632,
+      "model_groups": 6,
+      "passed": true,
+      "whole_modules_closed": false,
+      "all_gaps_closed": false,
+      "original_execution": false,
+      "original_emulation": false,
+      "independent_author_audit": false
+    },
+    "fresh_replay": false
+  },
+  "missing_proof_obligations": [
+    {
+      "id": "P1_SAME_OBJECT",
+      "status": "open",
+      "required": "Сохранённое доказательство одного и того же объекта T от производителя до заявленного чтения, без подмены N, стека или иного +68.",
+      "authority": "v10/remaining_gaps.json#/1/needed_proof",
+      "inventory_limit": "В этой работе не строилась новая alias/dataflow-трасса."
+    },
+    {
+      "id": "P2_TYPED_READ",
+      "status": "open",
+      "required": "Типизированное чтение именно поля порога T+68 с доказанной шириной и происхождением указателя.",
+      "authority": "v10/remaining_gaps.json#/1",
+      "inventory_limit": "Синтаксические обращения/перекрытия из wide_threshold_candidates сами этого не устанавливают."
+    },
+    {
+      "id": "P3_DECISION_ACTION",
+      "status": "open",
+      "required": "Подтверждённая связь чтения/сравнения, ветви и фактического действия; не только производитель или сравнение другого поля.",
+      "authority": "v10/remaining_gaps.json#/1/needed_proof",
+      "inventory_limit": "Новый потребитель, его трассировка и исполняемая реализация не создавались."
+    },
+    {
+      "id": "P4_COVERAGE_BOUNDARY",
+      "status": "open",
+      "required": "Явные условия, альтернативные выходы, жизненный цикл и внешние зависимости заявленной полной цепочки.",
+      "authority": "v8/facts.json#/module_status/1/not_closed",
+      "inventory_limit": "Сохранённые walks являются over-approximation; вызовы автоматически не прослежены, границы аналитические."
+    },
+    {
+      "id": "P5_BEHAVIOR_AND_AUDIT",
+      "status": "not_performed",
+      "required": "Отдельные независимые основания эквивалентности оригиналу; старые проверки собственной модели не заменяют наблюдение поведения.",
+      "authority": "v10/remaining_gaps.json#/6",
+      "inventory_limit": "Это описание границы доказательств, не разрешение запускать/загружать/эмулировать оригинал или подключаться к игре."
+    }
+  ],
+  "fresh_check_scope": [
+    "Сверка SHA-256/размеров сохранённых источников и четырёх image-файлов (чтение байтов, не загрузка кода).",
+    "Сверка закреплённых git blobs базового контекста, независимо от параллельных правок worktree.",
+    "Наличие 60 walk-ссылок из четырёх proof inventories и согласованность сохранённых чисел записей.",
+    "Точное совпадение 133 основных и 1197 контекстных записей с 27 исходными JSON walks.",
+    "Синтаксическая классификация операндов без нового декодирования, обхода CFG, эмуляции или исполнения.",
+    "Сверка двух выбранных локальных якорей с уже записанными источниками."
+  ],
+  "sources": [
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/client.dll",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/client.dll",
+      "bytes": 16377192,
+      "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "roles": [
+        "image_hash_only"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/engine.dll",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/engine.dll",
+      "bytes": 6496616,
+      "sha256": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+      "roles": [
+        "image_hash_only"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/neverlose.dll",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/neverlose.dll",
+      "bytes": 62201344,
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "roles": [
+        "image_hash_only"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/byte_evidence.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/byte_evidence.json",
+      "bytes": 531122,
+      "sha256": "afcaa6bfd3e75391b69a20e418855d5c4dca9f28418d048ce02385a0a4f0c074",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/default_indirect_transfer_guard_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/default_indirect_transfer_guard_walk.json",
+      "bytes": 509,
+      "sha256": "798b26aeaea9a034678074dfd6e593f26ce6301ec7c3290fc5c9974fb3b4a051",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/facts.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/facts.json",
+      "bytes": 8501,
+      "sha256": "93623fd49cb98f7a67dd073417a5222279aba4df653d09f8cf3df1463bbba2f2",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_array_runner_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_array_runner_walk.json",
+      "bytes": 2983,
+      "sha256": "ae0fe373e46dcb61dd197f6a23c5c8d2cb6182847d502842a3a0d122aace10d4",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_callsite_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/initializer_callsite_walk.json",
+      "bytes": 4807,
+      "sha256": "088dffea600786d7768d31af9b084e10f5e59ebf2d9481cce9ac2aae0c8e38a7",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_entity_lookup_extended_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_entity_lookup_extended_walk.json",
+      "bytes": 86431,
+      "sha256": "64fd8de9f3c05411843985ea111deff7a39c12a4dc07e41322a255a4d45fdf17",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_update_with_tls_tails_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/network_update_with_tls_tails_walk.json",
+      "bytes": 123563,
+      "sha256": "1de25a5d27c7eede50c0c1a0d3a26c27ade12e7fd406c01cb777cfd75bf968ad",
+      "roles": [
+        "proof_inventory_walk",
+        "selected_local_anchor_source"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_manager_initializer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_manager_initializer_walk.json",
+      "bytes": 6494,
+      "sha256": "67db0b4e270a31334905b6e74ee8ccc52b4a22be7b867b5ebc081c9f9d82194f",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_reader_caller_anchor_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_reader_caller_anchor_walk.json",
+      "bytes": 9155,
+      "sha256": "3d5071a4d2f3eeaec1093193d3336f59f8329f6bac448205978460af957079b7",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_record_reader_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/position_record_reader_walk.json",
+      "bytes": 71529,
+      "sha256": "07d1a93b7fefdd382910b17c49c2366bd737520ab6d7c022f6decfcb4a794aff",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/proof_spec.json",
+      "bytes": 3005,
+      "sha256": "58d4db93fa7e52a915a2ce9cce629e00ec3f018ab0da29a68bd5a692f8d06d2f",
+      "roles": [
+        "archived_proof_inventory"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_enrichment_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_enrichment_walk.json",
+      "bytes": 67604,
+      "sha256": "957adb6309aba7ce88f86208a053b406f0a65a065699cc6469a62c4968e8b653",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_update_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/record_actor_update_walk.json",
+      "bytes": 25449,
+      "sha256": "5e5ed64e1a68e5fda2df42cbc4dbb7085da7c71212377f79fe676fde0c5e7f66",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/remaining_gaps.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/remaining_gaps.json",
+      "bytes": 5839,
+      "sha256": "1602fbfd1e18ca54fb972bece79197e63bafbdc516a888a1925be1ebb676738a",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/support_anchors.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/support_anchors.json",
+      "bytes": 20911,
+      "sha256": "37530016598be20a0b10e39aa069574d843ca54b3fe69bdc8b45f4411ec347bb",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/v10_checks.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/v10_checks.json",
+      "bytes": 572,
+      "sha256": "37c81e4a4691e8cea12ead8a4167d7b219c499fdfadf02f79be4b6944a7accff",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/wide_threshold_candidates.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/wide_threshold_candidates.json",
+      "bytes": 205590,
+      "sha256": "22ec1bb267362418412fa01217a5f65756e888fdfd0d05d761dc349960db248a",
+      "roles": [
+        "archived_candidate_inventory"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Новые_связи_и_остаток_работы_V10.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Новые_связи_и_остаток_работы_V10.md",
+      "bytes": 15629,
+      "sha256": "02ab773afdde70cb8a61ea668f2cfc3cfbbd2b9c03f64c76b0e2b1a284ac6f69",
+      "roles": [
+        "archived_narrative_claim"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Чего_не_хватает_после_V10.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/Чего_не_хватает_после_V10.md",
+      "bytes": 6376,
+      "sha256": "c8d1061ab9bcbae9d711662e0bbf06a7e608a6778d0b6394aab5b41fb0f0fbbe",
+      "roles": [
+        "archived_narrative_claim"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/chance_worker_walk.json",
+      "bytes": 80023,
+      "sha256": "38ad03526275b0c0fc62f2d5339480022b3e2254f32e3186c837bedf2f3399a4",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/geometry_builder_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/geometry_builder_walk.json",
+      "bytes": 97940,
+      "sha256": "58a8baacec57d1a9ac1f4fa566e2d2d6234b386db46146dd1fe834d187509ed5",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_manager_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_manager_walk.json",
+      "bytes": 59387,
+      "sha256": "166177740d11cec915a6785b19f754dbc59ab77028fdbfc424617ee5ef06963e",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_producer_walk.json",
+      "bytes": 426300,
+      "sha256": "db0300d4412c6bbfc25ee3719f309d5785fe518e566b2689f509f020036d42ea",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_record_builder_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/history_record_builder_walk.json",
+      "bytes": 82657,
+      "sha256": "0b8db13536a9e319b3b7b473b0e5397b62039c81e027e08d25b6a9341508b1a7",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_evaluator_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_evaluator_walk.json",
+      "bytes": 163083,
+      "sha256": "79b55e967858cde29d47503ca45859ba0be3598fae4fe4616a33cd9460b18d82",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_finalizer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/point_finalizer_walk.json",
+      "bytes": 60087,
+      "sha256": "32900a8cf72e3f271cbc304b0a8ff4172d5b4259d41847dde33855c91182d184",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/resolver_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/resolver_walk.json",
+      "bytes": 168366,
+      "sha256": "663f418e28afb1c4a7838ed8eeba94a9c97ae00f9bc99eaa66d8ad5ab4318713",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/zone_builder_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v2/zone_builder_walk.json",
+      "bytes": 13738,
+      "sha256": "6c399b4e70001291e7d5a22b281d78dca8b8bf994e0e0859e6169eb757dd4376",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_record_constructor_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_record_constructor_walk.json",
+      "bytes": 8243,
+      "sha256": "e5eb9ae7c37aa7a00cae080a693f14d8c3f9ec10334955704e2db37f7c4e1feb",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/history_writer_body_walk.json",
+      "bytes": 316349,
+      "sha256": "fae55fc6656bf299ac6d535d041a954c44b632272ef80d1131f48e576eb5fa3c",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v3/snapshot_upstream_walk.json",
+      "bytes": 1274214,
+      "sha256": "6d8107a7fc3674f10ffeca923dfce268a6c16542f1682183fbbb115077e13f8c",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_restore_candidate_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_restore_candidate_walk.json",
+      "bytes": 82509,
+      "sha256": "950708cd43942a0aff2328c515d6521e5ea8c7a597beb43a0201d74a834781e3",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/snapshot_variant_producer_walk.json",
+      "bytes": 431293,
+      "sha256": "df7fe5615614922b9333c0429cf381ac81b334360729bb2b130912d3b9d69c73",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/target_coordinator_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/target_coordinator_walk.json",
+      "bytes": 605289,
+      "sha256": "272b6988cd840dc111233dfad32c7a773c4e70d4cda51357ec4c73a69ea1f87c",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/variant_simulation_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v4/variant_simulation_walk.json",
+      "bytes": 307232,
+      "sha256": "d032d25cf57a3dd1cb7293dfa4b2a99e7566ba896d7dec4fe14e806e4a3bab9f",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/accuracy_aggregate_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/accuracy_aggregate_walk.json",
+      "bytes": 76134,
+      "sha256": "b6eaf9d766b14c4313481f66381d4b359dd6627afb193e6eb88f7f1aba66a955",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/network_registration_walk.json",
+      "bytes": 241466,
+      "sha256": "ea0f8a1afa535683a2ab2bf93d65c854e01c19d89e9c54be8fa13b27119e0a98",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/penetration_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/penetration_walk.json",
+      "bytes": 51568,
+      "sha256": "eb96d6a21a7709668a3aa659dd637473d84335fbf56bd671869bea84de442cc2",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_builder_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_builder_walk.json",
+      "bytes": 74758,
+      "sha256": "7fc8c252c6e6c5be7aa7213c74662a063f339dbca7e06dc351e26603dd526ab1",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_constructor_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v5/target_constructor_walk.json",
+      "bytes": 65175,
+      "sha256": "31764646550ac104f11d0dca41ab204bcb222d4f9961c74910008e5c08740cb5",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/header_copy_with_tables_walk.json",
+      "bytes": 50687,
+      "sha256": "183e368978bbae7bff7cf2218be9a7fccc68dfbd97cd29cf1614ba7f8a887379",
+      "roles": [
+        "proof_inventory_walk",
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_finalizer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_finalizer_walk.json",
+      "bytes": 43737,
+      "sha256": "0436d2d112239341afb4400d0eac1cff5fc02fa9c58d3983d1c9ca707be5cbe8",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_optional_context_extended_walk.json",
+      "bytes": 60103,
+      "sha256": "c4da8f61805a6f1e7dfce05b56fdbcb77ce90e7fd73c87659941344a3ec29bf7",
+      "roles": [
+        "proof_inventory_walk",
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_two_shot_guard_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/point_two_shot_guard_walk.json",
+      "bytes": 3482,
+      "sha256": "e19ab502c31200bf85f2e66e49a0672d4bf5c6c49fddc058fd223bde611abceb",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/proof_spec.json",
+      "bytes": 3269,
+      "sha256": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+      "roles": [
+        "archived_proof_inventory"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/record_settings_flags_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/record_settings_flags_walk.json",
+      "bytes": 53952,
+      "sha256": "e1710deaab7785af82df24830add60690a8ed63b69e8661a1b8352b860be2ec6",
+      "roles": [
+        "proof_inventory_walk",
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_best_point_update_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_best_point_update_walk.json",
+      "bytes": 38382,
+      "sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_point_context.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_point_context.json",
+      "bytes": 4293,
+      "sha256": "02304cabd69156f4955a3eb7fe702cf835934663fad3a52fb51955d4d4865c03",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_selector_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_selector_walk.json",
+      "bytes": 67587,
+      "sha256": "8f0ecd1ca54d75968cf87ed3d0b3ff1b84674e03dc09314d5e1bd80a018ada7d",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_constructor_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_constructor_walk.json",
+      "bytes": 65175,
+      "sha256": "31764646550ac104f11d0dca41ab204bcb222d4f9961c74910008e5c08740cb5",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_scan_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/support_target_scan_walk.json",
+      "bytes": 596754,
+      "sha256": "7a3bd601aa211b002432607b94f1b4d7e5b351f68653d3fb5527ad1bd9d74608",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_destructor_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_destructor_walk.json",
+      "bytes": 12593,
+      "sha256": "65baed52bd5160bfce179ae02dc05fe6ea662a8f359f217baf522c9efa500549",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_move_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_move_walk.json",
+      "bytes": 11690,
+      "sha256": "c9012e8be1559d780b05de30519c6cb0a6b7d85fc16e5b3f6cd6f0ae0620d771",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_point_collection_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_point_collection_walk.json",
+      "bytes": 82110,
+      "sha256": "00da38bd8fffb244aa5ca7d57d37c2cd51037712f60ae20b79cd62ba3c7d7e37",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_population_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_population_walk.json",
+      "bytes": 24666,
+      "sha256": "f6fcb3618f429ab3eece791deb05262851b5e6105bae2f441c420b50b3dbb691",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_cleanup_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_cleanup_walk.json",
+      "bytes": 2680,
+      "sha256": "f74d821dbaa775e6ca89de02ffb43fa311e08003b2caac5a0c49aa72e6fbaae5",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_growth_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/target_vector_growth_walk.json",
+      "bytes": 32589,
+      "sha256": "8f3fa1d26caadc8a9bc2ce78ad8af61b37da8fef63b64ec768702da11c63e4a7",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/v7_checks.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v7/v7_checks.json",
+      "bytes": 695,
+      "sha256": "0ddee88c2c5597baace3759f74bc0f4afa51326ddbfd05578786834217488772",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_extended_walk.json",
+      "bytes": 113621,
+      "sha256": "da6d8d64950b560bc67751a0731d3feeabb43c98da74ecef4bf882cae406eaf9",
+      "roles": [
+        "proof_inventory_walk",
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_coverage_walk.json",
+      "bytes": 31874,
+      "sha256": "17000027b942dc5bcdaeb15fd691588457e62dee73f18471d86cb00e6a98897f",
+      "roles": [
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_scale_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/armor_scale_walk.json",
+      "bytes": 59106,
+      "sha256": "7abff03f160ba438f3abcf932af1451e3946eb249af53157de589ad68b8e769c",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/facts.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/facts.json",
+      "bytes": 8912,
+      "sha256": "dd82ac39c6a8c635b80c601f93ba42927b6ca8a7644a0f010ed7fa1f543bd927",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_preference_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_preference_walk.json",
+      "bytes": 2914,
+      "sha256": "7ba5bb1b13e9cf6933bedcc5510aa5278a3977405d1c3bf58efa8d82de2dccfa",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_selection_filter_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/history_selection_filter_walk.json",
+      "bytes": 5704,
+      "sha256": "0188abc327b379b11a8bcb94ddc4ac3601674c0d2de75d5c760aeff9ae2c0391",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/hitgroup_with_cases_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/hitgroup_with_cases_walk.json",
+      "bytes": 47500,
+      "sha256": "7c2697c86bc798fc13ce93666bc2ccdc85108cf10bca80c766543692161f7bef",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/penetration_with_materials_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/penetration_with_materials_walk.json",
+      "bytes": 62543,
+      "sha256": "77becd0db15b8741ae95b44092698826d0e56bbfdecd8f36b960beb20e866f76",
+      "roles": [
+        "proof_inventory_walk",
+        "candidate_source_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/proof_spec.json",
+      "bytes": 2508,
+      "sha256": "3470860aa88aa9688320b23831db87e3e947e215f771e0003387e0db7f5327ea",
+      "roles": [
+        "archived_proof_inventory"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_control_word_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_control_word_walk.json",
+      "bytes": 2430,
+      "sha256": "40a1b81db9580ae3e7020ce645cafa67645f79181e344aeddf230a606bfd72df",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_fallback_block_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/rounding_fallback_block_walk.json",
+      "bytes": 9982,
+      "sha256": "4788ed21232915d62cfce7da31c491725307e6a4009890a948ad19b58469578c",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_batch_dispatcher_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_batch_dispatcher_walk.json",
+      "bytes": 18560,
+      "sha256": "b5e4ff082fa603d823413348428f0cbda77f89b9533edf3b64ab274b1cee065d",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_caller_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_caller_walk.json",
+      "bytes": 101539,
+      "sha256": "36c53040698d9681e6ab989c01e7740bb24a08f2ceb861f77a6da7a81e5b8726",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_worker_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_chance_worker_walk.json",
+      "bytes": 80023,
+      "sha256": "38ad03526275b0c0fc62f2d5339480022b3e2254f32e3186c837bedf2f3399a4",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_damage_caller_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_damage_caller_walk.json",
+      "bytes": 133449,
+      "sha256": "dd27d68f48887e9074daed19e9ee9dc63226f1c283fafe8a984fe1be41197b1c",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_point_evaluator_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_point_evaluator_walk.json",
+      "bytes": 163083,
+      "sha256": "79b55e967858cde29d47503ca45859ba0be3598fae4fe4616a33cd9460b18d82",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_selector_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_selector_walk.json",
+      "bytes": 67587,
+      "sha256": "8f0ecd1ca54d75968cf87ed3d0b3ff1b84674e03dc09314d5e1bd80a018ada7d",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_scan_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_scan_walk.json",
+      "bytes": 596754,
+      "sha256": "7a3bd601aa211b002432607b94f1b4d7e5b351f68653d3fb5527ad1bd9d74608",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_settings_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/support_target_settings_walk.json",
+      "bytes": 43737,
+      "sha256": "0436d2d112239341afb4400d0eac1cff5fc02fa9c58d3983d1c9ca707be5cbe8",
+      "roles": [
+        "proof_inventory_walk",
+        "selected_local_anchor_source"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/threshold_rounding_helper_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/threshold_rounding_helper_walk.json",
+      "bytes": 9016,
+      "sha256": "9940d97748b89543020f527e55aa5b54cbef1049d5a5b5f35fac2ae441bef79b",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/v8_checks.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/v8_checks.json",
+      "bytes": 2214,
+      "sha256": "5063be6bdc10cb2eca8703a4d0c5dcce0dc48c5dfbc1c6f94220510368490ad1",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/x87_round_integral_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/x87_round_integral_walk.json",
+      "bytes": 1644,
+      "sha256": "749f6840ca06de16a4f37d05e34fa11825af31ae693aefdb9bceec2d06cfeb5a",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "bytes": 26243,
+      "sha256": "b0449b823dbd179b924aa71c90294293cdccbc452495866fa893f596f785699d",
+      "roles": [
+        "archived_narrative_claim"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/charge_small_gate_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/charge_small_gate_walk.json",
+      "bytes": 2360,
+      "sha256": "7010295009323013c053231b15744d72e55845f21673c899ba03342d6293e400",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/double_classification_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/double_classification_walk.json",
+      "bytes": 3040,
+      "sha256": "f9ff0a7f79ee75db4b50bb98410e3f1e6f5bffe87f56d8c8627683a75b20e6e5",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/float_classification_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/float_classification_walk.json",
+      "bytes": 4619,
+      "sha256": "34d625582079b41b50b9bc32865c64f19df8c6c2dad712019dcad719d89dee7f",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/mask_table_initializer_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/mask_table_initializer_walk.json",
+      "bytes": 9129,
+      "sha256": "c245695c2b7bb75991cd75f93ffa928b34e2935097a62dde811005c1a43eaf1b",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_double_remainder_dispatch_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_double_remainder_dispatch_walk.json",
+      "bytes": 2973,
+      "sha256": "aefba1d935f8dce41ebce357c7dcd129dcf3d25a4d231e207094a0a4aa0de84e",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_error_dispatch_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_error_dispatch_walk.json",
+      "bytes": 12336,
+      "sha256": "24b64e5f93158aa905fd9bffbfa1179460273650780746c950f5e7b1dc48608a",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_remainder_kernel_extended_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_remainder_kernel_extended_walk.json",
+      "bytes": 6675,
+      "sha256": "2e80dcfbaab745625f2216f6c578e043eb824adcd6225add6756f41036455c78",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_round_entry_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/math_round_entry_walk.json",
+      "bytes": 652,
+      "sha256": "e68e6ec63c9e0fb86758d0769cada618351a716c639ed601bb43f1e751e2da52",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/movement_helper_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/movement_helper_walk.json",
+      "bytes": 14889,
+      "sha256": "8025b423cbc40f69b482f39b42e535550659b1ec6469d5378bd9dd7daf59c3ea",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_group_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_group_walk.json",
+      "bytes": 19169,
+      "sha256": "0a13ddf78eaa71c6509a1479b446b8d656cfbfd309e667a9838caa0f8fc65be5",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_header_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_header_walk.json",
+      "bytes": 2259,
+      "sha256": "1bf86062c7d6e90c1abace0e97d532957f0c08c89343addfb13384dfae682bde",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_word_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/network_read_word_walk.json",
+      "bytes": 5297,
+      "sha256": "9fc85feff8daf490241d572e1df5c18e12ef5e31fa6a3a354a09abad719600e5",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/proof_spec.json",
+      "bytes": 3685,
+      "sha256": "f6249fcea1527e970363938d53bd8bec41d3ca60b5bf7b0a472d0013537d25ca",
+      "roles": [
+        "archived_proof_inventory"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/queued_batch_worker_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/queued_batch_worker_walk.json",
+      "bytes": 4316,
+      "sha256": "66bf77c1101a466706317ee8c73d5444c404e13cc72d39d21dfc0940e298f04f",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/recoil_input_helper_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/recoil_input_helper_walk.json",
+      "bytes": 10801,
+      "sha256": "7b69b2d07223f475d97f5ac5e4d5e5d95f0b1a9b89ccb641eb29a2182ee0e193",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_finite_case_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_finite_case_walk.json",
+      "bytes": 1265,
+      "sha256": "c12fc66a3fd6323c472b3c119815de2390655dc4b60df24a86514714dd41b7dc",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_zero_case_walk.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/remainder_zero_case_walk.json",
+      "bytes": 1158,
+      "sha256": "0536f7f6314eebf7885ce4eff0ad6206acd25ba0c80fb0574bd901952ef9fa3c",
+      "roles": [
+        "proof_inventory_walk"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/v9_checks.json",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/v9_checks.json",
+      "bytes": 515,
+      "sha256": "e5c1a5a55dbf3fc201bedf4833f600eb19e2485201b4cdb10329b0e2cc66c9b3",
+      "roles": [
+        "archived_claim_or_check_record"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "bytes": 19478,
+      "sha256": "688eb78d48dafb4f5c2f94cbc9368f356be8387ee9b3c9fba68cb21d4b00e964",
+      "roles": [
+        "archived_narrative_claim"
+      ]
+    },
+    {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "repository_path": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "bytes": 55578624,
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "roles": [
+        "image_hash_only"
+      ]
+    }
+  ]
+}
