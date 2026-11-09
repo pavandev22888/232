@@ -1,0 +1,275 @@
+{
+  "archive_sha256": "b5e3336edaa99b6f437f22368ab230107b7b781d9dfd54c83c6e00d9cfb8018f",
+  "baseline_commit": "d7e41026d179e20fa9e93c1720645181f1686b69",
+  "bundle_check": {
+    "passed": true,
+    "verified_files": 960
+  },
+  "bootstrap": {
+    "passed": true,
+    "checked_files": 64087,
+    "errors": [],
+    "scope": "input integrity only; no algorithmic correctness claimed"
+  },
+  "replay": {
+    "passed": true,
+    "checks": [
+      {
+        "version": "v10",
+        "passed": true,
+        "returncode": 0,
+        "log": "runs/replay_1794218335477194589/v10.log"
+      },
+      {
+        "version": "v9",
+        "passed": true,
+        "returncode": 0,
+        "log": "runs/replay_1794218335477194589/v9.log"
+      },
+      {
+        "version": "v8",
+        "passed": true,
+        "returncode": 0,
+        "log": "runs/replay_1794218335477194589/v8.log"
+      },
+      {
+        "version": "v7",
+        "passed": true,
+        "returncode": 0,
+        "log": "runs/replay_1794218335477194589/v7.log"
+      },
+      {
+        "version": "v6",
+        "passed": true,
+        "returncode": 0,
+        "log": "runs/replay_1794218335477194589/v6.log"
+      }
+    ],
+    "scope": "Archived static checks and own/reviewed pure helpers only; no original DLL execution; not independent audit."
+  },
+  "version_results": {
+    "v10": {
+      "input_hashes": 4,
+      "byte_records": 3106,
+      "fresh_GNU_decodes": 3106,
+      "constant_read_records": 9,
+      "initializer_slots": 189,
+      "initializer_nonzero_entries": 188,
+      "record_capacity": 2048,
+      "default_guard_file_target_return": true,
+      "accepted_walks": 10,
+      "saved_new_instruction_records": 2982,
+      "matched_metadata_lookup_names": 4,
+      "own_model_cases": 6632,
+      "model_groups": 6,
+      "passed": true,
+      "whole_modules_closed": false,
+      "all_gaps_closed": false,
+      "original_execution": false,
+      "original_emulation": false,
+      "independent_author_audit": false
+    },
+    "v9": {
+      "input_hashes": 4,
+      "byte_records": 4193,
+      "constant_read_records": 17,
+      "mask_entries": 32,
+      "math_dispatch_entries": 16,
+      "fresh_GNU_decodes": 1710,
+      "saved_guard_input_walks": 107,
+      "conditional_guards": 186,
+      "proved_branch_prunes": 0,
+      "own_model_cases": 87971,
+      "C_python_cases": 87451,
+      "model_groups": 11,
+      "passed": true,
+      "whole_modules_closed": false,
+      "all_gaps_closed": false,
+      "original_code_executed": false,
+      "original_code_emulated": false,
+      "independent_author_audit": false
+    },
+    "v8": {
+      "passed": true,
+      "new_walks": 10,
+      "new_instruction_records": 2370,
+      "all_byte_records": 11431,
+      "fresh_decode_anchors": 888,
+      "input_hashes": 4,
+      "constant_read_records": 25,
+      "table_entries_verified": 28,
+      "table_indirect_sites_derived_resolved": 2,
+      "linked_rounding_fallbacks": 1,
+      "C_python_cases": 6787,
+      "collection_shape_cases": 511,
+      "material_dispatch_domain_cases": 65536,
+      "hitgroup_dispatch_boundary_cases": 14,
+      "contract_walk_limits": [
+        {
+          "file": "penetration_with_materials_walk.json",
+          "records": 487,
+          "saved_indirect_sites": 5,
+          "saved_range_exits": []
+        },
+        {
+          "file": "hitgroup_with_cases_walk.json",
+          "records": 366,
+          "saved_indirect_sites": 5,
+          "saved_range_exits": [
+            "0x57be4276"
+          ]
+        },
+        {
+          "file": "armor_scale_walk.json",
+          "records": 436,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "history_selection_filter_walk.json",
+          "records": 44,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "history_preference_walk.json",
+          "records": 21,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "threshold_rounding_helper_walk.json",
+          "records": 68,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": [
+            "0x42048a07"
+          ]
+        },
+        {
+          "file": "rounding_fallback_block_walk.json",
+          "records": 79,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "rounding_control_word_walk.json",
+          "records": 17,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "x87_round_integral_walk.json",
+          "records": 11,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": []
+        },
+        {
+          "file": "armor_coverage_extended_walk.json",
+          "records": 841,
+          "saved_indirect_sites": 0,
+          "saved_range_exits": [
+            "0x9db52cc8"
+          ]
+        }
+      ],
+      "whole_modules_closed": false,
+      "all_gaps_closed": false,
+      "original_execution": false,
+      "original_emulation": false,
+      "original_modification": false,
+      "independent_author_audit": false
+    },
+    "v7": {
+      "passed": true,
+      "new_walks": 11,
+      "new_instruction_records": 2855,
+      "all_byte_records": 8661,
+      "fresh_decode_anchors": 282,
+      "input_hashes": 11,
+      "constant_reads": 1,
+      "resolved_copy_table_sites": 3,
+      "copy_table_targets": 8,
+      "word_pair_equality_fixtures": 1004,
+      "historical_H01_byte_assertions": 162,
+      "historical_H01_gnu_matches": 162,
+      "bounded_score_cases": 86,
+      "portable_tests": 3,
+      "blocked_checks": [
+        "Dynamic ASan runtime missing",
+        "Static ASan runtime missing",
+        "CMake unavailable"
+      ],
+      "all_gaps_closed": false,
+      "original_dll_execution": false,
+      "original_emulation": false,
+      "original_modification": false,
+      "independent_author_audit": false
+    },
+    "v6": {
+      "passed": true,
+      "scope": "Finite byte, decoder, literal-data and local-contract checks. Same author, not an independent audit.",
+      "input_hashes_checked": 12,
+      "saved_walks": 7,
+      "instruction_records_byte_checked": 1112,
+      "selected_instructions_freshly_decoded": 48,
+      "candidate_graph_functions": 4,
+      "candidate_graph_direct_edges": 5,
+      "candidate_absolute_reads_checked": 13,
+      "old_mask_data_cases": 6,
+      "engine_pattern_matches": [
+        "0x100dd290"
+      ],
+      "exact_historical_listing_paths_present": 3,
+      "archived_literal_probe_files": 90,
+      "archived_literal_probe_positive_candidates": 0,
+      "local_contract_models": [
+        {
+          "name": "quarter",
+          "passed": true
+        },
+        {
+          "name": "quarter_inside",
+          "passed": true
+        },
+        {
+          "name": "preserve_old_flag",
+          "passed": true
+        },
+        {
+          "name": "zero",
+          "passed": true
+        },
+        {
+          "name": "at_end",
+          "passed": true
+        },
+        {
+          "name": "beyond_end",
+          "passed": true
+        },
+        {
+          "name": "negative_local_guard",
+          "passed": true
+        },
+        {
+          "name": "unordered",
+          "passed": true
+        }
+      ],
+      "fourth_external_address": "0x289a6d60",
+      "resource_matches_supplied_dump": true,
+      "strict_old_multidecoder_protocol_repeated": false,
+      "runtime_module_mapping_proved": false,
+      "three_unknown_source_fields_closed": false,
+      "original_execution": false,
+      "original_emulation": false,
+      "independent_author_audit": false
+    }
+  },
+  "early_attempt": {
+    "passed": false,
+    "error": "AssertionError: Run tools/bootstrap.py first.",
+    "cause": "Replay was attempted while bootstrap was still extracting; retried successfully after completion."
+  },
+  "historical_note": "v7 blocked_checks is hard-coded archived text, not a fresh ASan probe. Current continuation sanitizer result is recorded separately."
+}

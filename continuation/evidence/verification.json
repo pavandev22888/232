@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-11-09T10:09:37.840137+00:00",
+  "command": "make -C continuation check",
+  "exit_code": 0,
+  "native_test": {
+    "passed": true,
+    "fixture_groups": 8,
+    "assertions": 2601
+  },
+  "asan_ubsan": {
+    "passed": true,
+    "fixture_groups": 8,
+    "assertions": 2601,
+    "leak_detection": true,
+    "undefined_behavior_halt_on_error": true
+  },
+  "byte_evidence": {
+    "passed": true,
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "instruction_bytes_and_fresh_decodes": 294,
+    "constants": 5,
+    "unchanged_inventory_files": 13,
+    "scope": "Bytes and instruction decoding only; not branch reachability or C++ equivalence."
+  },
+  "final_bundle_integrity": {
+    "passed": true,
+    "verified_files": 960,
+    "errors": [],
+    "scope": "File integrity, not behaviour equivalence."
+  },
+  "final_input_integrity": {
+    "passed": true,
+    "checked_files": 64087,
+    "errors": [],
+    "scope": "input integrity only; no algorithmic correctness claimed"
+  },
+  "environment": {
+    "cxx": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "python": "Python 3.12.3",
+    "architecture": "x86_64"
+  },
+  "source_sha256": {
+    "Makefile": "ae66a2db9d0e0021f52fba7453d44d5c4e8bcd36ed31c94d3c7ab67b68daa67c",
+    "include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "tests/verify_evidence.py": "1f6a3954c6da0d9b3e067256ac3d4b606cd110ff6138de7c955bce3b3a2faa1a"
+  },
+  "scope": "Current own offline C++ tests and byte checks only. Not original DLL execution, independent audit or whole Ragebot equivalence."
+}

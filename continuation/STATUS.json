@@ -1,0 +1,79 @@
+{
+  "stage": "V10 continuation: typed conditional position-record chain",
+  "full_ragebot_reconstructed": false,
+  "new_readable_code_added": true,
+  "implemented_local_contracts": [
+    "position storage and layout",
+    "resolved update with snapshots and metadata",
+    "resolved item word store",
+    "resolved reader including policy clearing",
+    "item consumer entry gate"
+  ],
+  "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
+  "verification": {
+    "v10_v9_v8_v7_v6_replay": "passed",
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "fresh_byte_replay": "passed",
+    "fixture_groups": 8,
+    "assertions_per_run": 2601,
+    "instruction_bytes_and_fresh_decodes": 294,
+    "constants": 5,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed"
+  },
+  "open_tasks": [
+    {
+      "id": "CODE01",
+      "status": "partial",
+      "change": "Added typed, compiled, connected local N chain; broader Ragebot code remains incomplete"
+    },
+    {
+      "id": "GAP01",
+      "status": "open",
+      "change": "No new claim about first positive Point+26/T+F4/old +BC sources"
+    },
+    {
+      "id": "GAP02",
+      "status": "open",
+      "change": "T+68 consumer not closed; N+68 explicitly separate"
+    },
+    {
+      "id": "GAP03",
+      "status": "partial",
+      "change": "Conditional N transitions and reader branches implemented; external/opaque paths and other modules remain"
+    },
+    {
+      "id": "GAP04",
+      "status": "open",
+      "change": "Providers remain explicit external observations; no runtime binding assigned"
+    },
+    {
+      "id": "GAP05",
+      "status": "partial",
+      "change": "Storage/update/reader/item-entry chain implemented; full sender/format/consumers and marker lifecycle remain"
+    },
+    {
+      "id": "GAP06",
+      "status": "partial",
+      "change": "Fresh V10-V6 replay; new tests and byte replay; no full H01 protocol or independent observation"
+    }
+  ],
+  "unresolved_boundaries": [
+    "external entity/weapon resolution",
+    "trace implementation and original runtime bindings",
+    "TLS/FS guards and exceptional paths",
+    "full marker +48 producer/lifecycle",
+    "complete message format and sender",
+    "rest of consumers and full Ragebot modes",
+    "original out-of-range index handler"
+  ],
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "input_and_restored_work_modified": false,
+  "independent_audit": false,
+  "next_task": "Recover the N+48 producer and actor-consumer transitions without pruning unresolved guards"
+}
