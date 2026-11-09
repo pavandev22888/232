@@ -1,0 +1,119 @@
+# Independent fixed-SHA agent review — selected excerpts only, NOT a full transcript.
+# Full fresh logs: runs/r03-review-sol/*.log (ignored, local to this reviewer worktree).
+# Complete commands, individual exit codes and SHA256 are pinned by acceptance.json.
+reviewed_sha=b97bf7e22da6568a938bddf071761428b0426137
+comparison_base_sha=fecb19440f91c9dddbb60247c386fe55ef4e0c92
+worktree=/tmp/hoplite/232-r03-review-sol
+branch=hoplite/sikyon-46eee495--r03-review-sol
+handoff=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 (read-only)
+result=accepted bounded static frontier; R03 remains incomplete/blocked, GAP04 open
+external_audit=false; full_original_reconstruction=false
+
+[Environment excerpt]
+Python 3.12.3; GCC/G++ 13.3.0; GNU Make 4.3; GNU objdump 2.42 (i386 available); Git 2.43.0.
+PYTHONOPTIMIZE=0; PYTHONDONTWRITEBYTECODE=1.
+
+[Focused verifier excerpt]
+command=python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+started=2026-11-09T12:54:38Z
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.
+
+exit_code=0
+finished=2026-11-09T12:54:42Z
+
+[Full make check excerpt]
+command=make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_charge_state
+PASS: 3274 charge-state checks
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_charge_state_sanitize
+PASS: 3274 charge-state checks
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only
+Ran 8 tests in 0.003s
+OK
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS marker composition: 3 evidence pins; 19 producer anchors; 25 fresh decoded instructions; 2 producer constants
+BOUNDARY: supplied independent snapshots; transactional no-change is offline API convention, not original rollback; runtime reachability/owners remain unresolved
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.
+exit_code=0
+Result: 7 native + 7 ASan/UBSan programs, 19902 assertions per mode, 8 Python tests.
+Sanitizer diagnostic scan: rg exit 1 (expected no matches); sanitizer execution itself passed.
+
+[Bundle and input/work integrity excerpt]
+Before: check_bundle.py exit 0, passed=true, verified_files=960; check_integrity.py exit 0, passed=true, checked_files=64087.
+After: check_bundle.py exit 0, passed=true, verified_files=960; check_integrity.py exit 0, passed=true, checked_files=64087.
+No shared handoff writes, bootstrap/restore, image loading/execution/emulation, game connection, process access or injection.
+
+[Independent static anchor review excerpt]
+Independent Python lookahead literal search: 767 hits; c705 writer 0x41C5DC06; 8935 writer 0x41C5E404.
+Separate raw-image objdump decodes: 0x41C784B0..0x41C784E3, 0x41C5E3B0..0x41C5E40A, 0x41C5BDA0..0x41C5BDC9, 0x41C5DC06..0x41C5DC10.
+0x41C5E404: 89354c195242 stores post-call ESI as a DWORD in 0x4252194C, conditional on the local zero-compare fallthrough.
+0x41C784D8: 8b0d4c195242 reloads that cell; 0x41C784DE: f30f105124 reads binary32 at [ECX+0x24].
+0x41C5E3F0: e8abd9ffff targets 0x41C5BDA0. Its entry saves ESI but also changes ESI to ESP; restoration on all exits is unproved.
+0x4252194C raw bytes 00000000 are a file snapshot, not established runtime initialization.
+The 767 nominated instruction starts are a literal inventory, not a CFG, reachability map or exhaustive writer proof.
+P_before, P_compare, post-call ESI and P_read are not identified across time; writer-before-read and provider field contents remain unproved.
+
+[Goal/status review excerpt]
+Current goal is original logic in its original source language; current C++17 and decompiler .c do not establish that language.
+C01-C04 are superseded/blocked, with empty active write_paths. No C17 acceptance gate was introduced or required.
+No source/include/tests behavior changed between comparison base and reviewed SHA; fresh regression check passed.
+
+[Nonblocking finding F01, severity=low]
+docs/TASKS.json:288-298 still records R03 in_progress, result_commit=null and blocked_reason=null.
+The proof and continuation/STATUS.json correctly retain the frontier/open state. After acceptance, coordinator should record the stopped/blocked frontier and result/review references; not done.
+
+[Fresh full-log SHA256]
+dd3a4a2e219f3d8883473d0937e20a27f91789f2ee4587b8d63a8aeeb913b69f  runs/r03-review-sol/environment.log  exit=0
+64ef4d8b8932edf711bd8736d4ec9655bcf3225c4c10269e6dea565b3bedb7be  runs/r03-review-sol/bundle-before.log  exit=0
+aa68cd0ed5ed22ec62675f4971bf7c962964d39259535cc2460dbdb3235800f4  runs/r03-review-sol/integrity-before.log  exit=0
+b68b22475f99d4be567c46a4e6999df8472c008141e9777253b58f0675e84c2e  runs/r03-review-sol/focused.log  exit=0
+1855059e5a16226b125a3a692e9cff19a16c3092903f2b52e7f77312b7e20341  runs/r03-review-sol/independent-anchors.log  exit=0
+b7e9658d3e97f8f700281fef12caddb38edd0b9f5d777220f9230536433688c6  runs/r03-review-sol/check.log  exit=0
+41b0f470565fc940b313900bcdeb9a9cc13be75324588e88e7b6dd381495c9e0  runs/r03-review-sol/bundle-after.log  exit=0
+353af9ab683516e3c4c84302a5add45e6972b3e86ff8dc25153db0ad5bb6fa5d  runs/r03-review-sol/integrity-after.log  exit=0
+d2187a6bb44bc0eb77d672ccd724596cdef1621ab4056286856025a4b8d45a86  runs/r03-review-sol/scope.log  exit=0
+e55cf00ca14f4e6cf725a64b8a7006996a90f7e29b85d7d2d9453b092fd59990  runs/r03-review-sol/diagnostics.log  exit=1
