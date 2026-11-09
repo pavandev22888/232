@@ -1,0 +1,86 @@
+{
+  "task": "W8-MOVEMENT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "verified_at_utc": "2026-11-09T18:58:26.895544+00:00",
+  "branch": "hoplite/tanagra-adb72df5--w8-movement",
+  "focused_checks_only": true,
+  "full_integrated_make_check": "pending coordinator; intentionally not run by this assignment",
+  "toolchain": {
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "python": "Python 3.12.3"
+  },
+  "checks": [
+    {
+      "name": "build-final",
+      "command": "make -B -C continuation BUILD=/tmp/hoplite/w8-movement-build /tmp/hoplite/w8-movement-build/test_movement_slice /tmp/hoplite/w8-movement-build/test_movement_slice_sanitize",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/build-final.log"
+    },
+    {
+      "name": "native-final",
+      "command": "/tmp/hoplite/w8-movement-build/test_movement_slice",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/native-final.log"
+    },
+    {
+      "name": "asan-ubsan-final",
+      "command": "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/w8-movement-build/test_movement_slice_sanitize",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/asan-ubsan-final.log"
+    },
+    {
+      "name": "w7-source-gate-final",
+      "command": "python3 -B continuation/evidence/wave7/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/w7-source-gate-final.log"
+    },
+    {
+      "name": "w8-source-gate-final",
+      "command": "python3 -B continuation/evidence/wave8/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/w8-source-gate-final.log"
+    },
+    {
+      "name": "diff-check-final",
+      "command": "git diff --check",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/diff-check-final.log"
+    },
+    {
+      "name": "staged-diff-check-final",
+      "command": "git diff --cached --check",
+      "cwd": "/tmp/hoplite/232-w8-movement",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/movement/logs/staged-diff-final.log"
+    }
+  ],
+  "code_sha256": {
+    "continuation/include/rage/movement_slice.hpp": "4bbf8113c86ce8588e7f096f85fd8a370a702a46ad66629b50a0abae41ba106d",
+    "continuation/src/movement_slice.cpp": "1a0d12acc3cb246d2a54f89807fbd511ad7b70639c517e88e138907fb9b2110e",
+    "continuation/tests/test_movement_slice.cpp": "64d2855c1d4421c476d6a8787d109c2d2c74b4c9c0b698b3ac48c8dde4963477",
+    "continuation/evidence/wave8/movement/verify_source_bytes.py": "844e29be814b46d235e4a04aff9b8614264dcb1d380b43e023644f9ff58d8493",
+    "continuation/evidence/wave8/movement/anchors.json": "0e5e4c37ad82fa961bebd6280ae6825269afc5c184defcf4eb539bd8cccc8ccd"
+  },
+  "test_assertions_per_mode": 198,
+  "preserved_failed_check": {
+    "exit_code": 1,
+    "log": "continuation/evidence/wave8/movement/logs/native-unordered-failure.log",
+    "cause": "GCC 13 _mm_ucomile_ss lowered to reversed UCOMISS/SETAE and returned false on unordered; fixed with NOT ordered-greater, fresh tests include both quiet/signaling NaNs",
+    "fixed_codegen": "logs/native-predicate-codegen.txt shows UCOMISS argument,squared then SETBE; native SSE arithmetic order inspected"
+  },
+  "original_loaded_run_or_emulated": false,
+  "source_io": "Read-only ZIP and nl.bin; both hashes/member agreement rechecked by standalone gate",
+  "shared_makefile_docs_registry_old_evidence_modified": false,
+  "preserved_staged_diff_failure": {
+    "exit_code": 2,
+    "log": "continuation/evidence/wave8/movement/logs/staged-diff-initial-failure.json",
+    "cause": "objdump formatting emitted trailing spaces/blank EOF; stripped presentation whitespace only, byte anchors unchanged"
+  }
+}

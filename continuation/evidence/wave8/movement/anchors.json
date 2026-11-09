@@ -1,0 +1,116 @@
+{
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624,
+    "image_base": "0x412a0000",
+    "archive_path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "archive_member": "nl.bin"
+  },
+  "regions": [
+    {
+      "label": "W7 caller boundary",
+      "va": "0x4148cc44",
+      "size": 72,
+      "sha256": "8242c24ce71228fc5676bc23fa7a76cead107950f3a0cd5f2497fcf2aa4e8a13",
+      "bytes": "0fb7043031db83f81f0f84660b000083f8400f845d0b0000f605b8525042017527660f6e05dc525042c745f0ffffffff83ec04660f7e0424e8af84010083c40484c00f842b0b0000"
+    },
+    {
+      "label": "entire callee including unmodeled alternate-control blocks",
+      "va": "0x414a5130",
+      "size": 428,
+      "sha256": "b16ab989f4ad69b5b13e9ffe00970f55ee48fc967f51f35010bb829352f29351",
+      "bytes": "5383ec0ca10027264231e08944240864a1300000008b88a80000000388a40000000388b80000000388bc000000034864b81cc5afbb2dc4ee8d0f2d904e2a35c1ca203556a17c522d96268b24c1c0029090909089442404394c2404742789f80fbed305105d20286629efc1d00e66d3c9d3ec66c1e41c0fc980f3006609cf6621c4f9ffe0b8b4bd5f1d3543c59b1ec1c010c1c015c1c9200533ed4e4f2d6a03007c3519b72d6390894424048b4c24048b01ff5034b30185c00f85dc00000064a1300000008b88a80000000388a40000000388b80000000388bc000000034864b8e06be895c1ca202d77246b5a2d1ea11807c1ce20c1c0052d4cfe0e1a353acb85729089442404394c2404743389e00fbef66681c5113f29d8c0d10c66c1cb0e66c1ec0ec1e60e0fcd6681f5671b09eb6621dff5ffe2c2e1e0e8710f7a72730fb825f9b1e505ee571b0c2d3780f3170584b8fc512dde966932c1c015359eccad78eb00894424048b4c24048b01ff5030d91c24f30f100424f30f51c0f30f5905f4cd0642f30f59c0f30f104c24140f540d40a505420f2ec80f96c38b4c240831e1e88729900089d883c40c5bc3"
+    },
+    {
+      "label": "low-lane sign mask and other lanes",
+      "va": "0x4205a540",
+      "size": 16,
+      "sha256": "c66856d3622ef1af1acca8762554ca873b9ea946fc38967d2d42caba297dc8d7",
+      "bytes": "ffffff7fffffff7fffffff7fffffff7f"
+    },
+    {
+      "label": "MULSS constant",
+      "va": "0x4206cdf4",
+      "size": 4,
+      "sha256": "75e253f50979177eba47b2d0805ad36038789108924514d2a761a70de057d16f",
+      "bytes": "0000803e"
+    }
+  ],
+  "task": "W8-MOVEMENT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "projection": {
+    "fs_dword_load_order": [
+      "+0xa8",
+      "+0xa4",
+      "+0xb8",
+      "+0xbc",
+      "+0x64"
+    ],
+    "guard_arithmetic": "separate snapshots, sequential uint32 modulo-2^32 sum == 0x20 at each gate",
+    "first_indirect_call": {
+      "site": "0x414a51e1",
+      "ecx_literal": "0x28f3bfb0",
+      "operand": "[[ECX]+0x34]",
+      "observation": "complete 32-bit EAX after normal return; nonzero sets the early BL=1 path"
+    },
+    "second_indirect_call": {
+      "site": "0x414a529c",
+      "ecx_literal": "0x28f2e100",
+      "operand": "[[ECX]+0x30]",
+      "observation": "raw binary32 bits after FSTP [ESP] at 0x414a529f, not a simulated x87 return"
+    },
+    "float_order": [
+      "FSTP m32 observation",
+      "MOVSS",
+      "SQRTSS",
+      "MULSS 0.25 (0x3e800000)",
+      "MULSS self",
+      "argument MOVSS [ESP+0x14]",
+      "ANDPS 0x7fffffff low lane",
+      "UCOMISS masked_argument,squared",
+      "SETBE BL (unordered=true)"
+    ],
+    "return_boundary": "BL remains pending at 0x414a52ca; only an observation of normal 0x41da7c5c cookie-check return establishes AL after MOV EAX,EBX and RET; upper EAX is not modeled",
+    "caller_link": "pinned direct CALL 0x4148cc7c->0x414a5130; reuse W7 selector/guard gate and AL-only TEST, raw argument bits unchanged",
+    "tests": [
+      "test_predicate_frontiers",
+      "test_predicate_float_operations",
+      "test_caller_composition",
+      "unchanged W7 caller regression cases"
+    ]
+  },
+  "preconditions": [
+    "x86 SSE2 binary32 nearest-even; FTZ and DAZ disabled; FP exceptions masked; FP status flags/traps not API outputs",
+    "Each optional observation belongs to its exact call/read site on the same conditional invocation; no runtime binding or reachability is inferred",
+    "Nested indirect calls and cookie check return with the required ESP/EBX preservation; cookie normal return is separately observed",
+    "Static constant decoding does not establish original source language, named interface/class, provider target or runtime mapping"
+  ],
+  "open_boundaries": [
+    {
+      "site": "0x414a518d",
+      "kind": "nonmatching first guard",
+      "detail": "stop before opaque register/stack mutations and indirect JMP EAX at 0x414a51b2"
+    },
+    {
+      "site": "0x414a523c",
+      "kind": "nonmatching second guard",
+      "detail": "stop before opaque register/stack mutations and indirect JMP EDX at 0x414a5263"
+    },
+    {
+      "site": "0x414a51e1 / 0x414a529c",
+      "kind": "providers",
+      "detail": "distinct ECX literals lie outside nl.bin snapshot; their objects, dereferenced tables, targets, lifetimes and return provenance remain unresolved"
+    },
+    {
+      "site": "0x414a52d0",
+      "kind": "normal cookie return",
+      "detail": "cookie/security implementation and exceptional behavior not reconstructed; absence leaves caller AL unresolved"
+    },
+    {
+      "kind": "full contour",
+      "detail": "selector/global/command semantics, scheduling, runtime reachability, stop meaning and complete GAPs not established"
+    }
+  ]
+}
