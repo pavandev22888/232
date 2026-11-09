@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "task": "W5-HISTORICAL",
+  "result": "bounded_replay_complete_ready_for_coordinator_review",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "worktree": "/tmp/hoplite/232-w5-historical-sol",
+  "branch": "hoplite/sikyon-46eee495--w5-historical-sol",
+  "commands_cwd": "/tmp/hoplite/232-w5-historical-sol",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/tmp/hoplite/232-w5-historical-sol/runs/w5-historical/downloads",
+        "--only-binary=:all:",
+        "--require-hashes",
+        "--no-deps",
+        "--no-compile",
+        "--upgrade",
+        "--target",
+        "/tmp/hoplite/232-w5-historical-sol/runs/w5-historical/deps",
+        "-r",
+        "continuation/evidence/wave5/historical/requirements.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "runs/w5-historical/install.stdout.log",
+      "stderr": "runs/w5-historical/install.stderr.log",
+      "purpose": "Single pinned pure-Python package installation"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave5/historical/replay_pefile_leaf.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "env": {
+        "PYTHONPATH": "/tmp/hoplite/232-w5-historical-sol/runs/w5-historical/deps"
+      },
+      "exit_code": 0,
+      "stdout": "runs/w5-historical/leaf.stdout.json",
+      "stderr": "runs/w5-historical/leaf.stderr.log",
+      "purpose": "Only new H01 named-library predicate replay; original producer not executed"
+    },
+    {
+      "argv": [
+        "make",
+        "-C",
+        "continuation",
+        "check",
+        "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "BUILD=build/w5-historical"
+      ],
+      "exit_code": 0,
+      "stdout": "runs/w5-historical/make-check.stdout.log",
+      "stderr": "runs/w5-historical/make-check.stderr.log",
+      "purpose": "Current baseline regressions, not another new historical leaf"
+    },
+    {
+      "argv": [
+        "python3",
+        "-c",
+        "import ast; from pathlib import Path; ast.parse(Path(\"continuation/evidence/wave5/historical/replay_pefile_leaf.py\").read_text())"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "json.tool",
+        "continuation/evidence/wave5/historical/frontier.json"
+      ],
+      "stdout": "/dev/null",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "json.tool",
+        "continuation/evidence/wave5/historical/leaf.json"
+      ],
+      "stdout": "/dev/null",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "RAGEBOT_V10_*.zip"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tools": {
+    "python": "3.12.3",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "make": "GNU Make 4.3",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "pefile": "2024.8.26"
+  },
+  "package": {
+    "filename": "pefile-2024.8.26-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/54/16/12b82f791c7f50ddec566873d5bdd245baa1491bac11d15ffb98aecc8f8b/pefile-2024.8.26-py3-none-any.whl",
+    "digests": {
+      "blake2b_256": "541612b82f791c7f50ddec566873d5bdd245baa1491bac11d15ffb98aecc8f8b",
+      "md5": "b6c7d2bd569fe4c2f471febc9c911f05",
+      "sha256": "76f8b485dcd3b1bb8166f1128d395fa3d87af26360c2358fb75b80019b957c6f"
+    },
+    "size": 74766
+  },
+  "replay_source_sha256": "f4baec769b3f6a50dd5d909ccada8d4909e4b4a32ab7f5e9dd4ffd1d1c4e9ba4",
+  "parser_source_sha256": "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345",
+  "pinned_source_verification": {
+    "exit_code": 0,
+    "source_and_input_hashes_verified": 12,
+    "values": "frontier.json#/source_hashes_relative_to_handoff_workspace"
+  },
+  "fresh_native_and_sanitizer_assertions_each": {
+    "actor_scalar_pipeline": 119,
+    "charge_state": 3274,
+    "marker_pipeline": 13255,
+    "position_lifecycle": 208,
+    "position_pipeline": 392,
+    "position_records": 2601,
+    "resolved_scalar_helper": 53,
+    "total": 19902
+  },
+  "baseline_python_unit_tests": 8,
+  "focused_inventory_consistency": {
+    "exit_code": 0,
+    "checks": [
+      "AST parse",
+      "12 exact original historical-only ordinals",
+      "one fresh named-library leaf only",
+      "actual leaf matches ordinal 5 expected historical data",
+      "replay source digest matches current script"
+    ]
+  },
+  "handoff_interval_integrity": {
+    "exit_code": 0,
+    "files": 65038,
+    "total_bytes": 1223394840,
+    "file_set_sha256_size_mtime_ns_equal": true,
+    "before_command": {
+      "argv": [
+        "python3",
+        "-"
+      ],
+      "stdin": "import hashlib,json\nfrom pathlib import Path\nh=Path('/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10'); rows=[]\nfor p in sorted(h.rglob('*')):\n if p.is_file():\n  s=p.stat(); rows.append({'path':str(p.relative_to(h)),'size':s.st_size,'mtime_ns':s.st_mtime_ns,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})\np=Path('runs/w5-historical/handoff.before.json');p.write_text(json.dumps(rows,ensure_ascii=False,separators=(',',':'))+'\\n')\n",
+      "exit_code": 0
+    },
+    "after_command": "Same Python traversal, output handoff.after.json, then compare decoded before and after lists for equality; exit 1 on mismatch.",
+    "before_after_manifest_sha256": "83464c2baa5d94aa1c20b1b7001a22034d8b04d20bd3ff5dcefacf86db55c73c",
+    "scope": "All current regular-file paths under this HANDOFF, not authenticated old audit interval, directory permissions or historical bundle completeness"
+  },
+  "logs": {
+    "runs/w5-historical/install.stdout.log": {
+      "sha256": "2b5a7a5085ada5c28661afdb15859763fb2ec02cbd3515cbedd1b24a7fab48cc",
+      "bytes": 311
+    },
+    "runs/w5-historical/install.stderr.log": {
+      "sha256": "24cc65b5c08e8f09bdd6a84de957dae4fc61b0af7ecda2f656dfcd2ddc897df6",
+      "bytes": 502
+    },
+    "runs/w5-historical/leaf.stdout.json": {
+      "sha256": "b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1",
+      "bytes": 1810
+    },
+    "runs/w5-historical/leaf.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "runs/w5-historical/make-check.stdout.log": {
+      "sha256": "e80a6b316a0a1a1b04c94b6fc6af3674d94d0b67cc2b3d93ef2b4b51b56c3a48",
+      "bytes": 94812
+    },
+    "runs/w5-historical/make-check.stderr.log": {
+      "sha256": "b880e7cb126656ff648c9708f3d5168fc8d3bf6b98603167b3fcd485ed399a6c",
+      "bytes": 1138
+    },
+    "runs/w5-historical/handoff.before.json": {
+      "sha256": "83464c2baa5d94aa1c20b1b7001a22034d8b04d20bd3ff5dcefacf86db55c73c",
+      "bytes": 13045328
+    },
+    "runs/w5-historical/handoff.after.json": {
+      "sha256": "83464c2baa5d94aa1c20b1b7001a22034d8b04d20bd3ff5dcefacf86db55c73c",
+      "bytes": 13045328
+    }
+  },
+  "artifact_sha256_excluding_this_file": {
+    "README.md": "a8d24cecec6124a6b6fba34824c3a8d6f5c3d42afe25c2515b879a095f169f3c",
+    "frontier.json": "7c44fb0b55761cb67d5fae7c9f610d7796963027c9f7173c829210d0ed4a5ac6",
+    "leaf.json": "b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1",
+    "replay_pefile_leaf.py": "f4baec769b3f6a50dd5d909ccada8d4909e4b4a32ab7f5e9dd4ffd1d1c4e9ba4",
+    "requirements.txt": "5a0ae4a9403807d21bf51c7c210501a6d3dac7a81749e4fb56f72d5b4b9e553c"
+  },
+  "preparation_diagnostics": [
+    {
+      "action": "First attempt to generate acceptance metadata via Python stdin",
+      "exit_code": 1,
+      "observed": "SyntaxError: unterminated triple-quoted string literal (detected at line 15)",
+      "effect": "No statement executed; no fixture/replay/build changed. Corrected Python string quoting; metadata generation then succeeded. Not a failed historical replay."
+    }
+  ],
+  "non_trace_historical_predicates_replayed": 1,
+  "old_h01_producer_executed": false,
+  "strict_old_protocol_repeated": false,
+  "all_209_repeated": false,
+  "external_independent_audit": false,
+  "full_gap06_closed": false,
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "originals_or_archives_added_to_git": false,
+  "coordinator_full_integrated_check_pending": true,
+  "independent_fixed_integrated_sha_review_pending": true,
+  "external_audit_obligation": "Open; agent review and model tests cannot supply independent external audit.",
+  "stop": "One non-trace leaf and per-entry frontier supplied. No further historical gates attempted."
+}
