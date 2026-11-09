@@ -1,0 +1,172 @@
+{
+  "wave": "W8",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "model": "gpt-6.1-sol",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "tasks": [
+    {
+      "id": "W8-AUDIT",
+      "owner": "w8-audit",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-audit",
+      "branch": "hoplite/tanagra-adb72df5--w8-audit",
+      "write_paths": [
+        "continuation/evidence/wave8/audit/"
+      ],
+      "scope": "Audit all reachable commits/refs and preserved publication evidence; identify actual remaining transitive gaps, stale publication claims and newly useful source anchors. No code changes or claim to unavailable historical pushes.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-AGGREGATE",
+      "owner": "w8-aggregate",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-aggregate",
+      "branch": "hoplite/tanagra-adb72df5--w8-aggregate",
+      "write_paths": [
+        "continuation/evidence/wave8/aggregate/",
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp"
+      ],
+      "scope": "Beyond W7 normal ranking: decode 0x4149EC2D index handler and immediate owner+4/+B0 dependencies. Implement a new contiguous source-backed body if possible; no fabricated setting/provider.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-DAMAGE",
+      "owner": "w8-damage",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-damage",
+      "branch": "hoplite/tanagra-adb72df5--w8-damage",
+      "write_paths": [
+        "continuation/evidence/wave8/damage/",
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp"
+      ],
+      "scope": "Extend 0x41370710 beyond hitgroup 3 into other byte-backed hitgroups/guards/armor logic; preserve provider observations, float order and stores. No guessed weapon/surface semantics.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-MOVEMENT",
+      "owner": "w8-movement",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-movement",
+      "branch": "hoplite/tanagra-adb72df5--w8-movement",
+      "write_paths": [
+        "continuation/evidence/wave8/movement/",
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp"
+      ],
+      "scope": "Reconstruct missing callee 0x414A5130 beyond W7 caller; prove branch/operation order and connect to existing caller only at established boundary. No assumed command/global providers.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-HISTORY",
+      "owner": "w8-history",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-history",
+      "branch": "hoplite/tanagra-adb72df5--w8-history",
+      "write_paths": [
+        "continuation/evidence/wave8/history/",
+        "continuation/include/rage/history_slot_slice.hpp",
+        "continuation/src/history_slot_slice.cpp",
+        "continuation/tests/test_history_slot_slice.cpp"
+      ],
+      "scope": "Extend 0x413F88F0 storage beyond W7 no-growth path: decode adjacent growth/initialization and implement deterministic local state changes with explicit allocator/postcall observations; do not assume power-of-two capacity or identity through opaque calls.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-MESSAGE",
+      "owner": "w8-message",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-message",
+      "branch": "hoplite/tanagra-adb72df5--w8-message",
+      "write_paths": [
+        "continuation/evidence/wave8/message/",
+        "continuation/include/rage/bounded_message_fields.hpp",
+        "continuation/src/bounded_message_fields.cpp",
+        "continuation/tests/test_bounded_message_fields.cpp"
+      ],
+      "scope": "Beyond W6 message static frontier/W5 bounded fields: trace one immediate message receiver/consumer body from existing source anchors and implement source-backed local transform if possible, otherwise document new precise dependency. No broad repeated xref scans or invented network sender.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-GEOMETRY",
+      "owner": "w8-geometry",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-geometry",
+      "branch": "hoplite/tanagra-adb72df5--w8-geometry",
+      "write_paths": [
+        "continuation/evidence/wave8/geometry/",
+        "continuation/include/rage/geometry_slice.hpp",
+        "continuation/src/geometry_slice.cpp",
+        "continuation/tests/test_geometry_slice.cpp"
+      ],
+      "scope": "Beyond W6 0x4136FFA0 geometry frontier: reconstruct one immediate trace-result transform/consumer with exact raw layout and guards, using new geometry_slice module only if evidence suffices. Do not duplicate damage writes or invent a trace provider.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-PROVIDER",
+      "owner": "w8-provider",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-provider",
+      "branch": "hoplite/tanagra-adb72df5--w8-provider",
+      "write_paths": [
+        "continuation/evidence/wave8/provider/"
+      ],
+      "scope": "Resolve one concrete runtime binding/language/ABI prerequisite beyond W7 ABI and W5 fallback24/indirect evidence. Inspect local source boundary and type descriptors at anchored caller/provider; do not infer original language/standard from decompiler or reconstruction. Stop with precise evidence-backed frontier if unresolved.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    }
+  ],
+  "original_execution_allowed": false,
+  "full_tasks_closed": []
+}
