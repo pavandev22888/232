@@ -1,0 +1,105 @@
+{
+  "task": "W8-SHOT",
+  "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+  "classification": "conditional_offline_local_index_and_postcall_consumer",
+  "original_language_or_standard_established": false,
+  "implementation_language": "C++17, reconstruction only",
+  "source": "byte_anchors.json: nl.bin + archive identity and 57 freshly decoded instructions",
+  "entry": "0x414C0A50; context only. Prologue and opaque frame-setup call do not prove ABI/language or full entry reachability.",
+  "index_prefix": {
+    "implemented_interval": "[0x414C197D,0x414C19C7)",
+    "inputs": [
+      "index_word is the raw DWORD loaded by 0x414C1980 from [ECX+0x20], with ECX freshly reloaded from [ESI+0x3C] after opaque call 0x413F8AB0.",
+      "slot_word_observation is the DWORD observed at 0x414C19A6, at raw32 (0x424F7E98 + byte_offset).",
+      "slot_byte_11_observation is the BYTE observed later at 0x414C19B9, at raw32 (0x424F7EA9 + byte_offset), after the D0/154 stores. Observations do not assert identity, ownership, or aliasing of original objects."
+    ],
+    "arithmetic": [
+      "Interpret index_word as signed int32, without an out-of-range unsigned-to-signed conversion.",
+      "0x414C1983..0x414C1994 uses signed IMUL high product with 0x1B4E81B5, logical sign extraction, SAR 4 and sign correction: quotient = trunc_toward_zero(signed_index / 150).",
+      "0x1B4E81B5 = ceil(2^36 / 150); the high-product/SAR correction is the signed constant-division sequence, not unsigned division.",
+      "remainder = signed_index - quotient * 150, range [-149,149]. Negative values stay negative; no normalization to [0,149].",
+      "byte_offset = uint32(remainder) * 0x98 modulo 2^32; all returned addresses are raw32 additions, never host pointers or dereferenced original memory."
+    ],
+    "ordered_stores": [
+      {
+        "address": "0x414C19AC",
+        "offset": "ESI+0xD0",
+        "width": 1,
+        "value": "slot_word_observation == index_word ? 1 : 0"
+      },
+      {
+        "address": "0x414C19B3",
+        "offset": "ESI+0x154",
+        "width": 4,
+        "value": "byte_offset, little endian"
+      },
+      {
+        "address": "0x414C19C0",
+        "offset": "ESI+0xEF",
+        "width": 1,
+        "value": "slot_byte_11_observation != 0 ? 1 : 0"
+      }
+    ]
+  },
+  "postcall_consumer": {
+    "context_interval": "[0x414C1FA0,0x414C1FC6)",
+    "implemented_interval": "[0x414C1FC6,0x414C2003)",
+    "precondition": "Caller supplies an independent frame observation after opaque 0x414BD940 at 0x414C1FC1. Neither prior index-prefix output nor observations from before intervening calls are silently reused. This API does not execute the opaque call or the intervening CFG.",
+    "ordered_effects": [
+      {
+        "address": "0x414C1FCD",
+        "offset": "ESI+0xD0",
+        "width": 1,
+        "value": "raw byte D0 & raw byte EF, not logical conjunction"
+      },
+      {
+        "address": "0x414C1FD3",
+        "effect": "read raw32 ESI+0x154 after the byte AND"
+      },
+      {
+        "address": "0x414C1FDF",
+        "offset": "ESI+0x78",
+        "width": 4,
+        "value": "uint32(saved_offset + 0x424F7EAC), little endian; address only, no dereference"
+      },
+      {
+        "address": "0x414C1FE2",
+        "offset": "ESI+0xF0",
+        "width": 4,
+        "value": "raw 0x7F7FFFFF, not host floating-point arithmetic"
+      },
+      {
+        "address": "0x414C1FEC",
+        "offset": "ESI+0x120",
+        "width": 4,
+        "value": "raw zero"
+      },
+      {
+        "address": "0x414C1FF6..0x414C1FFD",
+        "effect": "read postcall byte DC after stores; zero selects 0x414C2233, otherwise next 0x414C2003"
+      }
+    ]
+  },
+  "adapter_boundary": [
+    "Frame is a caller-owned byte view of at least 0x158 bytes, not a recovered object layout. Original ESI is a local frame base in this context.",
+    "Null/short frame rejection and no-write invalid_view are offline adapter policy, not a recovered original guard/rollback.",
+    "Views are ordinary single-thread offline memory. No concurrent/volatile observer or original pointer lifetime is modeled.",
+    "All other frame bytes are preserved. A one-byte SET/AND never overwrites neighboring bytes of a DWORD."
+  ],
+  "test_cases": [
+    "Signed boundaries: zero, +/-1, +/-149, +/-150, +/-151, +/-299, +/-300, INT32_MIN/MAX and adjacent values.",
+    "Matching/nonmatching raw slot DWORD, slot BYTE zero/1/0x80/0xFF, exact whole-frame preservation and byte widths.",
+    "Independent postcall frame with changed offset/D0/EF/DC, nonboolean bitwise AND, raw32 address wrap, sentinel bits and both outgoing branches.",
+    "Null and one-byte-short views reject without writes. 250 assertions in each native and ASan/UBSan focused executable."
+  ],
+  "frontier": [
+    "0x413F8AB0 at 0x414C1978: pre-prefix helper/provider and full path reachability not reconstructed.",
+    "0x414C19C7..0x414C1FC6: intervening CFG/helpers are not reconstructed; call 0x414BD940 effects and cross-call object identity remain unknown.",
+    "0x414C2003 / 0x414C2233: successor bodies are not part of this increment.",
+    "Cring is archival navigation terminology. This slice proves only the signed arithmetic, 0x98 scale, absolute addressing and local fields above; command identity and valid runtime index range are not established.",
+    "R stride 0xF1A0 remains archival navigation, with no proved R/index/result linkage in this slice. No R API is added.",
+    "No hit/miss, miss cause, server-confirmation, event association, lifecycle, full accounting module, original language or full GAP closure follows."
+  ],
+  "original_loaded_executed_or_emulated": false,
+  "full_tasks_closed": []
+}

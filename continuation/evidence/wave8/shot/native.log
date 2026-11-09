@@ -1,0 +1,3 @@
++ g++ -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/shot_result_slice.cpp continuation/tests/test_shot_result_slice.cpp -o continuation/evidence/wave8/shot/build/test_shot_result_slice
++ continuation/evidence/wave8/shot/build/test_shot_result_slice
+PASS shot_result_slice: 250 assertions

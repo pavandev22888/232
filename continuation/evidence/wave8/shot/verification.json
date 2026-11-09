@@ -1,0 +1,63 @@
+{
+  "task": "W8-SHOT",
+  "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+  "code_sha256": {
+    "continuation/include/rage/shot_result_slice.hpp": "6c317b6356f2426b2d4cda4f541d76145df434f044e8fb9b2f56e18814e2108e",
+    "continuation/src/shot_result_slice.cpp": "72023bc9fa7ec982f20d513979726a3e9cd27a58ff52ecdb47285df2a02e7e89",
+    "continuation/tests/test_shot_result_slice.cpp": "4c5785de4623a0159844b3521a7ce1a4a66f396de5c86683299f45f17e393f37"
+  },
+  "toolchain": {
+    "cxx": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "python": "Python 3.12.3",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42"
+  },
+  "checks": [
+    {
+      "id": "focused_native",
+      "command": "g++ -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/shot_result_slice.cpp continuation/tests/test_shot_result_slice.cpp -o continuation/evidence/wave8/shot/build/test_shot_result_slice && continuation/evidence/wave8/shot/build/test_shot_result_slice",
+      "exit": 0,
+      "assertions": 250,
+      "log": "native.log",
+      "log_sha256": "eb9209136ca7c920a1129179edd8c6d7473fb33917549e5953869dbd0181e654"
+    },
+    {
+      "id": "focused_asan_ubsan",
+      "command": "g++ -std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -fno-omit-frame-pointer -fsanitize=address,undefined -Icontinuation/include continuation/src/shot_result_slice.cpp continuation/tests/test_shot_result_slice.cpp -o continuation/evidence/wave8/shot/build/test_shot_result_slice_sanitize && ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 continuation/evidence/wave8/shot/build/test_shot_result_slice_sanitize",
+      "exit": 0,
+      "assertions": 250,
+      "log": "sanitize.log",
+      "log_sha256": "144c755725500f97b07f11a78fe6e72b6bd171a35c538de0cbe3b4dcd97a0ba1"
+    },
+    {
+      "id": "source_bytes",
+      "command": "python3 -B continuation/evidence/wave8/shot/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit": 0,
+      "instructions": 57,
+      "navigation_receipts": 6,
+      "log": "source-bytes.log",
+      "log_sha256": "8822ec9fb86fcea58f17ff92acd481fd99f89c1518d4c9cb903acfcb4c30cd87"
+    },
+    {
+      "id": "full_regression",
+      "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=evidence/wave8/shot/build/regression -j2",
+      "exit": 0,
+      "native_executables": 19,
+      "asan_ubsan_executables": 19,
+      "python_tests": 13,
+      "log": "regression.log",
+      "log_sha256": "167a1efd21db9f84255557b15cc5431de22e603afc71b5190d74c51c76639f7a"
+    }
+  ],
+  "diff_check": {
+    "command": "git diff --cached --check",
+    "exit": 0
+  },
+  "isolated_build": "continuation/evidence/wave8/shot/build/ (ignored)",
+  "existing_sources_tests_and_common_docs_modified": false,
+  "original_execution_or_emulation": false,
+  "pending_acceptance": [
+    "Coordinator integration and fresh integrated checks",
+    "Independent fixed-SHA review"
+  ],
+  "scope": "contract.json; local raw32 index/stores and distinct postcall consumer only; full shot accounting and GAPs remain open"
+}
