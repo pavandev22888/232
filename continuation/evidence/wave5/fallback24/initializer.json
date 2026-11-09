@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "task": "W5-FALLBACK24",
+  "owner": "w5-fallback24-sol",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "status": "bounded static candidate; provider unresolved; ready for independent review, not GAP04 closure",
+  "scope": {
+    "write_paths": [
+      "continuation/evidence/wave5/fallback24/"
+    ],
+    "candidate_count": 1,
+    "new_broad_literal_inventory": false,
+    "source_image_execution_or_emulation": false,
+    "enclosing_callee_esi_proof": "not attempted: separate W5-ESI owner",
+    "indirect_provider": "not attempted: separate owner",
+    "locator": "Only the nominated construction route was inspected. No absence claim follows from a fixed-window operand lookup."
+  },
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "conditional_base": "0x412a0000",
+  "mapping": "Raw VA = offset + conditional base; not an observed loaded-module base.",
+  "accepted_manifest": "continuation/evidence/next/scalar-provider/fallback_provider.json",
+  "sources": [
+    {
+      "root": "repo",
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/next/scalar-provider/fallback_provider.json",
+      "sha256": "9ab27eb48603ed01dfdb3bc75f993c2454d62b3017221e94af5779358e9e636a"
+    }
+  ],
+  "windows": [
+    {
+      "name": "selected_install",
+      "start": "0x41c5e3b0",
+      "end_exclusive": "0x41c5e40a",
+      "raw_offset": "0x9be3b0",
+      "bytes": "5553575681eca40900008b9c24bc0900008bbc24b8090000a14c19524285c07406ff8080030000ff35481952426840490000ff153c72264283c40889c689c153e8abd9ffff89be3c490000833d4c19524200750689354c195242",
+      "sha256": "cf76e168220548bcd49b96cf3019d61cb24efdb693b121a06cb03b940c495a37",
+      "instructions": [
+        [
+          "0x41c5e3b0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c5e3b1",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5e3b2",
+          "57",
+          "push edi"
+        ],
+        [
+          "0x41c5e3b3",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c5e3b4",
+          "81eca4090000",
+          "sub esp,0x9a4"
+        ],
+        [
+          "0x41c5e3ba",
+          "8b9c24bc090000",
+          "mov ebx,dword ptr [esp+0x9bc]"
+        ],
+        [
+          "0x41c5e3c1",
+          "8bbc24b8090000",
+          "mov edi,dword ptr [esp+0x9b8]"
+        ],
+        [
+          "0x41c5e3c8",
+          "a14c195242",
+          "mov eax,ds:0x4252194c"
+        ],
+        [
+          "0x41c5e3cd",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x41c5e3cf",
+          "7406",
+          "je 0x41c5e3d7"
+        ],
+        [
+          "0x41c5e3d1",
+          "ff8080030000",
+          "inc dword ptr [eax+0x380]"
+        ],
+        [
+          "0x41c5e3d7",
+          "ff3548195242",
+          "push dword ptr ds:0x42521948"
+        ],
+        [
+          "0x41c5e3dd",
+          "6840490000",
+          "push 0x4940"
+        ],
+        [
+          "0x41c5e3e2",
+          "ff153c722642",
+          "call dword ptr ds:0x4226723c"
+        ],
+        [
+          "0x41c5e3e8",
+          "83c408",
+          "add esp,0x8"
+        ],
+        [
+          "0x41c5e3eb",
+          "89c6",
+          "mov esi,eax"
+        ],
+        [
+          "0x41c5e3ed",
+          "89c1",
+          "mov ecx,eax"
+        ],
+        [
+          "0x41c5e3ef",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5e3f0",
+          "e8abd9ffff",
+          "call 0x41c5bda0"
+        ],
+        [
+          "0x41c5e3f5",
+          "89be3c490000",
+          "mov dword ptr [esi+0x493c],edi"
+        ],
+        [
+          "0x41c5e3fb",
+          "833d4c19524200",
+          "cmp dword ptr ds:0x4252194c,0x0"
+        ],
+        [
+          "0x41c5e402",
+          "7506",
+          "jne 0x41c5e40a"
+        ],
+        [
+          "0x41c5e404",
+          "89354c195242",
+          "mov dword ptr ds:0x4252194c,esi"
+        ]
+      ]
+    },
+    {
+      "name": "fallback_entry",
+      "start": "0x41c784b0",
+      "end_exclusive": "0x41c784e3",
+      "raw_offset": "0x9d84b0",
+      "bytes": "f30f104424088b442404f30f10080f2ec87501c3f30f1054241cf30f105c24180f57e40f2ed4730b8b0d4c195242f30f105124",
+      "sha256": "6f592d465d4edf84d77df4d8a0e812eda90115d07cce27ad24550ca944849e49",
+      "instructions": [
+        [
+          "0x41c784b0",
+          "f30f10442408",
+          "movss xmm0,dword ptr [esp+0x8]"
+        ],
+        [
+          "0x41c784b6",
+          "8b442404",
+          "mov eax,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x41c784ba",
+          "f30f1008",
+          "movss xmm1,dword ptr [eax]"
+        ],
+        [
+          "0x41c784be",
+          "0f2ec8",
+          "ucomiss xmm1,xmm0"
+        ],
+        [
+          "0x41c784c1",
+          "7501",
+          "jne 0x41c784c4"
+        ],
+        [
+          "0x41c784c3",
+          "c3",
+          "ret"
+        ],
+        [
+          "0x41c784c4",
+          "f30f1054241c",
+          "movss xmm2,dword ptr [esp+0x1c]"
+        ],
+        [
+          "0x41c784ca",
+          "f30f105c2418",
+          "movss xmm3,dword ptr [esp+0x18]"
+        ],
+        [
+          "0x41c784d0",
+          "0f57e4",
+          "xorps xmm4,xmm4"
+        ],
+        [
+          "0x41c784d3",
+          "0f2ed4",
+          "ucomiss xmm2,xmm4"
+        ],
+        [
+          "0x41c784d6",
+          "730b",
+          "jae 0x41c784e3"
+        ],
+        [
+          "0x41c784d8",
+          "8b0d4c195242",
+          "mov ecx,dword ptr ds:0x4252194c"
+        ],
+        [
+          "0x41c784de",
+          "f30f105124",
+          "movss xmm2,dword ptr [ecx+0x24]"
+        ]
+      ]
+    },
+    {
+      "name": "constructor_route",
+      "start": "0x41c5bda0",
+      "end_exclusive": "0x41c5bdfa",
+      "raw_offset": "0x9bbda0",
+      "bytes": "5589e553575683e4f081ecb000000089e689ae9800000089cf89a69c000000c786a8000000ffffffff8d86a0000000c786a40000001097c741648b0d00000000898ea000000064a3000000008d4f08898e94000000e8a6520000",
+      "sha256": "3f829c1a2d081fe2efa99cba5c9a2b19003de80918afdcd5079a5c8253939061",
+      "instructions": [
+        [
+          "0x41c5bda0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c5bda1",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x41c5bda3",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5bda4",
+          "57",
+          "push edi"
+        ],
+        [
+          "0x41c5bda5",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c5bda6",
+          "83e4f0",
+          "and esp,0xfffffff0"
+        ],
+        [
+          "0x41c5bda9",
+          "81ecb0000000",
+          "sub esp,0xb0"
+        ],
+        [
+          "0x41c5bdaf",
+          "89e6",
+          "mov esi,esp"
+        ],
+        [
+          "0x41c5bdb1",
+          "89ae98000000",
+          "mov dword ptr [esi+0x98],ebp"
+        ],
+        [
+          "0x41c5bdb7",
+          "89cf",
+          "mov edi,ecx"
+        ],
+        [
+          "0x41c5bdb9",
+          "89a69c000000",
+          "mov dword ptr [esi+0x9c],esp"
+        ],
+        [
+          "0x41c5bdbf",
+          "c786a8000000ffffffff",
+          "mov dword ptr [esi+0xa8],0xffffffff"
+        ],
+        [
+          "0x41c5bdc9",
+          "8d86a0000000",
+          "lea eax,[esi+0xa0]"
+        ],
+        [
+          "0x41c5bdcf",
+          "c786a40000001097c741",
+          "mov dword ptr [esi+0xa4],0x41c79710"
+        ],
+        [
+          "0x41c5bdd9",
+          "648b0d00000000",
+          "mov ecx,dword ptr fs:0x0"
+        ],
+        [
+          "0x41c5bde0",
+          "898ea0000000",
+          "mov dword ptr [esi+0xa0],ecx"
+        ],
+        [
+          "0x41c5bde6",
+          "64a300000000",
+          "mov fs:0x0,eax"
+        ],
+        [
+          "0x41c5bdec",
+          "8d4f08",
+          "lea ecx,[edi+0x8]"
+        ],
+        [
+          "0x41c5bdef",
+          "898e94000000",
+          "mov dword ptr [esi+0x94],ecx"
+        ],
+        [
+          "0x41c5bdf5",
+          "e8a6520000",
+          "call 0x41c610a0"
+        ]
+      ]
+    },
+    {
+      "name": "initializer_candidate",
+      "start": "0x41c610a0",
+      "end_exclusive": "0x41c610d1",
+      "raw_offset": "0x9c10a0",
+      "bytes": "5589e55683e4f083ec3089ce68201500006a0051e867be3a0083c40cc74608000080bfc7460c000080bfc7461c8988883c",
+      "sha256": "f7f4a0293b1ec98e93d590a830b62ac181791d2bf4a133029684dde75d7777ff",
+      "instructions": [
+        [
+          "0x41c610a0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c610a1",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x41c610a3",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c610a4",
+          "83e4f0",
+          "and esp,0xfffffff0"
+        ],
+        [
+          "0x41c610a7",
+          "83ec30",
+          "sub esp,0x30"
+        ],
+        [
+          "0x41c610aa",
+          "89ce",
+          "mov esi,ecx"
+        ],
+        [
+          "0x41c610ac",
+          "6820150000",
+          "push 0x1520"
+        ],
+        [
+          "0x41c610b1",
+          "6a00",
+          "push 0x0"
+        ],
+        [
+          "0x41c610b3",
+          "51",
+          "push ecx"
+        ],
+        [
+          "0x41c610b4",
+          "e867be3a00",
+          "call 0x4200cf20"
+        ],
+        [
+          "0x41c610b9",
+          "83c40c",
+          "add esp,0xc"
+        ],
+        [
+          "0x41c610bc",
+          "c74608000080bf",
+          "mov dword ptr [esi+0x8],0xbf800000"
+        ],
+        [
+          "0x41c610c3",
+          "c7460c000080bf",
+          "mov dword ptr [esi+0xc],0xbf800000"
+        ],
+        [
+          "0x41c610ca",
+          "c7461c8988883c",
+          "mov dword ptr [esi+0x1c],0x3c888889"
+        ]
+      ]
+    }
+  ],
+  "candidate": {
+    "store": "0x41c610ca",
+    "bytes": "c7461c8988883c",
+    "width_bytes": 4,
+    "parent_subobject_offset": "0x8",
+    "store_offset": "0x1c",
+    "conditional_parent_offset": "0x24",
+    "immediate_bits": "0x3c888889",
+    "binary32_value": 0.01666666753590107,
+    "value_class": "The immediate bit pattern decodes as finite positive binary32. It is not an observed runtime field value.",
+    "nested_call": "0x41c610b4",
+    "nested_target": "0x4200cf20",
+    "nested_target_semantics": "unexamined; no memset or ESI-preservation contract asserted"
+  },
+  "identity_ledger": [
+    {
+      "symbol": "A",
+      "definition": "EAX returned by the indirect call at 0x41c5e3e2; allocation/type/validity not established",
+      "local_anchor": "0x41c5e3eb..0x41c5e3f0 copies A to ESI and ECX, then calls 0x41c5bda0"
+    },
+    {
+      "symbol": "O_entry",
+      "definition": "entry ECX of 0x41c5bda0; on the nominated call edge O_entry=A",
+      "local_anchor": "0x41c5bdb7 copies entry ECX to EDI; no intervening call before 0x41c5bdec computes ECX=O_entry+8"
+    },
+    {
+      "symbol": "S_entry",
+      "definition": "entry ECX of 0x41c610a0; on the nominated call edge S_entry=O_entry+8 (32-bit address arithmetic)",
+      "local_anchor": "0x41c610aa copies entry ECX to ESI"
+    },
+    {
+      "symbol": "S_store",
+      "definition": "post-0x4200cf20 ESI used by 0x41c610ca",
+      "local_anchor": "store is [S_store+0x1c]=0x3c888889; S_store=S_entry is an explicit unproved join, not inferred from the register name"
+    },
+    {
+      "symbol": "V_install",
+      "definition": "post-0x41c5bda0 ESI used by 0x41c5e404",
+      "local_anchor": "the inherited compare/store installs V_install only on the zero-compare fallthrough; V_install=A remains the separate owner's obligation"
+    },
+    {
+      "symbol": "P_read",
+      "definition": "fresh DWORD read from 0x4252194c at 0x41c784d8",
+      "local_anchor": "0x41c784de reads exactly four bytes at P_read+0x24; P_read=V_install and same lifetime are not established"
+    }
+  ],
+  "proven_local": [
+    "The accepted pointer-install and fallback windows are unchanged and freshly decoded; this is not a new inventory of the global cell.",
+    "On the nominated direct-call edge, the enclosing callee receives A in ECX. Its entry-to-first-call route computes the adjusted address O_entry+8 in ECX.",
+    "The nested callee copies its entry ECX into ESI, makes a direct call at 0x41c610b4, and on normal fallthrough writes the immediate DWORD 0x3c888889 through post-call ESI+0x1c.",
+    "The source of the selected four-byte store is the immediate instruction payload, not the zero snapshot of the global cell.",
+    "Offset arithmetic 8+0x1c=0x24 is established; equality of the base pointers across the call is not established by that arithmetic."
+  ],
+  "conditional_chain": [
+    {
+      "requires": "S_store=S_entry across 0x4200cf20, valid writable address range and normal return to 0x41c610ca",
+      "then": "the candidate writes the immediate bits to O_entry+0x24 on this invocation"
+    },
+    {
+      "requires": "The preceding S_store=S_entry join, V_install=A across 0x41c5bda0, and normal continuation to the selected pointer store",
+      "then": "the candidate object and installed pointer can share the same base, subject to field stability and lifetime"
+    },
+    {
+      "requires": "Both preceding identity joins plus all temporal_lifetime_prerequisites below for this particular helper invocation",
+      "then": "the fallback read can observe 0x3c888889 at +0x24; this is conditional, not a supplied runtime provider"
+    }
+  ],
+  "temporal_lifetime_prerequisites": [
+    {
+      "id": "T1",
+      "condition": "The nominated calls and field store must be reached in the same construction invocation and return normally; no fault/exception or alternate exit may bypass the needed store/return.",
+      "status": "unproved beyond the displayed local fallthroughs"
+    },
+    {
+      "id": "T2",
+      "condition": "The initializer field store must precede the selected publication at 0x41c5e404. Later construction work and nested/aliased writes must not replace these four bytes before the read.",
+      "status": "whole-constructor field stability and global reachability unproved; full constructor not reconstructed"
+    },
+    {
+      "id": "T3",
+      "condition": "The zero comparison at 0x41c5e3fb must allow the store, and that actual publication must be the one observed by 0x41c784d8. Same global address is not dominance or ordering proof.",
+      "status": "unproved; ordinary compare then MOV, not atomic compare-and-swap"
+    },
+    {
+      "id": "T4",
+      "condition": "Between publication and pointer read, no other direct/computed/aliased/external writer may substitute the cell value. Between pointer read and float load, the pointed storage must remain valid and its four field bytes stable.",
+      "status": "unproved; no closed writer/alias set asserted"
+    },
+    {
+      "id": "T5",
+      "condition": "A, V_install and P_read must denote the same live storage instance, not merely equal 32-bit numbers. No free/reuse/relocation or ABA generation change; at least the bytes [base+0x24,base+0x28) must be valid.",
+      "status": "lifetime, extent, ownership, non-nullness and allocation semantics unproved"
+    },
+    {
+      "id": "T6",
+      "condition": "Required ordering is field-store before publication before this pointer-read before this float-read. Cross-thread use additionally needs a justified synchronization/visibility/no-race contract; static raw addresses supply none.",
+      "status": "threading/publication contract unproved"
+    },
+    {
+      "id": "T7",
+      "condition": "The conditional raw-image address convention must bind to the intended runtime storage, and this helper invocation must actually take its negative/unordered requested-step fallback path rather than return early or use the supplied step.",
+      "status": "runtime binding and call scheduling unproved"
+    },
+    {
+      "id": "T8",
+      "condition": "Re-establish these prerequisites independently for every helper invocation/component; a previous read or another actor/marker does not freeze pointer or field state.",
+      "status": "per-read observations remain required"
+    }
+  ],
+  "unresolved": [
+    "Nested 0x4200cf20 ESI contract: explicitly not examined, so S_store=S_entry is conditional.",
+    "Enclosing 0x41c5bda0 ESI contract and indirect provider are separate assignments, not duplicated here.",
+    "Later writes in the enclosing constructor, external mutations, runtime reachability, storage lifetime and writer-before-read remain open.",
+    "No language/ABI/object type is inferred from this immediate store or current C++17 baseline; no fallback provider or null-to-zero stub is implemented."
+  ],
+  "reproduce": "python3 -B continuation/evidence/wave5/fallback24/verify_initializer.py --handoff /absolute/path/RAGEBOT_HANDOFF_V10",
+  "verification_scope": "Verifier checks source/image hashes, four bounded byte windows, fresh instruction decodes, rel32 targets and immediate/offset arithmetic. It does not prove the conditional semantic joins, runtime reachability, lifetime or ordering."
+}
