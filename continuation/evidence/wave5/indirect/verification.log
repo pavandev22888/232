@@ -1,0 +1,150 @@
+W5-INDIRECT fresh local verification
+UTC: 2026-11-09T13:33:30.076163+00:00
+cwd: /tmp/hoplite/232-w5-indirect-sol
+tested base: 3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b
+branch: hoplite/sikyon-46eee495--w5-indirect-sol
+check environment: PYTHONDONTWRITEBYTECODE=1 PYTHONOPTIMIZE=0
+No original image loading, execution, emulation or process/game integration.
+No new C++; native/sanitizer results below cover unchanged baseline only.
+
+$ python3 --version
+Python 3.12.3
+exit_code=0
+$ objdump --version
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+exit_code=0
+$ g++ --version
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+exit_code=0
+$ make --version
+GNU Make 4.3
+exit_code=0
+$ git --version
+git version 2.43.0
+exit_code=0
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+exit_code=0
+full_log=runs/w5-indirect/bundle-before.log
+full_log_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+exit_code=0
+full_log=runs/w5-indirect/integrity-before.log
+full_log_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+
+$ python3 -B continuation/evidence/wave5/indirect/verify_indirect.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+full_log=runs/w5-indirect/focused.log
+full_log_sha256=9dc8c8377e37118d3556a399fabc6457d144ec477f2c3f057b5860e695a823f1
+0x41c5e3b0: 55  push ebp
+0x41c5e3b1: 53  push ebx
+0x41c5e3b2: 57  push edi
+0x41c5e3b3: 56  push esi
+0x41c5e3b4: 81eca4090000  sub esp,0x9a4
+0x41c5e3ba: 8b9c24bc090000  mov ebx,dword ptr [esp+0x9bc]
+0x41c5e3c1: 8bbc24b8090000  mov edi,dword ptr [esp+0x9b8]
+0x41c5e3c8: a14c195242  mov eax,ds:0x4252194c
+0x41c5e3cd: 85c0  test eax,eax
+0x41c5e3cf: 7406  je 0x41c5e3d7
+0x41c5e3d1: ff8080030000  inc dword ptr [eax+0x380]
+0x41c5e3d7: ff3548195242  push dword ptr ds:0x42521948
+0x41c5e3dd: 6840490000  push 0x4940
+0x41c5e3e2: ff153c722642  call dword ptr ds:0x4226723c
+0x41c5e3e8: 83c408  add esp,0x8
+WINDOW caller_from_local_entry raw=0x9be3b0 SHA256=c66781c2266329ae9f887f80aa940816d23d0c97c94bd411319c0fce61aff2b6
+WINDOW slot_file_snapshot raw=0xfc723c SHA256=515bd2e0d1f2155a3816c9e6d065605a5e57720c9593ad841c0a00d15a6f801c
+0x41c683a0: e9eea03c00  jmp 0x42032493
+WINDOW one_thunk_instruction raw=0x9c83a0 SHA256=1451b5a4c2404b519d6669d49f2af97407e302e862b7cc4dedf2043d248bc7e0
+PASS: 4 source hashes, 3 windows, 16 fresh i386 instructions; snapshot 0x4226723c -> 0x41c683a0 -> JMP destination 0x42032493 under raw bias 0x412a0000.
+FRONTIER: no runtime binding, import identity, writer/order/lifetime, callee semantics or allocation/type claim; R03/GAP04 remain open.
+
+$ python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+full_log=runs/w5-indirect/provider-regression.log
+full_log_sha256=56f96bb7d4ef3c49783c455c620f36b19b45b710f111ff0f06745e2f5453339d
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.
+
+$ make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build
+exit_code=0
+full_log=runs/w5-indirect/full-check.log
+full_log_sha256=7b991ac816f90a9c75bc10abcec11e77ab1986792f3a7688bce27615a3442b34
+Selected literal lines from the complete successful make check log:
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_charge_state
+PASS: 3274 charge-state checks
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_charge_state_sanitize
+PASS: 3274 charge-state checks
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/232-w5-indirect-sol/runs/w5-indirect/build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+Ran 8 tests in 0.003s
+OK
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+exit_code=0
+full_log=runs/w5-indirect/bundle-after.log
+full_log_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+exit_code=0
+full_log=runs/w5-indirect/integrity-after.log
+full_log_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+
+Reviewable evidence SHA256 (verification.log excluded to avoid self-reference):
+6d0ea7bbe686657a5700299c40086e014ad784e32ed2e43434d62c67cb665128  continuation/evidence/wave5/indirect/contract.md
+f692b5b45e2be022e2d8ee02f369c01a4c354e194d334e52d19468d72eef1350  continuation/evidence/wave5/indirect/dispatch.json
+d0eaab61c24b1afbe31f607083a4048360b8875b64bcb434fe95e5147a417455  continuation/evidence/wave5/indirect/verify_indirect.py
+
+Status: bounded snapshot dispatch evidence ready for review; R03/GAP04 open.
+Unproved: time-of-call slot, writer/loader, file/RVA/runtime mapping, reachability,
+destination semantics/ABI/allocation/type/lifetime. ESI and +0x24 not investigated.
+Coordinator still owes full integrated-SHA check and independent fixed-SHA review.

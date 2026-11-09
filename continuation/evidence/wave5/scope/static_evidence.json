@@ -1,0 +1,126 @@
+{
+  "task": "W5-SCOPE",
+  "source": {
+    "root": "handoff",
+    "path": "workspace/input/dll/neverlose.dll",
+    "size": 62201344,
+    "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "clue_budget": {
+    "maximum_types": 2,
+    "examined_types": 2,
+    "search_limit": "One PE header and the first at most three occurrences of one exact RTTI marker, never an exhaustive RTTI inventory."
+  },
+  "clues": [
+    {
+      "id": "pe_container_metadata",
+      "proven": "Original supplied neverlose.dll stores PE32/i386 metadata, optional-header linker-version bytes 0e 2c (14,44), preferred ImageBase 0x10000000.",
+      "anchors": [
+        {
+          "file_offset": "0x3c",
+          "hex": "18010000"
+        },
+        {
+          "file_offset": "0x118",
+          "hex": "504500004c010500b687116a0000000000000000e0000221"
+        },
+        {
+          "file_offset": "0x130",
+          "hex": "0b010e2c00e430000076840300000000a8693000001000000000310000000010"
+        }
+      ],
+      "conditional": "Compatible with a 32-bit Windows PE toolchain/container. The header records linker-version fields, not the C/C++ source standard or compiler identity.",
+      "unresolved": [
+        "Authenticity/provenance of linker-version fields beyond supplied bytes",
+        "Whether outer container metadata describes the payload Ragebot compilation",
+        "Compiler executable, source language and standard"
+      ],
+      "reference": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format"
+    },
+    {
+      "id": "one_rtti_name_marker",
+      "proven": "Exact null-terminated .?AVtype_info@@ bytes occur at the three recorded original file offsets; two lie inside the outer PE .rsrc raw section.",
+      "needle_hex": "2e3f4156747970655f696e666f404000",
+      "locations": [
+        {
+          "file_offset": "0x5ee278",
+          "section": ".data",
+          "rva": "0x5f0078",
+          "preferred_va_not_runtime_binding": "0x105f0078",
+          "context_start": "0x5ee270",
+          "context_hex": "54113b10000000002e3f4156747970655f696e666f404000"
+        },
+        {
+          "file_offset": "0x1838c40",
+          "section": ".rsrc",
+          "rva": "0x183f240",
+          "preferred_va_not_runtime_binding": "0x1183f240",
+          "context_start": "0x1838c38",
+          "context_hex": "e4280f42000000002e3f4156747970655f696e666f404000"
+        },
+        {
+          "file_offset": "0x18dd2f0",
+          "section": ".rsrc",
+          "rva": "0x18e38f0",
+          "preferred_va_not_runtime_binding": "0x118e38f0",
+          "context_start": "0x18dd2e8",
+          "context_hex": "08d35442000000002e3f4156747970655f696e666f404000"
+        }
+      ],
+      "mapping_receipts": [
+        {
+          "file_offset": "0x260",
+          "hex": "2e6461746100000000a82100005041000068210000324100"
+        },
+        {
+          "file_offset": "0x288",
+          "hex": "2e72737263000000002e500300006300002e5003009a6200"
+        }
+      ],
+      "conditional": "The decorated type_info spelling and preceding pointer/zero pair are compatible with Microsoft-style C++ RTTI in at least a contained component. This is a clue, not validated RTTI use or whole-project language proof; Clang also supports the Microsoft C++ ABI.",
+      "unresolved": [
+        "No xref/type-descriptor use or vtable function was followed",
+        "No RTTI ownership bound to a necessary Ragebot class or body",
+        "No proof all source units use one language, one compiler or one language standard",
+        "First three matches only: neither exhaustive occurrence count nor proof no other markers exist"
+      ],
+      "references": [
+        "https://learn.microsoft.com/en-us/cpp/cpp/type-info-class?view=msvc-170",
+        "https://clang.llvm.org/doxygen/MicrosoftMangle_8cpp_source.html"
+      ]
+    }
+  ],
+  "references_checked_on": "2026-11-09",
+  "reproduction": {
+    "cwd": "repository root",
+    "command": "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 python3 -B -c 'from pathlib import Path\nimport hashlib,json,os,struct\np=Path(os.environ['\"'\"'HANDOFF'\"'\"'])/'\"'\"'workspace/input/dll/neverlose.dll'\"'\"'; b=p.read_bytes()\nassert hashlib.sha256(b).hexdigest()=='\"'\"'c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c'\"'\"'\npe=struct.unpack_from('\"'\"'<I'\"'\"',b,0x3c)[0]; op=pe+24\nassert pe==0x118 and b[pe:pe+24].hex()=='\"'\"'504500004c010500b687116a0000000000000000e0000221'\"'\"'\nassert b[op:op+4].hex()=='\"'\"'0b010e2c'\"'\"'\nassert b[0x260:0x278].hex()=='\"'\"'2e6461746100000000a82100005041000068210000324100'\"'\"'\nassert b[0x288:0x2a0].hex()=='\"'\"'2e72737263000000002e500300006300002e5003009a6200'\"'\"'\nneedle=b'\"'\"'.?AVtype_info@@\\0'\"'\"'; start=0; hits=[]\nwhile len(hits)<3:\n o=b.find(needle,start)\n if o<0: break\n hits.append(o); start=o+len(needle)\nassert hits==[0x5ee278,0x1838c40,0x18dd2f0]\nassert b[0x5ee270:0x5ee288].hex()=='\"'\"'54113b10000000002e3f4156747970655f696e666f404000'\"'\"'\nprint(json.dumps({'\"'\"'source_sha256'\"'\"':hashlib.sha256(b).hexdigest(),'\"'\"'pe_offset'\"'\"':hex(pe),'\"'\"'machine'\"'\"':'\"'\"'0x14c'\"'\"','\"'\"'magic'\"'\"':'\"'\"'0x10b'\"'\"','\"'\"'linker_bytes'\"'\"':'\"'\"'0e2c'\"'\"','\"'\"'bounded_type_info_hits'\"'\"':[hex(x) for x in hits]},sort_keys=True))\n'",
+    "exit_code": 0,
+    "stdout": "{\"bounded_type_info_hits\": [\"0x5ee278\", \"0x1838c40\", \"0x18dd2f0\"], \"linker_bytes\": \"0e2c\", \"machine\": \"0x14c\", \"magic\": \"0x10b\", \"pe_offset\": \"0x118\", \"source_sha256\": \"c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c\"}",
+    "stderr": ""
+  },
+  "conclusion": {
+    "proven": "PE metadata and one RTTI-shaped spelling in original bytes only",
+    "conditional": "Microsoft-compatible C++ ABI component is plausible; container and payload remain distinct",
+    "original_language": "unresolved",
+    "original_standard": "unresolved",
+    "compiler_identity": "unresolved",
+    "runtime_mapping": "unresolved"
+  },
+  "excluded_as_proof": [
+    "Current C++17 implementation",
+    "Decompiled .c extension",
+    "Recovered helper language",
+    "A lone library/runtime string as whole-project proof"
+  ],
+  "no_original_loading_execution_emulation": true,
+  "prior_attempts": [
+    {
+      "command": "python3 -B runs/w5-scope/build_evidence.py",
+      "exit_code": 1,
+      "observed_signal": "AssertionError in generated original-byte probe line 16; outer assertion records empty stdout and AssertionError stderr.",
+      "cause_proven": "Probe sliced 23 bytes [0x5ee270:0x5ee287] but compared a 24-byte context including the terminating NUL; the exact marker is 16 bytes.",
+      "correction": "Slice end corrected to 0x5ee288; expected bytes unchanged, NUL coverage retained. Corrected probe exit 0 is recorded above.",
+      "evidence": "Fresh read printed marker_length=16, context_length=24, wrong_slice ending 4040 and correct_slice ending 404000."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+W5-REVIEW-PROVIDERS fresh sanitized excerpts
+tested_sha=f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+cwd=/tmp/hoplite/232-w5-review-providers
+Full stdout/stderr are private ignored runs/review-providers; hashes below.
+
+$ python3 -c 'import platform,subprocess; print(platform.python_version()); print(subprocess.check_output(["objdump","--version"],text=True).splitlines()[0]); print(subprocess.check_output(["git","--version"],text=True).strip())'
+exit_code=0
+3.12.3
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+git version 2.43.0
+FULL_LOG runs/review-providers/tools.stdout.log bytes=69 SHA256=66745df5595b2efafc86503ee7ef5d3427c1fb615418e727b16dfc0b4c150ada
+FULL_LOG runs/review-providers/tools.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B continuation/evidence/wave5/esi/verify_preservation.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+PASS W5-ESI: pinned sources/image; 383 continuous callee instructions; 5 caller instructions; 9 opaque calls; 1 local branch; 1 supported ret 4
+PROVEN LOCAL: save at 0x41c5bda5; slot [frame EBP-0xc]; restore 0x41c5c70f..0x41c5c716
+CONDITIONAL: normal-return traversal, EBP/ESI frame discipline and saved-slot integrity; nested effects and exception/non-local paths not proved
+FULL_LOG runs/review-providers/esi.stdout.log bytes=376 SHA256=d1e9b4512c3bdbc852d38c5ce8b8684e3a8774e2cf5cc072d2a451d9959ed3f7
+FULL_LOG runs/review-providers/esi.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B continuation/evidence/wave5/indirect/verify_indirect.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+PASS: 4 source hashes, 3 windows, 16 fresh i386 instructions; snapshot 0x4226723c -> 0x41c683a0 -> JMP destination 0x42032493 under raw bias 0x412a0000.
+FRONTIER: no runtime binding, import identity, writer/order/lifetime, callee semantics or allocation/type claim; R03/GAP04 remain open.
+FULL_LOG runs/review-providers/indirect.stdout.log bytes=1264 SHA256=9dc8c8377e37118d3556a399fabc6457d144ec477f2c3f057b5860e695a823f1
+FULL_LOG runs/review-providers/indirect.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B continuation/evidence/wave5/fallback24/verify_initializer.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+PASS W5-FALLBACK24: image; 2 pinned sources; 4 hashed windows; 70 fresh instructions; 3 rel32 targets; one candidate immediate/offset composition
+STATIC IMMEDIATE: 0x3c888889 -> binary32 0.01666666753590107; not a runtime observation
+CONDITIONAL: nested-call ESI identity, enclosing-call ESI identity, field stability, publication, lifetime and per-read ordering are NOT proved.
+FRONTIER: R03/GAP04 remain open; no image execution/emulation or new literal inventory.
+FULL_LOG runs/review-providers/fallback24.stdout.log bytes=467 SHA256=ea3aa1ff340bb2dc3364b72178c2d2ac59577c96e00bf0043e34d08120f5db6a
+FULL_LOG runs/review-providers/fallback24.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B continuation/evidence/wave3/source/verify_source.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Read-only: no output files, imports from handoff, original loading, execution or emulation.
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+FULL_LOG runs/review-providers/p-source.stdout.log bytes=418 SHA256=40762f86ac0b487cab9fc142ffad1d1fd03964a5c14f771c1b0b4a6ef507bed3
+FULL_LOG runs/review-providers/p-source.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+FULL_LOG runs/review-providers/p-scalar.stdout.log bytes=258 SHA256=ad4e777178d44b6e344faf23bc9be93d3ba4e7c6f8307bb1ca66426c0e031429
+FULL_LOG runs/review-providers/p-scalar.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B -m unittest discover -s continuation/evidence/wave5/esi -p 'test_*.py' -v
+exit_code=0
+test_additional_esi_mutation_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_additional_esi_mutation_is_rejected) ... ok
+test_changed_frame_extent_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_changed_frame_extent_is_rejected) ... ok
+test_missing_restore_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_missing_restore_is_rejected) ... ok
+test_supported_local_structure (test_verify_preservation.PreservationEvidenceTests.test_supported_local_structure) ... ok
+test_unestablished_branch_target_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_unestablished_branch_target_is_rejected) ... ok
+Ran 5 tests in 0.008s
+OK
+FULL_LOG runs/review-providers/esi-unit.stdout.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+FULL_LOG runs/review-providers/esi-unit.stderr.log bytes=774 SHA256=119eb9da45dfd4312f78463c5f6a1b7f25c2c76cfb16891fcf3c7ba4cdaf76b2
+
+$ python3 -m pip install --only-binary=:all: --require-hashes --no-deps --no-compile --target /tmp/hoplite/232-w5-review-providers/runs/review-providers/deps -r continuation/evidence/wave5/historical/requirements.txt
+exit_code=0
+Successfully installed pefile-2024.8.26
+FULL_LOG runs/review-providers/install.stdout.log bytes=398 SHA256=8236fa94ab6830934d7d844729e1fa3adf2553f16e1c639de5400f3e67a0d07b
+FULL_LOG runs/review-providers/install.stderr.log bytes=502 SHA256=24cc65b5c08e8f09bdd6a84de957dae4fc61b0af7ecda2f656dfcd2ddc897df6
+
+$ PYTHONPATH=/tmp/hoplite/232-w5-review-providers/runs/review-providers/deps python3 -B continuation/evidence/wave5/historical/replay_pefile_leaf.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit_code=0
+result=fresh_named_library_leaf_pass
+actual=[["BINARY", 6462224, 55578624, 1049]]
+pefile=2024.8.26
+old_producer_executed=false; strict_old_protocol_repeated=false; external_independent_audit=false
+FULL_LOG runs/review-providers/h01-pefile.stdout.log bytes=1810 SHA256=b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1
+FULL_LOG runs/review-providers/h01-pefile.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ python3 -B runs/review-providers/audit_pins.py
+exit_code=0
+PASS P: 9 source pins, 2 declared older-revision assignment pins, recorded log hash; no new supplier inferred
+PASS H01: 12 handoff/source pins and older assignment pin; all 12 entries exactly match original predicates; 47 dispositions byte-identical to base
+PASS H01 prerequisites: anchor counts 143/19, VEX records have only labels/counts, ledger script_present=False, only 3 named producer paths checked absent
+DEPENDENCY OBSERVATIONS {'lief': False, 'pyvex': False, 'archinfo': False} rizin=None
+PASS fresh pefile leaf: output exactly agrees with recorded leaf and H01 #5 predicate; pinned parser and replay; no native package files; not original producer/protocol
+PASS scoped immutability: 28 declared source/input/archive files, size/mtime/SHA256 unchanged across fresh checks; not a whole-HANDOFF audit
+FULL_LOG runs/review-providers/audit-pins.stdout.log bytes=809 SHA256=6d4daf334574c26d809aac1ebde69c5cc50dc3856fec19457989924d0ed6cb98
+FULL_LOG runs/review-providers/audit-pins.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+$ git diff --cached --check
+first_exit_code=2 (review-log extra blank EOF only; corrected)
+final_exit_code=0
+FULL_LOG runs/review-providers/diff-check.failed.stdout.log bytes=89 SHA256=b557ae78f4eb14b82c43de6392a39b0f7d88647321248ad6c212c59acd26288a
+FULL_LOG runs/review-providers/diff-check.failed.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+FULL_LOG runs/review-providers/diff-check.stdout.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+FULL_LOG runs/review-providers/diff-check.stderr.log bytes=0 SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855

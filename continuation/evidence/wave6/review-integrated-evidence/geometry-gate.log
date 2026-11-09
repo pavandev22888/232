@@ -1,0 +1,12 @@
+COMMAND: python3 -B continuation/evidence/wave6/geometry/verify_geometry.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+PASS nl_handoff archive and nested nl.bin pins
+PASS caller byte window SHA-256 72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb
+PASS indirect call setup byte window SHA-256 2cc0b6ecc5100b19b3d6981c3d7c8505e4eb5fecc9a4c01766abd2776416fe0f
+PASS result/effect byte window SHA-256 58dbf01250553f893287c7993997ca2d910a094a3730bf2939dd74f0dfc989a5
+PASS threshold VA 0x4205A554 bytes 00 00 80 3f
+PASS fresh caller immediates compute indirect target 0x289A6D60
+PASS separate client candidate RVA/raw windows; neither runtime base is established
+UNRESOLVED provider identity and runtime binding at 0x289A6D60

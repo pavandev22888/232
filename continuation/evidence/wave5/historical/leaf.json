@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "ordinal": 5,
+  "check": "pefile resource BINARY/101 raw offset and size",
+  "result": "fresh_named_library_leaf_pass",
+  "producer": "W5 replay_pefile_leaf.py, not the absent original H01 producer",
+  "python": "3.12.3",
+  "pefile": "2024.8.26",
+  "parser_sha256": "0d0eb68f0f169182613dc64b3ab50b20855508c1c1d2faafe8fccf23edb6a345",
+  "replay_sha256": "f4baec769b3f6a50dd5d909ccada8d4909e4b4a32ab7f5e9dd4ffd1d1c4e9ba4",
+  "input_sha256": {
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "actual": [
+    [
+      "BINARY",
+      6462224,
+      55578624,
+      1049
+    ]
+  ],
+  "anchors": [
+    {
+      "resource_id": 101,
+      "data_rva": "0x630110",
+      "resource_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "records": [
+        {
+          "role": "type",
+          "file_offset": "0x629a10",
+          "bytes": "0001008020000080"
+        },
+        {
+          "role": "id",
+          "file_offset": "0x629a30",
+          "bytes": "6500000060000080"
+        },
+        {
+          "role": "language",
+          "file_offset": "0x629a70",
+          "bytes": "19040000c0000000"
+        },
+        {
+          "role": "data",
+          "file_offset": "0x629ac0",
+          "bytes": "10016300001050030000000000000000"
+        }
+      ]
+    }
+  ],
+  "old_producer_executed": false,
+  "strict_old_protocol_repeated": false,
+  "all_209_repeated": false,
+  "external_independent_audit": false,
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "scope": "One resource-directory predicate; no instruction trace or runtime equivalence."
+}

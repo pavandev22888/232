@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-09",
+  "remote_base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+  "working_branch": "hoplite/sikyon-46eee495",
+  "tested_source_tree": "unchanged from remote_base_commit; only docs/TASKS.json assignment changed during the baseline run",
+  "assignment_commit": "89ed8b8",
+  "handoff": "runs/handoff/RAGEBOT_HANDOFF_V10",
+  "archive_sha256": "b5e3336edaa99b6f437f22368ab230107b7b781d9dfd54c83c6e00d9cfb8018f",
+  "environment": {
+    "python": "3.12.3",
+    "gcc_gxx": "13.3.0",
+    "gnu_make": "4.3",
+    "gnu_objdump": "2.42",
+    "git": "2.43.0",
+    "python_optimization": 0
+  },
+  "commands": [
+    {
+      "command": "python3 runs/assembly/assemble_handoff.py --parts-dir \"$PWD\" --output \"$PWD/runs/assembly/RAGEBOT_HANDOFF_V10.zip\"",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/check_bundle.py\"",
+      "exit_code": 0,
+      "bundle_files": 960
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/bootstrap.py\"",
+      "exit_code": 0,
+      "restored_file_records": 64076,
+      "integrity_records": 64087
+    },
+    {
+      "command": "make -C continuation check HANDOFF=\"$PWD/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+      "exit_code": 0
+    }
+  ],
+  "results": {
+    "native_programs": 7,
+    "sanitized_programs": 7,
+    "assertions_per_mode": 19902,
+    "python_unit_tests": 8,
+    "static_evidence": "passed"
+  },
+  "log": {
+    "path": "baseline.log",
+    "format": "selected output, explicitly not full transcript",
+    "original_sha256": "67757782456657a60d4b7f426ba2eaf1c95255c932c691ad24e2a230695f4362"
+  },
+  "not_run": [
+    "Optional standalone archival tools/replay.py --versions v10 v9 v8 v7 v6; current make check evidence gates did run.",
+    "Original DLL loading/execution/emulation, game connections, injection."
+  ],
+  "limits": "Baseline regression only; no new C17 implementation, no full GAP closure, no external audit."
+}

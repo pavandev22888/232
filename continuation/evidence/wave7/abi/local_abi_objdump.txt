@@ -1,0 +1,51 @@
+
+source/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e790 <.data+0x1fe790>:
+4149e790:	55                                              	push   ebp
+4149e791:	53                                              	push   ebx
+4149e792:	57                                              	push   edi
+4149e793:	56                                              	push   esi
+4149e794:	50                                              	push   eax
+4149e795:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+4149e797:	ff 00                                           	inc    DWORD PTR [eax]
+4149e799:	8b 41 04                                        	mov    eax,DWORD PTR [ecx+0x4]
+4149e79c:	0f b6 48 07                                     	movzx  ecx,BYTE PTR [eax+0x7]
+4149e7a0:	8b 7a 1c                                        	mov    edi,DWORD PTR [edx+0x1c]
+4149e7a3:	89 fe                                           	mov    esi,edi
+4149e7a5:	83 e6 fe                                        	and    esi,0xfffffffe
+4149e7a8:	83 fe 02                                        	cmp    esi,0x2
+4149e7ab:	0f 84 bb 01 00 00                               	je     0x4149e96c
+
+
+source/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149eb28 <.data+0x1feb28>:
+4149eb28:	83 c4 04                                        	add    esp,0x4
+4149eb2b:	5e                                              	pop    esi
+4149eb2c:	5f                                              	pop    edi
+4149eb2d:	5b                                              	pop    ebx
+4149eb2e:	5d                                              	pop    ebp
+4149eb2f:	c3                                              	ret
+
+
+source/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a8d56 <.data+0x208d56>:
+414a8d56:	80 be c0 00 00 00 00                            	cmp    BYTE PTR [esi+0xc0],0x0
+414a8d5d:	74 0e                                           	je     0x414a8d6d
+414a8d5f:	8d 4e 50                                        	lea    ecx,[esi+0x50]
+414a8d62:	8d 96 a0 00 00 00                               	lea    edx,[esi+0xa0]
+414a8d68:	e8 23 5a ff ff                                  	call   0x4149e790
+414a8d6d:	8b 7e 30                                        	mov    edi,DWORD PTR [esi+0x30]
+414a8d70:	8b 56 34                                        	mov    edx,DWORD PTR [esi+0x34]
+414a8d73:	8b 86 a0 01 00 00                               	mov    eax,DWORD PTR [esi+0x1a0]

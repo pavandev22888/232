@@ -1,0 +1,84 @@
+{
+  "task": "W7-MOVEMENT",
+  "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+  "scope": "One bounded caller-to-callee-return projection; not a full movement or stop reconstruction.",
+  "source": {
+    "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_base": "0x412a0000",
+    "original_loaded_executed_or_emulated": false
+  },
+  "static_chain": [
+    {
+      "va": "0x4148cae0",
+      "fact": "Caller entry frame bytes pinned; bounded caller branch window is at 0x4148cc44."
+    },
+    {
+      "va": "0x4148cc44",
+      "fact": "A zero-extended 16-bit word is compared with 0x1f and 0x40; both conditional branches target 0x4148d7b9."
+    },
+    {
+      "va": "0x4148cc5c",
+      "fact": "Only bit 0 of byte [0x425052b8] guards the direct call; set branches to 0x4148cc8c."
+    },
+    {
+      "va": "0x4148cc65",
+      "fact": "The 32-bit dword at [0x425052dc] is moved to the stack as one 4-byte argument for direct CALL 0x414a5130 at 0x4148cc7c."
+    },
+    {
+      "va": "0x414a52b7",
+      "fact": "Callee reads stack +0x14 with MOVSS and has a local UCOMISS/SETBE sequence; provider and full helper behavior are outside this slice."
+    },
+    {
+      "va": "0x4148cc84",
+      "fact": "Caller tests AL only; AL==0 branches to 0x4148d7b7, otherwise falls through to 0x4148cc8c."
+    }
+  ],
+  "typed_projection": {
+    "raw_inputs": [
+      "optional<uint16_t> selector_word; raw value, semantic identity unknown",
+      "optional<uint8_t> guard_byte; only bit 0 is tested",
+      "optional<Float32Bits> callee argument; exact 32 bits preserved, semantic meaning unknown",
+      "optional<uint8_t> callee_return_al; absent result remains unresolved"
+    ],
+    "outputs": [
+      "unobserved selector or guard states",
+      "selector edge to 0x4148d7b9",
+      "skip/fallthrough edge to 0x4148cc8c",
+      "zero-AL edge to 0x4148d7b7",
+      "unknown AL state"
+    ],
+    "provider_or_command_identity": "unknown; no fallback values or semantic names inferred"
+  },
+  "evidence_files": [
+    "continuation/evidence/wave7/movement/verify_source_bytes.py",
+    "continuation/evidence/wave7/movement/source_disassembly.txt"
+  ],
+  "verification": {
+    "exact_byte_gate": {
+      "command": "python3 continuation/evidence/wave7/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "pins": 5,
+      "result": "passed"
+    },
+    "native_and_asan_ubsan": {
+      "command": "make -C continuation BUILD=/tmp/hoplite/w7-movement-build/final check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "native_test_programs": 14,
+      "sanitizer_test_programs": 14,
+      "repository_evidence_target": "passed"
+    },
+    "new_test": "test_movement_slice passed in both native and ASan/UBSan full check"
+  },
+  "integration_needs": [
+    "Existing Makefile wildcard source/test lists auto-include the new C++ files; no Makefile edit was made.",
+    "Coordinator may wire verify_source_bytes.py into the shared Makefile evidence target using the existing --handoff argument convention."
+  ],
+  "unresolved": [
+    "Selector and guard semantics, command identity, global float provenance/meaning, and runtime ownership remain unknown.",
+    "The callee has unmodeled provider/dynamic-call behavior; only its caller-visible AL branch is represented.",
+    "The whole 0x4148cae0 function, scheduling, reachability, runtime mapping, and original equivalence remain unverified.",
+    "0x414b2930 remains excluded as a stop-feasibility helper."
+  ]
+}

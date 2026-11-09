@@ -1,0 +1,527 @@
+{
+  "schema": 1,
+  "task": "W5-REVIEW-PROVIDERS",
+  "review_kind": "independent_agent_review_not_external_audit",
+  "tested_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+  "diff_base": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "worktree": "/tmp/hoplite/232-w5-review-providers",
+  "assignment_registry": "/tmp/hoplite/workspace/runs/wave5/reviews.json",
+  "result": "bounded_acceptance",
+  "blocking_findings": [],
+  "nonblocking_defects": [],
+  "scope": [
+    "continuation/evidence/wave5/esi/",
+    "continuation/evidence/wave5/indirect/",
+    "continuation/evidence/wave5/fallback24/",
+    "continuation/evidence/wave5/p-tolerance/",
+    "continuation/evidence/wave5/historical/"
+  ],
+  "reviewed_file_sha256": {
+    "continuation/evidence/wave5/esi/callee.tsv": "c4cf937fe51e2f56d298449302468caabcfc1d6e44c0f7830fdc8aa14e55de05",
+    "continuation/evidence/wave5/esi/preservation.json": "1943f7ac57c3f4dd21d43704f2f3f80fa4c209082ca454408f279bfbea22c142",
+    "continuation/evidence/wave5/esi/test_verify_preservation.py": "0686ba0732570c03e9aec9c12237bd7fa1fb707fb9f29b33063648dd67b53880",
+    "continuation/evidence/wave5/esi/verify_preservation.py": "4b45633b859e74b35386c73557669ec9fc13483b3fad8c4b4001dd8817fee4bf",
+    "continuation/evidence/wave5/indirect/contract.md": "6d0ea7bbe686657a5700299c40086e014ad784e32ed2e43434d62c67cb665128",
+    "continuation/evidence/wave5/indirect/dispatch.json": "f692b5b45e2be022e2d8ee02f369c01a4c354e194d334e52d19468d72eef1350",
+    "continuation/evidence/wave5/indirect/verification.log": "1239252669e4885dcff93a8af0831d391efcc158abb84b48dfa1a94bde97d3e6",
+    "continuation/evidence/wave5/indirect/verify_indirect.py": "d0eaab61c24b1afbe31f607083a4048360b8875b64bcb434fe95e5147a417455",
+    "continuation/evidence/wave5/fallback24/initializer.json": "d1c59682d94e0c597e89d62788e3c0216dbd1cf76d809638b6f5ac0b317a3c3a",
+    "continuation/evidence/wave5/fallback24/verify_initializer.py": "88612e16bcc96b48da16d226209e7a149a155fb72ce4eb1a46ff8adacf40bf98",
+    "continuation/evidence/wave5/p-tolerance/frontier.json": "01797a677dff3fed808f64454b7b643a2a349be4c48e8793dc8756962838c515",
+    "continuation/evidence/wave5/p-tolerance/verification.log": "18440f67b54db87f8ea561f0eac29817d2b8a3d12c9d434483ae7a02c7a6ea2d",
+    "continuation/evidence/wave5/historical/README.md": "a8d24cecec6124a6b6fba34824c3a8d6f5c3d42afe25c2515b879a095f169f3c",
+    "continuation/evidence/wave5/historical/acceptance.json": "364b91100fc47769ea70a841a8518d0e5a85165a0fb4adfb78a8009d8c88306f",
+    "continuation/evidence/wave5/historical/frontier.json": "7c44fb0b55761cb67d5fae7c9f610d7796963027c9f7173c829210d0ed4a5ac6",
+    "continuation/evidence/wave5/historical/leaf.json": "b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1",
+    "continuation/evidence/wave5/historical/replay_pefile_leaf.py": "f4baec769b3f6a50dd5d909ccada8d4909e4b4a32ab7f5e9dd4ffd1d1c4e9ba4",
+    "continuation/evidence/wave5/historical/requirements.txt": "5a0ae4a9403807d21bf51c7c210501a6d3dac7a81749e4fb56f72d5b4b9e553c"
+  },
+  "commands": [
+    {
+      "id": "tools",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -c 'import platform,subprocess; print(platform.python_version()); print(subprocess.check_output([\"objdump\",\"--version\"],text=True).splitlines()[0]); print(subprocess.check_output([\"git\",\"--version\"],text=True).strip())'",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/tools.stdout.log": {
+          "bytes": 69,
+          "sha256": "66745df5595b2efafc86503ee7ef5d3427c1fb615418e727b16dfc0b4c150ada"
+        },
+        "runs/review-providers/tools.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "esi",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B continuation/evidence/wave5/esi/verify_preservation.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/esi.stdout.log": {
+          "bytes": 376,
+          "sha256": "d1e9b4512c3bdbc852d38c5ce8b8684e3a8774e2cf5cc072d2a451d9959ed3f7"
+        },
+        "runs/review-providers/esi.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "indirect",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B continuation/evidence/wave5/indirect/verify_indirect.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/indirect.stdout.log": {
+          "bytes": 1264,
+          "sha256": "9dc8c8377e37118d3556a399fabc6457d144ec477f2c3f057b5860e695a823f1"
+        },
+        "runs/review-providers/indirect.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "fallback24",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B continuation/evidence/wave5/fallback24/verify_initializer.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/fallback24.stdout.log": {
+          "bytes": 467,
+          "sha256": "ea3aa1ff340bb2dc3364b72178c2d2ac59577c96e00bf0043e34d08120f5db6a"
+        },
+        "runs/review-providers/fallback24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "p-source",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B continuation/evidence/wave3/source/verify_source.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/p-source.stdout.log": {
+          "bytes": 418,
+          "sha256": "40762f86ac0b487cab9fc142ffad1d1fd03964a5c14f771c1b0b4a6ef507bed3"
+        },
+        "runs/review-providers/p-source.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "p-scalar",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/p-scalar.stdout.log": {
+          "bytes": 258,
+          "sha256": "ad4e777178d44b6e344faf23bc9be93d3ba4e7c6f8307bb1ca66426c0e031429"
+        },
+        "runs/review-providers/p-scalar.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "id": "esi-unit",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B -m unittest discover -s continuation/evidence/wave5/esi -p 'test_*.py' -v",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/esi-unit.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "runs/review-providers/esi-unit.stderr.log": {
+          "bytes": 774,
+          "sha256": "119eb9da45dfd4312f78463c5f6a1b7f25c2c76cfb16891fcf3c7ba4cdaf76b2"
+        }
+      }
+    },
+    {
+      "id": "install",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -m pip install --only-binary=:all: --require-hashes --no-deps --no-compile --target /tmp/hoplite/232-w5-review-providers/runs/review-providers/deps -r continuation/evidence/wave5/historical/requirements.txt",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/install.stdout.log": {
+          "bytes": 398,
+          "sha256": "8236fa94ab6830934d7d844729e1fa3adf2553f16e1c639de5400f3e67a0d07b"
+        },
+        "runs/review-providers/install.stderr.log": {
+          "bytes": 502,
+          "sha256": "24cc65b5c08e8f09bdd6a84de957dae4fc61b0af7ecda2f656dfcd2ddc897df6"
+        }
+      }
+    },
+    {
+      "id": "h01-pefile",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "PYTHONPATH=/tmp/hoplite/232-w5-review-providers/runs/review-providers/deps python3 -B continuation/evidence/wave5/historical/replay_pefile_leaf.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "logs": {
+        "runs/review-providers/h01-pefile.stdout.log": {
+          "bytes": 1810,
+          "sha256": "b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1"
+        },
+        "runs/review-providers/h01-pefile.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "environment": {
+        "PYTHONPATH": "/tmp/hoplite/232-w5-review-providers/runs/review-providers/deps"
+      }
+    },
+    {
+      "id": "audit-pins",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "python3 -B runs/review-providers/audit_pins.py",
+      "exit_code": 0,
+      "script_sha256": "38a505497cbc377d60bdf621c94cd5054313c6392fc589f4e7054c92040dfe70",
+      "logs": {
+        "runs/review-providers/audit-pins.stdout.log": {
+          "sha256": "6d4daf334574c26d809aac1ebde69c5cc50dc3856fec19457989924d0ed6cb98",
+          "bytes": 809
+        },
+        "runs/review-providers/audit-pins.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "staged-diff-check-first",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "git diff --cached --check",
+      "exit_code": 2,
+      "scope": "review_report_packaging_only",
+      "logs": {
+        "runs/review-providers/diff-check.failed.stdout.log": {
+          "sha256": "b557ae78f4eb14b82c43de6392a39b0f7d88647321248ad6c212c59acd26288a",
+          "bytes": 89
+        },
+        "runs/review-providers/diff-check.failed.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "id": "staged-diff-check",
+      "cwd": "/tmp/hoplite/232-w5-review-providers",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "scope": "review_report_packaging_only",
+      "logs": {
+        "runs/review-providers/diff-check.stdout.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "runs/review-providers/diff-check.stderr.log": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    }
+  ],
+  "review_results": {
+    "esi": {
+      "verifier_exit": 0,
+      "unit_tests": 5,
+      "unit_exit": 0,
+      "fresh_instructions": 383,
+      "opaque_calls": 9,
+      "supported_normal_returns": 1,
+      "acceptance": "conditional_normal_flow_only",
+      "required": "EBP frame, saved-slot integrity, opaque-call normal return and frame/stack discipline; exceptions/non-local transfers excluded",
+      "evidence": "esi/preservation.json:238-271"
+    },
+    "indirect": {
+      "verifier_exit": 0,
+      "fresh_instructions": 16,
+      "windows": 3,
+      "acceptance": "raw_snapshot_dispatch_only",
+      "runtime_binding": false,
+      "allocator_or_import_identity": false,
+      "evidence": "indirect/contract.md:15-62"
+    },
+    "fallback24": {
+      "verifier_exit": 0,
+      "fresh_instructions": 70,
+      "windows": 4,
+      "candidate_bits": "0x3c888889",
+      "acceptance": "one_conditional_initializer_candidate",
+      "runtime_provider_supplied": false,
+      "required": "S_store=S_entry, V_install=A, P_read=V_install plus T1-T8 identity/temporal/lifetime/publication prerequisites",
+      "evidence": "fallback24/initializer.json:438-545"
+    },
+    "p_tolerance": {
+      "source_verifier_exit": 0,
+      "scalar_verifier_exit": 0,
+      "source_fresh_instructions": 257,
+      "scalar_fresh_instructions": 111,
+      "acceptance": "explicit_prerequisite_stop_not_absence_proof",
+      "new_supplier_evidence": false,
+      "source_pins_verified": 9,
+      "older_assignment_pins_verified": 2,
+      "evidence": "p-tolerance/frontier.json:28-36,230-254"
+    },
+    "historical": {
+      "pefile_replay_exit": 0,
+      "named_library": "pefile 2024.8.26",
+      "requirements": "continuation/evidence/wave5/historical/requirements.txt",
+      "dependency_directory": "/tmp/hoplite/232-w5-review-providers/runs/review-providers/deps",
+      "installed_distributions": 1,
+      "native_package_files": 0,
+      "fresh_leaf_ordinals": [
+        5
+      ],
+      "original_producer_executed": false,
+      "strict_old_protocol_repeated": false,
+      "all_209_repeated": false,
+      "external_independent_audit": false,
+      "dispositions_count": 47,
+      "historical_only_count": 12,
+      "dispositions_byte_identical_to_diff_base": true,
+      "handoff_source_pins_verified": 12,
+      "older_assignment_pin_verified": true,
+      "evidence": "historical/frontier.json:8-281; historical/replay_pefile_leaf.py:33-51"
+    }
+  },
+  "h01_gate_accounting": [
+    {
+      "ordinal": 5,
+      "check": "pefile resource BINARY/101 raw offset and size",
+      "accepted_status": "fresh_named_library_leaf_pass_not_old_producer",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pefile 2024.8.26 parses BINARY/101, language 1049, raw offset 0x629B10 and size 0x3501000",
+      "prerequisites": [
+        "Pinned neverlose.dll and extracted nl.bin",
+        "pefile 2024.8.26 wheel/source hash",
+        "Only the resource directory is parsed; no loader or instruction execution"
+      ],
+      "remaining": "Exact original producer protocol remains unsupported; no LIEF or other historical leaf inferred."
+    },
+    {
+      "ordinal": 6,
+      "check": "LIEF independently identifies same BINARY/101 bytes",
+      "accepted_status": "not_attempted_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "LIEF 1.0.0-d05b3499b independently traverses BINARY/101 and compares offset, size and resource SHA-256",
+      "prerequisites": [
+        "Pinned neverlose.dll",
+        "The recorded LIEF build and resource traversal/extraction API",
+        "Original producer or a separately identified bounded predicate implementation"
+      ],
+      "remaining": "Run a separately scoped LIEF gate. pefile output is not LIEF agreement."
+    },
+    {
+      "ordinal": 199,
+      "check": "Rizin independent address/bytes/length resource",
+      "accepted_status": "not_attempted_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "Rizin 0.9.1 independently decodes exactly 143 resource anchors with address/bytes/length agreement",
+      "prerequisites": [
+        "Rizin 0.9.1 executable",
+        "Pinned historical_H01_byte_evidence.json and nl.bin",
+        "Exact architecture/base/seek/decode command and comparison protocol"
+      ],
+      "remaining": "Obtain/identify the exact invocation before a separately scoped replay. GNU objdump is not this named Rizin gate."
+    },
+    {
+      "ordinal": 200,
+      "check": "Rizin independent address/bytes/length client",
+      "accepted_status": "not_attempted_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "Rizin 0.9.1 independently decodes exactly 19 client anchors with address/bytes/length agreement",
+      "prerequisites": [
+        "Rizin 0.9.1 executable",
+        "Pinned historical_H01_byte_evidence.json and client.dll",
+        "Exact architecture/base/seek/decode command and comparison protocol"
+      ],
+      "remaining": "Obtain/identify the exact invocation before a separately scoped replay. GNU objdump is not this named Rizin gate."
+    },
+    {
+      "ordinal": 202,
+      "check": "Static VEX covers exact block reload_literal_read",
+      "accepted_status": "not_attempted_input_and_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact reload_literal_read block: 45 bytes, 14 instructions, 34 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 203,
+      "check": "Static VEX covers exact block height_clamp",
+      "accepted_status": "not_attempted_input_and_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact height_clamp block: 24 bytes, 4 instructions, 22 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 204,
+      "check": "Static VEX covers exact block height_x87_conversion",
+      "accepted_status": "not_attempted_input_and_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact height_x87_conversion block: 28 bytes, 5 instructions, 45 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 205,
+      "check": "Static VEX covers exact block metric_compare",
+      "accepted_status": "not_attempted_input_and_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact metric_compare block: 21 bytes, 4 instructions, 40 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 206,
+      "check": "Static VEX covers exact block strict_threshold",
+      "accepted_status": "not_attempted_input_and_dependency_frontier",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact strict_threshold block: 29 bytes, 6 instructions, 53 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 207,
+      "check": "Original unchanged after audit neverlose.dll",
+      "accepted_status": "historical_interval_not_recreatable",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "Original audit before/after SHA-256 equality for neverlose.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    },
+    {
+      "ordinal": 208,
+      "check": "Original unchanged after audit client.dll",
+      "accepted_status": "historical_interval_not_recreatable",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "Original audit before/after SHA-256 equality for client.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    },
+    {
+      "ordinal": 209,
+      "check": "Original unchanged after audit engine.dll",
+      "accepted_status": "historical_interval_not_recreatable",
+      "original_predicate_matches_metrics_and_dispositions": true,
+      "gate": "Original audit before/after SHA-256 equality for engine.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    }
+  ],
+  "scoped_input_integrity": {
+    "files": 28,
+    "six_archives_included": true,
+    "properties": [
+      "size",
+      "mtime_ns",
+      "sha256"
+    ],
+    "before_equals_after": true,
+    "whole_handoff_manifest_repeated": false,
+    "historical_audit_interval_recreated": false,
+    "snapshots": {
+      "runs/review-providers/inputs.before.json": {
+        "sha256": "5d102af9d739b7009ab52f574b9c324bc34b61c26d75fdac90baeed189d99b29",
+        "bytes": 7381
+      },
+      "runs/review-providers/inputs.after.json": {
+        "sha256": "5d102af9d739b7009ab52f574b9c324bc34b61c26d75fdac90baeed189d99b29",
+        "bytes": 7381
+      }
+    }
+  },
+  "sanitized_artifacts": {
+    "continuation/evidence/wave5/review-providers/report.md": {
+      "sha256": "2029108d392c0943e082d1e295a35e9f6fb4e2f3b529681c75c6d5124ae2c214",
+      "bytes": 10753
+    },
+    "continuation/evidence/wave5/review-providers/verification.log": {
+      "sha256": "263b63b43aa9eeed081baac6dd80fb0dc4d5ed4e04b646a63ce3d5359eb09c90",
+      "bytes": 8737
+    }
+  },
+  "preparation_diagnostics": [
+    {
+      "action": "Initial report creation via apply_patch",
+      "result": "Tool rejected assigned worktree path outside its workspace boundary; no file written",
+      "resolution": "Report written through shell within assigned worktree; subsequent checks passed"
+    },
+    {
+      "action": "First staged review-artifact whitespace check",
+      "exit_code": 2,
+      "observed": "verification.log:91: new blank line at EOF",
+      "resolution": "Removed only extra final blank line; original failed logs retained separately; no subject evidence or verifier modified"
+    },
+    {
+      "action": "Post-generation metadata assertion",
+      "exit_code": 1,
+      "observed": "KeyError: scope while indexing optional command metadata field",
+      "effect": "All report writes and staged whitespace check had completed successfully; no reviewed source touched",
+      "resolution": "Corrected assertion uses optional field lookup; final metadata checks repeated successfully"
+    }
+  ],
+  "not_run": {
+    "full_make_native_sanitizers": "Explicitly outside provider/evidence-only reviewer scope; code reviewer/coordinator owns integrated gate",
+    "original_execution_loading_emulation": "Forbidden; original DLLs read as bytes only",
+    "game_injection": "Forbidden and not attempted",
+    "other_11_h01_named_gates": "Prerequisites accounted; not executed",
+    "managed_browser": "Not applicable: no UI"
+  },
+  "remaining": [
+    "R03/GAP04 runtime bindings, supplier identity, pointer/pointee lifetime, reachability and publication/order",
+    "R04 P/P+0/P+0x14 supplier/writer anchors",
+    "H01 original producer, remaining named gates and strict historical protocol",
+    "Independent external audit and original-language/full-logic completion gates",
+    "Coordinator common-doc/status refresh and integrated acceptance"
+  ],
+  "implementation_common_docs_status_makefile_changed": false,
+  "archival_dispositions_modified": false,
+  "push_or_merge": false
+}

@@ -1,0 +1,203 @@
+=== history-producer ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f6de0 --stop-address=0x413f6e40 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f6de0 <.data+0x156de0>:
+413f6de0:	55                                              	push   ebp
+413f6de1:	89 e5                                           	mov    ebp,esp
+413f6de3:	53                                              	push   ebx
+413f6de4:	57                                              	push   edi
+413f6de5:	56                                              	push   esi
+413f6de6:	83 ec 44                                        	sub    esp,0x44
+413f6de9:	89 cf                                           	mov    edi,ecx
+413f6deb:	8b 55 08                                        	mov    edx,DWORD PTR [ebp+0x8]
+413f6dee:	89 65 e4                                        	mov    DWORD PTR [ebp-0x1c],esp
+413f6df1:	c7 45 f0 ff ff ff ff                            	mov    DWORD PTR [ebp-0x10],0xffffffff
+413f6df8:	8d 45 e8                                        	lea    eax,[ebp-0x18]
+413f6dfb:	c7 45 ec 60 88 3f 41                            	mov    DWORD PTR [ebp-0x14],0x413f8860
+413f6e02:	64 8b 0d 00 00 00 00                            	mov    ecx,DWORD PTR fs:0x0
+413f6e09:	89 4d e8                                        	mov    DWORD PTR [ebp-0x18],ecx
+413f6e0c:	64 a3 00 00 00 00                               	mov    fs:0x0,eax
+413f6e12:	8d 5a 08                                        	lea    ebx,[edx+0x8]
+413f6e15:	8b 42 08                                        	mov    eax,DWORD PTR [edx+0x8]
+413f6e18:	89 d9                                           	mov    ecx,ebx
+413f6e1a:	ff 50 28                                        	call   DWORD PTR [eax+0x28]
+413f6e1d:	89 c6                                           	mov    esi,eax
+413f6e1f:	50                                              	push   eax
+413f6e20:	e8 fb cc f4 ff                                  	call   0x41343b20
+413f6e25:	83 c4 04                                        	add    esp,0x4
+413f6e28:	85 c0                                           	test   eax,eax
+413f6e2a:	0f 84 03 08 00 00                               	je     0x413f7633
+413f6e30:	83 b8 b0 00 00 00 00                            	cmp    DWORD PTR [eax+0xb0],0x0
+413f6e37:	0f 84 f6 07 00 00                               	je     0x413f7633
+413f6e3d:	89 45 d8                                        	mov    DWORD PTR [ebp-0x28],eax
+
+=== history-resolver ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f7054 --stop-address=0x413f7078 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f7054 <.data+0x157054>:
+413f7054:	8b 03                                           	mov    eax,DWORD PTR [ebx]
+413f7056:	8b 40 28                                        	mov    eax,DWORD PTR [eax+0x28]
+413f7059:	c7 45 f0 ff ff ff ff                            	mov    DWORD PTR [ebp-0x10],0xffffffff
+413f7060:	89 d9                                           	mov    ecx,ebx
+413f7062:	ff d0                                           	call   eax
+413f7064:	89 45 c8                                        	mov    DWORD PTR [ebp-0x38],eax
+413f7067:	50                                              	push   eax
+413f7068:	e8 b3 ca f4 ff                                  	call   0x41343b20
+413f706d:	83 c4 04                                        	add    esp,0x4
+413f7070:	85 c0                                           	test   eax,eax
+413f7072:	0f 84 bb 05 00 00                               	je     0x413f7633
+
+=== history-store-sequence ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f70f1 --stop-address=0x413f7201 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f70f1 <.data+0x1570f1>:
+413f70f1:	89 f9                                           	mov    ecx,edi
+413f70f3:	e8 f8 17 00 00                                  	call   0x413f88f0
+413f70f8:	89 c3                                           	mov    ebx,eax
+413f70fa:	8b 4d 08                                        	mov    ecx,DWORD PTR [ebp+0x8]
+413f70fd:	e8 2e 98 77 00                                  	call   0x41b70930
+413f7102:	8b 55 d8                                        	mov    edx,DWORD PTR [ebp-0x28]
+413f7105:	f3 0f 10 42 10                                  	movss  xmm0,DWORD PTR [edx+0x10]
+413f710a:	f3 0f 11 03                                     	movss  DWORD PTR [ebx],xmm0
+413f710e:	f3 0f 10 42 14                                  	movss  xmm0,DWORD PTR [edx+0x14]
+413f7113:	f3 0f 11 43 04                                  	movss  DWORD PTR [ebx+0x4],xmm0
+413f7118:	f3 0f 10 42 18                                  	movss  xmm0,DWORD PTR [edx+0x18]
+413f711d:	f3 0f 11 43 08                                  	movss  DWORD PTR [ebx+0x8],xmm0
+413f7122:	f3 0f 10 42 7c                                  	movss  xmm0,DWORD PTR [edx+0x7c]
+413f7127:	f3 0f 11 43 24                                  	movss  DWORD PTR [ebx+0x24],xmm0
+413f712c:	f3 0f 10 82 80 00 00 00                         	movss  xmm0,DWORD PTR [edx+0x80]
+413f7134:	f3 0f 11 43 28                                  	movss  DWORD PTR [ebx+0x28],xmm0
+413f7139:	f3 0f 10 82 84 00 00 00                         	movss  xmm0,DWORD PTR [edx+0x84]
+413f7141:	f3 0f 11 43 2c                                  	movss  DWORD PTR [ebx+0x2c],xmm0
+413f7146:	f3 0f 10 82 88 00 00 00                         	movss  xmm0,DWORD PTR [edx+0x88]
+413f714e:	f3 0f 11 43 30                                  	movss  DWORD PTR [ebx+0x30],xmm0
+413f7153:	f3 0f 10 82 8c 00 00 00                         	movss  xmm0,DWORD PTR [edx+0x8c]
+413f715b:	f3 0f 11 43 34                                  	movss  DWORD PTR [ebx+0x34],xmm0
+413f7160:	f3 0f 10 82 90 00 00 00                         	movss  xmm0,DWORD PTR [edx+0x90]
+413f7168:	f3 0f 11 43 38                                  	movss  DWORD PTR [ebx+0x38],xmm0
+413f716d:	8b 4a 38                                        	mov    ecx,DWORD PTR [edx+0x38]
+413f7170:	89 8b 80 00 00 00                               	mov    DWORD PTR [ebx+0x80],ecx
+413f7176:	f3 0f 10 42 4c                                  	movss  xmm0,DWORD PTR [edx+0x4c]
+413f717b:	f3 0f 11 83 94 00 00 00                         	movss  DWORD PTR [ebx+0x94],xmm0
+413f7183:	f3 0f 10 42 1c                                  	movss  xmm0,DWORD PTR [edx+0x1c]
+413f7188:	f3 0f 11 43 18                                  	movss  DWORD PTR [ebx+0x18],xmm0
+413f718d:	f3 0f 10 4a 20                                  	movss  xmm1,DWORD PTR [edx+0x20]
+413f7192:	f3 0f 11 4b 1c                                  	movss  DWORD PTR [ebx+0x1c],xmm1
+413f7197:	f3 0f 10 52 24                                  	movss  xmm2,DWORD PTR [edx+0x24]
+413f719c:	f3 0f 11 53 20                                  	movss  DWORD PTR [ebx+0x20],xmm2
+413f71a1:	8b 4d c8                                        	mov    ecx,DWORD PTR [ebp-0x38]
+413f71a4:	89 4b 3c                                        	mov    DWORD PTR [ebx+0x3c],ecx
+413f71a7:	f3 0f 10 9a 94 00 00 00                         	movss  xmm3,DWORD PTR [edx+0x94]
+413f71af:	f3 0f 11 9b a0 00 00 00                         	movss  DWORD PTR [ebx+0xa0],xmm3
+413f71b7:	f3 0f 10 9a 98 00 00 00                         	movss  xmm3,DWORD PTR [edx+0x98]
+413f71bf:	f3 0f 11 5b 70                                  	movss  DWORD PTR [ebx+0x70],xmm3
+413f71c4:	f3 0f 10 5a 28                                  	movss  xmm3,DWORD PTR [edx+0x28]
+413f71c9:	f3 0f 11 5b 64                                  	movss  DWORD PTR [ebx+0x64],xmm3
+413f71ce:	f3 0f 10 5a 2c                                  	movss  xmm3,DWORD PTR [edx+0x2c]
+413f71d3:	f3 0f 11 5b 68                                  	movss  DWORD PTR [ebx+0x68],xmm3
+413f71d8:	f3 0f 10 5a 30                                  	movss  xmm3,DWORD PTR [edx+0x30]
+413f71dd:	f3 0f 11 5b 6c                                  	movss  DWORD PTR [ebx+0x6c],xmm3
+413f71e2:	f3 0f 10 5a 5c                                  	movss  xmm3,DWORD PTR [edx+0x5c]
+413f71e7:	f3 0f 11 9b 98 00 00 00                         	movss  DWORD PTR [ebx+0x98],xmm3
+413f71ef:	c7 83 b0 00 00 00 00 00 00 00                   	mov    DWORD PTR [ebx+0xb0],0x0
+413f71f9:	8b 4a 40                                        	mov    ecx,DWORD PTR [edx+0x40]
+413f71fc:	89 da                                           	mov    edx,ebx
+413f71fe:	89 4b 40                                        	mov    DWORD PTR [ebx+0x40],ecx
+
+=== history-post-slice ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f7201 --stop-address=0x413f7242 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f7201 <.data+0x157201>:
+413f7201:	85 c0                                           	test   eax,eax
+413f7203:	74 65                                           	je     0x413f726a
+413f7205:	f3 0f 10 80 c8 00 00 00                         	movss  xmm0,DWORD PTR [eax+0xc8]
+413f720d:	f3 0f 11 42 0c                                  	movss  DWORD PTR [edx+0xc],xmm0
+413f7212:	f3 0f 10 80 cc 00 00 00                         	movss  xmm0,DWORD PTR [eax+0xcc]
+413f721a:	f3 0f 11 42 10                                  	movss  DWORD PTR [edx+0x10],xmm0
+413f721f:	f3 0f 10 80 d0 00 00 00                         	movss  xmm0,DWORD PTR [eax+0xd0]
+413f7227:	f3 0f 11 42 14                                  	movss  DWORD PTR [edx+0x14],xmm0
+413f722c:	f3 0f 10 80 38 03 00 00                         	movss  xmm0,DWORD PTR [eax+0x338]
+413f7234:	f3 0f 11 45 c8                                  	movss  DWORD PTR [ebp-0x38],xmm0
+413f7239:	89 c1                                           	mov    ecx,eax
+413f723b:	89 d3                                           	mov    ebx,edx
+413f723d:	e8 9e 95 77 00                                  	call   0x41b707e0
+
+=== history-constructor ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f88f0 --stop-address=0x413f8967 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f88f0 <.data+0x1588f0>:
+413f88f0:	53                                              	push   ebx
+413f88f1:	57                                              	push   edi
+413f88f2:	56                                              	push   esi
+413f88f3:	89 ce                                           	mov    esi,ecx
+413f88f5:	8b 41 08                                        	mov    eax,DWORD PTR [ecx+0x8]
+413f88f8:	8b 49 10                                        	mov    ecx,DWORD PTR [ecx+0x10]
+413f88fb:	41                                              	inc    ecx
+413f88fc:	39 c8                                           	cmp    eax,ecx
+413f88fe:	77 0c                                           	ja     0x413f890c
+413f8900:	89 f1                                           	mov    ecx,esi
+413f8902:	6a 01                                           	push   0x1
+413f8904:	e8 87 af ff ff                                  	call   0x413f3890
+413f8909:	8b 46 08                                        	mov    eax,DWORD PTR [esi+0x8]
+413f890c:	8d 58 ff                                        	lea    ebx,[eax-0x1]
+413f890f:	8b 7e 0c                                        	mov    edi,DWORD PTR [esi+0xc]
+413f8912:	21 df                                           	and    edi,ebx
+413f8914:	89 7e 0c                                        	mov    DWORD PTR [esi+0xc],edi
+413f8917:	0f 44 f8                                        	cmove  edi,eax
+413f891a:	4f                                              	dec    edi
+413f891b:	21 fb                                           	and    ebx,edi
+413f891d:	8b 46 04                                        	mov    eax,DWORD PTR [esi+0x4]
+413f8920:	8b 04 98                                        	mov    eax,DWORD PTR [eax+ebx*4]
+413f8923:	85 c0                                           	test   eax,eax
+413f8925:	75 1b                                           	jne    0x413f8942
+413f8927:	6a 20                                           	push   0x20
+413f8929:	68 c0 f0 00 00                                  	push   0xf0c0
+413f892e:	e8 79 f2 9a 00                                  	call   0x41da7bac
+413f8933:	83 c4 08                                        	add    esp,0x8
+413f8936:	8b 4e 04                                        	mov    ecx,DWORD PTR [esi+0x4]
+413f8939:	89 04 99                                        	mov    DWORD PTR [ecx+ebx*4],eax
+413f893c:	8b 46 04                                        	mov    eax,DWORD PTR [esi+0x4]
+413f893f:	8b 04 98                                        	mov    eax,DWORD PTR [eax+ebx*4]
+413f8942:	0f 57 c0                                        	xorps  xmm0,xmm0
+413f8945:	0f 29 40 30                                     	movaps XMMWORD PTR [eax+0x30],xmm0
+413f8949:	c7 40 41 00 00 00 00                            	mov    DWORD PTR [eax+0x41],0x0
+413f8950:	c7 40 3d 00 00 00 00                            	mov    DWORD PTR [eax+0x3d],0x0
+413f8957:	0f 11 40 48                                     	movups XMMWORD PTR [eax+0x48],xmm0
+413f895b:	0f 11 40 7c                                     	movups XMMWORD PTR [eax+0x7c],xmm0
+413f895f:	0f 11 40 6c                                     	movups XMMWORD PTR [eax+0x6c],xmm0
+413f8963:	0f 11 40 5c                                     	movups XMMWORD PTR [eax+0x5c],xmm0

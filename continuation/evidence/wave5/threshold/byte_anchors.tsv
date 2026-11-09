@@ -1,0 +1,111 @@
+span	va	bytes	instruction
+producer_entry	0x4149dfe0	55	push ebp
+producer_entry	0x4149dfe1	89e5	mov ebp,esp
+producer_entry	0x4149dfe3	53	push ebx
+producer_entry	0x4149dfe4	57	push edi
+producer_entry	0x4149dfe5	56	push esi
+producer_entry	0x4149dfe6	83ec3c	sub esp,0x3c
+producer_entry	0x4149dfe9	89cf	mov edi,ecx
+producer_store	0x4149e2fb	e8901db900	call 0x42030090
+producer_store	0x4149e300	83c408	add esp,0x8
+producer_store	0x4149e303	d95db8	fstp dword ptr [ebp-0x48]
+producer_store	0x4149e306	f30f2c45b8	cvttss2si eax,dword ptr [ebp-0x48]
+producer_store	0x4149e30b	694dc0d8050000	imul ecx,dword ptr [ebp-0x40],0x5d8
+producer_store	0x4149e312	8d140b	lea edx,[ebx+ecx*1]
+producer_store	0x4149e315	894768	mov dword ptr [edi+0x68],eax
+producer_normal_return	0x4149e35e	8b45e8	mov eax,dword ptr [ebp-0x18]
+producer_normal_return	0x4149e361	64a300000000	mov fs:0x0,eax
+producer_normal_return	0x4149e367	83c43c	add esp,0x3c
+producer_normal_return	0x4149e36a	5e	pop esi
+producer_normal_return	0x4149e36b	5f	pop edi
+producer_normal_return	0x4149e36c	5b	pop ebx
+producer_normal_return	0x4149e36d	5d	pop ebp
+producer_normal_return	0x4149e36e	c3	ret
+caller_to_candidate	0x414a5d09	89f9	mov ecx,edi
+caller_to_candidate	0x414a5d0b	e8d082ffff	call 0x4149dfe0
+caller_to_candidate	0x414a5d10	89f9	mov ecx,edi
+caller_to_candidate	0x414a5d12	ff7508	push dword ptr [ebp+0x8]
+caller_to_candidate	0x414a5d15	e8b6580000	call 0x414ab5d0
+candidate_body	0x414ab5d0	55	push ebp
+candidate_body	0x414ab5d1	89e5	mov ebp,esp
+candidate_body	0x414ab5d3	53	push ebx
+candidate_body	0x414ab5d4	57	push edi
+candidate_body	0x414ab5d5	56	push esi
+candidate_body	0x414ab5d6	83e4f8	and esp,0xfffffff8
+candidate_body	0x414ab5d9	81ec68010000	sub esp,0x168
+candidate_body	0x414ab5df	89ce	mov esi,ecx
+candidate_body	0x414ab5e1	a100272642	mov eax,ds:0x42262700
+candidate_body	0x414ab5e6	31e8	xor eax,ebp
+candidate_body	0x414ab5e8	89842460010000	mov dword ptr [esp+0x160],eax
+candidate_body	0x414ab5ef	8b09	mov ecx,dword ptr [ecx]
+candidate_body	0x414ab5f1	8d442408	lea eax,[esp+0x8]
+candidate_body	0x414ab5f5	50	push eax
+candidate_body	0x414ab5f6	e815746c00	call 0x41b72a10
+candidate_body	0x414ab5fb	0fb69c2444010000	movzx ebx,byte ptr [esp+0x144]
+candidate_body	0x414ab603	c786e000000000000000	mov dword ptr [esi+0xe0],0x0
+candidate_body	0x414ab60d	c786dc00000000000000	mov dword ptr [esi+0xdc],0x0
+candidate_body	0x414ab617	c786e400000000000000	mov dword ptr [esi+0xe4],0x0
+candidate_body	0x414ab621	f6465804	test byte ptr [esi+0x58],0x4
+candidate_body	0x414ab625	7426	je 0x414ab64d
+candidate_body	0x414ab627	89f1	mov ecx,esi
+candidate_body	0x414ab629	6a03	push 0x3
+candidate_body	0x414ab62b	e8a0ddfcff	call 0x414793d0
+candidate_body	0x414ab630	d95c2404	fstp dword ptr [esp+0x4]
+candidate_body	0x414ab634	f30f2a4e54	cvtsi2ss xmm1,dword ptr [esi+0x54]
+candidate_body	0x414ab639	f30f10442404	movss xmm0,dword ptr [esp+0x4]
+candidate_body	0x414ab63f	0f2ec1	ucomiss xmm0,xmm1
+candidate_body	0x414ab642	7209	jb 0x414ab64d
+candidate_body	0x414ab644	f30f2cc0	cvttss2si eax,xmm0
+candidate_body	0x414ab648	394650	cmp dword ptr [esi+0x50],eax
+candidate_body	0x414ab64b	7e41	jle 0x414ab68e
+candidate_body	0x414ab64d	f6465802	test byte ptr [esi+0x58],0x2
+candidate_body	0x414ab651	7427	je 0x414ab67a
+candidate_body	0x414ab653	89f1	mov ecx,esi
+candidate_body	0x414ab655	6a02	push 0x2
+candidate_body	0x414ab657	e874ddfcff	call 0x414793d0
+candidate_body	0x414ab65c	d91c24	fstp dword ptr [esp]
+candidate_body	0x414ab65f	0f57c9	xorps xmm1,xmm1
+candidate_body	0x414ab662	f30f2a4e54	cvtsi2ss xmm1,dword ptr [esi+0x54]
+candidate_body	0x414ab667	f30f100424	movss xmm0,dword ptr [esp]
+candidate_body	0x414ab66c	0f2ec1	ucomiss xmm0,xmm1
+candidate_body	0x414ab66f	7209	jb 0x414ab67a
+candidate_body	0x414ab671	f30f2cc0	cvttss2si eax,xmm0
+candidate_body	0x414ab675	394650	cmp dword ptr [esi+0x50],eax
+candidate_body	0x414ab678	7e14	jle 0x414ab68e
+candidate_body	0x414ab67a	c6461900	mov byte ptr [esi+0x19],0x0
+candidate_body	0x414ab67e	8b4604	mov eax,dword ptr [esi+0x4]
+candidate_body	0x414ab681	b9fffbffff	mov ecx,0xfffffbff
+candidate_body	0x414ab686	2388b0000000	and ecx,dword ptr [eax+0xb0]
+candidate_body	0x414ab68c	eb12	jmp 0x414ab6a0
+candidate_body	0x414ab68e	c6461901	mov byte ptr [esi+0x19],0x1
+candidate_body	0x414ab692	8b4604	mov eax,dword ptr [esi+0x4]
+candidate_body	0x414ab695	b900040000	mov ecx,0x400
+candidate_body	0x414ab69a	0b88b0000000	or ecx,dword ptr [eax+0xb0]
+candidate_body	0x414ab6a0	05b0000000	add eax,0xb0
+candidate_body	0x414ab6a5	8908	mov dword ptr [eax],ecx
+candidate_body	0x414ab6a7	84db	test bl,bl
+candidate_body	0x414ab6a9	7536	jne 0x414ab6e1
+candidate_body	0x414ab6ab	8b7d08	mov edi,dword ptr [ebp+0x8]
+candidate_body	0x414ab6ae	8b4e04	mov ecx,dword ptr [esi+0x4]
+candidate_body	0x414ab6b1	ff764c	push dword ptr [esi+0x4c]
+candidate_body	0x414ab6b4	ff36	push dword ptr [esi]
+candidate_body	0x414ab6b6	e8b5d1f4ff	call 0x413f8870
+candidate_body	0x414ab6bb	8986e0000000	mov dword ptr [esi+0xe0],eax
+candidate_body	0x414ab6c1	8b4e04	mov ecx,dword ptr [esi+0x4]
+candidate_body	0x414ab6c4	57	push edi
+candidate_body	0x414ab6c5	ff764c	push dword ptr [esi+0x4c]
+candidate_body	0x414ab6c8	ff36	push dword ptr [esi]
+candidate_body	0x414ab6ca	e87183f4ff	call 0x413f3a40
+candidate_body	0x414ab6cf	8986dc000000	mov dword ptr [esi+0xdc],eax
+candidate_body	0x414ab6d5	8b4604	mov eax,dword ptr [esi+0x4]
+candidate_body	0x414ab6d8	8b4058	mov eax,dword ptr [eax+0x58]
+candidate_body	0x414ab6db	8986e4000000	mov dword ptr [esi+0xe4],eax
+candidate_body	0x414ab6e1	8b8c2460010000	mov ecx,dword ptr [esp+0x160]
+candidate_body	0x414ab6e8	31e9	xor ecx,ebp
+candidate_body	0x414ab6ea	e86dc58f00	call 0x41da7c5c
+candidate_body	0x414ab6ef	8d65f4	lea esp,[ebp-0xc]
+candidate_body	0x414ab6f2	5e	pop esi
+candidate_body	0x414ab6f3	5f	pop edi
+candidate_body	0x414ab6f4	5b	pop ebx
+candidate_body	0x414ab6f5	5d	pop ebp
+candidate_body	0x414ab6f6	c20400	ret 0x4

@@ -1,0 +1,157 @@
+{
+  "files": [
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_core.c",
+      "size": 893,
+      "sha256": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+      "lines": 25,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_netvar.c",
+      "size": 3000,
+      "sha256": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+      "lines": 80,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_rage_math.c",
+      "size": 2509,
+      "sha256": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+      "lines": 81,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/inferred_signatures.h",
+      "size": 1535492,
+      "sha256": "d057eda4f5b1a7049d2d292cca45a8bed947a431badf138c14845e3277892d4f",
+      "lines": 20336,
+      "referenced_nl_symbols": [],
+      "kind": "automatically inferred signature comments"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_layouts.h",
+      "size": 1459,
+      "sha256": "d5fdca8059c521dda24a09d2391b9e047cf803bbdcdafe422e2287abff3c0d85",
+      "lines": 38,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_netvar.h",
+      "size": 1996,
+      "sha256": "a95ef5feb4a3dc22f9c3009ba362caddf56d493eb645132da488351665403187",
+      "lines": 60,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_rage_math.h",
+      "size": 1766,
+      "sha256": "0213293a5d0a51da2d124af0adf6cd8058a6ea92b3bd73408ae7ed93d8fe1a66",
+      "lines": 35,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_report_records.h",
+      "size": 1106,
+      "sha256": "107548f43193cdd1cc3aba89cf5ad00e6cff8df982708faf3749fc14a32b44dd",
+      "lines": 28,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_sdk.h",
+      "size": 3454,
+      "sha256": "8e3936131a4190f8892262d3dbde21f98472bd01af38160f52e6fb6c0c7d27d4",
+      "lines": 98,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_core.c",
+      "size": 833,
+      "sha256": "b634fabc322b75c1552823dcba3ab45165f46c2c8f23f4c5d25c7315302f8f9b",
+      "lines": 22,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_detours.cpp",
+      "size": 1144,
+      "sha256": "eb413ed56baacc51d04e880b403e23e48f698081e30e04c4545dab9f90f16cde",
+      "lines": 26,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_netvar.c",
+      "size": 2747,
+      "sha256": "6c6a8a0d15f3bfad64a274b2809f1a179131e0748d7e94e8140b4348491cdf2c",
+      "lines": 68,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_rage_math.c",
+      "size": 1628,
+      "sha256": "0f1f64382f3ebe2379837b741807d9d4c4902fd2da54585c22f3b017f19afa06",
+      "lines": 44,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    }
+  ],
+  "scope": "Read-only inventory; symbols in headers/tests are references, not proof of implemented functions."
+}

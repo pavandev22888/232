@@ -1,0 +1,37 @@
+{
+  "scope": "Non-direct callback and initial tail, not full callback",
+  "tested_code_commit": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+  "worktree": "/tmp/hoplite/workspace",
+  "commands": [
+    {
+      "command": "make -C continuation build/test_bounded_aggregation build/test_bounded_aggregation_sanitize",
+      "exit_code": 0,
+      "full_log": "runs/w6/aggregate-build.log",
+      "sha256": "a70b95c700121249b3e48bc24158c47ae23e2fdec82303240b97f6ed99b4e673",
+      "excerpt": "G++ native and address,undefined sanitizer compilations completed; full build log kept in runs/."
+    },
+    {
+      "command": "continuation/build/test_bounded_aggregation",
+      "exit_code": 0,
+      "full_log": "runs/w6/aggregate-native.log",
+      "sha256": "5c962a684674a54dee9aba5618fad9df229af1089fc8099e03a2ab3e0e8384a4",
+      "excerpt": "16392 bounded aggregation assertions passed"
+    },
+    {
+      "command": "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 continuation/build/test_bounded_aggregation_sanitize",
+      "exit_code": 0,
+      "full_log": "runs/w6/aggregate-sanitize.log",
+      "sha256": "5c962a684674a54dee9aba5618fad9df229af1089fc8099e03a2ab3e0e8384a4",
+      "excerpt": "16392 bounded aggregation assertions passed"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "full_log": "runs/w6/aggregate-bytes.log",
+      "sha256": "ddd6d78f05c8e8eaf2a5f9df71380773c3eb5c30b0076c85733e86341de1a0af",
+      "excerpt": "{\n  \"passed\": true,\n  \"instructions\": 175,\n  \"image_sha256\": \"682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e\",\n  \"original_execution_loading_emulation\": false,\n  \"scope\": \"Local static windows, not runtime bindings or whole callback\"\n}"
+    }
+  ],
+  "independent_review": "pending",
+  "original_execution_loading_emulation": false
+}

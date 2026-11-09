@@ -1,0 +1,149 @@
+{
+  "task": "W5-CHARGE",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "image": {
+    "path": "work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_base": "0x412a0000",
+    "file_offset_rule": "VA - image_base; static byte addressing only"
+  },
+  "source_sha256": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "orchestration/v5/historical_reset_block_walk.json": "b0a4f5de76203ca063253971cd75a8c857289ac5d3b1e4200842ab01ab678abd",
+    "orchestration/v5/historical_reset_block_focused.asm": "8b175242ac203dfc734ff78c7ff8e26d8e3fcc2af6ed9548aaf007d239bb5f74"
+  },
+  "block": {
+    "walk": "orchestration/v5/historical_reset_block_walk.json",
+    "start": "0x415decee",
+    "end_exclusive": "0x415ded53"
+  },
+  "stores": [
+    {
+      "va": "0x415decee",
+      "bytes": "c605bc09504200",
+      "size": 7,
+      "instruction": "mov BYTE PTR ds:0x425009bc,0x0",
+      "address": "0x425009bc",
+      "width": 1,
+      "value": 0,
+      "snapshot_member": "byte_425009bc"
+    },
+    {
+      "va": "0x415decf5",
+      "bytes": "c6052cf4234200",
+      "size": 7,
+      "instruction": "mov BYTE PTR ds:0x4223f42c,0x0",
+      "address": "0x4223f42c",
+      "width": 1,
+      "value": 0,
+      "snapshot_member": "byte_4223f42c"
+    },
+    {
+      "va": "0x415decfc",
+      "bytes": "c705741c4b4200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x424b1c74,0x0",
+      "address": "0x424b1c74",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_424b1c74"
+    },
+    {
+      "va": "0x415ded06",
+      "bytes": "c705a02b504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x42502ba0,0x0",
+      "address": "0x42502ba0",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_42502ba0"
+    },
+    {
+      "va": "0x415ded10",
+      "bytes": "c705f857504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x425057f8,0x0",
+      "address": "0x425057f8",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_425057f8"
+    },
+    {
+      "va": "0x415ded1a",
+      "bytes": "c7057c09504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x4250097c,0x0",
+      "address": "0x4250097c",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_4250097c"
+    },
+    {
+      "va": "0x415ded24",
+      "bytes": "c705246f504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x42506f24,0x0",
+      "address": "0x42506f24",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_42506f24"
+    },
+    {
+      "va": "0x415ded2e",
+      "bytes": "c605d409504200",
+      "size": 7,
+      "instruction": "mov BYTE PTR ds:0x425009d4,0x0",
+      "address": "0x425009d4",
+      "width": 1,
+      "value": 0,
+      "snapshot_member": "byte_425009d4"
+    },
+    {
+      "va": "0x415ded35",
+      "bytes": "c7055058504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x42505850,0x0",
+      "address": "0x42505850",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_42505850"
+    },
+    {
+      "va": "0x415ded3f",
+      "bytes": "c705e456504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x425056e4,0x0",
+      "address": "0x425056e4",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_425056e4"
+    },
+    {
+      "va": "0x415ded49",
+      "bytes": "c7053c85504200000000",
+      "size": 10,
+      "instruction": "mov DWORD PTR ds:0x4250853c,0x0",
+      "address": "0x4250853c",
+      "width": 4,
+      "value": 0,
+      "snapshot_member": "dword_4250853c"
+    }
+  ],
+  "contract": {
+    "operation": "apply_full_local_charge_reset(ChargeResetSnapshot&)",
+    "proven_local": "Eleven contiguous MOV immediate-zero stores, in listed instruction order: three BYTE and eight DWORD destinations. The snapshot retains raw widths and address-derived names; it is not an original object layout or runtime memory adapter.",
+    "entry_precondition": "Caller explicitly assumes execution reaches the first store and supplies values for the named destinations. Static decoding and offline tests do not prove this precondition.",
+    "legacy_api": "apply_charge_reset_slice remains a separate three-field projection. No automatic synchronization with ChargeState or SmallGateInput, no compose_charge_model_step change and no implicit reset on raw AL == 0.",
+    "unresolved": [
+      "Entry predicate and reachability",
+      "Original callers and reset/charge/small-gate scheduling",
+      "Runtime object identity and lifetime",
+      "Meanings and consumers of the eight newly represented values",
+      "Other direct, indirect or wide writers and full charge automaton"
+    ],
+    "entry_predecessors_investigated": 0,
+    "stop": "Only the saved local block is expanded. No predecessor or original execution/emulation investigated.",
+    "tests": "test_full_local_reset_snapshot: every raw BYTE and DWORD, zero/high-bit/all-one inputs, repeated reset and surrounding canaries; pre-existing projection, raw AL and counter-wrap tests retained."
+  }
+}

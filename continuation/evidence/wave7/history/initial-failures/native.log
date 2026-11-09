@@ -1,0 +1,19 @@
+COMMAND: g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -I continuation/include continuation/src/history_slice.cpp continuation/src/history_slot_slice.cpp continuation/tests/test_history_slot_slice.cpp -o /tmp/w7-history-build/test_history_slot_slice
+continuation/tests/test_history_slot_slice.cpp: In function ‘bool {anonymous}::selects_initializes_and_reaches_the_known_consumer()’:
+continuation/tests/test_history_slot_slice.cpp:59:21: error: loop variable ‘range’ creates a copy from type ‘const std::pair<long unsigned int, long unsigned int>’ [-Werror=range-loop-construct]
+   59 |     for (const auto range : first_zero_ranges)
+      |                     ^~~~~
+continuation/tests/test_history_slot_slice.cpp:59:21: note: use reference type to prevent copying
+   59 |     for (const auto range : first_zero_ranges)
+      |                     ^~~~~
+      |                     &
+continuation/tests/test_history_slot_slice.cpp:68:21: error: loop variable ‘range’ creates a copy from type ‘const std::pair<long unsigned int, long unsigned int>’ [-Werror=range-loop-construct]
+   68 |     for (const auto range : final_zero_ranges)
+      |                     ^~~~~
+continuation/tests/test_history_slot_slice.cpp:68:21: note: use reference type to prevent copying
+   68 |     for (const auto range : final_zero_ranges)
+      |                     ^~~~~
+      |                     &
+cc1plus: all warnings being treated as errors
+COMPILE_EXIT_CODE=1
+TEST_EXIT_CODE=125

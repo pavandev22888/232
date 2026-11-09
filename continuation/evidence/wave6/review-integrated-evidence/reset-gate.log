@@ -1,0 +1,6 @@
+COMMAND: python3 -B continuation/evidence/wave6/reset/verify_reset_predecessor.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+PASS: 5 source hashes, predecessor add/cmp/JNE, 11 reset stores, fresh objdump
+UNRESOLVED: EAX provider/identity, entry reachability, loop and scheduling

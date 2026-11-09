@@ -1,0 +1,291 @@
+{
+  "task": "NEXT-MESSAGE",
+  "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size_bytes": 55578624,
+    "image_base": "0x412a0000"
+  },
+  "preceding_evidence": {
+    "path": "continuation/evidence/wave5/messages/byte_anchors.json",
+    "sha256": "f72d3a552af10de3ea19d73bd601575489b91748b4b144d145b7b0ce5e05ff4b"
+  },
+  "decoder": "GNU objdump 2.42, i386, intel syntax",
+  "windows": [
+    {
+      "name": "caller_zero_gate",
+      "start": "0x41512aa6",
+      "end": "0x41512ab9",
+      "instructions": [
+        [
+          "0x41512aa6",
+          "80bea800000000",
+          "cmp byte ptr [esi+0xa8],0x0"
+        ],
+        [
+          "0x41512aad",
+          "0f94c2",
+          "sete dl"
+        ],
+        [
+          "0x41512ab0",
+          "895608",
+          "mov dword ptr [esi+0x8],edx"
+        ],
+        [
+          "0x41512ab3",
+          "0f8417010000",
+          "je 0x41512bd0"
+        ]
+      ]
+    },
+    {
+      "name": "caller_arguments_and_direct_call",
+      "start": "0x41512bd0",
+      "end": "0x41512bed",
+      "instructions": [
+        [
+          "0x41512bd0",
+          "8b5610",
+          "mov edx,dword ptr [esi+0x10]"
+        ],
+        [
+          "0x41512bd3",
+          "42",
+          "inc edx"
+        ],
+        [
+          "0x41512bd4",
+          "8b0dc0464f42",
+          "mov ecx,dword ptr ds:0x424f46c0"
+        ],
+        [
+          "0x41512bda",
+          "50",
+          "push eax"
+        ],
+        [
+          "0x41512bdb",
+          "6a01",
+          "push 0x1"
+        ],
+        [
+          "0x41512bdd",
+          "8d8650020000",
+          "lea eax,[esi+0x250]"
+        ],
+        [
+          "0x41512be3",
+          "50",
+          "push eax"
+        ],
+        [
+          "0x41512be4",
+          "52",
+          "push edx"
+        ],
+        [
+          "0x41512be5",
+          "ff7614",
+          "push dword ptr [esi+0x14]"
+        ],
+        [
+          "0x41512be8",
+          "e8137fffff",
+          "call 0x4150ab00"
+        ]
+      ]
+    },
+    {
+      "name": "direct_callee_entry_to_indirect_call",
+      "start": "0x4150ab00",
+      "end": "0x4150abee",
+      "instructions": [
+        [
+          "0x4150ab00",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x4150ab01",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x4150ab17",
+          "89cb",
+          "mov ebx,ecx"
+        ],
+        [
+          "0x4150ab39",
+          "648b0d00000000",
+          "mov ecx,dword ptr fs:0x0"
+        ],
+        [
+          "0x4150ab46",
+          "64a300000000",
+          "mov fs:0x0,eax"
+        ],
+        [
+          "0x4150ab4c",
+          "64a130000000",
+          "mov eax,fs:0x30"
+        ],
+        [
+          "0x4150ab52",
+          "8b88a8000000",
+          "mov ecx,dword ptr [eax+0xa8]"
+        ],
+        [
+          "0x4150ab58",
+          "0388a4000000",
+          "add ecx,dword ptr [eax+0xa4]"
+        ],
+        [
+          "0x4150ab5e",
+          "0388b8000000",
+          "add ecx,dword ptr [eax+0xb8]"
+        ],
+        [
+          "0x4150ab64",
+          "0388bc000000",
+          "add ecx,dword ptr [eax+0xbc]"
+        ],
+        [
+          "0x4150ab6a",
+          "034864",
+          "add ecx,dword ptr [eax+0x64]"
+        ],
+        [
+          "0x4150ab6d",
+          "8b7d0c",
+          "mov edi,dword ptr [ebp+0xc]"
+        ],
+        [
+          "0x4150ab96",
+          "394e20",
+          "cmp dword ptr [esi+0x20],ecx"
+        ],
+        [
+          "0x4150ab99",
+          "7425",
+          "je 0x4150abc0"
+        ],
+        [
+          "0x4150abbe",
+          "ffe7",
+          "jmp edi"
+        ],
+        [
+          "0x4150abc0",
+          "b8402ef21a",
+          "mov eax,0x1af22e40"
+        ],
+        [
+          "0x4150abc5",
+          "c1c808",
+          "ror eax,0x8"
+        ],
+        [
+          "0x4150abc8",
+          "35f4e5ab67",
+          "xor eax,0x67abe5f4"
+        ],
+        [
+          "0x4150abcd",
+          "3523461b54",
+          "xor eax,0x541b4623"
+        ],
+        [
+          "0x4150abd2",
+          "c1c012",
+          "rol eax,0x12"
+        ],
+        [
+          "0x4150abd5",
+          "358dd8be13",
+          "xor eax,0x13bed88d"
+        ],
+        [
+          "0x4150abdd",
+          "35ccc57e07",
+          "xor eax,0x77ec5cc"
+        ],
+        [
+          "0x4150abe3",
+          "894620",
+          "mov dword ptr [esi+0x20],eax"
+        ],
+        [
+          "0x4150abe6",
+          "8b4e20",
+          "mov ecx,dword ptr [esi+0x20]"
+        ],
+        [
+          "0x4150abe9",
+          "8b01",
+          "mov eax,dword ptr [ecx]"
+        ],
+        [
+          "0x4150abeb",
+          "ff5030",
+          "call dword ptr [eax+0x30]"
+        ]
+      ]
+    }
+  ],
+  "confirmed": [
+    "The caller branch to 0x41512bd0 is selected when the byte at [esi+0xa8] is zero; SETE and MOV preserve the CMP flags tested by JE.",
+    "On that branch EDX is loaded from the 32-bit word [esi+0x10] and incremented; ECX is loaded from dword [0x424f46c0].",
+    "The caller pushes, in order, EAX, 1, the address esi+0x250, EDX, and dword [esi+0x14], then directly calls 0x4150ab00. EAX's value and the slots' semantic types/identity are not established by these anchors.",
+    "The callee saves ECX, reads and updates FS:0, reads FS:0x30 and several words from that environment-derived base, then branches on a comparison. One path reaches jmp EDI; the equal path reaches an indirect call through [EAX+0x30]."
+  ],
+  "frontier": {
+    "guard_compare": "0x4150ab96",
+    "equal_edge": "0x4150abc0",
+    "unequal_edge": "0x4150ab9b, ending at register jump 0x4150abbe",
+    "computed_dispatch_object": "0x5325d3e8",
+    "indirect_call": "0x4150abeb",
+    "reason": "The callee first reads and updates FS-relative state, then builds a predicate from FS:0x30-derived words. Its unequal edge runs opaque register-dependent instructions and jumps through EDI. Its equal edge computes 0x5325d3e8 outside the pinned nl.bin image, dereferences that runtime address, and reaches an indirect call. No statically typed consumer contract is established.",
+    "static_derivation": {
+      "initial_eax": "0x1af22e40",
+      "operations": [
+        [
+          "ror",
+          8
+        ],
+        [
+          "xor",
+          "0x67abe5f4"
+        ],
+        [
+          "xor",
+          "0x541b4623"
+        ],
+        [
+          "rol",
+          18
+        ],
+        [
+          "xor",
+          "0x13bed88d"
+        ],
+        [
+          "xor",
+          "0x077ec5cc"
+        ]
+      ],
+      "result": "0x5325d3e8"
+    },
+    "unresolved": [
+      "Meaning and identity of the object whose address is loaded from 0x424f46c0.",
+      "Value/meaning of caller EAX and semantic types/identity of the stack arguments and [esi+0x250] storage.",
+      "Meaning of the FS-derived guard inputs and the register target used by the unequal branch.",
+      "Runtime contents at 0x5325d3e8 and the target/effects of the indirect call at 0x4150abeb."
+    ],
+    "implementation": "No message_consumer C++ body is justified; stop at this frontier rather than inventing providers or acceptance behavior.",
+    "address": "0x4150ab39",
+    "guard_input": "0x4150ab4c"
+  }
+}

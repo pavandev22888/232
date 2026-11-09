@@ -1,0 +1,17 @@
+make: Entering directory '/tmp/hoplite/workspace/continuation'
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/position_records.cpp tests/test_position_records.cpp -o build/test_position_records
+./build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/position_records.cpp tests/test_position_records.cpp -o build/test_position_records_sanitize
+ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=halt_on_error=1 ./build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+python3 tests/verify_evidence.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "instruction_bytes_and_fresh_decodes": 294,
+  "constants": 5,
+  "unchanged_inventory_files": 13,
+  "scope": "Bytes and instruction decoding only; not branch reachability or C++ equivalence."
+}
+make: Leaving directory '/tmp/hoplite/workspace/continuation'

@@ -1,0 +1,91 @@
+
+COMMAND: date -u +%Y-%m-%dT%H:%M:%SZ
+2026-11-09T12:47:03Z
+EXIT: 0
+
+COMMAND: pwd
+/tmp/hoplite/232-r03-fallback-sol
+EXIT: 0
+
+COMMAND: git rev-parse HEAD
+fecb19440f91c9dddbb60247c386fe55ef4e0c92
+EXIT: 0
+
+COMMAND: git branch --show-current
+hoplite/sikyon-46eee495--r03-fallback-sol
+EXIT: 0
+
+COMMAND: python3 --version
+Python 3.12.3
+EXIT: 0
+
+COMMAND: objdump --version
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+EXIT: 0
+
+COMMAND: git --version
+git version 2.43.0
+EXIT: 0
+
+PRE-ANALYSIS: check_bundle.py, exit 0 (verbatim retained output)
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+
+PRE-ANALYSIS: check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace, exit 0 (verbatim retained output)
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+
+COMMAND: sha256sum continuation/evidence/next/scalar-provider/verify_fallback_provider.py continuation/evidence/next/scalar-provider/fallback_provider.json continuation/evidence/next/scalar-provider/direct_refs.tsv continuation/evidence/next/scalar-provider/contract.md
+2c752033acb6779bfab36abe48ae5f046c7839e32d5ece32619601a775e4f3fb  continuation/evidence/next/scalar-provider/verify_fallback_provider.py
+9ab27eb48603ed01dfdb3bc75f993c2454d62b3017221e94af5779358e9e636a  continuation/evidence/next/scalar-provider/fallback_provider.json
+7557a75d408a876dde1102e5788ca0e5bbe462770cc3f7a34a73ff4ccede39af  continuation/evidence/next/scalar-provider/direct_refs.tsv
+e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff  continuation/evidence/next/scalar-provider/contract.md
+EXIT: 0
+
+COMMAND: python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.
+EXIT: 0
+
+COMMAND: python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+EXIT: 0
+
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+EXIT: 0
+
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+EXIT: 0
+
+COMMAND: git diff --exit-code HEAD -- . :(exclude)continuation/evidence/next/scalar-provider/
+EXIT: 0
+
+COMMAND: git diff --cached --check
+EXIT: 0

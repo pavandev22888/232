@@ -1,0 +1,169 @@
+
+source/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e9bd <.data+0x1fe9bd>:
+4149e9bd:	8b 30                                           	mov    esi,DWORD PTR [eax]
+4149e9bf:	80 be c0 00 00 00 00                            	cmp    BYTE PTR [esi+0xc0],0x0
+4149e9c6:	74 42                                           	je     0x4149ea0a
+4149e9c8:	89 cf                                           	mov    edi,ecx
+4149e9ca:	80 78 08 00                                     	cmp    BYTE PTR [eax+0x8],0x0
+4149e9ce:	0f 84 8c 00 00 00                               	je     0x4149ea60
+4149e9d4:	8b 4e 04                                        	mov    ecx,DWORD PTR [esi+0x4]
+4149e9d7:	f6 81 b0 00 00 00 04                            	test   BYTE PTR [ecx+0xb0],0x4
+4149e9de:	75 5f                                           	jne    0x4149ea3f
+4149e9e0:	0f b6 5a 25                                     	movzx  ebx,BYTE PTR [edx+0x25]
+4149e9e4:	38 9e 95 00 00 00                               	cmp    BYTE PTR [esi+0x95],bl
+4149e9ea:	0f 85 c5 00 00 00                               	jne    0x4149eab5
+4149e9f0:	83 7a 28 03                                     	cmp    DWORD PTR [edx+0x28],0x3
+4149e9f4:	0f 9d c3                                        	setge  bl
+4149e9f7:	83 be 98 00 00 00 03                            	cmp    DWORD PTR [esi+0x98],0x3
+4149e9fe:	0f 9c c1                                        	setl   cl
+4149ea01:	38 cb                                           	cmp    bl,cl
+4149ea03:	75 5b                                           	jne    0x4149ea60
+4149ea05:	e9 ab 00 00 00                                  	jmp    0x4149eab5
+4149ea0a:	8d 46 70                                        	lea    eax,[esi+0x70]
+4149ea0d:	0f 10 42 40                                     	movups xmm0,XMMWORD PTR [edx+0x40]
+4149ea11:	0f 11 40 40                                     	movups XMMWORD PTR [eax+0x40],xmm0
+4149ea15:	0f 10 42 30                                     	movups xmm0,XMMWORD PTR [edx+0x30]
+4149ea19:	0f 11 40 30                                     	movups XMMWORD PTR [eax+0x30],xmm0
+4149ea1d:	0f 10 42 20                                     	movups xmm0,XMMWORD PTR [edx+0x20]
+4149ea21:	0f 11 40 20                                     	movups XMMWORD PTR [eax+0x20],xmm0
+4149ea25:	0f 10 02                                        	movups xmm0,XMMWORD PTR [edx]
+4149ea28:	0f 10 4a 10                                     	movups xmm1,XMMWORD PTR [edx+0x10]
+4149ea2c:	0f 11 48 10                                     	movups XMMWORD PTR [eax+0x10],xmm1
+4149ea30:	0f 11 00                                        	movups XMMWORD PTR [eax],xmm0
+4149ea33:	c6 86 c0 00 00 00 01                            	mov    BYTE PTR [esi+0xc0],0x1
+4149ea3a:	e9 e9 00 00 00                                  	jmp    0x4149eb28
+4149ea3f:	83 7a 28 03                                     	cmp    DWORD PTR [edx+0x28],0x3
+4149ea43:	0f 9d c3                                        	setge  bl
+4149ea46:	83 be 98 00 00 00 03                            	cmp    DWORD PTR [esi+0x98],0x3
+4149ea4d:	0f 9c c1                                        	setl   cl
+4149ea50:	38 cb                                           	cmp    bl,cl
+4149ea52:	74 61                                           	je     0x4149eab5
+4149ea54:	0f b6 5a 25                                     	movzx  ebx,BYTE PTR [edx+0x25]
+4149ea58:	38 9e 95 00 00 00                               	cmp    BYTE PTR [esi+0x95],bl
+4149ea5e:	75 55                                           	jne    0x4149eab5
+4149ea60:	8b 4a 1c                                        	mov    ecx,DWORD PTR [edx+0x1c]
+4149ea63:	83 e1 fe                                        	and    ecx,0xfffffffe
+4149ea66:	83 f9 02                                        	cmp    ecx,0x2
+4149ea69:	0f 94 c3                                        	sete   bl
+4149ea6c:	8b 8e 8c 00 00 00                               	mov    ecx,DWORD PTR [esi+0x8c]
+4149ea72:	83 e1 fe                                        	and    ecx,0xfffffffe
+4149ea75:	83 f9 02                                        	cmp    ecx,0x2
+4149ea78:	0f 94 c7                                        	sete   bh
+4149ea7b:	89 f9                                           	mov    ecx,edi
+4149ea7d:	84 c9                                           	test   cl,cl
+4149ea7f:	74 04                                           	je     0x4149ea85
+4149ea81:	30 df                                           	xor    bh,bl
+4149ea83:	75 30                                           	jne    0x4149eab5
+4149ea85:	0f b6 4a 23                                     	movzx  ecx,BYTE PTR [edx+0x23]
+4149ea89:	88 0c 24                                        	mov    BYTE PTR [esp],cl
+4149ea8c:	84 c9                                           	test   cl,cl
+4149ea8e:	0f 95 c5                                        	setne  ch
+4149ea91:	80 7a 25 00                                     	cmp    BYTE PTR [edx+0x25],0x0
+4149ea95:	0f 95 c3                                        	setne  bl
+4149ea98:	20 eb                                           	and    bl,ch
+4149ea9a:	8a ae 93 00 00 00                               	mov    ch,BYTE PTR [esi+0x93]
+4149eaa0:	84 ed                                           	test   ch,ch
+4149eaa2:	0f 95 c7                                        	setne  bh
+4149eaa5:	80 be 95 00 00 00 00                            	cmp    BYTE PTR [esi+0x95],0x0
+4149eaac:	0f 95 c1                                        	setne  cl
+4149eaaf:	20 f9                                           	and    cl,bh
+4149eab1:	38 cb                                           	cmp    bl,cl
+4149eab3:	74 7b                                           	je     0x4149eb30
+4149eab5:	84 db                                           	test   bl,bl
+4149eab7:	74 6f                                           	je     0x4149eb28
+4149eab9:	f3 0f 10 02                                     	movss  xmm0,DWORD PTR [edx]
+4149eabd:	f3 0f 11 46 70                                  	movss  DWORD PTR [esi+0x70],xmm0
+4149eac2:	f3 0f 10 42 04                                  	movss  xmm0,DWORD PTR [edx+0x4]
+4149eac7:	f3 0f 11 46 74                                  	movss  DWORD PTR [esi+0x74],xmm0
+4149eacc:	f3 0f 10 42 08                                  	movss  xmm0,DWORD PTR [edx+0x8]
+4149ead1:	f3 0f 11 46 78                                  	movss  DWORD PTR [esi+0x78],xmm0
+4149ead6:	f3 0f 10 42 0c                                  	movss  xmm0,DWORD PTR [edx+0xc]
+4149eadb:	f3 0f 11 46 7c                                  	movss  DWORD PTR [esi+0x7c],xmm0
+4149eae0:	f3 0f 10 42 10                                  	movss  xmm0,DWORD PTR [edx+0x10]
+4149eae5:	f3 0f 11 86 80 00 00 00                         	movss  DWORD PTR [esi+0x80],xmm0
+4149eaed:	f3 0f 10 42 14                                  	movss  xmm0,DWORD PTR [edx+0x14]
+4149eaf2:	f3 0f 11 86 84 00 00 00                         	movss  DWORD PTR [esi+0x84],xmm0
+4149eafa:	0f 10 42 18                                     	movups xmm0,XMMWORD PTR [edx+0x18]
+4149eafe:	0f 10 4a 28                                     	movups xmm1,XMMWORD PTR [edx+0x28]
+4149eb02:	0f 11 86 88 00 00 00                            	movups XMMWORD PTR [esi+0x88],xmm0
+4149eb09:	0f 11 8e 98 00 00 00                            	movups XMMWORD PTR [esi+0x98],xmm1
+4149eb10:	0f 10 42 38                                     	movups xmm0,XMMWORD PTR [edx+0x38]
+4149eb14:	0f 11 86 a8 00 00 00                            	movups XMMWORD PTR [esi+0xa8],xmm0
+4149eb1b:	f2 0f 10 42 48                                  	movsd  xmm0,QWORD PTR [edx+0x48]
+4149eb20:	f2 0f 11 86 b8 00 00 00                         	movsd  QWORD PTR [esi+0xb8],xmm0
+4149eb28:	83 c4 04                                        	add    esp,0x4
+4149eb2b:	5e                                              	pop    esi
+4149eb2c:	5f                                              	pop    edi
+4149eb2d:	5b                                              	pop    ebx
+4149eb2e:	5d                                              	pop    ebp
+4149eb2f:	c3                                              	ret
+4149eb30:	84 ed                                           	test   ch,ch
+4149eb32:	0f 95 c1                                        	setne  cl
+4149eb35:	80 3c 24 00                                     	cmp    BYTE PTR [esp],0x0
+4149eb39:	0f 95 c5                                        	setne  ch
+4149eb3c:	80 78 05 00                                     	cmp    BYTE PTR [eax+0x5],0x0
+4149eb40:	0f 95 c0                                        	setne  al
+4149eb43:	20 cd                                           	and    ch,cl
+4149eb45:	08 c5                                           	or     ch,al
+4149eb47:	0f b6 c5                                        	movzx  eax,ch
+4149eb4a:	8b 4a 30                                        	mov    ecx,DWORD PTR [edx+0x30]
+4149eb4d:	2b 8e a0 00 00 00                               	sub    ecx,DWORD PTR [esi+0xa0]
+4149eb53:	89 cf                                           	mov    edi,ecx
+4149eb55:	f7 df                                           	neg    edi
+4149eb57:	0f 48 f9                                        	cmovs  edi,ecx
+4149eb5a:	39 c7                                           	cmp    edi,eax
+4149eb5c:	76 14                                           	jbe    0x4149eb72
+4149eb5e:	f3 0f 10 42 3c                                  	movss  xmm0,DWORD PTR [edx+0x3c]
+4149eb63:	0f 2e 86 ac 00 00 00                            	ucomiss xmm0,DWORD PTR [esi+0xac]
+4149eb6a:	0f 87 49 ff ff ff                               	ja     0x4149eab9
+4149eb70:	eb b6                                           	jmp    0x4149eb28
+4149eb72:	f3 0f 10 42 34                                  	movss  xmm0,DWORD PTR [edx+0x34]
+4149eb77:	f3 0f 10 8e a4 00 00 00                         	movss  xmm1,DWORD PTR [esi+0xa4]
+4149eb7f:	0f 28 d0                                        	movaps xmm2,xmm0
+4149eb82:	f3 0f 5c d1                                     	subss  xmm2,xmm1
+4149eb86:	0f 28 1d 40 a5 05 42                            	movaps xmm3,XMMWORD PTR ds:0x4205a540
+4149eb8d:	0f 54 da                                        	andps  xmm3,xmm2
+4149eb90:	0f 2e 1d 84 ac 05 42                            	ucomiss xmm3,DWORD PTR ds:0x4205ac84
+4149eb97:	76 0b                                           	jbe    0x4149eba4
+4149eb99:	0f 2e c1                                        	ucomiss xmm0,xmm1
+4149eb9c:	0f 87 17 ff ff ff                               	ja     0x4149eab9
+4149eba2:	eb 84                                           	jmp    0x4149eb28
+4149eba4:	8b 46 04                                        	mov    eax,DWORD PTR [esi+0x4]
+4149eba7:	f6 80 b0 00 00 00 04                            	test   BYTE PTR [eax+0xb0],0x4
+4149ebae:	75 18                                           	jne    0x4149ebc8
+4149ebb0:	8b 86 9c 00 00 00                               	mov    eax,DWORD PTR [esi+0x9c]
+4149ebb6:	39 42 2c                                        	cmp    DWORD PTR [edx+0x2c],eax
+4149ebb9:	75 5a                                           	jne    0x4149ec15
+4149ebbb:	8b 86 98 00 00 00                               	mov    eax,DWORD PTR [esi+0x98]
+4149ebc1:	39 42 28                                        	cmp    DWORD PTR [edx+0x28],eax
+4149ebc4:	74 18                                           	je     0x4149ebde
+4149ebc6:	eb 4d                                           	jmp    0x4149ec15
+4149ebc8:	8b 86 98 00 00 00                               	mov    eax,DWORD PTR [esi+0x98]
+4149ebce:	39 42 28                                        	cmp    DWORD PTR [edx+0x28],eax
+4149ebd1:	75 42                                           	jne    0x4149ec15
+4149ebd3:	8b 86 9c 00 00 00                               	mov    eax,DWORD PTR [esi+0x9c]
+4149ebd9:	39 42 2c                                        	cmp    DWORD PTR [edx+0x2c],eax
+4149ebdc:	75 37                                           	jne    0x4149ec15
+4149ebde:	0f 57 db                                        	xorps  xmm3,xmm3
+4149ebe1:	0f 2e d3                                        	ucomiss xmm2,xmm3
+4149ebe4:	75 b3                                           	jne    0x4149eb99
+4149ebe6:	0f b6 42 21                                     	movzx  eax,BYTE PTR [edx+0x21]
+4149ebea:	3a 86 91 00 00 00                               	cmp    al,BYTE PTR [esi+0x91]
+4149ebf0:	75 2e                                           	jne    0x4149ec20
+4149ebf2:	0f b6 42 22                                     	movzx  eax,BYTE PTR [edx+0x22]
+4149ebf6:	3a 86 92 00 00 00                               	cmp    al,BYTE PTR [esi+0x92]
+4149ebfc:	75 22                                           	jne    0x4149ec20
+4149ebfe:	f3 0f 10 86 a8 00 00 00                         	movss  xmm0,DWORD PTR [esi+0xa8]
+4149ec06:	0f 2e 42 38                                     	ucomiss xmm0,DWORD PTR [edx+0x38]
+4149ec0a:	0f 83 18 ff ff ff                               	jae    0x4149eb28
+4149ec10:	e9 49 ff ff ff                                  	jmp    0x4149eb5e
+4149ec15:	0f 8f 9e fe ff ff                               	jg     0x4149eab9
+4149ec1b:	e9 08 ff ff ff                                  	jmp    0x4149eb28
+4149ec20:	84 c0                                           	test   al,al
+4149ec22:	0f 85 91 fe ff ff                               	jne    0x4149eab9
+4149ec28:	e9 fb fe ff ff                                  	jmp    0x4149eb28

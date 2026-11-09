@@ -1,0 +1,34 @@
+=== release ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x415e019b --stop-address=0x415e0201 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+415e019b <.data+0x34019b>:
+415e019b:	e8 a0 10 f1 ff                                  	call   0x414f1240
+415e01a0:	84 c0                                           	test   al,al
+415e01a2:	0f 84 d4 03 00 00                               	je     0x415e057c
+415e01a8:	80 3d 78 0c 50 42 00                            	cmp    BYTE PTR ds:0x42500c78,0x0
+415e01af:	74 21                                           	je     0x415e01d2
+415e01b1:	e8 8a 20 f1 ff                                  	call   0x414f2240
+415e01b6:	84 c0                                           	test   al,al
+415e01b8:	75 07                                           	jne    0x415e01c1
+415e01ba:	c6 05 30 6f 50 42 01                            	mov    BYTE PTR ds:0x42506f30,0x1
+415e01c1:	a1 18 4b 4f 42                                  	mov    eax,ds:0x424f4b18
+415e01c6:	a3 28 fe 23 42                                  	mov    ds:0x4223fe28,eax
+415e01cb:	c6 05 78 0c 50 42 00                            	mov    BYTE PTR ds:0x42500c78,0x0
+415e01d2:	f3 0f 10 45 cc                                  	movss  xmm0,DWORD PTR [ebp-0x34]
+415e01d7:	89 d9                                           	mov    ecx,ebx
+415e01d9:	ff 15 e4 80 50 42                               	call   DWORD PTR ds:0x425080e4
+415e01df:	a1 28 fe 23 42                                  	mov    eax,ds:0x4223fe28
+415e01e4:	3b 05 18 4b 4f 42                               	cmp    eax,DWORD PTR ds:0x424f4b18
+415e01ea:	75 15                                           	jne    0x415e0201
+415e01ec:	8b 0d 28 f4 23 42                               	mov    ecx,DWORD PTR ds:0x4223f428
+415e01f2:	83 b9 30 4d 00 00 00                            	cmp    DWORD PTR [ecx+0x4d30],0x0
+415e01f9:	74 06                                           	je     0x415e0201
+415e01fb:	40                                              	inc    eax
+415e01fc:	a3 28 fe 23 42                                  	mov    ds:0x4223fe28,eax

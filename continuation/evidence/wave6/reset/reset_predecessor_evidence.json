@@ -1,0 +1,103 @@
+{
+  "task": "NEXT-RESET",
+  "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "image": {
+    "path": "work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_base": "0x412a0000",
+    "file_offset_rule": "VA - image_base; static byte addressing only"
+  },
+  "source_sha256": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "orchestration/v5/historical_reset_parent_walk.json": "436361e90aaaf309b4f1d26b634e45373b47779da2821fc95668052878018c26",
+    "orchestration/v5/historical_reset_parent_focused.asm": "ce0aa8f7a6f4bf456f7808ddcd2104433a4315593f0f5983993172e601f0ba31",
+    "orchestration/v5/historical_reset_block_walk.json": "b0a4f5de76203ca063253971cd75a8c857289ac5d3b1e4200842ab01ab678abd",
+    "orchestration/v5/historical_reset_block_focused.asm": "8b175242ac203dfc734ff78c7ff8e26d8e3fcc2af6ed9548aaf007d239bb5f74"
+  },
+  "predecessor": {
+    "instructions": [
+      {
+        "va": "0x415debf0",
+        "bytes": "c700ffffffff",
+        "size": 6,
+        "instruction": "mov DWORD PTR [eax],0xffffffff",
+        "role": "back-edge target"
+      },
+      {
+        "va": "0x415decbe",
+        "bytes": "3d9c305042",
+        "size": 5,
+        "instruction": "cmp eax,0x4250309c",
+        "role": "32-bit equality predicate"
+      },
+      {
+        "va": "0x415decc3",
+        "bytes": "0f8527ffffff",
+        "size": 6,
+        "instruction": "jne 0x415debf0",
+        "role": "repeat loop when unequal"
+      },
+      {
+        "va": "0x415decc9",
+        "bytes": "c705a8dd4f42ffffffff",
+        "size": 10,
+        "instruction": "mov DWORD PTR ds:0x424fdda8,0xffffffff",
+        "role": "fallthrough prefix; not part of the modeled snapshot"
+      },
+      {
+        "va": "0x415decd3",
+        "bytes": "c7057c4b4f4200000000",
+        "size": 10,
+        "instruction": "mov DWORD PTR ds:0x424f4b7c,0x0",
+        "role": "fallthrough prefix; not part of the modeled snapshot"
+      },
+      {
+        "va": "0x415decdd",
+        "bytes": "c705cc085042ffffffff",
+        "size": 10,
+        "instruction": "mov DWORD PTR ds:0x425008cc,0xffffffff",
+        "role": "fallthrough prefix; not part of the modeled snapshot"
+      },
+      {
+        "va": "0x415dece7",
+        "bytes": "c605e909504200",
+        "size": 7,
+        "instruction": "mov BYTE PTR ds:0x425009e9,0x0",
+        "role": "fallthrough prefix; not part of the modeled snapshot"
+      }
+    ],
+    "add": {
+      "va": "0x415decb9",
+      "bytes": "05c8000000",
+      "size": 5,
+      "instruction": "add eax,0xc8"
+    },
+    "fallthrough_effect": {
+      "start": "0x415decee",
+      "end_exclusive": "0x415ded53",
+      "source_evidence": "continuation/evidence/wave5/charge/full_reset_evidence.json",
+      "source_evidence_sha256": "6d50b93fdb3c8e7a3d373bee55ee3a0a7e314af8245f32d16157f3a92d73c0fb",
+      "store_count": 11
+    },
+    "focused_objdump": {
+      "start": "0x415debf0",
+      "end_exclusive": "0x415ded70",
+      "saved_path": "continuation/evidence/wave6/reset/reset_predecessor_objdump.txt"
+    }
+  },
+  "contract": {
+    "operation": "apply_reset_predecessor_projection(std::uint32_t eax_before_add, ChargeResetSnapshot&)",
+    "typed_predicate": "(eax_before_add + 0xc8) modulo 2^32 equals 0x4250309c",
+    "branch": "Unequal takes JNE back to 0x415debf0; equality falls through through four fixed stores and reaches the eleven-store block at 0x415decee.",
+    "modeled_effect": "On equality, apply only the existing eleven raw BYTE/DWORD zero-store projection; on inequality, leave its snapshot unchanged.",
+    "precondition": "Caller supplies the 32-bit EAX value immediately before ADD at 0x415decb9. The surrounding loop writes and earlier entry/provider are not part of this API.",
+    "unresolved": [
+      "Entry predicate, runtime reachability and the provider/identity of EAX",
+      "Identity, meaning and lifetime of the loop base and absolute destinations",
+      "The loop's 25 DWORD sentinel writes and their data structure",
+      "The four fallthrough-prefix stores and stores after 0x415ded52 are not composed into this projection",
+      "Original callers, reset/charge/release scheduling and other direct or indirect writers"
+    ],
+    "stop": "Static local branch/effect only; no source for the loop base or original runtime path is claimed."
+  }
+}

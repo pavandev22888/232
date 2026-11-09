@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "task": "W5-HISTORICAL",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "registry_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "assignment_sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4",
+  "baseline_dispositions_sha256": "5f69cb4aee78a42b29f0b0cd816d5f1e530246d8808dcf1c10f5e60be9284d96",
+  "source_hashes_relative_to_handoff_workspace": {
+    "orchestration/v7/verify_v7.py": "edf54449618586804747c9b90f03ae9cb02eecbad02a9c54fe9f7ac446ecb575",
+    "orchestration/v7/proof_spec.json": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+    "orchestration/v7/pe_data.py": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "orchestration/v7/historical_H01_byte_evidence.json": "0897ee504a64d723e7197faba9c584f26ba58d749bbc160d9a4b2a926ff3e94e",
+    "orchestration/v7/H01_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "orchestration/v1/direct/reproducibility.csv": "5cb29ac06cfaea02fcf586a94d5ce614312129ae040d3ba44c456610d43ae267",
+    "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json": "8aae710852d062dd3460a253250831f53354b5c792ad312903da37e2462b4a94",
+    "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md": "7fcabb005443cbb6f709124f92a35d893798f5082f0c3fa5caa81ccebaaea062",
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "historical_anchor_sources": {
+    "resource": 143,
+    "client": 19
+  },
+  "entries": [
+    {
+      "ordinal": 5,
+      "check": "pefile resource BINARY/101 raw offset and size",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": [
+        [
+          "BINARY",
+          6462224,
+          55578624,
+          1049
+        ]
+      ],
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/4",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "fresh_named_library_leaf_pass_not_old_producer",
+      "gate": "pefile 2024.8.26 parses BINARY/101, language 1049, raw offset 0x629B10 and size 0x3501000",
+      "prerequisites": [
+        "Pinned neverlose.dll and extracted nl.bin",
+        "pefile 2024.8.26 wheel/source hash",
+        "Only the resource directory is parsed; no loader or instruction execution"
+      ],
+      "observed": "One fresh pefile library leaf passed. See leaf.json. Original producer code/invocation not reproduced.",
+      "remaining": "Exact original producer protocol remains unsupported; no LIEF or other historical leaf inferred."
+    },
+    {
+      "ordinal": 6,
+      "check": "LIEF independently identifies same BINARY/101 bytes",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": [
+        [
+          "BINARY",
+          6462224,
+          55578624,
+          "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+        ]
+      ],
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/5",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_dependency_frontier",
+      "gate": "LIEF 1.0.0-d05b3499b independently traverses BINARY/101 and compares offset, size and resource SHA-256",
+      "prerequisites": [
+        "Pinned neverlose.dll",
+        "The recorded LIEF build and resource traversal/extraction API",
+        "Original producer or a separately identified bounded predicate implementation"
+      ],
+      "observed": "LIEF is not installed (find_spec returned None). Resource inputs are available; no LIEF installation/run in this one-leaf assignment.",
+      "remaining": "Run a separately scoped LIEF gate. pefile output is not LIEF agreement."
+    },
+    {
+      "ordinal": 199,
+      "check": "Rizin independent address/bytes/length resource",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "expected_instructions": 143,
+        "records": 143,
+        "returncode": 0
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/198",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_dependency_frontier",
+      "gate": "Rizin 0.9.1 independently decodes exactly 143 resource anchors with address/bytes/length agreement",
+      "prerequisites": [
+        "Rizin 0.9.1 executable",
+        "Pinned historical_H01_byte_evidence.json and nl.bin",
+        "Exact architecture/base/seek/decode command and comparison protocol"
+      ],
+      "observed": "rizin is not on PATH. The pinned anchor inputs are present; the metrics record aggregate counts, not the original invocation.",
+      "remaining": "Obtain/identify the exact invocation before a separately scoped replay. GNU objdump is not this named Rizin gate."
+    },
+    {
+      "ordinal": 200,
+      "check": "Rizin independent address/bytes/length client",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "expected_instructions": 19,
+        "records": 19,
+        "returncode": 0
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/199",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_dependency_frontier",
+      "gate": "Rizin 0.9.1 independently decodes exactly 19 client anchors with address/bytes/length agreement",
+      "prerequisites": [
+        "Rizin 0.9.1 executable",
+        "Pinned historical_H01_byte_evidence.json and client.dll",
+        "Exact architecture/base/seek/decode command and comparison protocol"
+      ],
+      "observed": "rizin is not on PATH. The pinned anchor inputs are present; the metrics record aggregate counts, not the original invocation.",
+      "remaining": "Obtain/identify the exact invocation before a separately scoped replay. GNU objdump is not this named Rizin gate."
+    },
+    {
+      "ordinal": 202,
+      "check": "Static VEX covers exact block reload_literal_read",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "bytes": 45,
+        "instructions": 14
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/201",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_input_and_dependency_frontier",
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact reload_literal_read block: 45 bytes, 14 instructions, 34 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "observed": "Neither pyvex nor archinfo is installed. The cited metrics #/vex/0 records label and counts only, without start VA, byte string or lift options.",
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 203,
+      "check": "Static VEX covers exact block height_clamp",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "bytes": 24,
+        "instructions": 4
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/202",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_input_and_dependency_frontier",
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact height_clamp block: 24 bytes, 4 instructions, 22 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "observed": "Neither pyvex nor archinfo is installed. The cited metrics #/vex/1 records label and counts only, without start VA, byte string or lift options.",
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 204,
+      "check": "Static VEX covers exact block height_x87_conversion",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "bytes": 28,
+        "instructions": 5
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/203",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_input_and_dependency_frontier",
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact height_x87_conversion block: 28 bytes, 5 instructions, 45 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "observed": "Neither pyvex nor archinfo is installed. The cited metrics #/vex/2 records label and counts only, without start VA, byte string or lift options.",
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 205,
+      "check": "Static VEX covers exact block metric_compare",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "bytes": 21,
+        "instructions": 4
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/204",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_input_and_dependency_frontier",
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact metric_compare block: 21 bytes, 4 instructions, 40 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "observed": "Neither pyvex nor archinfo is installed. The cited metrics #/vex/3 records label and counts only, without start VA, byte string or lift options.",
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 206,
+      "check": "Static VEX covers exact block strict_threshold",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": {
+        "bytes": 29,
+        "instructions": 6
+      },
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/205",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "not_attempted_input_and_dependency_frontier",
+      "gate": "pyvex 10.0.5 / archinfo 10.0.5 statically lift exact strict_threshold block: 29 bytes, 6 instructions, 53 IR statements",
+      "prerequisites": [
+        "pyvex 10.0.5 and archinfo 10.0.5",
+        "Exact pinned start VA and bytes of this block",
+        "Architecture/endness, lift options and block termination/coverage predicate"
+      ],
+      "observed": "Neither pyvex nor archinfo is installed. The cited metrics #/vex/4 records label and counts only, without start VA, byte string or lift options.",
+      "remaining": "Recover this exact input span and producer options; do not guess a span from the label or claim archived IR counts as new proof."
+    },
+    {
+      "ordinal": 207,
+      "check": "Original unchanged after audit neverlose.dll",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": null,
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/206",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "historical_interval_not_recreatable",
+      "gate": "Original audit before/after SHA-256 equality for neverlose.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "observed": "The check has detail=null. Pinned present-day image hash is c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c. Current interval manifests are recorded separately in acceptance.json.",
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    },
+    {
+      "ordinal": 208,
+      "check": "Original unchanged after audit client.dll",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": null,
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/207",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "historical_interval_not_recreatable",
+      "gate": "Original audit before/after SHA-256 equality for client.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "observed": "The check has detail=null. Pinned present-day image hash is 183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03. Current interval manifests are recorded separately in acceptance.json.",
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    },
+    {
+      "ordinal": 209,
+      "check": "Original unchanged after audit engine.dll",
+      "baseline_disposition": "historical_only",
+      "historical_predicate": null,
+      "historical_source": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/208",
+      "archived_pass_used_as_current_evidence": false,
+      "status": "historical_interval_not_recreatable",
+      "gate": "Original audit before/after SHA-256 equality for engine.dll",
+      "prerequisites": [
+        "Authenticated original interval boundary hashes/manifests and audit provenance",
+        "The historical audit actions/scope, not just present-day sample bytes"
+      ],
+      "observed": "The check has detail=null. Pinned present-day image hash is bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6. Current interval manifests are recorded separately in acceptance.json.",
+      "remaining": "Only present-interval immutability can be rechecked now. It does not establish the old interval or an independent external audit."
+    }
+  ],
+  "non_trace_leaf_attempts": 1,
+  "original_h01_producer_attempts": 0,
+  "original_h01_producer_frontier": {
+    "ledger": "orchestration/v1/direct/reproducibility.csv#H01: script_present=False",
+    "fresh_missing_path_observations_relative_to_handoff": [
+      "continuation/verify_history_metrics_current.py",
+      "workspace/continuation/verify_history_metrics_current.py",
+      "workspace/work/RAGEBOT_FINAL_v2/continuation/verify_history_metrics_current.py"
+    ],
+    "limit": "These three absent paths and the pinned ledger are bounded evidence, not an exhaustive absence claim."
+  },
+  "strict_old_protocol_repeated": false,
+  "all_209_repeated": false,
+  "external_independent_audit": false,
+  "full_gap06_closed": false,
+  "global_historical_dispositions_modified": false,
+  "stop": "One pefile library leaf replayed; all 12 original historical-only entries accounted for. No second leaf, broad toolchain, trace, DLL execution/loading/emulation or game/injection."
+}

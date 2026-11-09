@@ -1,0 +1,96 @@
+{
+  "task_id": "NEXT-REVIEW-CALLBACK",
+  "reviewed_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+  "comparison_base_sha": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "code_reviewed_at_fixed_sha": true,
+  "worktree": "/tmp/hoplite/232-review-callback",
+  "branch": "hoplite/sikyon-46eee495--review-callback",
+  "review_outcome": "blocked",
+  "blocking_findings": [
+    {
+      "id": "callback-prefix-c0-nonzero-countzero-cl-nonzero",
+      "severity": "blocking",
+      "location": "continuation/src/bounded_aggregation.cpp:90-95; continuation/tests/test_bounded_aggregation.cpp:172-176",
+      "source_anchors": [
+        "0x4149E8F0",
+        "0x4149E8AB..0x4149E8AE",
+        "0x4149E8B0..0x4149E8C9",
+        "0x4149E8CF..0x4149E8E6"
+      ],
+      "finding": "For owner.C0!=0, accumulator+6==0, accumulator+7!=0, the model derives a boolean CL from flags/owner+0x138/point+0x28 and always scores. The bytes preserve incoming CL when flag bit 8 is set; otherwise kind==1, flag4 and nonzero point+0x25 are required, then C0/signed point+0x28 gates determine score-with-original-CL versus return without sum/tail stores. Current implementation reverses the eligible C0!=0 and point+0x28<3 subcase and scores when the three gates fail. Existing tests encode always-score expectations.",
+      "required_action": "Correct the branch from byte-level flow and replace self-referential expectations with branch-derived cases; re-review a new fixed SHA."
+    }
+  ],
+  "other_blockers": [],
+  "no_additional_blockers": true,
+  "scope_limits": [
+    "Bounded offline reconstruction only; full callback/ranking and full GAP not proved.",
+    "Runtime settings/provider bindings and selected-table provenance/lifetime unresolved.",
+    "Out-of-range index handler semantics unresolved.",
+    "Original source language, ABI, and object identity not established.",
+    "No original DLL loading, execution, or emulation; no external audit/equivalence protocol.",
+    "No integrated-SHA review; later release_state_slice/reset-history/geometry changes are outside reviewed SHA."
+  ],
+  "evidence": {
+    "static_input_image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "static_support_walk_sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e",
+    "freshly_decoded_instruction_count": 175,
+    "reviewed_source_sha256": {
+      "continuation/src/bounded_aggregation.cpp": "1c212b6e2dd358d24354d134f97dfaa072806488e1ffbe21580ba645f2821ce6",
+      "continuation/tests/test_bounded_aggregation.cpp": "5ac3c490b25d2967915944bdb7b3af4991462440f4aa55ffbcf643058692e145",
+      "continuation/evidence/wave6/aggregate/anchors.json": "0ba20fbe3d54f0aae49fa0103e37bcb0526365dcb2b3ea2b4e6c9ba75f56206b"
+    },
+    "tool_versions": {
+      "g++": {
+        "command": "g++ --version",
+        "exit_code": 0,
+        "output": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+      },
+      "objdump": {
+        "command": "objdump --version",
+        "exit_code": 0,
+        "output": "GNU objdump (GNU Binutils for Ubuntu) 2.42"
+      },
+      "python3": {
+        "command": "python3 --version",
+        "exit_code": 0,
+        "output": "Python 3.12.3"
+      }
+    },
+    "commands": [
+      {
+        "label": "static evidence verifier",
+        "command": "python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "cwd": "/tmp/hoplite/232-review-callback",
+        "exit_code": 0,
+        "output": "{\n  \"passed\": true,\n  \"instructions\": 175,\n  \"image_sha256\": \"682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e\",\n  \"original_execution_loading_emulation\": false,\n  \"scope\": \"Local static windows, not runtime bindings or whole callback\"\n}\n"
+      },
+      {
+        "label": "native compile and test",
+        "command": "g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/*.cpp continuation/tests/test_bounded_aggregation.cpp -o /tmp/hoplite/232-review-callback-report-checks-av58i18o/test_bounded_aggregation && /tmp/hoplite/232-review-callback-report-checks-av58i18o/test_bounded_aggregation",
+        "cwd": "/tmp/hoplite/232-review-callback",
+        "exit_code": 0,
+        "output": "16392 bounded aggregation assertions passed\n"
+      },
+      {
+        "label": "ASan/UBSan compile and test",
+        "command": "g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined continuation/src/*.cpp continuation/tests/test_bounded_aggregation.cpp -o /tmp/hoplite/232-review-callback-report-checks-av58i18o/test_bounded_aggregation_sanitize && ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-review-callback-report-checks-av58i18o/test_bounded_aggregation_sanitize",
+        "cwd": "/tmp/hoplite/232-review-callback",
+        "exit_code": 0,
+        "output": "16392 bounded aggregation assertions passed\n"
+      },
+      {
+        "label": "reviewed diff whitespace check",
+        "command": "git diff --check 180616d..35b8ada -- continuation/include/rage/bounded_aggregation.hpp continuation/src/bounded_aggregation.cpp continuation/tests/test_bounded_aggregation.cpp continuation/Makefile continuation/evidence/wave6/aggregate",
+        "cwd": "/tmp/hoplite/232-review-callback",
+        "exit_code": 0,
+        "output": ""
+      }
+    ],
+    "test_assertions_each_native_and_sanitized": 16392,
+    "build_artifacts_temp_dir": "/tmp/hoplite/232-review-callback-report-checks-av58i18o",
+    "command_driver_note": "A preliminary wrapper attempt quoted the source wildcard and failed to expand continuation/src/*.cpp (exit 1, cc1plus reported no such file). The correctly shell-expanded native and sanitizer compile/run commands recorded here both ran to completion; this wrapper invocation error was not a source/test failure."
+  },
+  "review_report": "continuation/evidence/wave6/review-callback/report.md",
+  "verification_log": "continuation/evidence/wave6/review-callback/verification.log"
+}

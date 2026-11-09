@@ -1,0 +1,6 @@
+COMMAND: sh -c 'git show HEAD:continuation/evidence/wave6/review-integrated-evidence/report.json | sha256sum && sha256sum continuation/evidence/wave6/review-integrated-evidence/report.json && git diff --exit-code HEAD -- continuation/evidence/wave6/review-integrated-evidence/report.json'
+CWD: /tmp/hoplite/232-w6-review-evidence-followup
+EXIT_CODE: 0
+--- stdout+stderr ---
+69355a2af097688e9592d0b7c83968a938401c422791212919eca2c2e7a19658  -
+69355a2af097688e9592d0b7c83968a938401c422791212919eca2c2e7a19658  continuation/evidence/wave6/review-integrated-evidence/report.json

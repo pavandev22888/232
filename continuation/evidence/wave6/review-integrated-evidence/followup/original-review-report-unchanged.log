@@ -1,0 +1,4 @@
+COMMAND: git diff --exit-code HEAD -- continuation/evidence/wave6/review-integrated-evidence/report.json
+CWD: /tmp/hoplite/232-w6-review-evidence-followup
+EXIT_CODE: 0
+--- stdout+stderr ---

@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "task": "W5-THRESHOLD",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "hypothesis": {
+    "id": "W5-THRESHOLD-H1",
+    "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+    "hypothesis": "The immediate post-settings callee 0x414ab5d0 consumes the same T+0x68 DWORD as a decision threshold.",
+    "motivation": [
+      "target_scan 0x414a5d09 sets ECX=EDI before producer call 0x414a5d0b -> 0x4149dfe0",
+      "target_scan 0x414a5d10 again sets ECX=EDI before call 0x414a5d15 -> 0x414ab5d0"
+    ],
+    "required_before_implementation": [
+      "establish EDI preservation/object identity through producer return",
+      "establish callee base from entry ECX",
+      "establish actual DWORD T+0x68 read, original operands, comparison, branches and actions"
+    ],
+    "bound": {
+      "callee_entry": "0x414ab5d0",
+      "first_decode_end_exclusive": "0x414ab800",
+      "maximum_decode_end_exclusive": "0x414ad910",
+      "follow_calls": false
+    },
+    "exclusions": [
+      "N+0x68 is unrelated",
+      "no other consumer hypothesis",
+      "no original execution, loading as code, or emulation"
+    ]
+  },
+  "hypothesis_sha256": "49a58997bf6a793f6bf4b03c68d52149dfffb2fcd235cdcdd710accabac749ce",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "bytes": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "conditional_image_base": "0x412a0000",
+  "mapping_limit": "Linear nl.bin VA = 0x412a0000 + file offset, consistent with pinned V8 instruction records. This does not establish runtime relocation, original source language, or ABI.",
+  "sources": [
+    {
+      "id": "producer_walk",
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/support_target_settings_walk.json",
+      "bytes": 43737,
+      "sha256": "0436d2d112239341afb4400d0eac1cff5fc02fa9c58d3983d1c9ca707be5cbe8"
+    },
+    {
+      "id": "caller_walk",
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/support_target_scan_walk.json",
+      "bytes": 596754,
+      "sha256": "7a3bd601aa211b002432607b94f1b4d7e5b351f68653d3fb5527ad1bd9d74608"
+    },
+    {
+      "id": "archive_proof",
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/proof_spec.json",
+      "bytes": 2508,
+      "sha256": "3470860aa88aa9688320b23831db87e3e947e215f771e0003387e0db7f5327ea"
+    },
+    {
+      "id": "wave2_inventory",
+      "root": "git",
+      "path": "continuation/evidence/wave2/gap02/inventory.json",
+      "bytes": 193786,
+      "sha256": "635aed4a05d871f7bc81f98a6a280bc05239c90591be4f0ec6c62acf62e82be5",
+      "revision": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    {
+      "id": "assignment",
+      "root": "git",
+      "path": "continuation/evidence/wave5/assignment.json",
+      "bytes": 31481,
+      "sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4",
+      "revision": "dada7f078479219fd76e0ecacd2f056a440d8431"
+    }
+  ],
+  "anchors_sha256": "438bc63014b6a695b4d9ff0f161870c25ec358f0888c83e6a3bb1ddb0037c37c",
+  "spans": [
+    {
+      "id": "producer_entry",
+      "start": "0x4149dfe0",
+      "end_exclusive": "0x4149dfeb",
+      "bytes": 11,
+      "sha256": "67eae62c44f931105cbe4af2de23c9385ca0b76f309e1d35f9ae95b305a177e8",
+      "instructions": 7,
+      "archive_source": "producer_walk"
+    },
+    {
+      "id": "producer_store",
+      "start": "0x4149e2fb",
+      "end_exclusive": "0x4149e318",
+      "bytes": 29,
+      "sha256": "520e79c6f4c69abddb8ae33ec917a9410324e4a5c3a669d7df8f1b0e98ef98de",
+      "instructions": 7,
+      "archive_source": "producer_walk"
+    },
+    {
+      "id": "producer_normal_return",
+      "start": "0x4149e35e",
+      "end_exclusive": "0x4149e36f",
+      "bytes": 17,
+      "sha256": "559cc9626e3f6e66d1a2e369a5809848df839ad3ebc92ce9fd2e50c1fae1e500",
+      "instructions": 8,
+      "archive_source": "producer_walk"
+    },
+    {
+      "id": "caller_to_candidate",
+      "start": "0x414a5d09",
+      "end_exclusive": "0x414a5d1a",
+      "bytes": 17,
+      "sha256": "6da8c2501f7549e6931d4c011ae516a4b2818d96e835b6ebdf9c66806b6ab0b3",
+      "instructions": 5,
+      "archive_source": "caller_walk"
+    },
+    {
+      "id": "candidate_body",
+      "start": "0x414ab5d0",
+      "end_exclusive": "0x414ab6f9",
+      "bytes": 297,
+      "sha256": "9e6df13d037baa2fc2dd4b44697e6de44ae62f9071de3f9774804f1803973d5d",
+      "instructions": 83
+    }
+  ],
+  "object_flow": [
+    {
+      "anchors": [
+        "0x414a5d09",
+        "0x414a5d0b"
+      ],
+      "proven": "ECX receives caller EDI immediately before the producer call. Denote this pointer Q; allocation, type and lifetime are not inferred."
+    },
+    {
+      "anchors": [
+        "0x4149dfe4",
+        "0x4149dfe9"
+      ],
+      "proven": "Producer saves caller EDI and assigns EDI=entry ECX=Q."
+    },
+    {
+      "anchor": "0x4149e315",
+      "proven": "DWORD [EDI+0x68] is written from EAX. V8 calls this the T threshold producer.",
+      "conditional": "Attribution to Q after intervening calls requires EDI preservation by those callees; their bodies are not proved here. No new complete producer reconstruction."
+    },
+    {
+      "anchors": [
+        "0x4149e36b",
+        "0x4149e36e"
+      ],
+      "proven": "The recorded normal epilogue pops saved caller EDI and returns.",
+      "conditional": "Execution returns through this epilogue with balanced call/stack discipline and intact saved slot; exceptional and nonreturning paths are not covered."
+    },
+    {
+      "anchors": [
+        "0x414a5d10",
+        "0x414a5d12",
+        "0x414a5d15"
+      ],
+      "proven": "On that normal return, ECX again receives caller EDI=Q; push [EBP+8] leaves ECX unchanged; direct call reaches 0x414ab5d0."
+    },
+    {
+      "anchor": "0x414ab5df",
+      "proven": "Candidate assigns ESI=entry ECX before its first call, establishing ESI=Q at this point.",
+      "conditional": "At later ESI-relative instructions, preservation across calls remains an obligation, not a proved custom ABI."
+    }
+  ],
+  "candidate_body": {
+    "range_status": "Finite ordinary body from entry through RET 4; local direct branch targets are inside the span. Calls are not followed. No global consumer-completeness claim.",
+    "unfollowed_calls": [
+      [
+        "0x414ab5f6",
+        "0x41b72a10"
+      ],
+      [
+        "0x414ab62b",
+        "0x414793d0"
+      ],
+      [
+        "0x414ab657",
+        "0x414793d0"
+      ],
+      [
+        "0x414ab6b6",
+        "0x413f8870"
+      ],
+      [
+        "0x414ab6ca",
+        "0x413f3a40"
+      ],
+      [
+        "0x414ab6ea",
+        "0x41da7c5c"
+      ]
+    ],
+    "observed_esi_relative_offsets": [
+      "0x0",
+      "0x4",
+      "0x19",
+      "0x4c",
+      "0x50",
+      "0x54",
+      "0x58",
+      "0xdc",
+      "0xe0",
+      "0xe4"
+    ],
+    "decision_witnesses": [
+      {
+        "anchors": [
+          "0x414ab621",
+          "0x414ab625",
+          "0x414ab627",
+          "0x414ab629",
+          "0x414ab62b",
+          "0x414ab634",
+          "0x414ab63f",
+          "0x414ab642",
+          "0x414ab648",
+          "0x414ab64b"
+        ],
+        "proven": "First displayed decision uses byte [ESI+0x58] mask 4, a call with ECX=ESI and argument 3, signed DWORD [ESI+0x54] converted to float, UCOMISS/JB, CVTTSS2SI, then signed CMP/JLE with DWORD [ESI+0x50]. This is not a displayed +0x68 threshold compare."
+      },
+      {
+        "anchors": [
+          "0x414ab64d",
+          "0x414ab651",
+          "0x414ab653",
+          "0x414ab655",
+          "0x414ab657",
+          "0x414ab662",
+          "0x414ab66c",
+          "0x414ab66f",
+          "0x414ab675",
+          "0x414ab678"
+        ],
+        "proven": "Second displayed decision uses mask 2 and argument 2, with the same +0x54/+0x50 operand offsets and branch forms."
+      },
+      {
+        "anchors": [
+          "0x414ab67a",
+          "0x414ab68e",
+          "0x414ab686",
+          "0x414ab69a",
+          "0x414ab6a5"
+        ],
+        "proven": "Displayed alternatives write byte [ESI+0x19]=0/1 and clear/set bit 0x400 in DWORD [[ESI+4]+0xb0]. These must not be relabeled as proven T+0x68 consumer actions."
+      }
+    ],
+    "typed_status": "Same input-pointer forwarding is established at entry on the stated normal-return path. Semantic T attribution at later instructions remains conditional on writer identity and register/stack preservation; pointees cannot be equated with T.",
+    "hypothesis_disposition": "not_supported_in_bounded_direct_body; no direct ESI+0x68 operand or established threshold-derived comparison/action in this body; called bodies and aliases remain open"
+  },
+  "proven_boundary": [
+    "Fresh original-byte matches and fresh x86 disassembly for five frozen spans; caller/producer anchors also match V8 walks.",
+    "Concrete normal-return pointer-forwarding path from settings call to candidate entry; not equality of unrelated offsets.",
+    "Displayed candidate decisions use other operands; complete original operands, branches and actions for T+0x68 are not established."
+  ],
+  "unresolved": [
+    "Typed T+0x68 read, comparison operands, branches and corresponding action remain unproved; GAP02 remains open.",
+    "First candidate call 0x414ab5f6 -> 0x41b72a10 receives ECX=[Q], not proven Q; contents and register/stack effects are not traced.",
+    "Calls 0x414ab62b and 0x414ab657 forward ESI via ECX to 0x414793d0 with arguments 3/2. Under ESI preservation this is Q, but a transitive threshold read or alias is not established. These are a next bounded frontier, not another hypothesis investigated here.",
+    "Producer EDI preservation across rounding calls, candidate ESI preservation across calls, exceptional paths, lifetime/layout, reachability/scheduling and runtime ABI are not established.",
+    "N+0x68 is unrelated and is neither used nor accepted as threshold proof. No negative-search closure, original behavioral equivalence, or original language claim."
+  ],
+  "stop": {
+    "reached": true,
+    "reason": "One immediate same-input-pointer consumer hypothesis bounded at ordinary return and unfollowed callees. No established T+0x68 predicate/action to implement.",
+    "new_cpp_code": false,
+    "generic_stub": false,
+    "gap02_closed": false,
+    "original_execution": false,
+    "original_loading_as_code": false,
+    "original_emulation": false,
+    "game_or_process_work": false
+  },
+  "verification": {
+    "scope": "Fresh static source/byte/disassembly consistency and unchanged C++17 regression baseline; not original behavior or threshold consumer implementation.",
+    "checked_on": "2026-11-09",
+    "code_baseline_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+    "tools": {
+      "python": "3.12.3",
+      "objdump": "GNU Binutils for Ubuntu 2.42",
+      "g++": "Ubuntu 13.3.0-6ubuntu2~24.04.1"
+    },
+    "commands": [
+      {
+        "cwd": "/tmp/hoplite/232-w5-threshold-sol",
+        "command": "python3 -B continuation/evidence/wave5/threshold/verify_threshold_frontier.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "stdout_stderr": "/tmp/hoplite/232-w5-threshold-sol/runs/w5-threshold/frontier.log",
+        "log_sha256": "13c79c45706208bfe0d8af708745d08b2406efc101f6aada0a341f6ba3a737c8"
+      },
+      {
+        "cwd": "/tmp/hoplite/232-w5-threshold-sol",
+        "command": "python3 -B continuation/evidence/wave2/gap02/verify_inventory.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "stdout_stderr": "/tmp/hoplite/232-w5-threshold-sol/runs/w5-threshold/inventory.log",
+        "log_sha256": "0dc7ae139e6a2af2c9d67bec0db003c09e7bc9f25d733bb0a54c43ad4c6eefc2"
+      },
+      {
+        "cwd": "/tmp/hoplite/232-w5-threshold-sol",
+        "command": "make -C continuation check BUILD=../runs/w5-threshold/build HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "stdout_stderr": "/tmp/hoplite/232-w5-threshold-sol/runs/w5-threshold/check.log",
+        "log_sha256": "c9bd59a379685e7a1e082b311342c9d4f46479810f19c4a6271180bcd86f73cf"
+      }
+    ],
+    "full_check": {
+      "exit_code": 0,
+      "native_programs": 7,
+      "sanitizer_programs": 7,
+      "assertions_per_mode": 19902,
+      "python_unittests": 8,
+      "sanitizers": "ASan/UBSan",
+      "new_cpp_module_tests": "not applicable: no C++ implementation added"
+    },
+    "source_unchanged": {
+      "confirmed": "Image and all pinned consumed sources rechecked after analysis; old GAP02 inventory also passed. Commands against HANDOFF used only read-only file/data access.",
+      "limit": "No whole-HANDOFF before/after tree diff. Hash consistency does not prove behavior or reachability."
+    },
+    "remaining_acceptance": "Coordinator must review integrated fixed SHA, repeat full check and obtain independent review; none claimed here."
+  }
+}

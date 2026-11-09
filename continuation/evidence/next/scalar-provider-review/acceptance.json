@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "review_type": "Independent agent review of a fixed integrated SHA; not an external audit",
+  "reviewer": "r03-review-sol",
+  "model": "gpt-6.1-sol",
+  "recorded_at": "2026-11-09T12:57:38.569973+00:00",
+  "reviewed_sha": "b97bf7e22da6568a938bddf071761428b0426137",
+  "comparison_base_sha": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+  "worktree": "/tmp/hoplite/232-r03-review-sol",
+  "branch": "hoplite/sikyon-46eee495--r03-review-sol",
+  "handoff": {
+    "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "access": "read-only; no restoration or bootstrap invoked"
+  },
+  "verdict": {
+    "bounded_evidence": "accepted_with_low_priority_registry_observation",
+    "blocking_findings": 0,
+    "low_priority_findings": 1,
+    "R03": "incomplete; stopped at a blocked frontier, not done",
+    "GAP04": "open",
+    "full_original_logic_reconstructed": false,
+    "original_language_established": false,
+    "external_audit": false
+  },
+  "scope": {
+    "reviewed_diff": "fecb19440f91c9dddbb60247c386fe55ef4e0c92..b97bf7e22da6568a938bddf071761428b0426137",
+    "surfaces": [
+      "continuation/evidence/next/scalar-provider/",
+      "continuation/Makefile evidence target",
+      "active goal/workflow/source-index/roadmap/task/status changes after mandatory C17 withdrawal",
+      "new baseline report provenance only; its historical PASS is not fresh acceptance evidence"
+    ],
+    "tracked_write_paths": [
+      "continuation/evidence/next/scalar-provider-review/acceptance.json",
+      "continuation/evidence/next/scalar-provider-review/review.log"
+    ],
+    "code_include_tests_diff_from_base": "empty (git diff --exit-code passed)",
+    "source_or_shared_document_edits_by_reviewer": false,
+    "author_PASS_used_as_success_input": false
+  },
+  "environment": {
+    "python": "3.12.3",
+    "gcc": "13.3.0",
+    "gxx": "13.3.0",
+    "gnu_make": "4.3",
+    "gnu_objdump": "2.42",
+    "git": "2.43.0",
+    "i386_objdump_supported": true,
+    "python_optimization": 0,
+    "python_bytecode_writes_disabled": true,
+    "cxx_standard": "C++17 regression harness only; no original-language inference",
+    "floating_point_flags": [
+      "-fno-fast-math",
+      "-ffp-contract=off"
+    ],
+    "sanitizers": "address,undefined; detect_leaks=1; halt_on_error=1"
+  },
+  "commands": [
+    {
+      "command": "bash -c python3\\ --version\\;\\ git\\ --version\\;\\ make\\ --version\\;\\ gcc\\ --version\\;\\ g++\\ --version\\;\\ objdump\\ --version\\;\\ objdump\\ -i\\;\\ python3\\ -c\\ \\\"import\\ sys\\;\\ print\\(\\\\\\\"python_optimization=\\\\\\\"\\,sys.flags.optimize\\)\\\"\\;\\ git\\ status\\ --short\\;\\ git\\ branch\\ --show-current\\;\\ git\\ rev-parse\\ HEAD\\;\\ git\\ cat-file\\ -e\\ ed9df79c028e63ca56fc191a226f5fe2f221df64\\^\\{commit\\}",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/environment.log"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/bundle-before.log"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/integrity-before.log"
+    },
+    {
+      "command": "python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/focused.log"
+    },
+    {
+      "command": "python3 -B -c 'from pathlib import Path\nimport hashlib, re, subprocess\nimage_path = Path('\"'\"'/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin'\"'\"')\nimage = image_path.read_bytes()\nbase = 0x412A0000\nprint('\"'\"'image_size='\"'\"', len(image), '\"'\"'image_sha256='\"'\"', hashlib.sha256(image).hexdigest())\nhits = [m.start() for m in re.finditer(b'\"'\"'(?='\"'\"' + re.escape(bytes.fromhex('\"'\"'4c195242'\"'\"')) + b'\"'\"')'\"'\"', image)]\nprint('\"'\"'Independent lookahead LE32 literal scan:'\"'\"', len(hits))\nassert len(hits) == 767\nfor label, prefix in [('\"'\"'immediate_store'\"'\"', bytes.fromhex('\"'\"'c705'\"'\"')), ('\"'\"'register_store'\"'\"', bytes.fromhex('\"'\"'8935'\"'\"'))]:\n    addresses = [hex(base + p - 2) for p in hits if image[p-2:p] == prefix]\n    print(label, addresses)\n    assert addresses == (['\"'\"'0x41c5dc06'\"'\"'] if label == '\"'\"'immediate_store'\"'\"' else ['\"'\"'0x41c5e404'\"'\"'])\nfor label, start, end in [\n    ('\"'\"'fallback_entry'\"'\"', 0x41C784B0, 0x41C784E3),\n    ('\"'\"'selected_install'\"'\"', 0x41C5E3B0, 0x41C5E40A),\n    ('\"'\"'intervening_callee_entry_only'\"'\"', 0x41C5BDA0, 0x41C5BDC9),\n    ('\"'\"'other_write_inventory_only'\"'\"', 0x41C5DC06, 0x41C5DC10),\n    ('\"'\"'cell_image_snapshot'\"'\"', 0x4252194C, 0x42521950),\n]:\n    raw = image[start-base:end-base]\n    print(label, hex(start), hex(end), '\"'\"'bytes='\"'\"', raw.hex(), '\"'\"'sha256='\"'\"', hashlib.sha256(raw).hexdigest(), flush=True)\n    if label != '\"'\"'cell_image_snapshot'\"'\"':\n        cmd = ['\"'\"'objdump'\"'\"', '\"'\"'-D'\"'\"', '\"'\"'-b'\"'\"', '\"'\"'binary'\"'\"', '\"'\"'-m'\"'\"', '\"'\"'i386'\"'\"', '\"'\"'-M'\"'\"', '\"'\"'intel'\"'\"', '\"'\"'--insn-width=16'\"'\"', f'\"'\"'--adjust-vma={base:#x}'\"'\"', f'\"'\"'--start-address={start:#x}'\"'\"', f'\"'\"'--stop-address={end:#x}'\"'\"', str(image_path)]\n        print('\"'\"'command='\"'\"', '\"'\"' '\"'\"'.join(cmd), flush=True)\n        subprocess.run(cmd, check=True)\n'",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/independent-anchors.log"
+    },
+    {
+      "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/check.log"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/bundle-after.log"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/integrity-after.log"
+    },
+    {
+      "command": "rg -n 'ERROR: (AddressSanitizer|LeakSanitizer)|SUMMARY: .*Sanitizer|runtime error:|AddressSanitizer:DEADLYSIGNAL|UndefinedBehaviorSanitizer' runs/r03-review-sol/check.log",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 1,
+      "log": "runs/r03-review-sol/diagnostics.log",
+      "expected_exit_code": 1,
+      "interpretation": "No sanitizer diagnostic pattern matched; not a failed sanitizer run."
+    },
+    {
+      "command": "git diff --name-status fecb19440f91c9dddbb60247c386fe55ef4e0c92..b97bf7e22da6568a938bddf071761428b0426137",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "git diff --exit-code fecb19440f91c9dddbb60247c386fe55ef4e0c92..b97bf7e22da6568a938bddf071761428b0426137 -- continuation/include continuation/src continuation/tests",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "git diff --check fecb19440f91c9dddbb60247c386fe55ef4e0c92..b97bf7e22da6568a938bddf071761428b0426137",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "git diff --exit-code b97bf7e22da6568a938bddf071761428b0426137 -- .",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "git status --porcelain",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "sha256sum continuation/evidence/next/scalar-provider-review/baseline.json continuation/evidence/next/scalar-provider-review/baseline.log",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/scope.log"
+    },
+    {
+      "command": "git diff --cached --check",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 2,
+      "log": "runs/r03-review-sol/report-format-first.log",
+      "interpretation": "Initial report-only trailing whitespace, corrected without changing checked code/proofs."
+    },
+    {
+      "command": "git diff --cached --check",
+      "cwd": "/tmp/hoplite/232-r03-review-sol",
+      "exit_code": 0,
+      "log": "runs/r03-review-sol/report-format-final.log",
+      "interpretation": "Corrected report-format check passed."
+    }
+  ],
+  "fresh_results": {
+    "focused_verifier": {
+      "exit_code": 0,
+      "whole_image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "whole_image_size": 55578624,
+      "source_pins": 6,
+      "overlapping_literal_matches": 767,
+      "nominated_decodes": 767,
+      "classification_counts": {
+        "read": 759,
+        "read-compare": 2,
+        "write-immediate": 1,
+        "write-register": 1,
+        "read-add": 4
+      },
+      "hashed_windows": 5,
+      "fresh_window_instructions": 49,
+      "rel32_target_checked": true
+    },
+    "independent_anchor_crosscheck": {
+      "exit_code": 0,
+      "method": "Separate regex lookahead LE32 search and fixed-range raw objdump calls, not importing the author verifier. Manually checked typed claims against fresh decodes.",
+      "windows": [
+        {
+          "name": "fallback_entry",
+          "start": "0x41c784b0",
+          "end_exclusive": "0x41c784e3",
+          "sha256": "6f592d465d4edf84d77df4d8a0e812eda90115d07cce27ad24550ca944849e49"
+        },
+        {
+          "name": "selected_install",
+          "start": "0x41c5e3b0",
+          "end_exclusive": "0x41c5e40a",
+          "sha256": "cf76e168220548bcd49b96cf3019d61cb24efdb693b121a06cb03b940c495a37"
+        },
+        {
+          "name": "intervening_callee_entry_only",
+          "start": "0x41c5bda0",
+          "end_exclusive": "0x41c5bdc9",
+          "sha256": "1f2a116ffc35be014b45cffd0e7147679f75f156d1b98ba1bd0a2fdca3bee57c"
+        },
+        {
+          "name": "other_write_inventory_only",
+          "start": "0x41c5dc06",
+          "end_exclusive": "0x41c5dc10",
+          "sha256": "ce7e5c3ff0ffb4e9d4d613b3c1b260c41f0fbdf15c45e9d3259fd40bf32bcb08"
+        },
+        {
+          "name": "cell_image_snapshot",
+          "start": "0x4252194c",
+          "end_exclusive": "0x42521950",
+          "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ]
+    },
+    "make_check": {
+      "exit_code": 0,
+      "build": "/tmp/hoplite/232-r03-review-sol/runs/r03-review-sol/build",
+      "native_programs": 7,
+      "sanitized_programs": 7,
+      "assertions_per_mode": 19902,
+      "per_program_assertions": {
+        "actor_scalar_pipeline": 119,
+        "charge_state": 3274,
+        "marker_pipeline": 13255,
+        "position_lifecycle": 208,
+        "position_pipeline": 392,
+        "position_records": 2601,
+        "resolved_scalar_helper": 53
+      },
+      "python_unit_tests": 8,
+      "static_evidence": "all Makefile evidence gates including new R03 verifier passed",
+      "sanitizer_diagnostics": "none observed; targeted diagnostic scan returned expected no-match exit 1",
+      "failed_runs": 0
+    },
+    "bundle_before_and_after": {
+      "exit_codes": [
+        0,
+        0
+      ],
+      "verified_files_each": 960,
+      "errors_each": []
+    },
+    "input_work_before_and_after": {
+      "exit_codes": [
+        0,
+        0
+      ],
+      "checked_records_each": 64087,
+      "errors_each": []
+    },
+    "git_baseline_available": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "reviewed_range_diff_check_exit_code": 0,
+    "pre_report_tracked_worktree_status": "clean"
+  },
+  "confirmed_typed_claims": [
+    {
+      "claim": "Selected writer stores a 32-bit post-call ESI into pointer cell 0x4252194C on local zero-compare fallthrough. This is MOV, not compare-and-swap.",
+      "anchors": [
+        "0x41C5E3FB:833d4c19524200",
+        "0x41C5E402:7506",
+        "0x41C5E404:89354c195242"
+      ],
+      "qualification": "Conditional local instruction effects only; no claimed global execution or stability of the cell."
+    },
+    {
+      "claim": "EAX from indirect call [0x4226723C] is copied into ESI and ECX before direct call 0x41C5BDA0.",
+      "anchors": [
+        "0x41C5E3E2:ff153c722642",
+        "0x41C5E3EB:89c6",
+        "0x41C5E3ED:89c1",
+        "0x41C5E3F0:e8abd9ffff"
+      ],
+      "qualification": "Post-call ESI equals that EAX only under the additional, unproved callee-preservation assumption. 0x4940 is a pushed immediate, not an established allocator size/type."
+    },
+    {
+      "claim": "The intervening callee entry saves ESI then assigns ESI=ESP.",
+      "anchors": [
+        "0x41C5BDA5:56",
+        "0x41C5BDAF:89e6"
+      ],
+      "qualification": "This entry-only window cannot prove ESI restoration on every return or nested-call contracts."
+    },
+    {
+      "claim": "Fallback reloads DWORD P_read from cell 0x4252194C and reads one 4-byte scalar at [P_read+0x24].",
+      "anchors": [
+        "0x41C784D8:8b0d4c195242",
+        "0x41C784DE:f30f105124"
+      ],
+      "qualification": "Reached only when earlier current/target comparison is ordered-unequal and requested_step is negative/unordered, assuming no faults/exceptions. No pointer ownership, field value/sign/NaN, null protection or provider substitution is established."
+    },
+    {
+      "claim": "The two nominated literal store encodings are register-store 0x41C5E404 and zero-store 0x41C5DC06.",
+      "anchors": [
+        "0x41C5E404:89354c195242",
+        "0x41C5DC06:c7054c19524200000000"
+      ],
+      "qualification": "Exhaustive for this LE32 literal inventory and classified nominated encodings in the pinned image, not all writers. Other store has inventory-only scope."
+    },
+    {
+      "claim": "Four zero bytes at the cell are present in the raw image.",
+      "anchors": [
+        "0x4252194C:00000000"
+      ],
+      "qualification": "File snapshot only; not runtime initialization or proof that the selected writer executes."
+    }
+  ],
+  "proof_verifier_limits": [
+    "The verifier independently checks frozen hashes, nominated encodings, fresh objdump text and rel32 arithmetic; most selected_chain semantic metadata and documentation are not mechanically derived. Their typed interpretation was manually cross-checked in this review.",
+    "Raw VA = offset + 0x412A0000 is a conditional static addressing convention, not an observed runtime module base.",
+    "Fresh disassembly from nominated starts is not a global instruction-boundary map, executable CFG, reachability proof or exhaustive alias/computed/external writer coverage.",
+    "Source/proof hashes establish reproducibility, not the original source language, runtime equivalence or full Ragebot reconstruction."
+  ],
+  "goal_consistency": {
+    "mandatory_C17_port": false,
+    "original_source_language": "not established by this review",
+    "current_Cpp17_is_original_language_evidence": false,
+    "decompiler_c_extension_is_original_language_evidence": false,
+    "C01_C04": "all superseded=true and blocked, empty active write_paths; old contracts retained as history only",
+    "GAP04_open_preserved": true,
+    "R03_not_done": true
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "low",
+      "blocking": false,
+      "path": "docs/TASKS.json",
+      "lines": "288-298",
+      "title": "R03 assignment bookkeeping awaits coordinator finalization",
+      "observed": "The registry still says in_progress, result_commit=null and blocked_reason=null although the bounded source result has stopped at a frontier. The proof and STATUS.json correctly keep the gap open.",
+      "requested_action": "After accepting the fixed-SHA review, coordinator should record the stopped/blocked frontier plus result/review references; do not mark R03 done or resume the superseded C17 cards.",
+      "reviewer_edited_target": false
+    }
+  ],
+  "unresolved": [
+    "Target/contract of indirect call through [0x4226723C].",
+    "ESI preservation on every relevant return from 0x41C5BDA0; no complete callee reconstruction was attempted.",
+    "Writer-before-fallback ordering/dominance/reachability and temporal identity or intervening writes between P_before, P_compare, post-call ESI and P_read.",
+    "Pointer ownership, lifetime, null validity, aliases, computed/external writers and runtime bindings.",
+    "Contents/writer of binary32 field +0x24, including sign, NaN and positive-value provenance.",
+    "Tolerance provider and other scalar helper dependencies; repeated marker/actor reads need independent observations.",
+    "Original source language/ABI for the full transitive goal; no mandatory C17 migration can close this gap.",
+    "Full GAP04 and other full-task IDs, 12 historical-only H01 checks, original runtime protocol, observed equivalence and external audit."
+  ],
+  "not_run": [
+    "Original DLL/image loading, execution or emulation, game connection, injection and process inspection (prohibited and unnecessary for this static scope).",
+    "Optional standalone archival V10-V6 tools/replay.py; current full Makefile evidence and regression gates did run.",
+    "New provider chains, full intervening callee/indirect target research, tolerance investigation and other new goals (outside fixed review scope; stopped).",
+    "C17-port build/acceptance (withdrawn requirement, not a missing gate)."
+  ],
+  "preserved_baseline_reports": [
+    {
+      "path": "continuation/evidence/next/scalar-provider-review/baseline.json",
+      "sha256": "2d91044cf13f64870e6d54de03e6e050ce60b668ec6290fd428e3ce6800b8f5a",
+      "unchanged_from_reviewed_sha": true
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider-review/baseline.log",
+      "sha256": "dff27853f329924c5818a09d337489c29aa789c0196ec2dcff1889c343091049",
+      "unchanged_from_reviewed_sha": true
+    }
+  ],
+  "reviewed_source_pins": [
+    {
+      "root": "repo",
+      "path": "continuation/evidence/gap04/README.md",
+      "sha256": "13611c4f073f52938274df81b4626c38a75a0ad27bb3aae4f735b7a1ddf1dedf"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/contract.md",
+      "sha256": "575067ff9e314fbe752ed9b400d37556f63169f5b2d36ea4c80df14bc24fb7c2"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/scalar_helper.json",
+      "sha256": "545d274506c6c2328b50bc4855dd0d620efead620bed910c1638292bd468ae00"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/verify_scalar_helper.py",
+      "sha256": "08cf6191c300bf02ab424a8ff5456dc2fc19ceb3502a827cb6cfdb9b0b16882f"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave3/actor/provenance.json",
+      "sha256": "7b8bd799325227ee8d2203664761e3164d2755d2b5100960e5882b73acf875ee"
+    },
+    {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/functions/41C784B0.c",
+      "sha256": "9ada89162b4734545d1565ac01e962e406cb346400ca6a48cff9a88f9d4060b3"
+    }
+  ],
+  "reviewed_R03_files": [
+    {
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff"
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/direct_refs.tsv",
+      "sha256": "7557a75d408a876dde1102e5788ca0e5bbe462770cc3f7a34a73ff4ccede39af"
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/fallback_provider.json",
+      "sha256": "9ab27eb48603ed01dfdb3bc75f993c2454d62b3017221e94af5779358e9e636a"
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/verification.log",
+      "sha256": "df348e7f76732ff3b8182236784fa946b00aaffd2b8de52ab9743bfa7c7ebe75"
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/verify_fallback_provider.py",
+      "sha256": "2c752033acb6779bfab36abe48ae5f046c7839e32d5ece32619601a775e4f3fb"
+    }
+  ],
+  "fresh_full_logs": [
+    {
+      "path": "runs/r03-review-sol/environment.log",
+      "sha256": "dd3a4a2e219f3d8883473d0937e20a27f91789f2ee4587b8d63a8aeeb913b69f",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/bundle-before.log",
+      "sha256": "64ef4d8b8932edf711bd8736d4ec9655bcf3225c4c10269e6dea565b3bedb7be",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/integrity-before.log",
+      "sha256": "aa68cd0ed5ed22ec62675f4971bf7c962964d39259535cc2460dbdb3235800f4",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/focused.log",
+      "sha256": "b68b22475f99d4be567c46a4e6999df8472c008141e9777253b58f0675e84c2e",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/independent-anchors.log",
+      "sha256": "1855059e5a16226b125a3a692e9cff19a16c3092903f2b52e7f77312b7e20341",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/check.log",
+      "sha256": "b7e9658d3e97f8f700281fef12caddb38edd0b9f5d777220f9230536433688c6",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/bundle-after.log",
+      "sha256": "41b0f470565fc940b313900bcdeb9a9cc13be75324588e88e7b6dd381495c9e0",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/integrity-after.log",
+      "sha256": "353af9ab683516e3c4c84302a5add45e6972b3e86ff8dc25153db0ad5bb6fa5d",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/scope.log",
+      "sha256": "d2187a6bb44bc0eb77d672ccd724596cdef1621ab4056286856025a4b8d45a86",
+      "exit_code": 0,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/diagnostics.log",
+      "sha256": "e55cf00ca14f4e6cf725a64b8a7006996a90f7e29b85d7d2d9453b092fd59990",
+      "exit_code": 1,
+      "format": "complete local transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/report-format-first.log",
+      "sha256": "6e45f273d09c0fd5630672ee02a9ec810a9c72c88157a2acb336d6ee7aa16c25",
+      "exit_code": 2,
+      "format": "complete local report-format validation transcript; ignored and not committed"
+    },
+    {
+      "path": "runs/r03-review-sol/report-format-final.log",
+      "sha256": "145320552e6f32f24f1b42af3601aedd2e709945376a8847a22fce91f8a68071",
+      "exit_code": 0,
+      "format": "complete local report-format validation transcript; ignored and not committed"
+    }
+  ],
+  "published_log": {
+    "path": "continuation/evidence/next/scalar-provider-review/review.log",
+    "sha256": "1f81c1138dca64982869f982eb54c6ac2e6fce8f1c5b5bc6feb3c2d9ba032140",
+    "format": "selected cleaned excerpts, explicitly not the complete transcript",
+    "secrets_or_original_images_included": false
+  },
+  "stop_condition": "Fixed-SHA review complete. Evidence accepted only as a frontier; no new chains or goals investigated. Only the two assigned report files are to be committed; no push/merge/cherry-pick.",
+  "report_validation": {
+    "json_syntax": "passed",
+    "initial_staged_diff_check": 2,
+    "corrected_staged_diff_check": 0,
+    "reason": "Trailing whitespace in a copied command in the excerpt only; source verification unchanged."
+  }
+}

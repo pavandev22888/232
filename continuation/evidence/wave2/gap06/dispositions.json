@@ -1,0 +1,597 @@
+{
+  "schema": 1,
+  "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "metrics_path": "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json",
+  "source_hashes": {
+    "orchestration/v7/verify_v7.py": "edf54449618586804747c9b90f03ae9cb02eecbad02a9c54fe9f7ac446ecb575",
+    "orchestration/v7/proof_spec.json": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+    "orchestration/v7/pe_data.py": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "orchestration/v7/historical_H01_byte_evidence.json": "0897ee504a64d723e7197faba9c584f26ba58d749bbc160d9a4b2a926ff3e94e",
+    "orchestration/v7/H01_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "orchestration/v1/direct/reproducibility.csv": "5cb29ac06cfaea02fcf586a94d5ce614312129ae040d3ba44c456610d43ae267",
+    "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json": "8aae710852d062dd3460a253250831f53354b5c792ad312903da37e2462b4a94",
+    "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md": "7fcabb005443cbb6f709124f92a35d893798f5082f0c3fa5caa81ccebaaea062"
+  },
+  "input_hashes": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "checks": [
+    {
+      "ordinal": 1,
+      "check": "Original SHA256 neverlose.dll",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/0"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 2,
+      "check": "Original SHA256 client.dll",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/1"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 3,
+      "check": "Original SHA256 engine.dll",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/2"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 4,
+      "check": "Original inner resource hash",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/3"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 5,
+      "check": "pefile resource BINARY/101 raw offset and size",
+      "disposition": "historical_only",
+      "expected_historical_detail": [
+        [
+          "BINARY",
+          6462224,
+          55578624,
+          1049
+        ]
+      ],
+      "reason": "The named pefile/LIEF implementation is not rerun; own resource parsing only corroborates the resource bytes, offset, size and language.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/4"
+      ],
+      "recheckability": "Resource inputs and identity available; named-library rerun feasible separately, not performed."
+    },
+    {
+      "ordinal": 6,
+      "check": "LIEF independently identifies same BINARY/101 bytes",
+      "disposition": "historical_only",
+      "expected_historical_detail": [
+        [
+          "BINARY",
+          6462224,
+          55578624,
+          "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+        ]
+      ],
+      "reason": "The named pefile/LIEF implementation is not rerun; own resource parsing only corroborates the resource bytes, offset, size and language.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/5"
+      ],
+      "recheckability": "Resource inputs and identity available; named-library rerun feasible separately, not performed."
+    },
+    {
+      "ordinal": 169,
+      "check": "Full client string and DJB2 hash DT_CSGameRulesProxy",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x89b4ae59",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/168"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 170,
+      "check": "Full client string and DJB2 hash m_bFreezePeriod",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x88f823b7",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/169"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 171,
+      "check": "Full client string and DJB2 hash DT_BasePlayer",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x801ee124",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/170"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 172,
+      "check": "Full client string and DJB2 hash m_vecViewOffset[0]",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x42aa3499",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/171"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 173,
+      "check": "Client string 0x10b8fe40",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "m_bInReload",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/172"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 174,
+      "check": "Client string 0x10c8776c",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "weapon_accuracy_forcespread",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/173"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 175,
+      "check": "Client string 0x10c877cc",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "weapon_accuracy_nospread",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/174"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 176,
+      "check": "Client string 0x10c8808c",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "m_fAccuracyPenalty",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/175"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 177,
+      "check": "Reload descriptor type/name/offset/size",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": null,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/176",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 178,
+      "check": "Authored modulo-32 literal arithmetic yields reload offset 0x32B5",
+      "disposition": "model_only",
+      "expected_historical_detail": "0x32b5",
+      "reason": "Authored pure arithmetic/IEEE-754 model with pinned literal inputs; not original execution, emulation or full historical protocol.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/177",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 179,
+      "check": "m_fAccuracyPenalty descriptor points to client weapon +3340",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": null,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/178",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 180,
+      "check": "Primary RTTI identity 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": ".?AVC_WeaponCSBase@@",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/179",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 181,
+      "check": "Executable method-pointer run through slot483 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": [],
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/180",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 182,
+      "check": "Client weapon virtual+78C target 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x106a09c0",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/181",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 183,
+      "check": "Primary RTTI identity 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": ".?AVC_WeaponCSBaseGun@@",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/182",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 184,
+      "check": "Executable method-pointer run through slot483 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": [],
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/183",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 185,
+      "check": "Client weapon virtual+78C target 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x106a09c0",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/184",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 186,
+      "check": "Primary RTTI identity 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": ".?AVC_WeaponAWP@@",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/185",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 187,
+      "check": "Executable method-pointer run through slot483 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": [],
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/186",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 188,
+      "check": "Client weapon virtual+78C target 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x106a09c0",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/187",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 189,
+      "check": "Primary RTTI identity 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": ".?AVC_AK47@@",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/188",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 190,
+      "check": "Executable method-pointer run through slot483 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": [],
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/189",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 191,
+      "check": "Client weapon virtual+78C target 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": "0x106a09c0",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/190",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 192,
+      "check": "Original float32 constant 0x4205ac70",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 46.0,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/191"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 193,
+      "check": "Original float32 constant 0x4205ac74",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 64.0,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/192"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 194,
+      "check": "Original float32 constant 0x4205a628",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 1.5,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/193"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 195,
+      "check": "Original float32 constant 0x4207058c",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 128.0,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/194"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 196,
+      "check": "Original float32 constant 0x420768ac",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 7.9921875,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/195"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 197,
+      "check": "Original float32 constant 0x420768b0",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": 0.12512218952178955,
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/196"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 198,
+      "check": "Exact integer-to-double bias",
+      "disposition": "model_only",
+      "expected_historical_detail": null,
+      "reason": "Authored pure arithmetic/IEEE-754 model with pinned literal inputs; not original execution, emulation or full historical protocol.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/197",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 199,
+      "check": "Rizin independent address/bytes/length resource",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "expected_instructions": 143,
+        "records": 143,
+        "returncode": 0
+      },
+      "reason": "The named Rizin invocation and its exact protocol are not rerun; GNU decoding does not substitute for Rizin.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/198"
+      ],
+      "recheckability": "All 162 anchor inputs available; new Rizin byte/length recheck feasible, exact old invocation not established."
+    },
+    {
+      "ordinal": 200,
+      "check": "Rizin independent address/bytes/length client",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "expected_instructions": 19,
+        "records": 19,
+        "returncode": 0
+      },
+      "reason": "The named Rizin invocation and its exact protocol are not rerun; GNU decoding does not substitute for Rizin.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/199"
+      ],
+      "recheckability": "All 162 anchor inputs available; new Rizin byte/length recheck feasible, exact old invocation not established."
+    },
+    {
+      "ordinal": 201,
+      "check": "GNU objdump independent address/bytes/length all anchors",
+      "disposition": "freshly_rechecked",
+      "expected_historical_detail": {
+        "pass": 162,
+        "total": 162
+      },
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/200",
+        "orchestration/v7/historical_H01_byte_evidence.json"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic."
+    },
+    {
+      "ordinal": 202,
+      "check": "Static VEX covers exact block reload_literal_read",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "bytes": 45,
+        "instructions": 14
+      },
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/201"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options."
+    },
+    {
+      "ordinal": 203,
+      "check": "Static VEX covers exact block height_clamp",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "bytes": 24,
+        "instructions": 4
+      },
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/202"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options."
+    },
+    {
+      "ordinal": 204,
+      "check": "Static VEX covers exact block height_x87_conversion",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "bytes": 28,
+        "instructions": 5
+      },
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/203"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options."
+    },
+    {
+      "ordinal": 205,
+      "check": "Static VEX covers exact block metric_compare",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "bytes": 21,
+        "instructions": 4
+      },
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/204"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options."
+    },
+    {
+      "ordinal": 206,
+      "check": "Static VEX covers exact block strict_threshold",
+      "disposition": "historical_only",
+      "expected_historical_detail": {
+        "bytes": 29,
+        "instructions": 6
+      },
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/205"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options."
+    },
+    {
+      "ordinal": 207,
+      "check": "Original unchanged after audit neverlose.dll",
+      "disposition": "historical_only",
+      "expected_historical_detail": null,
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/206"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable."
+    },
+    {
+      "ordinal": 208,
+      "check": "Original unchanged after audit client.dll",
+      "disposition": "historical_only",
+      "expected_historical_detail": null,
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/207"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable."
+    },
+    {
+      "ordinal": 209,
+      "check": "Original unchanged after audit engine.dll",
+      "disposition": "historical_only",
+      "expected_historical_detail": null,
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/208"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable."
+    }
+  ]
+}

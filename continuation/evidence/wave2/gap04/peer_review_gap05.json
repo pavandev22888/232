@@ -1,0 +1,491 @@
+{
+  "task": "Read-only peer review of GAP05 wave2 optional N+50 output; no full lifecycle re-review",
+  "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "reviewed_state": "Shared worktree snapshot identified by per-file hashes; not all changes committed",
+  "reviewed_files": [
+    {
+      "path": "/tmp/hoplite/workspace/continuation/include/rage/position_lifecycle.hpp",
+      "sha256": "ae80c11898ca61d734a4c0d4cac6ddbd3eb36e557479816bcc4ad7f9c2d2e5ab"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+      "sha256": "f0cf864bb075ee33f0781116864fbf277e6afd1bcb51ad9dbfe8bf8f0c57f7d2"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+      "sha256": "e9710b0a8967a16d9622eb584df48790b63d46669b23a8c7feadf265b84ed641"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/optional_output.json",
+      "sha256": "96b94a6cb47012c8fe86a7e7a3bcacae385bc49d07f2f71ec60e28feef9803bc"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/verify_optional_output.py",
+      "sha256": "8ba0d7872297587a2165264918cf804595f48191838342ec4a55ace7bcbd72ae"
+    },
+    {
+      "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+      "sha256": "8a0d9bdeb812ded163b665b7d20315c0e72cce9726e87758a20d9fabf892b688"
+    }
+  ],
+  "conclusion": {
+    "status": "accepted_with_explicit_bounded_preconditions",
+    "confirmed_code_bugs": 0,
+    "actionable_blockers": [],
+    "summary_ru": "В новом optional N+50 output подтверждённых ошибок кода не найдено. Смещения, строгие сравнения, MAXSS и порядок допустимых alias-записей соответствуют проверенным локальным байтам. Это не доказательство полного consumer или runtime-достижимости."
+  },
+  "findings": [
+    {
+      "id": "ARGUMENT_OFFSETS",
+      "classification": "confirmed_correct",
+      "status": "confirmed",
+      "title": "Distinct position, marker and side50 output arguments",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/include/rage/position_lifecycle.hpp",
+          "lines": [
+            35,
+            49
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+          "lines": [
+            10,
+            11
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fd800..0x414fd80f",
+          "bytes": "5553575683ec248b7c24408b742438"
+        },
+        {
+          "va": "0x414fd916",
+          "bytes": "8b74243c"
+        },
+        {
+          "va": "0x414fda8b",
+          "bytes": "8b442444"
+        },
+        {
+          "va": "0x414fdab6",
+          "bytes": "8b7c2440"
+        },
+        {
+          "va": "0x414fdb3b",
+          "bytes": "8b442444"
+        }
+      ],
+      "detail": "Four saved registers plus 0x24 local bytes give a 0x34 prologue displacement. The restored body frame uses actor argument at ESP+38, external Vec3 sink at +3C, marker pointer at +40, optional scalar pointer at +44. EBP is the resolved N pointer. There is no swapped marker/side50 argument. Entry and +3C loads were freshly decoded in addition to the four supplied windows; ownership/runtime identity is not inferred."
+    },
+    {
+      "id": "AGE_MASKS",
+      "classification": "confirmed_correct",
+      "status": "confirmed",
+      "title": "Initialization masks compare elapsed, preserve quiet-NaN path and signed zero",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            11,
+            12
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            36,
+            45
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            294,
+            340
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/optional_output.json",
+          "lines": [
+            484,
+            499
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fdad6..0x414fdb2a"
+        },
+        {
+          "va": "0x414fdafb",
+          "bytes": "f30fc2d801"
+        },
+        {
+          "va": "0x414fdb03",
+          "bytes": "f30fc2e201"
+        },
+        {
+          "va": "0x42074cf4",
+          "bytes": "abaaaa3f"
+        },
+        {
+          "va": "0x4206db58",
+          "bytes": "0000403f"
+        }
+      ],
+      "detail": "The code computes elapsed=now-float(N+14), then binary32 scale*elapsed. elapsed<0 selects +0; 0.75<elapsed selects 1; otherwise scaled survives. Both comparisons are strict and ordered, matching CMPLTSS masks. In particular -0 is not negative and its scaled sign survives; unordered masks preserve scaled NaN. Disabled option returns 1 without reading N+14/now. The documented FP-environment exclusions are required and not silently closed."
+    },
+    {
+      "id": "MAXSS_CURRENT_OUTPUT",
+      "classification": "confirmed_correct",
+      "status": "confirmed",
+      "title": "MAXSS second operand is current output, not the original input or N+50",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            47,
+            50
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            91,
+            95
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            399,
+            421
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/optional_output.json",
+          "lines": [
+            467,
+            479
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fdb43",
+          "bytes": "f30f104550"
+        },
+        {
+          "va": "0x414fdb48",
+          "bytes": "f30f5f00"
+        },
+        {
+          "va": "0x414fdb4c",
+          "bytes": "f30f1100"
+        }
+      ],
+      "detail": "Original MAXSS destination initially contains N+50 and source is [side50_output]. C++ record_value>output_value ? record_value : output_value correctly selects the second operand on equality and unordered, including signed-zero ties and either quiet-NaN operand. Tests inspect NaN payload and zero sign in both operand orders. This is not std::fmax semantics."
+    },
+    {
+      "id": "EARLY_EXITS",
+      "classification": "confirmed_correct",
+      "status": "confirmed",
+      "title": "Copy/inactive/marker-gate exits run merge only; clear/missing-record bypass both side50 stores",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            81,
+            110
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            343,
+            396
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+          "lines": [
+            24,
+            30
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fd83b",
+          "bytes": "0f8416020000"
+        },
+        {
+          "va": "0x414fd86f",
+          "bytes": "0f84b9020000"
+        },
+        {
+          "va": "0x414fd8e2",
+          "bytes": "0f8482010000"
+        },
+        {
+          "va": "0x414fd8f5",
+          "bytes": "0f8433020000"
+        },
+        {
+          "va": "0x414fd8ff",
+          "bytes": "0f8429020000"
+        },
+        {
+          "va": "0x414fd90c",
+          "bytes": "0f2e4548"
+        },
+        {
+          "va": "0x414fd910",
+          "bytes": "0f8318020000"
+        },
+        {
+          "va": "0x414fda57..0x414fda81"
+        }
+      ],
+      "detail": "The finish lambda faithfully merges without age initialization for normal joins at DB2E. The marker gate is ordered 0>=N+48: quiet NaN does not reject, signed zero does. Clear and missing-record paths jump past DB4C and only clear marker output when present. If the two external scalar pointers coincide, that marker clear still changes their shared storage; tests explicitly cover this. No side50 merge is invented on these bypasses."
+    },
+    {
+      "id": "ALIAS_ORDER",
+      "classification": "confirmed_correct",
+      "status": "confirmed",
+      "title": "Permitted shared external scalar observes initial store, marker copy, then MAXSS",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            82,
+            95
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            119,
+            125
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            424,
+            473
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+          "lines": [
+            39,
+            43
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fda9e..0x414fdab4"
+        },
+        {
+          "va": "0x414fdb2a",
+          "bytes": "f30f1100"
+        },
+        {
+          "va": "0x414fdb37",
+          "bytes": "f30f1107"
+        },
+        {
+          "va": "0x414fdb48",
+          "bytes": "f30f5f00"
+        }
+      ],
+      "detail": "Positions are stored before preliminary side50 initialization. finish then copies N+48 before rereading the current side50 output for MAXSS. Thus shared external marker/side50 storage correctly discards the preliminary value before merge. Tests distinguish this with preliminary=1, marker=0.28125, N+50=0.5 and with a NaN marker. Existing marker_output==&N.validity_marker self-copy is safe to omit because side50_output cannot alias N under the contract."
+    },
+    {
+      "id": "ALIAS_PRECONDITIONS",
+      "classification": "api_precondition",
+      "status": "confirmed_documented_not_a_bug",
+      "title": "Initialized external scalar and disjoint-storage restrictions are reasonable bounded API assumptions",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/include/rage/position_lifecycle.hpp",
+          "lines": [
+            35,
+            40
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+          "lines": [
+            39,
+            48
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/optional_output.json",
+          "lines": [
+            544,
+            556
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fdb48",
+          "bytes": "f30f5f00"
+        },
+        {
+          "va": "0x414fdb26..0x414fdb4c"
+        }
+      ],
+      "detail": "Merge-only early exits read incoming output, so an initialized valid float is necessary on those paths. Excluding N/vector/input aliases while permitting exact external scalar sharing is an explicit supported domain, not a missed universal alias implementation. It does not assert the original caller never aliases these objects. Partial overlap, observable memory faults, signaling NaN, MXCSR flags/traps and FTZ/DAZ remain unproven."
+    },
+    {
+      "id": "SYNTHETIC_BOUNDARY",
+      "classification": "bounded_model_boundary",
+      "status": "confirmed_honest_not_original_behavior",
+      "title": "Missing provider observation is explicitly synthetic and skips side50 stores",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/include/rage/position_lifecycle.hpp",
+          "lines": [
+            59,
+            60
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            91,
+            92
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/src/position_lifecycle.cpp",
+          "lines": [
+            114,
+            117
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/evidence/wave2/gap05/README.md",
+          "lines": [
+            27,
+            30
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            387,
+            396
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            469,
+            473
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fdab4..0x414fdb4c"
+        }
+      ],
+      "detail": "trace_observation_missing has no original normal exit counterpart and is named as such in evidence/header. Existing marker-copy behavior is retained while new side50 stores are skipped. This is an explicit partial-model result, not an asserted faithful original branch; aliases can still reflect marker stores. Planned trace/geometry renames do not change this conclusion."
+    },
+    {
+      "id": "COVERAGE_ONLY",
+      "classification": "uncovered_test_case",
+      "status": "not_a_confirmed_code_bug",
+      "title": "No explicit shared-scalar normal early-copy regression in the current test",
+      "locations": [
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            343,
+            374
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            399,
+            421
+          ]
+        },
+        {
+          "path": "/tmp/hoplite/workspace/continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            424,
+            473
+          ]
+        }
+      ],
+      "original_byte_anchors": [
+        {
+          "va": "0x414fd86f..0x414fd875"
+        },
+        {
+          "va": "0x414fdb2e..0x414fdb50"
+        }
+      ],
+      "detail": "Separate-output early-copy/merge behavior and shared-output successful/clear/missing/synthetic paths are tested. An exact shared marker/side50 scalar on a normal copy-marker early exit is not explicitly exercised. Static code inspection confirms the same marker-copy-before-MAXSS finish sequence, so this is only a nonblocking coverage observation, not evidence of a bug or a request to expand scope."
+    }
+  ],
+  "verification": {
+    "original_image": {
+      "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "size": 55578624,
+      "conditional_raw_base": "0x412a0000"
+    },
+    "fresh_static_check": {
+      "command": "Inline Python standard-library read/hash comparison against optional_output.json; objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=START --stop-address=END IMAGE",
+      "result": "PASS: 4 windows, 87 instructions, 348 bytes, 3 constants; full image SHA-256; no temporary files",
+      "additional_decodes": [
+        "0x414fd800..0x414fd80f",
+        "0x414fd916..0x414fd91a"
+      ]
+    },
+    "syntax_check": {
+      "command": "g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wshadow -fno-fast-math -ffp-contract=off -Icontinuation/include -fsyntax-only continuation/src/position_lifecycle.cpp continuation/tests/test_position_lifecycle.cpp",
+      "result": "PASS"
+    },
+    "offline_binary_reruns": [
+      {
+        "command": "runs/wave2/gap05/test_position_lifecycle",
+        "sha256": "83eac81ac57304b5f980ebceac538b75eaf4eef35da361a4a257d9dfd0f64cdd",
+        "result": "204 assertions passed"
+      },
+      {
+        "command": "ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=halt_on_error=1 runs/wave2/gap05/test_position_lifecycle_sanitize",
+        "sha256": "c51cc98ad66c50e892e5f4f4d689607589657c6ec65792ef7cd5b9dac5efbed9",
+        "result": "204 assertions passed"
+      }
+    ],
+    "test_limitation": "Existing own-code test binaries were rerun, not rebuilt in this read-only review; the rerun alone does not establish exact correspondence to reviewed source hashes. Current sources passed syntax-only checks. Parent owns integrated builds/tests.",
+    "verifier_script": "Inspected verify_optional_output.py but did not invoke it because it creates scratch files outside this review write set. Equivalent fresh-decode/hash replay was performed entirely in memory.",
+    "writes": "Only this requested JSON artifact. No code, tests, old evidence, handoff/input/work or scratch files changed by review.",
+    "safety": "Original bytes read and decoded as data only; no loading, execution, emulation, runtime probing, game/process access."
+  },
+  "unproven": [
+    "Actual actor/record association and runtime reachability.",
+    "Runtime cfg object/selected byte and clock ownership/value beyond explicit supplied observations.",
+    "Full provenance and all writers/resets of N+14/N+50.",
+    "Full consumer, original FP environment, signaling-NaN behavior and universal alias semantics."
+  ],
+  "scope_not_reviewed": [
+    "Helper/reset implementation (parent review).",
+    "Whole lifecycle and CODE01 pipeline (separate assignments).",
+    "Neutral provider/adjustment renames planned by parent."
+  ],
+  "coordinator_action": "No code correction required by this bounded peer review. Integrate/build/test reviewed changes; review conclusions apply to the recorded file hashes."
+}

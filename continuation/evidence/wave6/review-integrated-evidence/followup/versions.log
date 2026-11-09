@@ -1,0 +1,6 @@
+COMMAND: sh -c 'python3 --version; objdump --version | head -n 1'
+CWD: /tmp/hoplite/232-w6-review-evidence-followup
+EXIT_CODE: 0
+--- stdout+stderr ---
+Python 3.12.3
+GNU objdump (GNU Binutils for Ubuntu) 2.42

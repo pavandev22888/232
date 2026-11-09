@@ -1,0 +1,8 @@
+COMMAND: python3 -B continuation/evidence/wave7/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS resolver VA=0x413f88f0 length=0xc0 sha256=b8d8206f38ea7844a1db06850dd6d6a098b2fc0e989946a045ca26ecff200a92
+PASS resolver cursor/index (DEC EDI; AND EBX,EDI; store EDI), init/return, and caller/consumer anchors
+PASS initializer vector VA=0x4205afd0 bytes=0000000000000000ffffffffffffffff
+EXIT_CODE=0

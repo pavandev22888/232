@@ -1,0 +1,347 @@
+{
+  "task": "W5-GLOBAL9BC",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "hypothesis": "H3_TLS_COUNTER_STORE",
+  "hypothesis_sha256": "6b412307d1a17cdb659e247feeaba99204ff2b383b4313210fee7c266a234261",
+  "bounded_result": "Exact indirect-store alias/value prerequisite; no first-positive source proved. Stop at this frontier.",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_base": "0x412a0000",
+    "size": 55578624
+  },
+  "saved_sources": {
+    "workspace/orchestration/v5/stop_complete_walk.json": "6aa95497dd568ab53a1e4eacbce66bf30e9fa4a8ea1d23440227bc1e17c96a43"
+  },
+  "repository_sources": {
+    "continuation/evidence/wave2/gap01/results.json": "49d31cda93de5f4551a9ea82457c2e290c02483348f52269c0483d680fe1bc67"
+  },
+  "blocks": [
+    {
+      "id": "g_b8_footer_call",
+      "start_va": "0x4148dec0",
+      "end_va_exclusive": "0x4148decd",
+      "sha256": "715b74ba8794b718003ab21e95a9d6c4b66c44fee6066645782294d0d5d2f3dd",
+      "saved_source": "workspace/orchestration/v5/stop_complete_walk.json",
+      "rows": [
+        {
+          "va": "0x4148dec0",
+          "bytes": "68b8095042",
+          "instruction": "push 0x425009b8"
+        },
+        {
+          "va": "0x4148dec5",
+          "bytes": "e81a9e9100",
+          "instruction": "call 0x41da7ce4"
+        },
+        {
+          "va": "0x4148deca",
+          "bytes": "83c404",
+          "instruction": "add esp,0x4"
+        }
+      ]
+    },
+    {
+      "id": "g_b8_footer_body",
+      "start_va": "0x41da7ce4",
+      "end_va_exclusive": "0x41da7d35",
+      "sha256": "f3e193dd404276f1696668d2d56f826c4119381de8834a5d30aea5b58685ffcc",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x41da7ce4",
+          "bytes": "55",
+          "instruction": "push ebp"
+        },
+        {
+          "va": "0x41da7ce5",
+          "bytes": "8bec",
+          "instruction": "mov ebp,esp"
+        },
+        {
+          "va": "0x41da7ce7",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "0x41da7ce8",
+          "bytes": "be3c855142",
+          "instruction": "mov esi,0x4251853c"
+        },
+        {
+          "va": "0x41da7ced",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "0x41da7cee",
+          "bytes": "ff15c08c1b42",
+          "instruction": "call dword ptr ds:0x421b8cc0"
+        },
+        {
+          "va": "0x41da7cf4",
+          "bytes": "8b0dec262642",
+          "instruction": "mov ecx,dword ptr ds:0x422626ec"
+        },
+        {
+          "va": "0x41da7cfa",
+          "bytes": "8b4508",
+          "instruction": "mov eax,dword ptr [ebp+0x8]"
+        },
+        {
+          "va": "0x41da7cfd",
+          "bytes": "41",
+          "instruction": "inc ecx"
+        },
+        {
+          "va": "0x41da7cfe",
+          "bytes": "890dec262642",
+          "instruction": "mov dword ptr ds:0x422626ec,ecx"
+        },
+        {
+          "va": "0x41da7d04",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "0x41da7d05",
+          "bytes": "8908",
+          "instruction": "mov dword ptr [eax],ecx"
+        },
+        {
+          "va": "0x41da7d07",
+          "bytes": "64a12c000000",
+          "instruction": "mov eax,fs:0x2c"
+        },
+        {
+          "va": "0x41da7d0d",
+          "bytes": "8b0d40855142",
+          "instruction": "mov ecx,dword ptr ds:0x42518540"
+        },
+        {
+          "va": "0x41da7d13",
+          "bytes": "8b0c88",
+          "instruction": "mov ecx,dword ptr [eax+ecx*4]"
+        },
+        {
+          "va": "0x41da7d16",
+          "bytes": "a1ec262642",
+          "instruction": "mov eax,ds:0x422626ec"
+        },
+        {
+          "va": "0x41da7d1b",
+          "bytes": "898108000000",
+          "instruction": "mov dword ptr [ecx+0x8],eax"
+        },
+        {
+          "va": "0x41da7d21",
+          "bytes": "ff15248f1b42",
+          "instruction": "call dword ptr ds:0x421b8f24"
+        },
+        {
+          "va": "0x41da7d27",
+          "bytes": "6838855142",
+          "instruction": "push 0x42518538"
+        },
+        {
+          "va": "0x41da7d2c",
+          "bytes": "ff15bc8f1b42",
+          "instruction": "call dword ptr ds:0x421b8fbc"
+        },
+        {
+          "va": "0x41da7d32",
+          "bytes": "5e",
+          "instruction": "pop esi"
+        },
+        {
+          "va": "0x41da7d33",
+          "bytes": "5d",
+          "instruction": "pop ebp"
+        },
+        {
+          "va": "0x41da7d34",
+          "bytes": "c3",
+          "instruction": "ret"
+        }
+      ]
+    },
+    {
+      "id": "known_reset_1",
+      "start_va": "0x41595497",
+      "end_va_exclusive": "0x4159549e",
+      "sha256": "8cc19764554c9527191c48aa02d843ff94215d94587fa12815a657a1c46afb9d",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x41595497",
+          "bytes": "c605bc09504200",
+          "instruction": "mov byte ptr ds:0x425009bc,0x0"
+        }
+      ]
+    },
+    {
+      "id": "known_reset_2",
+      "start_va": "0x415decee",
+      "end_va_exclusive": "0x415decf5",
+      "sha256": "8cc19764554c9527191c48aa02d843ff94215d94587fa12815a657a1c46afb9d",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x415decee",
+          "bytes": "c605bc09504200",
+          "instruction": "mov byte ptr ds:0x425009bc,0x0"
+        }
+      ]
+    },
+    {
+      "id": "known_consumer_or",
+      "start_va": "0x4148cbf0",
+      "end_va_exclusive": "0x4148cbf6",
+      "sha256": "613cdce4c5cf0c3fb8876c0d25f3f6ee3e5cb69e050ee37175994c77de7f4c93",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x4148cbf0",
+          "bytes": "0a05bc095042",
+          "instruction": "or al,byte ptr ds:0x425009bc"
+        }
+      ]
+    },
+    {
+      "id": "known_consumer_cmp",
+      "start_va": "0x4147adae",
+      "end_va_exclusive": "0x4147adb5",
+      "sha256": "6defd6a38c651676f66090b02ff1842fb719675aac7a832a60d66fdcf776ba0e",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x4147adae",
+          "bytes": "803dbc09504200",
+          "instruction": "cmp byte ptr ds:0x425009bc,0x0"
+        }
+      ]
+    }
+  ],
+  "fixed_image_cells": [
+    {
+      "role": "image_prefix_not_MZ",
+      "va": "0x412a0000",
+      "bytes": "0000"
+    },
+    {
+      "role": "saved_index_cell",
+      "va": "0x42518540",
+      "bytes": "00000000"
+    },
+    {
+      "role": "saved_counter_cell",
+      "va": "0x422626ec",
+      "bytes": "00000080"
+    },
+    {
+      "role": "adjacent_guard_and_flag",
+      "va": "0x425009b8",
+      "bytes": "0000000000"
+    }
+  ],
+  "proven_local": [
+    "The two known direct stores are BYTE zero resets; they say nothing about absence of other writers.",
+    "At the selected caller, argument A is literal 0x425009B8. The explicit DWORD store at 0x41DA7D05 covers B8..BB and not BC; this old rejection is a premise, not new progress.",
+    "The separate 0x41DA7D1B store has width 4 and base Q loaded by 0x41DA7D13 from [F+4*I], where F is DWORD FS:[0x2C] and I is DWORD G42518540, using 32-bit address arithmetic.",
+    "Its data W is a reload of DWORD G422626EC at 0x41DA7D16, not a positive immediate. The local earlier INC and counter store are at 0x41DA7CFD/CFE.",
+    "The saved nl.bin starts with 0000, not MZ; it cannot supply a PE TLS directory from its image prefix. Its saved index cell is zero, but neither this value nor FS/table contents are established for a call.",
+    "The pinned consumers read a byte, not a signed DWORD: OR AL,[G425009BC] and CMP BYTE [G425009BC],0."
+  ],
+  "address_and_value_relation": {
+    "F": "DWORD FS:[0x2C] at 0x41DA7D07",
+    "I": "DWORD [0x42518540] at 0x41DA7D0D",
+    "Q": "DWORD [(F + 4*I) mod 2^32] at 0x41DA7D13",
+    "W": "DWORD [0x422626EC] at 0x41DA7D16",
+    "write": "four little-endian bytes W at (Q+8) mod 2^32",
+    "overlap_cases": [
+      {
+        "Q": "0x425009b4",
+        "byte_index_in_W": 0,
+        "write_start": "0x425009bc",
+        "write_end_inclusive": "0x425009bf",
+        "nonzero_condition": "((W >> 0) & 0xff) != 0"
+      },
+      {
+        "Q": "0x425009b3",
+        "byte_index_in_W": 1,
+        "write_start": "0x425009bb",
+        "write_end_inclusive": "0x425009be",
+        "nonzero_condition": "((W >> 8) & 0xff) != 0"
+      },
+      {
+        "Q": "0x425009b2",
+        "byte_index_in_W": 2,
+        "write_start": "0x425009ba",
+        "write_end_inclusive": "0x425009bd",
+        "nonzero_condition": "((W >> 16) & 0xff) != 0"
+      },
+      {
+        "Q": "0x425009b1",
+        "byte_index_in_W": 3,
+        "write_start": "0x425009b9",
+        "write_end_inclusive": "0x425009bc",
+        "nonzero_condition": "((W >> 24) & 0xff) != 0"
+      }
+    ],
+    "iff": "Given successful execution of this DWORD store, it covers BC iff Q is one of 0x425009B1..0x425009B4. The byte written to BC is nonzero iff the corresponding byte of W is nonzero; writing may leave the old byte unchanged.",
+    "conditional_counter_relation": "If the shown straight-line sequence is reached after the import returns, the anchored caller argument is used, accesses succeed, and no other writer interferes, W=(C+1) mod 2^32, with C the DWORD read at 0x41DA7CF4. No sign or nonzero guarantee follows."
+  },
+  "conditional_not_proven": [
+    "FS/table naming as TLS follows the existing candidate convention only; runtime OS/loader binding, thread ownership, slot allocation and address disjointness are not proved here.",
+    "No actual Q in the four-address alias set is demonstrated. Conversely, zero image cells or a TLS-looking sequence cannot rule those aliases out.",
+    "Reachability, successful imported-call return, non-faulting accesses and absence of interfering writes are assumptions, not observations.",
+    "Even a hypothetical nonzero BC write would need ordering and lifetime proof before the separate byte consumers; known resets may intervene."
+  ],
+  "frontier": {
+    "status": "unresolved",
+    "positive_sources_proved": 0,
+    "missing": "A byte-supported binding of FS:[2C], I and table[I] to the actual destination Q, plus the source byte W and writer-before-consumer order for the same global byte.",
+    "next_bounded_prerequisite": "Only new static evidence that binds the selected slot/table to an address could advance this candidate; do not infer nonaliasing from the TLS label or rerun a literal census.",
+    "not_done": [
+      "No first-positive setter for G425009BC established",
+      "No complete GAP01 closure",
+      "No game code, provider or model added"
+    ]
+  },
+  "verification_scope": "Pinned source hashes, exact selected windows, fresh objdump decoding, saved caller rows, static fixed cells, operand/width and overlap arithmetic. Not execution, emulation, CFG completeness, loader semantics or runtime reachability.",
+  "read_only_inputs": true,
+  "original_loaded_executed_or_emulated": false,
+  "verification": {
+    "working_directory": "/tmp/hoplite/232-w5-global9bc-sol",
+    "tools": {
+      "python3": "3.12.3",
+      "objdump": "GNU Binutils for Ubuntu 2.42"
+    },
+    "commands": [
+      {
+        "command": "python3 -B continuation/evidence/wave5/global9bc/verify_chain.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-global9bc/verify-chain-1.log",
+        "fresh_decoded_instructions": 30,
+        "saved_caller_rows_rechecked": 3
+      },
+      {
+        "command": "python3 -B continuation/evidence/wave2/gap01/verify_gap01_wave2.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-global9bc/verify-wave2-1.log",
+        "fresh_decoded_instructions": 118,
+        "saved_rows_rechecked": 68
+      },
+      {
+        "command": "git diff --check",
+        "exit_code": 0
+      }
+    ],
+    "not_run": {
+      "native_and_sanitizer": "No C++ code changed or added.",
+      "full_make_check": "Coordinator must run on integrated SHA; not replaced by this narrow static check.",
+      "independent_review": "Pending coordinator fixed-integrated-SHA review."
+    },
+    "input_unchanged_scope": "The image and saved caller hashes are checked afresh against pinned values; handoff and archives were accessed read-only. This narrow run is not a whole-bundle integrity census."
+  }
+}

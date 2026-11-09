@@ -1,0 +1,160 @@
+{
+  "recorded_at": "2026-11-09T12:01:29.284352+00:00",
+  "purpose": "Verify portable multi-agent handoff documentation and restore from tracked archive parts; no new algorithm implementation.",
+  "tested_checkout_commit": "a21c2ac8045617278280de8ffb33f67dbf743c87",
+  "accepted_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+  "fresh_restore": true,
+  "fresh_network_clone": false,
+  "git_history_requirement": "ed9df79c028e63ca56fc191a226f5fe2f221df64 baseline exists in shared worktree history; fresh-clone command documented, not separately exercised.",
+  "worktree": "/tmp/hoplite/worktrees/sikyon-handoff-check",
+  "full_archive_sha256": "b5e3336edaa99b6f437f22368ab230107b7b781d9dfd54c83c6e00d9cfb8018f",
+  "environment": {
+    "python": "3.12.3",
+    "gcc_gxx": "13.3.0",
+    "gnu_make": "4.3",
+    "gnu_objdump": "2.42",
+    "python_optimization": 0
+  },
+  "commands": [
+    {
+      "command": "python3 runs/assembly/assemble_handoff.py --parts-dir \"$PWD\" --output \"$PWD/runs/assembly/RAGEBOT_HANDOFF_V10.zip\"",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m zipfile -e runs/assembly/RAGEBOT_HANDOFF_V10.zip runs/handoff",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/check_bundle.py\"",
+      "exit_code": 0,
+      "verified_files": 960
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/bootstrap.py\"",
+      "exit_code": 0,
+      "restored_file_records": 64076,
+      "integrity_records": 64087
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/replay.py\" --versions v10 v9 v8 v7 v6",
+      "exit_code": 0,
+      "versions": [
+        {
+          "version": "v10",
+          "exit_code": 0
+        },
+        {
+          "version": "v9",
+          "exit_code": 0
+        },
+        {
+          "version": "v8",
+          "exit_code": 0
+        },
+        {
+          "version": "v7",
+          "exit_code": 0
+        },
+        {
+          "version": "v6",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "command": "make -C continuation check HANDOFF=\"$HANDOFF\"",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/check_bundle.py\" (after checks)",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/workspace/orchestration/v1/approval_package/check_integrity.py\" --root \"$HANDOFF/workspace\" (after checks)",
+      "exit_code": 0
+    }
+  ],
+  "results": {
+    "native_programs": 7,
+    "sanitized_programs": 7,
+    "assertions_per_mode": 19902,
+    "python_unit_tests": 8,
+    "static_evidence": "passed",
+    "bundle": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    },
+    "input_work_integrity": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    }
+  },
+  "code_and_tests_unchanged": true,
+  "source_sha256": {
+    "continuation/Makefile": "da6adf34d472317e42a4bc5dce66c20c63e2ab4e83d0b5431f3bc4c5bae7c98e",
+    "continuation/include/rage/actor_scalar_pipeline.hpp": "7bbbfaaaeffd2b851b8a67883cdedbc6d3e25117485cf6bed3466ee44ec6e85e",
+    "continuation/include/rage/charge_state.hpp": "dfee3b8c177ccb4f31d44a1f9137e9b675b90d7021acb30ee222c6e09110cf5a",
+    "continuation/include/rage/marker_pipeline.hpp": "4881b3b931a6b79ab40c728da0215b1c407afe741213786063c7ec50f5781b50",
+    "continuation/include/rage/position_lifecycle.hpp": "49d3426063fad5acfcfa887fd6bc7002ac6d95aba2726e661aba1cfc2f150801",
+    "continuation/include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "continuation/include/rage/resolved_scalar_helper.hpp": "7544e3598881c5a3f711563d18f4d19e656daee8109411ace8464a0068de0f04",
+    "continuation/src/actor_scalar_pipeline.cpp": "f1efd4d255673fa9857f405781f57c2378c608f891549be69670a32077090a83",
+    "continuation/src/charge_state.cpp": "5a5ff3e592a4e9133896984d353255877f0e93b15757c3ac6294e5559a2fa4ce",
+    "continuation/src/marker_pipeline.cpp": "2311b49a11507e75c47706fb2e4f3b5a3bbbeb4dea69776de251a260e2eced4d",
+    "continuation/src/position_lifecycle.cpp": "8b921a16ed73020b42b823eed29d21db00e494260de78ad2cef3756fe88630ae",
+    "continuation/src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "continuation/src/resolved_scalar_helper.cpp": "cfde7d0df37d48489b5fe490a7a615ed24ee586069f86b57c443fdb1699b9ad1",
+    "continuation/tests/test_actor_scalar_pipeline.cpp": "f556481f9110034428e9278eef72f8ad54266f33952371f5178a27d01858e9d0",
+    "continuation/tests/test_charge_state.cpp": "c4971aeb43eb0c7b79ecb122c10c4d49b15490bfb2ce30032d1227847d2aaca9",
+    "continuation/tests/test_marker_pipeline.cpp": "4375005f919c3d3fc9342eb99ea131b1ac9d1196eeac5e5f465dcbb389436bce",
+    "continuation/tests/test_position_lifecycle.cpp": "4155df760e0ee35dce58af54e50feccf4a9f23f5264ed7a17eb17065bdfab79b",
+    "continuation/tests/test_position_pipeline.cpp": "841518ecab4f6d77771d37bba9293b80f30911de9e656de1f4cc9e482d9d33be",
+    "continuation/tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "continuation/tests/test_resolved_scalar_helper.cpp": "d4f03e6b2d02d06ea76935d95f4238d821e5c834b93d280711e69d9769e1e1bd",
+    "continuation/tests/verify_evidence.py": "1f6a3954c6da0d9b3e067256ac3d4b606cd110ff6138de7c955bce3b3a2faa1a"
+  },
+  "published_log": "verification.log",
+  "published_log_scope": "Complete assembly/bootstrap/replay wrapper/integrity outputs plus selected make result lines; workspace path normalized. Not a full make log.",
+  "published_log_sha256": "56488bc82f2df84322125d40cd3f5ae3aa5ae39670d4b4705a364efc397bb6fd",
+  "full_local_logs": {
+    "assemble.log": {
+      "path": "runs/assembly/assemble.log",
+      "sha256": "76c1b9a1ed150eb8edbebe8c7e018ba0d2e00956104a0aaaa70ca7a80a824a6c"
+    },
+    "bundle.log": {
+      "path": "runs/assembly/bundle.log",
+      "sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+    },
+    "bootstrap.log": {
+      "path": "runs/assembly/bootstrap.log",
+      "sha256": "22812549f3c8044ec77d4f50a4b74cd29fee49c885e7227b7da9b7343d2fe3fc"
+    },
+    "replay.log": {
+      "path": "runs/assembly/replay.log",
+      "sha256": "c2ae6871872288f2b4d0d2b9aa4181182380eea2963ad70fec020736d04085b6"
+    },
+    "check.log": {
+      "path": "runs/assembly/check.log",
+      "sha256": "18524292f87a39669444e1a539a687bc8548f00438206723ca155c3c39f9a59d"
+    },
+    "post-bundle.log": {
+      "path": "runs/assembly/post-bundle.log",
+      "sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+    },
+    "post-integrity.log": {
+      "path": "runs/assembly/post-integrity.log",
+      "sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+    }
+  },
+  "limitations": [
+    "No pure-C port implemented by this handoff change.",
+    "No original DLL loading, execution or emulation, game connection or injection.",
+    "Model tests and static checks do not prove whole-original equivalence or close any complete GAP.",
+    "H01 still has 12 historical-only entries; full original protocol and external audit remain open.",
+    "Agent inventory reviews are not an external audit."
+  ]
+}

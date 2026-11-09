@@ -1,0 +1,52 @@
+{
+  "task": "W5-POINT26",
+  "selected_field": "Point+0x26",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_source": "/tmp/hoplite/workspace/continuation/evidence/wave5/assignment.json",
+  "assignment_commit": "dada7f0",
+  "owner": "w5-point26-sol",
+  "recorded_before_new_source_research": true,
+  "prior_rejections_read": [
+    {
+      "source": "continuation/evidence/gap01/RESULTS.md",
+      "finding": "ADD overlap is known, but its EAX-to-Point identity was not established."
+    },
+    {
+      "source": "continuation/evidence/wave2/gap01/results.json#H1",
+      "finding": "Selected XORPS-to-MOVLPS fall-through writes zero to output+0x20..0x27. Do not repeat its alias search as a positive source."
+    },
+    {
+      "source": "continuation/evidence/wave2/gap01/results.json#H2",
+      "finding": "Adjacent G425009B8 helper argument stores cover B8..BB, not BC; out of selected scope."
+    }
+  ],
+  "hypothesis": {
+    "id": "W5-P26-H1",
+    "statement": "The pointer loaded from G424B004C at 0x4149BB7A may alias the Point used by the accepted Point+0x26 consumer. If so, the DWORD ADD [EAX+0x25],0x6A at 0x4149BB92 could produce a first nonzero +0x26 through carry from byte +0x25 rather than an explicit byte setter.",
+    "existing_byte_anchors": [
+      {
+        "va": "0x4149BB7A",
+        "bytes": "a14c004b42",
+        "instruction": "mov eax,ds:0x424b004c"
+      },
+      {
+        "va": "0x4149BB8C",
+        "bytes": "83fb41",
+        "instruction": "cmp ebx,0x41"
+      },
+      {
+        "va": "0x4149BB8F",
+        "bytes": "7218",
+        "instruction": "jb 0x4149bba9"
+      },
+      {
+        "va": "0x4149BB92",
+        "bytes": "8340256a",
+        "instruction": "add DWORD PTR [eax+0x25],0x6a"
+      }
+    ],
+    "new_question": "Resolve this one global-load-to-overlapping-write alias/source chain, including nearby control flow and the route to the typed consumer; no broad new offset census.",
+    "stop": "Prove identity, width, first-positive condition and consumer flow, or stop at the first concrete unsupported object/source/CFG edge. A negative search cannot close GAP01."
+  },
+  "safety_scope": "Read original bytes only; no DLL load/execution/emulation or process/game integration; HANDOFF and archives remain unchanged."
+}

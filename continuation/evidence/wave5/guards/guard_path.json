@@ -1,0 +1,1004 @@
+{
+  "task": "W5-GUARDS",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment": {
+    "owner": "w5-guards-sol",
+    "worktree": "/tmp/hoplite/232-w5-guards-sol",
+    "write_paths": [
+      "continuation/evidence/wave5/guards/"
+    ],
+    "registry_revision": "dada7f078479219fd76e0ecacd2f056a440d8431"
+  },
+  "scope": "Enumerate existing boundaries; follow exactly one selected FS/TLS guard and its taken stub, stopping at the nested guard. Other windows are boundary anchors, not reconstructed paths.",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "format": "raw image, not PE",
+    "conditional_base": "0x412a0000",
+    "mapping": "raw offset = VA - conditional_base; not an observed runtime mapping"
+  },
+  "sources": [
+    {
+      "id": "update",
+      "root": "handoff",
+      "path": "workspace/orchestration/v10/network_update_with_tls_tails_walk.json",
+      "sha256": "1de25a5d27c7eede50c0c1a0d3a26c27ade12e7fd406c01cb777cfd75bf968ad"
+    },
+    {
+      "id": "reader",
+      "root": "handoff",
+      "path": "workspace/orchestration/v10/position_record_reader_walk.json",
+      "sha256": "07d1a93b7fefdd382910b17c49c2366bd737520ab6d7c022f6decfcb4a794aff"
+    },
+    {
+      "id": "actor",
+      "root": "handoff",
+      "path": "workspace/orchestration/v10/record_actor_update_walk.json",
+      "sha256": "5e5ed64e1a68e5fda2df42cbc4dbb7085da7c71212377f79fe676fde0c5e7f66"
+    },
+    {
+      "id": "source_map",
+      "root": "repo",
+      "path": "continuation/evidence/SOURCE_MAP.md",
+      "sha256": "b466b805f83abe89d869418d3533af097c8987d53f9b70c9c0d36a2175f349e2"
+    },
+    {
+      "id": "lifecycle",
+      "root": "repo",
+      "path": "continuation/evidence/gap05/position_lifecycle.json",
+      "sha256": "54d6fd2e75624437eb1815eee53d5c7084c7f7ccf51c9db413b802df9252620f"
+    },
+    {
+      "id": "offline_records",
+      "root": "repo",
+      "path": "continuation/src/position_records.cpp",
+      "sha256": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae"
+    }
+  ],
+  "windows": [
+    {
+      "id": "record_base_before_guard",
+      "source": "update",
+      "start": "0x4150b589",
+      "end_exclusive": "0x4150b5a1",
+      "raw_offset": "0x26b589",
+      "bytes": "8bbebc0000008d0c3b8d043b83c05889869c000000c60101",
+      "sha256": "d87d9eca7a0bf1a882f084710ff443625cd0c0c2fd775729120f612da9d59968",
+      "instructions": [
+        [
+          "0x4150b589",
+          "8bbebc000000",
+          "mov edi,DWORD PTR [esi+0xbc]"
+        ],
+        [
+          "0x4150b58f",
+          "8d0c3b",
+          "lea ecx,[ebx+edi*1]"
+        ],
+        [
+          "0x4150b592",
+          "8d043b",
+          "lea eax,[ebx+edi*1]"
+        ],
+        [
+          "0x4150b595",
+          "83c058",
+          "add eax,0x58"
+        ],
+        [
+          "0x4150b598",
+          "89869c000000",
+          "mov DWORD PTR [esi+0x9c],eax"
+        ],
+        [
+          "0x4150b59e",
+          "c60101",
+          "mov BYTE PTR [ecx],0x1"
+        ]
+      ]
+    },
+    {
+      "id": "prior_position_stores",
+      "source": "update",
+      "start": "0x4150b6ae",
+      "end_exclusive": "0x4150b6c4",
+      "raw_offset": "0x26b6ae",
+      "bytes": "f30f11443b288d46340f44c1f30f1000f30f11443b2c",
+      "sha256": "14580f71e43b3a9c906069dfe137768aa9bcd275870fc8966df0f4086410f4d9",
+      "instructions": [
+        [
+          "0x4150b6ae",
+          "f30f11443b28",
+          "movss DWORD PTR [ebx+edi*1+0x28],xmm0"
+        ],
+        [
+          "0x4150b6b4",
+          "8d4634",
+          "lea eax,[esi+0x34]"
+        ],
+        [
+          "0x4150b6b7",
+          "0f44c1",
+          "cmove eax,ecx"
+        ],
+        [
+          "0x4150b6ba",
+          "f30f1000",
+          "movss xmm0,DWORD PTR [eax]"
+        ],
+        [
+          "0x4150b6be",
+          "f30f11443b2c",
+          "movss DWORD PTR [ebx+edi*1+0x2c],xmm0"
+        ]
+      ]
+    },
+    {
+      "id": "selected_tls_guard",
+      "source": "update",
+      "start": "0x4150b6c4",
+      "end_exclusive": "0x4150b6e5",
+      "raw_offset": "0x26b6c4",
+      "bytes": "a140855142648b0d2c0000008b04818b0d08044b423b88080000000f8f9d020000",
+      "sha256": "0cc78e0cb533f741437c640c7332ec369c78f8ad08f98274d3d74b8420c7db60",
+      "instructions": [
+        [
+          "0x4150b6c4",
+          "a140855142",
+          "mov eax,ds:0x42518540"
+        ],
+        [
+          "0x4150b6c9",
+          "648b0d2c000000",
+          "mov ecx,DWORD PTR fs:0x2c"
+        ],
+        [
+          "0x4150b6d0",
+          "8b0481",
+          "mov eax,DWORD PTR [ecx+eax*4]"
+        ],
+        [
+          "0x4150b6d3",
+          "8b0d08044b42",
+          "mov ecx,DWORD PTR ds:0x424b0408"
+        ],
+        [
+          "0x4150b6d9",
+          "3b8808000000",
+          "cmp ecx,DWORD PTR [eax+0x8]"
+        ],
+        [
+          "0x4150b6df",
+          "0f8f9d020000",
+          "jg 0x4150b982"
+        ]
+      ]
+    },
+    {
+      "id": "normal_continuation",
+      "source": "update",
+      "start": "0x4150b6e5",
+      "end_exclusive": "0x4150b77c",
+      "raw_offset": "0x26b6e5",
+      "bytes": "f30f10464cf30f100d54a5054231c00f2ec80f95c0f30f100d18a5054231d231c90f2ec80f97c28d14500f93c1898e9c0000008b3d98634f428b4e1c0b140f8b8e9c0000008d0c4983c1fd8d0445feffffff09c821d08b96bc000000894413048d041383c0208b4d148908a128f423428b806c010000894413708b451885c00f88f2fdffff8b4e188b96bc00000089441108e9e0fdffff",
+      "sha256": "e39707fa03d9a8f2e18a33bcba7c7c24fa99acfaab2bf89042e90f3f10f43644",
+      "instructions": [
+        [
+          "0x4150b6e5",
+          "f30f10464c",
+          "movss xmm0,DWORD PTR [esi+0x4c]"
+        ],
+        [
+          "0x4150b6ea",
+          "f30f100d54a50542",
+          "movss xmm1,DWORD PTR ds:0x4205a554"
+        ],
+        [
+          "0x4150b6f2",
+          "31c0",
+          "xor eax,eax"
+        ],
+        [
+          "0x4150b6f4",
+          "0f2ec8",
+          "ucomiss xmm1,xmm0"
+        ],
+        [
+          "0x4150b6f7",
+          "0f95c0",
+          "setne al"
+        ],
+        [
+          "0x4150b6fa",
+          "f30f100d18a50542",
+          "movss xmm1,DWORD PTR ds:0x4205a518"
+        ],
+        [
+          "0x4150b702",
+          "31d2",
+          "xor edx,edx"
+        ],
+        [
+          "0x4150b704",
+          "31c9",
+          "xor ecx,ecx"
+        ],
+        [
+          "0x4150b706",
+          "0f2ec8",
+          "ucomiss xmm1,xmm0"
+        ],
+        [
+          "0x4150b709",
+          "0f97c2",
+          "seta dl"
+        ],
+        [
+          "0x4150b70c",
+          "8d1450",
+          "lea edx,[eax+edx*2]"
+        ],
+        [
+          "0x4150b70f",
+          "0f93c1",
+          "setae cl"
+        ],
+        [
+          "0x4150b712",
+          "898e9c000000",
+          "mov DWORD PTR [esi+0x9c],ecx"
+        ],
+        [
+          "0x4150b718",
+          "8b3d98634f42",
+          "mov edi,DWORD PTR ds:0x424f6398"
+        ],
+        [
+          "0x4150b71e",
+          "8b4e1c",
+          "mov ecx,DWORD PTR [esi+0x1c]"
+        ],
+        [
+          "0x4150b721",
+          "0b140f",
+          "or edx,DWORD PTR [edi+ecx*1]"
+        ],
+        [
+          "0x4150b724",
+          "8b8e9c000000",
+          "mov ecx,DWORD PTR [esi+0x9c]"
+        ],
+        [
+          "0x4150b72a",
+          "8d0c49",
+          "lea ecx,[ecx+ecx*2]"
+        ],
+        [
+          "0x4150b72d",
+          "83c1fd",
+          "add ecx,0xfffffffd"
+        ],
+        [
+          "0x4150b730",
+          "8d0445feffffff",
+          "lea eax,[eax*2-0x2]"
+        ],
+        [
+          "0x4150b737",
+          "09c8",
+          "or eax,ecx"
+        ],
+        [
+          "0x4150b739",
+          "21d0",
+          "and eax,edx"
+        ],
+        [
+          "0x4150b73b",
+          "8b96bc000000",
+          "mov edx,DWORD PTR [esi+0xbc]"
+        ],
+        [
+          "0x4150b741",
+          "89441304",
+          "mov DWORD PTR [ebx+edx*1+0x4],eax"
+        ],
+        [
+          "0x4150b745",
+          "8d0413",
+          "lea eax,[ebx+edx*1]"
+        ],
+        [
+          "0x4150b748",
+          "83c020",
+          "add eax,0x20"
+        ],
+        [
+          "0x4150b74b",
+          "8b4d14",
+          "mov ecx,DWORD PTR [ebp+0x14]"
+        ],
+        [
+          "0x4150b74e",
+          "8908",
+          "mov DWORD PTR [eax],ecx"
+        ],
+        [
+          "0x4150b750",
+          "a128f42342",
+          "mov eax,ds:0x4223f428"
+        ],
+        [
+          "0x4150b755",
+          "8b806c010000",
+          "mov eax,DWORD PTR [eax+0x16c]"
+        ],
+        [
+          "0x4150b75b",
+          "89441370",
+          "mov DWORD PTR [ebx+edx*1+0x70],eax"
+        ],
+        [
+          "0x4150b75f",
+          "8b4518",
+          "mov eax,DWORD PTR [ebp+0x18]"
+        ],
+        [
+          "0x4150b762",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x4150b764",
+          "0f88f2fdffff",
+          "js 0x4150b55c"
+        ],
+        [
+          "0x4150b76a",
+          "8b4e18",
+          "mov ecx,DWORD PTR [esi+0x18]"
+        ],
+        [
+          "0x4150b76d",
+          "8b96bc000000",
+          "mov edx,DWORD PTR [esi+0xbc]"
+        ],
+        [
+          "0x4150b773",
+          "89441108",
+          "mov DWORD PTR [ecx+edx*1+0x8],eax"
+        ],
+        [
+          "0x4150b777",
+          "e9e0fdffff",
+          "jmp 0x4150b55c"
+        ]
+      ]
+    },
+    {
+      "id": "selected_taken_stub",
+      "source": "update",
+      "start": "0x4150b982",
+      "end_exclusive": "0x4150b99c",
+      "raw_offset": "0x26b982",
+      "bytes": "6808044b42e8dec2890083c404833d08044b42ff0f8549fdffff",
+      "sha256": "bcc995a3c0db709733f4d0604c679ed99e97a6158f63028b5edbe2cf6adf622b",
+      "instructions": [
+        [
+          "0x4150b982",
+          "6808044b42",
+          "push 0x424b0408"
+        ],
+        [
+          "0x4150b987",
+          "e8dec28900",
+          "call 0x41da7c6a"
+        ],
+        [
+          "0x4150b98c",
+          "83c404",
+          "add esp,0x4"
+        ],
+        [
+          "0x4150b98f",
+          "833d08044b42ff",
+          "cmp DWORD PTR ds:0x424b0408,0xffffffff"
+        ],
+        [
+          "0x4150b996",
+          "0f8549fdffff",
+          "jne 0x4150b6e5"
+        ]
+      ]
+    },
+    {
+      "id": "nested_guard_frontier",
+      "source": "update",
+      "start": "0x4150b99c",
+      "end_exclusive": "0x4150b9bd",
+      "raw_offset": "0x26b99c",
+      "bytes": "a1501c4b428b0d40855142648b152c0000008b0c8a3b81080000000f8f68010000",
+      "sha256": "933030870f1b26b93b2e287a8a096e228e86584cb340d91010df30bf89e57969",
+      "instructions": [
+        [
+          "0x4150b99c",
+          "a1501c4b42",
+          "mov eax,ds:0x424b1c50"
+        ],
+        [
+          "0x4150b9a1",
+          "8b0d40855142",
+          "mov ecx,DWORD PTR ds:0x42518540"
+        ],
+        [
+          "0x4150b9a7",
+          "648b152c000000",
+          "mov edx,DWORD PTR fs:0x2c"
+        ],
+        [
+          "0x4150b9ae",
+          "8b0c8a",
+          "mov ecx,DWORD PTR [edx+ecx*4]"
+        ],
+        [
+          "0x4150b9b1",
+          "3b8108000000",
+          "cmp eax,DWORD PTR [ecx+0x8]"
+        ],
+        [
+          "0x4150b9b7",
+          "0f8f68010000",
+          "jg 0x4150bb25"
+        ]
+      ]
+    },
+    {
+      "id": "reader_fs0_setup",
+      "source": "reader",
+      "start": "0x4150be62",
+      "end_exclusive": "0x4150be8f",
+      "raw_offset": "0x26be62",
+      "bytes": "c786a8000000ffffffff8d86a0000000c786a400000070aa4f41648b15000000008996a000000064a300000000",
+      "sha256": "d6b3fb043600b1978834f7cfcc22b2c5abd7aec6b20e5bcfd3d865a7c5c8a9ce",
+      "instructions": [
+        [
+          "0x4150be62",
+          "c786a8000000ffffffff",
+          "mov DWORD PTR [esi+0xa8],0xffffffff"
+        ],
+        [
+          "0x4150be6c",
+          "8d86a0000000",
+          "lea eax,[esi+0xa0]"
+        ],
+        [
+          "0x4150be72",
+          "c786a400000070aa4f41",
+          "mov DWORD PTR [esi+0xa4],0x414faa70"
+        ],
+        [
+          "0x4150be7c",
+          "648b1500000000",
+          "mov edx,DWORD PTR fs:0x0"
+        ],
+        [
+          "0x4150be83",
+          "8996a0000000",
+          "mov DWORD PTR [esi+0xa0],edx"
+        ],
+        [
+          "0x4150be89",
+          "64a300000000",
+          "mov fs:0x0,eax"
+        ]
+      ]
+    },
+    {
+      "id": "reader_index_boundary",
+      "source": "reader",
+      "start": "0x4150be8f",
+      "end_exclusive": "0x4150beaf",
+      "raw_offset": "0x26be8f",
+      "bytes": "8b410883c108ff50283d000800000f83550600008b4d0c89c36bc07401c78939",
+      "sha256": "d4c0fad0b3c952f43c5aba6e50246c0e755ca44cab690a80353d29ae5ca29756",
+      "instructions": [
+        [
+          "0x4150be8f",
+          "8b4108",
+          "mov eax,DWORD PTR [ecx+0x8]"
+        ],
+        [
+          "0x4150be92",
+          "83c108",
+          "add ecx,0x8"
+        ],
+        [
+          "0x4150be95",
+          "ff5028",
+          "call DWORD PTR [eax+0x28]"
+        ],
+        [
+          "0x4150be98",
+          "3d00080000",
+          "cmp eax,0x800"
+        ],
+        [
+          "0x4150be9d",
+          "0f8355060000",
+          "jae 0x4150c4f8"
+        ],
+        [
+          "0x4150bea3",
+          "8b4d0c",
+          "mov ecx,DWORD PTR [ebp+0xc]"
+        ],
+        [
+          "0x4150bea6",
+          "89c3",
+          "mov ebx,eax"
+        ],
+        [
+          "0x4150bea8",
+          "6bc074",
+          "imul eax,eax,0x74"
+        ],
+        [
+          "0x4150beab",
+          "01c7",
+          "add edi,eax"
+        ],
+        [
+          "0x4150bead",
+          "8939",
+          "mov DWORD PTR [ecx],edi"
+        ]
+      ]
+    },
+    {
+      "id": "reader_fs0_restore",
+      "source": "reader",
+      "start": "0x4150c4e1",
+      "end_exclusive": "0x4150c4ee",
+      "raw_offset": "0x26c4e1",
+      "bytes": "8b8ea000000064890d00000000",
+      "sha256": "82503ad582455e96f5a598389bfe17fe6c4644e338c50226f4134cb7e870f589",
+      "instructions": [
+        [
+          "0x4150c4e1",
+          "8b8ea0000000",
+          "mov ecx,DWORD PTR [esi+0xa0]"
+        ],
+        [
+          "0x4150c4e7",
+          "64890d00000000",
+          "mov DWORD PTR fs:0x0,ecx"
+        ]
+      ]
+    },
+    {
+      "id": "reader_out_of_range_call",
+      "source": "reader",
+      "start": "0x4150c4f8",
+      "end_exclusive": "0x4150c4fd",
+      "raw_offset": "0x26c4f8",
+      "bytes": "e8032edaff",
+      "sha256": "c4fbddc238ac5ea9af9f031dd7d26daf8900e423def35e53f105eed026966812",
+      "instructions": [
+        [
+          "0x4150c4f8",
+          "e8032edaff",
+          "call 0x412af300"
+        ]
+      ]
+    },
+    {
+      "id": "actor_opaque_dispatch",
+      "source": "actor",
+      "start": "0x414fd841",
+      "end_exclusive": "0x414fd84e",
+      "raw_offset": "0x25d841",
+      "bytes": "89c38b0685c0751ce967dc8f41",
+      "sha256": "b0d886e145a7c68d0d5a53d303706893c7a7457908a1d2ed5025f89af21c12b4",
+      "instructions": [
+        [
+          "0x414fd841",
+          "89c3",
+          "mov ebx,eax"
+        ],
+        [
+          "0x414fd843",
+          "8b06",
+          "mov eax,DWORD PTR [esi]"
+        ],
+        [
+          "0x414fd845",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x414fd847",
+          "751c",
+          "jne 0x414fd865"
+        ],
+        [
+          "0x414fd849",
+          "e967dc8f41",
+          "jmp 0x82dfb4b5"
+        ]
+      ]
+    },
+    {
+      "id": "actor_hlt_boundary",
+      "source": "actor",
+      "start": "0x414fd87d",
+      "end_exclusive": "0x414fd890",
+      "raw_offset": "0x25d87d",
+      "bytes": "ff502885c07e0b8b0d04ca23423b41187e30f4",
+      "sha256": "bc4d8d708b379c164924a63361370a13c15c5db3186777b934fb4e4b70d0dfa7",
+      "instructions": [
+        [
+          "0x414fd87d",
+          "ff5028",
+          "call DWORD PTR [eax+0x28]"
+        ],
+        [
+          "0x414fd880",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x414fd882",
+          "7e0b",
+          "jle 0x414fd88f"
+        ],
+        [
+          "0x414fd884",
+          "8b0d04ca2342",
+          "mov ecx,DWORD PTR ds:0x4223ca04"
+        ],
+        [
+          "0x414fd88a",
+          "3b4118",
+          "cmp eax,DWORD PTR [ecx+0x18]"
+        ],
+        [
+          "0x414fd88d",
+          "7e30",
+          "jle 0x414fd8bf"
+        ],
+        [
+          "0x414fd88f",
+          "f4",
+          "hlt"
+        ]
+      ]
+    },
+    {
+      "id": "update_indirect_dispatch_1",
+      "source": "update",
+      "start": "0x4150abbe",
+      "end_exclusive": "0x4150abc0",
+      "raw_offset": "0x26abbe",
+      "bytes": "ffe7",
+      "sha256": "228773b52cfbdd716e5d2f834d972ee18a9b15080712b2b77e1a94e14b1d6254",
+      "instructions": [
+        [
+          "0x4150abbe",
+          "ffe7",
+          "jmp edi"
+        ]
+      ]
+    },
+    {
+      "id": "update_indirect_dispatch_2",
+      "source": "update",
+      "start": "0x4150b4f3",
+      "end_exclusive": "0x4150b4f5",
+      "raw_offset": "0x26b4f3",
+      "bytes": "ffe6",
+      "sha256": "00ddff629a38849a38d4b0d384a73c29efd55344ca2124a8601eb360dc6b638c",
+      "instructions": [
+        [
+          "0x4150b4f3",
+          "ffe6",
+          "jmp esi"
+        ]
+      ]
+    }
+  ],
+  "direct_edges": [
+    {
+      "at": "0x4150b6df",
+      "opcode": "0f8f",
+      "mnemonic": "jg",
+      "target": "0x4150b982",
+      "fallthrough": "0x4150b6e5"
+    },
+    {
+      "at": "0x4150b987",
+      "opcode": "e8",
+      "mnemonic": "call",
+      "target": "0x41da7c6a"
+    },
+    {
+      "at": "0x4150b996",
+      "opcode": "0f85",
+      "mnemonic": "jne",
+      "target": "0x4150b6e5",
+      "fallthrough": "0x4150b99c"
+    },
+    {
+      "at": "0x4150b9b7",
+      "opcode": "0f8f",
+      "mnemonic": "jg",
+      "target": "0x4150bb25",
+      "fallthrough": "0x4150b9bd"
+    },
+    {
+      "at": "0x4150b764",
+      "opcode": "0f88",
+      "mnemonic": "js",
+      "target": "0x4150b55c",
+      "fallthrough": "0x4150b76a"
+    },
+    {
+      "at": "0x4150b777",
+      "opcode": "e9",
+      "mnemonic": "jmp",
+      "target": "0x4150b55c"
+    },
+    {
+      "at": "0x4150be9d",
+      "opcode": "0f83",
+      "mnemonic": "jae",
+      "target": "0x4150c4f8",
+      "fallthrough": "0x4150bea3"
+    },
+    {
+      "at": "0x4150c4f8",
+      "opcode": "e8",
+      "mnemonic": "call",
+      "target": "0x412af300"
+    },
+    {
+      "at": "0x414fd849",
+      "opcode": "e9",
+      "mnemonic": "jmp",
+      "target": "0x82dfb4b5"
+    },
+    {
+      "at": "0x414fd882",
+      "opcode": "7e",
+      "mnemonic": "jle",
+      "target": "0x414fd88f",
+      "fallthrough": "0x414fd884"
+    },
+    {
+      "at": "0x414fd88d",
+      "opcode": "7e",
+      "mnemonic": "jle",
+      "target": "0x414fd8bf",
+      "fallthrough": "0x414fd88f"
+    }
+  ],
+  "selected_path": {
+    "entry": "0x4150b6c4",
+    "guard_branch": "0x4150b6df",
+    "taken_stub": "0x4150b982",
+    "ordinary_rejoin": "0x4150b6e5",
+    "observations": [
+      {
+        "anchors": [
+          "0x4150b6c4",
+          "0x4150b6c9",
+          "0x4150b6d0",
+          "0x4150b6d3",
+          "0x4150b6d9",
+          "0x4150b6df"
+        ],
+        "proven_local": "Load DWORD G42518540; read FS:[0x2c]; index its DWORD table with scale 4; compare DWORD G424B0408 against DWORD at the selected pointer+8. JG is signed greater (ZF=0 and SF=OF), not unsigned JA. Less/equal, including signed negatives according to CMP flags, takes 0x4150b6e5; greater takes 0x4150b982.",
+        "conditional": "Every read succeeds in a valid FS/TLS-shaped environment; no contents, lifetime, TLS index registration, initialized epoch or actual OS binding are supplied by these bytes."
+      },
+      {
+        "anchors": [
+          "0x4150b982",
+          "0x4150b987",
+          "0x4150b98c",
+          "0x4150b98f",
+          "0x4150b996"
+        ],
+        "proven_local": "Taken stub pushes the address 0x424b0408, calls direct target 0x41da7c6a, then on ordinary return removes four stack bytes and rereads that global DWORD. If it is not 0xffffffff, JNE rejoins 0x4150b6e5. The test is on memory, not the callee return value/AL.",
+        "conditional": "Only the local continuation after a normal callee return is described. Callee effects, exception behavior, synchronization, termination and non-return are unresolved; no inferred _Init_thread_header contract."
+      },
+      {
+        "anchors": [
+          "0x4150b99c",
+          "0x4150b9a1",
+          "0x4150b9a7",
+          "0x4150b9ae",
+          "0x4150b9b1",
+          "0x4150b9b7"
+        ],
+        "proven_local": "When the post-call global equals 0xffffffff, a second global DWORD G424B1C50 is compared signed against +8 of a freshly loaded FS:[2c]/G42518540 slot. Greater branches to 0x4150bb25; less/equal falls through to 0x4150b9bd.",
+        "conditional": "This is the exact stop frontier: neither successor body is reconstructed. Repeated slot loads do not prove stable thread state across the intervening call."
+      },
+      {
+        "anchors": [
+          "0x4150b589",
+          "0x4150b58f",
+          "0x4150b59e",
+          "0x4150b6ae",
+          "0x4150b6be",
+          "0x4150b741",
+          "0x4150b74e",
+          "0x4150b75b",
+          "0x4150b773"
+        ],
+        "proven_local": "Under the existing local N mapping, the active-byte and N+28/+2c stores precede this guard. The ordinary continuation contains later DWORD stores to N+4, N+20, N+70 and a nonnegative-tag-only N+8 store. These anchors establish pre-guard and later normal-path stores, not fault rollback or an atomic update.",
+        "conditional": "Local source order only: a callee or handler could change additional state. Record mapping requires the existing caller/local provenance and preserved bases on a returning call. Later stores reload the saved offset from [ESI+BC]; no cross-call object identity or rollback is inferred."
+      }
+    ],
+    "stop": {
+      "at": "0x4150b9b7",
+      "taken_successor": "0x4150bb25",
+      "fallthrough_successor": "0x4150b9bd",
+      "reason": "Both sides require a second unresolved guard/initializer environment. Stop before either body, without reconstructing a full runtime."
+    }
+  },
+  "boundaries": [
+    {
+      "id": "TLS-FS2C",
+      "category": "TLS/FS",
+      "status": "unresolved",
+      "anchors": [
+        "0x4150b6c9",
+        "0x4150b6df",
+        "0x4150b9a7",
+        "0x4150b9b7"
+      ],
+      "local_evidence": "Selected outer and nested guards use FS:[2c], indexed DWORD slots and signed epoch-like comparisons.",
+      "remaining_gate": "FS segment/table mapping, G42518540 origin, pointer validity, shared-global writers, thread state and guard reachability."
+    },
+    {
+      "id": "FS0-EXCEPTION-CHAIN",
+      "category": "exceptional paths",
+      "status": "unresolved",
+      "anchors": [
+        "0x4150be62",
+        "0x4150be72",
+        "0x4150be7c",
+        "0x4150be89",
+        "0x4150c4e1",
+        "0x4150c4e7"
+      ],
+      "local_evidence": "Reader writes -1 to scratch+a8 and 0x414faa70 to scratch+a4, saves FS:[0] and links scratch+a0 into FS:[0]; normal exit restores the saved DWORD. This is distinct from FS:[2c] slot reads.",
+      "remaining_gate": "Registration-shaped bytes do not prove handler semantics. 0x414faa70 body, unwind/filter states, faults, cleanup coverage and resume/termination behavior remain unknown."
+    },
+    {
+      "id": "OPAQUE-INDIRECT",
+      "category": "opaque dispatch",
+      "status": "unresolved",
+      "anchors": [
+        "0x4150abbe",
+        "0x4150b4f3"
+      ],
+      "local_evidence": "Existing update walk has jmp edi and jmp esi; no destinations are recovered here.",
+      "remaining_gate": "Register provenance, runtime targets and reachability through each indirect transition; no negative-search closure."
+    },
+    {
+      "id": "OPAQUE-OUTSIDE-IMAGE",
+      "category": "opaque dispatch",
+      "status": "unresolved",
+      "anchors": [
+        "0x414fd849"
+      ],
+      "local_evidence": "The actor path has direct relative jmp 0x82dfb4b5 under the conditional base; that target lies outside the supplied raw image.",
+      "remaining_gate": "Actual runtime mapping/relocation or overlapping decode/opaque mechanism and subsequent state changes; not an ordinary guard rejection."
+    },
+    {
+      "id": "HLT-EXCEPTION",
+      "category": "exceptional paths",
+      "status": "unresolved",
+      "anchors": [
+        "0x414fd87d",
+        "0x414fd882",
+        "0x414fd88d",
+        "0x414fd88f"
+      ],
+      "local_evidence": "Existing actor walk has virtual call, signed JLE to HLT at 0x414fd88f, and another JLE whose fallthrough is the same HLT. Byte f4 is separately anchored.",
+      "remaining_gate": "Callee result, entry reachability, actual execution privilege, trap delivery/handling and any continuation are unknown. This HLT is not proven to be the out-of-range handler."
+    },
+    {
+      "id": "INDEX-OUTSIDE-2048",
+      "category": "out-of-range index handler",
+      "status": "unresolved",
+      "anchors": [
+        "0x4150be95",
+        "0x4150be98",
+        "0x4150be9d",
+        "0x4150bead",
+        "0x4150c4f8"
+      ],
+      "local_evidence": "Virtual result in EAX is compared unsigned with 0x800; JAE, including high-bit values, reaches call 0x412af300 before the supported-path output-pointer store. Supported path multiplies by 0x74 then writes the output pointer.",
+      "remaining_gate": "0x412af300 handler contract, return/non-return, effects and exception behavior are not reconstructed. No original Boolean false, null output, HLT equivalence or transactional rollback is inferred."
+    },
+    {
+      "id": "GUARD-CALLEE-AND-NESTED",
+      "category": "guard/initializer frontier",
+      "status": "unresolved",
+      "anchors": [
+        "0x4150b987",
+        "0x4150b98f",
+        "0x4150b9b7"
+      ],
+      "local_evidence": "One direct call is exposed; the returned path re-tests the global and may enter a second signed guard.",
+      "remaining_gate": "Direct callee 0x41da7c6a and both nested-guard successor bodies require independent evidence. ABI/locking/initialization names are not inferred from code shape."
+    }
+  ],
+  "offline_contract": {
+    "source": "continuation/src/position_records.cpp",
+    "update": "update_resolved_record assumes resolved guards and has no TLS execution. New evidence does not implement guard failures or promise rollback.",
+    "reader": "outside_supported_domain is the offline safety status for index>=capacity, not a reconstruction of 0x412af300. passes_item_consumer_gate false is only that offline API policy, not the original fault result.",
+    "changes": "No C++/API/tests or existing byte evidence changed."
+  },
+  "unresolved": [
+    "Full CODE01/GAP04/GAP05 and runtime equivalence remain open; inventory is bounded to named existing walks, not all guards or exceptions.",
+    "Original DLLs were never loaded, executed or emulated. No injection, game/service connection, network sender or dynamic fault probe.",
+    "Input/work and archives remain strictly read-only; static checks do not prove reachability or runtime rollback.",
+    "Coordinator integration, full integrated-SHA check and independent fixed-SHA review are separate acceptance gates."
+  ],
+  "reproduction": {
+    "cwd": "/tmp/hoplite/232-w5-guards-sol",
+    "static_command": "python3 -B continuation/evidence/wave5/guards/verify_guards.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "regression_command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=../runs/w5-guards-sol/build",
+    "own_cpp_native_sanitizer": "Not applicable: no C++ code added; the unmodified full regression baseline is checked separately.",
+    "observed_checks": [
+      {
+        "command": "python3 -B continuation/evidence/wave5/guards/verify_guards.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-guards-sol/static.log",
+        "log_sha256": "e344cab6d59d7f3d3db699d0bc5e6f7fea3ec354ae5d94054db0ee92c8d611e9"
+      },
+      {
+        "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=../runs/w5-guards-sol/build",
+        "exit_code": 0,
+        "log": "runs/w5-guards-sol/check.log",
+        "log_sha256": "316cb71f5a72f09a43e4f1439cb68734505b6a33beda76a6ac3d5dcc6299f714"
+      },
+      {
+        "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+        "exit_code": 0,
+        "log": "runs/w5-guards-sol/integrity.after.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+        "exit_code": 0,
+        "log": "runs/w5-guards-sol/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      }
+    ],
+    "read_only_materials": {
+      "before_log": "runs/w5-guards-sol/integrity.before.log",
+      "after_log": "runs/w5-guards-sol/integrity.after.log",
+      "identical_log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac",
+      "input_work_files_verified": 64087,
+      "bundle_files_verified": 960,
+      "archives": "No writes or extraction; no tracked existing path changed."
+    },
+    "regression_result": {
+      "native_assertions": 19902,
+      "asan_ubsan_assertions": 19902,
+      "programs_per_mode": 7,
+      "python_tests": 8,
+      "new_cpp_tests": "not applicable; evidence-only change",
+      "full_runtime_claim": false
+    },
+    "versions": {
+      "python": "Python 3.12.3",
+      "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+      "cxx": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+    }
+  }
+}

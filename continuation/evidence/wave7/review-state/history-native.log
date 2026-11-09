@@ -1,0 +1,3 @@
+COMMAND: /tmp/hoplite/w7-review-state-build/test_history_slot_slice
+PASS test_history_slot_slice assertions=55
+EXIT_CODE=0

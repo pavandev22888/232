@@ -1,0 +1,84 @@
+STATIC SOURCE: /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+SHA256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+IMAGE BASE: 0x412a0000
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x4148cae0 --stop-address=0x4148cb10 <nl.bin>
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4148cae0 <.data+0x1ecae0>:
+4148cae0:	55                                  	push   ebp
+4148cae1:	89 e5                               	mov    ebp,esp
+4148cae3:	53                                  	push   ebx
+4148cae4:	57                                  	push   edi
+4148cae5:	56                                  	push   esi
+4148cae6:	81 ec ac 02 00 00                   	sub    esp,0x2ac
+4148caec:	89 65 e4                            	mov    DWORD PTR [ebp-0x1c],esp
+4148caef:	c7 45 f0 ff ff ff ff                	mov    DWORD PTR [ebp-0x10],0xffffffff
+4148caf6:	8d 45 e8                            	lea    eax,[ebp-0x18]
+4148caf9:	c7 45 ec e0 bc 48 41                	mov    DWORD PTR [ebp-0x14],0x4148bce0
+4148cb00:	64 8b 0d 00 00 00 00                	mov    ecx,DWORD PTR fs:0x0
+4148cb07:	89 4d e8                            	mov    DWORD PTR [ebp-0x18],ecx
+4148cb0a:	64 a3 00 00 00 00                   	mov    fs:0x0,eax
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x4148cc44 --stop-address=0x4148cc8c <nl.bin>
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4148cc44 <.data+0x1ecc44>:
+4148cc44:	0f b7 04 30                         	movzx  eax,WORD PTR [eax+esi*1]
+4148cc48:	31 db                               	xor    ebx,ebx
+4148cc4a:	83 f8 1f                            	cmp    eax,0x1f
+4148cc4d:	0f 84 66 0b 00 00                   	je     0x4148d7b9
+4148cc53:	83 f8 40                            	cmp    eax,0x40
+4148cc56:	0f 84 5d 0b 00 00                   	je     0x4148d7b9
+4148cc5c:	f6 05 b8 52 50 42 01                	test   BYTE PTR ds:0x425052b8,0x1
+4148cc63:	75 27                               	jne    0x4148cc8c
+4148cc65:	66 0f 6e 05 dc 52 50 42             	movd   xmm0,DWORD PTR ds:0x425052dc
+4148cc6d:	c7 45 f0 ff ff ff ff                	mov    DWORD PTR [ebp-0x10],0xffffffff
+4148cc74:	83 ec 04                            	sub    esp,0x4
+4148cc77:	66 0f 7e 04 24                      	movd   DWORD PTR [esp],xmm0
+4148cc7c:	e8 af 84 01 00                      	call   0x414a5130
+4148cc81:	83 c4 04                            	add    esp,0x4
+4148cc84:	84 c0                               	test   al,al
+4148cc86:	0f 84 2b 0b 00 00                   	je     0x4148d7b7
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x414a5130 --stop-address=0x414a513f <nl.bin>
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a5130 <.data+0x205130>:
+414a5130:	53                                  	push   ebx
+414a5131:	83 ec 0c                            	sub    esp,0xc
+414a5134:	a1 00 27 26 42                      	mov    eax,ds:0x42262700
+414a5139:	31 e0                               	xor    eax,esp
+414a513b:	89 44 24 08                         	mov    DWORD PTR [esp+0x8],eax
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x414a52b7 --stop-address=0x414a52dc <nl.bin>
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a52b7 <.data+0x2052b7>:
+414a52b7:	f3 0f 10 4c 24 14                   	movss  xmm1,DWORD PTR [esp+0x14]
+414a52bd:	0f 54 0d 40 a5 05 42                	andps  xmm1,XMMWORD PTR ds:0x4205a540
+414a52c4:	0f 2e c8                            	ucomiss xmm1,xmm0
+414a52c7:	0f 96 c3                            	setbe  bl
+414a52ca:	8b 4c 24 08                         	mov    ecx,DWORD PTR [esp+0x8]
+414a52ce:	31 e1                               	xor    ecx,esp
+414a52d0:	e8 87 29 90 00                      	call   0x41da7c5c
+414a52d5:	89 d8                               	mov    eax,ebx
+414a52d7:	83 c4 0c                            	add    esp,0xc
+414a52da:	5b                                  	pop    ebx
+414a52db:	c3                                  	ret

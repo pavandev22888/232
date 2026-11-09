@@ -1,0 +1,19 @@
+cwd=/tmp/hoplite/232-w5-p-tolerance-sol
+Python 3.12.3
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+
+$ python3 -B continuation/evidence/wave3/source/verify_source.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Read-only: no output files, imports from handoff, original loading, execution or emulation.
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+exit_code=0
+
+$ python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+exit_code=0
+
+Pinned handoff input/work/context files unchanged before/after: 10
+Canonical sorted path-to-SHA256 map digest before=after: ae5c3c98c6023112ca492bb82e02a8af7fd7dc793692bb35b0ca863dc822de91
+No original image loading, execution, emulation, process/game access or injection.

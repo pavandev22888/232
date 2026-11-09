@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "task_id": "W6-REVIEW-EVIDENCE",
+  "reviewed_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+  "baseline_sha": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "branch": "hoplite/sikyon-46eee495--w6-review-evidence",
+  "worktree": "/tmp/hoplite/232-w6-review-evidence",
+  "handoff": {
+    "path": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "access": "read-only"
+  },
+  "review_status": "review_complete_with_one_documentation_address_finding",
+  "acceptance": "not_ready_pending_F1_correction; this fixed-SHA agent review is not an external audit or full W6 acceptance",
+  "tool_versions": {
+    "python": "3.12.3",
+    "objdump": "GNU Binutils for Ubuntu 2.42"
+  },
+  "baseline_comparison": {
+    "result": "All files under continuation/evidence/wave6 shown as added relative to the requested baseline; comparison log is pinned below.",
+    "log": "continuation/evidence/wave6/review-integrated-evidence/baseline-diff.log",
+    "sha256": "83271331b43d174738530615fad9c687bfec80ad8539bf182d1e5f61e4956b06"
+  },
+  "source_pins": {
+    "shared_nl_image": {
+      "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "size": 55578624,
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "conditional_raw_base": "0x412a0000"
+    },
+    "history_source_dll": {
+      "path": "workspace/input/dll/neverlose.dll",
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "resource_offset": "0x629b10",
+      "resource_size": "0x3501000",
+      "claim": "resource bytes equal pinned nl.bin; this is not a runtime mapping"
+    },
+    "geometry_archive": {
+      "path": "workspace/input/nl_handoff_2026-11-06.zip",
+      "sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49"
+    },
+    "geometry_client": {
+      "path": "workspace/input/dll/client.dll",
+      "size": 16377192,
+      "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "pe32_preferred_base": "0x10000000"
+    },
+    "aggregate_support_walk": {
+      "path": "workspace/orchestration/v7/support_best_point_update_walk.json",
+      "sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e"
+    },
+    "release_walk": {
+      "path": "workspace/orchestration/v2/charge_release_walk.json",
+      "sha256": "c41cdec63b8fe011e33205212f64b9fdbb83851432117e85282e6897445d8c7c"
+    },
+    "message_preceding_evidence": {
+      "path": "continuation/evidence/wave5/messages/byte_anchors.json",
+      "sha256": "f72d3a552af10de3ea19d73bd601575489b91748b4b144d145b7b0ce5e05ff4b"
+    },
+    "reset_sources": {
+      "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "orchestration/v5/historical_reset_parent_walk.json": "436361e90aaaf309b4f1d26b634e45373b47779da2821fc95668052878018c26",
+      "orchestration/v5/historical_reset_parent_focused.asm": "ce0aa8f7a6f4bf456f7808ddcd2104433a4315593f0f5983993172e601f0ba31",
+      "orchestration/v5/historical_reset_block_walk.json": "b0a4f5de76203ca063253971cd75a8c857289ac5d3b1e4200842ab01ab678abd",
+      "orchestration/v5/historical_reset_block_focused.asm": "8b175242ac203dfc734ff78c7ff8e26d8e3fcc2af6ed9548aaf007d239bb5f74"
+    }
+  },
+  "domain_review": {
+    "aggregate_callback": {
+      "fresh_gate": "PASS; 175 pinned instruction rows, shared nl image SHA above.",
+      "callback_retraction": {
+        "resolution_path": "continuation/evidence/wave6/review-callback/resolution.json",
+        "status": "prior_blocking_finding_withdrawn",
+        "reason_checked": "The prior report conflated sibling CFG paths; the fixed reviewed code/tests are unchanged between 35b8ada917cdfa018d0f259b1e930d9bc44f5e07 and this review SHA.",
+        "fresh_edge_observations": [
+          {
+            "va": "0x4149e7ba",
+            "bytes": "0f84ab000000",
+            "decode": "je 0x4149e86b; zero owner+C0 takes sibling path"
+          },
+          {
+            "va": "0x4149e7d6",
+            "bytes": "0f8414010000",
+            "decode": "je 0x4149e8f0; separate accumulator+6 zero edge"
+          },
+          {
+            "va": "0x4149e8eb",
+            "bytes": "8b0c24",
+            "decode": "mov ecx,[esp]"
+          },
+          {
+            "va": "0x4149e8ee",
+            "bytes": "eb7c",
+            "decode": "jmp 0x4149e96c; sibling does not fall into 0x4149e8f0"
+          },
+          {
+            "va": "0x4149e8f2",
+            "bytes": "744d",
+            "decode": "je 0x4149e941"
+          }
+        ],
+        "code_test_diff_log": "continuation/evidence/wave6/review-integrated-evidence/callback-code-unchanged.log",
+        "code_test_diff_sha256": "e9dc637a3760ba55641425484e00936bb6a71c77a5f286206a6353a1984de6b4"
+      },
+      "limits": "No provider binding, full callback/ranking, reachability, ABI, or full GAP acceptance."
+    },
+    "release_modes": {
+      "fresh_gate": "PASS; 23 instruction rows.",
+      "independent_observations_confirmed": [
+        "CALL 0x414f1240 at 0x415e019b; post-call AL test at 0x415e01a0.",
+        "CALL 0x414f2240 at 0x415e01b1; distinct post-call AL test at 0x415e01b6.",
+        "Indirect CALL [0x425080e4] at 0x415e01d9; distinct post-call global read starts at 0x415e01df."
+      ],
+      "contract_boundary": "Snapshots are independently supplied after unknown calls; no preserved cross-call state, provider identity, function ABI, or whole-mode scheduling is asserted."
+    },
+    "message_frontier": {
+      "fresh_gate": "PASS; 4 + 10 + 65 decoded rows across the three pinned windows.",
+      "static_result": "The checked transform yields 0x5325d3e8, outside the pinned nl.bin range; the FS-derived guard, unequal register edge, equal-edge dereference, target identity and effects remain unresolved.",
+      "no_binding_claim": true
+    },
+    "reset_predecessor": {
+      "fresh_gate": "PASS; five source hashes, predecessor ADD/CMP/JNE, eleven-store evidence, fresh objdump.",
+      "predicate_anchors": [
+        {
+          "va": "0x415decb9",
+          "bytes": "05c8000000",
+          "decode": "add eax,0xc8"
+        },
+        {
+          "va": "0x415decbe",
+          "bytes": "3d9c305042",
+          "decode": "cmp eax,0x4250309c"
+        },
+        {
+          "va": "0x415decc3",
+          "bytes": "0f8527ffffff",
+          "decode": "jne 0x415debf0"
+        }
+      ],
+      "effect_boundary": "Only the existing eleven raw BYTE/DWORD stores beginning 0x415decee are projected on the equality/fallthrough case. Four earlier fallthrough-prefix stores, loop body, EAX provider/identity, entry reachability and scheduling remain excluded."
+    },
+    "geometry": {
+      "fresh_gate": "PASS; archive/nested image, byte windows, threshold, PE section mapping, and distinct candidate samples pinned.",
+      "caller_byte_windows_sha256": {
+        "0x414f3c90..0x414f3eb5": "72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb",
+        "indirect-call-setup": "2cc0b6ecc5100b19b3d6981c3d7c8505e4eb5fecc9a4c01766abd2776416fe0f",
+        "post-call-result/effect": "58dbf01250553f893287c7993997ca2d910a094a3730bf2939dd74f0dfc989a5"
+      },
+      "comparison_interpretation": {
+        "va": "0x414f3e72",
+        "bytes": "0f2ec8",
+        "decode": "ucomiss xmm1,xmm0; xmm1 loaded from 0x4205a554 = binary32 1.0"
+      },
+      "branch": {
+        "va": "0x414f3e75",
+        "bytes": "7628",
+        "decode": "jbe 0x414f3e9f; failure for ordered local scalar >= 1.0 and unordered; ordered less-than takes local success/effect path"
+      },
+      "candidate_results": [
+        {
+          "preferred_va": "0x10876d60",
+          "rva": "0x876d60",
+          "raw_offset": "0x876160",
+          "sample_sha256": "3e8684c72ca46e7023c0dca0b703cca4ebb574f8986c3ca3355c7c26d77564b4",
+          "hypothetical_base_for_computed_target": "0x28130000"
+        },
+        {
+          "preferred_va": "0x103e6d60",
+          "rva": "0x3e6d60",
+          "raw_offset": "0x3e6160",
+          "sample_sha256": "4d1e06c23eb46d58717bdaf3fde7364c7bb646fb22fb2d235247ebcb623ceea6",
+          "hypothetical_base_for_computed_target": "0x285c0000"
+        }
+      ],
+      "candidate_bases_distinct": true,
+      "runtime_base_provider_identity_and_callee_abi": "unresolved; neither candidate bound to caller"
+    },
+    "history": {
+      "fresh_gate": "PASS; source DLL resource equals nl.bin, 14 byte anchors and saved walks (28 producer, 11 resolver, 47 consumer, 40 constructor rows) match.",
+      "confirmed_sequence": [
+        {
+          "va": "0x413f70fd",
+          "bytes": "e82e987700",
+          "decode": "call 0x41b70930 (opaque call)"
+        },
+        {
+          "va": "0x413f7102",
+          "bytes": "8b55d8",
+          "decode": "mov edx,[ebp-0x28] (source pointer load, not [ebp-0x38])"
+        },
+        {
+          "va": "0x413f71a1",
+          "bytes": "8b4dc8",
+          "decode": "mov ecx,[ebp-0x38] (local DWORD observation)"
+        },
+        {
+          "va": "0x413f71a4",
+          "bytes": "894b3c",
+          "decode": "mov [ebx+0x3c],ecx"
+        }
+      ],
+      "following_frontier": {
+        "va": "0x413f7201",
+        "bytes": "85c0",
+        "decode": "test eax,eax; next branch is outside the modeled copy slice"
+      },
+      "identity_boundary": "No stack identity/alias, provider semantics, helper allocation/slot lifetime, source-to-slot identity, matrix/pose contract, or reachability is inferred."
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "minor factual evidence-address mismatch; correction required for clean evidence acceptance",
+      "paths": [
+        "continuation/evidence/wave6/history/README.md:7",
+        "continuation/evidence/wave6/history/verification.txt:17"
+      ],
+      "finding": "Both prose passages say the DWORD at [ebp-0x38] is read at 0x413F7102. Fresh objdump at 0x413F7102 (bytes 8b55d8) decodes mov edx,[ebp-0x28]. The [ebp-0x38] read is at 0x413F71A1 (bytes 8b4dc8), followed by the destination store at 0x413F71A4 (bytes 894b3c). The opaque call at 0x413F70FD precedes this sequence.",
+      "effect": "Address-level prose error; it does not invalidate the bounded numeric-observation API or the local store model, but leaves the history evidence text inaccurate.",
+      "suggested_correction": "Use 0x413F71A1 for the [ebp-0x38] read; retain 0x413F7102 for the [ebp-0x28] source-pointer read. No correction was made in this review scope.",
+      "support_log": "continuation/evidence/wave6/review-integrated-evidence/history-fresh-objdump.log",
+      "support_log_sha256": "fbb5f2a7d22ff4921d9d6a6d00e4c9df072bf75a78ac723ef268bc549447593b"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/aggregate-gate.log",
+      "log_sha256": "116a857b16c646154347e513afa2d949b51f4371103dca8637a0ff5411d8b413"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/modes/verify_release.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/release-gate.log",
+      "log_sha256": "44ceed0911b426b1f1faa83310858c6e24c5304e55468a22d8a3918b198e9f4a"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/message/verify_message_frontier.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/message-gate.log",
+      "log_sha256": "a39f663de7fde40ebefdd0862390c0708d39bf62603b039fa743a1a3070bd835"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/reset/verify_reset_predecessor.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/reset-gate.log",
+      "log_sha256": "202b79f569c3a94ae8aaa9026eb8bc41f177d4f8d419ae695b9a1dbb71b21d6f"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/geometry/verify_geometry.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/geometry-gate.log",
+      "log_sha256": "d958086ff3b11328fd14fe047ba9cec716d3efd44b1eba29e23a36fd9463a635"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave6/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/history-gate.log",
+      "log_sha256": "77585115659cf43a0cdeb913d0eb45e8a6e62f64ca1cf10658863885bb0dd1b8"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/bundle-check.log",
+      "log_sha256": "4d37398f7c64a8e7515fde7d6f38dbda9abc18729b222982b97ef04bdfa04916",
+      "result": "960 files verified; file integrity only"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/reproduction_inputs/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/integrity-check-v10.log",
+      "log_sha256": "08a9f0a15f148fe3acffab3aa9fc86aa3f58b2804a2809728e956c906492faa5",
+      "result": "64087 files checked; input integrity only"
+    },
+    {
+      "command": "git diff --name-status 180616d1227235fc952ad07202cdd7529c0272e8..d99dd375160c7fccfd489598942232430d78da2f -- continuation/evidence/wave6",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/baseline-diff.log",
+      "log_sha256": "83271331b43d174738530615fad9c687bfec80ad8539bf182d1e5f61e4956b06"
+    },
+    {
+      "command": "git diff --stat 35b8ada917cdfa018d0f259b1e930d9bc44f5e07..d99dd375160c7fccfd489598942232430d78da2f -- continuation/src/bounded_aggregation.cpp continuation/tests/test_bounded_aggregation.cpp",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave6/review-integrated-evidence/callback-code-unchanged.log",
+      "log_sha256": "e9dc637a3760ba55641425484e00936bb6a71c77a5f286206a6353a1984de6b4"
+    }
+  ],
+  "fresh_objdump": [
+    {
+      "domain": "callback CFG correction",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/callback-fresh-objdump.log",
+      "sha256": "119af15d4ddddeb2ccb9d4a89501945d8d11ea2b3c3a16931710817d0d54d3c1",
+      "exit_code": 0,
+      "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149e7b1 --stop-address=0x4149e96c /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+    },
+    {
+      "domain": "release observations",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/release-fresh-objdump.log",
+      "sha256": "21aa53ee853fcf30ac4dc42d715a0a118c3a5d1ba97449d8bb75c5ed12a92322",
+      "exit_code": 0,
+      "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x415e019b --stop-address=0x415e0201 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+    },
+    {
+      "domain": "message windows/frontier",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/message-fresh-objdump.log",
+      "sha256": "b6affaefd9ce9a423dd5e8f7a7a83daf070f6ebba1116efca3039613842e09d2",
+      "exit_code": 0,
+      "commands": [
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41512aa6 --stop-address=0x41512ab9 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41512bd0 --stop-address=0x41512bed /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150ab00 --stop-address=0x4150abee /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+      ],
+      "all_exit_code": 0
+    },
+    {
+      "domain": "reset predecessor",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/reset-fresh-objdump.log",
+      "sha256": "9ab588c521e40ca1d0b00753b165c85239ae3523e830453203212b80a31012cc",
+      "exit_code": 0,
+      "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x415debf0 --stop-address=0x415ded70 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+    },
+    {
+      "domain": "geometry caller/candidates/JBE",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/geometry-fresh-objdump.log",
+      "sha256": "ca453dce713e914a1a158b9e3b1a5e14bfd93708db8e160df970c8c812231b99",
+      "all_exit_code": 0,
+      "commands": [
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414f3c90 --stop-address=0x414f3eb5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -Mintel --insn-width=16 --start-address=0x10876d60 --stop-address=0x10876dc0 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/client.dll",
+        "objdump -D -Mintel --insn-width=16 --start-address=0x103e6d60 --stop-address=0x103e6dc0 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/client.dll"
+      ]
+    },
+    {
+      "domain": "history producer/resolver/copy/frontiers/helper",
+      "log": "continuation/evidence/wave6/review-integrated-evidence/history-fresh-objdump.log",
+      "sha256": "fbb5f2a7d22ff4921d9d6a6d00e4c9df072bf75a78ac723ef268bc549447593b",
+      "all_exit_code": 0,
+      "commands": [
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f6de0 --stop-address=0x413f6e40 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f7054 --stop-address=0x413f7078 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f70f1 --stop-address=0x413f7201 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f7201 --stop-address=0x413f7242 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+        "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413f88f0 --stop-address=0x413f8967 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+      ]
+    }
+  ],
+  "handoff_integrity": {
+    "bundle_passed": true,
+    "bundle_files": 960,
+    "input_work_passed": true,
+    "input_files_checked": 64087,
+    "scope": "These checks prove input file integrity only, not algorithmic correctness."
+  },
+  "original_loading_execution_emulation": false,
+  "full_make_or_native_test_suite_run": false,
+  "reason_not_run": "Delegated scope explicitly assigned the six static gates and handoff checks; full code make/native suite is covered by a separate reviewer.",
+  "current_w6_verification_state": {
+    "path": "continuation/evidence/wave6/verification.json",
+    "status": "awaiting_integration_and_review",
+    "review": null,
+    "acceptance": null,
+    "changed_by_this_review": false
+  },
+  "full_gap_closed": false,
+  "external_audit": false,
+  "changes_made": [
+    "Only files under continuation/evidence/wave6/review-integrated-evidence/; no W6 source, tests, Makefile, shared docs, or prior evidence were edited."
+  ]
+}

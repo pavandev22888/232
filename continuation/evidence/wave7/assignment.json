@@ -1,0 +1,156 @@
+{
+  "wave": "W7",
+  "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "tasks": [
+    {
+      "id": "W7-RANK",
+      "owner": "primary-coordinator",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/workspace",
+      "branch": "hoplite/sikyon-46eee495",
+      "write_paths": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/evidence/wave7/rank/"
+      ],
+      "scope": "Nonzero-C0 callback ranking at 4149E9C8 through the next proved local branch/copy; keep existing prefix/tail APIs, unknown bindings explicit.",
+      "dependencies": [
+        "W6-REVIEW-CODE",
+        "W6-REVIEW-EVIDENCE"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes and source-transform-consumer chain.",
+        "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
+        "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
+      ],
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-RESET",
+      "owner": "w7-reset",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-reset",
+      "branch": "hoplite/sikyon-46eee495--w7-reset",
+      "write_paths": [
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_predecessor.cpp",
+        "continuation/evidence/wave7/reset/"
+      ],
+      "scope": "Extend reset local projection with four fallthrough prefix stores at 415DECC9..415DECEE and, if independently proved, one record reset body at 415DEBF0..415DECB9. No guessed EAX provider or full scheduling.",
+      "dependencies": [
+        "W6-REVIEW-CODE",
+        "W6-REVIEW-EVIDENCE"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes and source-transform-consumer chain.",
+        "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
+        "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
+      ],
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-HISTORY",
+      "owner": "w7-history",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-history",
+      "branch": "hoplite/sikyon-46eee495--w7-history",
+      "write_paths": [
+        "continuation/include/rage/history_slot_slice.hpp",
+        "continuation/src/history_slot_slice.cpp",
+        "continuation/tests/test_history_slot_slice.cpp",
+        "continuation/evidence/wave7/history/"
+      ],
+      "scope": "Inspect 413F88F0 slot resolver used by accepted history stores; reconstruct one fully proved local branch/index/layout/initialization contract, stop before unknown allocation/lifetime effects.",
+      "dependencies": [
+        "W6-REVIEW-CODE",
+        "W6-REVIEW-EVIDENCE"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes and source-transform-consumer chain.",
+        "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
+        "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
+      ],
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-MOVEMENT",
+      "owner": "w7-movement",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-movement",
+      "branch": "hoplite/sikyon-46eee495--w7-movement",
+      "write_paths": [
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp",
+        "continuation/evidence/wave7/movement/"
+      ],
+      "scope": "One caller/predecessor-to-consumer chain around 414A5130 or 4148CAE0 beyond existing archived pure predicate; preserve FP branches and explicit unknown command/provider inputs, no guessed movement semantics.",
+      "dependencies": [
+        "W6-REVIEW-CODE",
+        "W6-REVIEW-EVIDENCE"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes and source-transform-consumer chain.",
+        "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
+        "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
+      ],
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-ABI",
+      "owner": "w7-abi",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-abi",
+      "branch": "hoplite/sikyon-46eee495--w7-abi",
+      "write_paths": [
+        "continuation/evidence/wave7/abi/"
+      ],
+      "scope": "Resolve one required local calling convention/type link for callback 4149E790 or history resolver 413F88F0 from caller/callee byte evidence; investigate whether existing RTTI clue actually belongs to required body. No global original-language/standard claim from marker alone.",
+      "dependencies": [
+        "W6-REVIEW-CODE",
+        "W6-REVIEW-EVIDENCE"
+      ],
+      "acceptance": [
+        "Fresh source hashes, exact bytes/decodes and source-transform-consumer chain.",
+        "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
+        "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
+      ],
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-DAMAGE",
+      "owner": "w7-damage",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-damage",
+      "branch": "hoplite/sikyon-46eee495--w7-damage",
+      "write_paths": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/evidence/wave7/damage/"
+      ],
+      "scope": "Retry unimplemented NEXT-DAMAGE: one exact local case 4136FFA0/41370710 through result/store, typed inputs and FP order, no invented weapon/surface provider. Earlier execution limitation is not proof of unresolvable source.",
+      "dependencies": [
+        "W5-SCOPE"
+      ],
+      "acceptance": [
+        "Fresh hashes/bytes and typed source-transform-consumer.",
+        "Native/sanitizer tests plus byte gate if implementable.",
+        "Fixed integrated SHA independent review."
+      ],
+      "stop_condition": "One proved local body or specific new prerequisite frontier. No original loading/execution/emulation or broad repeat scanning."
+    }
+  ],
+  "original_execution_loading_emulation": false,
+  "merge_auto_merge_queue": false,
+  "semantics": "Initial assignment snapshot; task statuses/owners here are historical, not live completion. Current registry: docs/TASKS.json; integrated receipt: continuation/evidence/wave7/verification.json."
+}

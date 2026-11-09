@@ -1,0 +1,11 @@
+COMMAND: python3 -B continuation/evidence/wave6/modes/verify_release.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+{
+  "passed": true,
+  "instructions": 23,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local static release windows, not mode scheduling or provider binding"
+}

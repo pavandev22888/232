@@ -1,0 +1,2 @@
+COMMAND: g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/history_slice.cpp continuation/src/history_slot_slice.cpp continuation/tests/test_history_slot_slice.cpp -o /tmp/hoplite/w7-review-state-build/test_history_slot_slice
+EXIT_CODE=0

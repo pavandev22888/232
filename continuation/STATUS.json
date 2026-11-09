@@ -1,0 +1,490 @@
+{
+  "stage": "W7 bounded contracts accepted after fixed-SHA reviews and integrated gate; full reconstruction remains open",
+  "full_ragebot_reconstructed": false,
+  "new_readable_code_added": true,
+  "implemented_local_contracts": [
+    "position storage and layout",
+    "resolved update with snapshots and metadata",
+    "resolved item word store",
+    "resolved reader including policy clearing",
+    "item consumer entry gate",
+    "charge capacity with raw-byte branch semantics",
+    "set-only mode latch and separate small counter gate",
+    "local N+48 producer tail with resolved external observations",
+    "actor-position consumer with distinct copy/clear guard exits",
+    "explicit local charge reset projection for latch, guard C and previous counter",
+    "local scalar helper with explicit fallback-step observation",
+    "optional N+50 output with age-ramp, MAXSS ordering and bounded aliases",
+    "transactional offline marker helper/producer composition with separate fallback snapshots",
+    "pure three-axis scalar resolver with per-call observations and explicit unresolved axis",
+    "direct +1C=2/3 callback score prefix and separate conditional T+F0 finalizer",
+    "explicit 11-store full local reset snapshot (3 BYTE, 8 DWORD), no scheduling",
+    "quarter-decay upstream seed composed with existing marker tail",
+    "bounded message fields/parser and consumer-call boundary, not full packet/sender",
+    "non-direct callback local gates with explicit settings observations and retained pre-branch counter increment",
+    "callback statistics stores and initial 0x50-byte point copy when owner+C0==0",
+    "release local route, post-helper stores and separate post-dispatch counter update",
+    "reset ADD/CMP/JNE predecessor and conditional eleven-store snapshot, not whole loop",
+    "history 21 raw-word copies plus observed little-endian local DWORD and zero store, not selector or matrix provider",
+    "normal callback ranking tail with per-path observations, modulo/signed comparisons, FP unordered and raw 0x50-byte replacement",
+    "25-DWORD raw reset snapshot preserving gap bytes and four conditional fallthrough stores",
+    "no-growth existing history slot resolver with distinct cursor/index and explicit post-provider slot observation",
+    "movement caller selector/guard/float-bits/AL projection, not movement helper",
+    "hitgroup-3 provider-observed float multiplied by 1.25f, not full damage or trace linkage"
+  ],
+  "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
+  "verification": {
+    "report": "evidence/wave7/verification.json",
+    "log": "evidence/wave7/verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "instrumented_checks_per_mode": 67660,
+    "additional_uncounted_tests": [
+      "reset_predecessor",
+      "movement_slice",
+      "damage_slice"
+    ],
+    "modules": 15,
+    "test_programs": 16,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 13,
+    "static_evidence": "passed",
+    "new_w7_static_gates": 6,
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "tested_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "independent_agent_reviews": {
+      "result": "accepted_bounded_scope_with_explicit_frontiers",
+      "reports": [
+        "evidence/wave7/review-state/README.md",
+        "evidence/wave7/review-flow/report.json"
+      ],
+      "blocking_findings": 0,
+      "external_audit": false
+    },
+    "publication_head_gate": "Separate fresh four-command gate and exact publication SHA recorded in PR #1; this ledger pins the tested candidate, not its future metadata commit."
+  },
+  "open_tasks": [
+    {
+      "id": "CODE01",
+      "status": "partial",
+      "change": "Accepted direct/non-direct gates, statistics, initial copy and bounded normal ranking/replacement tail. Runtime settings/owner flags, index handler, enumeration and full selection remain unresolved."
+    },
+    {
+      "id": "GAP01",
+      "status": "open",
+      "change": "Three bounded hypotheses pinned; Point+26, T+F4 and G425009BC first-positive sources remain unresolved."
+    },
+    {
+      "id": "GAP02",
+      "status": "open",
+      "change": "Immediate helper candidate uses +50/+54/+58/+19, not an established typed T+68 predicate/action; deeper calls unresolved."
+    },
+    {
+      "id": "GAP03",
+      "status": "partial",
+      "change": "Accepted eleven local reset stores, ADD/CMP/JNE predecessor, 25-DWORD raw snapshot, four fallthrough stores and separate release observations. EAX/helper providers, full entry/loop and DT/HS scheduling remain unresolved."
+    },
+    {
+      "id": "GAP04",
+      "status": "open",
+      "change": "Conditional ESI save/restore, raw dispatch edge, candidate P+24 initializer, entity/weapon and guard boundaries pinned. Runtime bindings/providers, nested calls, lifetime/order and tolerance remain open."
+    },
+    {
+      "id": "GAP05",
+      "status": "partial",
+      "change": "Added quarter-decay seed path and bounded message parser; other seeds, P/P+0, repeated snapshot identity, full lifecycle, complete message/sender remain unresolved."
+    },
+    {
+      "id": "GAP06",
+      "status": "partial",
+      "change": "Fresh W6 native/sanitizer/static checks and independent fixed-SHA reviews accepted bounded scope; findings resolved or withdrawn, no external audit. Supplemental pefile H01 #5 does not recover the old producer/full protocol."
+    }
+  ],
+  "unresolved_boundaries": [
+    "Point+26, T+F4 and G425009BC first positive sources",
+    "T+68 typed consumer; runtime settings observations, owner+4/B0 provider, enumeration and full target selection",
+    "external entity/weapon resolution",
+    "scalar helper fallback/tolerance providers and original runtime bindings",
+    "TLS/FS guards, opaque dispatch and exceptional paths",
+    "charge reset entry predicate, additional-field meanings and original scheduling",
+    "other N+48 upstream seeds, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
+    "complete message format and sender",
+    "remaining consumers and complete modes",
+    "original out-of-range index handler",
+    "12 historical-only H01 entries, full original protocol and independent external audit",
+    "Release helper/indirect-call effects and post-call snapshots, G4223F428 pointee+4D30 provenance, full DT/HS scheduling",
+    "History allocator/growth, slot ownership/lifetime and continuity across opaque 0x41B70930, matrix path",
+    "Movement command/global providers and complete helper 0x414A5130 semantics",
+    "Damage vtable+0x30 provider, trace result linkage, remaining hitgroups and full armor/surface/weapon path",
+    "Original source language/standard and complete ABI beyond local ECX/EDX observations"
+  ],
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "input_and_restored_work_modified": false,
+  "independent_audit": false,
+  "next_task": "Assign one new source-backed dependency beyond the accepted W7 slices, e.g. owner+4/B0 provider or 0x4149EC2D handler only with a concrete new anchor. Do not repeat completed slices or reopen blocked broad searches; full GAPs remain open.",
+  "parallel_wave": {
+    "status": "completed_with_unperformed_tasks",
+    "baseline_commit": "20b7907",
+    "user_priority": "balanced",
+    "agents": [
+      "code01-readable-aggregation",
+      "gap01-positive-sources",
+      "gap02-threshold-consumer",
+      "gap03-charge-state",
+      "gap04-external-bindings",
+      "gap05-position-lifecycle",
+      "gap06-verification-audit"
+    ],
+    "acceptance": "Coordinator reruns checks and reviews changes before accepting claims",
+    "unperformed_tasks": {
+      "CODE01": "Assigned agent declined; no aggregation implementation or tests",
+      "GAP02": "Assigned agent declined; no T+68 implementation or tests"
+    },
+    "accepted_limited_deliverables": [
+      "GAP01",
+      "GAP03",
+      "GAP04",
+      "GAP05",
+      "GAP06"
+    ],
+    "full_tasks_closed": [],
+    "agents_still_running": 0,
+    "acceptance_report": "evidence/parallel_verification.json"
+  },
+  "baseline_verification": {
+    "v10_v9_v8_v7_v6_replay": "passed",
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "fresh_byte_replay": "passed",
+    "fixture_groups": 8,
+    "assertions_per_run": 2601,
+    "instruction_bytes_and_fresh_decodes": 294,
+    "constants": 5,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed"
+  },
+  "parallel_wave_2": {
+    "status": "completed_limited_deliverables",
+    "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "requested_model": "gpt-6.1-sol",
+    "effort_setting": "not_exposed_by_spawn_tool",
+    "fast_mode": "not_exposed_by_spawn_tool",
+    "user_priority": "balanced",
+    "agents": [
+      "sol-code01-integration-review",
+      "sol-gap01-source-evidence",
+      "sol-gap02-proof-inventory",
+      "sol-gap03-charge-continuation",
+      "sol-gap04-provider-contract",
+      "sol-gap05-marker-continuation",
+      "sol-gap06-historical-replay"
+    ],
+    "code01_gap02_scope": "Existing-source review/inventory only; declined implementations not retried",
+    "acceptance": "Coordinator-reviewed and make check passed after final corrections",
+    "accepted_limited_deliverables": [
+      "CODE01",
+      "GAP01",
+      "GAP02",
+      "GAP03",
+      "GAP04",
+      "GAP05",
+      "GAP06"
+    ],
+    "full_tasks_closed": [],
+    "agents_still_running": 0,
+    "acceptance_report": "evidence/wave2/verification.json",
+    "additional_followups": [
+      "coherent producer-reader-actor regression tests",
+      "read-only cross-review of optional N+50 output"
+    ],
+    "remaining_unperformed_implementations": [
+      "CODE01 target aggregation",
+      "GAP02 threshold consumer"
+    ]
+  },
+  "isolated_waves": {
+    "status": "completed_bounded_deliverables",
+    "plan": "PLAN_NEXT.md",
+    "specification": "SPEC_NEXT.md",
+    "orchestration": "ORCHESTRATION_WORKTREES.md",
+    "base_commit": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+    "model": "gpt-6.1-sol",
+    "effort_setting": "not_exposed_by_spawn_tool",
+    "fast_mode": "not_exposed_by_spawn_tool",
+    "user_priority": "balanced",
+    "user_scope": "multiple_bounded_waves",
+    "pull_request": "requested_without_merge",
+    "auto_merge_allowed": false,
+    "wave3_agents": [
+      "w3-marker-worktree",
+      "w3-actor-worktree",
+      "w3-source-worktree",
+      "w3-repro-worktree"
+    ],
+    "wave4": "completed_bounded_acceptance",
+    "integrated_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+    "wave4_agents": [
+      "w4-proof-review",
+      "w4-test-review"
+    ],
+    "agents_still_running": 0,
+    "full_tasks_closed": [],
+    "acceptance_report": "evidence/wave3/verification.json",
+    "review_reports": [
+      "evidence/wave4/proof/acceptance.json",
+      "evidence/wave4/tests/acceptance.json"
+    ],
+    "publication_policy": "Existing PR #1; no merge or merge queue; auto-merge disabled"
+  },
+  "project_goal": {
+    "description": "Full original Ragebot logic and necessary dependencies in the original source language.",
+    "target_language": "original source language (not yet established)",
+    "current_root_implementation_language": "C++17",
+    "c17_port_started": false,
+    "specification": "docs/GOAL.md",
+    "paths_relative_to": "repository root",
+    "mandatory_c17_port": false,
+    "goal_corrected_at": "2026-11-09"
+  },
+  "agent_handoff": {
+    "entrypoint": "README.md",
+    "instructions": "AGENTS.md",
+    "source_index": "docs/SOURCE_INDEX.md",
+    "roadmap": "docs/ROADMAP.md",
+    "task_registry": "docs/TASKS.json",
+    "bootstrap": "docs/BOOTSTRAP.md",
+    "workflow": "docs/AGENT_WORKFLOW.md",
+    "prompts": "docs/AGENT_PROMPTS.md",
+    "paths_relative_to": "repository root",
+    "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure.",
+    "transfer_summary": "docs/HANDOFF.md",
+    "immediate_start_prompt": "docs/START_NEXT_AGENT.md"
+  },
+  "latest_bounded_wave": {
+    "task": "W7",
+    "status": "accepted_bounded_scope",
+    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "integrated_reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "fresh_gate_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "report": "evidence/wave7/verification.json",
+    "modules": 15,
+    "test_programs": 16,
+    "python_tests": 13,
+    "new_static_verifiers": 6,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "review_reports": [
+      "evidence/wave7/review-state/README.md",
+      "evidence/wave7/review-flow/report.json"
+    ]
+  },
+  "previous_bounded_wave": {
+    "task": "W5",
+    "status": "accepted_bounded_scope",
+    "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+    "integrated_reviewed_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+    "executors_completed": 16,
+    "reviewers": 3,
+    "model": "gpt-6.1-sol",
+    "new_original_logic_bodies": true,
+    "report": "evidence/wave5/verification.json",
+    "scope_map": "evidence/wave5/scope/coverage.json",
+    "native_assertions": 23354,
+    "asan_ubsan_assertions": 23354,
+    "test_programs": 10,
+    "modules": 9,
+    "python_tests": 13,
+    "new_static_verifiers": 13,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "review_reports": [
+      "evidence/wave5/review-code/acceptance.json",
+      "evidence/wave5/review-evidence/verification.log",
+      "evidence/wave5/review-providers/acceptance.json"
+    ]
+  },
+  "previous_verification": {
+    "report": "evidence/wave3/verification.json",
+    "log": "evidence/wave3/verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "assertions_per_run": 19902,
+    "modules": 6,
+    "test_programs": 7,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 8,
+    "static_evidence": "passed",
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+    "independent_agent_reviews": {
+      "source_api": "passed_bounded_scope",
+      "tests_repro": "passed_bounded_scope_after_review_only_import_clarification",
+      "reports": [
+        "evidence/wave4/proof/acceptance.json",
+        "evidence/wave4/tests/acceptance.json"
+      ],
+      "external_audit": false
+    }
+  },
+  "current_continuation": {
+    "task": "W7",
+    "status": "accepted_bounded_scope",
+    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "report": "evidence/wave7/verification.json",
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "coordinator_gate": "passed_at_candidate",
+    "review_reports": [
+      "evidence/wave7/review-state/README.md",
+      "evidence/wave7/review-flow/report.json"
+    ]
+  },
+  "previous_verification_w5": {
+    "report": "evidence/wave5/verification.json",
+    "log": "evidence/wave5/verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "assertions_per_run": 23354,
+    "modules": 9,
+    "test_programs": 10,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 13,
+    "static_evidence": "passed",
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+    "independent_agent_reviews": {
+      "result": "accepted_bounded_scope_with_explicit_frontiers",
+      "reports": [
+        "evidence/wave5/review-code/acceptance.json",
+        "evidence/wave5/review-evidence/verification.log",
+        "evidence/wave5/review-providers/acceptance.json"
+      ],
+      "blocking_findings": 0,
+      "external_audit": false
+    }
+  },
+  "previous_bounded_wave_r03": {
+    "task": "R03",
+    "status": "blocked_frontier",
+    "goal_correction": "Original logic on original source language; no mandatory C17 port",
+    "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+    "integrated_reviewed_commit": "b97bf7e22da6568a938bddf071761428b0426137",
+    "new_original_logic_bodies": false,
+    "new_static_verifier": true,
+    "report": "evidence/next/scalar-provider-review/verification.json",
+    "independent_review": "evidence/next/scalar-provider-review/acceptance.json",
+    "native_assertions": 19902,
+    "asan_ubsan_assertions": 19902,
+    "python_tests": 8,
+    "bundle_files": 960,
+    "input_work_records": 64087,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "model": "gpt-6.1-sol",
+    "reviewer_finding_F01": "resolved in task registry: stopped blocked frontier, not done"
+  },
+  "previous_verification_w6": {
+    "report": "evidence/wave6/verification.json",
+    "log": "evidence/wave6/verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "instrumented_checks_per_mode": 60995,
+    "reset_predecessor_test": "Additional equality/non-equality/uint32-wrap test passed; not included in instrumented count.",
+    "modules": 12,
+    "test_programs": 13,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 13,
+    "static_evidence": "passed",
+    "new_w6_static_gates": 6,
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+    "tested_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "independent_agent_reviews": {
+      "result": "accepted_bounded_scope_with_explicit_frontiers",
+      "reports": [
+        "evidence/wave6/review-integrated-code/report.json",
+        "evidence/wave6/review-integrated-code/resolution.json",
+        "evidence/wave6/review-integrated-evidence/report.json",
+        "evidence/wave6/review-integrated-evidence/followup/report.json"
+      ],
+      "blocking_findings": 0,
+      "external_audit": false
+    },
+    "publication_head_gate": "Separate fresh four-command gate and exact publication SHA recorded in PR #1; this ledger pins the tested candidate, not its future metadata commit."
+  },
+  "previous_bounded_wave_w6": {
+    "task": "W6",
+    "status": "accepted_bounded_scope",
+    "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+    "integrated_reviewed_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+    "corrected_documentation_reviewed_commit": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+    "fresh_gate_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "report": "evidence/wave6/verification.json",
+    "modules": 12,
+    "test_programs": 13,
+    "python_tests": 13,
+    "new_static_verifiers": 6,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "review_reports": [
+      "evidence/wave6/review-integrated-code/report.json",
+      "evidence/wave6/review-integrated-code/resolution.json",
+      "evidence/wave6/review-integrated-evidence/report.json",
+      "evidence/wave6/review-integrated-evidence/followup/report.json"
+    ]
+  }
+}

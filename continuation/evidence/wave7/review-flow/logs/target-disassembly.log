@@ -1,0 +1,46 @@
+Static objdump only; no load/execute/emulate.
+image_sha256:
+682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+movement caller pinned window 0x4148cc44..0x4148cc8c:
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4148cc40 <.data+0x1ecc40>:
+4148cc40:	28 00                	sub    BYTE PTR [eax],al
+4148cc42:	4b                   	dec    ebx
+4148cc43:	42                   	inc    edx
+4148cc44:	0f b7 04 30          	movzx  eax,WORD PTR [eax+esi*1]
+4148cc48:	31 db                	xor    ebx,ebx
+4148cc4a:	83 f8 1f             	cmp    eax,0x1f
+4148cc4d:	0f 84 66 0b 00 00    	je     0x4148d7b9
+4148cc53:	83 f8 40             	cmp    eax,0x40
+4148cc56:	0f 84 5d 0b 00 00    	je     0x4148d7b9
+4148cc5c:	f6 05 b8 52 50 42 01 	test   BYTE PTR ds:0x425052b8,0x1
+4148cc63:	75 27                	jne    0x4148cc8c
+4148cc65:	66 0f 6e 05 dc 52 50 	movd   xmm0,DWORD PTR ds:0x425052dc
+4148cc6c:	42
+4148cc6d:	c7 45 f0 ff ff ff ff 	mov    DWORD PTR [ebp-0x10],0xffffffff
+4148cc74:	83 ec 04             	sub    esp,0x4
+4148cc77:	66 0f 7e 04 24       	movd   DWORD PTR [esp],xmm0
+4148cc7c:	e8 af 84 01 00       	call   0x414a5130
+4148cc81:	83 c4 04             	add    esp,0x4
+4148cc84:	84 c0                	test   al,al
+4148cc86:	0f 84 2b 0b 00 00    	je     0x4148d7b7
+movement_objdump_exit=0
+
+predicate argument read excerpt 0x414a52b7..0x414a52ca (not full helper):
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a52b7 <.data+0x2052b7>:
+414a52b7:	f3 0f 10 4c 24 14    	movss  xmm1,DWORD PTR [esp+0x14]
+414a52bd:	0f 54 0d 40 a5 05 42 	andps  xmm1,XMMWORD PTR ds:0x4205a540
+414a52c4:	0f 2e c8             	ucomiss xmm1,xmm0
+414a52c7:	0f 96 c3             	setbe  bl
+predicate_argument_excerpt_objdump_exit=0

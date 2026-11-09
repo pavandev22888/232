@@ -1,0 +1,69 @@
+Reviewed SHA: f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+CWD: /tmp/hoplite/232-w5-review-code
+COMMAND: PYTHONDONTWRITEBYTECODE=1 PYTHONOPTIMIZE=0 make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/232-w5-review-code/runs/w5-review-code/build
+EXIT: 0
+FULL LOG: runs/w5-review-code/make-check.full.log
+FULL LOG SHA256: eb404b0e7df1c0550564eeac83861d92d7452e45f1d6e87cf8d662c09f13993a
+Sanitized verbatim line excerpts (compile commands and bulk JSON omitted):
+13: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_actor_scalar_pipeline
+14: PASS actor_scalar_pipeline: 119 assertions
+15: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_bounded_aggregation
+16: 64 bounded aggregation assertions passed
+17: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_bounded_message_fields
+18: bounded_message_fields: 352 assertions passed
+19: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_charge_state
+20: PASS: 3490 charge-state checks
+21: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_lifecycle_seed_slice
+22: PASS lifecycle_seed_slice: 2820 assertions
+23: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_marker_pipeline
+24: PASS marker_pipeline: 13255 assertions
+25: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_lifecycle
+26: position_lifecycle: 208 assertions passed
+27: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_pipeline
+28: position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+29: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_records
+30: PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+31: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_resolved_scalar_helper
+32: PASS resolved_scalar_helper: 53 assertions
+43: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_actor_scalar_pipeline_sanitize
+44: PASS actor_scalar_pipeline: 119 assertions
+45: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_bounded_aggregation_sanitize
+46: 64 bounded aggregation assertions passed
+47: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_bounded_message_fields_sanitize
+48: bounded_message_fields: 352 assertions passed
+49: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_charge_state_sanitize
+50: PASS: 3490 charge-state checks
+51: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_lifecycle_seed_slice_sanitize
+52: PASS lifecycle_seed_slice: 2820 assertions
+53: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_marker_pipeline_sanitize
+54: PASS marker_pipeline: 13255 assertions
+55: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_lifecycle_sanitize
+56: position_lifecycle: 208 assertions passed
+57: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_pipeline_sanitize
+58: position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+59: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_position_records_sanitize
+60: PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+61: RUN /tmp/hoplite/232-w5-review-code/runs/w5-review-code/build/test_resolved_scalar_helper_sanitize
+62: PASS resolved_scalar_helper: 53 assertions
+2422: test_archived_pass_cannot_become_fresh_success (test_verify_remaining_h01.RemainingH01Tests.test_archived_pass_cannot_become_fresh_success) ... ok
+2423: test_bias_model_is_bounded_and_checks_constant (test_verify_remaining_h01.RemainingH01Tests.test_bias_model_is_bounded_and_checks_constant) ... ok
+2424: test_changed_pinned_source_is_rejected (test_verify_remaining_h01.RemainingH01Tests.test_changed_pinned_source_is_rejected) ... ok
+2425: test_descriptor_must_match_actual_bytes (test_verify_remaining_h01.RemainingH01Tests.test_descriptor_must_match_actual_bytes) ... ok
+2426: test_manifest_partition (test_verify_remaining_h01.RemainingH01Tests.test_manifest_partition) ... ok
+2427: test_modular_model_and_count_masking (test_verify_remaining_h01.RemainingH01Tests.test_modular_model_and_count_masking) ... ok
+2428: test_new_failure_is_not_promoted (test_verify_remaining_h01.RemainingH01Tests.test_new_failure_is_not_promoted) ... ok
+2429: test_only_file_backed_executable_targets (test_verify_remaining_h01.RemainingH01Tests.test_only_file_backed_executable_targets) ... ok
+2432: Ran 8 tests in 0.003s
+2434: OK
+2457:   "byte_anchors_and_fresh_gnu_decodes": 58,
+2460:   "scope": "Local bytes and decoding; not whole-CFG reachability or original equivalence."
+2470: PASS: 3 immutable source hashes, 11 zero stores/fresh objdump instructions (3 BYTE, 8 DWORD); entry and scheduling remain unresolved
+2550: PASS W5-LIFECYCLE: 6 reference pins; 179 instructions / 739 bytes; 4 constants
+2553: PASS: 8 fresh windows, 354 instruction anchors, 3 constants; conditional parser, not a packet/sender
+2595: test_additional_esi_mutation_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_additional_esi_mutation_is_rejected) ... ok
+2596: test_changed_frame_extent_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_changed_frame_extent_is_rejected) ... ok
+2597: test_missing_restore_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_missing_restore_is_rejected) ... ok
+2598: test_supported_local_structure (test_verify_preservation.PreservationEvidenceTests.test_supported_local_structure) ... ok
+2599: test_unestablished_branch_target_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_unestablished_branch_target_is_rejected) ... ok
+2602: Ran 5 tests in 0.004s
+2604: OK

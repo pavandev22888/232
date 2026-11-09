@@ -1,0 +1,2664 @@
+make: Entering directory '/tmp/hoplite/232-w6-review-code/continuation'
+mkdir -p build-w6-review
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_actor_scalar_pipeline.cpp -o build-w6-review/test_actor_scalar_pipeline
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_aggregation.cpp -o build-w6-review/test_bounded_aggregation
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_message_fields.cpp -o build-w6-review/test_bounded_message_fields
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_charge_state.cpp -o build-w6-review/test_charge_state
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_history_slice.cpp -o build-w6-review/test_history_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_lifecycle_seed_slice.cpp -o build-w6-review/test_lifecycle_seed_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_marker_pipeline.cpp -o build-w6-review/test_marker_pipeline
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_lifecycle.cpp -o build-w6-review/test_position_lifecycle
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_pipeline.cpp -o build-w6-review/test_position_pipeline
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_records.cpp -o build-w6-review/test_position_records
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_release_state_slice.cpp -o build-w6-review/test_release_state_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_predecessor.cpp -o build-w6-review/test_reset_predecessor
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_resolved_scalar_helper.cpp -o build-w6-review/test_resolved_scalar_helper
+RUN build-w6-review/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN build-w6-review/test_bounded_aggregation
+16392 bounded aggregation assertions passed
+RUN build-w6-review/test_bounded_message_fields
+bounded_message_fields: 352 assertions passed
+RUN build-w6-review/test_charge_state
+PASS: 3490 charge-state checks
+RUN build-w6-review/test_history_slice
+PASS history slice: 22 assertions
+RUN build-w6-review/test_lifecycle_seed_slice
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build-w6-review/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build-w6-review/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build-w6-review/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build-w6-review/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build-w6-review/test_release_state_slice
+21291 release-state assertions passed
+RUN build-w6-review/test_reset_predecessor
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build-w6-review/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_actor_scalar_pipeline.cpp -o build-w6-review/test_actor_scalar_pipeline_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_aggregation.cpp -o build-w6-review/test_bounded_aggregation_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_message_fields.cpp -o build-w6-review/test_bounded_message_fields_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_charge_state.cpp -o build-w6-review/test_charge_state_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_history_slice.cpp -o build-w6-review/test_history_slice_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_lifecycle_seed_slice.cpp -o build-w6-review/test_lifecycle_seed_slice_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_marker_pipeline.cpp -o build-w6-review/test_marker_pipeline_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_lifecycle.cpp -o build-w6-review/test_position_lifecycle_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_pipeline.cpp -o build-w6-review/test_position_pipeline_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_position_records.cpp -o build-w6-review/test_position_records_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_release_state_slice.cpp -o build-w6-review/test_release_state_slice_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_predecessor.cpp -o build-w6-review/test_reset_predecessor_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/history_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_resolved_scalar_helper.cpp -o build-w6-review/test_resolved_scalar_helper_sanitize
+RUN build-w6-review/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build-w6-review/test_bounded_aggregation_sanitize
+16392 bounded aggregation assertions passed
+RUN build-w6-review/test_bounded_message_fields_sanitize
+bounded_message_fields: 352 assertions passed
+RUN build-w6-review/test_charge_state_sanitize
+PASS: 3490 charge-state checks
+RUN build-w6-review/test_history_slice_sanitize
+PASS history slice: 22 assertions
+RUN build-w6-review/test_lifecycle_seed_slice_sanitize
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build-w6-review/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build-w6-review/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build-w6-review/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build-w6-review/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build-w6-review/test_release_state_slice_sanitize
+21291 release-state assertions passed
+RUN build-w6-review/test_reset_predecessor_sanitize
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build-w6-review/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+python3 tests/verify_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "instruction_bytes_and_fresh_decodes": 294,
+  "constants": 5,
+  "unchanged_inventory_files": 13,
+  "scope": "Bytes and instruction decoding only; not branch reachability or C++ equivalence."
+}
+python3 evidence/gap01/verify_gap01.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "saved_rows_rechecked": 32,
+  "fresh_objdump_decodes": 32,
+  "point26_candidate_identity": false,
+  "point26_guard": "The EBX<65 branch skips this block.",
+  "g425009bc_known_direct_stores": 2,
+  "t96_origin_status": "propagation_verified_positive_origin_open",
+  "scope": "Selected bytes/provenance only; not full source absence, reachability, or runtime behavior."
+}
+python3 evidence/gap03/verify_charge_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+python3 evidence/gap04/check_bindings.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+UNRESOLVED runtime base, module ownership, target identity, and execution/reachability
+python3 evidence/gap05/replay_position_lifecycle.py "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+python3 evidence/gap06/verify_h01_replay.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "command": "python3 continuation/evidence/gap06/verify_h01_replay.py --handoff <RAGEBOT_HANDOFF_V10>",
+  "h01": {
+    "archivedChecks": 209,
+    "archivedReportedPasses": 209,
+    "storedByteAssertions": 162,
+    "freshlyReplayedByteAssertions": 162,
+    "resource": 143,
+    "client": 19,
+    "otherHistoricalChecksNotReplayed": 47,
+    "strictOldProtocolRepeated": false
+  },
+  "inputs": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json": "8aae710852d062dd3460a253250831f53354b5c792ad312903da37e2462b4a94",
+    "work/recovered_nl/recovered_nl/src/nl_core.c": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+    "work/recovered_nl/recovered_nl/src/nl_rage_math.c": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+    "work/recovered_nl/recovered_nl/src/nl_netvar.c": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+    "work/recovered_nl/recovered_nl/tests/test_core.c": "b634fabc322b75c1552823dcba3ab45165f46c2c8f23f4c5d25c7315302f8f9b",
+    "work/recovered_nl/recovered_nl/tests/test_netvar.c": "6c6a8a0d15f3bfad64a274b2809f1a179131e0748d7e94e8140b4348491cdf2c",
+    "work/recovered_nl/recovered_nl/tests/test_rage_math.c": "0f1f64382f3ebe2379837b741807d9d4c4902fd2da54585c22f3b017f19afa06"
+  },
+  "scriptsAndEvidence": {
+    "orchestration/v7/verify_v7.py": "edf54449618586804747c9b90f03ae9cb02eecbad02a9c54fe9f7ac446ecb575",
+    "orchestration/v7/proof_spec.json": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+    "orchestration/v7/pe_data.py": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "orchestration/v7/historical_H01_byte_evidence.json": "0897ee504a64d723e7197faba9c584f26ba58d749bbc160d9a4b2a926ff3e94e",
+    "orchestration/v7/H01_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "orchestration/v1/direct/reproducibility.csv": "5cb29ac06cfaea02fcf586a94d5ce614312129ae040d3ba44c456610d43ae267"
+  },
+  "auditedSources": {
+    "continuation/include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "continuation/src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "continuation/tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "continuation/evidence/byte_anchors.json": "1784806e32a2ae149eb7b463485a53691383f16c140f861a0eda81c4d40712ba",
+    "continuation/evidence/SOURCE_MAP.md": "b466b805f83abe89d869418d3533af097c8987d53f9b70c9c0d36a2175f349e2"
+  },
+  "v10Walks": {
+    "position_manager_initializer_walk.json": "67db0b4e270a31334905b6e74ee8ccc52b4a22be7b867b5ebc081c9f9d82194f",
+    "network_update_with_tls_tails_walk.json": "1de25a5d27c7eede50c0c1a0d3a26c27ade12e7fd406c01cb777cfd75bf968ad",
+    "record_actor_enrichment_walk.json": "957adb6309aba7ce88f86208a053b406f0a65a065699cc6469a62c4968e8b653",
+    "position_record_reader_walk.json": "07d1a93b7fefdd382910b17c49c2366bd737520ab6d7c022f6decfcb4a794aff",
+    "position_reader_caller_anchor_walk.json": "3d5071a4d2f3eeaec1093193d3336f59f8329f6bac448205978460af957079b7"
+  },
+  "scope": "Read-only hash, stored-byte, PE-offset and GNU objdump checks for the selected H01 subset; not a replay of all 209 checks or an independent external audit."
+}
+python3 -B evidence/wave2/code01/review_baseline.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "baseline_files": [
+    {
+      "path": "continuation/Makefile",
+      "size": 1577,
+      "sha256": "e5ed2466bbdfac38e4f31c25852e7efaa42272c82dab639c0af5900e71296e83",
+      "lines": 41
+    },
+    {
+      "path": "continuation/include/rage/charge_state.hpp",
+      "size": 1363,
+      "sha256": "a176bce5e72bca17914efc0ee66da7c2cbbc8a8d912f7e3b30d91bd927df9558",
+      "lines": 55
+    },
+    {
+      "path": "continuation/include/rage/position_lifecycle.hpp",
+      "size": 2336,
+      "sha256": "b70e8e3e9e72b5e7f416e8af5c6a8b8152d6df1f49e4db9988c5342069d14d71",
+      "lines": 79
+    },
+    {
+      "path": "continuation/include/rage/position_records.hpp",
+      "size": 4898,
+      "sha256": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+      "lines": 151
+    },
+    {
+      "path": "continuation/src/charge_state.cpp",
+      "size": 3208,
+      "sha256": "3700344cfe178804c2f3d14e2fb670dfee46ac91e5104e9d778ab8c7e63a4ea4",
+      "lines": 109
+    },
+    {
+      "path": "continuation/src/position_lifecycle.cpp",
+      "size": 5377,
+      "sha256": "97001be1725726f55543d5d57ee1ee180e50811b8dd1335709e04a5f1ddbd0b0",
+      "lines": 134
+    },
+    {
+      "path": "continuation/src/position_records.cpp",
+      "size": 4994,
+      "sha256": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+      "lines": 133
+    },
+    {
+      "path": "continuation/tests/test_charge_state.cpp",
+      "size": 9055,
+      "sha256": "7f27ab24798945a6c411a80e41f39c3f46029e1a9f4d1b58710e81554d0f19bd",
+      "lines": 252
+    },
+    {
+      "path": "continuation/tests/test_position_lifecycle.cpp",
+      "size": 11870,
+      "sha256": "f0eb4c5b379b9f017ae4724f0cc5a683057f6d03dd7ab6b920dca0cf06025641",
+      "lines": 289
+    },
+    {
+      "path": "continuation/tests/test_position_records.cpp",
+      "size": 14184,
+      "sha256": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+      "lines": 367
+    }
+  ],
+  "original_inventory_verified": [
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_core.c",
+      "size": 893,
+      "sha256": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+      "lines": 25,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_netvar.c",
+      "size": 3000,
+      "sha256": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+      "lines": 80,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/src/nl_rage_math.c",
+      "size": 2509,
+      "sha256": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+      "lines": 81,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/inferred_signatures.h",
+      "size": 1535492,
+      "sha256": "d057eda4f5b1a7049d2d292cca45a8bed947a431badf138c14845e3277892d4f",
+      "lines": 20336,
+      "referenced_nl_symbols": [],
+      "kind": "automatically inferred signature comments"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_layouts.h",
+      "size": 1459,
+      "sha256": "d5fdca8059c521dda24a09d2391b9e047cf803bbdcdafe422e2287abff3c0d85",
+      "lines": 38,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_netvar.h",
+      "size": 1996,
+      "sha256": "a95ef5feb4a3dc22f9c3009ba362caddf56d493eb645132da488351665403187",
+      "lines": 60,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_rage_math.h",
+      "size": 1766,
+      "sha256": "0213293a5d0a51da2d124af0adf6cd8058a6ea92b3bd73408ae7ed93d8fe1a66",
+      "lines": 35,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_report_records.h",
+      "size": 1106,
+      "sha256": "107548f43193cdd1cc3aba89cf5ad00e6cff8df982708faf3749fc14a32b44dd",
+      "lines": 28,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/sdk/nl_sdk.h",
+      "size": 3454,
+      "sha256": "8e3936131a4190f8892262d3dbde21f98472bd01af38160f52e6fb6c0c7d27d4",
+      "lines": 98,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_core.c",
+      "size": 833,
+      "sha256": "b634fabc322b75c1552823dcba3ab45165f46c2c8f23f4c5d25c7315302f8f9b",
+      "lines": 22,
+      "referenced_nl_symbols": [
+        "nl_crc32_update",
+        "nl_lag_compensation_unavailable"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_detours.cpp",
+      "size": 1144,
+      "sha256": "eb413ed56baacc51d04e880b403e23e48f698081e30e04c4545dab9f90f16cde",
+      "lines": 26,
+      "referenced_nl_symbols": [],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_netvar.c",
+      "size": 2747,
+      "sha256": "6c6a8a0d15f3bfad64a274b2809f1a179131e0748d7e94e8140b4348491cdf2c",
+      "lines": 68,
+      "referenced_nl_symbols": [
+        "nl_netvar_find",
+        "nl_netvar_find_in_table"
+      ],
+      "kind": "existing source/header/test"
+    },
+    {
+      "path": "work/recovered_nl/recovered_nl/tests/test_rage_math.c",
+      "size": 1628,
+      "sha256": "0f1f64382f3ebe2379837b741807d9d4c4902fd2da54585c22f3b017f19afa06",
+      "lines": 44,
+      "referenced_nl_symbols": [
+        "nl_apply_shot_buttons",
+        "nl_backtrack_correction",
+        "nl_command_tick_limit",
+        "nl_hitchance_score",
+        "nl_hits_to_kill",
+        "nl_interpolation_seconds",
+        "nl_mean_expected_damage",
+        "nl_prepare_movement",
+        "nl_tick_interval_metric"
+      ],
+      "kind": "existing source/header/test"
+    }
+  ],
+  "original_inventory_files": 13,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "selected_byte_checks": {
+    "4150bead": "8939",
+    "4150beb6": "0f8423060000",
+    "4150c4da": "0f92c0",
+    "4150c4df": "31c0",
+    "414fd82d": "e80ee60000",
+    "414fd841": "89c3",
+    "414fd905": "84db",
+    "414fd907": "750d",
+    "414fd90c": "0f2e4548",
+    "414fd910": "0f8318020000"
+  },
+  "contradictory_fixture_pairs_confirmed": 2,
+  "runs": [],
+  "original_execution_loading_or_emulation": false
+}
+python3 -B evidence/wave2/gap01/verify_gap01_wave2.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "blocks_checked": 8,
+  "fresh_decoded_instructions": 118,
+  "saved_rows_rechecked": 68,
+  "bounded_hypotheses_checked": 2,
+  "positive_sources_proved": 0,
+  "point_qword": {
+    "overlaps_plus26": true,
+    "written_value_on_selected_fallthrough": "zero",
+    "context_slot": "0x10",
+    "conditional_caller_stack_offsets_inclusive": [
+      "0x1b0",
+      "0x1b7"
+    ]
+  },
+  "g_b8_argument_writes": {
+    "inclusive_range": [
+      "0x425009b8",
+      "0x425009bb"
+    ],
+    "overlaps_g425009bc": false
+  },
+  "all_three_positive_source_gates": "open",
+  "scope": "Static selected bytes, decode, local operands and widths; not full CFG, imports/TLS effects, runtime state, or global absence.",
+  "original_dll_loaded_executed_or_emulated": false
+}
+python3 -B evidence/wave2/gap02/verify_inventory.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "scope": "read_only_archival_record_and_hash_consistency_only",
+  "source_files_hashed": 104,
+  "json_sources_parsed": 96,
+  "baseline_git_blobs": 5,
+  "image_hashes": 4,
+  "proof_inventories": 4,
+  "proof_walk_references": 60,
+  "candidate_source_walks": 27,
+  "candidate_primary_records": 133,
+  "candidate_context_records": 1197,
+  "unique_primary_address_bytes": 122,
+  "classification_counts": {
+    "adjacent_not_covering_68": 3,
+    "direct_68_untyped": 5,
+    "stack_relative": 9,
+    "wide_overlap_68_untyped": 116
+  },
+  "selected_local_anchors": 2,
+  "fresh_behavioral_check": false,
+  "consumer_implemented": false,
+  "gap02_status": "open"
+}
+python3 -B evidence/wave2/gap03/verify_reset_evidence.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings
+python3 -B evidence/wave2/gap04/verify_scalar_helper.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+python3 -B evidence/wave2/gap05/verify_optional_output.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+python3 -B evidence/wave2/gap06/verify_remaining_h01.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "schema": 1,
+  "supported_checks_passed": true,
+  "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "verifier_sha256": "e8e545fb528c0f9e0d9a44d73f981892384a1d47f650a9a894f0298e05f8d979",
+  "manifest_sha256": "5f69cb4aee78a42b29f0b0cd816d5f1e530246d8808dcf1c10f5e60be9284d96",
+  "strict_old_protocol_repeated": false,
+  "all_209_repeated": false,
+  "external_independent_audit": false,
+  "original_execution_or_emulation": false,
+  "scope": "47 non-instruction H01 entries; archived pass flags/counts are not success inputs.",
+  "disposition_counts": {
+    "freshly_rechecked": 33,
+    "model_only": 2,
+    "historical_only": 12,
+    "unresolved": 0
+  },
+  "new_evaluation_passes": {
+    "freshly_rechecked": 33,
+    "model_only": 2
+  },
+  "input_hashes_before": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "input_hashes_after": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "inputs_unchanged_during_this_replay_only": true,
+  "pinned_sources": {
+    "orchestration/v7/verify_v7.py": "edf54449618586804747c9b90f03ae9cb02eecbad02a9c54fe9f7ac446ecb575",
+    "orchestration/v7/proof_spec.json": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+    "orchestration/v7/pe_data.py": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "orchestration/v7/historical_H01_byte_evidence.json": "0897ee504a64d723e7197faba9c584f26ba58d749bbc160d9a4b2a926ff3e94e",
+    "orchestration/v7/H01_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "orchestration/v1/direct/reproducibility.csv": "5cb29ac06cfaea02fcf586a94d5ce614312129ae040d3ba44c456610d43ae267",
+    "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json": "8aae710852d062dd3460a253250831f53354b5c792ad312903da37e2462b4a94",
+    "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md": "7fcabb005443cbb6f709124f92a35d893798f5082f0c3fa5caa81ccebaaea062",
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+  },
+  "supplemental_resource_fact": {
+    "path": [
+      "BINARY",
+      101,
+      1049
+    ],
+    "file_offset": "0x629b10",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "method": "hash-pinned read-only PE helper; not pefile/LIEF"
+  },
+  "unresolved_gates": [
+    "Original producer script and exact tool/block-input protocol are not available via the cited paths/ledger; the archived check list is not an executable protocol.",
+    "Named pefile/LIEF, Rizin and five VEX checks are not rerun.",
+    "The original audit before/after interval cannot be recreated.",
+    "Models do not establish live behavior, full equivalence or actual x87 rounding."
+  ],
+  "checks": [
+    {
+      "ordinal": 1,
+      "check": "Original SHA256 neverlose.dll",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/0"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "path": "input/dll/neverlose.dll",
+        "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+      }
+    },
+    {
+      "ordinal": 2,
+      "check": "Original SHA256 client.dll",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/1"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "path": "input/dll/client.dll",
+        "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03"
+      }
+    },
+    {
+      "ordinal": 3,
+      "check": "Original SHA256 engine.dll",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/2"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "path": "input/dll/engine.dll",
+        "sha256": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6"
+      }
+    },
+    {
+      "ordinal": 4,
+      "check": "Original inner resource hash",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/3"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "path": "work/nl_handoff_2026-11-06/nl.bin",
+        "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+      }
+    },
+    {
+      "ordinal": 5,
+      "check": "pefile resource BINARY/101 raw offset and size",
+      "disposition": "historical_only",
+      "reason": "The named pefile/LIEF implementation is not rerun; own resource parsing only corroborates the resource bytes, offset, size and language.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/4"
+      ],
+      "recheckability": "Resource inputs and identity available; named-library rerun feasible separately, not performed.",
+      "fresh_evaluation_passed": null,
+      "corroboration_not_named_tool_replay": {
+        "path": [
+          "BINARY",
+          101,
+          1049
+        ],
+        "file_offset": "0x629b10",
+        "size": 55578624,
+        "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+        "method": "hash-pinned read-only PE helper; not pefile/LIEF"
+      }
+    },
+    {
+      "ordinal": 6,
+      "check": "LIEF independently identifies same BINARY/101 bytes",
+      "disposition": "historical_only",
+      "reason": "The named pefile/LIEF implementation is not rerun; own resource parsing only corroborates the resource bytes, offset, size and language.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/5"
+      ],
+      "recheckability": "Resource inputs and identity available; named-library rerun feasible separately, not performed.",
+      "fresh_evaluation_passed": null,
+      "corroboration_not_named_tool_replay": {
+        "path": [
+          "BINARY",
+          101,
+          1049
+        ],
+        "file_offset": "0x629b10",
+        "size": 55578624,
+        "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+        "method": "hash-pinned read-only PE helper; not pefile/LIEF"
+      }
+    },
+    {
+      "ordinal": 169,
+      "check": "Full client string and DJB2 hash DT_CSGameRulesProxy",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/168"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "string": "DT_CSGameRulesProxy",
+        "file_offsets": [
+          "0xc09600"
+        ],
+        "djb2": "0x89b4ae59"
+      }
+    },
+    {
+      "ordinal": 170,
+      "check": "Full client string and DJB2 hash m_bFreezePeriod",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/169"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "string": "m_bFreezePeriod",
+        "file_offsets": [
+          "0xc10384"
+        ],
+        "djb2": "0x88f823b7"
+      }
+    },
+    {
+      "ordinal": 171,
+      "check": "Full client string and DJB2 hash DT_BasePlayer",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/170"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "string": "DT_BasePlayer",
+        "file_offsets": [
+          "0xb9bf54"
+        ],
+        "djb2": "0x801ee124"
+      }
+    },
+    {
+      "ordinal": 172,
+      "check": "Full client string and DJB2 hash m_vecViewOffset[0]",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/171"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "string": "m_vecViewOffset[0]",
+        "file_offsets": [
+          "0xb9bdd8"
+        ],
+        "djb2": "0x42aa3499"
+      }
+    },
+    {
+      "ordinal": 173,
+      "check": "Client string 0x10b8fe40",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/172"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10b8fe40",
+        "file_offset": "0xb8e840",
+        "string": "m_bInReload"
+      }
+    },
+    {
+      "ordinal": 174,
+      "check": "Client string 0x10c8776c",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/173"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10c8776c",
+        "file_offset": "0xc8616c",
+        "string": "weapon_accuracy_forcespread"
+      }
+    },
+    {
+      "ordinal": 175,
+      "check": "Client string 0x10c877cc",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/174"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10c877cc",
+        "file_offset": "0xc861cc",
+        "string": "weapon_accuracy_nospread"
+      }
+    },
+    {
+      "ordinal": 176,
+      "check": "Client string 0x10c8808c",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/175"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10c8808c",
+        "file_offset": "0xc86a8c",
+        "string": "m_fAccuracyPenalty"
+      }
+    },
+    {
+      "ordinal": 177,
+      "check": "Reload descriptor type/name/offset/size",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/176",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10da317c",
+        "bytes": "0600000040feb810b532000001000200",
+        "field_type": 6,
+        "name_pointer": "0x10b8fe40",
+        "name": "m_bInReload",
+        "offset": "0x32b5",
+        "count": 1,
+        "flags": 2
+      }
+    },
+    {
+      "ordinal": 178,
+      "check": "Authored modulo-32 literal arithmetic yields reload offset 0x32B5",
+      "disposition": "model_only",
+      "reason": "Authored pure arithmetic/IEEE-754 model with pinned literal inputs; not original execution, emulation or full historical protocol.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/177",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "result": "0x32b5",
+        "rotate_by_32_fixtures": 4,
+        "scope": "Authored modular arithmetic only; no instruction execution."
+      }
+    },
+    {
+      "ordinal": 179,
+      "check": "m_fAccuracyPenalty descriptor points to client weapon +3340",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/178",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x10db9e60",
+        "bytes": "8c80c81040330000",
+        "name_pointer": "0x10c8808c",
+        "name": "m_fAccuracyPenalty",
+        "offset": "0x3340"
+      }
+    },
+    {
+      "ordinal": 180,
+      "check": "Primary RTTI identity 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/179",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c88488",
+        "locator": "0x10d76154",
+        "type_descriptor": "0x10e1cb94",
+        "class": ".?AVC_WeaponCSBase@@",
+        "primary_offset": 0,
+        "class_hierarchy": "0x10d75394"
+      }
+    },
+    {
+      "ordinal": 181,
+      "check": "Executable method-pointer run through slot483 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/180",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c88488",
+        "slots_checked": 484,
+        "last_slot": 483,
+        "pointer_bytes_sha256": "284cae12e8a5855c08bef43194403cded1446411fce0fd9c930addce0632c447",
+        "scope": "File-backed executable section membership, not live dispatch."
+      }
+    },
+    {
+      "ordinal": 182,
+      "check": "Client weapon virtual+78C target 0x10c88488",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/181",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c88488",
+        "slot": 483,
+        "target": "0x106a09c0"
+      }
+    },
+    {
+      "ordinal": 183,
+      "check": "Primary RTTI identity 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/182",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c89ea0",
+        "locator": "0x10d78688",
+        "type_descriptor": "0x10e22444",
+        "class": ".?AVC_WeaponCSBaseGun@@",
+        "primary_offset": 0,
+        "class_hierarchy": "0x10d7723c"
+      }
+    },
+    {
+      "ordinal": 184,
+      "check": "Executable method-pointer run through slot483 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/183",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c89ea0",
+        "slots_checked": 484,
+        "last_slot": 483,
+        "pointer_bytes_sha256": "1f649f8846dc4fbf70b86af5ea67553f60e044eb273c24532fad560f615aebc4",
+        "scope": "File-backed executable section membership, not live dispatch."
+      }
+    },
+    {
+      "ordinal": 185,
+      "check": "Client weapon virtual+78C target 0x10c89ea0",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/184",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c89ea0",
+        "slot": 483,
+        "target": "0x106a09c0"
+      }
+    },
+    {
+      "ordinal": 186,
+      "check": "Primary RTTI identity 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/185",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9ab54",
+        "locator": "0x10d783f4",
+        "type_descriptor": "0x10e34424",
+        "class": ".?AVC_WeaponAWP@@",
+        "primary_offset": 0,
+        "class_hierarchy": "0x10d77320"
+      }
+    },
+    {
+      "ordinal": 187,
+      "check": "Executable method-pointer run through slot483 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/186",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9ab54",
+        "slots_checked": 484,
+        "last_slot": 483,
+        "pointer_bytes_sha256": "1f649f8846dc4fbf70b86af5ea67553f60e044eb273c24532fad560f615aebc4",
+        "scope": "File-backed executable section membership, not live dispatch."
+      }
+    },
+    {
+      "ordinal": 188,
+      "check": "Client weapon virtual+78C target 0x10c9ab54",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/187",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9ab54",
+        "slot": 483,
+        "target": "0x106a09c0"
+      }
+    },
+    {
+      "ordinal": 189,
+      "check": "Primary RTTI identity 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/188",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9b450",
+        "locator": "0x10d786ec",
+        "type_descriptor": "0x10e3445c",
+        "class": ".?AVC_AK47@@",
+        "primary_offset": 0,
+        "class_hierarchy": "0x10d77340"
+      }
+    },
+    {
+      "ordinal": 190,
+      "check": "Executable method-pointer run through slot483 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/189",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9b450",
+        "slots_checked": 484,
+        "last_slot": 483,
+        "pointer_bytes_sha256": "1f649f8846dc4fbf70b86af5ea67553f60e044eb273c24532fad560f615aebc4",
+        "scope": "File-backed executable section membership, not live dispatch."
+      }
+    },
+    {
+      "ordinal": 191,
+      "check": "Client weapon virtual+78C target 0x10c9b450",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/190",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "vtable": "0x10c9b450",
+        "slot": 483,
+        "target": "0x106a09c0"
+      }
+    },
+    {
+      "ordinal": 192,
+      "check": "Original float32 constant 0x4205ac70",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/191"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x4205ac70",
+        "bytes": "00003842",
+        "float32": 46.0
+      }
+    },
+    {
+      "ordinal": 193,
+      "check": "Original float32 constant 0x4205ac74",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/192"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x4205ac74",
+        "bytes": "00008042",
+        "float32": 64.0
+      }
+    },
+    {
+      "ordinal": 194,
+      "check": "Original float32 constant 0x4205a628",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/193"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x4205a628",
+        "bytes": "0000c03f",
+        "float32": 1.5
+      }
+    },
+    {
+      "ordinal": 195,
+      "check": "Original float32 constant 0x4207058c",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/194"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x4207058c",
+        "bytes": "00000043",
+        "float32": 128.0
+      }
+    },
+    {
+      "ordinal": 196,
+      "check": "Original float32 constant 0x420768ac",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/195"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x420768ac",
+        "bytes": "00c0ff40",
+        "float32": 7.9921875
+      }
+    },
+    {
+      "ordinal": 197,
+      "check": "Original float32 constant 0x420768b0",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/196"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "va": "0x420768b0",
+        "bytes": "0820003e",
+        "float32": 0.12512218952178955
+      }
+    },
+    {
+      "ordinal": 198,
+      "check": "Exact integer-to-double bias",
+      "disposition": "model_only",
+      "reason": "Authored pure arithmetic/IEEE-754 model with pinned literal inputs; not original execution, emulation or full historical protocol.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/197",
+        "work/RAGEBOT_FINAL_v2/reports/Рейджбот_метрики_истории_и_исключения.md"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "mask_va": "0x4205b050",
+        "mask_bytes": "00000000000030430000000000003043",
+        "bias_va": "0x4205a9b0",
+        "bias_bytes": "0000000000003043",
+        "cases": 1026,
+        "domain": "0..1023 and two unsigned boundaries",
+        "scope": "Authored IEEE-754 model, not x87 rounding or live-state proof."
+      }
+    },
+    {
+      "ordinal": 199,
+      "check": "Rizin independent address/bytes/length resource",
+      "disposition": "historical_only",
+      "reason": "The named Rizin invocation and its exact protocol are not rerun; GNU decoding does not substitute for Rizin.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/198"
+      ],
+      "recheckability": "All 162 anchor inputs available; new Rizin byte/length recheck feasible, exact old invocation not established.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 200,
+      "check": "Rizin independent address/bytes/length client",
+      "disposition": "historical_only",
+      "reason": "The named Rizin invocation and its exact protocol are not rerun; GNU decoding does not substitute for Rizin.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/199"
+      ],
+      "recheckability": "All 162 anchor inputs available; new Rizin byte/length recheck feasible, exact old invocation not established.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 201,
+      "check": "GNU objdump independent address/bytes/length all anchors",
+      "disposition": "freshly_rechecked",
+      "reason": "Read-only bytes or file-backed PE metadata, evaluated anew.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/200",
+        "orchestration/v7/historical_H01_byte_evidence.json"
+      ],
+      "recheckability": "Evaluated using immutable file data or explicitly bounded authored arithmetic.",
+      "fresh_evaluation_passed": true,
+      "new_evidence": {
+        "tool": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+        "records": 162,
+        "sources": {
+          "resource": 143,
+          "client": 19
+        },
+        "decodes": [
+          {
+            "va": "0x41b6abfd",
+            "source": "resource",
+            "bytes": "a160fe2342",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x4223fe60"
+          },
+          {
+            "va": "0x41b6ac02",
+            "source": "resource",
+            "bytes": "85c0",
+            "length": 2,
+            "instruction": "test   eax,eax"
+          },
+          {
+            "va": "0x41b6ac04",
+            "source": "resource",
+            "bytes": "7431",
+            "length": 2,
+            "instruction": "je     0x41b6ac37"
+          },
+          {
+            "va": "0x41b6ac06",
+            "source": "resource",
+            "bytes": "8b30",
+            "length": 2,
+            "instruction": "mov    esi,DWORD PTR [eax]"
+          },
+          {
+            "va": "0x41b6ac08",
+            "source": "resource",
+            "bytes": "85f6",
+            "length": 2,
+            "instruction": "test   esi,esi"
+          },
+          {
+            "va": "0x41b6ac0a",
+            "source": "resource",
+            "bytes": "742b",
+            "length": 2,
+            "instruction": "je     0x41b6ac37"
+          },
+          {
+            "va": "0x41b6ac29",
+            "source": "resource",
+            "bytes": "a1000c5042",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x42500c00"
+          },
+          {
+            "va": "0x41b6ac2e",
+            "source": "resource",
+            "bytes": "803c3000",
+            "length": 4,
+            "instruction": "cmp    BYTE PTR [eax+esi*1],0x0"
+          },
+          {
+            "va": "0x41b6ac32",
+            "source": "resource",
+            "bytes": "0f95c0",
+            "length": 3,
+            "instruction": "setne  al"
+          },
+          {
+            "va": "0x41b6ac37",
+            "source": "resource",
+            "bytes": "31c0",
+            "length": 2,
+            "instruction": "xor    eax,eax"
+          },
+          {
+            "va": "0x41b6ac88",
+            "source": "resource",
+            "bytes": "b9044b4f42",
+            "length": 5,
+            "instruction": "mov    ecx,0x424f4b04"
+          },
+          {
+            "va": "0x41b6ac8f",
+            "source": "resource",
+            "bytes": "68b723f888",
+            "length": 5,
+            "instruction": "push   0x88f823b7"
+          },
+          {
+            "va": "0x41b6ac94",
+            "source": "resource",
+            "bytes": "6859aeb489",
+            "length": 5,
+            "instruction": "push   0x89b4ae59"
+          },
+          {
+            "va": "0x41b6ac99",
+            "source": "resource",
+            "bytes": "e862eb0100",
+            "length": 5,
+            "instruction": "call   0x41b89800"
+          },
+          {
+            "va": "0x41b6acd3",
+            "source": "resource",
+            "bytes": "a3000c5042",
+            "length": 5,
+            "instruction": "mov    ds:0x42500c00,eax"
+          },
+          {
+            "va": "0x41b6ace8",
+            "source": "resource",
+            "bytes": "e93cffffff",
+            "length": 5,
+            "instruction": "jmp    0x41b6ac29"
+          },
+          {
+            "va": "0x41599a75",
+            "source": "resource",
+            "bytes": "e856115d00",
+            "length": 5,
+            "instruction": "call   0x41b6abd0"
+          },
+          {
+            "va": "0x41599a7a",
+            "source": "resource",
+            "bytes": "84c0",
+            "length": 2,
+            "instruction": "test   al,al"
+          },
+          {
+            "va": "0x41599a7c",
+            "source": "resource",
+            "bytes": "0f856f010000",
+            "length": 6,
+            "instruction": "jne    0x41599bf1"
+          },
+          {
+            "va": "0x41b71cff",
+            "source": "resource",
+            "bytes": "b858618e9d",
+            "length": 5,
+            "instruction": "mov    eax,0x9d8e6158"
+          },
+          {
+            "va": "0x41b71d04",
+            "source": "resource",
+            "bytes": "05e76fa652",
+            "length": 5,
+            "instruction": "add    eax,0x52a66fe7"
+          },
+          {
+            "va": "0x41b71d09",
+            "source": "resource",
+            "bytes": "c1c920",
+            "length": 3,
+            "instruction": "ror    ecx,0x20"
+          },
+          {
+            "va": "0x41b71d0c",
+            "source": "resource",
+            "bytes": "2d3ffdb62e",
+            "length": 5,
+            "instruction": "sub    eax,0x2eb6fd3f"
+          },
+          {
+            "va": "0x41b71d11",
+            "source": "resource",
+            "bytes": "c1c003",
+            "length": 3,
+            "instruction": "rol    eax,0x3"
+          },
+          {
+            "va": "0x41b71d14",
+            "source": "resource",
+            "bytes": "c1cb20",
+            "length": 3,
+            "instruction": "ror    ebx,0x20"
+          },
+          {
+            "va": "0x41b71d17",
+            "source": "resource",
+            "bytes": "2d0636890b",
+            "length": 5,
+            "instruction": "sub    eax,0xb893606"
+          },
+          {
+            "va": "0x41b71d1c",
+            "source": "resource",
+            "bytes": "c1c017",
+            "length": 3,
+            "instruction": "rol    eax,0x17"
+          },
+          {
+            "va": "0x41b71d22",
+            "source": "resource",
+            "bytes": "890424",
+            "length": 3,
+            "instruction": "mov    DWORD PTR [esp],eax"
+          },
+          {
+            "va": "0x41b71d25",
+            "source": "resource",
+            "bytes": "8b0424",
+            "length": 3,
+            "instruction": "mov    eax,DWORD PTR [esp]"
+          },
+          {
+            "va": "0x41b71d28",
+            "source": "resource",
+            "bytes": "0fb61c08",
+            "length": 4,
+            "instruction": "movzx  ebx,BYTE PTR [eax+ecx*1]"
+          },
+          {
+            "va": "0x41599ac3",
+            "source": "resource",
+            "bytes": "89c3",
+            "length": 2,
+            "instruction": "mov    ebx,eax"
+          },
+          {
+            "va": "0x41599ac5",
+            "source": "resource",
+            "bytes": "89c1",
+            "length": 2,
+            "instruction": "mov    ecx,eax"
+          },
+          {
+            "va": "0x41599ac7",
+            "source": "resource",
+            "bytes": "e824825d00",
+            "length": 5,
+            "instruction": "call   0x41b71cf0"
+          },
+          {
+            "va": "0x41599acc",
+            "source": "resource",
+            "bytes": "84c0",
+            "length": 2,
+            "instruction": "test   al,al"
+          },
+          {
+            "va": "0x41599ace",
+            "source": "resource",
+            "bytes": "0f851d010000",
+            "length": 6,
+            "instruction": "jne    0x41599bf1"
+          },
+          {
+            "va": "0x4143ffb6",
+            "source": "resource",
+            "bytes": "8b4f04",
+            "length": 3,
+            "instruction": "mov    ecx,DWORD PTR [edi+0x4]"
+          },
+          {
+            "va": "0x4143ffb9",
+            "source": "resource",
+            "bytes": "bab5814e1b",
+            "length": 5,
+            "instruction": "mov    edx,0x1b4e81b5"
+          },
+          {
+            "va": "0x4143ffc0",
+            "source": "resource",
+            "bytes": "f7ea",
+            "length": 2,
+            "instruction": "imul   edx"
+          },
+          {
+            "va": "0x4143ffcc",
+            "source": "resource",
+            "bytes": "69c296000000",
+            "length": 6,
+            "instruction": "imul   eax,edx,0x96"
+          },
+          {
+            "va": "0x4143ffd6",
+            "source": "resource",
+            "bytes": "69fa98000000",
+            "length": 6,
+            "instruction": "imul   edi,edx,0x98"
+          },
+          {
+            "va": "0x4143ffdc",
+            "source": "resource",
+            "bytes": "398f987e4f42",
+            "length": 6,
+            "instruction": "cmp    DWORD PTR [edi+0x424f7e98],ecx"
+          },
+          {
+            "va": "0x4143ffea",
+            "source": "resource",
+            "bytes": "8908",
+            "length": 2,
+            "instruction": "mov    DWORD PTR [eax],ecx"
+          },
+          {
+            "va": "0x4144002a",
+            "source": "resource",
+            "bytes": "897e0c",
+            "length": 3,
+            "instruction": "mov    DWORD PTR [esi+0xc],edi"
+          },
+          {
+            "va": "0x414406f6",
+            "source": "resource",
+            "bytes": "8b7e0c",
+            "length": 3,
+            "instruction": "mov    edi,DWORD PTR [esi+0xc]"
+          },
+          {
+            "va": "0x41440734",
+            "source": "resource",
+            "bytes": "a1d0034b42",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x424b03d0"
+          },
+          {
+            "va": "0x41440739",
+            "source": "resource",
+            "bytes": "f30f10441808",
+            "length": 6,
+            "instruction": "movss  xmm0,DWORD PTR [eax+ebx*1+0x8]"
+          },
+          {
+            "va": "0x4144073f",
+            "source": "resource",
+            "bytes": "f30f1187b07e4f42",
+            "length": 8,
+            "instruction": "movss  DWORD PTR [edi+0x424f7eb0],xmm0"
+          },
+          {
+            "va": "0x41440751",
+            "source": "resource",
+            "bytes": "89d9",
+            "length": 2,
+            "instruction": "mov    ecx,ebx"
+          },
+          {
+            "va": "0x41440753",
+            "source": "resource",
+            "bytes": "e8b8f77200",
+            "length": 5,
+            "instruction": "call   0x41b6ff10"
+          },
+          {
+            "va": "0x41440758",
+            "source": "resource",
+            "bytes": "84c0",
+            "length": 2,
+            "instruction": "test   al,al"
+          },
+          {
+            "va": "0x4144075a",
+            "source": "resource",
+            "bytes": "741e",
+            "length": 2,
+            "instruction": "je     0x4144077a"
+          },
+          {
+            "va": "0x4144075c",
+            "source": "resource",
+            "bytes": "8d87b07e4f42",
+            "length": 6,
+            "instruction": "lea    eax,[edi+0x424f7eb0]"
+          },
+          {
+            "va": "0x41440766",
+            "source": "resource",
+            "bytes": "f30f5f0570ac0542",
+            "length": 8,
+            "instruction": "maxss  xmm0,DWORD PTR ds:0x4205ac70"
+          },
+          {
+            "va": "0x4144076e",
+            "source": "resource",
+            "bytes": "f30f5d0574ac0542",
+            "length": 8,
+            "instruction": "minss  xmm0,DWORD PTR ds:0x4205ac74"
+          },
+          {
+            "va": "0x41440776",
+            "source": "resource",
+            "bytes": "f30f1100",
+            "length": 4,
+            "instruction": "movss  DWORD PTR [eax],xmm0"
+          },
+          {
+            "va": "0x41441ad1",
+            "source": "resource",
+            "bytes": "b9044b4f42",
+            "length": 5,
+            "instruction": "mov    ecx,0x424f4b04"
+          },
+          {
+            "va": "0x41441ad8",
+            "source": "resource",
+            "bytes": "689934aa42",
+            "length": 5,
+            "instruction": "push   0x42aa3499"
+          },
+          {
+            "va": "0x41441add",
+            "source": "resource",
+            "bytes": "6824e11e80",
+            "length": 5,
+            "instruction": "push   0x801ee124"
+          },
+          {
+            "va": "0x41441ae2",
+            "source": "resource",
+            "bytes": "e8197d7400",
+            "length": 5,
+            "instruction": "call   0x41b89800"
+          },
+          {
+            "va": "0x41441b19",
+            "source": "resource",
+            "bytes": "a3d0034b42",
+            "length": 5,
+            "instruction": "mov    ds:0x424b03d0,eax"
+          },
+          {
+            "va": "0x41441b31",
+            "source": "resource",
+            "bytes": "e9feebffff",
+            "length": 5,
+            "instruction": "jmp    0x41440734"
+          },
+          {
+            "va": "0x41446dd1",
+            "source": "resource",
+            "bytes": "f30f10443808",
+            "length": 6,
+            "instruction": "movss  xmm0,DWORD PTR [eax+edi*1+0x8]"
+          },
+          {
+            "va": "0x41446dd7",
+            "source": "resource",
+            "bytes": "f30f1183b07e4f42",
+            "length": 8,
+            "instruction": "movss  DWORD PTR [ebx+0x424f7eb0],xmm0"
+          },
+          {
+            "va": "0x41449c65",
+            "source": "resource",
+            "bytes": "f30f10443808",
+            "length": 6,
+            "instruction": "movss  xmm0,DWORD PTR [eax+edi*1+0x8]"
+          },
+          {
+            "va": "0x41449c6b",
+            "source": "resource",
+            "bytes": "f30f1183b07e4f42",
+            "length": 8,
+            "instruction": "movss  DWORD PTR [ebx+0x424f7eb0],xmm0"
+          },
+          {
+            "va": "0x4139a197",
+            "source": "resource",
+            "bytes": "f30f1087b07e4f42",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [edi+0x424f7eb0]"
+          },
+          {
+            "va": "0x4139a1c0",
+            "source": "resource",
+            "bytes": "8b0dd0034b42",
+            "length": 6,
+            "instruction": "mov    ecx,DWORD PTR ds:0x424b03d0"
+          },
+          {
+            "va": "0x4139a1c6",
+            "source": "resource",
+            "bytes": "f30f11441108",
+            "length": 6,
+            "instruction": "movss  DWORD PTR [ecx+edx*1+0x8],xmm0"
+          },
+          {
+            "va": "0x41455e77",
+            "source": "resource",
+            "bytes": "f30f1082b07e4f42",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [edx+0x424f7eb0]"
+          },
+          {
+            "va": "0x41455ea0",
+            "source": "resource",
+            "bytes": "8b0dd0034b42",
+            "length": 6,
+            "instruction": "mov    ecx,DWORD PTR ds:0x424b03d0"
+          },
+          {
+            "va": "0x41455ea6",
+            "source": "resource",
+            "bytes": "f30f11441908",
+            "length": 6,
+            "instruction": "movss  DWORD PTR [ecx+ebx*1+0x8],xmm0"
+          },
+          {
+            "va": "0x41448615",
+            "source": "resource",
+            "bytes": "8d93b07e4f42",
+            "length": 6,
+            "instruction": "lea    edx,[ebx+0x424f7eb0]"
+          },
+          {
+            "va": "0x41448621",
+            "source": "resource",
+            "bytes": "f30f1002",
+            "length": 4,
+            "instruction": "movss  xmm0,DWORD PTR [edx]"
+          },
+          {
+            "va": "0x41448625",
+            "source": "resource",
+            "bytes": "b8ff030000",
+            "length": 5,
+            "instruction": "mov    eax,0x3ff"
+          },
+          {
+            "va": "0x4144862a",
+            "source": "resource",
+            "bytes": "f30f100d8c050742",
+            "length": 8,
+            "instruction": "movss  xmm1,DWORD PTR ds:0x4207058c"
+          },
+          {
+            "va": "0x41448635",
+            "source": "resource",
+            "bytes": "7226",
+            "length": 2,
+            "instruction": "jb     0x4144865d"
+          },
+          {
+            "va": "0x4144863f",
+            "source": "resource",
+            "bytes": "721c",
+            "length": 2,
+            "instruction": "jb     0x4144865d"
+          },
+          {
+            "va": "0x41448641",
+            "source": "resource",
+            "bytes": "f30f5905ac680742",
+            "length": 8,
+            "instruction": "mulss  xmm0,DWORD PTR ds:0x420768ac"
+          },
+          {
+            "va": "0x41448657",
+            "source": "resource",
+            "bytes": "df7e10",
+            "length": 3,
+            "instruction": "fistp  QWORD PTR [esi+0x10]"
+          },
+          {
+            "va": "0x4144865d",
+            "source": "resource",
+            "bytes": "660f6ec0",
+            "length": 4,
+            "instruction": "movd   xmm0,eax"
+          },
+          {
+            "va": "0x41448661",
+            "source": "resource",
+            "bytes": "660feb0550b00542",
+            "length": 8,
+            "instruction": "por    xmm0,XMMWORD PTR ds:0x4205b050"
+          },
+          {
+            "va": "0x41448669",
+            "source": "resource",
+            "bytes": "f20f5c05b0a90542",
+            "length": 8,
+            "instruction": "subsd  xmm0,QWORD PTR ds:0x4205a9b0"
+          },
+          {
+            "va": "0x41448671",
+            "source": "resource",
+            "bytes": "f20f5ac0",
+            "length": 4,
+            "instruction": "cvtsd2ss xmm0,xmm0"
+          },
+          {
+            "va": "0x41448675",
+            "source": "resource",
+            "bytes": "f30f5905b0680742",
+            "length": 8,
+            "instruction": "mulss  xmm0,DWORD PTR ds:0x420768b0"
+          },
+          {
+            "va": "0x4144867d",
+            "source": "resource",
+            "bytes": "f30f104c0f08",
+            "length": 6,
+            "instruction": "movss  xmm1,DWORD PTR [edi+ecx*1+0x8]"
+          },
+          {
+            "va": "0x41448683",
+            "source": "resource",
+            "bytes": "0f2ec1",
+            "length": 3,
+            "instruction": "ucomiss xmm0,xmm1"
+          },
+          {
+            "va": "0x4144868c",
+            "source": "resource",
+            "bytes": "746d",
+            "length": 2,
+            "instruction": "je     0x414486fb"
+          },
+          {
+            "va": "0x414486a6",
+            "source": "resource",
+            "bytes": "f30f590dac680742",
+            "length": 8,
+            "instruction": "mulss  xmm1,DWORD PTR ds:0x420768ac"
+          },
+          {
+            "va": "0x414486bc",
+            "source": "resource",
+            "bytes": "df7e10",
+            "length": 3,
+            "instruction": "fistp  QWORD PTR [esi+0x10]"
+          },
+          {
+            "va": "0x414486da",
+            "source": "resource",
+            "bytes": "f30f590db0680742",
+            "length": 8,
+            "instruction": "mulss  xmm1,DWORD PTR ds:0x420768b0"
+          },
+          {
+            "va": "0x414486e2",
+            "source": "resource",
+            "bytes": "0f2ec1",
+            "length": 3,
+            "instruction": "ucomiss xmm0,xmm1"
+          },
+          {
+            "va": "0x414486e5",
+            "source": "resource",
+            "bytes": "7414",
+            "length": 2,
+            "instruction": "je     0x414486fb"
+          },
+          {
+            "va": "0x414486e7",
+            "source": "resource",
+            "bytes": "f30f10440f08",
+            "length": 6,
+            "instruction": "movss  xmm0,DWORD PTR [edi+ecx*1+0x8]"
+          },
+          {
+            "va": "0x414486ed",
+            "source": "resource",
+            "bytes": "f30f1102",
+            "length": 4,
+            "instruction": "movss  DWORD PTR [edx],xmm0"
+          },
+          {
+            "va": "0x414486f1",
+            "source": "resource",
+            "bytes": "b001",
+            "length": 2,
+            "instruction": "mov    al,0x1"
+          },
+          {
+            "va": "0x414486fb",
+            "source": "resource",
+            "bytes": "c7862401000000000000",
+            "length": 10,
+            "instruction": "mov    DWORD PTR [esi+0x124],0x0"
+          },
+          {
+            "va": "0x41440f9a",
+            "source": "resource",
+            "bytes": "a120004b42",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x424b0020"
+          },
+          {
+            "va": "0x41440f9f",
+            "source": "resource",
+            "bytes": "8b0418",
+            "length": 3,
+            "instruction": "mov    eax,DWORD PTR [eax+ebx*1]"
+          },
+          {
+            "va": "0x41440fa2",
+            "source": "resource",
+            "bytes": "8986dc000000",
+            "length": 6,
+            "instruction": "mov    DWORD PTR [esi+0xdc],eax"
+          },
+          {
+            "va": "0x41440fb2",
+            "source": "resource",
+            "bytes": "8d8edc000000",
+            "length": 6,
+            "instruction": "lea    ecx,[esi+0xdc]"
+          },
+          {
+            "va": "0x41440fb8",
+            "source": "resource",
+            "bytes": "e82321edff",
+            "length": 5,
+            "instruction": "call   0x413130e0"
+          },
+          {
+            "va": "0x41440fbd",
+            "source": "resource",
+            "bytes": "85c0",
+            "length": 2,
+            "instruction": "test   eax,eax"
+          },
+          {
+            "va": "0x41440fbf",
+            "source": "resource",
+            "bytes": "0f8414050000",
+            "length": 6,
+            "instruction": "je     0x414414d9"
+          },
+          {
+            "va": "0x41440fc5",
+            "source": "resource",
+            "bytes": "89c3",
+            "length": 2,
+            "instruction": "mov    ebx,eax"
+          },
+          {
+            "va": "0x41440fcd",
+            "source": "resource",
+            "bytes": "8987a07e4f42",
+            "length": 6,
+            "instruction": "mov    DWORD PTR [edi+0x424f7ea0],eax"
+          },
+          {
+            "va": "0x41441405",
+            "source": "resource",
+            "bytes": "8b7e0c",
+            "length": 3,
+            "instruction": "mov    edi,DWORD PTR [esi+0xc]"
+          },
+          {
+            "va": "0x4144145f",
+            "source": "resource",
+            "bytes": "89d9",
+            "length": 2,
+            "instruction": "mov    ecx,ebx"
+          },
+          {
+            "va": "0x41441461",
+            "source": "resource",
+            "bytes": "e89af47200",
+            "length": 5,
+            "instruction": "call   0x41b70900"
+          },
+          {
+            "va": "0x41441466",
+            "source": "resource",
+            "bytes": "d99fdc7e4f42",
+            "length": 6,
+            "instruction": "fstp   DWORD PTR [edi+0x424f7edc]"
+          },
+          {
+            "va": "0x414414f6",
+            "source": "resource",
+            "bytes": "c787dc7e4f4200000000",
+            "length": 10,
+            "instruction": "mov    DWORD PTR [edi+0x424f7edc],0x0"
+          },
+          {
+            "va": "0x4144150a",
+            "source": "resource",
+            "bytes": "c787a07e4f42ffffffff",
+            "length": 10,
+            "instruction": "mov    DWORD PTR [edi+0x424f7ea0],0xffffffff"
+          },
+          {
+            "va": "0x41447aae",
+            "source": "resource",
+            "bytes": "e84d8e7200",
+            "length": 5,
+            "instruction": "call   0x41b70900"
+          },
+          {
+            "va": "0x41447ab3",
+            "source": "resource",
+            "bytes": "d99bdc7e4f42",
+            "length": 6,
+            "instruction": "fstp   DWORD PTR [ebx+0x424f7edc]"
+          },
+          {
+            "va": "0x4144a942",
+            "source": "resource",
+            "bytes": "e8b95f7200",
+            "length": 5,
+            "instruction": "call   0x41b70900"
+          },
+          {
+            "va": "0x4144a947",
+            "source": "resource",
+            "bytes": "d99bdc7e4f42",
+            "length": 6,
+            "instruction": "fstp   DWORD PTR [ebx+0x424f7edc]"
+          },
+          {
+            "va": "0x41b70900",
+            "source": "resource",
+            "bytes": "8b01",
+            "length": 2,
+            "instruction": "mov    eax,DWORD PTR [ecx]"
+          },
+          {
+            "va": "0x41b70902",
+            "source": "resource",
+            "bytes": "85c0",
+            "length": 2,
+            "instruction": "test   eax,eax"
+          },
+          {
+            "va": "0x41b70904",
+            "source": "resource",
+            "bytes": "7406",
+            "length": 2,
+            "instruction": "je     0x41b7090c"
+          },
+          {
+            "va": "0x41b70906",
+            "source": "resource",
+            "bytes": "ffa08c070000",
+            "length": 6,
+            "instruction": "jmp    DWORD PTR [eax+0x78c]"
+          },
+          {
+            "va": "0x41495f3e",
+            "source": "resource",
+            "bytes": "837dd800",
+            "length": 4,
+            "instruction": "cmp    DWORD PTR [ebp-0x28],0x0"
+          },
+          {
+            "va": "0x41495f42",
+            "source": "resource",
+            "bytes": "7433",
+            "length": 2,
+            "instruction": "je     0x41495f77"
+          },
+          {
+            "va": "0x41495f44",
+            "source": "resource",
+            "bytes": "803de909504200",
+            "length": 7,
+            "instruction": "cmp    BYTE PTR ds:0x425009e9,0x0"
+          },
+          {
+            "va": "0x41495f4b",
+            "source": "resource",
+            "bytes": "7415",
+            "length": 2,
+            "instruction": "je     0x41495f62"
+          },
+          {
+            "va": "0x41495f4d",
+            "source": "resource",
+            "bytes": "f30f1087b07e4f42",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [edi+0x424f7eb0]"
+          },
+          {
+            "va": "0x41495f58",
+            "source": "resource",
+            "bytes": "0f2e4018",
+            "length": 4,
+            "instruction": "ucomiss xmm0,DWORD PTR [eax+0x18]"
+          },
+          {
+            "va": "0x41495f5c",
+            "source": "resource",
+            "bytes": "0f8241ffffff",
+            "length": 6,
+            "instruction": "jb     0x41495ea3"
+          },
+          {
+            "va": "0x41495f62",
+            "source": "resource",
+            "bytes": "f30f1087dc7e4f42",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [edi+0x424f7edc]"
+          },
+          {
+            "va": "0x41495f6d",
+            "source": "resource",
+            "bytes": "0f2e4044",
+            "length": 4,
+            "instruction": "ucomiss xmm0,DWORD PTR [eax+0x44]"
+          },
+          {
+            "va": "0x41495f71",
+            "source": "resource",
+            "bytes": "0f872cffffff",
+            "length": 6,
+            "instruction": "ja     0x41495ea3"
+          },
+          {
+            "va": "0x41495f77",
+            "source": "resource",
+            "bytes": "8d87987e4f42",
+            "length": 6,
+            "instruction": "lea    eax,[edi+0x424f7e98]"
+          },
+          {
+            "va": "0x41495f7d",
+            "source": "resource",
+            "bytes": "8945d8",
+            "length": 3,
+            "instruction": "mov    DWORD PTR [ebp-0x28],eax"
+          },
+          {
+            "va": "0x41495f80",
+            "source": "resource",
+            "bytes": "8975d0",
+            "length": 3,
+            "instruction": "mov    DWORD PTR [ebp-0x30],esi"
+          },
+          {
+            "va": "0x41495f88",
+            "source": "resource",
+            "bytes": "837dd800",
+            "length": 4,
+            "instruction": "cmp    DWORD PTR [ebp-0x28],0x0"
+          },
+          {
+            "va": "0x41495f8e",
+            "source": "resource",
+            "bytes": "803de909504200",
+            "length": 7,
+            "instruction": "cmp    BYTE PTR ds:0x425009e9,0x0"
+          },
+          {
+            "va": "0x41495f95",
+            "source": "resource",
+            "bytes": "0f95c0",
+            "length": 3,
+            "instruction": "setne  al"
+          },
+          {
+            "va": "0x41495f98",
+            "source": "resource",
+            "bytes": "0a45e3",
+            "length": 3,
+            "instruction": "or     al,BYTE PTR [ebp-0x1d]"
+          },
+          {
+            "va": "0x41495f9b",
+            "source": "resource",
+            "bytes": "741a",
+            "length": 2,
+            "instruction": "je     0x41495fb7"
+          },
+          {
+            "va": "0x41495fb7",
+            "source": "resource",
+            "bytes": "a10c044b42",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x424b040c"
+          },
+          {
+            "va": "0x41495fbc",
+            "source": "resource",
+            "bytes": "f30f1080e8000000",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [eax+0xe8]"
+          },
+          {
+            "va": "0x41495fc4",
+            "source": "resource",
+            "bytes": "f30f590528a60542",
+            "length": 8,
+            "instruction": "mulss  xmm0,DWORD PTR ds:0x4205a628"
+          },
+          {
+            "va": "0x41495fcc",
+            "source": "resource",
+            "bytes": "31f6",
+            "length": 2,
+            "instruction": "xor    esi,esi"
+          },
+          {
+            "va": "0x41495fd1",
+            "source": "resource",
+            "bytes": "0f2e4044",
+            "length": 4,
+            "instruction": "ucomiss xmm0,DWORD PTR [eax+0x44]"
+          },
+          {
+            "va": "0x41495fd5",
+            "source": "resource",
+            "bytes": "0f4775d0",
+            "length": 4,
+            "instruction": "cmova  esi,DWORD PTR [ebp-0x30]"
+          },
+          {
+            "va": "0x10057cb4",
+            "source": "client",
+            "bytes": "b948bfe010",
+            "length": 5,
+            "instruction": "mov    ecx,0x10e0bf48"
+          },
+          {
+            "va": "0x10057cca",
+            "source": "client",
+            "bytes": "686c77c810",
+            "length": 5,
+            "instruction": "push   0x10c8776c"
+          },
+          {
+            "va": "0x10057ccf",
+            "source": "client",
+            "bytes": "e82c669400",
+            "length": 5,
+            "instruction": "call   0x1099e300"
+          },
+          {
+            "va": "0x10057cf4",
+            "source": "client",
+            "bytes": "b9b0bfe010",
+            "length": 5,
+            "instruction": "mov    ecx,0x10e0bfb0"
+          },
+          {
+            "va": "0x10057d0a",
+            "source": "client",
+            "bytes": "68cc77c810",
+            "length": 5,
+            "instruction": "push   0x10c877cc"
+          },
+          {
+            "va": "0x10057d0f",
+            "source": "client",
+            "bytes": "e8ec659400",
+            "length": 5,
+            "instruction": "call   0x1099e300"
+          },
+          {
+            "va": "0x106a0acd",
+            "source": "client",
+            "bytes": "f30f10442414",
+            "length": 6,
+            "instruction": "movss  xmm0,DWORD PTR [esp+0x14]"
+          },
+          {
+            "va": "0x106a0ad3",
+            "source": "client",
+            "bytes": "0f2f05ac2ab710",
+            "length": 7,
+            "instruction": "comiss xmm0,DWORD PTR ds:0x10b72aac"
+          },
+          {
+            "va": "0x106a0ada",
+            "source": "client",
+            "bytes": "0f8691000000",
+            "length": 6,
+            "instruction": "jbe    0x106a0b71"
+          },
+          {
+            "va": "0x106a0b71",
+            "source": "client",
+            "bytes": "a1b0bfe010",
+            "length": 5,
+            "instruction": "mov    eax,ds:0x10e0bfb0"
+          },
+          {
+            "va": "0x106a0b76",
+            "source": "client",
+            "bytes": "b9b0bfe010",
+            "length": 5,
+            "instruction": "mov    ecx,0x10e0bfb0"
+          },
+          {
+            "va": "0x106a0b7b",
+            "source": "client",
+            "bytes": "8b4034",
+            "length": 3,
+            "instruction": "mov    eax,DWORD PTR [eax+0x34]"
+          },
+          {
+            "va": "0x106a0b7e",
+            "source": "client",
+            "bytes": "ffd0",
+            "length": 2,
+            "instruction": "call   eax"
+          },
+          {
+            "va": "0x106a0b80",
+            "source": "client",
+            "bytes": "85c0",
+            "length": 2,
+            "instruction": "test   eax,eax"
+          },
+          {
+            "va": "0x106a0b82",
+            "source": "client",
+            "bytes": "0f8596feffff",
+            "length": 6,
+            "instruction": "jne    0x106a0a1e"
+          },
+          {
+            "va": "0x106a0bd3",
+            "source": "client",
+            "bytes": "f30f108740330000",
+            "length": 8,
+            "instruction": "movss  xmm0,DWORD PTR [edi+0x3340]"
+          },
+          {
+            "va": "0x106a0f7d",
+            "source": "client",
+            "bytes": "f30f5d0570e1d210",
+            "length": 8,
+            "instruction": "minss  xmm0,DWORD PTR ds:0x10d2e170"
+          },
+          {
+            "va": "0x106a0f8b",
+            "source": "client",
+            "bytes": "d9442414",
+            "length": 4,
+            "instruction": "fld    DWORD PTR [esp+0x14]"
+          },
+          {
+            "va": "0x106a0f92",
+            "source": "client",
+            "bytes": "c3",
+            "length": 1,
+            "instruction": "ret"
+          }
+        ]
+      }
+    },
+    {
+      "ordinal": 202,
+      "check": "Static VEX covers exact block reload_literal_read",
+      "disposition": "historical_only",
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/201"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 203,
+      "check": "Static VEX covers exact block height_clamp",
+      "disposition": "historical_only",
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/202"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 204,
+      "check": "Static VEX covers exact block height_x87_conversion",
+      "disposition": "historical_only",
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/203"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 205,
+      "check": "Static VEX covers exact block metric_compare",
+      "disposition": "historical_only",
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/204"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 206,
+      "check": "Static VEX covers exact block strict_threshold",
+      "disposition": "historical_only",
+      "reason": "Exact VEX block inputs/producer protocol are not supplied here; archived byte/instruction counts are not new IR coverage evidence.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/205"
+      ],
+      "recheckability": "Block labels and lengths alone do not identify exact original VEX input spans/options.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 207,
+      "check": "Original unchanged after audit neverlose.dll",
+      "disposition": "historical_only",
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/206"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 208,
+      "check": "Original unchanged after audit client.dll",
+      "disposition": "historical_only",
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/207"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable.",
+      "fresh_evaluation_passed": null
+    },
+    {
+      "ordinal": 209,
+      "check": "Original unchanged after audit engine.dll",
+      "disposition": "historical_only",
+      "reason": "A new before/after hash proves only this replay did not change inputs; it cannot recreate the original audit interval.",
+      "sources": [
+        "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json#/checks/208"
+      ],
+      "recheckability": "Original audit interval cannot be recreated; only current replay interval is observable.",
+      "fresh_evaluation_passed": null
+    }
+  ]
+}
+python3 -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v
+test_archived_pass_cannot_become_fresh_success (test_verify_remaining_h01.RemainingH01Tests.test_archived_pass_cannot_become_fresh_success) ... ok
+test_bias_model_is_bounded_and_checks_constant (test_verify_remaining_h01.RemainingH01Tests.test_bias_model_is_bounded_and_checks_constant) ... ok
+test_changed_pinned_source_is_rejected (test_verify_remaining_h01.RemainingH01Tests.test_changed_pinned_source_is_rejected) ... ok
+test_descriptor_must_match_actual_bytes (test_verify_remaining_h01.RemainingH01Tests.test_descriptor_must_match_actual_bytes) ... ok
+test_manifest_partition (test_verify_remaining_h01.RemainingH01Tests.test_manifest_partition) ... ok
+test_modular_model_and_count_masking (test_verify_remaining_h01.RemainingH01Tests.test_modular_model_and_count_masking) ... ok
+test_new_failure_is_not_promoted (test_verify_remaining_h01.RemainingH01Tests.test_new_failure_is_not_promoted) ... ok
+test_only_file_backed_executable_targets (test_verify_remaining_h01.RemainingH01Tests.test_only_file_backed_executable_targets) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK
+python3 -B evidence/wave3/marker/verify_composition.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS marker composition: 3 evidence pins; 19 producer anchors; 25 fresh decoded instructions; 2 producer constants
+BOUNDARY: supplied independent snapshots; transactional no-change is offline API convention, not original rollback; runtime reachability/owners remain unresolved
+python3 -B evidence/wave3/source/verify_source.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Read-only: no output files, imports from handoff, original loading, execution or emulation.
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+python3 -B evidence/next/scalar-provider/verify_fallback_provider.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.
+python3 -B evidence/wave5/aggregate/verify_contract.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "head": "d99dd375160c7fccfd489598942232430d78da2f",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "archival_source_pins": 6,
+  "byte_anchors_and_fresh_gnu_decodes": 58,
+  "constants": 1,
+  "original_execution_or_emulation": false,
+  "scope": "Local bytes and decoding; not whole-CFG reachability or original equivalence."
+}
+python3 -B evidence/wave6/aggregate/verify_callback.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "instructions": 175,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local static windows, not runtime bindings or whole callback"
+}
+python3 -B evidence/wave6/modes/verify_release.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "instructions": 23,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local static release windows, not mode scheduling or provider binding"
+}
+python3 -B evidence/wave6/message/verify_message_frontier.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS caller_zero_gate: 4 fresh decoded instructions; 4 byte/decode pins
+PASS caller_arguments_and_direct_call: 10 fresh decoded instructions; 10 byte/decode pins
+PASS direct_callee_entry_to_indirect_call: 65 fresh decoded instructions; 26 byte/decode pins
+PASS source SHA256 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS dispatch expression -> 0x5325d3e8, outside pinned image
+FRONTIER 0x4150ab39: FS-relative state; guard input 0x4150ab4c; unequal register jump and equal-edge runtime dereference remain unresolved
+python3 -B evidence/wave6/reset/verify_reset_predecessor.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 5 source hashes, predecessor add/cmp/JNE, 11 reset stores, fresh objdump
+UNRESOLVED: EAX provider/identity, entry reachability, loop and scheduling
+python3 -B evidence/wave6/geometry/verify_geometry.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS nl_handoff archive and nested nl.bin pins
+PASS caller byte window SHA-256 72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb
+PASS indirect call setup byte window SHA-256 2cc0b6ecc5100b19b3d6981c3d7c8505e4eb5fecc9a4c01766abd2776416fe0f
+PASS result/effect byte window SHA-256 58dbf01250553f893287c7993997ca2d910a094a3730bf2939dd74f0dfc989a5
+PASS threshold VA 0x4205A554 bytes 00 00 80 3f
+PASS fresh caller immediates compute indirect target 0x289A6D60
+PASS separate client candidate RVA/raw windows; neither runtime base is established
+UNRESOLVED provider identity and runtime binding at 0x289A6D60
+python3 -B evidence/wave6/history/verify_source_bytes.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS 14 raw-byte anchors; offsets=0x156de0,0x156e1a,0x156e20,0x157054,0x157062,0x157068,0x1570f3,0x1570fd,0x157102,0x157201,0x15723d,0x1588f0,0x158904,0x15892e
+PASS saved walks match fresh bytes: producer=28, resolver=11, consumer=47, constructor=40
+python3 -B evidence/wave5/bindings/verify_resolution.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS 12 pinned source hashes
+PASS 2 byte windows and fresh objdump instruction boundaries
+PASS guarded static address 0x2cf551dc -> [vtable+0x10]; ownership unresolved
+PASS distinct repeated calls; first-zero skip; signed WORD -> N+1C DWORD
+PASS 16 existing geometry alternatives retained; no handle binding established
+UNRESOLVED object/vtable ownership, method target/ABI, entity supplier/index, metadata offsets, guards, repeated-call identity/lifetime and reachability
+python3 -B evidence/wave5/charge/verify_full_reset.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 3 immutable source hashes, 11 zero stores/fresh objdump instructions (3 BYTE, 8 DWORD); entry and scheduling remain unresolved
+python3 -B evidence/wave5/esi/verify_preservation.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS W5-ESI: pinned sources/image; 383 continuous callee instructions; 5 caller instructions; 9 opaque calls; 1 local branch; 1 supported ret 4
+PROVEN LOCAL: save at 0x41c5bda5; slot [frame EBP-0xc]; restore 0x41c5c70f..0x41c5c716
+CONDITIONAL: normal-return traversal, EBP/ESI frame discipline and saved-slot integrity; nested effects and exception/non-local paths not proved
+python3 -B evidence/wave5/fallback24/verify_initializer.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS W5-FALLBACK24: image; 2 pinned sources; 4 hashed windows; 70 fresh instructions; 3 rel32 targets; one candidate immediate/offset composition
+STATIC IMMEDIATE: 0x3c888889 -> binary32 0.01666666753590107; not a runtime observation
+CONDITIONAL: nested-call ESI identity, enclosing-call ESI identity, field stability, publication, lifetime and per-read ordering are NOT proved.
+FRONTIER: R03/GAP04 remain open; no image execution/emulation or new literal inventory.
+python3 -B evidence/wave5/global9bc/verify_chain.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "task": "W5-GLOBAL9BC",
+  "hypotheses_checked": 1,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "fresh_decoded_instructions": 30,
+  "saved_caller_rows_rechecked": 3,
+  "overlap_cases": [
+    {
+      "Q": "0x425009b4",
+      "byte_index_in_W": 0,
+      "write_start": "0x425009bc",
+      "write_end_inclusive": "0x425009bf",
+      "nonzero_condition": "((W >> 0) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b3",
+      "byte_index_in_W": 1,
+      "write_start": "0x425009bb",
+      "write_end_inclusive": "0x425009be",
+      "nonzero_condition": "((W >> 8) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b2",
+      "byte_index_in_W": 2,
+      "write_start": "0x425009ba",
+      "write_end_inclusive": "0x425009bd",
+      "nonzero_condition": "((W >> 16) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b1",
+      "byte_index_in_W": 3,
+      "write_start": "0x425009b9",
+      "write_end_inclusive": "0x425009bc",
+      "nonzero_condition": "((W >> 24) & 0xff) != 0"
+    }
+  ],
+  "positive_sources_proved": 0,
+  "G425009BC": "open",
+  "scope": "Pinned source hashes, exact selected windows, fresh objdump decoding, saved caller rows, static fixed cells, operand/width and overlap arithmetic. Not execution, emulation, CFG completeness, loader semantics or runtime reachability.",
+  "original_loaded_executed_or_emulated": false
+}
+python3 -B evidence/wave5/guards/verify_guards.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+PASS: 6 source hashes, whole image SHA256, 14 windows, 99 instructions, 11 direct edges, 7 distinct unresolved boundaries
+Static local evidence only; no loading, execution, emulation, TLS resolution, callee contracts, original fault result or runtime equivalence.
+python3 -B evidence/wave5/indirect/verify_indirect.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+0x41c5e3b0: 55  push ebp
+0x41c5e3b1: 53  push ebx
+0x41c5e3b2: 57  push edi
+0x41c5e3b3: 56  push esi
+0x41c5e3b4: 81eca4090000  sub esp,0x9a4
+0x41c5e3ba: 8b9c24bc090000  mov ebx,dword ptr [esp+0x9bc]
+0x41c5e3c1: 8bbc24b8090000  mov edi,dword ptr [esp+0x9b8]
+0x41c5e3c8: a14c195242  mov eax,ds:0x4252194c
+0x41c5e3cd: 85c0  test eax,eax
+0x41c5e3cf: 7406  je 0x41c5e3d7
+0x41c5e3d1: ff8080030000  inc dword ptr [eax+0x380]
+0x41c5e3d7: ff3548195242  push dword ptr ds:0x42521948
+0x41c5e3dd: 6840490000  push 0x4940
+0x41c5e3e2: ff153c722642  call dword ptr ds:0x4226723c
+0x41c5e3e8: 83c408  add esp,0x8
+WINDOW caller_from_local_entry raw=0x9be3b0 SHA256=c66781c2266329ae9f887f80aa940816d23d0c97c94bd411319c0fce61aff2b6
+WINDOW slot_file_snapshot raw=0xfc723c SHA256=515bd2e0d1f2155a3816c9e6d065605a5e57720c9593ad841c0a00d15a6f801c
+0x41c683a0: e9eea03c00  jmp 0x42032493
+WINDOW one_thunk_instruction raw=0x9c83a0 SHA256=1451b5a4c2404b519d6669d49f2af97407e302e862b7cc4dedf2043d248bc7e0
+PASS: 4 source hashes, 3 windows, 16 fresh i386 instructions; snapshot 0x4226723c -> 0x41c683a0 -> JMP destination 0x42032493 under raw bias 0x412a0000.
+FRONTIER: no runtime binding, import identity, writer/order/lifetime, callee semantics or allocation/type claim; R03/GAP04 remain open.
+python3 -B evidence/wave5/lifecycle/verify_seed_path.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS W5-LIFECYCLE: 6 reference pins; 179 instructions / 739 bytes; 4 constants
+BOUNDARY: selected AL!=0 branch only; guards, time/provider owners, other seed branches and full lifecycle remain unresolved; no original execution
+python3 -B evidence/wave5/messages/verify_message_fields.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 8 fresh windows, 354 instruction anchors, 3 constants; conditional parser, not a packet/sender
+python3 -B evidence/wave5/point26/verify_point26.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "blocks_checked": 7,
+  "saved_rows_and_fresh_decodes": 36,
+  "unique_instruction_starts": 35,
+  "selected_hypotheses": 1,
+  "write_offsets_inclusive": [
+    "0x25",
+    "0x28"
+  ],
+  "local_alias_on_selected_fallthrough": "EAX retains DWORD[G424B004C] through ADD; that value was also stored to DWORD[ESI+0x3C]",
+  "selected_edge_condition": "unsigned EBX >= 0x41 bypasses JB and reaches PUSHF before ADD, if no fault",
+  "conditional_byte_formula": "new26 = (old26 + (old25 >= 0x96)) modulo 256",
+  "conditional_zero_to_nonzero": "old26 == 0 and old25 >= 0x96 implies new26 == 1 at this ADD",
+  "frontier": [
+    "No proof that loaded G424B004C pointee is the consumed Point.",
+    "No positive byte+25 source or actual pre-ADD byte+26 value established.",
+    "No full CFG/reachability or nonalias proof for earlier stores, PUSHF, or later calls; first-positive ordering is not established.",
+    "No same-object/lifetime/order bridge to the Point+26 -> T+96 propagation."
+  ],
+  "positive_point_sources_proved": 0,
+  "gap01_status": "open",
+  "original_dll_loaded_executed_or_emulated": false
+}
+python3 -B evidence/wave5/tf4/verify_tf4.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "blocks_checked": 5,
+  "fresh_decoded_instructions": 100,
+  "saved_rows_rechecked": 79,
+  "bounded_hypotheses_checked": 1,
+  "typed_positive_t_f4_source_proved": false,
+  "frontier": "U == selector T, prologue ECX / slot / lifetime / order preservation, and primary positive R+24 source",
+  "original_execution_or_emulation": false
+}
+python3 -B evidence/wave5/threshold/verify_threshold_frontier.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 5 sources, 5 spans, 110 freshly decoded instructions; static consistency only; GAP02 open
+python3 -B -m unittest discover -s evidence/wave5/esi -p 'test_*.py' -v
+test_additional_esi_mutation_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_additional_esi_mutation_is_rejected) ... ok
+test_changed_frame_extent_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_changed_frame_extent_is_rejected) ... ok
+test_missing_restore_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_missing_restore_is_rejected) ... ok
+test_supported_local_structure (test_verify_preservation.PreservationEvidenceTests.test_supported_local_structure) ... ok
+test_unestablished_branch_target_is_rejected (test_verify_preservation.PreservationEvidenceTests.test_unestablished_branch_target_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+make: Leaving directory '/tmp/hoplite/232-w6-review-code/continuation'

@@ -1,0 +1,880 @@
+{
+  "task_id": "NEXT-REVIEW-CALLBACK",
+  "resolution_of_report_commit": "5ca65dd0f7142da76fbe114487f3f894df762d56",
+  "prior_report_preserved": true,
+  "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+  "reviewed_comparison": "180616d1227235fc952ad07202cdd7529c0272e8..35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+  "status": "prior_blocking_finding_withdrawn",
+  "corrected_conclusion": "The alleged mismatch was caused by conflating sibling CFG paths. The fixed-SHA code at bounded_aggregation.cpp:90-95 and tests at test_bounded_aggregation.cpp:172-176 match the C0!=0, owner+8C kind 2/3, accumulator+6==0 paths decoded here. No code or test fix is warranted for this finding; this corrected finding is no longer a blocker.",
+  "reason_for_error": "The prior report incorrectly attributed the 0x4149E8AB..0x4149E8EE settings branch (a C0==0, accumulator+6!=0 sibling path) to entry 0x4149E8F0. It also incorrectly described a descending address range 0x4149E8F0..0x4149E8EE as one path.",
+  "fresh_source_pins": {
+    "image_path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_size": 55578624,
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "support_walk_path": "workspace/orchestration/v7/support_best_point_update_walk.json",
+    "support_walk_sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e",
+    "static_verifier_command": "python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "static_verifier_exit_code": 0,
+    "static_verifier_output": "{\n  \"passed\": true,\n  \"instructions\": 175,\n  \"image_sha256\": \"682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e\",\n  \"original_execution_loading_emulation\": false,\n  \"scope\": \"Local static windows, not runtime bindings or whole callback\"\n}",
+    "focused_fresh_decode": {
+      "method": "Read the pinned image bytes at VA 0x4149E7B1..0x4149E96C, write only a temporary raw slice, then invoke GNU objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x4149e7b1; assert branch targets and print selected decoded rows.",
+      "exit_code": 0,
+      "tool": "GNU objdump (GNU Binutils) 2.42",
+      "decoded_rows": [
+        {
+          "va": "0x4149e7b3",
+          "bytes": "80bec000000000",
+          "instruction": "cmp BYTE PTR [esi+0xc0],0x0"
+        },
+        {
+          "va": "0x4149e7ba",
+          "bytes": "0f84ab000000",
+          "instruction": "je 0x4149e86b"
+        },
+        {
+          "va": "0x4149e7c0",
+          "bytes": "8b9e8c000000",
+          "instruction": "mov ebx,DWORD PTR [esi+0x8c]"
+        },
+        {
+          "va": "0x4149e7d2",
+          "bytes": "80780600",
+          "instruction": "cmp BYTE PTR [eax+0x6],0x0"
+        },
+        {
+          "va": "0x4149e7d6",
+          "bytes": "0f8414010000",
+          "instruction": "je 0x4149e8f0"
+        },
+        {
+          "va": "0x4149e86b",
+          "bytes": "80780600",
+          "instruction": "cmp BYTE PTR [eax+0x6],0x0"
+        },
+        {
+          "va": "0x4149e86f",
+          "bytes": "0f84f7000000",
+          "instruction": "je 0x4149e96c"
+        },
+        {
+          "va": "0x4149e875",
+          "bytes": "890c24",
+          "instruction": "mov DWORD PTR [esp],ecx"
+        },
+        {
+          "va": "0x4149e8ab",
+          "bytes": "f6c308",
+          "instruction": "test bl,0x8"
+        },
+        {
+          "va": "0x4149e8ae",
+          "bytes": "753b",
+          "instruction": "jne 0x4149e8eb"
+        },
+        {
+          "va": "0x4149e8eb",
+          "bytes": "8b0c24",
+          "instruction": "mov ecx,DWORD PTR [esp]"
+        },
+        {
+          "va": "0x4149e8ee",
+          "bytes": "eb7c",
+          "instruction": "jmp 0x4149e96c"
+        },
+        {
+          "va": "0x4149e8f0",
+          "bytes": "84c9",
+          "instruction": "test cl,cl"
+        },
+        {
+          "va": "0x4149e8f2",
+          "bytes": "744d",
+          "instruction": "je 0x4149e941"
+        },
+        {
+          "va": "0x4149e8f4",
+          "bytes": "8b0d9c634f42",
+          "instruction": "mov ecx,DWORD PTR ds:0x424f639c"
+        },
+        {
+          "va": "0x4149e906",
+          "bytes": "83fb10",
+          "instruction": "cmp ebx,0x10"
+        },
+        {
+          "va": "0x4149e90f",
+          "bytes": "69dbd8050000",
+          "instruction": "imul ebx,ebx,0x5d8"
+        },
+        {
+          "va": "0x4149e927",
+          "bytes": "83ff01",
+          "instruction": "cmp edi,0x1"
+        },
+        {
+          "va": "0x4149e92a",
+          "bytes": "7519",
+          "instruction": "jne 0x4149e945"
+        },
+        {
+          "va": "0x4149e92c",
+          "bytes": "89d9",
+          "instruction": "mov ecx,ebx"
+        },
+        {
+          "va": "0x4149e92e",
+          "bytes": "83e108",
+          "instruction": "and ecx,0x8"
+        },
+        {
+          "va": "0x4149e931",
+          "bytes": "7412",
+          "instruction": "je 0x4149e945"
+        },
+        {
+          "va": "0x4149e933",
+          "bytes": "8b8ea0000000",
+          "instruction": "mov ecx,DWORD PTR [esi+0xa0]"
+        },
+        {
+          "va": "0x4149e939",
+          "bytes": "2b4a30",
+          "instruction": "sub ecx,DWORD PTR [edx+0x30]"
+        },
+        {
+          "va": "0x4149e93c",
+          "bytes": "83f901",
+          "instruction": "cmp ecx,0x1"
+        },
+        {
+          "va": "0x4149e93f",
+          "bytes": "7e04",
+          "instruction": "jle 0x4149e945"
+        },
+        {
+          "va": "0x4149e941",
+          "bytes": "31c9",
+          "instruction": "xor ecx,ecx"
+        },
+        {
+          "va": "0x4149e943",
+          "bytes": "eb27",
+          "instruction": "jmp 0x4149e96c"
+        },
+        {
+          "va": "0x4149e945",
+          "bytes": "b101",
+          "instruction": "mov cl,0x1"
+        },
+        {
+          "va": "0x4149e947",
+          "bytes": "83ff01",
+          "instruction": "cmp edi,0x1"
+        },
+        {
+          "va": "0x4149e94c",
+          "bytes": "83e304",
+          "instruction": "and ebx,0x4"
+        },
+        {
+          "va": "0x4149e94f",
+          "bytes": "741b",
+          "instruction": "je 0x4149e96c"
+        },
+        {
+          "va": "0x4149e951",
+          "bytes": "807a2500",
+          "instruction": "cmp BYTE PTR [edx+0x25],0x0"
+        },
+        {
+          "va": "0x4149e955",
+          "bytes": "7415",
+          "instruction": "je 0x4149e96c"
+        },
+        {
+          "va": "0x4149e957",
+          "bytes": "80be3801000000",
+          "instruction": "cmp BYTE PTR [esi+0x138],0x0"
+        },
+        {
+          "va": "0x4149e95e",
+          "bytes": "0f95c1",
+          "instruction": "setne cl"
+        },
+        {
+          "va": "0x4149e961",
+          "bytes": "837a2803",
+          "instruction": "cmp DWORD PTR [edx+0x28],0x3"
+        },
+        {
+          "va": "0x4149e965",
+          "bytes": "0f9cc3",
+          "instruction": "setl bl"
+        },
+        {
+          "va": "0x4149e968",
+          "bytes": "20cb",
+          "instruction": "and bl,cl"
+        },
+        {
+          "va": "0x4149e96a",
+          "bytes": "89d9",
+          "instruction": "mov ecx,ebx"
+        }
+      ],
+      "asserted_edges": [
+        "0x4149E7BA -> 0x4149E86B",
+        "0x4149E7D6 -> 0x4149E8F0",
+        "0x4149E8F2 -> 0x4149E941",
+        "0x4149E8AE -> 0x4149E8EB",
+        "0x4149E93F -> 0x4149E945"
+      ]
+    }
+  },
+  "cfg_trace": [
+    {
+      "at": "0x4149E7B3",
+      "edge": "C0==0 takes the JE at 0x4149E7BA to 0x4149E86B; C0!=0 falls through to 0x4149E7C0."
+    },
+    {
+      "at": "0x4149E7D2",
+      "edge": "On C0!=0 and owner+0x8C masked kind 2/3, accumulator+6==0 takes JE at 0x4149E7D6 to 0x4149E8F0; accumulator+6!=0 falls through to settings load at 0x4149E7DC."
+    },
+    {
+      "at": "0x4149E8F0",
+      "edge": "TEST CL,CL; zero takes JE at 0x4149E8F2 directly to 0x4149E941. Nonzero falls through to 0x4149E8F4, then settings lookup. No edge here or later in this path targets 0x4149E8AB..0x4149E8EE."
+    },
+    {
+      "at": "0x4149E8AB",
+      "edge": "This is reached from the separate C0==0 path: 0x4149E7BA -> 0x4149E86B, where acc6==0 branches straight to 0x4149E96C and acc6!=0 falls through to settings lookup at 0x4149E875. It is not reached from 0x4149E8F0."
+    },
+    {
+      "at": "0x4149E927..0x4149E96A",
+      "edge": "For nonzero CL path from 0x4149E8F0, settings flow tests kind and flags. Flag-8 path subtracts DWORDs at 0x4149E939 then signed JLE at 0x4149E93F; greater-than-one falls to XOR CL=0 at 0x4149E941 and jumps to score tail. Other cases set CL=1 at 0x4149E945; kind/flag4/point+25 gates either retain 1 or compute (owner+0x138 != 0 && signed point+0x28 < 3) into CL. Paths join at 0x4149E96C score tail."
+    }
+  ],
+  "model_correspondence": {
+    "code_path": "continuation/src/bounded_aggregation.cpp:70-104",
+    "test_path": "continuation/tests/test_bounded_aggregation.cpp:151-198",
+    "mapping": [
+      "E7BA routes C0==0 to the earlier branch; C0!=0 continues through owner+8C and E7D6.",
+      "For C0!=0 / acc6==0 / acc7==0, the model returns score CL=0, matching E8F0 TEST/JZ E941 XOR.",
+      "For C0!=0 / acc6==0 / acc7!=0, optional settings stop at observation boundaries; for observed valid settings, difference_gate returns CL=0 only for kind 1, flag 8 and signed wrapped SUB >1; otherwise flag4/point25 selects the boolean owner138 && signed point28<3, or CL remains 1. This matches E8F4..E96A.",
+      "The focused tests exercise nonzero C0 with acc6=0, varying kind/flags/point25/owner138/signed point28 and incoming CL 0x80; the separate wrapped-difference cases at lines 184-198 cover wrapped signed comparison."
+    ],
+    "source_sha256": {
+      "continuation/src/bounded_aggregation.cpp": "1c212b6e2dd358d24354d134f97dfaa072806488e1ffbe21580ba645f2821ce6",
+      "continuation/tests/test_bounded_aggregation.cpp": "5ac3c490b25d2967915944bdb7b3af4991462440f4aa55ffbcf643058692e145"
+    },
+    "code_unchanged_from_reviewed_sha": true
+  },
+  "disposition": "No remaining blocker from the reviewed callback branch after this correction. This only resolves the prior finding on fixed SHA 35b8ada; it is not a new integrated-SHA review or full-project acceptance.",
+  "limits": [
+    "Settings runtime provider/lifetime bindings remain unresolved.",
+    "Unknown-index handler semantics remain unresolved.",
+    "Full callback/ranking and full GAP are not established.",
+    "Original language and ABI are not established; no original binary was loaded, executed, or emulated.",
+    "No integrated-SHA review was performed."
+  ],
+  "new_resolution_report": "continuation/evidence/wave6/review-callback/resolution.json",
+  "fresh_edge_review": {
+    "decoder_command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x4149e7b1 <temporary image slice>",
+    "slice_va_start": "0x4149E7B1",
+    "slice_va_end_exclusive": "0x4149E96C",
+    "decoder_exit_code": 0,
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "decoded_rows": [
+      {
+        "va": "0x4149e7b1",
+        "bytes": "8b30",
+        "instruction": "mov    esi,DWORD PTR [eax]"
+      },
+      {
+        "va": "0x4149e7b3",
+        "bytes": "80bec000000000",
+        "instruction": "cmp    BYTE PTR [esi+0xc0],0x0"
+      },
+      {
+        "va": "0x4149e7ba",
+        "bytes": "0f84ab000000",
+        "instruction": "je     0x4149e86b"
+      },
+      {
+        "va": "0x4149e7c0",
+        "bytes": "8b9e8c000000",
+        "instruction": "mov    ebx,DWORD PTR [esi+0x8c]"
+      },
+      {
+        "va": "0x4149e7c6",
+        "bytes": "83e3fe",
+        "instruction": "and    ebx,0xfffffffe"
+      },
+      {
+        "va": "0x4149e7c9",
+        "bytes": "83fb02",
+        "instruction": "cmp    ebx,0x2"
+      },
+      {
+        "va": "0x4149e7cc",
+        "bytes": "0f859a010000",
+        "instruction": "jne    0x4149e96c"
+      },
+      {
+        "va": "0x4149e7d2",
+        "bytes": "80780600",
+        "instruction": "cmp    BYTE PTR [eax+0x6],0x0"
+      },
+      {
+        "va": "0x4149e7d6",
+        "bytes": "0f8414010000",
+        "instruction": "je     0x4149e8f0"
+      },
+      {
+        "va": "0x4149e7dc",
+        "bytes": "890c24",
+        "instruction": "mov    DWORD PTR [esp],ecx"
+      },
+      {
+        "va": "0x4149e7df",
+        "bytes": "8b1d9c634f42",
+        "instruction": "mov    ebx,DWORD PTR ds:0x424f639c"
+      },
+      {
+        "va": "0x4149e7e5",
+        "bytes": "8bab2c010100",
+        "instruction": "mov    ebp,DWORD PTR [ebx+0x1012c]"
+      },
+      {
+        "va": "0x4149e7eb",
+        "bytes": "8badcc020000",
+        "instruction": "mov    ebp,DWORD PTR [ebp+0x2cc]"
+      },
+      {
+        "va": "0x4149e7f1",
+        "bytes": "83fd10",
+        "instruction": "cmp    ebp,0x10"
+      },
+      {
+        "va": "0x4149e7f4",
+        "bytes": "0f8333040000",
+        "instruction": "jae    0x4149ec2d"
+      },
+      {
+        "va": "0x4149e7fa",
+        "bytes": "69edd8050000",
+        "instruction": "imul   ebp,ebp,0x5d8"
+      },
+      {
+        "va": "0x4149e800",
+        "bytes": "8d0c2b",
+        "instruction": "lea    ecx,[ebx+ebp*1]"
+      },
+      {
+        "va": "0x4149e803",
+        "bytes": "0fb69c2b2c040100",
+        "instruction": "movzx  ebx,BYTE PTR [ebx+ebp*1+0x1042c]"
+      },
+      {
+        "va": "0x4149e80b",
+        "bytes": "8b9c9924040100",
+        "instruction": "mov    ebx,DWORD PTR [ecx+ebx*4+0x10424]"
+      },
+      {
+        "va": "0x4149e812",
+        "bytes": "83ff01",
+        "instruction": "cmp    edi,0x1"
+      },
+      {
+        "va": "0x4149e815",
+        "bytes": "7519",
+        "instruction": "jne    0x4149e830"
+      },
+      {
+        "va": "0x4149e817",
+        "bytes": "89d9",
+        "instruction": "mov    ecx,ebx"
+      },
+      {
+        "va": "0x4149e819",
+        "bytes": "83e108",
+        "instruction": "and    ecx,0x8"
+      },
+      {
+        "va": "0x4149e81c",
+        "bytes": "7412",
+        "instruction": "je     0x4149e830"
+      },
+      {
+        "va": "0x4149e81e",
+        "bytes": "8b8ea0000000",
+        "instruction": "mov    ecx,DWORD PTR [esi+0xa0]"
+      },
+      {
+        "va": "0x4149e824",
+        "bytes": "2b4a30",
+        "instruction": "sub    ecx,DWORD PTR [edx+0x30]"
+      },
+      {
+        "va": "0x4149e827",
+        "bytes": "83f901",
+        "instruction": "cmp    ecx,0x1"
+      },
+      {
+        "va": "0x4149e82a",
+        "bytes": "0f8fbb000000",
+        "instruction": "jg     0x4149e8eb"
+      },
+      {
+        "va": "0x4149e830",
+        "bytes": "83ff01",
+        "instruction": "cmp    edi,0x1"
+      },
+      {
+        "va": "0x4149e833",
+        "bytes": "8b0c24",
+        "instruction": "mov    ecx,DWORD PTR [esp]"
+      },
+      {
+        "va": "0x4149e836",
+        "bytes": "0f85ec020000",
+        "instruction": "jne    0x4149eb28"
+      },
+      {
+        "va": "0x4149e83c",
+        "bytes": "83e304",
+        "instruction": "and    ebx,0x4"
+      },
+      {
+        "va": "0x4149e83f",
+        "bytes": "0f84e3020000",
+        "instruction": "je     0x4149eb28"
+      },
+      {
+        "va": "0x4149e845",
+        "bytes": "807a2500",
+        "instruction": "cmp    BYTE PTR [edx+0x25],0x0"
+      },
+      {
+        "va": "0x4149e849",
+        "bytes": "0f84d9020000",
+        "instruction": "je     0x4149eb28"
+      },
+      {
+        "va": "0x4149e84f",
+        "bytes": "80be3801000000",
+        "instruction": "cmp    BYTE PTR [esi+0x138],0x0"
+      },
+      {
+        "va": "0x4149e856",
+        "bytes": "0f8410010000",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "va": "0x4149e85c",
+        "bytes": "837a2802",
+        "instruction": "cmp    DWORD PTR [edx+0x28],0x2"
+      },
+      {
+        "va": "0x4149e860",
+        "bytes": "0f8ec2020000",
+        "instruction": "jle    0x4149eb28"
+      },
+      {
+        "va": "0x4149e866",
+        "bytes": "e901010000",
+        "instruction": "jmp    0x4149e96c"
+      },
+      {
+        "va": "0x4149e86b",
+        "bytes": "80780600",
+        "instruction": "cmp    BYTE PTR [eax+0x6],0x0"
+      },
+      {
+        "va": "0x4149e86f",
+        "bytes": "0f84f7000000",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "va": "0x4149e875",
+        "bytes": "890c24",
+        "instruction": "mov    DWORD PTR [esp],ecx"
+      },
+      {
+        "va": "0x4149e878",
+        "bytes": "8b1d9c634f42",
+        "instruction": "mov    ebx,DWORD PTR ds:0x424f639c"
+      },
+      {
+        "va": "0x4149e87e",
+        "bytes": "8b8b2c010100",
+        "instruction": "mov    ecx,DWORD PTR [ebx+0x1012c]"
+      },
+      {
+        "va": "0x4149e884",
+        "bytes": "8ba9cc020000",
+        "instruction": "mov    ebp,DWORD PTR [ecx+0x2cc]"
+      },
+      {
+        "va": "0x4149e88a",
+        "bytes": "83fd10",
+        "instruction": "cmp    ebp,0x10"
+      },
+      {
+        "va": "0x4149e88d",
+        "bytes": "0f839a030000",
+        "instruction": "jae    0x4149ec2d"
+      },
+      {
+        "va": "0x4149e893",
+        "bytes": "69cdd8050000",
+        "instruction": "imul   ecx,ebp,0x5d8"
+      },
+      {
+        "va": "0x4149e899",
+        "bytes": "8d2c0b",
+        "instruction": "lea    ebp,[ebx+ecx*1]"
+      },
+      {
+        "va": "0x4149e89c",
+        "bytes": "0fb68c0b2c040100",
+        "instruction": "movzx  ecx,BYTE PTR [ebx+ecx*1+0x1042c]"
+      },
+      {
+        "va": "0x4149e8a4",
+        "bytes": "8b9c8d24040100",
+        "instruction": "mov    ebx,DWORD PTR [ebp+ecx*4+0x10424]"
+      },
+      {
+        "va": "0x4149e8ab",
+        "bytes": "f6c308",
+        "instruction": "test   bl,0x8"
+      },
+      {
+        "va": "0x4149e8ae",
+        "bytes": "753b",
+        "instruction": "jne    0x4149e8eb"
+      },
+      {
+        "va": "0x4149e8b0",
+        "bytes": "83ff01",
+        "instruction": "cmp    edi,0x1"
+      },
+      {
+        "va": "0x4149e8b3",
+        "bytes": "8b0c24",
+        "instruction": "mov    ecx,DWORD PTR [esp]"
+      },
+      {
+        "va": "0x4149e8b6",
+        "bytes": "0f856c020000",
+        "instruction": "jne    0x4149eb28"
+      },
+      {
+        "va": "0x4149e8bc",
+        "bytes": "83e304",
+        "instruction": "and    ebx,0x4"
+      },
+      {
+        "va": "0x4149e8bf",
+        "bytes": "0f8463020000",
+        "instruction": "je     0x4149eb28"
+      },
+      {
+        "va": "0x4149e8c5",
+        "bytes": "807a2500",
+        "instruction": "cmp    BYTE PTR [edx+0x25],0x0"
+      },
+      {
+        "va": "0x4149e8c9",
+        "bytes": "0f8459020000",
+        "instruction": "je     0x4149eb28"
+      },
+      {
+        "va": "0x4149e8cf",
+        "bytes": "80be3801000000",
+        "instruction": "cmp    BYTE PTR [esi+0x138],0x0"
+      },
+      {
+        "va": "0x4149e8d6",
+        "bytes": "0f8490000000",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "va": "0x4149e8dc",
+        "bytes": "837a2803",
+        "instruction": "cmp    DWORD PTR [edx+0x28],0x3"
+      },
+      {
+        "va": "0x4149e8e0",
+        "bytes": "0f8c42020000",
+        "instruction": "jl     0x4149eb28"
+      },
+      {
+        "va": "0x4149e8e6",
+        "bytes": "e981000000",
+        "instruction": "jmp    0x4149e96c"
+      },
+      {
+        "va": "0x4149e8eb",
+        "bytes": "8b0c24",
+        "instruction": "mov    ecx,DWORD PTR [esp]"
+      },
+      {
+        "va": "0x4149e8ee",
+        "bytes": "eb7c",
+        "instruction": "jmp    0x4149e96c"
+      },
+      {
+        "va": "0x4149e8f0",
+        "bytes": "84c9",
+        "instruction": "test   cl,cl"
+      },
+      {
+        "va": "0x4149e8f2",
+        "bytes": "744d",
+        "instruction": "je     0x4149e941"
+      },
+      {
+        "va": "0x4149e8f4",
+        "bytes": "8b0d9c634f42",
+        "instruction": "mov    ecx,DWORD PTR ds:0x424f639c"
+      },
+      {
+        "va": "0x4149e8fa",
+        "bytes": "8b992c010100",
+        "instruction": "mov    ebx,DWORD PTR [ecx+0x1012c]"
+      },
+      {
+        "va": "0x4149e900",
+        "bytes": "8b9bcc020000",
+        "instruction": "mov    ebx,DWORD PTR [ebx+0x2cc]"
+      },
+      {
+        "va": "0x4149e906",
+        "bytes": "83fb10",
+        "instruction": "cmp    ebx,0x10"
+      },
+      {
+        "va": "0x4149e909",
+        "bytes": "0f831e030000",
+        "instruction": "jae    0x4149ec2d"
+      },
+      {
+        "va": "0x4149e90f",
+        "bytes": "69dbd8050000",
+        "instruction": "imul   ebx,ebx,0x5d8"
+      },
+      {
+        "va": "0x4149e915",
+        "bytes": "8d2c19",
+        "instruction": "lea    ebp,[ecx+ebx*1]"
+      },
+      {
+        "va": "0x4149e918",
+        "bytes": "0fb68c192c040100",
+        "instruction": "movzx  ecx,BYTE PTR [ecx+ebx*1+0x1042c]"
+      },
+      {
+        "va": "0x4149e920",
+        "bytes": "8b9c8d24040100",
+        "instruction": "mov    ebx,DWORD PTR [ebp+ecx*4+0x10424]"
+      },
+      {
+        "va": "0x4149e927",
+        "bytes": "83ff01",
+        "instruction": "cmp    edi,0x1"
+      },
+      {
+        "va": "0x4149e92a",
+        "bytes": "7519",
+        "instruction": "jne    0x4149e945"
+      },
+      {
+        "va": "0x4149e92c",
+        "bytes": "89d9",
+        "instruction": "mov    ecx,ebx"
+      },
+      {
+        "va": "0x4149e92e",
+        "bytes": "83e108",
+        "instruction": "and    ecx,0x8"
+      },
+      {
+        "va": "0x4149e931",
+        "bytes": "7412",
+        "instruction": "je     0x4149e945"
+      },
+      {
+        "va": "0x4149e933",
+        "bytes": "8b8ea0000000",
+        "instruction": "mov    ecx,DWORD PTR [esi+0xa0]"
+      },
+      {
+        "va": "0x4149e939",
+        "bytes": "2b4a30",
+        "instruction": "sub    ecx,DWORD PTR [edx+0x30]"
+      },
+      {
+        "va": "0x4149e93c",
+        "bytes": "83f901",
+        "instruction": "cmp    ecx,0x1"
+      },
+      {
+        "va": "0x4149e93f",
+        "bytes": "7e04",
+        "instruction": "jle    0x4149e945"
+      },
+      {
+        "va": "0x4149e941",
+        "bytes": "31c9",
+        "instruction": "xor    ecx,ecx"
+      },
+      {
+        "va": "0x4149e943",
+        "bytes": "eb27",
+        "instruction": "jmp    0x4149e96c"
+      },
+      {
+        "va": "0x4149e945",
+        "bytes": "b101",
+        "instruction": "mov    cl,0x1"
+      },
+      {
+        "va": "0x4149e947",
+        "bytes": "83ff01",
+        "instruction": "cmp    edi,0x1"
+      },
+      {
+        "va": "0x4149e94a",
+        "bytes": "7520",
+        "instruction": "jne    0x4149e96c"
+      },
+      {
+        "va": "0x4149e94c",
+        "bytes": "83e304",
+        "instruction": "and    ebx,0x4"
+      },
+      {
+        "va": "0x4149e94f",
+        "bytes": "741b",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "va": "0x4149e951",
+        "bytes": "807a2500",
+        "instruction": "cmp    BYTE PTR [edx+0x25],0x0"
+      },
+      {
+        "va": "0x4149e955",
+        "bytes": "7415",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "va": "0x4149e957",
+        "bytes": "80be3801000000",
+        "instruction": "cmp    BYTE PTR [esi+0x138],0x0"
+      },
+      {
+        "va": "0x4149e95e",
+        "bytes": "0f95c1",
+        "instruction": "setne  cl"
+      },
+      {
+        "va": "0x4149e961",
+        "bytes": "837a2803",
+        "instruction": "cmp    DWORD PTR [edx+0x28],0x3"
+      },
+      {
+        "va": "0x4149e965",
+        "bytes": "0f9cc3",
+        "instruction": "setl   bl"
+      },
+      {
+        "va": "0x4149e968",
+        "bytes": "20cb",
+        "instruction": "and    bl,cl"
+      },
+      {
+        "va": "0x4149e96a",
+        "bytes": "89d9",
+        "instruction": "mov    ecx,ebx"
+      }
+    ],
+    "branch_targets_from_E8F0_through_E96A": [
+      {
+        "from": "0x4149e8f2",
+        "to": "0x4149e941",
+        "instruction": "je     0x4149e941"
+      },
+      {
+        "from": "0x4149e909",
+        "to": "0x4149ec2d",
+        "instruction": "jae    0x4149ec2d"
+      },
+      {
+        "from": "0x4149e92a",
+        "to": "0x4149e945",
+        "instruction": "jne    0x4149e945"
+      },
+      {
+        "from": "0x4149e931",
+        "to": "0x4149e945",
+        "instruction": "je     0x4149e945"
+      },
+      {
+        "from": "0x4149e93f",
+        "to": "0x4149e945",
+        "instruction": "jle    0x4149e945"
+      },
+      {
+        "from": "0x4149e943",
+        "to": "0x4149e96c",
+        "instruction": "jmp    0x4149e96c"
+      },
+      {
+        "from": "0x4149e94a",
+        "to": "0x4149e96c",
+        "instruction": "jne    0x4149e96c"
+      },
+      {
+        "from": "0x4149e94f",
+        "to": "0x4149e96c",
+        "instruction": "je     0x4149e96c"
+      },
+      {
+        "from": "0x4149e955",
+        "to": "0x4149e96c",
+        "instruction": "je     0x4149e96c"
+      }
+    ],
+    "asserted_fallthrough_chain": [
+      "0x4149E8F4->0x4149E8FA",
+      "0x4149E8FA->0x4149E900",
+      "0x4149E900->0x4149E906",
+      "0x4149E906->0x4149E909",
+      "0x4149E909->0x4149E90F",
+      "0x4149E90F->0x4149E915",
+      "0x4149E915->0x4149E918",
+      "0x4149E918->0x4149E920",
+      "0x4149E920->0x4149E927"
+    ],
+    "assertions": [
+      "E7BA conditional target is E86B (C0==0); nonzero C0 falls through into E7C0.",
+      "E7D6 targets E8F0 only from the C0!=0/owner8C-kind2or3 path when accumulator+6==0.",
+      "At E8F2, CL==0 branches to E941; CL!=0 falls through to E8F4 and settings loads.",
+      "No direct branch target in the E8F0..E96A region is in E8AB..E8EE; its only entry in this reviewed region is E7BA->E86B and E86F skips to E96C when acc6==0.",
+      "For E8F0 nonzero-CL path, flag-8 wrapped SUB signed-greater-than-one falls through E93F to E941 (clear ECX/CL) then jumps E96C; other cases enter E945 with CL=1 and optional signed boolean at E957..E96A."
+    ],
+    "exclusive_end_note": "0x4149E96C is the downstream score-tail destination and is intentionally the exclusive end of this decoded prefix; the full-window static verifier independently pins and decodes through this address."
+  },
+  "discarded_diagnostic_attempts": [
+    {
+      "outcome": "exit 1; discarded, not source evidence",
+      "reason": "An initial focused decoder slice ended exclusively at 0x4149E96C but the temporary assertion incorrectly required an instruction row at that exclusive endpoint. The edge target itself remains E96C; the corrected decoder checks the branch target without requiring that row in the prefix slice."
+    },
+    {
+      "outcome": "exit 0 from wrapper; discarded, not source evidence",
+      "reason": "A follow-up exploratory slice extended only three bytes past E96C, so objdump printed an incomplete opcode there. It was discarded; the final recorded slice ends exactly at E96C and independently asserts the branch target."
+    }
+  ]
+}

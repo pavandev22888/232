@@ -1,0 +1,19 @@
+## Original bounded implementation
+
+Base: `180616d1227235fc952ad07202cdd7529c0272e8`.
+`make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/w6-history-build/regression` exited 0 on commit `2a3e717d5585ae7eb2ad3cfabafeaa191b2c013f`. The saved `full-check.log` includes `test_history_slice` via the Makefile wildcard in native and sanitizer runs (19 assertions each). That full check predates the little-endian follow-up below and was not repeated.
+
+## Little-endian correction follow-up
+
+Follow-up base: `2a3e717d5585ae7eb2ad3cfabafeaa191b2c013f`.
+All commands ran in `/tmp/hoplite/232-next-history`; handoff remained read-only.
+
+- `python3 continuation/evidence/wave6/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10` — exit 0; source DLL/resource, `nl.bin` hash, 14 raw anchors, and saved walks rechecked (`byte-check.log`).
+- `g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -I continuation/include continuation/src/history_slice.cpp continuation/tests/test_history_slice.cpp -o /tmp/w6-history-build/test_history_slice` — exit 0.
+- `/tmp/w6-history-build/test_history_slice` — exit 0; 22 assertions, including explicit bytes `BE BA FE CA` for local observation `0xCAFEBABE` at destination `+0x3C` (`native.log`).
+- `g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -fsanitize=address,undefined -fno-omit-frame-pointer -g -I continuation/include continuation/src/history_slice.cpp continuation/tests/test_history_slice.cpp -o /tmp/w6-history-build/test_history_slice_san` — exit 0.
+- `ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/w6-history-build/test_history_slice_san` — exit 0; 22 assertions (`sanitizer.log`).
+
+The local input is only a numeric observation of the DWORD read from `[ebp-0x38]` at `0x413F71A1`, after opaque call `0x41B70930`; no original stack identity or alias is inferred. Its destination encoding is explicit little-endian. Raw source-record copies continue to preserve bytes and store order through the existing word temporary. The full check was not rerun for this targeted serialization correction.
+
+W6-REVIEW-EVIDENCE F1 correction: local DWORD read is 0x413F71A1 (8b 4d c8), followed by store 0x413F71A4 (89 4b 3c). 0x413F7102 instead loads the source pointer from [ebp-0x28] (8b 55 d8). This fixes documentation only; code/tests and earlier command results are unchanged.

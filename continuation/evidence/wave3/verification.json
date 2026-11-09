@@ -1,0 +1,209 @@
+{
+  "recorded_at": "2026-11-09T11:07:43.441338+00:00",
+  "baseline_commit": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+  "tested_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+  "worktree": "/tmp/hoplite/workspace",
+  "command": "make -C continuation check",
+  "exit_code": 0,
+  "native_tests": {
+    "passed": true,
+    "programs": 7,
+    "assertions_per_program": {
+      "actor_scalar_pipeline": 119,
+      "charge_state": 3274,
+      "marker_pipeline": 13255,
+      "position_lifecycle": 208,
+      "position_pipeline": 392,
+      "position_records": 2601,
+      "resolved_scalar_helper": 53
+    },
+    "total_assertions": 19902
+  },
+  "asan_ubsan": {
+    "passed": true,
+    "programs": 7,
+    "total_assertions": 19902,
+    "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1"
+  },
+  "python_unit_tests": {
+    "passed": true,
+    "count": 8
+  },
+  "new_static_evidence": {
+    "marker": {
+      "passed": true,
+      "reused_helper_instructions": 111,
+      "producer_anchors": 19,
+      "fresh_producer_and_seed_instructions": 25
+    },
+    "actor": {
+      "passed": true,
+      "reuses": "wave2/gap04/scalar_helper.json and verify_scalar_helper.py"
+    },
+    "source": {
+      "passed": true,
+      "pinned_source_files": 8,
+      "windows": 12,
+      "fresh_instructions": 257,
+      "bytes": 1039
+    }
+  },
+  "h01": {
+    "byte_assertions_replayed": 162,
+    "other_entries": 47,
+    "freshly_rechecked": 33,
+    "model_only": 2,
+    "historical_only": 12,
+    "full_original_protocol_repeated": false,
+    "overlapping_checks_are_not_independent_additive_proofs": true
+  },
+  "coordinator_changes": [
+    "Added both new static verifiers to make evidence; resolves HANDOFF to an absolute path for these recipes.",
+    "Made existing ASan halt-on-error default explicit."
+  ],
+  "integration_ledger": [
+    {
+      "task": "W3-M",
+      "worktree": "/tmp/hoplite/worktrees/sikyon-w3-marker",
+      "branch": "hoplite/sikyon-46eee495--w3-marker",
+      "agent_commit": "665322e9bb7176b9fdf36d046bc68baebd18dcdd",
+      "integrated_commit": "3120d4187d80a9ee6ebf253572e3ce9694ef4a67",
+      "files_unchanged_by_integration": true,
+      "files": [
+        "continuation/evidence/wave3/marker/.gitignore",
+        "continuation/evidence/wave3/marker/composition.json",
+        "continuation/evidence/wave3/marker/verify_composition.py",
+        "continuation/include/rage/marker_pipeline.hpp",
+        "continuation/src/marker_pipeline.cpp",
+        "continuation/tests/test_marker_pipeline.cpp"
+      ]
+    },
+    {
+      "task": "W3-A",
+      "worktree": "/tmp/hoplite/worktrees/sikyon-w3-actor",
+      "branch": "hoplite/sikyon-46eee495--w3-actor",
+      "agent_commit": "21f9f4c16b31b51b43e69152fe366de92caff5ac",
+      "integrated_commit": "d22bf735267c971854ca54b17c8fa9519eaf75b1",
+      "files_unchanged_by_integration": true,
+      "files": [
+        "continuation/evidence/wave3/actor/.gitignore",
+        "continuation/evidence/wave3/actor/provenance.json",
+        "continuation/include/rage/actor_scalar_pipeline.hpp",
+        "continuation/src/actor_scalar_pipeline.cpp",
+        "continuation/tests/test_actor_scalar_pipeline.cpp"
+      ]
+    },
+    {
+      "task": "W3-S",
+      "worktree": "/tmp/hoplite/worktrees/sikyon-w3-source",
+      "branch": "hoplite/sikyon-46eee495--w3-source",
+      "agent_commit": "43737f7ac7d6fcc02d5cd097499bbf1f69be7254",
+      "integrated_commit": "2d2f87c7d28def16161b1f84805e8c5c65c21139",
+      "files_unchanged_by_integration": true,
+      "files": [
+        "continuation/evidence/wave3/source/README.md",
+        "continuation/evidence/wave3/source/ledger.json",
+        "continuation/evidence/wave3/source/verify_source.py"
+      ]
+    },
+    {
+      "task": "W3-V",
+      "worktree": "/tmp/hoplite/worktrees/sikyon-w3-repro",
+      "branch": "hoplite/sikyon-46eee495--w3-repro",
+      "agent_commit": "c00d32c6c6d0c112f469313899cb97281774305c",
+      "integrated_commit": "dc8f5fa0a424bd13a6552d3b1801dddc441f075d",
+      "files_unchanged_by_integration": true,
+      "files": [
+        "continuation/evidence/wave3/repro/README.md",
+        "continuation/evidence/wave3/repro/acceptance.json",
+        "continuation/evidence/wave3/repro/inputs.sha256"
+      ]
+    }
+  ],
+  "final_bundle_integrity": {
+    "command": [
+      "python3",
+      "-B",
+      "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+      "--root",
+      "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+    ],
+    "started_at": "2026-11-09T11:07:51.438885+00:00",
+    "exit_code": 0,
+    "log_path": "runs/wave3/bundle-integrity.log",
+    "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f",
+    "result": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    }
+  },
+  "final_input_and_work_integrity": {
+    "command": [
+      "python3",
+      "-B",
+      "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+      "--root",
+      "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+    ],
+    "started_at": "2026-11-09T11:07:52.296436+00:00",
+    "exit_code": 0,
+    "log_path": "runs/wave3/input-integrity.log",
+    "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac",
+    "result": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    }
+  },
+  "wave4_review": {
+    "status": "accepted_bounded_scope",
+    "tested_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+    "reports": [
+      "evidence/wave4/proof/acceptance.json",
+      "evidence/wave4/tests/acceptance.json"
+    ],
+    "source_api": "accepted_no_blocker",
+    "tests_repro": "accepted_after_review_scope_clarification",
+    "initial_test_attempt_exit_code": 2,
+    "corrected_test_attempt_exit_code": 0,
+    "original_failure_preserved": true,
+    "production_changes_after_review": false,
+    "external_independent_audit": false
+  },
+  "full_tasks_closed": [],
+  "scope": "Conditional authored offline C++ and static file/byte checks only; no original loading/execution/emulation, runtime reachability, full equivalence or independent external audit.",
+  "source_sha256": {
+    "Makefile": "da6adf34d472317e42a4bc5dce66c20c63e2ab4e83d0b5431f3bc4c5bae7c98e",
+    "evidence/wave3/actor/provenance.json": "7b8bd799325227ee8d2203664761e3164d2755d2b5100960e5882b73acf875ee",
+    "evidence/wave3/marker/composition.json": "ac486c03bd04e9c9deb286372506d2d885107976ce7bd73ecc8129965671692e",
+    "evidence/wave3/marker/verify_composition.py": "e5931e0e39afc8eb6dfd0e3e8b2d5f63c93de629f0aa08759be7c0040ef43e4f",
+    "evidence/wave3/source/ledger.json": "9a422a17b444d034e34fdc2bf76dbda28993817b0ab0436c5bad319a511dd8c3",
+    "evidence/wave3/source/verify_source.py": "314f65a6ce8d6a867259653c77c7b65853e7c18e16ee3b0b7bd5b82924427a67",
+    "include/rage/actor_scalar_pipeline.hpp": "7bbbfaaaeffd2b851b8a67883cdedbc6d3e25117485cf6bed3466ee44ec6e85e",
+    "include/rage/charge_state.hpp": "dfee3b8c177ccb4f31d44a1f9137e9b675b90d7021acb30ee222c6e09110cf5a",
+    "include/rage/marker_pipeline.hpp": "4881b3b931a6b79ab40c728da0215b1c407afe741213786063c7ec50f5781b50",
+    "include/rage/position_lifecycle.hpp": "49d3426063fad5acfcfa887fd6bc7002ac6d95aba2726e661aba1cfc2f150801",
+    "include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "include/rage/resolved_scalar_helper.hpp": "7544e3598881c5a3f711563d18f4d19e656daee8109411ace8464a0068de0f04",
+    "src/actor_scalar_pipeline.cpp": "f1efd4d255673fa9857f405781f57c2378c608f891549be69670a32077090a83",
+    "src/charge_state.cpp": "5a5ff3e592a4e9133896984d353255877f0e93b15757c3ac6294e5559a2fa4ce",
+    "src/marker_pipeline.cpp": "2311b49a11507e75c47706fb2e4f3b5a3bbbeb4dea69776de251a260e2eced4d",
+    "src/position_lifecycle.cpp": "8b921a16ed73020b42b823eed29d21db00e494260de78ad2cef3756fe88630ae",
+    "src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "src/resolved_scalar_helper.cpp": "cfde7d0df37d48489b5fe490a7a615ed24ee586069f86b57c443fdb1699b9ad1",
+    "tests/test_actor_scalar_pipeline.cpp": "f556481f9110034428e9278eef72f8ad54266f33952371f5178a27d01858e9d0",
+    "tests/test_charge_state.cpp": "c4971aeb43eb0c7b79ecb122c10c4d49b15490bfb2ce30032d1227847d2aaca9",
+    "tests/test_marker_pipeline.cpp": "4375005f919c3d3fc9342eb99ea131b1ac9d1196eeac5e5f465dcbb389436bce",
+    "tests/test_position_lifecycle.cpp": "4155df760e0ee35dce58af54e50feccf4a9f23f5264ed7a17eb17065bdfab79b",
+    "tests/test_position_pipeline.cpp": "841518ecab4f6d77771d37bba9293b80f30911de9e656de1f4cc9e482d9d33be",
+    "tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "tests/test_resolved_scalar_helper.cpp": "d4f03e6b2d02d06ea76935d95f4238d821e5c834b93d280711e69d9769e1e1bd",
+    "tests/verify_evidence.py": "1f6a3954c6da0d9b3e067256ac3d4b606cd110ff6138de7c955bce3b3a2faa1a"
+  },
+  "log_path": "evidence/wave3/verification.log",
+  "log_sha256": "fda8992e4f998fbfbb8c475a60727976852f0c5fc3eee18bcb17a8cf6b3d8703"
+}

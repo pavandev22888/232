@@ -1,0 +1,768 @@
+operand_va	instruction_va	kind	bytes	instruction
+0x412aaf18	0x412aaf17	read	a14c195242	mov eax,ds:0x4252194c
+0x412ecc68	0x412ecc67	read	a14c195242	mov eax,ds:0x4252194c
+0x41329457	0x41329456	read	a14c195242	mov eax,ds:0x4252194c
+0x413bfa16	0x413bfa14	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x415166fa	0x415166f9	read	a14c195242	mov eax,ds:0x4252194c
+0x4151da34	0x4151da33	read	a14c195242	mov eax,ds:0x4252194c
+0x4152c32a	0x4152c329	read	a14c195242	mov eax,ds:0x4252194c
+0x4152ecca	0x4152ecc9	read	a14c195242	mov eax,ds:0x4252194c
+0x4152ed41	0x4152ed40	read	a14c195242	mov eax,ds:0x4252194c
+0x4152f1c5	0x4152f1c4	read	a14c195242	mov eax,ds:0x4252194c
+0x415b7f5b	0x415b7f59	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x415f6c1f	0x415f6c1e	read	a14c195242	mov eax,ds:0x4252194c
+0x415f93ad	0x415f93ac	read	a14c195242	mov eax,ds:0x4252194c
+0x415f9e3f	0x415f9e3e	read	a14c195242	mov eax,ds:0x4252194c
+0x415fce8d	0x415fce8c	read	a14c195242	mov eax,ds:0x4252194c
+0x415fd7ce	0x415fd7cd	read	a14c195242	mov eax,ds:0x4252194c
+0x41602ead	0x41602eac	read	a14c195242	mov eax,ds:0x4252194c
+0x416037fb	0x416037fa	read	a14c195242	mov eax,ds:0x4252194c
+0x41607ea5	0x41607ea4	read	a14c195242	mov eax,ds:0x4252194c
+0x41609a08	0x41609a07	read	a14c195242	mov eax,ds:0x4252194c
+0x4160d649	0x4160d648	read	a14c195242	mov eax,ds:0x4252194c
+0x4160d669	0x4160d668	read	a14c195242	mov eax,ds:0x4252194c
+0x4160de6a	0x4160de69	read	a14c195242	mov eax,ds:0x4252194c
+0x4160e006	0x4160e005	read	a14c195242	mov eax,ds:0x4252194c
+0x4160e099	0x4160e098	read	a14c195242	mov eax,ds:0x4252194c
+0x4160eb85	0x4160eb84	read	a14c195242	mov eax,ds:0x4252194c
+0x4160f176	0x4160f175	read	a14c195242	mov eax,ds:0x4252194c
+0x41610d6e	0x41610d6d	read	a14c195242	mov eax,ds:0x4252194c
+0x41740951	0x4174094f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41a8bc08	0x41a8bc07	read	a14c195242	mov eax,ds:0x4252194c
+0x41ba4089	0x41ba4088	read	a14c195242	mov eax,ds:0x4252194c
+0x41bb2299	0x41bb2297	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41bb3711	0x41bb3710	read	a14c195242	mov eax,ds:0x4252194c
+0x41bb3833	0x41bb3832	read	a14c195242	mov eax,ds:0x4252194c
+0x41bb8962	0x41bb8961	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbad15	0x41bbad14	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbb1bb	0x41bbb1ba	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbb301	0x41bbb300	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbb332	0x41bbb331	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbdbeb	0x41bbdbea	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbde01	0x41bbde00	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbeb4c	0x41bbeb4a	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41bbee49	0x41bbee47	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41bbf37e	0x41bbf37d	read	a14c195242	mov eax,ds:0x4252194c
+0x41bbf4b6	0x41bbf4b5	read	a14c195242	mov eax,ds:0x4252194c
+0x41bc02e2	0x41bc02e1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c41f99	0x41c41f97	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c46094	0x41c46092	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c460eb	0x41c460e9	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c485aa	0x41c485a8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c485ff	0x41c485fd	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c57f72	0x41c57f71	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5a3ba	0x41c5a3b9	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5a897	0x41c5a896	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5a8fb	0x41c5a8f9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5a93b	0x41c5a939	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5a971	0x41c5a970	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5a9d6	0x41c5a9d4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5a9f6	0x41c5a9f4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5aa21	0x41c5aa20	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5aae4	0x41c5aae2	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5ab75	0x41c5ab73	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5ac52	0x41c5ac51	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5acb9	0x41c5acb7	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5aeb1	0x41c5aeaf	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5aeed	0x41c5aeec	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5af7d	0x41c5af7c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b02e	0x41c5b02c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5b094	0x41c5b092	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5b185	0x41c5b183	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5b2a1	0x41c5b2a0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b2c8	0x41c5b2c6	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5b36f	0x41c5b36d	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c5b6d1	0x41c5b6d0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b741	0x41c5b740	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b8a1	0x41c5b8a0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b908	0x41c5b907	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b975	0x41c5b974	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5b9b1	0x41c5b9af	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5ba1c	0x41c5ba1a	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5c248	0x41c5c247	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5c874	0x41c5c872	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c5ca25	0x41c5ca23	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5caa2	0x41c5caa0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5caea	0x41c5cae8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5cb95	0x41c5cb93	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5cbc5	0x41c5cbc4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5cd96	0x41c5cd94	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5cdc9	0x41c5cdc7	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5cef1	0x41c5cef0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5cf46	0x41c5cf44	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5cf82	0x41c5cf81	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5cfb6	0x41c5cfb4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d009	0x41c5d007	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c5d161	0x41c5d160	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5d258	0x41c5d256	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d2b5	0x41c5d2b4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5d361	0x41c5d360	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5d3c5	0x41c5d3c4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5d411	0x41c5d410	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5d42a	0x41c5d428	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d466	0x41c5d464	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5d4f9	0x41c5d4f7	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d52b	0x41c5d529	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d564	0x41c5d562	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d76d	0x41c5d76b	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d7d6	0x41c5d7d4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d864	0x41c5d862	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d8b7	0x41c5d8b5	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d8ff	0x41c5d8fd	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d947	0x41c5d945	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d98f	0x41c5d98d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5d9d7	0x41c5d9d5	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5dbc1	0x41c5dbc0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5dbeb	0x41c5dbe9	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5dbfa	0x41c5dbf8	read-compare	39354c195242	cmp dword ptr ds:0x4252194c,esi
+0x41c5dc08	0x41c5dc06	write-immediate	c7054c19524200000000	mov dword ptr ds:0x4252194c,0x0
+0x41c5dc1c	0x41c5dc1b	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5dd54	0x41c5dd52	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5dd9f	0x41c5dd9d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5de14	0x41c5de12	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5de57	0x41c5de55	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5dea1	0x41c5dea0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5e3c9	0x41c5e3c8	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5e3fd	0x41c5e3fb	read-compare	833d4c19524200	cmp dword ptr ds:0x4252194c,0x0
+0x41c5e406	0x41c5e404	write-register	89354c195242	mov dword ptr ds:0x4252194c,esi
+0x41c5e411	0x41c5e40f	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c5e4cc	0x41c5e4ca	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c5e5b6	0x41c5e5b4	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5e9a6	0x41c5e9a5	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5ec22	0x41c5ec20	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5ec4f	0x41c5ec4d	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5edb1	0x41c5edaf	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5ee85	0x41c5ee84	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5eed0	0x41c5eece	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5ef21	0x41c5ef1f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5ef6b	0x41c5ef69	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5f070	0x41c5f06f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5f0bb	0x41c5f0b9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5f137	0x41c5f136	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5f369	0x41c5f368	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5f3ca	0x41c5f3c8	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5f4d1	0x41c5f4d0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5f68a	0x41c5f689	read	a14c195242	mov eax,ds:0x4252194c
+0x41c5f763	0x41c5f761	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c5f82e	0x41c5f82c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5f8b1	0x41c5f8af	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c5fa1a	0x41c5fa18	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5fb6c	0x41c5fb6a	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c5fc10	0x41c5fc0e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5fd59	0x41c5fd57	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c5fdf3	0x41c5fdf1	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c5ff1f	0x41c5ff1d	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c5ff43	0x41c5ff41	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c60046	0x41c60045	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60082	0x41c60080	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c60121	0x41c60120	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6016e	0x41c6016c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c60245	0x41c60244	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60322	0x41c60321	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60357	0x41c60356	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60396	0x41c60394	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c603ba	0x41c603b9	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60459	0x41c60457	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c604a1	0x41c604a0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c604d2	0x41c604d1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60587	0x41c60585	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c60627	0x41c60625	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6068b	0x41c60689	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c60737	0x41c60735	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c608ad	0x41c608ab	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c609d9	0x41c609d7	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c60a97	0x41c60a95	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c60c61	0x41c60c60	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60caa	0x41c60ca8	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c60d51	0x41c60d50	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60de9	0x41c60de8	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60ef6	0x41c60ef4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c60f41	0x41c60f40	read	a14c195242	mov eax,ds:0x4252194c
+0x41c60fab	0x41c60faa	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61071	0x41c61070	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61086	0x41c61084	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c613ac	0x41c613aa	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c613f6	0x41c613f4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61452	0x41c61450	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6149c	0x41c6149a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61522	0x41c61520	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6156c	0x41c6156a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c615e0	0x41c615de	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61689	0x41c61688	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6172c	0x41c6172a	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c617d2	0x41c617d0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61826	0x41c61824	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6187f	0x41c6187d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6196c	0x41c6196b	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61a4a	0x41c61a48	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61ad8	0x41c61ad6	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61b90	0x41c61b8e	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c61bc4	0x41c61bc2	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c61bf5	0x41c61bf4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61bfc	0x41c61bfb	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61d57	0x41c61d55	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c61dbf	0x41c61dbe	read	a14c195242	mov eax,ds:0x4252194c
+0x41c61e3a	0x41c61e39	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6201c	0x41c6201a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c62499	0x41c62497	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c627be	0x41c627bc	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6282e	0x41c6282d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c62a3c	0x41c62a3a	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c62bd1	0x41c62bd0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c62c19	0x41c62c17	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c62c66	0x41c62c64	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c62c86	0x41c62c84	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c62cb6	0x41c62cb4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c62e66	0x41c62e64	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6316b	0x41c63169	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c631ab	0x41c631a9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c63249	0x41c63247	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6344a	0x41c63449	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63467	0x41c63466	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63491	0x41c63490	read	a14c195242	mov eax,ds:0x4252194c
+0x41c634f4	0x41c634f2	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c63581	0x41c63580	read	a14c195242	mov eax,ds:0x4252194c
+0x41c637c1	0x41c637c0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63838	0x41c63837	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63888	0x41c63886	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c63899	0x41c63898	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63c8a	0x41c63c88	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c63cbb	0x41c63cba	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63cc2	0x41c63cc1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c63f79	0x41c63f77	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6403c	0x41c6403a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c64126	0x41c64125	read	a14c195242	mov eax,ds:0x4252194c
+0x41c64293	0x41c64291	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c64364	0x41c64363	read	a14c195242	mov eax,ds:0x4252194c
+0x41c644ce	0x41c644cd	read	a14c195242	mov eax,ds:0x4252194c
+0x41c64596	0x41c64594	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c6486a	0x41c64868	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c648bd	0x41c648bb	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c64927	0x41c64926	read	a14c195242	mov eax,ds:0x4252194c
+0x41c64a78	0x41c64a76	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c64cab	0x41c64ca9	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c6518f	0x41c6518e	read	a14c195242	mov eax,ds:0x4252194c
+0x41c65368	0x41c65367	read	a14c195242	mov eax,ds:0x4252194c
+0x41c65643	0x41c65642	read	a14c195242	mov eax,ds:0x4252194c
+0x41c65696	0x41c65695	read	a14c195242	mov eax,ds:0x4252194c
+0x41c65770	0x41c6576f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c65796	0x41c65795	read	a14c195242	mov eax,ds:0x4252194c
+0x41c657f4	0x41c657f3	read	a14c195242	mov eax,ds:0x4252194c
+0x41c658f1	0x41c658f0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c659c5	0x41c659c3	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c65bdf	0x41c65bdd	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c65cb0	0x41c65cae	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c660f2	0x41c660f0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c66159	0x41c66158	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6682d	0x41c6682b	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c66ab6	0x41c66ab4	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c66bcd	0x41c66bcc	read	a14c195242	mov eax,ds:0x4252194c
+0x41c66c18	0x41c66c16	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c66c75	0x41c66c74	read	a14c195242	mov eax,ds:0x4252194c
+0x41c66cbe	0x41c66cbc	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c66d0e	0x41c66d0d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c67bc8	0x41c67bc6	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c67c96	0x41c67c94	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c67cf2	0x41c67cf0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c67db2	0x41c67db0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c67dfb	0x41c67dfa	read	a14c195242	mov eax,ds:0x4252194c
+0x41c67e98	0x41c67e96	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c67fba	0x41c67fb8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6806a	0x41c68068	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c68219	0x41c68217	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68259	0x41c68257	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c682bd	0x41c682bc	read	a14c195242	mov eax,ds:0x4252194c
+0x41c682fe	0x41c682fc	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68343	0x41c68341	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c683b6	0x41c683b4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c683f7	0x41c683f6	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6846e	0x41c6846c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c684a3	0x41c684a1	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c684df	0x41c684dd	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6851b	0x41c68519	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68557	0x41c68555	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68593	0x41c68591	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c685da	0x41c685d8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68616	0x41c68614	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68652	0x41c68650	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6868e	0x41c6868c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c686ca	0x41c686c8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68711	0x41c6870f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68763	0x41c68761	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6879f	0x41c6879d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68801	0x41c687ff	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68836	0x41c68834	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68872	0x41c68870	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c688ae	0x41c688ac	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c688ea	0x41c688e8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68926	0x41c68924	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68962	0x41c68960	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6899e	0x41c6899c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c689da	0x41c689d8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68a16	0x41c68a14	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68a52	0x41c68a50	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c68c2d	0x41c68c2c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69013	0x41c69012	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69241	0x41c69240	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69251	0x41c69250	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69286	0x41c69284	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c692a3	0x41c692a1	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69411	0x41c69410	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6943a	0x41c69439	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69520	0x41c6951e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69571	0x41c69570	read	a14c195242	mov eax,ds:0x4252194c
+0x41c69591	0x41c69590	read	a14c195242	mov eax,ds:0x4252194c
+0x41c695f6	0x41c695f5	read	a14c195242	mov eax,ds:0x4252194c
+0x41c696d6	0x41c696d4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69788	0x41c69786	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c697ba	0x41c697b8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69a1c	0x41c69a1a	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c69dc9	0x41c69dc7	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69dfb	0x41c69df9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69f95	0x41c69f93	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c69fd5	0x41c69fd3	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a065	0x41c6a063	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a108	0x41c6a106	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a166	0x41c6a165	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6a2e1	0x41c6a2df	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a35c	0x41c6a35b	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6a3a1	0x41c6a3a0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6a3c2	0x41c6a3c0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a405	0x41c6a403	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6a47d	0x41c6a47b	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c6a582	0x41c6a580	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a5f4	0x41c6a5f2	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c6a67f	0x41c6a67d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a791	0x41c6a78f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a7c7	0x41c6a7c5	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a802	0x41c6a800	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a83e	0x41c6a83c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a887	0x41c6a885	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a980	0x41c6a97f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6a9b0	0x41c6a9ae	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6a9f8	0x41c6a9f6	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6aa40	0x41c6aa3e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6aa92	0x41c6aa90	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6aada	0x41c6aad8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ab4a	0x41c6ab48	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ab92	0x41c6ab90	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6abda	0x41c6abd8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ac22	0x41c6ac20	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ac6a	0x41c6ac68	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6acb2	0x41c6acb0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6acfa	0x41c6acf8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ad63	0x41c6ad61	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6adab	0x41c6ada9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6adf3	0x41c6adf1	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ae3b	0x41c6ae39	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ae83	0x41c6ae81	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6aecb	0x41c6aec9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6af13	0x41c6af11	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6af5b	0x41c6af59	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6afa3	0x41c6afa1	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6b01b	0x41c6b019	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6b079	0x41c6b078	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6bb87	0x41c6bb85	read-add	030d4c195242	add ecx,dword ptr ds:0x4252194c
+0x41c6be44	0x41c6be42	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6bed4	0x41c6bed2	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6bfed	0x41c6bfec	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6c086	0x41c6c084	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6c0c7	0x41c6c0c5	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c6c1cc	0x41c6c1cb	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6c27f	0x41c6c27d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6c2e2	0x41c6c2e0	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c6c55a	0x41c6c558	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6c94e	0x41c6c94c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6cdd7	0x41c6cdd6	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6ce61	0x41c6ce60	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6cf44	0x41c6cf42	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6d02e	0x41c6d02c	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6d392	0x41c6d390	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6d467	0x41c6d466	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6d4ab	0x41c6d4aa	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6d4f3	0x41c6d4f2	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6d5c7	0x41c6d5c6	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6d9c6	0x41c6d9c4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6daaa	0x41c6daa8	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6daf2	0x41c6daf0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6db9c	0x41c6db9a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dbf4	0x41c6dbf2	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dcd6	0x41c6dcd4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dd19	0x41c6dd17	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dd59	0x41c6dd57	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dd9a	0x41c6dd98	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ddde	0x41c6dddc	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6de40	0x41c6de3e	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6dee2	0x41c6dee0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6dfc9	0x41c6dfc7	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6e049	0x41c6e047	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c6e16b	0x41c6e16a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6e212	0x41c6e210	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6e298	0x41c6e297	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6e7d6	0x41c6e7d4	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c6e8c0	0x41c6e8be	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ea18	0x41c6ea16	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ea62	0x41c6ea60	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6eb02	0x41c6eb00	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6eb4f	0x41c6eb4d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6ed6a	0x41c6ed68	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6edb7	0x41c6edb5	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6edf3	0x41c6edf2	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6ee40	0x41c6ee3e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6eeb5	0x41c6eeb4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6ef74	0x41c6ef72	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6efbf	0x41c6efbd	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6f3b9	0x41c6f3b7	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6f454	0x41c6f452	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6f4a1	0x41c6f49f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6f54e	0x41c6f54d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6f56d	0x41c6f56c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6f6db	0x41c6f6da	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6f9f2	0x41c6f9f0	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c6fa50	0x41c6fa4f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c6fb3e	0x41c6fb3c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6fb8b	0x41c6fb89	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c6fd07	0x41c6fd06	read	a14c195242	mov eax,ds:0x4252194c
+0x41c70444	0x41c70443	read	a14c195242	mov eax,ds:0x4252194c
+0x41c704cb	0x41c704ca	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7062f	0x41c7062d	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c70a05	0x41c70a04	read	a14c195242	mov eax,ds:0x4252194c
+0x41c70bbe	0x41c70bbd	read	a14c195242	mov eax,ds:0x4252194c
+0x41c70d6a	0x41c70d69	read	a14c195242	mov eax,ds:0x4252194c
+0x41c70e7b	0x41c70e7a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c70fb7	0x41c70fb6	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7145a	0x41c71459	read	a14c195242	mov eax,ds:0x4252194c
+0x41c714a7	0x41c714a5	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c71559	0x41c71558	read	a14c195242	mov eax,ds:0x4252194c
+0x41c715a6	0x41c715a4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c715f3	0x41c715f2	read	a14c195242	mov eax,ds:0x4252194c
+0x41c71640	0x41c7163e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7168d	0x41c7168c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c716da	0x41c716d8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c71727	0x41c71726	read	a14c195242	mov eax,ds:0x4252194c
+0x41c71772	0x41c71770	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c71813	0x41c71811	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7185f	0x41c7185d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c718de	0x41c718dc	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7195b	0x41c71959	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c71982	0x41c71981	read	a14c195242	mov eax,ds:0x4252194c
+0x41c71cc0	0x41c71cbe	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c71d18	0x41c71d17	read	a14c195242	mov eax,ds:0x4252194c
+0x41c71d2e	0x41c71d2d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c71f0a	0x41c71f09	read	a14c195242	mov eax,ds:0x4252194c
+0x41c72017	0x41c72015	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7204d	0x41c7204c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7212b	0x41c7212a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7224a	0x41c72248	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7227e	0x41c7227c	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c722d9	0x41c722d7	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c722e1	0x41c722df	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c72844	0x41c72842	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c728f7	0x41c728f6	read	a14c195242	mov eax,ds:0x4252194c
+0x41c72d53	0x41c72d51	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c72f46	0x41c72f45	read	a14c195242	mov eax,ds:0x4252194c
+0x41c73001	0x41c73000	read	a14c195242	mov eax,ds:0x4252194c
+0x41c73026	0x41c73024	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c73046	0x41c73044	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c73061	0x41c73060	read	a14c195242	mov eax,ds:0x4252194c
+0x41c730c2	0x41c730c1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c73117	0x41c73115	read-add	03054c195242	add eax,dword ptr ds:0x4252194c
+0x41c73121	0x41c73120	read	a14c195242	mov eax,ds:0x4252194c
+0x41c73154	0x41c73152	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c7318d	0x41c7318c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c731d4	0x41c731d2	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c73276	0x41c73274	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c732f9	0x41c732f7	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c7413c	0x41c7413a	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c742a8	0x41c742a6	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c742e8	0x41c742e6	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c74388	0x41c74387	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7454e	0x41c7454d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c74611	0x41c74610	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7473b	0x41c7473a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c747d0	0x41c747ce	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7496d	0x41c7496b	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c74a1e	0x41c74a1c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c74ab6	0x41c74ab5	read	a14c195242	mov eax,ds:0x4252194c
+0x41c74b83	0x41c74b81	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c74c19	0x41c74c18	read	a14c195242	mov eax,ds:0x4252194c
+0x41c74cdb	0x41c74cda	read	a14c195242	mov eax,ds:0x4252194c
+0x41c74d3e	0x41c74d3d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c74e8c	0x41c74e8a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c74fde	0x41c74fdd	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7505d	0x41c7505c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c750ab	0x41c750aa	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75103	0x41c75102	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7514e	0x41c7514d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75229	0x41c75228	read	a14c195242	mov eax,ds:0x4252194c
+0x41c752d9	0x41c752d8	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7533c	0x41c7533b	read	a14c195242	mov eax,ds:0x4252194c
+0x41c753aa	0x41c753a9	read	a14c195242	mov eax,ds:0x4252194c
+0x41c753f5	0x41c753f4	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75455	0x41c75454	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75530	0x41c7552f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c755ca	0x41c755c8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7560f	0x41c7560e	read	a14c195242	mov eax,ds:0x4252194c
+0x41c756eb	0x41c756e9	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75744	0x41c75743	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75820	0x41c7581e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75881	0x41c75880	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75942	0x41c75940	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75994	0x41c75993	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75a22	0x41c75a20	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75ac4	0x41c75ac2	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75b10	0x41c75b0f	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75bdd	0x41c75bdb	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75c36	0x41c75c35	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75ce0	0x41c75cde	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75d39	0x41c75d38	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75de0	0x41c75dde	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75e32	0x41c75e31	read	a14c195242	mov eax,ds:0x4252194c
+0x41c75ec0	0x41c75ebe	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75f15	0x41c75f13	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c75fdc	0x41c75fdb	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76102	0x41c76100	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7622a	0x41c76228	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c762ba	0x41c762b9	read	a14c195242	mov eax,ds:0x4252194c
+0x41c763c3	0x41c763c2	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76469	0x41c76467	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c76607	0x41c76605	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c76669	0x41c76668	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76673	0x41c76672	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76791	0x41c7678f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c76899	0x41c76897	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c76941	0x41c7693f	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c769d0	0x41c769ce	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c76a3b	0x41c76a3a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76c13	0x41c76c12	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76d55	0x41c76d53	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c76e91	0x41c76e90	read	a14c195242	mov eax,ds:0x4252194c
+0x41c76fac	0x41c76faa	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c77054	0x41c77052	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77111	0x41c77110	read	a14c195242	mov eax,ds:0x4252194c
+0x41c77162	0x41c77160	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77221	0x41c77220	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7724a	0x41c77249	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7732c	0x41c7732a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7738b	0x41c7738a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c773cc	0x41c773ca	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77401	0x41c77400	read	a14c195242	mov eax,ds:0x4252194c
+0x41c77443	0x41c77441	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c774e5	0x41c774e3	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7751a	0x41c77518	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77556	0x41c77554	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77592	0x41c77590	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c775ce	0x41c775cc	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7793e	0x41c7793d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c779f0	0x41c779ee	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77a40	0x41c77a3e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77b51	0x41c77b4f	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c77d8e	0x41c77d8c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77dd0	0x41c77dce	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77e21	0x41c77e20	read	a14c195242	mov eax,ds:0x4252194c
+0x41c77e63	0x41c77e61	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77ea8	0x41c77ea6	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c77f58	0x41c77f56	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c77fca	0x41c77fc8	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c7807b	0x41c7807a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c780f4	0x41c780f2	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c7818a	0x41c78188	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c78251	0x41c78250	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78289	0x41c78287	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c782f2	0x41c782f1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78335	0x41c78333	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c78369	0x41c78368	read	a14c195242	mov eax,ds:0x4252194c
+0x41c783db	0x41c783da	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7841e	0x41c7841d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78447	0x41c78445	read-add	03054c195242	add eax,dword ptr ds:0x4252194c
+0x41c78451	0x41c78450	read	a14c195242	mov eax,ds:0x4252194c
+0x41c784a1	0x41c784a0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c784da	0x41c784d8	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78531	0x41c78530	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78587	0x41c78586	read	a14c195242	mov eax,ds:0x4252194c
+0x41c7867d	0x41c7867c	read	a14c195242	mov eax,ds:0x4252194c
+0x41c787be	0x41c787bd	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78820	0x41c7881e	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78874	0x41c78872	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c788b2	0x41c788b0	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78903	0x41c78901	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78958	0x41c78956	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78998	0x41c78996	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c789e9	0x41c789e7	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78a45	0x41c78a43	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78a89	0x41c78a87	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78b09	0x41c78b07	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41c78bf0	0x41c78bef	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78c38	0x41c78c36	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78cb6	0x41c78cb4	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78ced	0x41c78ceb	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78e05	0x41c78e04	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78e46	0x41c78e44	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c78e62	0x41c78e61	read	a14c195242	mov eax,ds:0x4252194c
+0x41c78e91	0x41c78e90	read	a14c195242	mov eax,ds:0x4252194c
+0x41c79013	0x41c79011	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c794ad	0x41c794ab	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c794f0	0x41c794ee	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c79525	0x41c79523	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c7956f	0x41c7956d	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c795ed	0x41c795eb	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c92059	0x41c92058	read	a14c195242	mov eax,ds:0x4252194c
+0x41c95ab8	0x41c95ab6	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c95bfc	0x41c95bfa	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c96c01	0x41c96bff	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c96ecf	0x41c96ecd	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c9741c	0x41c9741b	read	a14c195242	mov eax,ds:0x4252194c
+0x41c974d1	0x41c974cf	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c978f5	0x41c978f3	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c97bd1	0x41c97bd0	read	a14c195242	mov eax,ds:0x4252194c
+0x41c97c8e	0x41c97c8c	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c97e00	0x41c97dfe	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c97f6e	0x41c97f6d	read	a14c195242	mov eax,ds:0x4252194c
+0x41c98409	0x41c98408	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9842b	0x41c9842a	read	a14c195242	mov eax,ds:0x4252194c
+0x41c98cc4	0x41c98cc2	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c99e6c	0x41c99e6a	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c9a395	0x41c9a394	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9a7a2	0x41c9a7a1	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9ae22	0x41c9ae20	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41c9b676	0x41c9b675	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9b697	0x41c9b696	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9b7de	0x41c9b7dc	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c9b80d	0x41c9b80b	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c9b8fb	0x41c9b8fa	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9c629	0x41c9c627	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41c9c717	0x41c9c716	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9c782	0x41c9c781	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9c8d2	0x41c9c8d0	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c9cff2	0x41c9cff0	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41c9d9ee	0x41c9d9ed	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9da13	0x41c9da12	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9db86	0x41c9db85	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9deac	0x41c9deaa	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41c9e432	0x41c9e431	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9e802	0x41c9e800	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41c9fd11	0x41c9fd10	read	a14c195242	mov eax,ds:0x4252194c
+0x41c9fd88	0x41c9fd86	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41ca00ce	0x41ca00cd	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca013d	0x41ca013b	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41ca0561	0x41ca055f	read-add	033d4c195242	add edi,dword ptr ds:0x4252194c
+0x41ca0700	0x41ca06fe	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41ca08ed	0x41ca08ec	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca0935	0x41ca0934	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca12ac	0x41ca12aa	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41ca1586	0x41ca1585	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca2194	0x41ca2192	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41ca2988	0x41ca2987	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca408c	0x41ca408a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41ca535c	0x41ca535b	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca5556	0x41ca5554	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41ca6314	0x41ca6312	read	8b2d4c195242	mov ebp,dword ptr ds:0x4252194c
+0x41ca64c3	0x41ca64c2	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca662d	0x41ca662b	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41ca67d9	0x41ca67d7	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41ca6974	0x41ca6972	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41ca6bb5	0x41ca6bb3	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41ca7154	0x41ca7153	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca7207	0x41ca7206	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca7306	0x41ca7304	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41ca739e	0x41ca739d	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca7d8d	0x41ca7d8c	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca7dd2	0x41ca7dd1	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca7f33	0x41ca7f32	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca88fb	0x41ca88fa	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca8ad1	0x41ca8acf	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41ca95e9	0x41ca95e7	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41ca9877	0x41ca9876	read	a14c195242	mov eax,ds:0x4252194c
+0x41ca98c6	0x41ca98c5	read	a14c195242	mov eax,ds:0x4252194c
+0x41caa1cb	0x41caa1ca	read	a14c195242	mov eax,ds:0x4252194c
+0x41caaaf9	0x41caaaf8	read	a14c195242	mov eax,ds:0x4252194c
+0x41caae7c	0x41caae7a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41caba7c	0x41caba7a	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cac5cc	0x41cac5ca	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41cacc46	0x41cacc45	read	a14c195242	mov eax,ds:0x4252194c
+0x41cad3ec	0x41cad3eb	read	a14c195242	mov eax,ds:0x4252194c
+0x41cad5de	0x41cad5dd	read	a14c195242	mov eax,ds:0x4252194c
+0x41cad609	0x41cad608	read	a14c195242	mov eax,ds:0x4252194c
+0x41cae311	0x41cae310	read	a14c195242	mov eax,ds:0x4252194c
+0x41cae45f	0x41cae45d	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41caef11	0x41caef10	read	a14c195242	mov eax,ds:0x4252194c
+0x41caef59	0x41caef57	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41caf92b	0x41caf92a	read	a14c195242	mov eax,ds:0x4252194c
+0x41cafb02	0x41cafb00	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cb00a2	0x41cb00a1	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb0532	0x41cb0530	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb0a84	0x41cb0a82	read	8b3d4c195242	mov edi,dword ptr ds:0x4252194c
+0x41cb140f	0x41cb140d	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb1dec	0x41cb1dea	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb206e	0x41cb206c	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb2b41	0x41cb2b40	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb31c9	0x41cb31c8	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb5831	0x41cb5830	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb587c	0x41cb587b	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb5b66	0x41cb5b65	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb5b99	0x41cb5b98	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb5ce7	0x41cb5ce6	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb622e	0x41cb622d	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb6284	0x41cb6283	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb6fcc	0x41cb6fca	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb7a96	0x41cb7a94	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cb7e63	0x41cb7e61	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41cb8718	0x41cb8716	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cb8aeb	0x41cb8aea	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb8c28	0x41cb8c27	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb9275	0x41cb9274	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb9ce2	0x41cb9ce1	read	a14c195242	mov eax,ds:0x4252194c
+0x41cb9fe1	0x41cb9fdf	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cba0ac	0x41cba0aa	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41cbb80a	0x41cbb809	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbbc7c	0x41cbbc7a	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cbc0c5	0x41cbc0c4	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbc127	0x41cbc126	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbcc1d	0x41cbcc1b	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cbce1a	0x41cbce18	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41cbcedc	0x41cbceda	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cbd35a	0x41cbd359	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbdebd	0x41cbdebc	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbe5a5	0x41cbe5a4	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbe5ef	0x41cbe5ee	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbe623	0x41cbe622	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbee21	0x41cbee20	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbef71	0x41cbef70	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbf2a4	0x41cbf2a3	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbf309	0x41cbf308	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbf394	0x41cbf393	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbf5b6	0x41cbf5b5	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfb00	0x41cbfaff	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfcf4	0x41cbfcf3	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfd60	0x41cbfd5f	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfd93	0x41cbfd92	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfe05	0x41cbfe03	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41cbfe2a	0x41cbfe28	read	8b154c195242	mov edx,dword ptr ds:0x4252194c
+0x41cbfe84	0x41cbfe83	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbfecf	0x41cbfece	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbff13	0x41cbff12	read	a14c195242	mov eax,ds:0x4252194c
+0x41cbffb1	0x41cbffb0	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc0016	0x41cc0015	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc00ad	0x41cc00ac	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc00ea	0x41cc00e9	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc0167	0x41cc0166	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc01c1	0x41cc01c0	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc021f	0x41cc021e	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc0244	0x41cc0243	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc02de	0x41cc02dd	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc0356	0x41cc0355	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc1793	0x41cc1792	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc240d	0x41cc240b	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cc2c93	0x41cc2c92	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc30b1	0x41cc30af	read	8b1d4c195242	mov ebx,dword ptr ds:0x4252194c
+0x41cc3303	0x41cc3301	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cc34c2	0x41cc34c1	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc34e8	0x41cc34e7	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc3eff	0x41cc3efd	read	8b0d4c195242	mov ecx,dword ptr ds:0x4252194c
+0x41cc4271	0x41cc4270	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc42f2	0x41cc42f0	read	8b354c195242	mov esi,dword ptr ds:0x4252194c
+0x41cc4f81	0x41cc4f80	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc522f	0x41cc522e	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc58a6	0x41cc58a5	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc5b8b	0x41cc5b8a	read	a14c195242	mov eax,ds:0x4252194c
+0x41cc5d9f	0x41cc5d9e	read	a14c195242	mov eax,ds:0x4252194c

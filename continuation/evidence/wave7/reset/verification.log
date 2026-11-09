@@ -1,0 +1,19 @@
+COMMAND: python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+UNRESOLVED: EAX provider/identity, initial table base, entry reachability, outer scheduling and reset-field semantics
+EXIT: 0
+
+FOLLOW-UP: pure raw 0xc8-byte body snapshot application
+COMMAND: g++ -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/reset_predecessor.cpp continuation/src/charge_state.cpp continuation/tests/test_reset_predecessor.cpp -o /tmp/w7-reset-record-native && /tmp/w7-reset-record-native
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+EXIT: 0
+COMMAND: g++ -std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -fno-omit-frame-pointer -fsanitize=address,undefined -Icontinuation/include continuation/src/reset_predecessor.cpp continuation/src/charge_state.cpp continuation/tests/test_reset_predecessor.cpp -o /tmp/w7-reset-record-sanitize && ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=print_stacktrace=1:halt_on_error=1 /tmp/w7-reset-record-sanitize
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+EXIT: 0
+COMMAND: python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+PASS: snapshot mutation and metadata-only trace contract assertions
+EXIT: 0
+COMMAND: python3 -B continuation/evidence/wave6/reset/verify_reset_predecessor.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: 5 source hashes, predecessor add/cmp/JNE, 11 reset stores, fresh objdump
+EXIT: 0

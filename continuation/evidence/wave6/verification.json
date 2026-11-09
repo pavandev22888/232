@@ -1,0 +1,442 @@
+{
+  "status": "accepted_bounded_scope",
+  "baseline_head": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "restoration": {
+    "archive_sha256": "b5e3336edaa99b6f437f22368ab230107b7b781d9dfd54c83c6e00d9cfb8018f",
+    "assembly_exit_code": 0,
+    "bootstrap_exit_code": 0,
+    "git_baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "baseline_make_check_exit_code": 0,
+    "baseline_bundle": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    },
+    "baseline_integrity": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    }
+  },
+  "archive_integrity": {
+    "passed": true,
+    "files": [
+      {
+        "path": "RAGEBOT_V10_часть_01_из_06.zip",
+        "sha256": "4ef58ad83095d5d183e73d048e8618d134e1ae80a33135dbe8d5a0b99429910f",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_02_из_06.zip",
+        "sha256": "b82341ba07fe2154304ef0d88f7d86a8cf9abc22dff8364bd65e514582b946c8",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_03_из_06.zip",
+        "sha256": "c8ec867c86683d1ed5eec9191a16dd23f66ffe9291fa3a7696ddb032cd7b77cc",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_04_из_06.zip",
+        "sha256": "6cbe5dffca7ec442371c6f04d288201b0a0e02c86857164a4dcf8e55d06fa64a",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_05_из_06.zip",
+        "sha256": "3724c4981934579228e953552189cf4a7d9e4d6caf363dda51dde148eff38e5d",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_06_из_06.zip",
+        "sha256": "91a554eb07c81f1d0a1b2558131150c7a6f863e38a0cde596b34917788a82ff3",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      }
+    ]
+  },
+  "original_loading_execution_emulation": false,
+  "full_tasks_closed": [],
+  "external_audit": false,
+  "original_language_abi_established": false,
+  "execution_limitations": [
+    "Subagent checkpoint/event persistence timeouts interrupted reset and callback review; same worktrees/context resumed, no assumed acceptance.",
+    "NEXT-DAMAGE returned no implementation/tests/result commit; not evidence of source unresolvability."
+  ],
+  "preintegration_integrity": {
+    "bundle": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    },
+    "input_work": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    },
+    "recorded_before": "1215d91"
+  },
+  "integrated_code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+  "integration_ledger": [
+    {
+      "task": "NEXT-AGGREGATE",
+      "source_commits": [
+        "35b8ada917cdfa018d0f259b1e930d9bc44f5e07"
+      ],
+      "integration_commits": [
+        "35b8ada917cdfa018d0f259b1e930d9bc44f5e07"
+      ],
+      "result": "Non-direct local gates + tail statistics/initial copy; unknown settings/handler/ranking remain."
+    },
+    {
+      "task": "NEXT-MODES",
+      "source_commits": [
+        "47af79a1f5e90e308463f58df131ee109528ce03"
+      ],
+      "integration_commits": [
+        "47af79a1f5e90e308463f58df131ee109528ce03"
+      ],
+      "result": "Independent post-call observations; not a complete state machine."
+    },
+    {
+      "task": "NEXT-MESSAGE",
+      "source_commits": [
+        "8faa0257be3ac7cf1f6c41a63eec98baf7c1875a"
+      ],
+      "integration_commits": [
+        "a63b998421707648b86a7aeb176f93d91aba05c3",
+        "23198f7b01d0c5deba1cb093b12699b4136622b5"
+      ],
+      "result": "Evidence only; caller/callee frontier 5325D3E8 outside image."
+    },
+    {
+      "task": "NEXT-GEOMETRY",
+      "source_commits": [
+        "b9be3bd9bc5987ee08c65e12ddc20e622e3bd27d"
+      ],
+      "integration_commits": [
+        "1215d912bf28712ab699349770e8734493be73d3"
+      ],
+      "result": "Evidence only; 289A6D60 binding/ABI unresolved; candidates remain separate."
+    },
+    {
+      "task": "NEXT-RESET",
+      "source_commits": [
+        "de19628f8e541324f286814bc5ff331c55a8802b",
+        "e9b3c7d03936c901a64bcb10a974661ab5c84333"
+      ],
+      "integration_commits": [
+        "14cc8811821bc77da8fd94c9924a2321809de08e",
+        "c5e496fe61e9e0f88a1aa1854df0aa41a265d15b"
+      ],
+      "result": "ADD/CMP/JNE -> eleven-store projection, not loop/scheduling; initial byte failure retained."
+    },
+    {
+      "task": "NEXT-HISTORY",
+      "source_commits": [
+        "2a3e717d5585ae7eb2ad3cfabafeaa191b2c013f",
+        "46c1738e9c483c9852f7cecefc10c05f0371d140"
+      ],
+      "integration_commits": [
+        "5859dd28807a0194051a0997980d843116d02906",
+        "a940ea61d201ea3092a288523bad728ba694b9d7"
+      ],
+      "result": "Ordered store slice with little-endian local observation; unknown suitability/slot/matrix paths."
+    },
+    {
+      "task": "NEXT-DAMAGE",
+      "source_commits": [],
+      "integration_commits": [],
+      "result": "No implementation/tests/evidence; task not completed, no source-unresolvability inference."
+    }
+  ],
+  "callback_review": {
+    "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+    "initial_report": "review-callback/report.json",
+    "resolution": "review-callback/resolution.json",
+    "status": "initial finding withdrawn after fresh CFG trace; source/tests unchanged",
+    "source_report_commits": [
+      "5ca65dd0f7142da76fbe114487f3f894df762d56",
+      "25f66a7747b50665b8d166989f7ed4a1593ad0fb",
+      "d1fe45cd5d20d8705e9e7b7a19af0e2a85068672",
+      "9084d92e323a96910b079fd8f46f1d755d9a3299",
+      "96c756242b104c78ae350bbf919045383065467d"
+    ],
+    "integration_report_commits": [
+      "0d934d4922597211680d2e8d3fb2ac49af4220b7",
+      "545018304a3ff24530cc11d78220e39d954b1a69",
+      "b4283fc9ae5a38521c7a372f6d5e4c4ae01ae412",
+      "9ff3fd56a724f9dc401f1719adfe0ba6bdf350c6",
+      "a47a028a3e4c8dafd71f99fc02100d586047fb51"
+    ],
+    "coordinator_static_gate_exit": 0,
+    "supplemental_cfg_recheck": {
+      "report": "review-callback/cfg-recheck.json",
+      "report_sha256": "99ebed97b115fba2f8b14867114618263e44144a9717266bbbbf4d053412db25",
+      "source_commit": "96c756242b104c78ae350bbf919045383065467d",
+      "integration_commit": "a47a028a3e4c8dafd71f99fc02100d586047fb51",
+      "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+      "scope": "Additional preserved evidence for the already withdrawn sibling-path finding, not a new review of the final integrated SHA.",
+      "current_source_test_hashes_match_report": true,
+      "coordinator_gate": {
+        "tested_head": "a47a028a3e4c8dafd71f99fc02100d586047fb51",
+        "command": [
+          "python3",
+          "-B",
+          "continuation/evidence/wave6/aggregate/verify_callback.py",
+          "--handoff",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/callback-supplement/gate.log",
+        "log_sha256": "ddd6d78f05c8e8eaf2a5f9df71380773c3eb5c30b0076c85733e86341de1a0af"
+      },
+      "geometry_reset_delivery": "Rechecked against b9be3bd and e9b3c7d: their assigned files already match the published W6 exactly; no reintegration needed."
+    }
+  },
+  "preliminary_gate": {
+    "head": "62d7775bf5ca183c9fb35146c3dec2ec6d04ea4f",
+    "started_at": "2026-11-09T16:55:21.519691+00:00",
+    "commands": [
+      {
+        "name": "make-check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/make-check.log",
+        "log_sha256": "99b94c1707faf3059d9639fc2c721e0dc1af83ab05d63fc1e6d58ffa6ae83570"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T16:56:36.070108+00:00",
+    "scope": "Before history integration; not final W6 acceptance. Only handoff documentation was edited while these commands ran."
+  },
+  "coordinator_integrated_gate": {
+    "head": "d99dd375160c7fccfd489598942232430d78da2f",
+    "started_at": "2026-11-09T16:59:45.807813+00:00",
+    "commands": [
+      {
+        "name": "make-check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/make-check.log",
+        "log_sha256": "e2f63ea8f04835105f6f716b3b1cd263ca5ec1d0322822cbffdc86313f5f5fc2"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T17:01:05.605465+00:00",
+    "concurrent_metadata_change": "Only TASKS.json and this verification ledger changed during/after check; all code/tests/Makefile and source contracts remained at integrated_code_sha."
+  },
+  "verification_counts": {
+    "modules": 12,
+    "test_programs_per_mode": 13,
+    "python_unit_tests": 13,
+    "new_w6_static_gates": 6,
+    "instrumented_checks_per_mode": 60995,
+    "reset_predecessor_test": "additional equality/non-equality/wrap test passes; its checks are not included in instrumented counter",
+    "native": "passed",
+    "asan_ubsan": "passed",
+    "all_six_w6_static_gates": "passed",
+    "bundle_files": 960,
+    "input_work_records": 64087,
+    "h01_strict_old_protocol_repeated": false
+  },
+  "final_independent_reviews": {
+    "status": "accepted_bounded_scope_with_explicit_frontiers",
+    "code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+    "corrected_documentation_sha": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+    "report_paths": [
+      "review-integrated-code/report.json",
+      "review-integrated-code/resolution.json",
+      "review-integrated-evidence/report.json",
+      "review-integrated-evidence/followup/report.json"
+    ],
+    "blocking_findings_remaining": 0,
+    "external_audit": false,
+    "code_finding": "W6RC-001 withdrawn by its reviewer: two distinct memcpy calls through a local word; source/tests unchanged.",
+    "evidence_finding": "F1 corrected in documentation only and independently verified on corrected_documentation_sha.",
+    "followup_source_commit": "ae86187b42f2a9a5b2aee3e96460ade7ca1b1916",
+    "followup_integration_commit": "4c513fc1d3c894bd5613b647ebd870f6bf400791"
+  },
+  "tools": {
+    "python3": "Python 3.12.3",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "make": "GNU Make 4.3",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "git": "git version 2.43.0"
+  },
+  "sanitized_log": {
+    "path": "verification.log",
+    "sha256": "a8de2956603d770916dcf54d30200f48c799b6bc5116d3f0b90266bee27f7e21",
+    "scope": "Separately labeled historical integrated, fresh post-correction candidate and callback-supplement outputs; not complete raw logs. Final publication-head receipts are in PR #1."
+  },
+  "review_corrections": [
+    {
+      "finding": "W6RC-001",
+      "result": "withdrawn by reviewer after checking the two independent memcpy calls via local word; code/tests unchanged",
+      "report": "review-integrated-code/resolution.json"
+    },
+    {
+      "finding": "W6-REVIEW-EVIDENCE F1",
+      "result": "Corrected history local DWORD read address to 413F71A1; store at 413F71A4, not source-pointer load at 413F7102",
+      "code_tests_changed": false,
+      "coordinator_history_gate_exit": 0,
+      "coordinator_fresh_objdump_exit": 0,
+      "independent_followup": "review-integrated-evidence/followup/report.json",
+      "reviewed_sha": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+      "status": "resolved"
+    }
+  ],
+  "fresh_candidate_gate": {
+    "tested_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "started_at": "2026-11-09T17:13:56.056050+00:00",
+    "working_tree_clean_at_start": true,
+    "commands": [
+      {
+        "name": "check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/check.log",
+        "log_sha256": "dd4f7b1eefce182e96e44e5b9c17a6e6f8fdf8b6f232777602da0ee57a3068f3"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/fresh-candidate/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T17:14:25.257564+00:00",
+    "working_tree_clean_at_end": true,
+    "scope": "Fresh complete gate after history address correction, on a clean fixed HEAD. Later acceptance/report-only changes require the separate clean publication-head gate recorded in PR #1.",
+    "implementation_tests_makefile_static_verifiers_unchanged_since": "d99dd375160c7fccfd489598942232430d78da2f"
+  },
+  "acceptance": {
+    "scope": "Only bounded callback gates/tail stores, reset predecessor, separate release observations and ordered history stores; message and geometry static frontiers accepted as evidence, not implemented providers.",
+    "fresh_gate": "fresh_candidate_gate",
+    "tested_head": "b869125873217d955cf56788219fc7e2879b17f4",
+    "later_changes": "Follow-up review artifacts and coordinator acceptance/status documents only. Publication HEAD must pass the same four commands again; its exact SHA, exit codes and log hashes are recorded in PR #1 to avoid a self-referential verification commit.",
+    "publication_receipt": "https://github.com/pavandev22888/232/pull/1",
+    "damage": "No implementation, tests or new source evidence; assignment remains unperformed.",
+    "full_tasks_closed": [],
+    "original_language_abi_established": false,
+    "external_audit": false
+  }
+}

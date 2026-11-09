@@ -1,0 +1,62 @@
+{
+  "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "scope": "Source review of baseline; current pipeline regression coverage, not whole-original equivalence",
+  "confirmed_production_bugs": 0,
+  "findings": [
+    {
+      "id": "W2-CODE01-01",
+      "severity": "medium",
+      "kind": "coverage_gap",
+      "baseline_path": "tests/test_position_lifecycle.cpp",
+      "baseline_lines": [
+        [
+          54,
+          66
+        ],
+        [
+          251,
+          259
+        ]
+      ],
+      "finding": "Local fixtures supply AL inconsistent with the invoked reader status; not a coherent original-call proof",
+      "resolution": "New coherent normal-return scenarios in tests/test_position_pipeline.cpp; old local fixtures retained"
+    },
+    {
+      "id": "W2-CODE01-02",
+      "severity": "medium",
+      "kind": "coverage_gap",
+      "baseline_path": "tests/test_position_lifecycle.cpp",
+      "baseline_lines": [
+        [
+          218,
+          277
+        ]
+      ],
+      "finding": "Produced zero/quiet NaN markers did not traverse reader policy before actor",
+      "resolution": "20 composed scenarios covering policy/bypass, source failure, expiry and markers in tests/test_position_pipeline.cpp"
+    },
+    {
+      "id": "W2-CODE01-03",
+      "severity": "low",
+      "kind": "evidence_limit",
+      "baseline_path": "tests/test_charge_state.cpp",
+      "baseline_lines": [
+        [
+          39,
+          73
+        ],
+        [
+          113,
+          156
+        ]
+      ],
+      "finding": "2736 baseline checks use a structurally similar reference formula, not independent equivalence proof",
+      "resolution": "Limitation retained explicitly; regression checks not weakened"
+    }
+  ],
+  "code01_implemented": false,
+  "code01_closed": false,
+  "original_execution": false,
+  "external_independent_audit": false,
+  "coordinator_acceptance_report": "../verification.json"
+}

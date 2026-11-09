@@ -1,0 +1,675 @@
+{
+  "task": "W5-TF4",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "authoritative_assignment": {
+    "commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+    "path": "continuation/evidence/wave5/assignment.json",
+    "sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4",
+    "owner": "w5-tf4-sol",
+    "write_path": "continuation/evidence/wave5/tf4/"
+  },
+  "pre_edit_capture": {
+    "path": "runs/w5-tf4/anchors-before-edit.json",
+    "sha256": "61e0b9f35a22c758a9f6631279ab8702641dc85e92fc774cac244778a9f5ddb6",
+    "captured_utc": "2026-11-09T13:25:06Z",
+    "retained_in_git": false
+  },
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_base": "0x412a0000",
+    "address_model": "32-bit little-endian; no runtime mapping asserted"
+  },
+  "hypotheses": [
+    {
+      "id": "H-TF4-1",
+      "selected_field": "T+F4",
+      "question": "H-TF4-1: 0x414C1ED4 might propagate a positive value into the same T+F4 compared by the selector. Bound: source load, receiver slot, one direct caller; no additional positive-source hypotheses.",
+      "candidate": "0x414c1ed4: f30f1180f4000000, MOVSS DWORD [EAX+F4],XMM0",
+      "origin": "Saved v7 wide_member_candidates.targetF0F4 entry; only this candidate and one direct caller examined.",
+      "status": "unresolved_at_receiver_identity_and_source_value",
+      "accepted_frontier_unchanged": "Point+26 -> T+96 is propagation of an existing byte, not a first-positive source or a link to this candidate. No second field hypothesis is investigated."
+    }
+  ],
+  "roles": {
+    "S": "ESI in selected callee; stack-base role captured at 0x414c0a63. No T/Point/N identity is inferred.",
+    "U": "EAX loaded from DWORD [S+3C] at 0x414c1e5c. The slot captures ECX at 0x414c0a9e, after prologue call 0x41da7e70; equality to entry ECX / caller EBP is conditional on preservation.",
+    "K": "DWORD [S+B8] at 0x414c1e45. Contents, ownership and lifetime unresolved.",
+    "R": "EDI loaded from DWORD [DWORD[K+4] + 4*(DWORD[S+78] & (DWORD[K+8]-1))] at 0x414c1e55, with 32-bit wrapping arithmetic.",
+    "T": "The accepted target-record role in the selector; not established equal or unequal to U.",
+    "Point": "The accepted source point of Point+26 -> T+96, not identified as R.",
+    "N": "Separate position-record object; no N identity occurs in this chain."
+  },
+  "proven_local": [
+    "Fresh bytes/decode establish a 4-byte load at 0x414c1ecf from R+24 immediately followed by a 4-byte store at 0x414c1ed4 to U+F4. MOVSS performs no arithmetic conversion here: it propagates the raw 32 bits observed by that load, including NaN payloads and signed-zero encodings.",
+    "The selected straight-line copy at 0x414c1e58 loads EAX from [S+3C] before stores; EAX is not redefined before 0x414c1ed4. The store covers U+F4..U+F7, not a byte, QWORD or T+96.",
+    "On the selected route, ordered-greater UCOMISS at 0x414c1dc1 / JA at 0x414c1dc4 selects 0x414c1e45; K+4 and K+8 select R before the load/store chain. Alternative incoming paths are not claimed excluded.",
+    "In one fresh raw direct-CALL candidate at 0x414c08b7, ECX is set to caller EBP at 0x414c08ab. The locally decoded normal caller route requires DWORD [EBP+18] != 0 and DWORD [EBP+44] == 0. This is not proof of global caller completeness or reachability.",
+    "The accepted selector reads DWORD [EDX+F4] at 0x41477e96 and compares to DWORD [ECX+ESI+F4] at 0x41477e9c, branching on inequality at 0x41477ea3. That is bit equality, not a demonstrated float or signed-positive predicate."
+  ],
+  "conditions": [
+    "All selected reads/stores have valid 32-bit addresses. Runtime execution and global CFG feasibility are not proved.",
+    "To connect U to entry ECX / caller EBP, prologue call 0x41da7e70 must preserve ECX until capture at 0x414c0a9e; then S must retain its stack-base role and [S+3C] its captured value until 0x414c1e5c. Intervening calls, aliases and opaque paths are not discharged by register naming or a literal-use census.",
+    "The chosen incoming route is 0x414c1dc4 -> 0x414c1e45 -> 0x414c1e58. The alternative 0x414c1e3a/3e route is outside the conditional identity calculation.",
+    "The raw-bit copy claim refers to memory at the time of 0x414c1ecf. Source and destination disjointness is not proved; earlier stores in the same copy may affect an overlapping source. No snapshot-at-block-entry claim is made."
+  ],
+  "frontier": [
+    "No typed alias U == the same T consumed at 0x41477e96/9c, nor writer-before-selector ordering/lifetime, is established. Entry-ECX preservation across prologue call 0x41da7e70 is unproved. Caller EBP identity is the one-caller stopping frontier; its provenance is not followed further.",
+    "No reached R+24 value is proved nonzero or positive, and no primary producer of R+24 is established. The candidate only transports a pre-existing DWORD.",
+    "Neither U != T nor absence of another writer is proved. Point+26, T+96, N and the other GAP01 gates remain distinct and unchanged. T+F4 and full GAP01 remain open."
+  ],
+  "verification_scope": "Pinned source hashes, five contiguous byte windows, fresh GNU objdump rows, fixed operand widths and selected local flow; not full CFG, original behavior, runtime binding or DLL execution.",
+  "saved_source_sha256": {
+    "workspace/orchestration/v5/shot_result_complete_walk.json": "19fe2a1388d1114d61ebca768afa41155ea44e792dca906c806ca531d55dfeb7",
+    "workspace/orchestration/v7/support_selector_walk.json": "8f0ecd1ca54d75968cf87ed3d0b3ff1b84674e03dc09314d5e1bd80a018ada7d",
+    "workspace/orchestration/v7/wide_member_candidates.json": "81554a09a5ddab462efea148782d89a6be3a48a1269e8299d4c21cd28a9043d3"
+  },
+  "safety_scope": {
+    "original_dll_loaded": false,
+    "original_dll_executed": false,
+    "original_dll_emulated": false,
+    "connection_or_injection": false,
+    "positive_value_stub_added": false,
+    "source_cpp_changed": false,
+    "shared_handoff_written": false
+  },
+  "blocks": [
+    {
+      "id": "receiver_entry",
+      "start_va": "0x414c0a50",
+      "end_va_exclusive": "0x414c0aa4",
+      "sha256": "53d6e77ccbf6cf1ed88280a636be96f35436b4e5256e81b5a1955259853cf436",
+      "saved_source": "workspace/orchestration/v5/shot_result_complete_walk.json",
+      "rows": [
+        {
+          "va": "0x414c0a50",
+          "bytes": "55",
+          "instruction": "push ebp"
+        },
+        {
+          "va": "0x414c0a51",
+          "bytes": "89e5",
+          "instruction": "mov ebp,esp"
+        },
+        {
+          "va": "0x414c0a53",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "va": "0x414c0a54",
+          "bytes": "57",
+          "instruction": "push edi"
+        },
+        {
+          "va": "0x414c0a55",
+          "bytes": "56",
+          "instruction": "push esi"
+        },
+        {
+          "va": "0x414c0a56",
+          "bytes": "83e4f0",
+          "instruction": "and esp,0xfffffff0"
+        },
+        {
+          "va": "0x414c0a59",
+          "bytes": "b8001a0000",
+          "instruction": "mov eax,0x1a00"
+        },
+        {
+          "va": "0x414c0a5e",
+          "bytes": "e80d748e00",
+          "instruction": "call 0x41da7e70"
+        },
+        {
+          "va": "0x414c0a63",
+          "bytes": "89e6",
+          "instruction": "mov esi,esp"
+        },
+        {
+          "va": "0x414c0a65",
+          "bytes": "89aee8190000",
+          "instruction": "mov dword ptr [esi+0x19e8],ebp"
+        },
+        {
+          "va": "0x414c0a6b",
+          "bytes": "89a6ec190000",
+          "instruction": "mov dword ptr [esi+0x19ec],esp"
+        },
+        {
+          "va": "0x414c0a71",
+          "bytes": "c786f8190000ffffffff",
+          "instruction": "mov dword ptr [esi+0x19f8],0xffffffff"
+        },
+        {
+          "va": "0x414c0a7b",
+          "bytes": "8d86f0190000",
+          "instruction": "lea eax,[esi+0x19f0]"
+        },
+        {
+          "va": "0x414c0a81",
+          "bytes": "c786f4190000b05a4c41",
+          "instruction": "mov dword ptr [esi+0x19f4],0x414c5ab0"
+        },
+        {
+          "va": "0x414c0a8b",
+          "bytes": "648b1500000000",
+          "instruction": "mov edx,dword ptr fs:0x0"
+        },
+        {
+          "va": "0x414c0a92",
+          "bytes": "8996f0190000",
+          "instruction": "mov dword ptr [esi+0x19f0],edx"
+        },
+        {
+          "va": "0x414c0a98",
+          "bytes": "64a300000000",
+          "instruction": "mov fs:0x0,eax"
+        },
+        {
+          "va": "0x414c0a9e",
+          "bytes": "894e3c",
+          "instruction": "mov dword ptr [esi+0x3c],ecx"
+        },
+        {
+          "va": "0x414c0aa1",
+          "bytes": "8b7918",
+          "instruction": "mov edi,dword ptr [ecx+0x18]"
+        }
+      ]
+    },
+    {
+      "id": "candidate_incoming",
+      "start_va": "0x414c1d80",
+      "end_va_exclusive": "0x414c1dc6",
+      "sha256": "2f088ac09a6bbc5061d7d2496b52490e140b1ab13b1794fc1af7e236db9e442b",
+      "saved_source": "workspace/orchestration/v5/shot_result_complete_walk.json",
+      "rows": [
+        {
+          "va": "0x414c1d80",
+          "bytes": "0f28e3",
+          "instruction": "movaps xmm4,xmm3"
+        },
+        {
+          "va": "0x414c1d83",
+          "bytes": "0f28d9",
+          "instruction": "movaps xmm3,xmm1"
+        },
+        {
+          "va": "0x414c1d86",
+          "bytes": "89d7",
+          "instruction": "mov edi,edx"
+        },
+        {
+          "va": "0x414c1d88",
+          "bytes": "8b5678",
+          "instruction": "mov edx,dword ptr [esi+0x78]"
+        },
+        {
+          "va": "0x414c1d8b",
+          "bytes": "01c2",
+          "instruction": "add edx,eax"
+        },
+        {
+          "va": "0x414c1d8d",
+          "bytes": "21ca",
+          "instruction": "and edx,ecx"
+        },
+        {
+          "va": "0x414c1d8f",
+          "bytes": "8b9ebc000000",
+          "instruction": "mov ebx,dword ptr [esi+0xbc]"
+        },
+        {
+          "va": "0x414c1d95",
+          "bytes": "8b1493",
+          "instruction": "mov edx,dword ptr [ebx+edx*4]"
+        },
+        {
+          "va": "0x414c1d98",
+          "bytes": "f30f104a08",
+          "instruction": "movss xmm1,dword ptr [edx+0x8]"
+        },
+        {
+          "va": "0x414c1d9d",
+          "bytes": "0f28e9",
+          "instruction": "movaps xmm5,xmm1"
+        },
+        {
+          "va": "0x414c1da0",
+          "bytes": "f30f5ceb",
+          "instruction": "subss xmm5,xmm3"
+        },
+        {
+          "va": "0x414c1da4",
+          "bytes": "f20f101a",
+          "instruction": "movsd xmm3,qword ptr [edx]"
+        },
+        {
+          "va": "0x414c1da8",
+          "bytes": "0f28f3",
+          "instruction": "movaps xmm6,xmm3"
+        },
+        {
+          "va": "0x414c1dab",
+          "bytes": "0f5cf4",
+          "instruction": "subps xmm6,xmm4"
+        },
+        {
+          "va": "0x414c1dae",
+          "bytes": "0f59f6",
+          "instruction": "mulps xmm6,xmm6"
+        },
+        {
+          "va": "0x414c1db1",
+          "bytes": "f30f59ed",
+          "instruction": "mulss xmm5,xmm5"
+        },
+        {
+          "va": "0x414c1db5",
+          "bytes": "f30f58ee",
+          "instruction": "addss xmm5,xmm6"
+        },
+        {
+          "va": "0x414c1db9",
+          "bytes": "0fc6f655",
+          "instruction": "shufps xmm6,xmm6,0x55"
+        },
+        {
+          "va": "0x414c1dbd",
+          "bytes": "f30f58f5",
+          "instruction": "addss xmm6,xmm5"
+        },
+        {
+          "va": "0x414c1dc1",
+          "bytes": "0f2ef2",
+          "instruction": "ucomiss xmm6,xmm2"
+        },
+        {
+          "va": "0x414c1dc4",
+          "bytes": "777f",
+          "instruction": "ja 0x414c1e45"
+        }
+      ]
+    },
+    {
+      "id": "receiver_copy",
+      "start_va": "0x414c1e3a",
+      "end_va_exclusive": "0x414c1ee9",
+      "sha256": "216daf5fb2f9b5fd35e85ced6fd6c2377068aed6ed0f5d8b3902c7f5cb71ecc2",
+      "saved_source": "workspace/orchestration/v5/shot_result_complete_walk.json",
+      "rows": [
+        {
+          "va": "0x414c1e3a",
+          "bytes": "89c7",
+          "instruction": "mov edi,eax"
+        },
+        {
+          "va": "0x414c1e3c",
+          "bytes": "85c0",
+          "instruction": "test eax,eax"
+        },
+        {
+          "va": "0x414c1e3e",
+          "bytes": "7518",
+          "instruction": "jne 0x414c1e58"
+        },
+        {
+          "va": "0x414c1e40",
+          "bytes": "e95b010000",
+          "instruction": "jmp 0x414c1fa0"
+        },
+        {
+          "va": "0x414c1e45",
+          "bytes": "8b8eb8000000",
+          "instruction": "mov ecx,dword ptr [esi+0xb8]"
+        },
+        {
+          "va": "0x414c1e4b",
+          "bytes": "8b4104",
+          "instruction": "mov eax,dword ptr [ecx+0x4]"
+        },
+        {
+          "va": "0x414c1e4e",
+          "bytes": "8b4908",
+          "instruction": "mov ecx,dword ptr [ecx+0x8]"
+        },
+        {
+          "va": "0x414c1e51",
+          "bytes": "49",
+          "instruction": "dec ecx"
+        },
+        {
+          "va": "0x414c1e52",
+          "bytes": "234e78",
+          "instruction": "and ecx,dword ptr [esi+0x78]"
+        },
+        {
+          "va": "0x414c1e55",
+          "bytes": "8b3c88",
+          "instruction": "mov edi,dword ptr [eax+ecx*4]"
+        },
+        {
+          "va": "0x414c1e58",
+          "bytes": "f30f1007",
+          "instruction": "movss xmm0,dword ptr [edi]"
+        },
+        {
+          "va": "0x414c1e5c",
+          "bytes": "8b463c",
+          "instruction": "mov eax,dword ptr [esi+0x3c]"
+        },
+        {
+          "va": "0x414c1e5f",
+          "bytes": "f30f1180d0000000",
+          "instruction": "movss dword ptr [eax+0xd0],xmm0"
+        },
+        {
+          "va": "0x414c1e67",
+          "bytes": "f30f104704",
+          "instruction": "movss xmm0,dword ptr [edi+0x4]"
+        },
+        {
+          "va": "0x414c1e6c",
+          "bytes": "f30f1180d4000000",
+          "instruction": "movss dword ptr [eax+0xd4],xmm0"
+        },
+        {
+          "va": "0x414c1e74",
+          "bytes": "f30f104708",
+          "instruction": "movss xmm0,dword ptr [edi+0x8]"
+        },
+        {
+          "va": "0x414c1e79",
+          "bytes": "f30f1180d8000000",
+          "instruction": "movss dword ptr [eax+0xd8],xmm0"
+        },
+        {
+          "va": "0x414c1e81",
+          "bytes": "f30f10470c",
+          "instruction": "movss xmm0,dword ptr [edi+0xc]"
+        },
+        {
+          "va": "0x414c1e86",
+          "bytes": "f30f1180dc000000",
+          "instruction": "movss dword ptr [eax+0xdc],xmm0"
+        },
+        {
+          "va": "0x414c1e8e",
+          "bytes": "f30f104710",
+          "instruction": "movss xmm0,dword ptr [edi+0x10]"
+        },
+        {
+          "va": "0x414c1e93",
+          "bytes": "f30f1180e0000000",
+          "instruction": "movss dword ptr [eax+0xe0],xmm0"
+        },
+        {
+          "va": "0x414c1e9b",
+          "bytes": "f30f104714",
+          "instruction": "movss xmm0,dword ptr [edi+0x14]"
+        },
+        {
+          "va": "0x414c1ea0",
+          "bytes": "f30f1180e4000000",
+          "instruction": "movss dword ptr [eax+0xe4],xmm0"
+        },
+        {
+          "va": "0x414c1ea8",
+          "bytes": "f30f104718",
+          "instruction": "movss xmm0,dword ptr [edi+0x18]"
+        },
+        {
+          "va": "0x414c1ead",
+          "bytes": "f30f1180e8000000",
+          "instruction": "movss dword ptr [eax+0xe8],xmm0"
+        },
+        {
+          "va": "0x414c1eb5",
+          "bytes": "f30f10471c",
+          "instruction": "movss xmm0,dword ptr [edi+0x1c]"
+        },
+        {
+          "va": "0x414c1eba",
+          "bytes": "f30f1180ec000000",
+          "instruction": "movss dword ptr [eax+0xec],xmm0"
+        },
+        {
+          "va": "0x414c1ec2",
+          "bytes": "f30f104720",
+          "instruction": "movss xmm0,dword ptr [edi+0x20]"
+        },
+        {
+          "va": "0x414c1ec7",
+          "bytes": "f30f1180f0000000",
+          "instruction": "movss dword ptr [eax+0xf0],xmm0"
+        },
+        {
+          "va": "0x414c1ecf",
+          "bytes": "f30f104724",
+          "instruction": "movss xmm0,dword ptr [edi+0x24]"
+        },
+        {
+          "va": "0x414c1ed4",
+          "bytes": "f30f1180f4000000",
+          "instruction": "movss dword ptr [eax+0xf4],xmm0"
+        },
+        {
+          "va": "0x414c1edc",
+          "bytes": "f30f104728",
+          "instruction": "movss xmm0,dword ptr [edi+0x28]"
+        },
+        {
+          "va": "0x414c1ee1",
+          "bytes": "f30f1180f8000000",
+          "instruction": "movss dword ptr [eax+0xf8],xmm0"
+        }
+      ]
+    },
+    {
+      "id": "caller",
+      "start_va": "0x414c0877",
+      "end_va_exclusive": "0x414c08bc",
+      "sha256": "765fbfb959e72ae7c867d836929e39522f4e4dd8263969004da50c61a8031d7e",
+      "saved_source": null,
+      "rows": [
+        {
+          "va": "0x414c0877",
+          "bytes": "837d1800",
+          "instruction": "cmp dword ptr [ebp+0x18],0x0"
+        },
+        {
+          "va": "0x414c087b",
+          "bytes": "7511",
+          "instruction": "jne 0x414c088e"
+        },
+        {
+          "va": "0x414c087d",
+          "bytes": "eb3d",
+          "instruction": "jmp 0x414c08bc"
+        },
+        {
+          "va": "0x414c087f",
+          "bytes": "c7042400000000",
+          "instruction": "mov dword ptr [esp],0x0"
+        },
+        {
+          "va": "0x414c0886",
+          "bytes": "31db",
+          "instruction": "xor ebx,ebx"
+        },
+        {
+          "va": "0x414c0888",
+          "bytes": "837d1800",
+          "instruction": "cmp dword ptr [ebp+0x18],0x0"
+        },
+        {
+          "va": "0x414c088c",
+          "bytes": "742e",
+          "instruction": "je 0x414c08bc"
+        },
+        {
+          "va": "0x414c088e",
+          "bytes": "837d4400",
+          "instruction": "cmp dword ptr [ebp+0x44],0x0"
+        },
+        {
+          "va": "0x414c0892",
+          "bytes": "7528",
+          "instruction": "jne 0x414c08bc"
+        },
+        {
+          "va": "0x414c0894",
+          "bytes": "8b8664110000",
+          "instruction": "mov eax,dword ptr [esi+0x1164]"
+        },
+        {
+          "va": "0x414c089a",
+          "bytes": "2b8660110000",
+          "instruction": "sub eax,dword ptr [esi+0x1160]"
+        },
+        {
+          "va": "0x414c08a0",
+          "bytes": "83f00c",
+          "instruction": "xor eax,0xc"
+        },
+        {
+          "va": "0x414c08a3",
+          "bytes": "31d2",
+          "instruction": "xor edx,edx"
+        },
+        {
+          "va": "0x414c08a5",
+          "bytes": "0b0424",
+          "instruction": "or eax,dword ptr [esp]"
+        },
+        {
+          "va": "0x414c08a8",
+          "bytes": "0f94c2",
+          "instruction": "sete dl"
+        },
+        {
+          "va": "0x414c08ab",
+          "bytes": "89e9",
+          "instruction": "mov ecx,ebp"
+        },
+        {
+          "va": "0x414c08ad",
+          "bytes": "52",
+          "instruction": "push edx"
+        },
+        {
+          "va": "0x414c08ae",
+          "bytes": "ff742410",
+          "instruction": "push dword ptr [esp+0x10]"
+        },
+        {
+          "va": "0x414c08b2",
+          "bytes": "ff74240c",
+          "instruction": "push dword ptr [esp+0xc]"
+        },
+        {
+          "va": "0x414c08b6",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "va": "0x414c08b7",
+          "bytes": "e894010000",
+          "instruction": "call 0x414c0a50"
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "start_va": "0x41477e83",
+      "end_va_exclusive": "0x41477ea5",
+      "sha256": "2310e0f38d01dc2ca58742745c329728d82bc317d67970e055bd54561cbf18a5",
+      "saved_source": "workspace/orchestration/v7/support_selector_walk.json",
+      "rows": [
+        {
+          "va": "0x41477e83",
+          "bytes": "8b82f0000000",
+          "instruction": "mov eax,dword ptr [edx+0xf0]"
+        },
+        {
+          "va": "0x41477e89",
+          "bytes": "398431f0000000",
+          "instruction": "cmp dword ptr [ecx+esi*1+0xf0],eax"
+        },
+        {
+          "va": "0x41477e90",
+          "bytes": "0f857e000000",
+          "instruction": "jne 0x41477f14"
+        },
+        {
+          "va": "0x41477e96",
+          "bytes": "8b82f4000000",
+          "instruction": "mov eax,dword ptr [edx+0xf4]"
+        },
+        {
+          "va": "0x41477e9c",
+          "bytes": "398431f4000000",
+          "instruction": "cmp dword ptr [ecx+esi*1+0xf4],eax"
+        },
+        {
+          "va": "0x41477ea3",
+          "bytes": "756f",
+          "instruction": "jne 0x41477f14"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "cwd": "/tmp/hoplite/232-w5-tf4-sol",
+    "tested_source_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b with only the two assigned W5-TF4 evidence files added; no C++ edits",
+    "environment": {
+      "python": "3.12.3",
+      "objdump": "GNU Binutils for Ubuntu 2.42",
+      "g++": "13.3.0",
+      "make": "4.3",
+      "git": "2.43.0",
+      "PYTHONOPTIMIZE": "0",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "verifier_in_make_check": false,
+    "coordinator_gate": "Run the explicit W5-TF4 verifier and full check again on a fixed integrated SHA; independent review pending.",
+    "commands": [
+      {
+        "command": "python3 -B continuation/evidence/wave5/tf4/verify_tf4.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-tf4/verify-final.log",
+        "scope": "5 windows, 100 fresh instructions, 79 saved rows, one hypothesis; no typed positive source proved",
+        "log_sha256": "66ead471fefe617a6221130b6430b44d5de6d05e28ec3e20666c4017ac32bdfa"
+      },
+      {
+        "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-tf4/check.log",
+        "scope": "Existing native and ASan/UBSan regression suite, static evidence and eight Python tests; not proof of runtime identity",
+        "log_sha256": "b15c05d38cb25a27620eb2796b9396bbb766e1e3f0a4fbe529e5cabf7ca32ebe"
+      },
+      {
+        "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+        "exit_code": 0,
+        "log": "runs/w5-tf4/bundle.log",
+        "scope": "960 bundle files",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+        "exit_code": 0,
+        "log": "runs/w5-tf4/input-work.log",
+        "scope": "64087 input/work records unchanged",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "command": "git diff --check",
+        "exit_code": 0
+      }
+    ],
+    "regression_assertions_per_mode": 19902,
+    "regression_programs_per_mode": 7,
+    "python_unit_tests": 8
+  }
+}

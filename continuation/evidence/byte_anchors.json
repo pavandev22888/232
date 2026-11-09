@@ -1,0 +1,2101 @@
+{
+  "format": 1,
+  "image": {
+    "path": "work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "image_base": "0x412a0000",
+  "instructions": [
+    {
+      "va": "0x412c2f20",
+      "bytes": "56",
+      "instruction": "push esi",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f21",
+      "bytes": "6800a00300",
+      "instruction": "push 0x3a000",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f26",
+      "bytes": "e8514cae00",
+      "instruction": "call 0x41da7b7c",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f2b",
+      "bytes": "83c404",
+      "instruction": "add esp,0x4",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f2e",
+      "bytes": "89c6",
+      "instruction": "mov esi,eax",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f30",
+      "bytes": "6800a00300",
+      "instruction": "push 0x3a000",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f35",
+      "bytes": "6a00",
+      "instruction": "push 0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f37",
+      "bytes": "50",
+      "instruction": "push eax",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f38",
+      "bytes": "e8e39fd400",
+      "instruction": "call 0x4200cf20",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f3d",
+      "bytes": "83c40c",
+      "instruction": "add esp,0xc",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f40",
+      "bytes": "b880000000",
+      "instruction": "mov eax,0x80",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f45",
+      "bytes": "0f57c0",
+      "instruction": "xorps xmm0,xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f48",
+      "bytes": "0f1f840000000000",
+      "instruction": "nop DWORD PTR [eax+eax*1+0x0]",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f50",
+      "bytes": "c644068000",
+      "instruction": "mov BYTE PTR [esi+eax*1-0x80],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f55",
+      "bytes": "c744068400000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x7c],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f5d",
+      "bytes": "c744068864000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x78],0x64",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f65",
+      "bytes": "0f1144068c",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x74],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f6a",
+      "bytes": "0f1144069c",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x64],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f6f",
+      "bytes": "0f114406ac",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x54],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f74",
+      "bytes": "0f114406bc",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x44],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f79",
+      "bytes": "0f114406cc",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x34],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f7e",
+      "bytes": "0f114406dc",
+      "instruction": "movups XMMWORD PTR [esi+eax*1-0x24],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f83",
+      "bytes": "c74406f000000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x10],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f8b",
+      "bytes": "c74406ec00000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x14],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f93",
+      "bytes": "c64406f400",
+      "instruction": "mov BYTE PTR [esi+eax*1-0xc],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2f98",
+      "bytes": "c74406f800000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x8],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fa0",
+      "bytes": "c74406fc64000000",
+      "instruction": "mov DWORD PTR [esi+eax*1-0x4],0x64",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fa8",
+      "bytes": "0f110406",
+      "instruction": "movups XMMWORD PTR [esi+eax*1],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fac",
+      "bytes": "0f11440610",
+      "instruction": "movups XMMWORD PTR [esi+eax*1+0x10],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fb1",
+      "bytes": "0f11440620",
+      "instruction": "movups XMMWORD PTR [esi+eax*1+0x20],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fb6",
+      "bytes": "0f11440630",
+      "instruction": "movups XMMWORD PTR [esi+eax*1+0x30],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fbb",
+      "bytes": "0f11440640",
+      "instruction": "movups XMMWORD PTR [esi+eax*1+0x40],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fc0",
+      "bytes": "0f11440650",
+      "instruction": "movups XMMWORD PTR [esi+eax*1+0x50],xmm0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fc5",
+      "bytes": "c744066400000000",
+      "instruction": "mov DWORD PTR [esi+eax*1+0x64],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fcd",
+      "bytes": "c744066000000000",
+      "instruction": "mov DWORD PTR [esi+eax*1+0x60],0x0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fd5",
+      "bytes": "05e8000000",
+      "instruction": "add eax,0xe8",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fda",
+      "bytes": "3d80a00300",
+      "instruction": "cmp eax,0x3a080",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fdf",
+      "bytes": "0f856bffffff",
+      "instruction": "jne 0x412c2f50",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2fe5",
+      "bytes": "8935c0464f42",
+      "instruction": "mov DWORD PTR ds:0x424f46c0,esi",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2feb",
+      "bytes": "68a0803241",
+      "instruction": "push 0x413280a0",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2ff0",
+      "bytes": "e8a64eae00",
+      "instruction": "call 0x41da7e9b",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2ff5",
+      "bytes": "83c404",
+      "instruction": "add esp,0x4",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2ff8",
+      "bytes": "5e",
+      "instruction": "pop esi",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x412c2ff9",
+      "bytes": "c3",
+      "instruction": "ret",
+      "segment": "initialization",
+      "source": "orchestration/v10/position_manager_initializer_walk.json"
+    },
+    {
+      "va": "0x4150b3ac",
+      "bytes": "8b5514",
+      "instruction": "mov edx,DWORD PTR [ebp+0x14]",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3af",
+      "bytes": "6bcf74",
+      "instruction": "imul ecx,edi,0x74",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3b2",
+      "bytes": "f30f10440b0c",
+      "instruction": "movss xmm0,DWORD PTR [ebx+ecx*1+0xc]",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3b8",
+      "bytes": "a104ca2342",
+      "instruction": "mov eax,ds:0x4223ca04",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3bd",
+      "bytes": "0f2e00",
+      "instruction": "ucomiss xmm0,DWORD PTR [eax]",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3c0",
+      "bytes": "750a",
+      "instruction": "jne 0x4150b3cc",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3c2",
+      "bytes": "39540b20",
+      "instruction": "cmp DWORD PTR [ebx+ecx*1+0x20],edx",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3c6",
+      "bytes": "0f8f90010000",
+      "instruction": "jg 0x4150b55c",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3cc",
+      "bytes": "8b4508",
+      "instruction": "mov eax,DWORD PTR [ebp+0x8]",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3cf",
+      "bytes": "83fa02",
+      "instruction": "cmp edx,0x2",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3d2",
+      "bytes": "750a",
+      "instruction": "jne 0x4150b3de",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3d4",
+      "bytes": "39440b58",
+      "instruction": "cmp DWORD PTR [ebx+ecx*1+0x58],eax",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3d8",
+      "bytes": "0f8f7e010000",
+      "instruction": "jg 0x4150b55c",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3de",
+      "bytes": "898ebc000000",
+      "instruction": "mov DWORD PTR [esi+0xbc],ecx",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b3e4",
+      "bytes": "895e18",
+      "instruction": "mov DWORD PTR [esi+0x18],ebx",
+      "segment": "update_priority",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b556",
+      "bytes": "807e5600",
+      "instruction": "cmp BYTE PTR [esi+0x56],0x0",
+      "segment": "trace_all_solid",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b55a",
+      "bytes": "7416",
+      "instruction": "je 0x4150b572",
+      "segment": "trace_all_solid",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b572",
+      "bytes": "807e5700",
+      "instruction": "cmp BYTE PTR [esi+0x57],0x0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b576",
+      "bytes": "75e4",
+      "instruction": "jne 0x4150b55c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b578",
+      "bytes": "f30f10464c",
+      "instruction": "movss xmm0,DWORD PTR [esi+0x4c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b57d",
+      "bytes": "0f2e0554a50542",
+      "instruction": "ucomiss xmm0,DWORD PTR ds:0x4205a554",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b584",
+      "bytes": "74d6",
+      "instruction": "je 0x4150b55c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b586",
+      "bytes": "8b5e18",
+      "instruction": "mov ebx,DWORD PTR [esi+0x18]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b589",
+      "bytes": "8bbebc000000",
+      "instruction": "mov edi,DWORD PTR [esi+0xbc]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b58f",
+      "bytes": "8d0c3b",
+      "instruction": "lea ecx,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b592",
+      "bytes": "8d043b",
+      "instruction": "lea eax,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b595",
+      "bytes": "83c058",
+      "instruction": "add eax,0x58",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b598",
+      "bytes": "89869c000000",
+      "instruction": "mov DWORD PTR [esi+0x9c],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b59e",
+      "bytes": "c60101",
+      "instruction": "mov BYTE PTR [ecx],0x1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5a1",
+      "bytes": "f30f104c3b24",
+      "instruction": "movss xmm1,DWORD PTR [ebx+edi*1+0x24]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5a7",
+      "bytes": "0f2e4c3b3c",
+      "instruction": "ucomiss xmm1,DWORD PTR [ebx+edi*1+0x3c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5ac",
+      "bytes": "8b4508",
+      "instruction": "mov eax,DWORD PTR [ebp+0x8]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5af",
+      "bytes": "751a",
+      "instruction": "jne 0x4150b5cb",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5b1",
+      "bytes": "f30f10543b28",
+      "instruction": "movss xmm2,DWORD PTR [ebx+edi*1+0x28]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5b7",
+      "bytes": "0f2e543b40",
+      "instruction": "ucomiss xmm2,DWORD PTR [ebx+edi*1+0x40]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5bc",
+      "bytes": "750d",
+      "instruction": "jne 0x4150b5cb",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5be",
+      "bytes": "f30f10543b2c",
+      "instruction": "movss xmm2,DWORD PTR [ebx+edi*1+0x2c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5c4",
+      "bytes": "0f2e543b44",
+      "instruction": "ucomiss xmm2,DWORD PTR [ebx+edi*1+0x44]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5c9",
+      "bytes": "7450",
+      "instruction": "je 0x4150b61b",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5cb",
+      "bytes": "8b543b60",
+      "instruction": "mov edx,DWORD PTR [ebx+edi*1+0x60]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5cf",
+      "bytes": "39c2",
+      "instruction": "cmp edx,eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5d1",
+      "bytes": "7404",
+      "instruction": "je 0x4150b5d7",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5d3",
+      "bytes": "89543b64",
+      "instruction": "mov DWORD PTR [ebx+edi*1+0x64],edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5d7",
+      "bytes": "8d0c3b",
+      "instruction": "lea ecx,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5da",
+      "bytes": "83c160",
+      "instruction": "add ecx,0x60",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5dd",
+      "bytes": "39c2",
+      "instruction": "cmp edx,eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5df",
+      "bytes": "7509",
+      "instruction": "jne 0x4150b5ea",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5e1",
+      "bytes": "8b4514",
+      "instruction": "mov eax,DWORD PTR [ebp+0x14]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5e4",
+      "bytes": "39443b68",
+      "instruction": "cmp DWORD PTR [ebx+edi*1+0x68],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5e8",
+      "bytes": "7d2c",
+      "instruction": "jge 0x4150b616",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5ea",
+      "bytes": "8d143b",
+      "instruction": "lea edx,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5ed",
+      "bytes": "83c23c",
+      "instruction": "add edx,0x3c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5f0",
+      "bytes": "8b4514",
+      "instruction": "mov eax,DWORD PTR [ebp+0x14]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5f3",
+      "bytes": "89422c",
+      "instruction": "mov DWORD PTR [edx+0x2c],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5f6",
+      "bytes": "f30f110a",
+      "instruction": "movss DWORD PTR [edx],xmm1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b5fa",
+      "bytes": "f20f104c3b28",
+      "instruction": "movsd xmm1,QWORD PTR [ebx+edi*1+0x28]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b600",
+      "bytes": "f20f114c3b40",
+      "instruction": "movsd QWORD PTR [ebx+edi*1+0x40],xmm1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b606",
+      "bytes": "8b1528f42342",
+      "instruction": "mov edx,DWORD PTR ds:0x4223f428",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b60c",
+      "bytes": "8b926c010000",
+      "instruction": "mov edx,DWORD PTR [edx+0x16c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b612",
+      "bytes": "89543b6c",
+      "instruction": "mov DWORD PTR [ebx+edi*1+0x6c],edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b616",
+      "bytes": "8b4508",
+      "instruction": "mov eax,DWORD PTR [ebp+0x8]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b619",
+      "bytes": "8901",
+      "instruction": "mov DWORD PTR [ecx],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b61b",
+      "bytes": "8d0c3b",
+      "instruction": "lea ecx,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b61e",
+      "bytes": "83c10c",
+      "instruction": "add ecx,0xc",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b621",
+      "bytes": "8b969c000000",
+      "instruction": "mov edx,DWORD PTR [esi+0x9c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b627",
+      "bytes": "8b12",
+      "instruction": "mov edx,DWORD PTR [edx]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b629",
+      "bytes": "39c2",
+      "instruction": "cmp edx,eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b62b",
+      "bytes": "7404",
+      "instruction": "je 0x4150b631",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b62d",
+      "bytes": "89543b5c",
+      "instruction": "mov DWORD PTR [ebx+edi*1+0x5c],edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b631",
+      "bytes": "8b969c000000",
+      "instruction": "mov edx,DWORD PTR [esi+0x9c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b637",
+      "bytes": "8902",
+      "instruction": "mov DWORD PTR [edx],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b639",
+      "bytes": "8d043b",
+      "instruction": "lea eax,[ebx+edi*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b63c",
+      "bytes": "83c024",
+      "instruction": "add eax,0x24",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b63f",
+      "bytes": "f30f1011",
+      "instruction": "movss xmm2,DWORD PTR [ecx]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b643",
+      "bytes": "8b1504ca2342",
+      "instruction": "mov edx,DWORD PTR ds:0x4223ca04",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b649",
+      "bytes": "f30f105a20",
+      "instruction": "movss xmm3,DWORD PTR [edx+0x20]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b64e",
+      "bytes": "f30f591db4bb0942",
+      "instruction": "mulss xmm3,DWORD PTR ds:0x4209bbb4",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b656",
+      "bytes": "f30f100a",
+      "instruction": "movss xmm1,DWORD PTR [edx]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b65a",
+      "bytes": "f30f58d9",
+      "instruction": "addss xmm3,xmm1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b65e",
+      "bytes": "0f2eda",
+      "instruction": "ucomiss xmm3,xmm2",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b661",
+      "bytes": "730e",
+      "instruction": "jae 0x4150b671",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b663",
+      "bytes": "f30f5cca",
+      "instruction": "subss xmm1,xmm2",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b667",
+      "bytes": "f30f114c3b18",
+      "instruction": "movss DWORD PTR [ebx+edi*1+0x18],xmm1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b66d",
+      "bytes": "f30f100a",
+      "instruction": "movss xmm1,DWORD PTR [edx]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b671",
+      "bytes": "f30f1109",
+      "instruction": "movss DWORD PTR [ecx],xmm1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b675",
+      "bytes": "0f2e05b8bb0942",
+      "instruction": "ucomiss xmm0,DWORD PTR ds:0x4209bbb8",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b67c",
+      "bytes": "0f92c1",
+      "instruction": "setb cl",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b67f",
+      "bytes": "8b5514",
+      "instruction": "mov edx,DWORD PTR [ebp+0x14]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b682",
+      "bytes": "83e2fb",
+      "instruction": "and edx,0xfffffffb",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b685",
+      "bytes": "83fa01",
+      "instruction": "cmp edx,0x1",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b688",
+      "bytes": "0f95c2",
+      "instruction": "setne dl",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b68b",
+      "bytes": "84ca",
+      "instruction": "test dl,cl",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b68d",
+      "bytes": "8d4e2c",
+      "instruction": "lea ecx,[esi+0x2c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b690",
+      "bytes": "8b5510",
+      "instruction": "mov edx,DWORD PTR [ebp+0x10]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b693",
+      "bytes": "0f44ca",
+      "instruction": "cmove ecx,edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b696",
+      "bytes": "f30f1001",
+      "instruction": "movss xmm0,DWORD PTR [ecx]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b69a",
+      "bytes": "8d4a04",
+      "instruction": "lea ecx,[edx+0x4]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b69d",
+      "bytes": "f30f1100",
+      "instruction": "movss DWORD PTR [eax],xmm0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6a1",
+      "bytes": "8d4630",
+      "instruction": "lea eax,[esi+0x30]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6a4",
+      "bytes": "0f44c1",
+      "instruction": "cmove eax,ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6a7",
+      "bytes": "8d4a08",
+      "instruction": "lea ecx,[edx+0x8]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6aa",
+      "bytes": "f30f1000",
+      "instruction": "movss xmm0,DWORD PTR [eax]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6ae",
+      "bytes": "f30f11443b28",
+      "instruction": "movss DWORD PTR [ebx+edi*1+0x28],xmm0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6b4",
+      "bytes": "8d4634",
+      "instruction": "lea eax,[esi+0x34]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6b7",
+      "bytes": "0f44c1",
+      "instruction": "cmove eax,ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6ba",
+      "bytes": "f30f1000",
+      "instruction": "movss xmm0,DWORD PTR [eax]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6be",
+      "bytes": "f30f11443b2c",
+      "instruction": "movss DWORD PTR [ebx+edi*1+0x2c],xmm0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6c4",
+      "bytes": "a140855142",
+      "instruction": "mov eax,ds:0x42518540",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6c9",
+      "bytes": "648b0d2c000000",
+      "instruction": "mov ecx,DWORD PTR fs:0x2c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6d0",
+      "bytes": "8b0481",
+      "instruction": "mov eax,DWORD PTR [ecx+eax*4]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6d3",
+      "bytes": "8b0d08044b42",
+      "instruction": "mov ecx,DWORD PTR ds:0x424b0408",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6d9",
+      "bytes": "3b8808000000",
+      "instruction": "cmp ecx,DWORD PTR [eax+0x8]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6df",
+      "bytes": "0f8f9d020000",
+      "instruction": "jg 0x4150b982",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6e5",
+      "bytes": "f30f10464c",
+      "instruction": "movss xmm0,DWORD PTR [esi+0x4c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6ea",
+      "bytes": "f30f100d54a50542",
+      "instruction": "movss xmm1,DWORD PTR ds:0x4205a554",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6f2",
+      "bytes": "31c0",
+      "instruction": "xor eax,eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6f4",
+      "bytes": "0f2ec8",
+      "instruction": "ucomiss xmm1,xmm0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6f7",
+      "bytes": "0f95c0",
+      "instruction": "setne al",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b6fa",
+      "bytes": "f30f100d18a50542",
+      "instruction": "movss xmm1,DWORD PTR ds:0x4205a518",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b702",
+      "bytes": "31d2",
+      "instruction": "xor edx,edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b704",
+      "bytes": "31c9",
+      "instruction": "xor ecx,ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b706",
+      "bytes": "0f2ec8",
+      "instruction": "ucomiss xmm1,xmm0",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b709",
+      "bytes": "0f97c2",
+      "instruction": "seta dl",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b70c",
+      "bytes": "8d1450",
+      "instruction": "lea edx,[eax+edx*2]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b70f",
+      "bytes": "0f93c1",
+      "instruction": "setae cl",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b712",
+      "bytes": "898e9c000000",
+      "instruction": "mov DWORD PTR [esi+0x9c],ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b718",
+      "bytes": "8b3d98634f42",
+      "instruction": "mov edi,DWORD PTR ds:0x424f6398",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b71e",
+      "bytes": "8b4e1c",
+      "instruction": "mov ecx,DWORD PTR [esi+0x1c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b721",
+      "bytes": "0b140f",
+      "instruction": "or edx,DWORD PTR [edi+ecx*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b724",
+      "bytes": "8b8e9c000000",
+      "instruction": "mov ecx,DWORD PTR [esi+0x9c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b72a",
+      "bytes": "8d0c49",
+      "instruction": "lea ecx,[ecx+ecx*2]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b72d",
+      "bytes": "83c1fd",
+      "instruction": "add ecx,0xfffffffd",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b730",
+      "bytes": "8d0445feffffff",
+      "instruction": "lea eax,[eax*2-0x2]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b737",
+      "bytes": "09c8",
+      "instruction": "or eax,ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b739",
+      "bytes": "21d0",
+      "instruction": "and eax,edx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b73b",
+      "bytes": "8b96bc000000",
+      "instruction": "mov edx,DWORD PTR [esi+0xbc]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b741",
+      "bytes": "89441304",
+      "instruction": "mov DWORD PTR [ebx+edx*1+0x4],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b745",
+      "bytes": "8d0413",
+      "instruction": "lea eax,[ebx+edx*1]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b748",
+      "bytes": "83c020",
+      "instruction": "add eax,0x20",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b74b",
+      "bytes": "8b4d14",
+      "instruction": "mov ecx,DWORD PTR [ebp+0x14]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b74e",
+      "bytes": "8908",
+      "instruction": "mov DWORD PTR [eax],ecx",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b750",
+      "bytes": "a128f42342",
+      "instruction": "mov eax,ds:0x4223f428",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b755",
+      "bytes": "8b806c010000",
+      "instruction": "mov eax,DWORD PTR [eax+0x16c]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b75b",
+      "bytes": "89441370",
+      "instruction": "mov DWORD PTR [ebx+edx*1+0x70],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b75f",
+      "bytes": "8b4518",
+      "instruction": "mov eax,DWORD PTR [ebp+0x18]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b762",
+      "bytes": "85c0",
+      "instruction": "test eax,eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b764",
+      "bytes": "0f88f2fdffff",
+      "instruction": "js 0x4150b55c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b76a",
+      "bytes": "8b4e18",
+      "instruction": "mov ecx,DWORD PTR [esi+0x18]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b76d",
+      "bytes": "8b96bc000000",
+      "instruction": "mov edx,DWORD PTR [esi+0xbc]",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b773",
+      "bytes": "89441108",
+      "instruction": "mov DWORD PTR [ecx+edx*1+0x8],eax",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150b777",
+      "bytes": "e9e0fdffff",
+      "instruction": "jmp 0x4150b55c",
+      "segment": "update_state",
+      "source": "orchestration/v10/network_update_with_tls_tails_walk.json"
+    },
+    {
+      "va": "0x4150be8f",
+      "bytes": "8b4108",
+      "instruction": "mov eax,DWORD PTR [ecx+0x8]",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150be92",
+      "bytes": "83c108",
+      "instruction": "add ecx,0x8",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150be95",
+      "bytes": "ff5028",
+      "instruction": "call DWORD PTR [eax+0x28]",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150be98",
+      "bytes": "3d00080000",
+      "instruction": "cmp eax,0x800",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150be9d",
+      "bytes": "0f8355060000",
+      "instruction": "jae 0x4150c4f8",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bea3",
+      "bytes": "8b4d0c",
+      "instruction": "mov ecx,DWORD PTR [ebp+0xc]",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bea6",
+      "bytes": "89c3",
+      "instruction": "mov ebx,eax",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bea8",
+      "bytes": "6bc074",
+      "instruction": "imul eax,eax,0x74",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150beab",
+      "bytes": "01c7",
+      "instruction": "add edi,eax",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bead",
+      "bytes": "8939",
+      "instruction": "mov DWORD PTR [ecx],edi",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150beaf",
+      "bytes": "e8bc076600",
+      "instruction": "call 0x41b6c670",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150beb4",
+      "bytes": "85c0",
+      "instruction": "test eax,eax",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150beb6",
+      "bytes": "0f8423060000",
+      "instruction": "je 0x4150c4df",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bebc",
+      "bytes": "83fb40",
+      "instruction": "cmp ebx,0x40",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bebf",
+      "bytes": "0f87f5050000",
+      "instruction": "ja 0x4150c4ba",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bec5",
+      "bytes": "89c7",
+      "instruction": "mov edi,eax",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150bec7",
+      "bytes": "899e94000000",
+      "instruction": "mov DWORD PTR [esi+0x94],ebx",
+      "segment": "reader_index_and_borrow",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c19f",
+      "bytes": "8b8e94000000",
+      "instruction": "mov ecx,DWORD PTR [esi+0x94]",
+      "segment": "reader_slot_flag",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c1a5",
+      "bytes": "803c0100",
+      "instruction": "cmp BYTE PTR [ecx+eax*1],0x0",
+      "segment": "reader_slot_flag",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c1a9",
+      "bytes": "0f84de020000",
+      "instruction": "je 0x4150c48d",
+      "segment": "reader_slot_flag",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c47f",
+      "bytes": "01f8",
+      "instruction": "add eax,edi",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c481",
+      "bytes": "8b8e94000000",
+      "instruction": "mov ecx,DWORD PTR [esi+0x94]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c487",
+      "bytes": "833c8800",
+      "instruction": "cmp DWORD PTR [eax+ecx*4],0x0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c48b",
+      "bytes": "7f2d",
+      "instruction": "jg 0x4150c4ba",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c48d",
+      "bytes": "a15c004b42",
+      "instruction": "mov eax,ds:0x424b005c",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c492",
+      "bytes": "80b86603000001",
+      "instruction": "cmp BYTE PTR [eax+0x366],0x1",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c499",
+      "bytes": "b965030000",
+      "instruction": "mov ecx,0x365",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c49e",
+      "bytes": "83d900",
+      "instruction": "sbb ecx,0x0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4a1",
+      "bytes": "803c0800",
+      "instruction": "cmp BYTE PTR [eax+ecx*1],0x0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4a5",
+      "bytes": "8b450c",
+      "instruction": "mov eax,DWORD PTR [ebp+0xc]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4a8",
+      "bytes": "8b00",
+      "instruction": "mov eax,DWORD PTR [eax]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4aa",
+      "bytes": "7409",
+      "instruction": "je 0x4150c4b5",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4ac",
+      "bytes": "0f57c0",
+      "instruction": "xorps xmm0,xmm0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4af",
+      "bytes": "0f2e4048",
+      "instruction": "ucomiss xmm0,DWORD PTR [eax+0x48]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4b3",
+      "bytes": "7505",
+      "instruction": "jne 0x4150c4ba",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4b5",
+      "bytes": "c60000",
+      "instruction": "mov BYTE PTR [eax],0x0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4b8",
+      "bytes": "eb25",
+      "instruction": "jmp 0x4150c4df",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4ba",
+      "bytes": "8b450c",
+      "instruction": "mov eax,DWORD PTR [ebp+0xc]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4bd",
+      "bytes": "8b00",
+      "instruction": "mov eax,DWORD PTR [eax]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4bf",
+      "bytes": "803800",
+      "instruction": "cmp BYTE PTR [eax],0x0",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4c2",
+      "bytes": "741b",
+      "instruction": "je 0x4150c4df",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4c4",
+      "bytes": "8b0d04ca2342",
+      "instruction": "mov ecx,DWORD PTR ds:0x4223ca04",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4ca",
+      "bytes": "f30f1001",
+      "instruction": "movss xmm0,DWORD PTR [ecx]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4ce",
+      "bytes": "f30f5c400c",
+      "instruction": "subss xmm0,DWORD PTR [eax+0xc]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4d3",
+      "bytes": "0f2e0580a50542",
+      "instruction": "ucomiss xmm0,DWORD PTR ds:0x4205a580",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4da",
+      "bytes": "0f92c0",
+      "instruction": "setb al",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4dd",
+      "bytes": "eb02",
+      "instruction": "jmp 0x4150c4e1",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4df",
+      "bytes": "31c0",
+      "instruction": "xor eax,eax",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4e1",
+      "bytes": "8b8ea0000000",
+      "instruction": "mov ecx,DWORD PTR [esi+0xa0]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4e7",
+      "bytes": "64890d00000000",
+      "instruction": "mov DWORD PTR fs:0x0,ecx",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4ee",
+      "bytes": "8d65f4",
+      "instruction": "lea esp,[ebp-0xc]",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4f1",
+      "bytes": "5e",
+      "instruction": "pop esi",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4f2",
+      "bytes": "5f",
+      "instruction": "pop edi",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4f3",
+      "bytes": "5b",
+      "instruction": "pop ebx",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4f4",
+      "bytes": "5d",
+      "instruction": "pop ebp",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x4150c4f5",
+      "bytes": "c20800",
+      "instruction": "ret 0x8",
+      "segment": "reader_policy_and_age",
+      "source": "orchestration/v10/position_record_reader_walk.json"
+    },
+    {
+      "va": "0x414f83af",
+      "bytes": "c745c800000000",
+      "instruction": "mov DWORD PTR [ebp-0x38],0x0",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83b6",
+      "bytes": "8d45c8",
+      "instruction": "lea eax,[ebp-0x38]",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83b9",
+      "bytes": "89f1",
+      "instruction": "mov ecx,esi",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83bb",
+      "bytes": "50",
+      "instruction": "push eax",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83bc",
+      "bytes": "57",
+      "instruction": "push edi",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83bd",
+      "bytes": "e87e3a0100",
+      "instruction": "call 0x4150be40",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83c2",
+      "bytes": "8b7dc8",
+      "instruction": "mov edi,DWORD PTR [ebp-0x38]",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83c5",
+      "bytes": "85ff",
+      "instruction": "test edi,edi",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83c7",
+      "bytes": "0f84f5030000",
+      "instruction": "je 0x414f87c2",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83cd",
+      "bytes": "88c3",
+      "instruction": "mov bl,al",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83cf",
+      "bytes": "e89c426700",
+      "instruction": "call 0x41b6c670",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83d4",
+      "bytes": "85c0",
+      "instruction": "test eax,eax",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f83d6",
+      "bytes": "0f84e6030000",
+      "instruction": "je 0x414f87c2",
+      "segment": "enrichment_record_identity",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8552",
+      "bytes": "a120004b42",
+      "instruction": "mov eax,ds:0x424b0020",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8557",
+      "bytes": "8b0430",
+      "instruction": "mov eax,DWORD PTR [eax+esi*1]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f855a",
+      "bytes": "8945cc",
+      "instruction": "mov DWORD PTR [ebp-0x34],eax",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f855d",
+      "bytes": "c745f0ffffffff",
+      "instruction": "mov DWORD PTR [ebp-0x10],0xffffffff",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8564",
+      "bytes": "8d4dcc",
+      "instruction": "lea ecx,[ebp-0x34]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8567",
+      "bytes": "e874abe1ff",
+      "instruction": "call 0x413130e0",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f856c",
+      "bytes": "85c0",
+      "instruction": "test eax,eax",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f856e",
+      "bytes": "7437",
+      "instruction": "je 0x414f85a7",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8570",
+      "bytes": "8d4dcc",
+      "instruction": "lea ecx,[ebp-0x34]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8573",
+      "bytes": "e868abe1ff",
+      "instruction": "call 0x413130e0",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8578",
+      "bytes": "89c6",
+      "instruction": "mov esi,eax",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f857a",
+      "bytes": "a1b4034b42",
+      "instruction": "mov eax,ds:0x424b03b4",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f857f",
+      "bytes": "8b0d40855142",
+      "instruction": "mov ecx,DWORD PTR ds:0x42518540",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8585",
+      "bytes": "648b152c000000",
+      "instruction": "mov edx,DWORD PTR fs:0x2c",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f858c",
+      "bytes": "8b0c8a",
+      "instruction": "mov ecx,DWORD PTR [edx+ecx*4]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f858f",
+      "bytes": "3b8108000000",
+      "instruction": "cmp eax,DWORD PTR [ecx+0x8]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f8595",
+      "bytes": "0f8f5f030000",
+      "instruction": "jg 0x414f88fa",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f859b",
+      "bytes": "a128004b42",
+      "instruction": "mov eax,ds:0x424b0028",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f85a0",
+      "bytes": "0fbf0430",
+      "instruction": "movsx eax,WORD PTR [eax+esi*1]",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x414f85a4",
+      "bytes": "89471c",
+      "instruction": "mov DWORD PTR [edi+0x1c],eax",
+      "segment": "item_handle_and_store",
+      "source": "orchestration/v10/record_actor_enrichment_walk.json"
+    },
+    {
+      "va": "0x413650d2",
+      "bytes": "8b0dc0464f42",
+      "instruction": "mov ecx,DWORD PTR ds:0x424f46c0",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650d8",
+      "bytes": "8d8568fdffff",
+      "instruction": "lea eax,[ebp-0x298]",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650de",
+      "bytes": "50",
+      "instruction": "push eax",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650df",
+      "bytes": "56",
+      "instruction": "push esi",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650e0",
+      "bytes": "e85b6d1a00",
+      "instruction": "call 0x4150be40",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650e5",
+      "bytes": "84c0",
+      "instruction": "test al,al",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650e7",
+      "bytes": "0f84a7090000",
+      "instruction": "je 0x41365a94",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650ed",
+      "bytes": "8b8568fdffff",
+      "instruction": "mov eax,DWORD PTR [ebp-0x298]",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650f3",
+      "bytes": "83781c00",
+      "instruction": "cmp DWORD PTR [eax+0x1c],0x0",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    },
+    {
+      "va": "0x413650f7",
+      "bytes": "0f8497090000",
+      "instruction": "je 0x41365a94",
+      "segment": "consumer_gate",
+      "source": "orchestration/v10/position_reader_caller_anchor_walk.json"
+    }
+  ],
+  "constants": [
+    {
+      "address": "0x4205a554",
+      "bytes": "0000803f",
+      "float": 1.0,
+      "meaning": "one"
+    },
+    {
+      "address": "0x4205a518",
+      "bytes": "0000003f",
+      "float": 0.5,
+      "meaning": "one_half"
+    },
+    {
+      "address": "0x4205a580",
+      "bytes": "00008040",
+      "float": 4.0,
+      "meaning": "reader_age_limit"
+    },
+    {
+      "address": "0x4209bbb4",
+      "bytes": "000080c3",
+      "float": -256.0,
+      "meaning": "negative_lookback_scale"
+    },
+    {
+      "address": "0x4209bbb8",
+      "bytes": "ec51783f",
+      "float": 0.9700000286102295,
+      "meaning": "trace_position_cutoff"
+    }
+  ],
+  "scope": "Local instruction bytes and stored walks, not full CFG reachability, runtime bindings or equivalence."
+}
