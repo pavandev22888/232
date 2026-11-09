@@ -1,0 +1,232 @@
+{
+  "wave": "W5",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "review_base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+  "acceptance": "pending_independent_reviews",
+  "model": "gpt-6.1-sol",
+  "executors": 16,
+  "integration_ledger": [
+    {
+      "task": "W5-SCOPE",
+      "owner": "w5-scope-sol",
+      "agent_commit": "ef00286377315e8ab31c47a9c793fc12d94735d7",
+      "integrated_commit": "a6a7b408b381606ecc924d3f0e55389c113450e9",
+      "paths": [
+        "continuation/evidence/wave5/scope/coverage.json",
+        "continuation/evidence/wave5/scope/static_evidence.json"
+      ]
+    },
+    {
+      "task": "W5-POINT26",
+      "owner": "w5-point26-sol",
+      "agent_commit": "356f68ed378f719d8d36f2560ec03becbfc9b986",
+      "integrated_commit": "79e40eb3c5c37771f6f8991ad541fe0a1e95b834",
+      "paths": [
+        "continuation/evidence/wave5/point26/anchors.json",
+        "continuation/evidence/wave5/point26/hypothesis.json",
+        "continuation/evidence/wave5/point26/verify_point26.py"
+      ]
+    },
+    {
+      "task": "W5-TF4",
+      "owner": "w5-tf4-sol",
+      "agent_commit": "73850e3437bb5d141388df9c20ebba7d518ae2e1",
+      "integrated_commit": "f3ca65e5b38144d44e4673c2862708546d1c1b66",
+      "paths": [
+        "continuation/evidence/wave5/tf4/anchors.json",
+        "continuation/evidence/wave5/tf4/verify_tf4.py"
+      ]
+    },
+    {
+      "task": "W5-GLOBAL9BC",
+      "owner": "w5-global9bc-sol",
+      "agent_commit": "7b352fecb217f45bb38f2accc3a47f4588388da7",
+      "integrated_commit": "3dcebf983223a5c5e34ebc326988acf467ed5b2c",
+      "paths": [
+        "continuation/evidence/wave5/global9bc/chain.json",
+        "continuation/evidence/wave5/global9bc/hypothesis.json",
+        "continuation/evidence/wave5/global9bc/verify_chain.py"
+      ]
+    },
+    {
+      "task": "W5-AGGREGATE",
+      "owner": "w5-aggregate-sol",
+      "agent_commit": "07bdc2617e69e4eb863fdc6e32010147c8e98dd3",
+      "integrated_commit": "ba234c51a0c7cc1ac1c40d2a2ac3b9142865f7f9",
+      "paths": [
+        "continuation/evidence/wave5/aggregate/anchors.json",
+        "continuation/evidence/wave5/aggregate/contract.json",
+        "continuation/evidence/wave5/aggregate/verify_contract.py",
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp"
+      ]
+    },
+    {
+      "task": "W5-THRESHOLD",
+      "owner": "w5-threshold-sol",
+      "agent_commit": "ac1de73ae472d6f139bd9541187ae150be556382",
+      "integrated_commit": "c8c4f52273515065b584b0a1a9213bd2ccc56626",
+      "paths": [
+        "continuation/evidence/wave5/threshold/byte_anchors.tsv",
+        "continuation/evidence/wave5/threshold/consumer_frontier.json",
+        "continuation/evidence/wave5/threshold/verify_threshold_frontier.py"
+      ]
+    },
+    {
+      "task": "W5-BINDINGS",
+      "owner": "w5-bindings-sol",
+      "agent_commit": "62cce62299d02cd54879be4ad527dcf76bbc8bd8",
+      "integrated_commit": "c17ff7858ed010bd94b12bed17c779c47250ccae",
+      "paths": [
+        "continuation/evidence/wave5/bindings/anchors.json",
+        "continuation/evidence/wave5/bindings/contract.md",
+        "continuation/evidence/wave5/bindings/verify_resolution.py"
+      ]
+    },
+    {
+      "task": "W5-ESI",
+      "owner": "w5-esi-sol",
+      "agent_commit": "c98256d07f033f3be13358f1794b4ead3c153a82",
+      "integrated_commit": "c96112d28c2ab3a62c9636bd5b1d8f2cef703061",
+      "paths": [
+        "continuation/evidence/wave5/esi/callee.tsv",
+        "continuation/evidence/wave5/esi/preservation.json",
+        "continuation/evidence/wave5/esi/test_verify_preservation.py",
+        "continuation/evidence/wave5/esi/verify_preservation.py"
+      ]
+    },
+    {
+      "task": "W5-INDIRECT",
+      "owner": "w5-indirect-sol",
+      "agent_commit": "ff56de7cb06a67eff1bde978fea94943fd5910d9",
+      "integrated_commit": "6ef572f671ac347f64741d837402ef25268b68ef",
+      "paths": [
+        "continuation/evidence/wave5/indirect/contract.md",
+        "continuation/evidence/wave5/indirect/dispatch.json",
+        "continuation/evidence/wave5/indirect/verification.log",
+        "continuation/evidence/wave5/indirect/verify_indirect.py"
+      ]
+    },
+    {
+      "task": "W5-FALLBACK24",
+      "owner": "w5-fallback24-sol",
+      "agent_commit": "82c7ccbde722f390a6debe5da6b2841ea150966a",
+      "integrated_commit": "c057026415a74ea4c33bd2c200b0b0a887b882d7",
+      "paths": [
+        "continuation/evidence/wave5/fallback24/initializer.json",
+        "continuation/evidence/wave5/fallback24/verify_initializer.py"
+      ]
+    },
+    {
+      "task": "W5-P-TOLERANCE",
+      "owner": "w5-p-tolerance-sol",
+      "agent_commit": "0b12da53baa8735ba8a6b7bfb8e6fea1bcce3f62",
+      "integrated_commit": "4924483ed23982fdf6bc704d8eaa5b18be5c6378",
+      "paths": [
+        "continuation/evidence/wave5/p-tolerance/frontier.json",
+        "continuation/evidence/wave5/p-tolerance/verification.log"
+      ]
+    },
+    {
+      "task": "W5-GUARDS",
+      "owner": "w5-guards-sol",
+      "agent_commit": "37eeff868a096629afce2731e1d8d0a0fc798319",
+      "integrated_commit": "7f5b493e8f03ddf3df8b2dbaabe6bcc4a7d09229",
+      "paths": [
+        "continuation/evidence/wave5/guards/guard_path.json",
+        "continuation/evidence/wave5/guards/verify_guards.py"
+      ]
+    },
+    {
+      "task": "W5-CHARGE",
+      "owner": "w5-charge-sol",
+      "agent_commit": "604966938718b7a4810837da6aa2c70532920cbf",
+      "integrated_commit": "fc4ac9adedc61574a6d2193762f2a491acbba8ab",
+      "paths": [
+        "continuation/evidence/wave5/charge/full_reset_evidence.json",
+        "continuation/evidence/wave5/charge/verify_full_reset.py",
+        "continuation/include/rage/charge_state.hpp",
+        "continuation/src/charge_state.cpp",
+        "continuation/tests/test_charge_state.cpp"
+      ]
+    },
+    {
+      "task": "W5-LIFECYCLE",
+      "owner": "w5-lifecycle-sol",
+      "agent_commit": "4eede5c2f1e8e5ea0060e22bff28c19c0af2b51c",
+      "integrated_commit": "c2e4a53ec9c579fd951e3b0d19ad8f287b0b0fa9",
+      "paths": [
+        "continuation/evidence/wave5/lifecycle/seed_path.json",
+        "continuation/evidence/wave5/lifecycle/verify_seed_path.py",
+        "continuation/include/rage/lifecycle_seed_slice.hpp",
+        "continuation/src/lifecycle_seed_slice.cpp",
+        "continuation/tests/test_lifecycle_seed_slice.cpp"
+      ]
+    },
+    {
+      "task": "W5-MESSAGES",
+      "owner": "w5-messages-sol",
+      "agent_commit": "e6c3481c14fd7af773cc7b21a896840a8d4d67e6",
+      "integrated_commit": "0bd8c0c961ed2c3e02198f85d08432c3dc3bba62",
+      "paths": [
+        "continuation/evidence/wave5/messages/byte_anchors.json",
+        "continuation/evidence/wave5/messages/verify_message_fields.py",
+        "continuation/include/rage/bounded_message_fields.hpp",
+        "continuation/src/bounded_message_fields.cpp",
+        "continuation/tests/test_bounded_message_fields.cpp"
+      ]
+    },
+    {
+      "task": "W5-HISTORICAL",
+      "owner": "w5-historical-sol",
+      "agent_commit": "960aeaaa91dfc8e24288401fd1857cd9fadcea83",
+      "integrated_commit": "9ff28862833eae2f15a8f4e19c1aef28bacbc748",
+      "paths": [
+        "continuation/evidence/wave5/historical/README.md",
+        "continuation/evidence/wave5/historical/acceptance.json",
+        "continuation/evidence/wave5/historical/frontier.json",
+        "continuation/evidence/wave5/historical/leaf.json",
+        "continuation/evidence/wave5/historical/replay_pefile_leaf.py",
+        "continuation/evidence/wave5/historical/requirements.txt"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": "make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log_path": "runs/wave5/baseline-check.log",
+      "log_sha256": "f56a564c4c5b8564f7b5700a9946874de6f56923258bee0c3b2de917955c73a5"
+    },
+    {
+      "command": "make -C continuation -j2 check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log_path": "runs/wave5/integrated-check.log",
+      "log_sha256": "fbef72e4584dd7881ad7893640324f5825790fa622267231b64dc8e29708cda7"
+    },
+    {
+      "command": "PYTHONPATH=$PWD/runs/wave5/pefile python3 -B continuation/evidence/wave5/historical/replay_pefile_leaf.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log_path": "runs/wave5/pefile-leaf.json",
+      "log_sha256": "b07e6018a1cb6ac2fd74b30ed24d7ab78b70a36e10a16ca2ad90926d843d24a1"
+    }
+  ],
+  "coordinator_check_tree": "The first integrated check ran immediately before the Makefile commit; implementation/tests/evidence/Makefile bytes match the fixed review SHA.",
+  "results": {
+    "modules": 9,
+    "test_programs": 10,
+    "assertions_per_mode": 23354,
+    "python_unit_tests": 13,
+    "new_static_verifiers": 13,
+    "scope_domains": 24,
+    "scope_source_pins": 39,
+    "original_language_established": false,
+    "h01_supplemental_leaf": "Fresh pefile 2024.8.26 predicate #5, not old producer/protocol; historical 47-disposition ledger unchanged."
+  },
+  "post_wave_integrity": "pending",
+  "full_tasks_closed": [],
+  "external_audit": false,
+  "original_dll_loading_execution_emulation": false,
+  "publication_policy": "PR #1 review only; no merge, queue or auto-merge"
+}
