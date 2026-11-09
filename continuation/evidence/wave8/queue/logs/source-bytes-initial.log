@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/tmp/hoplite/232-w8-queue/continuation/evidence/wave8/queue/verify_source_bytes.py", line 125, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/tmp/hoplite/232-w8-queue/continuation/evidence/wave8/queue/verify_source_bytes.py", line 120, in main
+    print(json.dumps(verify(args.handoff), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/hoplite/232-w8-queue/continuation/evidence/wave8/queue/verify_source_bytes.py", line 101, in verify
+    raise ValueError(f'{name} mismatch: {actual:#x}')
+ValueError: ECX capture displacement mismatch: 0xfffd648d

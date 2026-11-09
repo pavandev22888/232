@@ -1,0 +1,262 @@
+Static disassembly of bounded regions from nl.bin; not execution or emulation.
+Image base 0x412a0000; all ranges end-exclusive. Table regions are data.
+objdump -D -b binary -m i386 -M intel --adjust-vma=0x412a0000 --start-address=START --stop-address=END nl.bin
+
+stack context capture and pinned caller arguments: 0x4148fda1..0x4148fde8
+4148fda1 <.data+0x1efda1>:
+4148fda1:	c7 85 6c fd ff ff 00 	mov    DWORD PTR [ebp-0x294],0x0
+4148fda8:	00 00 00
+4148fdab:	c7 85 70 fd ff ff 00 	mov    DWORD PTR [ebp-0x290],0x0
+4148fdb2:	00 00 00
+4148fdb5:	31 c0                	xor    eax,eax
+4148fdb7:	87 85 6c fd ff ff    	xchg   DWORD PTR [ebp-0x294],eax
+4148fdbd:	c7 85 64 fd ff ff 10 	mov    DWORD PTR [ebp-0x29c],0x414ad910
+4148fdc4:	d9 4a 41
+4148fdc7:	8d 85 64 ff ff ff    	lea    eax,[ebp-0x9c]
+4148fdcd:	89 85 68 fd ff ff    	mov    DWORD PTR [ebp-0x298],eax
+4148fdd3:	8d 8d 64 fd ff ff    	lea    ecx,[ebp-0x29c]
+4148fdd9:	68 80 00 00 00       	push   0x80
+4148fdde:	68 8c 90 23 42       	push   0x4223908c
+4148fde3:	e8 48 2b 02 00       	call   0x414b2930
+dispatcher context address identity and range stores: 0x414b293e..0x414b295d
+414b293e <.data+0x21293e>:
+414b293e:	89 cf                	mov    edi,ecx
+414b2940:	8b 5d 0c             	mov    ebx,DWORD PTR [ebp+0xc]
+414b2943:	8b 45 08             	mov    eax,DWORD PTR [ebp+0x8]
+414b2946:	8b 15 fc 08 50 42    	mov    edx,DWORD PTR ds:0x425008fc
+414b294c:	8d 0c 98             	lea    ecx,[eax+ebx*4]
+414b294f:	87 47 08             	xchg   DWORD PTR [edi+0x8],eax
+414b2952:	89 4f 0c             	mov    DWORD PTR [edi+0xc],ecx
+414b2955:	89 d1                	mov    ecx,edx
+414b2957:	8b 02                	mov    eax,DWORD PTR [edx]
+414b2959:	85 c0                	test   eax,eax
+414b295b:	75 2f                	jne    0x414b298c
+opaque worker-count provider and signed branch: 0x414b298c..0x414b29a3
+414b298c <.data+0x21298c>:
+414b298c:	89 4e 14             	mov    DWORD PTR [esi+0x14],ecx
+414b298f:	ff 50 1c             	call   DWORD PTR [eax+0x1c]
+414b2992:	4b                   	dec    ebx
+414b2993:	39 c3                	cmp    ebx,eax
+414b2995:	0f 4d d8             	cmovge ebx,eax
+414b2998:	85 db                	test   ebx,ebx
+414b299a:	89 7e 10             	mov    DWORD PTR [esi+0x10],edi
+414b299d:	0f 8e 15 01 00 00    	jle    0x414b2ab8
+opaque enqueue arguments and loop: 0x414b29d0..0x414b29ef
+414b29d0 <.data+0x2129d0>:
+414b29d0:	4b                   	dec    ebx
+414b29d1:	89 5e 14             	mov    DWORD PTR [esi+0x14],ebx
+414b29d4:	89 f9                	mov    ecx,edi
+414b29d6:	6a 08                	push   0x8
+414b29d8:	6a 00                	push   0x0
+414b29da:	8b 5e 0c             	mov    ebx,DWORD PTR [esi+0xc]
+414b29dd:	53                   	push   ebx
+414b29de:	50                   	push   eax
+414b29df:	ff 52 50             	call   DWORD PTR [edx+0x50]
+414b29e2:	83 c3 fc             	add    ebx,0xfffffffc
+414b29e5:	89 5e 0c             	mov    DWORD PTR [esi+0xc],ebx
+414b29e8:	8b 5e 14             	mov    ebx,DWORD PTR [esi+0x14]
+414b29eb:	85 db                	test   ebx,ebx
+414b29ed:	74 55                	je     0x414b2a44
+allocation call and raw task preparation: 0x414b29ef..0x414b2a20
+414b29ef <.data+0x2129ef>:
+414b29ef:	6a 18                	push   0x18
+414b29f1:	e8 86 51 8f 00       	call   0x41da7b7c
+414b29f6:	83 c4 04             	add    esp,0x4
+414b29f9:	c7 00 04 81 07 42    	mov    DWORD PTR [eax],0x42078104
+414b29ff:	c7 40 08 f0 80 07 42 	mov    DWORD PTR [eax+0x8],0x420780f0
+414b2a06:	c7 40 0c 01 00 00 00 	mov    DWORD PTR [eax+0xc],0x1
+414b2a0d:	c7 40 10 d0 c2 4a 41 	mov    DWORD PTR [eax+0x10],0x414ac2d0
+414b2a14:	8b 4e 10             	mov    ecx,DWORD PTR [esi+0x10]
+414b2a17:	89 48 14             	mov    DWORD PTR [eax+0x14],ecx
+414b2a1a:	8b 17                	mov    edx,DWORD PTR [edi]
+414b2a1c:	85 d2                	test   edx,edx
+414b2a1e:	75 b0                	jne    0x414b29d0
+caller drain then per-handle opaque wait and virtual release: 0x414b2a44..0x414b2ab8
+414b2a44 <.data+0x212a44>:
+414b2a44:	8b 7e 10             	mov    edi,DWORD PTR [esi+0x10]
+414b2a47:	8b 47 08             	mov    eax,DWORD PTR [edi+0x8]
+414b2a4a:	8b 4f 0c             	mov    ecx,DWORD PTR [edi+0xc]
+414b2a4d:	39 c1                	cmp    ecx,eax
+414b2a4f:	76 44                	jbe    0x414b2a95
+414b2a51:	89 4e 0c             	mov    DWORD PTR [esi+0xc],ecx
+414b2a54:	eb 14                	jmp    0x414b2a6a
+414b2a56:	66 2e 0f 1f 84 00 00 	nop    WORD PTR cs:[eax+eax*1+0x0]
+414b2a5d:	00 00 00
+414b2a60:	8b 4e 0c             	mov    ecx,DWORD PTR [esi+0xc]
+414b2a63:	39 cb                	cmp    ebx,ecx
+414b2a65:	8b 7e 10             	mov    edi,DWORD PTR [esi+0x10]
+414b2a68:	73 2b                	jae    0x414b2a95
+414b2a6a:	bb 04 00 00 00       	mov    ebx,0x4
+414b2a6f:	f0 0f c1 5f 08       	lock xadd DWORD PTR [edi+0x8],ebx
+414b2a74:	8d 7b 04             	lea    edi,[ebx+0x4]
+414b2a77:	39 cf                	cmp    edi,ecx
+414b2a79:	0f 43 f9             	cmovae edi,ecx
+414b2a7c:	39 df                	cmp    edi,ebx
+414b2a7e:	76 e0                	jbe    0x414b2a60
+414b2a80:	8b 4e 10             	mov    ecx,DWORD PTR [esi+0x10]
+414b2a83:	ff 71 04             	push   DWORD PTR [ecx+0x4]
+414b2a86:	53                   	push   ebx
+414b2a87:	ff 11                	call   DWORD PTR [ecx]
+414b2a89:	83 c4 08             	add    esp,0x8
+414b2a8c:	83 c3 04             	add    ebx,0x4
+414b2a8f:	39 fb                	cmp    ebx,edi
+414b2a91:	72 ed                	jb     0x414b2a80
+414b2a93:	eb cb                	jmp    0x414b2a60
+414b2a95:	31 ff                	xor    edi,edi
+414b2a97:	8b 5e 18             	mov    ebx,DWORD PTR [esi+0x18]
+414b2a9a:	66 0f 1f 44 00 00    	nop    WORD PTR [eax+eax*1+0x0]
+414b2aa0:	8b 0c bb             	mov    ecx,DWORD PTR [ebx+edi*4]
+414b2aa3:	e8 88 98 ff ff       	call   0x414ac330
+414b2aa8:	8b 0c bb             	mov    ecx,DWORD PTR [ebx+edi*4]
+414b2aab:	8b 01                	mov    eax,DWORD PTR [ecx]
+414b2aad:	ff 50 04             	call   DWORD PTR [eax+0x4]
+414b2ab0:	47                   	inc    edi
+414b2ab1:	39 7e 1c             	cmp    DWORD PTR [esi+0x1c],edi
+414b2ab4:	75 ea                	jne    0x414b2aa0
+414b2ab6:	eb 4d                	jmp    0x414b2b05
+no-task local drain and dispatcher return: 0x414b2ab8..0x414b2b0f
+414b2ab8 <.data+0x212ab8>:
+414b2ab8:	8b 47 08             	mov    eax,DWORD PTR [edi+0x8]
+414b2abb:	8b 4f 0c             	mov    ecx,DWORD PTR [edi+0xc]
+414b2abe:	39 c1                	cmp    ecx,eax
+414b2ac0:	76 43                	jbe    0x414b2b05
+414b2ac2:	89 4e 0c             	mov    DWORD PTR [esi+0xc],ecx
+414b2ac5:	eb 13                	jmp    0x414b2ada
+414b2ac7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [eax+eax*1+0x0]
+414b2ace:	00 00
+414b2ad0:	8b 4e 0c             	mov    ecx,DWORD PTR [esi+0xc]
+414b2ad3:	39 cb                	cmp    ebx,ecx
+414b2ad5:	8b 7e 10             	mov    edi,DWORD PTR [esi+0x10]
+414b2ad8:	73 2b                	jae    0x414b2b05
+414b2ada:	bb 04 00 00 00       	mov    ebx,0x4
+414b2adf:	f0 0f c1 5f 08       	lock xadd DWORD PTR [edi+0x8],ebx
+414b2ae4:	8d 7b 04             	lea    edi,[ebx+0x4]
+414b2ae7:	39 cf                	cmp    edi,ecx
+414b2ae9:	0f 43 f9             	cmovae edi,ecx
+414b2aec:	39 df                	cmp    edi,ebx
+414b2aee:	76 e0                	jbe    0x414b2ad0
+414b2af0:	8b 4e 10             	mov    ecx,DWORD PTR [esi+0x10]
+414b2af3:	ff 71 04             	push   DWORD PTR [ecx+0x4]
+414b2af6:	53                   	push   ebx
+414b2af7:	ff 11                	call   DWORD PTR [ecx]
+414b2af9:	83 c4 08             	add    esp,0x8
+414b2afc:	83 c3 04             	add    ebx,0x4
+414b2aff:	39 fb                	cmp    ebx,edi
+414b2b01:	72 ed                	jb     0x414b2af0
+414b2b03:	eb cb                	jmp    0x414b2ad0
+414b2b05:	8d 65 f4             	lea    esp,[ebp-0xc]
+414b2b08:	5e                   	pop    esi
+414b2b09:	5f                   	pop    edi
+414b2b0a:	5b                   	pop    ebx
+414b2b0b:	5d                   	pop    ebp
+414b2b0c:	c2 08 00             	ret    0x8
+complete worker body: 0x414ac2d0..0x414ac327
+414ac2d0 <.data+0x20c2d0>:
+414ac2d0:	55                   	push   ebp
+414ac2d1:	53                   	push   ebx
+414ac2d2:	57                   	push   edi
+414ac2d3:	56                   	push   esi
+414ac2d4:	8b 41 08             	mov    eax,DWORD PTR [ecx+0x8]
+414ac2d7:	8b 79 0c             	mov    edi,DWORD PTR [ecx+0xc]
+414ac2da:	39 c7                	cmp    edi,eax
+414ac2dc:	76 44                	jbe    0x414ac322
+414ac2de:	89 ce                	mov    esi,ecx
+414ac2e0:	eb 12                	jmp    0x414ac2f4
+414ac2e2:	66 66 66 66 66 2e 0f 	data16 data16 data16 data16 nop WORD PTR cs:[eax+eax*1+0x0]
+414ac2e9:	1f 84 00 00 00 00 00
+414ac2f0:	39 fb                	cmp    ebx,edi
+414ac2f2:	73 2e                	jae    0x414ac322
+414ac2f4:	bb 04 00 00 00       	mov    ebx,0x4
+414ac2f9:	f0 0f c1 5e 08       	lock xadd DWORD PTR [esi+0x8],ebx
+414ac2fe:	8d 6b 04             	lea    ebp,[ebx+0x4]
+414ac301:	39 fd                	cmp    ebp,edi
+414ac303:	0f 43 ef             	cmovae ebp,edi
+414ac306:	39 dd                	cmp    ebp,ebx
+414ac308:	76 e6                	jbe    0x414ac2f0
+414ac30a:	66 0f 1f 44 00 00    	nop    WORD PTR [eax+eax*1+0x0]
+414ac310:	ff 76 04             	push   DWORD PTR [esi+0x4]
+414ac313:	53                   	push   ebx
+414ac314:	ff 16                	call   DWORD PTR [esi]
+414ac316:	83 c4 08             	add    esp,0x8
+414ac319:	83 c3 04             	add    ebx,0x4
+414ac31c:	39 eb                	cmp    ebx,ebp
+414ac31e:	72 f0                	jb     0x414ac310
+414ac320:	eb ce                	jmp    0x414ac2f0
+414ac322:	5e                   	pop    esi
+414ac323:	5f                   	pop    edi
+414ac324:	5b                   	pop    ebx
+414ac325:	5d                   	pop    ebp
+414ac326:	c3                   	ret
+task ECX forwarding wrapper: 0x4149bfc0..0x4149bfc8
+4149bfc0 <.data+0x1fbfc0>:
+4149bfc0:	89 c8                	mov    eax,ecx
+4149bfc2:	8b 49 14             	mov    ecx,DWORD PTR [ecx+0x14]
+4149bfc5:	ff 60 10             	jmp    DWORD PTR [eax+0x10]
+task primary virtual table first four entries: 0x42078104..0x42078114
+90 3b 34 41 10 1f 35 41 d0 55 2c 41 c0 bf 49 41
+task secondary virtual table two entries: 0x420780f0..0x420780f8
+10 68 34 41 10 5c 2a 41
+wait prefix with runtime-bound function pointer: 0x414ac330..0x414ac3bf
+414ac330 <.data+0x20c330>:
+414ac330:	55                   	push   ebp
+414ac331:	89 e5                	mov    ebp,esp
+414ac333:	53                   	push   ebx
+414ac334:	57                   	push   edi
+414ac335:	56                   	push   esi
+414ac336:	83 e4 f0             	and    esp,0xfffffff0
+414ac339:	81 ec 80 00 00 00    	sub    esp,0x80
+414ac33f:	89 e6                	mov    esi,esp
+414ac341:	89 6e 68             	mov    DWORD PTR [esi+0x68],ebp
+414ac344:	89 cf                	mov    edi,ecx
+414ac346:	89 66 6c             	mov    DWORD PTR [esi+0x6c],esp
+414ac349:	c7 46 78 ff ff ff ff 	mov    DWORD PTR [esi+0x78],0xffffffff
+414ac350:	8d 46 70             	lea    eax,[esi+0x70]
+414ac353:	c7 46 74 70 49 4b 41 	mov    DWORD PTR [esi+0x74],0x414b4970
+414ac35a:	64 8b 0d 00 00 00 00 	mov    ecx,DWORD PTR fs:0x0
+414ac361:	89 4e 70             	mov    DWORD PTR [esi+0x70],ecx
+414ac364:	64 a3 00 00 00 00    	mov    fs:0x0,eax
+414ac36a:	a1 fc 57 50 42       	mov    eax,ds:0x425057fc
+414ac36f:	8b 0d 40 85 51 42    	mov    ecx,DWORD PTR ds:0x42518540
+414ac375:	64 8b 15 2c 00 00 00 	mov    edx,DWORD PTR fs:0x2c
+414ac37c:	8b 0c 8a             	mov    ecx,DWORD PTR [edx+ecx*4]
+414ac37f:	3b 81 08 00 00 00    	cmp    eax,DWORD PTR [ecx+0x8]
+414ac385:	7f 22                	jg     0x414ac3a9
+414ac387:	c7 46 78 ff ff ff ff 	mov    DWORD PTR [esi+0x78],0xffffffff
+414ac38e:	89 f9                	mov    ecx,edi
+414ac390:	6a 01                	push   0x1
+414ac392:	ff 15 f0 57 50 42    	call   DWORD PTR ds:0x425057f0
+414ac398:	8b 46 70             	mov    eax,DWORD PTR [esi+0x70]
+414ac39b:	64 a3 00 00 00 00    	mov    fs:0x0,eax
+414ac3a1:	8d 65 f4             	lea    esp,[ebp-0xc]
+414ac3a4:	5e                   	pop    esi
+414ac3a5:	5f                   	pop    edi
+414ac3a6:	5b                   	pop    ebx
+414ac3a7:	5d                   	pop    ebp
+414ac3a8:	c3                   	ret
+414ac3a9:	68 fc 57 50 42       	push   0x425057fc
+414ac3ae:	e8 b7 b8 8f 00       	call   0x41da7c6a
+414ac3b3:	83 c4 04             	add    esp,0x4
+414ac3b6:	83 3d fc 57 50 42 ff 	cmp    DWORD PTR ds:0x425057fc,0xffffffff
+414ac3bd:	75 c8                	jne    0x414ac387
+task virtual release entry with refcount and further indirect calls: 0x41351f10..0x41351f3c
+41351f10 <.data+0xb1f10>:
+41351f10:	57                   	push   edi
+41351f11:	56                   	push   esi
+41351f12:	be ff ff ff ff       	mov    esi,0xffffffff
+41351f17:	f0 0f c1 71 0c       	lock xadd DWORD PTR [ecx+0xc],esi
+41351f1c:	4e                   	dec    esi
+41351f1d:	75 18                	jne    0x41351f37
+41351f1f:	89 cf                	mov    edi,ecx
+41351f21:	83 c1 08             	add    ecx,0x8
+41351f24:	8b 47 08             	mov    eax,DWORD PTR [edi+0x8]
+41351f27:	ff 50 04             	call   DWORD PTR [eax+0x4]
+41351f2a:	84 c0                	test   al,al
+41351f2c:	74 09                	je     0x41351f37
+41351f2e:	8b 07                	mov    eax,DWORD PTR [edi]
+41351f30:	89 f9                	mov    ecx,edi
+41351f32:	6a 01                	push   0x1
+41351f34:	ff 50 08             	call   DWORD PTR [eax+0x8]
+41351f37:	89 f0                	mov    eax,esi
+41351f39:	5e                   	pop    esi
+41351f3a:	5f                   	pop    edi
+41351f3b:	c3                   	ret
