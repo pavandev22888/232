@@ -108,7 +108,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Bounded waves completed; review PR without merging. Any further reconstruction requires a separate evidence-driven scope.",
+  "next_task": "Use docs/TASKS.json to assign one bounded task; recommended C01 C17 scalar port and independent R01 scope inventory. W3-W4 remain completed. Keep PR open without merging.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -224,5 +224,25 @@
       "evidence/wave4/tests/acceptance.json"
     ],
     "publication_policy": "Existing PR #1; no merge or merge queue; auto-merge disabled"
+  },
+  "project_goal": {
+    "description": "Full original Ragebot and necessary transitive dependencies in readable C.",
+    "target_language": "C17",
+    "current_root_implementation_language": "C++17",
+    "c17_port_started": false,
+    "specification": "docs/GOAL.md",
+    "paths_relative_to": "repository root"
+  },
+  "agent_handoff": {
+    "entrypoint": "README.md",
+    "instructions": "AGENTS.md",
+    "source_index": "docs/SOURCE_INDEX.md",
+    "roadmap": "docs/ROADMAP.md",
+    "task_registry": "docs/TASKS.json",
+    "bootstrap": "docs/BOOTSTRAP.md",
+    "workflow": "docs/AGENT_WORKFLOW.md",
+    "prompts": "docs/AGENT_PROMPTS.md",
+    "paths_relative_to": "repository root",
+    "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure."
   }
 }

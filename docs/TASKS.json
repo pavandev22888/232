@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-09",
+  "created_from_commit": "a21c2ac8045617278280de8ffb33f67dbf743c87",
+  "goal": "Full original Ragebot and its necessary transitive dependencies as readable C17.",
+  "current_implementation_language": "C++17 (bounded offline modules); archived partial C helpers also exist.",
+  "path_base": "repository root",
+  "assignment_protocol": "docs/AGENT_WORKFLOW.md",
+  "state_semantics": "ready means assignable bounded work, not implemented functionality; done never auto-closes a full GAP.",
+  "coordinator_owned_paths": [
+    "README.md",
+    "AGENTS.md",
+    "docs/",
+    "continuation/STATUS.json",
+    "continuation/DECISIONS.md",
+    "continuation/Makefile"
+  ],
+  "tasks": [
+    {
+      "id": "C01",
+      "title": "C17 pilot: scalar helper",
+      "kind": "implementation",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP04"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/c17/include/rage/resolved_scalar_helper.h",
+        "continuation/c17/src/resolved_scalar_helper.c",
+        "continuation/c17/tests/test_resolved_scalar_helper.c",
+        "continuation/evidence/c17/scalar/"
+      ],
+      "read_first": [
+        "docs/GOAL.md",
+        "continuation/include/rage/resolved_scalar_helper.hpp",
+        "continuation/src/resolved_scalar_helper.cpp",
+        "continuation/tests/test_resolved_scalar_helper.cpp",
+        "continuation/evidence/wave2/gap04/contract.md"
+      ],
+      "bounded_deliverable": "One C17 helper preserving the existing bounded contract and explicit optional fallback; no provider reconstruction.",
+      "acceptance": [
+        "Strict C17 compilation by a C compiler; coordinator integrates build targets.",
+        "Native and ASan/UBSan; NaN, signed zero, ordering and missing fallback cases.",
+        "Bitwise differential checks against C++ within its documented domain; keep original tests.",
+        "Fixed-SHA peer review; no claim of equivalence to the original binary."
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "C17 N layout, storage, update and reader",
+      "kind": "implementation",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "CODE01",
+        "GAP03",
+        "GAP05"
+      ],
+      "depends_on": [
+        "C01"
+      ],
+      "blocked_reason": "C01 must establish the accepted C API/build/test pattern first.",
+      "write_paths": [
+        "continuation/c17/include/rage/position_records.h",
+        "continuation/c17/src/position_records.c",
+        "continuation/c17/tests/test_position_records.c",
+        "continuation/evidence/c17/records/"
+      ],
+      "read_first": [
+        "continuation/include/rage/position_records.hpp",
+        "continuation/src/position_records.cpp",
+        "continuation/tests/test_position_records.cpp",
+        "continuation/evidence/SOURCE_MAP.md"
+      ],
+      "bounded_deliverable": "Port only the accepted N contract with explicit ownership and statuses; not target aggregation.",
+      "acceptance": [
+        "C17 layout/size assertions and all existing bounded cases.",
+        "C/C++ state and bit comparisons, including unchanged bytes and outside-supported-domain results.",
+        "Native/sanitizer checks and peer review."
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "C17 local charge state",
+      "kind": "implementation",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP03"
+      ],
+      "depends_on": [
+        "C01"
+      ],
+      "blocked_reason": "C01 API/build/test pattern pending.",
+      "write_paths": [
+        "continuation/c17/include/rage/charge_state.h",
+        "continuation/c17/src/charge_state.c",
+        "continuation/c17/tests/test_charge_state.c",
+        "continuation/evidence/c17/charge/"
+      ],
+      "read_first": [
+        "continuation/include/rage/charge_state.hpp",
+        "continuation/src/charge_state.cpp",
+        "continuation/tests/test_charge_state.cpp",
+        "continuation/evidence/gap03/condition_table.md",
+        "continuation/evidence/wave2/gap03/reset_slice_contract.md"
+      ],
+      "bounded_deliverable": "Port local capacity/latch/gate/reset projection, not an invented complete automaton.",
+      "acceptance": [
+        "Raw AL values 0, 1, 2, 3, 254, 255 and branch semantics retained.",
+        "No assumed reset scheduling; compare only supported state projections.",
+        "C17/native/sanitizer checks and peer review."
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "C17 lifecycle and scalar compositions",
+      "kind": "implementation",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP04",
+        "GAP05"
+      ],
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "blocked_reason": "Requires accepted C scalar helper and N representation.",
+      "write_paths": [
+        "continuation/c17/include/rage/position_lifecycle.h",
+        "continuation/c17/src/position_lifecycle.c",
+        "continuation/c17/include/rage/marker_pipeline.h",
+        "continuation/c17/src/marker_pipeline.c",
+        "continuation/c17/include/rage/actor_scalar_pipeline.h",
+        "continuation/c17/src/actor_scalar_pipeline.c",
+        "continuation/c17/tests/test_position_lifecycle.c",
+        "continuation/c17/tests/test_marker_pipeline.c",
+        "continuation/c17/tests/test_actor_scalar_pipeline.c",
+        "continuation/evidence/c17/compositions/"
+      ],
+      "read_first": [
+        "continuation/SPEC_NEXT.md",
+        "continuation/src/position_lifecycle.cpp",
+        "continuation/src/marker_pipeline.cpp",
+        "continuation/src/actor_scalar_pipeline.cpp",
+        "continuation/evidence/wave2/gap05/README.md"
+      ],
+      "bounded_deliverable": "Port current producer/consumer/optional output and two compositions; coordinator may split into disjoint child tasks.",
+      "acceptance": [
+        "Per-call observations, consumer bypasses, bounded aliases, float order and byte preservation retained.",
+        "Unresolved rollback labelled as offline API convention, not original behavior.",
+        "C17/native/sanitizer and C++ regression/differential checks; fixed-SHA review."
+      ]
+    },
+    {
+      "id": "R01",
+      "title": "Transitive scope and evidence coverage map",
+      "kind": "static_inventory",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "CODE01",
+        "GAP02"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/evidence/next/scope-map/"
+      ],
+      "read_first": [
+        "docs/GOAL.md",
+        "docs/SOURCE_INDEX.md",
+        "continuation/PLAN.md",
+        "continuation/STATUS.json",
+        "continuation/evidence/wave2/code01/README.md",
+        "continuation/evidence/wave2/gap02/README.md"
+      ],
+      "bounded_deliverable": "Map every domain of the full goal to existing code/evidence/unknowns; propose bounded next cards for aggregation, geometry, modes and network gaps. No new aggregation or T+68 implementation in this card.",
+      "acceptance": [
+        "Each row has concrete source paths/anchors or explicit unknown, plus dependencies.",
+        "Keep N and T distinct; inventory does not close CODE01/GAP02.",
+        "Read-only archive checks and independent review of scope coverage."
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "One first-positive-source hypothesis",
+      "kind": "bounded_static_research",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP01"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/evidence/next/positive-source/"
+      ],
+      "read_first": [
+        "continuation/evidence/gap01/RESULTS.md",
+        "continuation/evidence/wave2/gap01/results.json"
+      ],
+      "bounded_deliverable": "Before assignment select exactly one field among Point+26, T+F4 and G425009BC and one new byte-supported hypothesis; produce a typed source chain or exact frontier.",
+      "acceptance": [
+        "Record selected field/hypothesis in assignment before work.",
+        "Prove object identity, width, flow and conditions; negative search is not proof of absence.",
+        "Fresh pinned byte checks and review; no synthetic positive-value stub."
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "One scalar external-observation provider",
+      "kind": "bounded_static_research",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP04"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/evidence/next/scalar-provider/"
+      ],
+      "read_first": [
+        "continuation/evidence/gap04/README.md",
+        "continuation/evidence/wave2/gap04/contract.md",
+        "continuation/evidence/wave3/actor/provenance.json"
+      ],
+      "bounded_deliverable": "Select one fallback or tolerance observation and trace a bounded typed dependency; do not claim complete runtime bindings.",
+      "acceptance": [
+        "Exact caller/provider anchors and explicit assumptions.",
+        "Separate repeated reads over time; identify unresolved lifetime/alias/guard boundaries.",
+        "Static verifier and review; no runtime hook or original-image execution."
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "N+14 P/P+0 frontier",
+      "kind": "bounded_static_research",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP05"
+      ],
+      "depends_on": [],
+      "blocked_reason": "No new byte-level basis beyond the accepted W3 frontier; do not repeat broad searches.",
+      "write_paths": [
+        "continuation/evidence/next/n14-provider/"
+      ],
+      "read_first": [
+        "continuation/evidence/wave3/source/README.md",
+        "continuation/evidence/wave3/source/ledger.json"
+      ],
+      "bounded_deliverable": "Only after new concrete byte-level evidence: investigate one P supplier/lifetime/P+0-writer hypothesis.",
+      "acceptance": [
+        "Coordinator records the new evidence and bounded window before unblocking.",
+        "Same-offset or same-global-address observations alone are insufficient.",
+        "Do not infer positivity, reachability or cross-call identity from the immediate writer."
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "One charge reset condition or remaining store",
+      "kind": "bounded_static_research",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP03"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/evidence/next/charge-transition/"
+      ],
+      "read_first": [
+        "continuation/evidence/gap03/condition_table.md",
+        "continuation/evidence/wave2/gap03/reset_slice_contract.md",
+        "continuation/evidence/wave2/gap03/reset_slice_evidence.json"
+      ],
+      "bounded_deliverable": "Select one entry predicate or one of the unmodelled reset stores and establish a bounded contract/frontier.",
+      "acceptance": [
+        "Exact memory identity, branch condition, effects and width.",
+        "No assumed invocation order or full state-machine closure.",
+        "Fresh byte evidence and independent review."
+      ]
+    },
+    {
+      "id": "V01",
+      "title": "One remaining historical H01 gate",
+      "kind": "verification",
+      "status": "ready",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "GAP06"
+      ],
+      "depends_on": [],
+      "blocked_reason": null,
+      "write_paths": [
+        "continuation/evidence/next/historical-review/"
+      ],
+      "read_first": [
+        "continuation/evidence/wave2/gap06/README.md",
+        "continuation/evidence/wave2/gap06/dispositions.json",
+        "continuation/evidence/wave3/repro/README.md"
+      ],
+      "bounded_deliverable": "Choose one of the 12 historical-only entries; reproduce its actual gate if supported, otherwise record a concrete blocker. Do not rebuild all tooling blindly.",
+      "acceptance": [
+        "Read old scripts before execution; do not modify archival inputs/evidence.",
+        "Commands, versions, SHA, exit codes and sanitized logs; no relabelled historical PASS.",
+        "Do not call agent review an external audit or substitute a different test for the old protocol."
+      ]
+    },
+    {
+      "id": "I01",
+      "title": "Integrated bounded C17 library acceptance",
+      "kind": "integration",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "CODE01",
+        "GAP03",
+        "GAP04",
+        "GAP05",
+        "GAP06"
+      ],
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "R01"
+      ],
+      "blocked_reason": "C ports and transitive scope inventory not yet accepted.",
+      "write_paths": [
+        "continuation/Makefile",
+        "continuation/c17/tests/test_position_pipeline.c",
+        "continuation/evidence/c17/integration/"
+      ],
+      "read_first": [
+        "docs/GOAL.md",
+        "docs/AGENT_WORKFLOW.md",
+        "continuation/tests/test_position_pipeline.cpp",
+        "continuation/Makefile"
+      ],
+      "bounded_deliverable": "Coordinator integrates the C ports and bounded pipeline with an independent fixed-SHA acceptance; not the complete Ragebot.",
+      "acceptance": [
+        "C library builds as C17 without a C++ runtime dependency.",
+        "Existing C++ make check plus native/sanitized C tests and differential harness.",
+        "Input integrity unchanged; independent code/evidence and reproducibility reviews."
+      ]
+    },
+    {
+      "id": "FULL01",
+      "title": "Full-project completion gate, not a single-agent assignment",
+      "kind": "milestone",
+      "status": "blocked",
+      "owner": null,
+      "base_commit": null,
+      "branch": null,
+      "worktree": null,
+      "result_commit": null,
+      "full_task_ids": [
+        "CODE01",
+        "GAP01",
+        "GAP02",
+        "GAP03",
+        "GAP04",
+        "GAP05",
+        "GAP06"
+      ],
+      "depends_on": [
+        "I01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "V01"
+      ],
+      "blocked_reason": "Full tasks remain open/partial; no full C port, full behavioral proof or external audit.",
+      "write_paths": [],
+      "read_first": [
+        "docs/GOAL.md",
+        "continuation/STATUS.json",
+        "docs/SOURCE_INDEX.md"
+      ],
+      "bounded_deliverable": "Close the actual complete transitive Ragebot contour in readable C, including tasks discovered by R01 and later evidence; no claim that the listed bounded cards alone suffice.",
+      "acceptance": [
+        "All criteria in docs/GOAL.md met; no critical unknown providers, branches or placeholder logic.",
+        "Complete dependency/mode/environment map and reproducible behavioral protocol.",
+        "Independent external audit and original-equivalence obligations actually satisfied, or completion remains blocked."
+      ]
+    }
+  ]
+}
