@@ -1,0 +1,159 @@
+{
+  "task": "NEXT-GEOMETRY",
+  "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "status": "blocked_at_external_binding",
+  "source_pins": [
+    {
+      "root": "handoff",
+      "path": "workspace/input/nl_handoff_2026-11-06.zip",
+      "size": 149819978,
+      "sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+      "entry": "nl.bin",
+      "entry_size": 55578624,
+      "entry_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+    },
+    {
+      "root": "handoff",
+      "path": "workspace/input/dll/client.dll",
+      "size": 16377192,
+      "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "machine": "i386",
+      "preferred_image_base": "0x10000000"
+    }
+  ],
+  "nl_address_mapping": {
+    "kind": "conditional_file_offset_mapping",
+    "base": "0x412A0000",
+    "formula": "VA = file_offset + 0x412A0000",
+    "runtime_mapping_proved": false
+  },
+  "caller": {
+    "va_start": "0x414F3C90",
+    "va_end_exclusive": "0x414F3EB5",
+    "file_offset_start": "0x253C90",
+    "file_offset_end_exclusive": "0x253EB5",
+    "byte_count": 549,
+    "sha256": "72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb",
+    "call_setup": {
+      "va_start": "0x414F3E19",
+      "va_end_exclusive": "0x414F3E5A",
+      "file_offset_start": "0x253E19",
+      "byte_count": 65,
+      "sha256": "2cc0b6ecc5100b19b3d6981c3d7c8505e4eb5fecc9a4c01766abd2776416fe0f",
+      "bytes_hex": "b806250d87c1c00b2ddbeb6120c1cb20c1ce20c1c81a35a984a17d2d9b2699239090908945d88b45d8f30f115424088d4ddc894c24048d4da8890c248d4db4ffd0"
+    },
+    "result_gate_and_effect": {
+      "va_start": "0x414F3E5D",
+      "va_end_exclusive": "0x414F3EB5",
+      "file_offset_start": "0x253E5D",
+      "byte_count": 88,
+      "sha256": "58dbf01250553f893287c7993997ca2d910a094a3730bf2939dd74f0dfc989a5",
+      "bytes_hex": "83c40cf30f1045b4befffffffff30f100d54a505420f2ec87628f30f59472cf30f11472c807dd4007404c64737010f1045b80f11470cf20f1045c8f20f11471c31f68b4df431e9e8b33d8b0089f081c4bc0000005e5f5dc3"
+    },
+    "threshold": {
+      "va": "0x4205A554",
+      "file_offset": "0xDBA554",
+      "bytes_hex": "0000803f",
+      "ieee754_binary32": "1.0"
+    },
+    "target_arithmetic": [
+      {
+        "operation": "mov eax,0x870d2506",
+        "result": "0x870D2506"
+      },
+      {
+        "operation": "rol eax,0xb",
+        "result": "0x69283438"
+      },
+      {
+        "operation": "sub eax,0x2061ebdb",
+        "result": "0x48C6485D"
+      },
+      {
+        "operation": "ror eax,0x1a",
+        "result": "0x31921752"
+      },
+      {
+        "operation": "xor eax,0x7da184a9",
+        "result": "0x4C3393FB"
+      },
+      {
+        "operation": "sub eax,0x2399269b",
+        "result": "0x289A6D60"
+      }
+    ],
+    "observed_call_registers_and_stack": {
+      "edx": "incoming [ebp+0x8] value remains live at the call",
+      "ecx": "address of local [ebp-0x4c]",
+      "stack_0": "address of local [ebp-0x58]",
+      "stack_4": "address of local [ebp-0x24]",
+      "stack_8": "single-precision value from xmm2"
+    },
+    "observed_output": {
+      "default_return": "-1 (esi initialized to 0xffffffff)",
+      "success_return": "0 (esi cleared on the non-jbe branch)",
+      "gate": "ucomiss compares threshold 1.0 with local [ebp-0x4c]; jbe rejects threshold<=value and unordered",
+      "success_writes": [
+        "output [arg3]+0x2c = local scalar multiplied by old output [arg3]+0x2c",
+        "if local byte [ebp-0x2c] != 0, write 1 to output [arg3]+0x37; otherwise do not clear it",
+        "copy 16 bytes from local [ebp-0x48] to output [arg3]+0x0c",
+        "copy 8 bytes from local [ebp-0x38] to output [arg3]+0x1c"
+      ],
+      "output_object_identity": "unknown; +0x37 is not proven Point+26"
+    }
+  },
+  "neutral_argument_trace": {
+    "arg0_stack_slot": "[ebp+0x8], loaded into edx; reads offsets +0x10 (qword) and +0x18 (float)",
+    "arg1_stack_slot": "[ebp+0x0c], loaded into eax; reads offsets +0x08, +0x14, +0x1c, +0x30",
+    "arg2_stack_slot": "[ebp+0x10], loaded into ecx; float reads span +0x00 through +0x2c",
+    "arg3_stack_slot": "[ebp+0x14], loaded into edi; output base inferred from reads/writes at +0x2c and writes at +0x0c..+0x23 and +0x37",
+    "type_limit": "32-bit stack slots and pointer-like dereferences are observed; named structures, field meanings, record lengths, aliasing, and original ABI are not established"
+  },
+  "client_candidates": [
+    {
+      "preferred_address": "0x10876D60",
+      "rva": "0x876D60",
+      "section": ".text",
+      "file_offset": "0x876160",
+      "sample_size": 96,
+      "sample_sha256": "3e8684c72ca46e7023c0dca0b703cca4ebb574f8986c3ca3355c7c26d77564b4",
+      "sample_hex": "558bec83e4f883ec348b450cf30f1002f30f105a08f30f107d10f30f5c00f30f5c5808f30f104804f30f10600cf30f5c20f30f105014f30f5c5008f30f11442418f30f1144241cf30f104204f30f5cc1f30f115c2408f30f115c2424f30f1058",
+      "structural_note": "standalone-looking prologue followed by vector-float operations; call-register/stack shape is a plausible match, not a binding proof",
+      "hypothetical_image_base_needed_for_call_va": "0x28130000"
+    },
+    {
+      "preferred_address": "0x103E6D60",
+      "rva": "0x3E6D60",
+      "section": ".text",
+      "file_offset": "0x3E6160",
+      "sample_size": 96,
+      "sample_sha256": "4d1e06c23eb46d58717bdaf3fde7364c7bb646fb22fb2d235247ebcb623ceea6",
+      "sample_hex": "f30f1165fc89b574ffffff4783ff400f8e52feffff8b0dcc51e0148b7dd880bd5fffffff000f856805000083bd74ffffff000f845b05000085c90f84b80000008b018b401cffd0e9ae0000000f28d10f28c3f30f59c6f30f59d7f30f59c9f30f",
+      "structural_note": "sample begins in an existing EBP-based block with an increment/loop branch; standalone function entry is not established",
+      "hypothetical_image_base_needed_for_call_va": "0x285C0000"
+    }
+  ],
+  "proof_boundary": {
+    "caller_target_computed": true,
+    "provider_identity_proved": false,
+    "client_runtime_image_base_proved": false,
+    "candidate_binding_proved": false,
+    "geometry_helper_semantics_proved": false,
+    "capsule_applicability_proved": false,
+    "full_hitbox_or_position_coverage_proved": false,
+    "requested_Point+26_identity_proved": false,
+    "stop_frontier": "identity/binding of computed external target 0x289A6D60"
+  },
+  "objdump_capture": {
+    "path": "objdump.txt",
+    "size": 11354,
+    "sha256": "88252e5fa01a5b7be97ed8aecced277a5bc4ccbcd9c656a61b11d642a1d3cc16",
+    "tool": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "mode": "static x86 decode only; no original code execution",
+    "windows": [
+      "nl.bin VA 0x414F3C90..0x414F3EB5 under conditional bias 0x412A0000",
+      "client.dll preferred VA 0x10876D60..0x10876DC0",
+      "client.dll preferred VA 0x103E6D60..0x103E6DC0"
+    ]
+  }
+}
