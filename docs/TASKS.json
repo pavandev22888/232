@@ -241,11 +241,11 @@
       "id": "R03",
       "title": "One scalar external-observation provider",
       "kind": "bounded_static_research",
-      "status": "ready",
-      "owner": null,
-      "base_commit": null,
-      "branch": null,
-      "worktree": null,
+      "status": "in_progress",
+      "owner": "r03-fallback-sol",
+      "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+      "branch": "hoplite/sikyon-46eee495--r03-fallback-sol",
+      "worktree": "/tmp/hoplite/232-r03-fallback-sol",
       "result_commit": null,
       "full_task_ids": [
         "GAP04"
@@ -265,7 +265,23 @@
         "Exact caller/provider anchors and explicit assumptions.",
         "Separate repeated reads over time; identify unresolved lifetime/alias/guard boundaries.",
         "Static verifier and review; no runtime hook or original-image execution."
-      ]
+      ],
+      "assignment": {
+        "date": "2026-11-09",
+        "model": "gpt-6.1-sol",
+        "occupancy_check": "Remote branch fecb194; R03 ready/unowned. Visible active thread is this run only. C01 and R01 remain assigned to their existing owners and are not touched.",
+        "observation": "Fallback step read at 0x41C784D8..0x41C784E3: float [*(0x4252194C)+0x24], not tolerance.",
+        "hypothesis": "Trace one immediate static writer/provider of the pointer cell 0x4252194C and its link to the fallback read; no assumed object type or provider value.",
+        "bounds": "Inventory direct references to this one pointer cell, then inspect at most one immediate writer/provider chain. Do not expand into tolerance, complete bindings, or C01.",
+        "checks": [
+          "Pinned whole-image and window SHA256 plus fresh objdump decode",
+          "Focused static verifier",
+          "Coordinator make -C continuation check with restored HANDOFF",
+          "Separate fixed-integrated-SHA review",
+          "Bundle/input/work integrity before and after"
+        ],
+        "stop": "Stop with byte-supported typed dependency or exact frontier after the one chain. A negative search or unresolved provider keeps R03 blocked and GAP04 open; no synthetic provider."
+      }
     },
     {
       "id": "R04",
