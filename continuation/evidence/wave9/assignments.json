@@ -216,5 +216,128 @@
     ],
     "scope": "Cross-domain coverage reconciliation, historical H01/external-audit boundary, integration, Makefile, docs/status, full tests, fixed-SHA independent review and review-only publication. External audit/observed equivalence cannot be supplied by agent tests."
   },
-  "full_gap_statuses_unchanged": true
+  "full_gap_statuses_unchanged": true,
+  "domain_ownership": [
+    {
+      "id": "language_abi",
+      "domain": "Исходный язык, compiler и ABI",
+      "owner": "w9-queue-abi"
+    },
+    {
+      "id": "target_selection",
+      "domain": "Выбор цели",
+      "owner": "w9-selection"
+    },
+    {
+      "id": "point_evaluation",
+      "domain": "Выбор/оценка точки и агрегация",
+      "owner": "w9-selection"
+    },
+    {
+      "id": "geometry_hit",
+      "domain": "Геометрия, попадание и варианты положения",
+      "owner": "w9-damage-geometry"
+    },
+    {
+      "id": "chance_thresholds",
+      "domain": "Шанс и два порога",
+      "owner": "w9-selection"
+    },
+    {
+      "id": "damage",
+      "domain": "Урон и hitgroup",
+      "owner": "w9-damage-geometry"
+    },
+    {
+      "id": "penetration",
+      "domain": "Пробитие и препятствия",
+      "owner": "w9-damage-geometry"
+    },
+    {
+      "id": "armor",
+      "domain": "Броня и предикат применимости",
+      "owner": "w9-damage-geometry"
+    },
+    {
+      "id": "history",
+      "domain": "История и варианты состояния H",
+      "owner": "w9-history-shot"
+    },
+    {
+      "id": "settings",
+      "domain": "Настройки и configuration",
+      "owner": "w9-selection"
+    },
+    {
+      "id": "filters",
+      "domain": "Фильтры целей/точек/недавних записей",
+      "owner": "w9-selection"
+    },
+    {
+      "id": "angle_correction",
+      "domain": "Коррекция углов и отдача",
+      "owner": "w9-angle-movement"
+    },
+    {
+      "id": "movement_stop",
+      "domain": "Движение и остановка",
+      "owner": "w9-angle-movement"
+    },
+    {
+      "id": "modes_dt_hs",
+      "domain": "Режимы DT/HS и выпуск команд",
+      "owner": "w9-lifecycle-message"
+    },
+    {
+      "id": "charge_resets",
+      "domain": "Зарядка, переходы и сбросы",
+      "owner": "w9-lifecycle-message"
+    },
+    {
+      "id": "network_state",
+      "domain": "Необходимые сетевые/позиционные состояния N",
+      "owner": "w9-lifecycle-message"
+    },
+    {
+      "id": "messages",
+      "domain": "Форматы сообщений, валидация и sender",
+      "owner": "w9-lifecycle-message"
+    },
+    {
+      "id": "shot_result",
+      "domain": "Учёт результата выстрела",
+      "owner": "w9-history-shot"
+    },
+    {
+      "id": "interfaces",
+      "domain": "Интерфейсы, entity/weapon и runtime bindings",
+      "owner": "w9-queue-abi"
+    },
+    {
+      "id": "ownership_lifecycle",
+      "domain": "Владение, перенос, время жизни и snapshots",
+      "owner": "w9-history-shot"
+    },
+    {
+      "id": "services_queue",
+      "domain": "Служебные зависимости: worker queue и инициализация",
+      "owner": "w9-queue-abi"
+    },
+    {
+      "id": "guards_dispatch",
+      "domain": "TLS/FS, opaque dispatch, исключения и out-of-range index",
+      "owner": "w9-queue-abi"
+    },
+    {
+      "id": "remaining_consumers",
+      "domain": "Остальные потребители транзитивного контура",
+      "owner": "parent"
+    },
+    {
+      "id": "equivalence_audit",
+      "domain": "Воспроизводимость, соответствие оригиналу и внешний аудит",
+      "owner": "parent"
+    }
+  ],
+  "domain_ownership_scope": "Accountability map, not acceptance or permission to widen the first bounded slice. Module-specific providers/ownership stay with assigned module owner. Parent owns cross-module reconciliation."
 }
