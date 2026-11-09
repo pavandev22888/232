@@ -133,10 +133,12 @@ git status --short
 `check` включает native, ASan/UBSan и static evidence. Исторический W5-набор:
 23 354 assertions **на каждый режим**, десять программ и 13 Python-тестов;
 13 новых static verifiers включены в `make check`. W6 сохранена в
-`continuation/evidence/wave6/verification.json`; текущий W7 gate — в
+`continuation/evidence/wave6/verification.json`; исторический W7 gate — в
 `continuation/evidence/wave7/verification.json`: 16 программ на режим,
 67 660 counted checks плюс три программы без счётчика, 13 Python-тестов
-и шесть новых byte-gates. Исторические PASS не подтверждают новый HEAD. Историческая база W3–W4
+и шесть новых byte-gates. Текущий W8-набор: 21 программа на режим, 11 новых byte-gates и
+unity/LTO `make mxcsr`; точные результаты — в
+[W8 verification](../continuation/evidence/wave8/verification.json). Исторические PASS не подтверждают новый HEAD. Историческая база W3–W4
 имела 19 902 assertions, семь программ и восемь Python-тестов.
 H01: 162 byte checks плюс 33 fresh-static / 2 model-only / 12 historical-only;
 полный старый протокол не закрыт. Отдельный W5 pefile leaf №5 воспроизводится
