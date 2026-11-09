@@ -1,0 +1,15 @@
+$ python3 -B continuation/evidence/wave8/message/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source/ZIP/member SHA256 and identity: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS index_origin: 1 fresh contiguous byte/decode pins
+PASS receiver_prefix: 33 fresh contiguous byte/decode pins
+PASS nonzero_slot_base_gate: 3 fresh contiguous byte/decode pins
+PASS next_epoch_gate: 6 fresh contiguous byte/decode pins
+PASS return_target: 8 fresh contiguous byte/decode pins
+PASS guard_epoch_side_exit_entry: 5 fresh contiguous byte/decode pins
+PASS slot_epoch_side_exit_entry: 5 fresh contiguous byte/decode pins
+PASS zero_slot_base_entry: 2 fresh contiguous byte/decode pins
+PASS zero_slot_base_tail: 4 fresh contiguous byte/decode pins
+PASS 67 instructions; conditional receiver prefix only
+FRONTIER 0x4150afb4: next TLS epoch gate; side exits 0x4150b77c / 0x4150b831 / 0x4150ac88 remain unimplemented
+
+EXIT_CODE=0

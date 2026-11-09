@@ -1,0 +1,180 @@
+{
+  "task": "W8-REVIEW-EVIDENCE",
+  "reviewed_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "runs": [
+    {
+      "name": "w8-aggregate",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/aggregate/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:29.672047+00:00",
+      "duration_seconds": 0.68,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-aggregate.log",
+      "log_sha256": "5b67831cedce7c1e5d61db036c997ddb31afa234f406da40d8aa61ee17f4066b"
+    },
+    {
+      "name": "w8-damage",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:29.672681+00:00",
+      "duration_seconds": 0.33,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-damage.log",
+      "log_sha256": "066a527b3b53cfa0fa807cb747229460bd54c95dd5f8b2e30a459dd6c11ece84"
+    },
+    {
+      "name": "w8-geometry",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/geometry/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:29.673169+00:00",
+      "duration_seconds": 0.516,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-geometry.log",
+      "log_sha256": "fd130af9cc07b03a15e6856a89757bfc120849acef79cd04d3e6079860a7bb83"
+    },
+    {
+      "name": "w8-message",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/message/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:29.673720+00:00",
+      "duration_seconds": 0.66,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-message.log",
+      "log_sha256": "c8868b0ff6e8ce8188758c629974e862a7a489d892ecbeb299235b7c57cb4cc0"
+    },
+    {
+      "name": "w8-movement",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.002648+00:00",
+      "duration_seconds": 0.991,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-movement.log",
+      "log_sha256": "51de7bc42316d681ad99f8f0e57705b3d496bab55c59ae5df252e5f9091bc8c8"
+    },
+    {
+      "name": "w8-provider",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/provider/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.190870+00:00",
+      "duration_seconds": 1.233,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-provider.log",
+      "log_sha256": "f31ec1b45e08fe29524f6d5b7af822a5406dab89efd78c694c8fbd071157c801"
+    },
+    {
+      "name": "w8-reset",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave8/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.334196+00:00",
+      "duration_seconds": 0.502,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w8-reset.log",
+      "log_sha256": "7b8fd8da491f0f46e6e737a8b933e14d976131bdccf66cd232a75a6bd8f98b85"
+    },
+    {
+      "name": "w5-esi",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave5/esi/verify_preservation.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.352644+00:00",
+      "duration_seconds": 0.592,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w5-esi.log",
+      "log_sha256": "5f2442ea7967833662504e3434bb0404ac143a7db695c5075b5863cf003bcab0"
+    },
+    {
+      "name": "w5-fallback24",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave5/fallback24/verify_initializer.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.836848+00:00",
+      "duration_seconds": 0.294,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w5-fallback24.log",
+      "log_sha256": "53e05ce915b2c3129aa020fe440de7a1dc3c979927dc812478b9f681572b3d26"
+    },
+    {
+      "name": "w5-indirect",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave5/indirect/verify_indirect.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.945235+00:00",
+      "duration_seconds": 0.256,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w5-indirect.log",
+      "log_sha256": "4fab9e704d3e467407c37ed5420a474d992de635b1c200dc3b4c8a656014cbe9"
+    },
+    {
+      "name": "scalar-provider",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:30.993843+00:00",
+      "duration_seconds": 4.72,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/scalar-provider.log",
+      "log_sha256": "59d027cc4812e1bd4acb47bfe291a8fbf26597b53497f22ea0588fcd2fc37978"
+    },
+    {
+      "name": "w7-abi",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "python3 -B continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "started_utc": "2026-11-09T19:04:31.131755+00:00",
+      "duration_seconds": 0.246,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/w7-abi.log",
+      "log_sha256": "f02bf4bf350df26101e46b0e94441391be4a1ea9a4ee6727a72a1201fd696268"
+    },
+    {
+      "name": "audit-integrity",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "exact python3 -c command is preserved at the start of logs/audit-integrity.log",
+      "started_utc": "2026-11-09T19:06:21.180118+00:00",
+      "duration_seconds": 1.485,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/audit-integrity.log",
+      "log_sha256": "47eb8ee9719c947cb897230100bac4bc76a9e879b44caea0a1c4bf4c9f328e18"
+    },
+    {
+      "name": "publication-doc-followup",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "bash -lc 'nl -ba docs/HANDOFF.md | sed -n '\"'\"'18,26p;249,257p'\"'\"'; printf '\"'\"'\\nOther current publication references:\\n'\"'\"'; rg -n '\"'\"'\u043e\u0431\u043d\u043e\u0432\u0438\u0442\u044c PR #1'\"'\"' README.md AGENTS.md docs/HANDOFF.md docs/START_NEXT_AGENT.md docs/BOOTSTRAP.md docs/ROADMAP.md docs/AGENT_WORKFLOW.md'",
+      "started_utc": "2026-11-09T19:07:23.326628+00:00",
+      "duration_seconds": 0.09,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/publication-doc-followup.log",
+      "log_sha256": "41779e072c8c727a864ef7ec56291820fc06b3a4300a8c55da61adc9a48342e8",
+      "log_format": "Trailing line-number whitespace removed for Git hygiene; substantive stdout unchanged."
+    },
+    {
+      "name": "tool-versions",
+      "cwd": "/tmp/hoplite/232-w8-review-evidence",
+      "command": "bash -lc 'python3 --version; git --version; objdump --version | head -1'",
+      "started_utc": "2026-11-09T19:07:23.416515+00:00",
+      "duration_seconds": 0.104,
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/review-evidence/logs/tool-versions.log",
+      "log_sha256": "bf5fb9ba288242ad45075cbf24bb6b5a330d23f25bc1e6625b1c5e146d1ad5ee"
+    }
+  ],
+  "original_executed_loaded_emulated": false,
+  "tools": {
+    "python": "3.12.3",
+    "git": "2.43.0",
+    "objdump": "GNU Binutils for Ubuntu 2.42"
+  },
+  "scope": {
+    "seven_w8_source_gates": 7,
+    "focused_inherited_gates": 5,
+    "audit_checks": "frozen commits/refs, source receipts, sanitized publication captures, inherited evidence preservation",
+    "no_native_or_sanitizer_rerun": true,
+    "full_coordinator_check_pending": true,
+    "final_history_sha_followup_pending": true
+  },
+  "preparation_failure": {
+    "command": "git diff --cached --check",
+    "exit_code": 2,
+    "log": "continuation/evidence/wave8/review-evidence/logs/staged-diff-check-failed.log",
+    "log_sha256": "d6b6250f7459d0bc2bf1f3d8676cfb57d4f67f34526d37c05aa73dcda771e122",
+    "cause": "nl -ba emitted a trailing TAB for blank documentation lines in a captured log. No source or byte gate failed.",
+    "repair": "Trim trailing whitespace in the two text logs; retain the failed check separately. No code, test or verifier changes."
+  }
+}

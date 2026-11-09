@@ -1,0 +1,24 @@
+$ bash -lc 'nl -ba docs/HANDOFF.md | sed -n '"'"'18,26p;249,257p'"'"'; printf '"'"'\nOther current publication references:\n'"'"'; rg -n '"'"'обновить PR #1'"'"' README.md AGENTS.md docs/HANDOFF.md docs/START_NEXT_AGENT.md docs/BOOTSTRAP.md docs/ROADMAP.md docs/AGENT_WORKFLOW.md'
+    18
+    19	## 1. Точка передачи и источники истины
+    20
+    21	- Репозиторий: <https://github.com/pavandev22888/232>.
+    22	- Рабочая ветка продолжения: `hoplite/tanagra-adb72df5`.
+    23	  [PR #1](https://github.com/pavandev22888/232/pull/1) уже слит 2026-11-09;
+    24	  `main` содержит W1–W7 (`0fe371b`), а новая ветка — продолжение W8 и полную
+    25	  исходную историю. Новый PR — **без merge, merge queue и auto-merge**.
+    26	- Снимок результата W5: `897b4bf51b1931fd1b80f178d40b7478ce251959`, 2026-11-09.
+   249	Перед приёмкой нового кода — независимое ревью **фиксированного интегрированного SHA**
+   250	в отдельном worktree; после исправлений новый SHA и повтор нужных проверок.
+   251	Обновлять STATUS/TASKS/SOURCE_INDEX/DECISIONS и свежие evidence, не старые журналы.
+   252	Отчёт: код и границы, источник/hash/адреса/байты, команды и exit codes, проверенный
+   253	и опубликованный SHA, результаты ревью и что осталось. Только после этого commit/push
+   254	в существующую ветку с явным refspec, обновить PR #1; никаких merge/queue/auto-merge.
+   255	Не публиковать распакованные DLL, build, секреты или необработанные приватные логи.
+   256	Отсутствие GitHub checks не называть зелёным CI. Полная готовность определяется
+   257	[GOAL](GOAL.md), а не успешностью локальной модели или этой таблицей.
+
+Other current publication references:
+docs/HANDOFF.md:254:в существующую ветку с явным refspec, обновить PR #1; никаких merge/queue/auto-merge.
+
+EXIT_CODE=0

@@ -1,0 +1,4 @@
+$ python3 -B continuation/evidence/wave8/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: immediate EAX source, 25 ordered stores, stride/end/back-edge, six records
+
+EXIT_CODE=0
