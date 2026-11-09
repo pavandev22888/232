@@ -84,65 +84,65 @@
     {
       "task": "NEXT-AGGREGATE",
       "source_commits": [
-        "35b8ada"
+        "35b8ada917cdfa018d0f259b1e930d9bc44f5e07"
       ],
       "integration_commits": [
-        "35b8ada"
+        "35b8ada917cdfa018d0f259b1e930d9bc44f5e07"
       ],
       "result": "Non-direct local gates + tail statistics/initial copy; unknown settings/handler/ranking remain."
     },
     {
       "task": "NEXT-MODES",
       "source_commits": [
-        "47af79a"
+        "47af79a1f5e90e308463f58df131ee109528ce03"
       ],
       "integration_commits": [
-        "47af79a"
+        "47af79a1f5e90e308463f58df131ee109528ce03"
       ],
       "result": "Independent post-call observations; not a complete state machine."
     },
     {
       "task": "NEXT-MESSAGE",
       "source_commits": [
-        "8faa025"
+        "8faa0257be3ac7cf1f6c41a63eec98baf7c1875a"
       ],
       "integration_commits": [
-        "a63b998",
-        "23198f7"
+        "a63b998421707648b86a7aeb176f93d91aba05c3",
+        "23198f7b01d0c5deba1cb093b12699b4136622b5"
       ],
       "result": "Evidence only; caller/callee frontier 5325D3E8 outside image."
     },
     {
       "task": "NEXT-GEOMETRY",
       "source_commits": [
-        "b9be3bd"
+        "b9be3bd9bc5987ee08c65e12ddc20e622e3bd27d"
       ],
       "integration_commits": [
-        "1215d91"
+        "1215d912bf28712ab699349770e8734493be73d3"
       ],
       "result": "Evidence only; 289A6D60 binding/ABI unresolved; candidates remain separate."
     },
     {
       "task": "NEXT-RESET",
       "source_commits": [
-        "de19628",
-        "e9b3c7d"
+        "de19628f8e541324f286814bc5ff331c55a8802b",
+        "e9b3c7d03936c901a64bcb10a974661ab5c84333"
       ],
       "integration_commits": [
-        "14cc881",
-        "c5e496f"
+        "14cc8811821bc77da8fd94c9924a2321809de08e",
+        "c5e496fe61e9e0f88a1aa1854df0aa41a265d15b"
       ],
       "result": "ADD/CMP/JNE -> eleven-store projection, not loop/scheduling; initial byte failure retained."
     },
     {
       "task": "NEXT-HISTORY",
       "source_commits": [
-        "2a3e717",
-        "46c1738"
+        "2a3e717d5585ae7eb2ad3cfabafeaa191b2c013f",
+        "46c1738e9c483c9852f7cecefc10c05f0371d140"
       ],
       "integration_commits": [
-        "5859dd2",
-        "a940ea6"
+        "5859dd28807a0194051a0997980d843116d02906",
+        "a940ea61d201ea3092a288523bad728ba694b9d7"
       ],
       "result": "Ordered store slice with little-endian local observation; unknown suitability/slot/matrix paths."
     },
@@ -159,16 +159,16 @@
     "resolution": "review-callback/resolution.json",
     "status": "initial finding withdrawn after fresh CFG trace; source/tests unchanged",
     "source_report_commits": [
-      "5ca65dd",
-      "25f66a7",
-      "d1fe45c",
-      "9084d92"
+      "5ca65dd0f7142da76fbe114487f3f894df762d56",
+      "25f66a7747b50665b8d166989f7ed4a1593ad0fb",
+      "d1fe45cd5d20d8705e9e7b7a19af0e2a85068672",
+      "9084d92e323a96910b079fd8f46f1d755d9a3299"
     ],
     "integration_report_commits": [
-      "0d934d4",
-      "5450183",
-      "b4283fc",
-      "9ff3fd5"
+      "0d934d4922597211680d2e8d3fb2ac49af4220b7",
+      "545018304a3ff24530cc11d78220e39d954b1a69",
+      "b4283fc9ae5a38521c7a372f6d5e4c4ae01ae412",
+      "9ff3fd56a724f9dc401f1719adfe0ba6bdf350c6"
     ],
     "coordinator_static_gate_exit": 0
   },
@@ -227,5 +227,109 @@
     ],
     "finished_at": "2026-11-09T16:56:36.070108+00:00",
     "scope": "Before history integration; not final W6 acceptance. Only handoff documentation was edited while these commands ran."
-  }
+  },
+  "coordinator_integrated_gate": {
+    "head": "d99dd375160c7fccfd489598942232430d78da2f",
+    "started_at": "2026-11-09T16:59:45.807813+00:00",
+    "commands": [
+      {
+        "name": "make-check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/make-check.log",
+        "log_sha256": "e2f63ea8f04835105f6f716b3b1cd263ca5ec1d0322822cbffdc86313f5f5fc2"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-review/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T17:01:05.605465+00:00",
+    "concurrent_metadata_change": "Only TASKS.json and this verification ledger changed during/after check; all code/tests/Makefile and source contracts remained at integrated_code_sha."
+  },
+  "verification_counts": {
+    "modules": 12,
+    "test_programs_per_mode": 13,
+    "python_unit_tests": 13,
+    "new_w6_static_gates": 6,
+    "instrumented_checks_per_mode": 60995,
+    "reset_predecessor_test": "additional equality/non-equality/wrap test passes; its checks are not included in instrumented counter",
+    "native": "passed",
+    "asan_ubsan": "passed",
+    "all_six_w6_static_gates": "passed",
+    "bundle_files": 960,
+    "input_work_records": 64087,
+    "h01_strict_old_protocol_repeated": false
+  },
+  "final_independent_reviews": {
+    "status": "in_progress",
+    "code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+    "report_paths": [
+      "review-integrated-code/report.json",
+      "review-integrated-evidence/report.json"
+    ]
+  },
+  "tools": {
+    "python3": "Python 3.12.3",
+    "g++": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "make": "GNU Make 4.3",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "git": "git version 2.43.0"
+  },
+  "sanitized_log": {
+    "path": "verification.log",
+    "sha256": "72b0d37c4e78bc2763abb8510a4a8930474834a13228f6735e52bb4d8fd5236a",
+    "scope": "Selected fresh outputs, not the complete raw check log."
+  },
+  "review_corrections": [
+    {
+      "finding": "W6RC-001",
+      "result": "withdrawn by reviewer after checking the two independent memcpy calls via local word; code/tests unchanged",
+      "report": "review-integrated-code/resolution.json"
+    },
+    {
+      "finding": "W6-REVIEW-EVIDENCE F1",
+      "result": "Corrected history local DWORD read address to 413F71A1; store at 413F71A4, not source-pointer load at 413F7102",
+      "code_tests_changed": false,
+      "coordinator_history_gate_exit": 0,
+      "coordinator_fresh_objdump_exit": 0
+    }
+  ]
 }

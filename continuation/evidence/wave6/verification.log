@@ -1,0 +1,101 @@
+W6 coordinator integrated gate
+Code SHA: d99dd375160c7fccfd489598942232430d78da2f
+
+Full logs are local in runs/w6/integrated-review; SHA256 and commands in verification.json.
+
+COMMAND: make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT: 0
+LOG SHA256: e2f63ea8f04835105f6f716b3b1cd263ca5ec1d0322822cbffdc86313f5f5fc2
+
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+EXIT: 0
+LOG SHA256: e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+EXIT: 0
+LOG SHA256: 3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+
+COMMAND: git diff --check
+EXIT: 0
+LOG SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+Native and sanitizer test outputs:
+RUN build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation
+16392 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state
+PASS: 3490 charge-state checks
+RUN build/test_history_slice
+PASS history slice: 22 assertions
+RUN build/test_lifecycle_seed_slice
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_release_state_slice
+21291 release-state assertions passed
+RUN build/test_reset_predecessor
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_bounded_aggregation_sanitize
+16392 bounded aggregation assertions passed
+RUN build/test_bounded_message_fields_sanitize
+bounded_message_fields: 352 assertions passed
+RUN build/test_charge_state_sanitize
+PASS: 3490 charge-state checks
+RUN build/test_history_slice_sanitize
+PASS history slice: 22 assertions
+RUN build/test_lifecycle_seed_slice_sanitize
+PASS lifecycle_seed_slice: 2820 assertions
+RUN build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_release_state_slice_sanitize
+21291 release-state assertions passed
+RUN build/test_reset_predecessor_sanitize
+PASS: reset predecessor equality, non-equality and uint32 wrap
+RUN build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+
+Static gates:
+Ran 8 tests in 0.002s
+OK
+python3 -B evidence/wave6/aggregate/verify_callback.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave6/modes/verify_release.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave6/message/verify_message_frontier.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave6/reset/verify_reset_predecessor.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave6/geometry/verify_geometry.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+python3 -B evidence/wave6/history/verify_source_bytes.py --handoff "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+Ran 5 tests in 0.003s
+OK
+
+Bundle: {
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+Integrity: {
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+
+No originals loaded, executed or emulated; no full reconstruction or external-audit claim.
