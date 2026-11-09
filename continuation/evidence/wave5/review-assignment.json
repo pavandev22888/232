@@ -1,0 +1,53 @@
+{
+  "review_base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+  "reviews": [
+    {
+      "id": "W5-REVIEW-CODE",
+      "owner": "w5-review-code",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-code",
+      "branch": "hoplite/sikyon-46eee495--w5-review-code",
+      "write_paths": [
+        "continuation/evidence/wave5/review-code/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
+    },
+    {
+      "id": "W5-REVIEW-EVIDENCE",
+      "owner": "w5-review-evidence",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-evidence",
+      "branch": "hoplite/sikyon-46eee495--w5-review-evidence",
+      "write_paths": [
+        "continuation/evidence/wave5/review-evidence/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
+    },
+    {
+      "id": "W5-REVIEW-PROVIDERS",
+      "owner": "w5-review-providers",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-providers",
+      "branch": "hoplite/sikyon-46eee495--w5-review-providers",
+      "write_paths": [
+        "continuation/evidence/wave5/review-providers/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
+    }
+  ]
+}
