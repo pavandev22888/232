@@ -190,3 +190,19 @@
 - Done в bounded-карточках не закрывает CODE01/GAP01–GAP06; язык/ABI оригинала,
   runtime bindings, полный H01 protocol и внешний аудит не установлены.
   PR остаётся только для просмотра: без merge, очереди и auto-merge.
+
+## 2026-11-09 — W8: условные тела вместо выдуманных providers
+
+- Аудит фиксирует 93 commits/14 refs и только два доступных PushEvent; полный
+  push/deleted-ref журнал не заявляется. Старое ancestry сохранено для baseline
+  после squash PR #1; продолжение публикуется отдельным PR без merge/queue.
+- W8 продвигает 11 source-backed участков, включая новые angle/shot/queue.
+  [Сводка и frontiers](evidence/wave8/README.md) отделяют raw32 и site-specific
+  post-call observations от живых объектов, scheduler и времени жизни.
+- Initial review нашёл воспроизводимый MXCSR/CSE дефект damage при unity/LTO.
+  `dc18d0b` добавляет volatile/memory barrier и постоянный `make mxcsr` gate;
+  failure и corrected logs сохранены отдельно. Независимый follow-up на
+  `bc89d9d` подтвердил old-fail/new-pass и ограниченную приёмку.
+- Фактическая приёмка и итоговые команды записываются в
+  [W8 verification](evidence/wave8/verification.json). Все полные GAP,
+  исходный язык/ABI, H01 protocol и внешний аудит остаются открытыми.

@@ -1,0 +1,4 @@
+CMD git diff bcc5918568c162482b7ec4e1fd7ca7ec48d58940 -- continuation/src continuation/include continuation/tests continuation/Makefile continuation/STATUS.json docs
+EXIT 0
+CMD git diff --check
+EXIT 0

@@ -1,0 +1,6 @@
++ set -x
++ g++ -std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -fno-omit-frame-pointer -fsanitize=address,undefined -Icontinuation/include continuation/src/shot_result_slice.cpp continuation/tests/test_shot_result_slice.cpp -o continuation/evidence/wave8/shot/build/test_shot_result_slice_sanitize
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ continuation/evidence/wave8/shot/build/test_shot_result_slice_sanitize
+PASS shot_result_slice: 250 assertions

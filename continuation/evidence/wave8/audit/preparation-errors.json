@@ -1,0 +1,16 @@
+{
+  "task": "W8-AUDIT",
+  "attempts": [
+    {
+      "step": "Initial inventory metadata generation after commits.jsonl was written",
+      "exit_code": 1,
+      "diagnostic": "ValueError: not enough values to unpack (expected 3, got 2)",
+      "cause": "Empty reflog action plus outer whitespace stripping removed a trailing tab.",
+      "repair": "Retain line whitespace and explicitly pad an empty action to three fields. No history entries discarded.",
+      "effect": "commits.jsonl persisted; history/publication metadata was absent until this corrected run.",
+      "subsequent_static_gate_exit": 0,
+      "corrected_metadata_generation_exit": 0
+    }
+  ],
+  "not_a_source_or_gate_failure": true
+}

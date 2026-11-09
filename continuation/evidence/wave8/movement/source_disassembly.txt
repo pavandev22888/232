@@ -1,0 +1,156 @@
+STATIC DATA DISASSEMBLY ONLY; original not loaded, run or emulated.
+SOURCE: workspace/work/nl_handoff_2026-11-06/nl.bin
+SHA256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+IMAGE BASE: 0x412a0000
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x4148cc44 --stop-address=0x4148cc8c <nl.bin>
+
+<nl.bin>:     file format binary
+
+
+Disassembly of section .data:
+
+4148cc44 <.data+0x1ecc44>:
+4148cc44:	0f b7 04 30                         	movzx  eax,WORD PTR [eax+esi*1]
+4148cc48:	31 db                               	xor    ebx,ebx
+4148cc4a:	83 f8 1f                            	cmp    eax,0x1f
+4148cc4d:	0f 84 66 0b 00 00                   	je     0x4148d7b9
+4148cc53:	83 f8 40                            	cmp    eax,0x40
+4148cc56:	0f 84 5d 0b 00 00                   	je     0x4148d7b9
+4148cc5c:	f6 05 b8 52 50 42 01                	test   BYTE PTR ds:0x425052b8,0x1
+4148cc63:	75 27                               	jne    0x4148cc8c
+4148cc65:	66 0f 6e 05 dc 52 50 42             	movd   xmm0,DWORD PTR ds:0x425052dc
+4148cc6d:	c7 45 f0 ff ff ff ff                	mov    DWORD PTR [ebp-0x10],0xffffffff
+4148cc74:	83 ec 04                            	sub    esp,0x4
+4148cc77:	66 0f 7e 04 24                      	movd   DWORD PTR [esp],xmm0
+4148cc7c:	e8 af 84 01 00                      	call   0x414a5130
+4148cc81:	83 c4 04                            	add    esp,0x4
+4148cc84:	84 c0                               	test   al,al
+4148cc86:	0f 84 2b 0b 00 00                   	je     0x4148d7b7
+
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=12 --adjust-vma=0x412a0000 --start-address=0x414a5130 --stop-address=0x414a52dc <nl.bin>
+
+<nl.bin>:     file format binary
+
+
+Disassembly of section .data:
+
+414a5130 <.data+0x205130>:
+414a5130:	53                                  	push   ebx
+414a5131:	83 ec 0c                            	sub    esp,0xc
+414a5134:	a1 00 27 26 42                      	mov    eax,ds:0x42262700
+414a5139:	31 e0                               	xor    eax,esp
+414a513b:	89 44 24 08                         	mov    DWORD PTR [esp+0x8],eax
+414a513f:	64 a1 30 00 00 00                   	mov    eax,fs:0x30
+414a5145:	8b 88 a8 00 00 00                   	mov    ecx,DWORD PTR [eax+0xa8]
+414a514b:	03 88 a4 00 00 00                   	add    ecx,DWORD PTR [eax+0xa4]
+414a5151:	03 88 b8 00 00 00                   	add    ecx,DWORD PTR [eax+0xb8]
+414a5157:	03 88 bc 00 00 00                   	add    ecx,DWORD PTR [eax+0xbc]
+414a515d:	03 48 64                            	add    ecx,DWORD PTR [eax+0x64]
+414a5160:	b8 1c c5 af bb                      	mov    eax,0xbbafc51c
+414a5165:	2d c4 ee 8d 0f                      	sub    eax,0xf8deec4
+414a516a:	2d 90 4e 2a 35                      	sub    eax,0x352a4e90
+414a516f:	c1 ca 20                            	ror    edx,0x20
+414a5172:	35 56 a1 7c 52                      	xor    eax,0x527ca156
+414a5177:	2d 96 26 8b 24                      	sub    eax,0x248b2696
+414a517c:	c1 c0 02                            	rol    eax,0x2
+414a517f:	90                                  	nop
+414a5180:	90                                  	nop
+414a5181:	90                                  	nop
+414a5182:	90                                  	nop
+414a5183:	89 44 24 04                         	mov    DWORD PTR [esp+0x4],eax
+414a5187:	39 4c 24 04                         	cmp    DWORD PTR [esp+0x4],ecx
+414a518b:	74 27                               	je     0x414a51b4
+414a518d:	89 f8                               	mov    eax,edi
+414a518f:	0f be d3                            	movsx  edx,bl
+414a5192:	05 10 5d 20 28                      	add    eax,0x28205d10
+414a5197:	66 29 ef                            	sub    di,bp
+414a519a:	c1 d0 0e                            	rcl    eax,0xe
+414a519d:	66 d3 c9                            	ror    cx,cl
+414a51a0:	d3 ec                               	shr    esp,cl
+414a51a2:	66 c1 e4 1c                         	shl    sp,0x1c
+414a51a6:	0f c9                               	bswap  ecx
+414a51a8:	80 f3 00                            	xor    bl,0x0
+414a51ab:	66 09 cf                            	or     di,cx
+414a51ae:	66 21 c4                            	and    sp,ax
+414a51b1:	f9                                  	stc
+414a51b2:	ff e0                               	jmp    eax
+414a51b4:	b8 b4 bd 5f 1d                      	mov    eax,0x1d5fbdb4
+414a51b9:	35 43 c5 9b 1e                      	xor    eax,0x1e9bc543
+414a51be:	c1 c0 10                            	rol    eax,0x10
+414a51c1:	c1 c0 15                            	rol    eax,0x15
+414a51c4:	c1 c9 20                            	ror    ecx,0x20
+414a51c7:	05 33 ed 4e 4f                      	add    eax,0x4f4eed33
+414a51cc:	2d 6a 03 00 7c                      	sub    eax,0x7c00036a
+414a51d1:	35 19 b7 2d 63                      	xor    eax,0x632db719
+414a51d6:	90                                  	nop
+414a51d7:	89 44 24 04                         	mov    DWORD PTR [esp+0x4],eax
+414a51db:	8b 4c 24 04                         	mov    ecx,DWORD PTR [esp+0x4]
+414a51df:	8b 01                               	mov    eax,DWORD PTR [ecx]
+414a51e1:	ff 50 34                            	call   DWORD PTR [eax+0x34]
+414a51e4:	b3 01                               	mov    bl,0x1
+414a51e6:	85 c0                               	test   eax,eax
+414a51e8:	0f 85 dc 00 00 00                   	jne    0x414a52ca
+414a51ee:	64 a1 30 00 00 00                   	mov    eax,fs:0x30
+414a51f4:	8b 88 a8 00 00 00                   	mov    ecx,DWORD PTR [eax+0xa8]
+414a51fa:	03 88 a4 00 00 00                   	add    ecx,DWORD PTR [eax+0xa4]
+414a5200:	03 88 b8 00 00 00                   	add    ecx,DWORD PTR [eax+0xb8]
+414a5206:	03 88 bc 00 00 00                   	add    ecx,DWORD PTR [eax+0xbc]
+414a520c:	03 48 64                            	add    ecx,DWORD PTR [eax+0x64]
+414a520f:	b8 e0 6b e8 95                      	mov    eax,0x95e86be0
+414a5214:	c1 ca 20                            	ror    edx,0x20
+414a5217:	2d 77 24 6b 5a                      	sub    eax,0x5a6b2477
+414a521c:	2d 1e a1 18 07                      	sub    eax,0x718a11e
+414a5221:	c1 ce 20                            	ror    esi,0x20
+414a5224:	c1 c0 05                            	rol    eax,0x5
+414a5227:	2d 4c fe 0e 1a                      	sub    eax,0x1a0efe4c
+414a522c:	35 3a cb 85 72                      	xor    eax,0x7285cb3a
+414a5231:	90                                  	nop
+414a5232:	89 44 24 04                         	mov    DWORD PTR [esp+0x4],eax
+414a5236:	39 4c 24 04                         	cmp    DWORD PTR [esp+0x4],ecx
+414a523a:	74 33                               	je     0x414a526f
+414a523c:	89 e0                               	mov    eax,esp
+414a523e:	0f be f6                            	movsx  esi,dh
+414a5241:	66 81 c5 11 3f                      	add    bp,0x3f11
+414a5246:	29 d8                               	sub    eax,ebx
+414a5248:	c0 d1 0c                            	rcl    cl,0xc
+414a524b:	66 c1 cb 0e                         	ror    bx,0xe
+414a524f:	66 c1 ec 0e                         	shr    sp,0xe
+414a5253:	c1 e6 0e                            	shl    esi,0xe
+414a5256:	0f cd                               	bswap  ebp
+414a5258:	66 81 f5 67 1b                      	xor    bp,0x1b67
+414a525d:	09 eb                               	or     ebx,ebp
+414a525f:	66 21 df                            	and    di,bx
+414a5262:	f5                                  	cmc
+414a5263:	ff e2                               	jmp    edx
+414a5265:	c2 e1 e0                            	ret    0xe0e1
+414a5268:	e8 71 0f 7a 72                      	call   0xb3c461de
+414a526d:	73 0f                               	jae    0x414a527e
+414a526f:	b8 25 f9 b1 e5                      	mov    eax,0xe5b1f925
+414a5274:	05 ee 57 1b 0c                      	add    eax,0xc1b57ee
+414a5279:	2d 37 80 f3 17                      	sub    eax,0x17f38037
+414a527e:	05 84 b8 fc 51                      	add    eax,0x51fcb884
+414a5283:	2d de 96 69 32                      	sub    eax,0x326996de
+414a5288:	c1 c0 15                            	rol    eax,0x15
+414a528b:	35 9e cc ad 78                      	xor    eax,0x78adcc9e
+414a5290:	eb 00                               	jmp    0x414a5292
+414a5292:	89 44 24 04                         	mov    DWORD PTR [esp+0x4],eax
+414a5296:	8b 4c 24 04                         	mov    ecx,DWORD PTR [esp+0x4]
+414a529a:	8b 01                               	mov    eax,DWORD PTR [ecx]
+414a529c:	ff 50 30                            	call   DWORD PTR [eax+0x30]
+414a529f:	d9 1c 24                            	fstp   DWORD PTR [esp]
+414a52a2:	f3 0f 10 04 24                      	movss  xmm0,DWORD PTR [esp]
+414a52a7:	f3 0f 51 c0                         	sqrtss xmm0,xmm0
+414a52ab:	f3 0f 59 05 f4 cd 06 42             	mulss  xmm0,DWORD PTR ds:0x4206cdf4
+414a52b3:	f3 0f 59 c0                         	mulss  xmm0,xmm0
+414a52b7:	f3 0f 10 4c 24 14                   	movss  xmm1,DWORD PTR [esp+0x14]
+414a52bd:	0f 54 0d 40 a5 05 42                	andps  xmm1,XMMWORD PTR ds:0x4205a540
+414a52c4:	0f 2e c8                            	ucomiss xmm1,xmm0
+414a52c7:	0f 96 c3                            	setbe  bl
+414a52ca:	8b 4c 24 08                         	mov    ecx,DWORD PTR [esp+0x8]
+414a52ce:	31 e1                               	xor    ecx,esp
+414a52d0:	e8 87 29 90 00                      	call   0x41da7c5c
+414a52d5:	89 d8                               	mov    eax,ebx
+414a52d7:	83 c4 0c                            	add    esp,0xc
+414a52da:	5b                                  	pop    ebx
+414a52db:	c3                                  	ret

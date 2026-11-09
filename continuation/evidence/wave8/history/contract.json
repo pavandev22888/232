@@ -1,0 +1,116 @@
+{
+  "task": "W8-HISTORY",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "source_map": "source_bytes.json",
+  "implementation": "conditional offline C++17 byte/state model, not original source language/ABI proof",
+  "entry": {
+    "caller": "0x413F8902..09",
+    "callee": "0x413F3890",
+    "stack_argument": 1,
+    "original_execution": false
+  },
+  "prefix": {
+    "api": "plan_history_slot_growth",
+    "range": "0x413F3899..391A",
+    "domain": "field_08 <= 0x11037, request argument == 1; offline restriction, not an original entry guard",
+    "transform": [
+      "N = C + (C < 1)",
+      "while N < 8 or unsigned(N-C) < 1: if unsigned(0x11037-N) < N stop at failure-call boundary; otherwise N += N",
+      "argument = 4*N below 0x400; otherwise 4*N+0x23",
+      "aligned branch selected BEFORE opaque allocation, not inferred from post-call EBX"
+    ],
+    "failure_calls": {
+      "0x413F3A20": "0x412F2470; behavior/return/exception unresolved",
+      "0x413F3A25": "0x412A24C0; guards N>=0x40000000 and N>=0x3FFFFFF8 unreachable in bounded prefix domain"
+    },
+    "test": "growth_request_retains_unsigned_limits_and_non_power_of_two_capacities"
+  },
+  "allocation_and_copy": {
+    "api": "populate_history_growth_table",
+    "range": "0x413F3906..39D8",
+    "opaque_call": "0x41DA7B7C at 0x413F38FE or 0x413F3912; numeric argument is modeled, no allocation performed",
+    "explicit_observations": [
+      "EAX numeric 32-bit address and caller-supplied byte mapping",
+      "pre-call aligned-branch selection",
+      "post-allocation EBX N and EBP cursor P; no callee-preservation assumption",
+      "post-allocation EDI field_04 table mapping and reloaded field_08 C; no object identity assumption"
+    ],
+    "preconditions": [
+      "8 <= N <= 0x11037; 0 <= P <= C <= N; offline representability/safety restrictions",
+      "old source span C*4 bytes and allocation span N*4 plus branch-specific 0x23 bytes; live/stable mappings supplied by caller",
+      "non-null returned numeric address, no 32-bit mapped-address wrap; host buffer large enough",
+      "old/allocation byte storage disjoint; descriptors and other live fields do not alias writes",
+      "copy/fill helper calls complete normally, CPU dispatch flags valid, forward direction flag clear, required physical reads readable",
+      "model covers logical byte effects and inter-call order, not vector dispatch, speculative/overlapping physical reads, faults or timing"
+    ],
+    "header": "aligned branch: T = (EAX+0x23)&0xFFFFFFE0; write raw EAX as little-endian DWORD at T-4 before any copy; otherwise T=EAX",
+    "layout": "DWORD pointer tokens serialized as 4 raw bytes; never copy native HistoryDestinationBytes descriptors as original pointer table",
+    "variables": "D=N-C; P is raw saved cursor, not a masked index; do not round C or N to powers of two",
+    "ordered_operations": {
+      "always": "copy old[P:C] to new[P:C]",
+      "D_lt_P": [
+        "copy old[0:D] to new[C:N]",
+        "copy old[D:P] to new[0:P-D]",
+        "zero new[P-D:P]"
+      ],
+      "D_ge_P": [
+        "copy old[0:P] to new[C:C+P]",
+        "zero new[C+P:N]",
+        "zero new[0:P]"
+      ]
+    },
+    "helpers": {
+      "0x4200C9A0": "byte-copy effect, overlap-aware original; adapter uses disjoint spans",
+      "0x4200CF20": "byte-fill effect with zero argument"
+    },
+    "unmodified": "source bytes and object fields +04/+08/+0C/+10; publication is later",
+    "tests": [
+      "growth_copies_and_zeros_in_both_source_orders",
+      "allocation_observations_control_header_and_do_not_allocate",
+      "invalid_growth_observations_do_not_write"
+    ]
+  },
+  "release": {
+    "api": "plan_history_growth_release",
+    "range": "0x413F39DC..3A09",
+    "observations": "fresh field_04, field_08 and optional DWORD read at table-4; not assumed equal to pre-allocation object/table",
+    "transform": [
+      "if field_04==0: no release call",
+      "B=field_08*4 modulo 2^32; if B<0x1000 request (field_04,B)",
+      "otherwise require observed header H; if unsigned(field_04-4-H)>=0x20 stop at invalid-parameter call 0x42028CEF",
+      "else request (H,B+0x23 modulo 2^32)"
+    ],
+    "opaque_call": "0x41DA7BE5 at 0x413F3A04, not executed; ownership/lifetime/destruction behavior unresolved",
+    "test": "release_and_publication_use_fresh_independent_observations"
+  },
+  "publication": {
+    "api": "publish_history_growth_table",
+    "range": "0x413F3A0C..3A13",
+    "observations": "post-release EDI mapping, stack table-address DWORD, EBX delta, all supplied independently",
+    "ordered_stores": [
+      "field_04 = stack_table_address",
+      "field_08 += ebx_capacity_delta modulo 2^32"
+    ],
+    "unmodified": [
+      "field_0c",
+      "field_10"
+    ],
+    "test": "release_and_publication_use_fresh_independent_observations"
+  },
+  "consumer": {
+    "api": "resume_history_slot_after_growth",
+    "range": "0x413F8909..89AF, conditional existing-slot branch",
+    "observations": "independent post-growth ESI/fields/entry-descriptor mapping, not an automatic pre-call identity bridge",
+    "transform": "reload field_08 then continue selection without repeating entry growth gate; preserve W7 separate decremented cursor and masked table index; reuse existing ordered initializer",
+    "test": "growth_table_reaches_resolver_but_does_not_invent_null_slot_allocation",
+    "bounded_result": "capacity 5 -> 10 with saved cursor 4 creates zero token at index 9; explicitly mapped resolver observes null slot and stops after preliminary masked +0C store",
+    "other_fixture": "separately observed capacity 5/cursor 4/count 9/present entry 0 initializes it and stores cursor 3, not index 0, without a second growth check",
+    "no_reachability_claim": "post-call changed-capacity/changed-EBX fixtures test conditional contracts only, not actual original side effects or reachability"
+  },
+  "frontier": [
+    "0x413F8927..8941 pushes 0x20,0xF0C0 then calls opaque 0x41DA7BAC; no allocator/lifetime provider is fabricated",
+    "growth allocation/release/failure behavior and cross-call object/register identity remain externally observed",
+    "0x41B70930 consumer boundary still requires distinct post-call slot and DWORD observations from W7",
+    "no selector/actor identity, whole-history, full GAP or original-language completion claim"
+  ]
+}

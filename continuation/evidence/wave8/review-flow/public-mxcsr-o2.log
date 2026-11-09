@@ -1,0 +1,102 @@
+CWD /tmp/hoplite/232-w8-review-flow
+SOURCE (stdin):
+#include "rage/damage_slice.hpp"
+#include <xmmintrin.h>
+#include <cstdio>
+int main() {
+    const unsigned saved = _mm_getcsr();
+    rage::offline::DamageSwitchObservations o{3, 0, 0x3f800001u, {}};
+    _mm_setcsr(0x1f80);
+    const auto nearest = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(0x5f80);
+    const auto upward = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(saved);
+    std::printf("public API nearest=%08x (want 3fa00001), upward=%08x (want 3fa00002)\n", *nearest.result_slot_bits,*upward.result_slot_bits);
+    return *nearest.result_slot_bits==0x3fa00001u && *upward.result_slot_bits==0x3fa00002u ? 0:1;
+}
+CMD g++ -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-o2
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-o2:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	55                   	push   rbp
+    1085:	53                   	push   rbx
+    1086:	48 81 ec d8 00 00 00 	sub    rsp,0xd8
+    108d:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    1094:	00 00
+    1096:	48 89 84 24 c8 00 00 	mov    QWORD PTR [rsp+0xc8],rax
+    109d:	00
+    109e:	31 c0                	xor    eax,eax
+    10a0:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    10a5:	66 0f ef c0          	pxor   xmm0,xmm0
+    10a9:	8b 6c 24 0c          	mov    ebp,DWORD PTR [rsp+0xc]
+    10ad:	48 c7 84 24 b4 00 00 	mov    QWORD PTR [rsp+0xb4],0x0
+    10b4:	00 00 00 00 00
+    10b9:	0f 11 44 24 74       	movups XMMWORD PTR [rsp+0x74],xmm0
+    10be:	c7 44 24 70 03 00 00 	mov    DWORD PTR [rsp+0x70],0x3
+    10c5:	00
+    10c6:	c7 44 24 78 01 00 80 	mov    DWORD PTR [rsp+0x78],0x3f800001
+    10cd:	3f
+    10ce:	c6 44 24 7c 01       	mov    BYTE PTR [rsp+0x7c],0x1
+    10d3:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10da:	00
+    10db:	0f 11 84 24 84 00 00 	movups XMMWORD PTR [rsp+0x84],xmm0
+    10e2:	00
+    10e3:	0f 11 84 24 94 00 00 	movups XMMWORD PTR [rsp+0x94],xmm0
+    10ea:	00
+    10eb:	0f 11 84 24 a4 00 00 	movups XMMWORD PTR [rsp+0xa4],xmm0
+    10f2:	00
+    10f3:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f8:	48 8d 5c 24 70       	lea    rbx,[rsp+0x70]
+    10fd:	48 8d 7c 24 10       	lea    rdi,[rsp+0x10]
+    1102:	48 89 de             	mov    rsi,rbx
+    1105:	e8 a6 01 00 00       	call   12b0 <_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE>
+    110a:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    1111:	00
+    1112:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    1117:	48 89 de             	mov    rsi,rbx
+    111a:	48 8d 7c 24 40       	lea    rdi,[rsp+0x40]
+    111f:	e8 8c 01 00 00       	call   12b0 <_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE>
+    1124:	89 6c 24 0c          	mov    DWORD PTR [rsp+0xc],ebp
+    1128:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    112d:	31 c0                	xor    eax,eax
+    112f:	8b 6c 24 68          	mov    ebp,DWORD PTR [rsp+0x68]
+    1133:	8b 5c 24 38          	mov    ebx,DWORD PTR [rsp+0x38]
+    1137:	bf 02 00 00 00       	mov    edi,0x2
+    113c:	48 8d 35 cd 0e 00 00 	lea    rsi,[rip+0xecd]        # 2010 <_IO_stdin_used+0x10>
+    1143:	89 da                	mov    edx,ebx
+    1145:	89 e9                	mov    ecx,ebp
+    1147:	e8 24 ff ff ff       	call   1070 <__printf_chk@plt>
+    114c:	81 fd 02 00 a0 3f    	cmp    ebp,0x3fa00002
+    1152:	0f 95 c0             	setne  al
+    1155:	81 fb 01 00 a0 3f    	cmp    ebx,0x3fa00001
+    115b:	0f 95 c2             	setne  dl
+    115e:	09 d0                	or     eax,edx
+    1160:	48 8b 94 24 c8 00 00 	mov    rdx,QWORD PTR [rsp+0xc8]
+    1167:	00
+    1168:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+    116f:	00 00
+    1171:	75 0d                	jne    1180 <main+0x100>
+    1173:	48 81 c4 d8 00 00 00 	add    rsp,0xd8
+    117a:	0f b6 c0             	movzx  eax,al
+    117d:	5b                   	pop    rbx
+    117e:	5d                   	pop    rbp
+    117f:	c3                   	ret
+    1180:	e8 db fe ff ff       	call   1060 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:

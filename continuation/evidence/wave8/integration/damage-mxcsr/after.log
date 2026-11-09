@@ -1,0 +1,14 @@
+make: Entering directory '/tmp/hoplite/workspace/continuation'
+mkdir -p /tmp/hoplite/workspace/runs/w8-mxcsr-after/build
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto tests/regression_damage_mxcsr.cpp -o /tmp/hoplite/workspace/runs/w8-mxcsr-after/build/damage_mxcsr_lto
+/tmp/hoplite/workspace/runs/w8-mxcsr-after/build/damage_mxcsr_lto
+damage MXCSR: nearest=3fa00001, upward=3fa00002
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_damage_slice.cpp -o /tmp/hoplite/workspace/runs/w8-mxcsr-after/build/test_damage_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_damage_slice.cpp -o /tmp/hoplite/workspace/runs/w8-mxcsr-after/build/test_damage_slice_sanitize
+make: Leaving directory '/tmp/hoplite/workspace/continuation'
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+PASS nl.bin/DLL SHA-256 and exact embedded-resource identity
+PASS 5 byte ranges, 134 static instruction decodes
+PASS eight switch targets, four binary32 constants, both guards == 0x20
+PASS distinct provider operands 0x2e198140 / 0x2e198210; bindings remain unknown

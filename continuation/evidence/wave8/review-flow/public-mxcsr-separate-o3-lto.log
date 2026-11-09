@@ -1,0 +1,102 @@
+CWD /tmp/hoplite/232-w8-review-flow
+SOURCE (stdin):
+#include "rage/damage_slice.hpp"
+#include <xmmintrin.h>
+#include <cstdio>
+int main() {
+    const unsigned saved = _mm_getcsr();
+    rage::offline::DamageSwitchObservations o{3, 0, 0x3f800001u, {}};
+    _mm_setcsr(0x1f80);
+    const auto nearest = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(0x5f80);
+    const auto upward = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(saved);
+    std::printf("public API nearest=%08x (want 3fa00001), upward=%08x (want 3fa00002)\n", *nearest.result_slot_bits,*upward.result_slot_bits);
+    return *nearest.result_slot_bits==0x3fa00001u && *upward.result_slot_bits==0x3fa00002u ? 0:1;
+}
+CMD g++ -I. -Icontinuation/include -std=c++17 -O3 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-separate-o3-lto
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-separate-o3-lto:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	55                   	push   rbp
+    1085:	53                   	push   rbx
+    1086:	48 81 ec d8 00 00 00 	sub    rsp,0xd8
+    108d:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    1094:	00 00
+    1096:	48 89 84 24 c8 00 00 	mov    QWORD PTR [rsp+0xc8],rax
+    109d:	00
+    109e:	31 c0                	xor    eax,eax
+    10a0:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    10a5:	66 0f ef c0          	pxor   xmm0,xmm0
+    10a9:	44 8b 4c 24 0c       	mov    r9d,DWORD PTR [rsp+0xc]
+    10ae:	48 c7 84 24 b4 00 00 	mov    QWORD PTR [rsp+0xb4],0x0
+    10b5:	00 00 00 00 00
+    10ba:	0f 11 44 24 74       	movups XMMWORD PTR [rsp+0x74],xmm0
+    10bf:	c7 44 24 70 03 00 00 	mov    DWORD PTR [rsp+0x70],0x3
+    10c6:	00
+    10c7:	c7 44 24 78 01 00 80 	mov    DWORD PTR [rsp+0x78],0x3f800001
+    10ce:	3f
+    10cf:	c6 44 24 7c 01       	mov    BYTE PTR [rsp+0x7c],0x1
+    10d4:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10db:	00
+    10dc:	0f 11 84 24 84 00 00 	movups XMMWORD PTR [rsp+0x84],xmm0
+    10e3:	00
+    10e4:	0f 11 84 24 94 00 00 	movups XMMWORD PTR [rsp+0x94],xmm0
+    10eb:	00
+    10ec:	0f 11 84 24 a4 00 00 	movups XMMWORD PTR [rsp+0xa4],xmm0
+    10f3:	00
+    10f4:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f9:	4c 8d 44 24 70       	lea    r8,[rsp+0x70]
+    10fe:	48 8d 7c 24 40       	lea    rdi,[rsp+0x40]
+    1103:	4c 89 c6             	mov    rsi,r8
+    1106:	e8 75 01 00 00       	call   1280 <_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE>
+    110b:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    1112:	00
+    1113:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    1118:	4c 89 c6             	mov    rsi,r8
+    111b:	48 8d 7c 24 10       	lea    rdi,[rsp+0x10]
+    1120:	e8 5b 01 00 00       	call   1280 <_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE>
+    1125:	44 89 4c 24 0c       	mov    DWORD PTR [rsp+0xc],r9d
+    112a:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    112f:	8b 6c 24 38          	mov    ebp,DWORD PTR [rsp+0x38]
+    1133:	8b 5c 24 68          	mov    ebx,DWORD PTR [rsp+0x68]
+    1137:	31 c0                	xor    eax,eax
+    1139:	bf 02 00 00 00       	mov    edi,0x2
+    113e:	48 8d 35 cb 0e 00 00 	lea    rsi,[rip+0xecb]        # 2010 <_IO_stdin_used+0x10>
+    1145:	89 e9                	mov    ecx,ebp
+    1147:	89 da                	mov    edx,ebx
+    1149:	e8 22 ff ff ff       	call   1070 <__printf_chk@plt>
+    114e:	81 fd 02 00 a0 3f    	cmp    ebp,0x3fa00002
+    1154:	0f 95 c0             	setne  al
+    1157:	81 fb 01 00 a0 3f    	cmp    ebx,0x3fa00001
+    115d:	0f 95 c2             	setne  dl
+    1160:	09 d0                	or     eax,edx
+    1162:	48 8b 94 24 c8 00 00 	mov    rdx,QWORD PTR [rsp+0xc8]
+    1169:	00
+    116a:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+    1171:	00 00
+    1173:	75 0d                	jne    1182 <main+0x102>
+    1175:	48 81 c4 d8 00 00 00 	add    rsp,0xd8
+    117c:	0f b6 c0             	movzx  eax,al
+    117f:	5b                   	pop    rbx
+    1180:	5d                   	pop    rbp
+    1181:	c3                   	ret
+    1182:	e8 d9 fe ff ff       	call   1060 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:

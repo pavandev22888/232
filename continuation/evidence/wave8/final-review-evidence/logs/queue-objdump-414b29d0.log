@@ -1,0 +1,24 @@
+$ objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414b29d0 --stop-address=0x414b29ef /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414b29d0 <.data+0x2129d0>:
+414b29d0:	4b                                              	dec    ebx
+414b29d1:	89 5e 14                                        	mov    DWORD PTR [esi+0x14],ebx
+414b29d4:	89 f9                                           	mov    ecx,edi
+414b29d6:	6a 08                                           	push   0x8
+414b29d8:	6a 00                                           	push   0x0
+414b29da:	8b 5e 0c                                        	mov    ebx,DWORD PTR [esi+0xc]
+414b29dd:	53                                              	push   ebx
+414b29de:	50                                              	push   eax
+414b29df:	ff 52 50                                        	call   DWORD PTR [edx+0x50]
+414b29e2:	83 c3 fc                                        	add    ebx,0xfffffffc
+414b29e5:	89 5e 0c                                        	mov    DWORD PTR [esi+0xc],ebx
+414b29e8:	8b 5e 14                                        	mov    ebx,DWORD PTR [esi+0x14]
+414b29eb:	85 db                                           	test   ebx,ebx
+414b29ed:	74 55                                           	je     0x414b2a44
+
+EXIT_CODE=0

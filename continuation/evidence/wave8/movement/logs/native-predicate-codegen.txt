@@ -1,0 +1,90 @@
+0000000000004170 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)>:
+    4170:	f3 0f 1e fa          	endbr64
+    4174:	66 0f ef c0          	pxor   xmm0,xmm0
+    4178:	80 7e 14 00          	cmp    BYTE PTR [rsi+0x14],0x0
+    417c:	c7 47 30 00 00 00 00 	mov    DWORD PTR [rdi+0x30],0x0
+    4183:	48 89 f8             	mov    rax,rdi
+    4186:	0f 11 07             	movups XMMWORD PTR [rdi],xmm0
+    4189:	0f 11 47 10          	movups XMMWORD PTR [rdi+0x10],xmm0
+    418d:	0f 11 47 20          	movups XMMWORD PTR [rdi+0x20],xmm0
+    4191:	74 52                	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    4193:	8b 56 04             	mov    edx,DWORD PTR [rsi+0x4]
+    4196:	03 16                	add    edx,DWORD PTR [rsi]
+    4198:	c6 47 08 01          	mov    BYTE PTR [rdi+0x8],0x1
+    419c:	03 56 08             	add    edx,DWORD PTR [rsi+0x8]
+    419f:	03 56 0c             	add    edx,DWORD PTR [rsi+0xc]
+    41a2:	03 56 10             	add    edx,DWORD PTR [rsi+0x10]
+    41a5:	89 57 04             	mov    DWORD PTR [rdi+0x4],edx
+    41a8:	83 fa 20             	cmp    edx,0x20
+    41ab:	74 0b                	je     41b8 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x48>
+    41ad:	c6 07 01             	mov    BYTE PTR [rdi],0x1
+    41b0:	c3                   	ret
+    41b1:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    41b8:	80 7e 1c 00          	cmp    BYTE PTR [rsi+0x1c],0x0
+    41bc:	c6 07 02             	mov    BYTE PTR [rdi],0x2
+    41bf:	74 24                	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    41c1:	8b 4e 18             	mov    ecx,DWORD PTR [rsi+0x18]
+    41c4:	ba 01 01 00 00       	mov    edx,0x101
+    41c9:	66 89 57 30          	mov    WORD PTR [rdi+0x30],dx
+    41cd:	85 c9                	test   ecx,ecx
+    41cf:	74 1f                	je     41f0 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x80>
+    41d1:	80 7e 48 00          	cmp    BYTE PTR [rsi+0x48],0x0
+    41d5:	c6 00 07             	mov    BYTE PTR [rax],0x7
+    41d8:	74 0b                	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    41da:	0f b7 50 30          	movzx  edx,WORD PTR [rax+0x30]
+    41de:	c6 00 08             	mov    BYTE PTR [rax],0x8
+    41e1:	66 89 50 32          	mov    WORD PTR [rax+0x32],dx
+    41e5:	c3                   	ret
+    41e6:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    41ed:	00 00 00
+    41f0:	80 7e 34 00          	cmp    BYTE PTR [rsi+0x34],0x0
+    41f4:	c6 07 03             	mov    BYTE PTR [rdi],0x3
+    41f7:	74 ec                	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    41f9:	8b 56 24             	mov    edx,DWORD PTR [rsi+0x24]
+    41fc:	03 56 20             	add    edx,DWORD PTR [rsi+0x20]
+    41ff:	c6 47 10 01          	mov    BYTE PTR [rdi+0x10],0x1
+    4203:	03 56 28             	add    edx,DWORD PTR [rsi+0x28]
+    4206:	03 56 2c             	add    edx,DWORD PTR [rsi+0x2c]
+    4209:	03 56 30             	add    edx,DWORD PTR [rsi+0x30]
+    420c:	89 57 0c             	mov    DWORD PTR [rdi+0xc],edx
+    420f:	83 fa 20             	cmp    edx,0x20
+    4212:	74 04                	je     4218 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0xa8>
+    4214:	c6 07 04             	mov    BYTE PTR [rdi],0x4
+    4217:	c3                   	ret
+    4218:	80 7e 3c 00          	cmp    BYTE PTR [rsi+0x3c],0x0
+    421c:	c6 07 05             	mov    BYTE PTR [rdi],0x5
+    421f:	74 c4                	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    4221:	8b 56 38             	mov    edx,DWORD PTR [rsi+0x38]
+    4224:	80 7e 44 00          	cmp    BYTE PTR [rsi+0x44],0x0
+    4228:	48 c7 47 24 00 00 00 	mov    QWORD PTR [rdi+0x24],0x0
+    422f:	00
+    4230:	c6 47 2c 01          	mov    BYTE PTR [rdi+0x2c],0x1
+    4234:	66 0f 6e ca          	movd   xmm1,edx
+    4238:	89 54 24 d8          	mov    DWORD PTR [rsp-0x28],edx
+    423c:	f3 0f 51 c9          	sqrtss xmm1,xmm1
+    4240:	c6 07 06             	mov    BYTE PTR [rdi],0x6
+    4243:	0f 28 c1             	movaps xmm0,xmm1
+    4246:	f3 0f 59 05 62 1e 00 	mulss  xmm0,DWORD PTR [rip+0x1e62]        # 60b0 <_IO_stdin_used+0xb0>
+    424d:	00
+    424e:	0f 28 d0             	movaps xmm2,xmm0
+    4251:	f3 0f 59 d0          	mulss  xmm2,xmm0
+    4255:	0f c6 c1 00          	shufps xmm0,xmm1,0x0
+    4259:	0f c6 c1 e2          	shufps xmm0,xmm1,0xe2
+    425d:	66 0f d6 44 24 dc    	movq   QWORD PTR [rsp-0x24],xmm0
+    4263:	f3 0f 11 54 24 e4    	movss  DWORD PTR [rsp-0x1c],xmm2
+    4269:	66 0f 6f 5c 24 d8    	movdqa xmm3,XMMWORD PTR [rsp-0x28]
+    426f:	0f 11 5f 14          	movups XMMWORD PTR [rdi+0x14],xmm3
+    4273:	0f 84 6c ff ff ff    	je     41e5 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x75>
+    4279:	f3 0f 10 0d a3 1d 00 	movss  xmm1,DWORD PTR [rip+0x1da3]        # 6024 <_IO_stdin_used+0x24>
+    4280:	00
+    4281:	f3 0f 10 46 40       	movss  xmm0,DWORD PTR [rsi+0x40]
+    4286:	c6 47 28 01          	mov    BYTE PTR [rdi+0x28],0x1
+    428a:	c6 47 31 01          	mov    BYTE PTR [rdi+0x31],0x1
+    428e:	0f c6 c9 00          	shufps xmm1,xmm1,0x0
+    4292:	0f 54 c1             	andps  xmm0,xmm1
+    4295:	0f 2e c2             	ucomiss xmm0,xmm2
+    4298:	f3 0f 11 47 24       	movss  DWORD PTR [rdi+0x24],xmm0
+    429d:	0f 96 47 30          	setbe  BYTE PTR [rdi+0x30]
+    42a1:	e9 2b ff ff ff       	jmp    41d1 <rage::offline::evaluate_movement_predicate(rage::offline::MovementPredicateObservations const&)+0x61>
+    42a6:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    42ad:	00 00 00

@@ -1,0 +1,6 @@
+$ runs/w8-geometry-build/test_geometry_slice
+PASS geometry post-call consumer: 78 checks
+native_exit=0
+$ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 runs/w8-geometry-build/test_geometry_slice_sanitize
+PASS geometry post-call consumer: 78 checks
+sanitized_exit=0

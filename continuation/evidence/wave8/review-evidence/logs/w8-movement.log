@@ -1,0 +1,92 @@
+$ python3 -B continuation/evidence/wave8/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "branches": [
+    {
+      "site": "0x4148cc4d",
+      "target": "0x4148d7b9"
+    },
+    {
+      "site": "0x4148cc56",
+      "target": "0x4148d7b9"
+    },
+    {
+      "site": "0x4148cc63",
+      "target": "0x4148cc8c"
+    },
+    {
+      "site": "0x4148cc7c",
+      "target": "0x414a5130"
+    },
+    {
+      "site": "0x4148cc86",
+      "target": "0x4148d7b7"
+    },
+    {
+      "site": "0x414a518b",
+      "target": "0x414a51b4"
+    },
+    {
+      "site": "0x414a51e8",
+      "target": "0x414a52ca"
+    },
+    {
+      "site": "0x414a523a",
+      "target": "0x414a526f"
+    },
+    {
+      "site": "0x414a5290",
+      "target": "0x414a5292"
+    },
+    {
+      "site": "0x414a52d0",
+      "target": "0x41da7c5c"
+    }
+  ],
+  "distinct_external_ecx_literals": [
+    "0x28f3bfb0",
+    "0x28f2e100"
+  ],
+  "guard_comparison_values": [
+    "0x20",
+    "0x20"
+  ],
+  "original_loaded_run_or_emulated": false,
+  "pins": [
+    {
+      "label": "W7 caller boundary",
+      "sha256": "8242c24ce71228fc5676bc23fa7a76cead107950f3a0cd5f2497fcf2aa4e8a13",
+      "size": 72,
+      "va": "0x4148cc44"
+    },
+    {
+      "label": "entire callee including unmodeled alternate-control blocks",
+      "sha256": "b16ab989f4ad69b5b13e9ffe00970f55ee48fc967f51f35010bb829352f29351",
+      "size": 428,
+      "va": "0x414a5130"
+    },
+    {
+      "label": "low-lane sign mask and other lanes",
+      "sha256": "c66856d3622ef1af1acca8762554ca873b9ea946fc38967d2d42caba297dc8d7",
+      "size": 16,
+      "va": "0x4205a540"
+    },
+    {
+      "label": "MULSS constant",
+      "sha256": "75e253f50979177eba47b2d0805ad36038789108924514d2a761a70de057d16f",
+      "size": 4,
+      "va": "0x4206cdf4"
+    }
+  ],
+  "result": "passed",
+  "source": {
+    "archive_member": "nl.bin",
+    "archive_path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "image_base": "0x412a0000",
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624
+  }
+}
+
+EXIT_CODE=0

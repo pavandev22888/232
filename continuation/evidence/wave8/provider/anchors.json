@@ -1,0 +1,813 @@
+{
+  "task": "W8-PROVIDER",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "scope": "One W5-FALLBACK24 prerequisite: nested 0x4200CF20 leaves ESI unchanged on supported normal returns. Not a runtime provider.",
+  "image": {
+    "root": "handoff",
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_raw_origin": "0x412a0000"
+  },
+  "mapping": "Raw label = file offset + 0x412A0000 only. No actual module ImageBase/RVA/runtime map inferred.",
+  "sources": [
+    {
+      "root": "handoff",
+      "path": "workspace/input/nl_handoff_2026-11-06.zip",
+      "size": 149819978,
+      "sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49"
+    },
+    {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/functions.zip",
+      "size": 17634509,
+      "sha256": "51cdaf33b4ff2fc92bb773540a815eeacb157638cbd2c1edec3cea382d332609"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave5/fallback24/initializer.json",
+      "size": 17358,
+      "sha256": "d1c59682d94e0c597e89d62788e3c0216dbd1cf76d809638b6f5ac0b317a3c3a"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave5/esi/preservation.json",
+      "size": 9037,
+      "sha256": "1943f7ac57c3f4dd21d43704f2f3f80fa4c209082ca454408f279bfbea22c142"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave5/scope/static_evidence.json",
+      "size": 6988,
+      "sha256": "d8867dd7da494f82871910ffe460495a11237c213d18a91195a91faf6f966097"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave5/bindings/contract.md",
+      "size": 14303,
+      "sha256": "30ef77b1c8a104cefe36aa354c5aaa102c772fbd9fa682947ebcde617dffa150"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave5/indirect/contract.md",
+      "size": 6271,
+      "sha256": "6d0ea7bbe686657a5700299c40086e014ad784e32ed2e43434d62c67cb665128"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "size": 9313,
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave7/abi/contract.json",
+      "size": 2268,
+      "sha256": "16682ff76f538dc2f7228c09b41e2dd279668bd6d288344174cbaac4902d83c9"
+    }
+  ],
+  "archive_members": [
+    {
+      "archive": "workspace/input/nl_handoff_2026-11-06.zip",
+      "member": "nl.bin",
+      "size": 55578624,
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "role": "original source ZIP member equals the raw-image pin"
+    },
+    {
+      "archive": "workspace/work/recovered_nl/recovered_nl/functions.zip",
+      "member": "functions/4200CF20.c",
+      "size": 2180,
+      "sha256": "8e7a5e9f4b98f2e42194351dedbf8a37234e9e103eee7d2588810b0591427218",
+      "role": "decompiler hint only; neither original source nor ABI authority"
+    }
+  ],
+  "windows": [
+    {
+      "name": "constructor_route",
+      "novelty": "inherited W5 entry-to-first-call route",
+      "start": "0x41c5bda0",
+      "end_exclusive": "0x41c5bdfa",
+      "raw_offset": "0x9bbda0",
+      "size": 90,
+      "sha256": "3f829c1a2d081fe2efa99cba5c9a2b19003de80918afdcd5079a5c8253939061",
+      "bytes": "5589e553575683e4f081ecb000000089e689ae9800000089cf89a69c000000c786a8000000ffffffff8d86a0000000c786a40000001097c741648b0d00000000898ea000000064a3000000008d4f08898e94000000e8a6520000",
+      "instructions": [
+        [
+          "0x41c5bda0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c5bda1",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x41c5bda3",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5bda4",
+          "57",
+          "push edi"
+        ],
+        [
+          "0x41c5bda5",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c5bda6",
+          "83e4f0",
+          "and esp,0xfffffff0"
+        ],
+        [
+          "0x41c5bda9",
+          "81ecb0000000",
+          "sub esp,0xb0"
+        ],
+        [
+          "0x41c5bdaf",
+          "89e6",
+          "mov esi,esp"
+        ],
+        [
+          "0x41c5bdb1",
+          "89ae98000000",
+          "mov dword ptr [esi+0x98],ebp"
+        ],
+        [
+          "0x41c5bdb7",
+          "89cf",
+          "mov edi,ecx"
+        ],
+        [
+          "0x41c5bdb9",
+          "89a69c000000",
+          "mov dword ptr [esi+0x9c],esp"
+        ],
+        [
+          "0x41c5bdbf",
+          "c786a8000000ffffffff",
+          "mov dword ptr [esi+0xa8],0xffffffff"
+        ],
+        [
+          "0x41c5bdc9",
+          "8d86a0000000",
+          "lea eax,[esi+0xa0]"
+        ],
+        [
+          "0x41c5bdcf",
+          "c786a40000001097c741",
+          "mov dword ptr [esi+0xa4],0x41c79710"
+        ],
+        [
+          "0x41c5bdd9",
+          "648b0d00000000",
+          "mov ecx,dword ptr fs:0x0"
+        ],
+        [
+          "0x41c5bde0",
+          "898ea0000000",
+          "mov dword ptr [esi+0xa0],ecx"
+        ],
+        [
+          "0x41c5bde6",
+          "64a300000000",
+          "mov fs:0x0,eax"
+        ],
+        [
+          "0x41c5bdec",
+          "8d4f08",
+          "lea ecx,[edi+0x8]"
+        ],
+        [
+          "0x41c5bdef",
+          "898e94000000",
+          "mov dword ptr [esi+0x94],ecx"
+        ],
+        [
+          "0x41c5bdf5",
+          "e8a6520000",
+          "call 0x41c610a0"
+        ]
+      ]
+    },
+    {
+      "name": "initializer_candidate",
+      "novelty": "inherited W5 caller and immediate store",
+      "start": "0x41c610a0",
+      "end_exclusive": "0x41c610d1",
+      "raw_offset": "0x9c10a0",
+      "size": 49,
+      "sha256": "f7f4a0293b1ec98e93d590a830b62ac181791d2bf4a133029684dde75d7777ff",
+      "bytes": "5589e55683e4f083ec3089ce68201500006a0051e867be3a0083c40cc74608000080bfc7460c000080bfc7461c8988883c",
+      "instructions": [
+        [
+          "0x41c610a0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c610a1",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x41c610a3",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c610a4",
+          "83e4f0",
+          "and esp,0xfffffff0"
+        ],
+        [
+          "0x41c610a7",
+          "83ec30",
+          "sub esp,0x30"
+        ],
+        [
+          "0x41c610aa",
+          "89ce",
+          "mov esi,ecx"
+        ],
+        [
+          "0x41c610ac",
+          "6820150000",
+          "push 0x1520"
+        ],
+        [
+          "0x41c610b1",
+          "6a00",
+          "push 0x0"
+        ],
+        [
+          "0x41c610b3",
+          "51",
+          "push ecx"
+        ],
+        [
+          "0x41c610b4",
+          "e867be3a00",
+          "call 0x4200cf20"
+        ],
+        [
+          "0x41c610b9",
+          "83c40c",
+          "add esp,0xc"
+        ],
+        [
+          "0x41c610bc",
+          "c74608000080bf",
+          "mov dword ptr [esi+0x8],0xbf800000"
+        ],
+        [
+          "0x41c610c3",
+          "c7460c000080bf",
+          "mov dword ptr [esi+0xc],0xbf800000"
+        ],
+        [
+          "0x41c610ca",
+          "c7461c8988883c",
+          "mov dword ptr [esi+0x1c],0x3c888889"
+        ]
+      ]
+    },
+    {
+      "name": "nested_leaf",
+      "novelty": "new W8 complete local body",
+      "start": "0x4200cf20",
+      "end_exclusive": "0x4200d07a",
+      "raw_offset": "0xd6cf20",
+      "size": 346,
+      "sha256": "a926212d42a287f420bd22d103ff89eb9f842d37a088c203a60a3d8c9b44c978",
+      "bytes": "8b4c240c0fb64424088bd78b7c240485c90f843c01000069c00101010183f9200f86df00000081f9800000000f828b0000000fba2518395242017309f3aa8b4424048bfac30fba258ca04a42010f83b2000000660f6ec0660f70c00003cf0f110783c71083e7f02bcf81f980000000764c8da424000000008da4240000000090660f7f07660f7f4710660f7f4720660f7f4730660f7f4740660f7f4750660f7f4760660f7f47708dbf8000000081e980000000f7c100ffffff75c5eb130fba258ca04a4201733e660f6ec0660f70c00083f920721cf30f7f07f30f7f471083c72083e92083f92073ecf7c11f00000074628d7c0fe0f30f7f07f30f7f47108b4424048bfac3f7c103000000740e88074783e901f7c10300000075f2f7c1040000007408890783c70483e904f7c1f8ffffff74208da424000000008d9b00000000890789470483c70883e908f7c1f8ffffff75ed8b4424048bfac3",
+      "instructions": [
+        [
+          "0x4200cf20",
+          "8b4c240c",
+          "mov ecx,dword ptr [esp+0xc]"
+        ],
+        [
+          "0x4200cf24",
+          "0fb6442408",
+          "movzx eax,byte ptr [esp+0x8]"
+        ],
+        [
+          "0x4200cf29",
+          "8bd7",
+          "mov edx,edi"
+        ],
+        [
+          "0x4200cf2b",
+          "8b7c2404",
+          "mov edi,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x4200cf2f",
+          "85c9",
+          "test ecx,ecx"
+        ],
+        [
+          "0x4200cf31",
+          "0f843c010000",
+          "je 0x4200d073"
+        ],
+        [
+          "0x4200cf37",
+          "69c001010101",
+          "imul eax,eax,0x1010101"
+        ],
+        [
+          "0x4200cf3d",
+          "83f920",
+          "cmp ecx,0x20"
+        ],
+        [
+          "0x4200cf40",
+          "0f86df000000",
+          "jbe 0x4200d025"
+        ],
+        [
+          "0x4200cf46",
+          "81f980000000",
+          "cmp ecx,0x80"
+        ],
+        [
+          "0x4200cf4c",
+          "0f828b000000",
+          "jb 0x4200cfdd"
+        ],
+        [
+          "0x4200cf52",
+          "0fba251839524201",
+          "bt dword ptr ds:0x42523918,0x1"
+        ],
+        [
+          "0x4200cf5a",
+          "7309",
+          "jae 0x4200cf65"
+        ],
+        [
+          "0x4200cf5c",
+          "f3aa",
+          "rep stos byte ptr es:[edi],al"
+        ],
+        [
+          "0x4200cf5e",
+          "8b442404",
+          "mov eax,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x4200cf62",
+          "8bfa",
+          "mov edi,edx"
+        ],
+        [
+          "0x4200cf64",
+          "c3",
+          "ret"
+        ],
+        [
+          "0x4200cf65",
+          "0fba258ca04a4201",
+          "bt dword ptr ds:0x424aa08c,0x1"
+        ],
+        [
+          "0x4200cf6d",
+          "0f83b2000000",
+          "jae 0x4200d025"
+        ],
+        [
+          "0x4200cf73",
+          "660f6ec0",
+          "movd xmm0,eax"
+        ],
+        [
+          "0x4200cf77",
+          "660f70c000",
+          "pshufd xmm0,xmm0,0x0"
+        ],
+        [
+          "0x4200cf7c",
+          "03cf",
+          "add ecx,edi"
+        ],
+        [
+          "0x4200cf7e",
+          "0f1107",
+          "movups xmmword ptr [edi],xmm0"
+        ],
+        [
+          "0x4200cf81",
+          "83c710",
+          "add edi,0x10"
+        ],
+        [
+          "0x4200cf84",
+          "83e7f0",
+          "and edi,0xfffffff0"
+        ],
+        [
+          "0x4200cf87",
+          "2bcf",
+          "sub ecx,edi"
+        ],
+        [
+          "0x4200cf89",
+          "81f980000000",
+          "cmp ecx,0x80"
+        ],
+        [
+          "0x4200cf8f",
+          "764c",
+          "jbe 0x4200cfdd"
+        ],
+        [
+          "0x4200cf91",
+          "8da42400000000",
+          "lea esp,[esp+0x0]"
+        ],
+        [
+          "0x4200cf98",
+          "8da42400000000",
+          "lea esp,[esp+0x0]"
+        ],
+        [
+          "0x4200cf9f",
+          "90",
+          "nop"
+        ],
+        [
+          "0x4200cfa0",
+          "660f7f07",
+          "movdqa xmmword ptr [edi],xmm0"
+        ],
+        [
+          "0x4200cfa4",
+          "660f7f4710",
+          "movdqa xmmword ptr [edi+0x10],xmm0"
+        ],
+        [
+          "0x4200cfa9",
+          "660f7f4720",
+          "movdqa xmmword ptr [edi+0x20],xmm0"
+        ],
+        [
+          "0x4200cfae",
+          "660f7f4730",
+          "movdqa xmmword ptr [edi+0x30],xmm0"
+        ],
+        [
+          "0x4200cfb3",
+          "660f7f4740",
+          "movdqa xmmword ptr [edi+0x40],xmm0"
+        ],
+        [
+          "0x4200cfb8",
+          "660f7f4750",
+          "movdqa xmmword ptr [edi+0x50],xmm0"
+        ],
+        [
+          "0x4200cfbd",
+          "660f7f4760",
+          "movdqa xmmword ptr [edi+0x60],xmm0"
+        ],
+        [
+          "0x4200cfc2",
+          "660f7f4770",
+          "movdqa xmmword ptr [edi+0x70],xmm0"
+        ],
+        [
+          "0x4200cfc7",
+          "8dbf80000000",
+          "lea edi,[edi+0x80]"
+        ],
+        [
+          "0x4200cfcd",
+          "81e980000000",
+          "sub ecx,0x80"
+        ],
+        [
+          "0x4200cfd3",
+          "f7c100ffffff",
+          "test ecx,0xffffff00"
+        ],
+        [
+          "0x4200cfd9",
+          "75c5",
+          "jne 0x4200cfa0"
+        ],
+        [
+          "0x4200cfdb",
+          "eb13",
+          "jmp 0x4200cff0"
+        ],
+        [
+          "0x4200cfdd",
+          "0fba258ca04a4201",
+          "bt dword ptr ds:0x424aa08c,0x1"
+        ],
+        [
+          "0x4200cfe5",
+          "733e",
+          "jae 0x4200d025"
+        ],
+        [
+          "0x4200cfe7",
+          "660f6ec0",
+          "movd xmm0,eax"
+        ],
+        [
+          "0x4200cfeb",
+          "660f70c000",
+          "pshufd xmm0,xmm0,0x0"
+        ],
+        [
+          "0x4200cff0",
+          "83f920",
+          "cmp ecx,0x20"
+        ],
+        [
+          "0x4200cff3",
+          "721c",
+          "jb 0x4200d011"
+        ],
+        [
+          "0x4200cff5",
+          "f30f7f07",
+          "movdqu xmmword ptr [edi],xmm0"
+        ],
+        [
+          "0x4200cff9",
+          "f30f7f4710",
+          "movdqu xmmword ptr [edi+0x10],xmm0"
+        ],
+        [
+          "0x4200cffe",
+          "83c720",
+          "add edi,0x20"
+        ],
+        [
+          "0x4200d001",
+          "83e920",
+          "sub ecx,0x20"
+        ],
+        [
+          "0x4200d004",
+          "83f920",
+          "cmp ecx,0x20"
+        ],
+        [
+          "0x4200d007",
+          "73ec",
+          "jae 0x4200cff5"
+        ],
+        [
+          "0x4200d009",
+          "f7c11f000000",
+          "test ecx,0x1f"
+        ],
+        [
+          "0x4200d00f",
+          "7462",
+          "je 0x4200d073"
+        ],
+        [
+          "0x4200d011",
+          "8d7c0fe0",
+          "lea edi,[edi+ecx*1-0x20]"
+        ],
+        [
+          "0x4200d015",
+          "f30f7f07",
+          "movdqu xmmword ptr [edi],xmm0"
+        ],
+        [
+          "0x4200d019",
+          "f30f7f4710",
+          "movdqu xmmword ptr [edi+0x10],xmm0"
+        ],
+        [
+          "0x4200d01e",
+          "8b442404",
+          "mov eax,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x4200d022",
+          "8bfa",
+          "mov edi,edx"
+        ],
+        [
+          "0x4200d024",
+          "c3",
+          "ret"
+        ],
+        [
+          "0x4200d025",
+          "f7c103000000",
+          "test ecx,0x3"
+        ],
+        [
+          "0x4200d02b",
+          "740e",
+          "je 0x4200d03b"
+        ],
+        [
+          "0x4200d02d",
+          "8807",
+          "mov byte ptr [edi],al"
+        ],
+        [
+          "0x4200d02f",
+          "47",
+          "inc edi"
+        ],
+        [
+          "0x4200d030",
+          "83e901",
+          "sub ecx,0x1"
+        ],
+        [
+          "0x4200d033",
+          "f7c103000000",
+          "test ecx,0x3"
+        ],
+        [
+          "0x4200d039",
+          "75f2",
+          "jne 0x4200d02d"
+        ],
+        [
+          "0x4200d03b",
+          "f7c104000000",
+          "test ecx,0x4"
+        ],
+        [
+          "0x4200d041",
+          "7408",
+          "je 0x4200d04b"
+        ],
+        [
+          "0x4200d043",
+          "8907",
+          "mov dword ptr [edi],eax"
+        ],
+        [
+          "0x4200d045",
+          "83c704",
+          "add edi,0x4"
+        ],
+        [
+          "0x4200d048",
+          "83e904",
+          "sub ecx,0x4"
+        ],
+        [
+          "0x4200d04b",
+          "f7c1f8ffffff",
+          "test ecx,0xfffffff8"
+        ],
+        [
+          "0x4200d051",
+          "7420",
+          "je 0x4200d073"
+        ],
+        [
+          "0x4200d053",
+          "8da42400000000",
+          "lea esp,[esp+0x0]"
+        ],
+        [
+          "0x4200d05a",
+          "8d9b00000000",
+          "lea ebx,[ebx+0x0]"
+        ],
+        [
+          "0x4200d060",
+          "8907",
+          "mov dword ptr [edi],eax"
+        ],
+        [
+          "0x4200d062",
+          "894704",
+          "mov dword ptr [edi+0x4],eax"
+        ],
+        [
+          "0x4200d065",
+          "83c708",
+          "add edi,0x8"
+        ],
+        [
+          "0x4200d068",
+          "83e908",
+          "sub ecx,0x8"
+        ],
+        [
+          "0x4200d06b",
+          "f7c1f8ffffff",
+          "test ecx,0xfffffff8"
+        ],
+        [
+          "0x4200d071",
+          "75ed",
+          "jne 0x4200d060"
+        ],
+        [
+          "0x4200d073",
+          "8b442404",
+          "mov eax,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x4200d077",
+          "8bfa",
+          "mov edi,edx"
+        ],
+        [
+          "0x4200d079",
+          "c3",
+          "ret"
+        ]
+      ]
+    }
+  ],
+  "new_normal_returns": [
+    "0x4200cf64",
+    "0x4200d024",
+    "0x4200d079"
+  ],
+  "new_direct_edges": [
+    [
+      "0x4200cf31",
+      "0x4200d073"
+    ],
+    [
+      "0x4200cf40",
+      "0x4200d025"
+    ],
+    [
+      "0x4200cf4c",
+      "0x4200cfdd"
+    ],
+    [
+      "0x4200cf5a",
+      "0x4200cf65"
+    ],
+    [
+      "0x4200cf6d",
+      "0x4200d025"
+    ],
+    [
+      "0x4200cf8f",
+      "0x4200cfdd"
+    ],
+    [
+      "0x4200cfd9",
+      "0x4200cfa0"
+    ],
+    [
+      "0x4200cfdb",
+      "0x4200cff0"
+    ],
+    [
+      "0x4200cfe5",
+      "0x4200d025"
+    ],
+    [
+      "0x4200cff3",
+      "0x4200d011"
+    ],
+    [
+      "0x4200d007",
+      "0x4200cff5"
+    ],
+    [
+      "0x4200d00f",
+      "0x4200d073"
+    ],
+    [
+      "0x4200d02b",
+      "0x4200d03b"
+    ],
+    [
+      "0x4200d039",
+      "0x4200d02d"
+    ],
+    [
+      "0x4200d041",
+      "0x4200d04b"
+    ],
+    [
+      "0x4200d051",
+      "0x4200d073"
+    ],
+    [
+      "0x4200d071",
+      "0x4200d060"
+    ]
+  ]
+}

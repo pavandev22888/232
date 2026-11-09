@@ -31,6 +31,17 @@ struct ResetPredecessorSnapshot {
     ResetFallthroughSnapshot fallthrough;
 };
 
+inline constexpr std::size_t kResetTableRecordCount = 6;
+
+struct ResetTableSnapshot {
+    std::array<ResetBodySnapshot, kResetTableRecordCount> records;
+    ResetPredecessorSnapshot globals;
+};
+
+// Local 0x415debde..0x415ded53 path: six records, then the existing global
+// stores. Snapshots must describe distinct destinations; entry is not inferred.
+ResetTableSnapshot apply_reset_table_snapshot(const ResetTableSnapshot& snapshot);
+
 struct ResetBodyDwordStore {
     std::uint32_t offset;
     std::uint32_t value;

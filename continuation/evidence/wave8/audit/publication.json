@@ -1,0 +1,97 @@
+{
+  "task": "W8-AUDIT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "capture_provenance": "Parent-created read-only provider captures; auditor did not authenticate or query provider APIs. Source SHA256 identifies exactly what was inspected.",
+  "captures": {
+    "pr1-state.json": {
+      "path": "/tmp/hoplite/workspace/runs/pr1-state.json",
+      "sha256": "13263d4255d574db6320b2238a8898b10bd83fc42dec2c79b7fdbf6cf0b078ef"
+    },
+    "pr1-review-threads.json": {
+      "path": "/tmp/hoplite/workspace/runs/pr1-review-threads.json",
+      "sha256": "df4c98e7d76ec7fddbcb2cfcabf7b643f0c004773f8e639038d41270e634d240"
+    },
+    "github-events.json": {
+      "path": "/tmp/hoplite/workspace/runs/github-events.json",
+      "sha256": "ae85a735054d5c18ba9e155829080931275f034a0dd6bb21cd3763d5ab5cc108"
+    }
+  },
+  "pr": {
+    "number": 1,
+    "state": "MERGED",
+    "mergedAt": "2026-11-09T18:06:11Z",
+    "mergeCommit": {
+      "oid": "0fe371bf61446ee799c3ad671b16f23bb7f6a643"
+    },
+    "reviews": [],
+    "statusCheckRollup": []
+  },
+  "review_threads": {
+    "nodes": []
+  },
+  "head_ref_oid": "514479c145689639dfac89ea902fe4da7d01070b",
+  "events": [
+    {
+      "id": "19579350715",
+      "type": "PullRequestEvent",
+      "created_at": "2026-11-09T18:06:11Z",
+      "action": "merged"
+    },
+    {
+      "id": "26667638320",
+      "type": "PushEvent",
+      "created_at": "2026-11-09T12:11:11Z",
+      "ref": "refs/heads/hoplite/sikyon-46eee495",
+      "before": "453fec5aa9ba1a290b8789aa780d947db24e7192",
+      "head": "c8d44fa0946a222734b092f16247a3bd95eb84a9",
+      "push_id": 49565160393,
+      "reachable_commit_delta": [
+        "c8d44fa0946a222734b092f16247a3bd95eb84a9"
+      ]
+    },
+    {
+      "id": "26667359053",
+      "type": "PushEvent",
+      "created_at": "2026-11-09T12:07:35Z",
+      "ref": "refs/heads/hoplite/sikyon-46eee495",
+      "before": "a21c2ac8045617278280de8ffb33f67dbf743c87",
+      "head": "453fec5aa9ba1a290b8789aa780d947db24e7192",
+      "push_id": 49564788385,
+      "reachable_commit_delta": [
+        "453fec5aa9ba1a290b8789aa780d947db24e7192"
+      ]
+    },
+    {
+      "id": "19544746271",
+      "type": "PullRequestEvent",
+      "created_at": "2026-11-09T10:57:05Z",
+      "action": "opened"
+    }
+  ],
+  "preserved_publication_gate": {
+    "source": "https://github.com/pavandev22888/232/pull/1#issuecomment-6747615295",
+    "created_at": "2026-11-09T18:04:41Z",
+    "head": "514479c145689639dfac89ea902fe4da7d01070b",
+    "commands_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "provenance": "Historical PR comment, not this audit rerunning native/sanitizer tests.",
+    "scope": "16 programs per mode, 67660 counted checks plus uncounted reset/movement/damage programs, 13 Python tests, six W7 static gates; not original equivalence."
+  },
+  "actions": {
+    "parent_report": "No GitHub Actions runs",
+    "directly_inspected_capture": "statusCheckRollup is empty; no review or thread approvals are recorded.",
+    "fresh_actions_api_query_performed_by_auditor": false,
+    "limit": "Empty PR checks do not independently prove there were never Actions runs; no Actions CI pass is claimed."
+  },
+  "limits": [
+    "The four captured events include two PushEvents only, not every historical push.",
+    "No event proves contents of unavailable deleted refs or force-pushed predecessors.",
+    "PR comments and local agent fixed-SHA reports are not GitHub human reviews.",
+    "The old review-only policy is historical evidence, not proof PR #1 is open or authority to merge another PR.",
+    "No inference is made about who authorized the observed merge."
+  ]
+}

@@ -7,20 +7,29 @@ C++17 — стандарт текущей офлайн-реконструкци�
 Для старта без истории чата передайте агенту [готовый промпт](START_NEXT_AGENT.md).
 Этот пакет передаёт работу, но сам не назначает следующую волну и не закрывает GAP.
 
-**Обновление W7:** ниже сохранён исторический снимок W5. Текущая интеграция —
-[W7 scope](../continuation/evidence/wave7/README.md),
-[verification](../continuation/evidence/wave7/verification.json),
-[STATUS](../continuation/STATUS.json) и [TASKS](TASKS.json). W7 добавляет normal
-ranking/replacement tail, локальную caller ABI-связь, raw reset snapshot,
-existing-slot history resolver, movement caller и hitgroup-3 damage arm.
-Не начинать их заново по старому списку W5/W6. Исторические W5/W6 PASS не
-подтверждают W7; её fixed-SHA gate и ревью фиксируются отдельно.
+**Обновление W8:** ниже сохранён исторический снимок W5, а не текущий перечень
+незавершённых локальных модулей. Текущий код, точные frontiers и приёмка:
+[W8 scope](../continuation/evidence/wave8/README.md),
+[verification](../continuation/evidence/wave8/verification.json),
+[STATUS](../continuation/STATUS.json), [TASKS](TASKS.json).
+W8 расширяет callback, damage, movement, message, geometry, history, reset и ABI;
+добавляет angle/shot/queue slices. Их нельзя повторно назначать по снимку W5/W7.
+Исторические PASS не подтверждают текущий HEAD. Аудит 93 commits/14 refs —
+зафиксированный срез; два сохранённых PushEvent не являются полной push-историей.
 
 ## 1. Точка передачи и источники истины
 
 - Репозиторий: <https://github.com/pavandev22888/232>.
-- Рабочая ветка: `hoplite/sikyon-46eee495`; [PR #1](https://github.com/pavandev22888/232/pull/1).
-  **Без merge, merge queue и auto-merge. Не начинать с одного `main`.**
+- Рабочая ветка продолжения: `hoplite/tanagra-adb72df5`.
+  [PR #1](https://github.com/pavandev22888/232/pull/1) уже слит 2026-11-09;
+  `main` содержит W1–W7 (`0fe371b`), а новая ветка — продолжение W8 и полную
+  исходную историю. Продолжение опубликовано в [PR #2](https://github.com/pavandev22888/232/pull/2)
+  — **без merge, merge queue и auto-merge**. Начальный snapshot `d3e526f`:
+  PR OPEN/MERGEABLE, GitHub checks/Actions/reviews и незакрытых review threads нет;
+  это не зелёный CI. Подписка на обновления активна, task auto-merge выключен.
+  Snapshot и повторный gate `d3e526f` сохранены в W8 verification; точный финальный
+  опубликованный SHA и проверки после metadata-коммита — в разделе Verification PR #2.
+  При следующем старте сверить live состояние, не считать этот snapshot текущим.
 - Снимок результата W5: `897b4bf51b1931fd1b80f178d40b7478ce251959`, 2026-11-09.
   Документы передачи добавляются поверх него; при старте получить актуальный remote HEAD.
 - Интегрированный код, проверенный тремя рецензентами:
@@ -249,7 +258,8 @@ native/ASan+UBSan режиме**, 13 Python unit tests, 13 новых static ver
 Обновлять STATUS/TASKS/SOURCE_INDEX/DECISIONS и свежие evidence, не старые журналы.
 Отчёт: код и границы, источник/hash/адреса/байты, команды и exit codes, проверенный
 и опубликованный SHA, результаты ревью и что осталось. Только после этого commit/push
-в существующую ветку с явным refspec, обновить PR #1; никаких merge/queue/auto-merge.
+в существующую ветку с явным refspec, создать/обновить новый PR продолжения (не слитый PR #1);
+никаких merge/queue/auto-merge.
 Не публиковать распакованные DLL, build, секреты или необработанные приватные логи.
 Отсутствие GitHub checks не называть зелёным CI. Полная готовность определяется
 [GOAL](GOAL.md), а не успешностью локальной модели или этой таблицей.

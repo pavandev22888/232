@@ -1,0 +1,16 @@
+Read-only SHA-256 after native/sanitizer/static/probe runs; no original load/run/emulation
+682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin  bytes=55578624
+c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/dll/neverlose.dll  bytes=62201344
+cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/nl_handoff_2026-11-06.zip  bytes=149819978
+6adae5522eea8b1fa68a2c77943b1cef82fd2d3a4b2de3f59e6f303de44c4127  /tmp/hoplite/232-w8-review-flow/continuation/src/damage_slice.cpp
+3ff4c8e5324b9e75bd5c7ecc96664458421ef537f0734e45d0573c503e25e11f  /tmp/hoplite/232-w8-review-flow/continuation/src/geometry_slice.cpp
+1a0d12acc3cb246d2a54f89807fbd511ad7b70639c517e88e138907fb9b2110e  /tmp/hoplite/232-w8-review-flow/continuation/src/movement_slice.cpp
+d30413486e8187336827c8a5661ff5863cec3536eb58468ce6b2f1891a4c826a  /tmp/hoplite/232-w8-review-flow/continuation/include/rage/damage_slice.hpp
+e3ef69fb57e4772af5edbc2fa5a2364eb12c02ebdab1f35169aac263267c7452  /tmp/hoplite/232-w8-review-flow/continuation/tests/test_damage_slice.cpp
+74fdb73d85517645ff69901f18f08012efdfcc38ff91451672928ee515d2ab02  /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/damage/verify_source_bytes.py
+4bbf8113c86ce8588e7f096f85fd8a370a702a46ad66629b50a0abae41ba106d  /tmp/hoplite/232-w8-review-flow/continuation/include/rage/movement_slice.hpp
+64d2855c1d4421c476d6a8787d109c2d2c74b4c9c0b698b3ac48c8dde4963477  /tmp/hoplite/232-w8-review-flow/continuation/tests/test_movement_slice.cpp
+844e29be814b46d235e4a04aff9b8614264dcb1d380b43e023644f9ff58d8493  /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/movement/verify_source_bytes.py
+c9ad61c87eb06b4c7ee17de80e23aa956d4e20fa636573b9fe9c963d7b0b398c  /tmp/hoplite/232-w8-review-flow/continuation/include/rage/geometry_slice.hpp
+fae6a45eb55bbef17b0e3ded41036a7f69391447776c4625429415238fc6c274  /tmp/hoplite/232-w8-review-flow/continuation/tests/test_geometry_slice.cpp
+7b71da8748be932190940201c5c01f9f794d2c65a7c84984d6f2966906bdb8aa  /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/geometry/verify_source_bytes.py

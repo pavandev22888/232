@@ -1,0 +1,6 @@
+ENV ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1
+UTC 2026-11-09T19:05:01.234546+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+PASS geometry post-call consumer: 78 checks
+EXIT 0

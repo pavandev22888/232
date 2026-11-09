@@ -1,0 +1,24 @@
+$ python3 -B continuation/evidence/wave5/indirect/verify_indirect.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+0x41c5e3b0: 55  push ebp
+0x41c5e3b1: 53  push ebx
+0x41c5e3b2: 57  push edi
+0x41c5e3b3: 56  push esi
+0x41c5e3b4: 81eca4090000  sub esp,0x9a4
+0x41c5e3ba: 8b9c24bc090000  mov ebx,dword ptr [esp+0x9bc]
+0x41c5e3c1: 8bbc24b8090000  mov edi,dword ptr [esp+0x9b8]
+0x41c5e3c8: a14c195242  mov eax,ds:0x4252194c
+0x41c5e3cd: 85c0  test eax,eax
+0x41c5e3cf: 7406  je 0x41c5e3d7
+0x41c5e3d1: ff8080030000  inc dword ptr [eax+0x380]
+0x41c5e3d7: ff3548195242  push dword ptr ds:0x42521948
+0x41c5e3dd: 6840490000  push 0x4940
+0x41c5e3e2: ff153c722642  call dword ptr ds:0x4226723c
+0x41c5e3e8: 83c408  add esp,0x8
+WINDOW caller_from_local_entry raw=0x9be3b0 SHA256=c66781c2266329ae9f887f80aa940816d23d0c97c94bd411319c0fce61aff2b6
+WINDOW slot_file_snapshot raw=0xfc723c SHA256=515bd2e0d1f2155a3816c9e6d065605a5e57720c9593ad841c0a00d15a6f801c
+0x41c683a0: e9eea03c00  jmp 0x42032493
+WINDOW one_thunk_instruction raw=0x9c83a0 SHA256=1451b5a4c2404b519d6669d49f2af97407e302e862b7cc4dedf2043d248bc7e0
+PASS: 4 source hashes, 3 windows, 16 fresh i386 instructions; snapshot 0x4226723c -> 0x41c683a0 -> JMP destination 0x42032493 under raw bias 0x412a0000.
+FRONTIER: no runtime binding, import identity, writer/order/lifetime, callee semantics or allocation/type claim; R03/GAP04 remain open.
+
+EXIT_CODE=0

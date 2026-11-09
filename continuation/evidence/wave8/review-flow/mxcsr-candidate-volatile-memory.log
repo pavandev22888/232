@@ -1,0 +1,108 @@
+CANDIDATE ONLY; repository implementation unchanged
+CWD /tmp/hoplite/232-w8-review-flow
+PATCH __asm__("mulss %1, %0" : "+x"(destination) : "x"(source)); -> __asm__ volatile("mulss %1, %0" : "+x"(destination) : "x"(source) : "memory");
+PROBE same source as mxcsr-o2-lto.log with include replaced by exact reviewed source and above one-line change
+CMD g++ -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-candidate-volatile-memory
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00002 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00002
+RUN_EXIT 0
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-candidate-volatile-memory:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001060 <main>:
+    1060:	f3 0f 1e fa          	endbr64
+    1064:	41 57                	push   r15
+    1066:	41 56                	push   r14
+    1068:	41 55                	push   r13
+    106a:	41 54                	push   r12
+    106c:	55                   	push   rbp
+    106d:	53                   	push   rbx
+    106e:	48 83 ec 18          	sub    rsp,0x18
+    1072:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    1077:	8b 4c 24 0c          	mov    ecx,DWORD PTR [rsp+0xc]
+    107b:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    1082:	00
+    1083:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    1088:	f3 0f 10 15 78 0f 00 	movss  xmm2,DWORD PTR [rip+0xf78]        # 2008 <_IO_stdin_used+0x8>
+    108f:	00
+    1090:	f3 0f 10 05 6c 0f 00 	movss  xmm0,DWORD PTR [rip+0xf6c]        # 2004 <_IO_stdin_used+0x4>
+    1097:	00
+    1098:	f3 0f 59 c2          	mulss  xmm0,xmm2
+    109c:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10a3:	00
+    10a4:	66 41 0f 7e c6       	movd   r14d,xmm0
+    10a9:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10ae:	f3 0f 10 05 4e 0f 00 	movss  xmm0,DWORD PTR [rip+0xf4e]        # 2004 <_IO_stdin_used+0x4>
+    10b5:	00
+    10b6:	f3 0f 59 c2          	mulss  xmm0,xmm2
+    10ba:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10c1:	00
+    10c2:	66 41 0f 7e c4       	movd   r12d,xmm0
+    10c7:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10cc:	e8 af 01 00 00       	call   1280 <_Z9referencejj.constprop.0>
+    10d1:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10d8:	00
+    10d9:	41 89 c5             	mov    r13d,eax
+    10dc:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10e1:	e8 9a 01 00 00       	call   1280 <_Z9referencejj.constprop.0>
+    10e6:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10ed:	00
+    10ee:	41 89 c7             	mov    r15d,eax
+    10f1:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f6:	f3 0f 10 05 06 0f 00 	movss  xmm0,DWORD PTR [rip+0xf06]        # 2004 <_IO_stdin_used+0x4>
+    10fd:	00
+    10fe:	f3 0f 59 c2          	mulss  xmm0,xmm2
+    1102:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    1109:	00
+    110a:	66 0f 7e c5          	movd   ebp,xmm0
+    110e:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    1113:	f3 0f 10 05 e9 0e 00 	movss  xmm0,DWORD PTR [rip+0xee9]        # 2004 <_IO_stdin_used+0x4>
+    111a:	00
+    111b:	f3 0f 59 c2          	mulss  xmm0,xmm2
+    111f:	89 4c 24 0c          	mov    DWORD PTR [rsp+0xc],ecx
+    1123:	66 0f 7e c3          	movd   ebx,xmm0
+    1127:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    112c:	44 89 f2             	mov    edx,r14d
+    112f:	48 8d 64 24 f8       	lea    rsp,[rsp-0x8]
+    1134:	41 89 c1             	mov    r9d,eax
+    1137:	45 89 e8             	mov    r8d,r13d
+    113a:	44 89 e1             	mov    ecx,r12d
+    113d:	66 0f 7e 04 24       	movd   DWORD PTR [rsp],xmm0
+    1142:	31 c0                	xor    eax,eax
+    1144:	bf 02 00 00 00       	mov    edi,0x2
+    1149:	48 8d 35 c0 0e 00 00 	lea    rsi,[rip+0xec0]        # 2010 <_IO_stdin_used+0x10>
+    1150:	55                   	push   rbp
+    1151:	e8 fa fe ff ff       	call   1050 <__printf_chk@plt>
+    1156:	45 39 ee             	cmp    r14d,r13d
+    1159:	0f 95 c0             	setne  al
+    115c:	45 39 e7             	cmp    r15d,r12d
+    115f:	0f 95 c2             	setne  dl
+    1162:	09 d0                	or     eax,edx
+    1164:	41 39 ed             	cmp    r13d,ebp
+    1167:	0f 95 c2             	setne  dl
+    116a:	09 d0                	or     eax,edx
+    116c:	41 39 df             	cmp    r15d,ebx
+    116f:	0f 95 c2             	setne  dl
+    1172:	48 83 c4 28          	add    rsp,0x28
+    1176:	09 d0                	or     eax,edx
+    1178:	5b                   	pop    rbx
+    1179:	5d                   	pop    rbp
+    117a:	0f b6 c0             	movzx  eax,al
+    117d:	41 5c                	pop    r12
+    117f:	41 5d                	pop    r13
+    1181:	41 5e                	pop    r14
+    1183:	41 5f                	pop    r15
+    1185:	c3                   	ret
+
+Disassembly of section .fini:

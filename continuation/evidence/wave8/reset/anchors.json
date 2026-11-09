@@ -1,0 +1,31 @@
+{
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "anchors": [
+    {
+      "address": "0x415debd0",
+      "bytes": "83ec08a10027264231e089442404",
+      "role": "prologue and cookie setup, outside modeled stores"
+    },
+    {
+      "address": "0x415debde",
+      "bytes": "b8ec2b5042666666662e0f1f840000000000",
+      "role": "immediate EAX source and fallthrough padding"
+    },
+    {
+      "address": "0x415decb9",
+      "bytes": "05c80000003d9c3050420f8527ffffff",
+      "role": "stride, end comparison and unequal back-edge"
+    }
+  ],
+  "table": {
+    "start": "0x42502bec",
+    "end_exclusive": "0x4250309c",
+    "stride": "0xc8",
+    "records": 6,
+    "stores_per_record": 25
+  },
+  "full_gap_closed": false
+}

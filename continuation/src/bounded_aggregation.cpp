@@ -24,6 +24,30 @@ bool signed_difference_greater_than_one(std::uint32_t left, std::uint32_t right)
     const std::uint32_t difference = left - right;
     return difference > 1u && difference < 0x80000000u;
 }
+
+std::optional<std::uint32_t> read_callback32(
+    const std::vector<CallbackRaw32Region>& memory,
+    std::uint32_t address, std::uint8_t width)
+{
+    if (std::uint64_t{address} + width > 0x100000000ull)
+        return std::nullopt;
+    std::uint32_t value = 0;
+    for (std::uint32_t i = 0; i < width; ++i) {
+        const std::uint32_t current = address + i;
+        bool observed = false;
+        for (const auto& region : memory) {
+            if (current >= region.address &&
+                std::uint64_t{current} - region.address < region.bytes.size()) {
+                value |= std::uint32_t{region.bytes[current - region.address]} << (i * 8u);
+                observed = true;
+                break;
+            }
+        }
+        if (!observed)
+            return std::nullopt;
+    }
+    return value;
+}
 } // namespace
 
 std::optional<TargetScoreProjection> accumulate_direct_score_prefix(
@@ -237,6 +261,74 @@ CallbackRankResult rank_callback_point(
     if (scalar(saved, 0x38) >= scalar(point, 0x38))
         return finish(false);
     return finish(damage_wins());
+}
+
+std::array<std::uint8_t, 0x80> initialize_callback_context32(
+    const std::array<std::uint8_t, 0x80>& before, std::uint32_t caller_address)
+{
+    auto after = before;
+    const auto store = [&](std::size_t offset, std::uint32_t value) {
+        for (std::size_t i = 0; i < 4; ++i)
+            after[offset + i] = static_cast<std::uint8_t>(value >> (i * 8u));
+    };
+    store(0x70, 0);
+    store(0x30, 0);
+    store(0x34, 0);
+    store(0x38, 0);
+    store(0x50, caller_address + 0x70u);
+    store(0x54, caller_address + 0x80u);
+    return after;
+}
+
+CallbackSettingsResolution resolve_callback_settings32(
+    const std::vector<CallbackRaw32Region>& memory)
+{
+    using Stop = CallbackSettingsReadStop;
+    CallbackSettingsResolution result{Stop::memory_unobserved, std::nullopt, std::nullopt};
+    const auto read = [&](std::uint32_t address, std::uint8_t width) {
+        const auto value = read_callback32(memory, address, width);
+        if (!value)
+            result.missing = CallbackMissingRead32{address, width};
+        return value;
+    };
+    const auto root = read(0x424f639cu, 4);
+    if (!root)
+        return result;
+    const auto manager = read(*root + 0x1012cu, 4);
+    if (!manager)
+        return result;
+    const auto index = read(*manager + 0x2ccu, 4);
+    if (!index)
+        return result;
+    result.observation = CallbackSettingsObservation{*index, std::nullopt};
+    if (*index >= 16u) {
+        result.stop = Stop::index_handler_4149ec2d;
+        return result;
+    }
+    const std::uint32_t slot = *root + *index * 0x5d8u;
+    const auto selector = read(slot + 0x1042cu, 1);
+    if (!selector)
+        return result;
+    const auto flags = read(slot + *selector * 4u + 0x10424u, 4);
+    if (!flags)
+        return result;
+    result.observation->selected_flags = *flags;
+    result.stop = Stop::complete;
+    return result;
+}
+
+CallbackOwnerFlagsResolution resolve_callback_owner_flags32(
+    const std::vector<CallbackRaw32Region>& memory, std::uint32_t owner)
+{
+    const std::uint32_t pointer_address = owner + 4u;
+    const auto pointer = read_callback32(memory, pointer_address, 4);
+    if (!pointer)
+        return {std::nullopt, CallbackMissingRead32{pointer_address, 4}};
+    const std::uint32_t flags_address = *pointer + 0xb0u;
+    const auto flags = read_callback32(memory, flags_address, 1);
+    if (!flags)
+        return {std::nullopt, CallbackMissingRead32{flags_address, 1}};
+    return {static_cast<std::uint8_t>(*flags), std::nullopt};
 }
 
 } // namespace rage::offline

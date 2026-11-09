@@ -1,0 +1,112 @@
+CWD /tmp/hoplite/232-w8-review-flow
+SOURCE (stdin):
+#include "continuation/src/damage_slice.cpp"
+#include <xmmintrin.h>
+#include <cstdio>
+__attribute__((noinline)) unsigned reference(unsigned left, unsigned right) {
+    unsigned result;
+    __asm__ volatile("movd %1, %%xmm0; movd %2, %%xmm1; mulss %%xmm1, %%xmm0; movd %%xmm0, %0"
+                     : "=r"(result) : "r"(left), "r"(right) : "xmm0", "xmm1");
+    return result;
+}
+int main() {
+    unsigned saved = _mm_getcsr();
+    _mm_setcsr(0x1f80);
+    auto h1 = rage::offline::multiply_binary32(0x3f800001u, 0x3fa00000u);
+    _mm_setcsr(0x5f80);
+    auto h2 = rage::offline::multiply_binary32(0x3f800001u, 0x3fa00000u);
+    _mm_setcsr(0x1f80); auto r1 = reference(0x3f800001u, 0x3fa00000u);
+    _mm_setcsr(0x5f80); auto r2 = reference(0x3f800001u, 0x3fa00000u);
+    rage::offline::DamageSwitchObservations o{3, 0, 0x3f800001u, {}};
+    _mm_setcsr(0x1f80); auto a = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(0x5f80); auto b = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(saved);
+    std::printf("helper nearest=%08x upward=%08x reference=%08x/%08x evaluator=%08x/%08x\n", h1,h2,r1,r2,*a.result_slot_bits,*b.result_slot_bits);
+    return h1==r1 && h2==r2 && *a.result_slot_bits==r1 && *b.result_slot_bits==r2 ? 0:1;
+}
+
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-o2-lto
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00001 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00001
+RUN_EXIT 1
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-o2-lto:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001060 <main>:
+    1060:	f3 0f 1e fa          	endbr64
+    1064:	41 54                	push   r12
+    1066:	55                   	push   rbp
+    1067:	53                   	push   rbx
+    1068:	48 83 ec 10          	sub    rsp,0x10
+    106c:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    1071:	8b 4c 24 0c          	mov    ecx,DWORD PTR [rsp+0xc]
+    1075:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    107c:	00
+    107d:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    1082:	f3 0f 10 05 7a 0f 00 	movss  xmm0,DWORD PTR [rip+0xf7a]        # 2004 <_IO_stdin_used+0x4>
+    1089:	00
+    108a:	f3 0f 10 0d 76 0f 00 	movss  xmm1,DWORD PTR [rip+0xf76]        # 2008 <_IO_stdin_used+0x8>
+    1091:	00
+    1092:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    1099:	00
+    109a:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    109e:	66 0f 7e c3          	movd   ebx,xmm0
+    10a2:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10a7:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10ae:	00
+    10af:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10b4:	e8 77 01 00 00       	call   1230 <_Z9referencejj.constprop.0>
+    10b9:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10c0:	00
+    10c1:	41 89 c4             	mov    r12d,eax
+    10c4:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10c9:	e8 62 01 00 00       	call   1230 <_Z9referencejj.constprop.0>
+    10ce:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10d5:	00
+    10d6:	89 c5                	mov    ebp,eax
+    10d8:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10dd:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10e4:	00
+    10e5:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10ea:	89 4c 24 0c          	mov    DWORD PTR [rsp+0xc],ecx
+    10ee:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f3:	89 da                	mov    edx,ebx
+    10f5:	41 89 c1             	mov    r9d,eax
+    10f8:	53                   	push   rbx
+    10f9:	45 89 e0             	mov    r8d,r12d
+    10fc:	89 d9                	mov    ecx,ebx
+    10fe:	31 c0                	xor    eax,eax
+    1100:	53                   	push   rbx
+    1101:	48 8d 35 08 0f 00 00 	lea    rsi,[rip+0xf08]        # 2010 <_IO_stdin_used+0x10>
+    1108:	bf 02 00 00 00       	mov    edi,0x2
+    110d:	e8 3e ff ff ff       	call   1050 <__printf_chk@plt>
+    1112:	44 39 e3             	cmp    ebx,r12d
+    1115:	0f 95 c0             	setne  al
+    1118:	39 dd                	cmp    ebp,ebx
+    111a:	0f 95 c2             	setne  dl
+    111d:	09 d0                	or     eax,edx
+    111f:	41 39 dc             	cmp    r12d,ebx
+    1122:	0f 95 c2             	setne  dl
+    1125:	09 d0                	or     eax,edx
+    1127:	39 dd                	cmp    ebp,ebx
+    1129:	0f 95 c2             	setne  dl
+    112c:	48 83 c4 20          	add    rsp,0x20
+    1130:	09 d0                	or     eax,edx
+    1132:	5b                   	pop    rbx
+    1133:	5d                   	pop    rbp
+    1134:	0f b6 c0             	movzx  eax,al
+    1137:	41 5c                	pop    r12
+    1139:	c3                   	ret
+
+Disassembly of section .fini:

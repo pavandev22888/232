@@ -1,0 +1,166 @@
+FILE damage-build.log
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/review-flow/.build SOURCES=src/damage_slice.cpp evidence/wave8/review-flow/.build/test_damage_slice evidence/wave8/review-flow/.build/test_damage_slice_sanitize
+EXIT 0
+FILE damage-native.log
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+EXIT 0
+FILE damage-sanitize.log
+ENV ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice_sanitize
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+EXIT 0
+FILE damage-static.log
+CMD python3 -B continuation/evidence/wave8/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS nl.bin/DLL SHA-256 and exact embedded-resource identity
+EXIT 0
+FILE environment-and-scope.log
+CMD git rev-parse HEAD
+EXIT 0
+CMD git branch --show-current
+EXIT 0
+CMD git status --short
+EXIT 0
+CMD g++ --version
+EXIT 0
+CMD objdump --version
+EXIT 0
+CMD python3 --version
+EXIT 0
+CMD uname -m
+EXIT 0
+CMD git diff --check
+EXIT 0
+CMD git diff 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41..HEAD --stat -- continuation/include/rage/damage_slice.hpp continuation/src/damage_slice.cpp continuation/tests/test_damage_slice.cpp continuation/include/rage/movement_slice.hpp continuation/src/movement_slice.cpp continuation/tests/test_movement_slice.cpp continuation/include/rage/geometry_slice.hpp continuation/src/geometry_slice.cpp continuation/tests/test_geometry_slice.cpp
+EXIT 0
+FILE fresh-model-codegen-initial-empty.log
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice_sanitize
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+EXIT 0
+FILE fresh-model-codegen.log
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice
+EXIT 0
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice_sanitize
+EXIT 0
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice
+EXIT 0
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+EXIT 0
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice
+EXIT 0
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+EXIT 0
+FILE fresh-original-static.log
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413708da --stop-address=0x41370ab1 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41370b4b --stop-address=0x41370b6f /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414a5130 --stop-address=0x414a52dc /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414f3e42 --stop-address=0x414f3eb5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+EXIT 0
+FILE geometry-build.log
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/review-flow/.build SOURCES=src/geometry_slice.cpp evidence/wave8/review-flow/.build/test_geometry_slice evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+EXIT 0
+FILE geometry-native.log
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice
+PASS geometry post-call consumer: 78 checks
+EXIT 0
+FILE geometry-sanitize.log
+ENV ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+PASS geometry post-call consumer: 78 checks
+EXIT 0
+FILE geometry-static.log
+CMD python3 -B continuation/evidence/wave8/geometry/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT 0
+FILE movement-build.log
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/review-flow/.build SOURCES=src/movement_slice.cpp evidence/wave8/review-flow/.build/test_movement_slice evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+EXIT 0
+FILE movement-native.log
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice
+PASS: movement caller/callee, guarded frontiers and exact SSE bits (198 assertions)
+EXIT 0
+FILE movement-sanitize.log
+ENV ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+PASS: movement caller/callee, guarded frontiers and exact SSE bits (198 assertions)
+EXIT 0
+FILE movement-static.log
+CMD python3 -B continuation/evidence/wave8/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT 0
+FILE mxcsr-candidate-volatile-memory.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-candidate-volatile-memory
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00002 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00002
+RUN_EXIT 0
+FILE mxcsr-candidate-volatile.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-candidate-volatile
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00002 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00002
+RUN_EXIT 0
+FILE mxcsr-o2-lto.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-o2-lto
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00001 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00001
+RUN_EXIT 1
+FILE mxcsr-o2-rounding.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -frounding-math -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-o2-rounding
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00001 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00002
+RUN_EXIT 1
+FILE mxcsr-o2.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/mxcsr-o2
+COMPILE_EXIT 0
+helper nearest=3fa00001 upward=3fa00001 reference=3fa00001/3fa00002 evaluator=3fa00001/3fa00002
+RUN_EXIT 1
+FILE public-mxcsr-candidate-volatile-memory.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-candidate
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE public-mxcsr-o2-lto-rounding.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto -frounding-math continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-o2-lto-rounding
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE public-mxcsr-o2-lto.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-o2-lto
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE public-mxcsr-o2.log
+CMD g++ -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-o2
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE public-mxcsr-separate-o3-lto.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O3 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off continuation/src/damage_slice.cpp -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-separate-o3-lto
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE public-mxcsr-unity-o2-lto.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-unity-o2-lto
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00001 (want 3fa00002)
+RUN_EXIT 1
+FILE public-mxcsr-unity-o2.log
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-unity-o2
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+FILE scope-check.log
+CMD git diff bcc5918568c162482b7ec4e1fd7ca7ec48d58940 -- continuation/src continuation/include continuation/tests continuation/Makefile continuation/STATUS.json docs
+EXIT 0
+CMD git diff --check
+EXIT 0
+FILE source-sha256.log

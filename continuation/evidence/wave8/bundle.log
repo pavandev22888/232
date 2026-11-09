@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}

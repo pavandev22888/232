@@ -1,0 +1,11 @@
+$ python3 -B continuation/evidence/wave8/geometry/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS pinned ZIP/nl.bin and neverlose.dll embedded resource identity
+PASS caller: [0x414f3c90,0x414f3eb5) SHA-256 72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb
+PASS postcall_consumer: [0x414f3e60,0x414f3e9f) SHA-256 6530efbee3eb144ae52276436621a624393f9d16b79b681c685b13181e94efe1
+PASS return_epilogue: [0x414f3e9f,0x414f3eb5) SHA-256 318e1885b75d4024b2a32f589de788977d78a1cae064aad2b9d86b4e2aa5f796
+PASS observed_call_boundary: [0x414f3e42,0x414f3e60) SHA-256 2db85d394f361c7c6bef085c19d300e77a4aa755273b752fa7e18675453dfdd7
+PASS trace_wrapper_tail: [0x413700dc,0x413700fc) SHA-256 adcb925a6035ecc4659bda95957fef507888d663b00c2ff33c0931768ba75f19
+PASS 23 fresh static instruction decodes and threshold bytes
+BOUNDARY: external observations only; no provider identity, ABI, runtime base or full geometry proof
+
+EXIT_CODE=0

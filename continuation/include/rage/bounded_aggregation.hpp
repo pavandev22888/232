@@ -4,6 +4,7 @@
 #include <array>
 #include <cstdint>
 #include <optional>
+#include <vector>
 
 namespace rage::offline {
 
@@ -107,6 +108,49 @@ CallbackRankResult rank_callback_point(
     const std::array<std::uint8_t, 0x50>& point,
     std::uint8_t accumulator_05, std::uint8_t accumulator_08,
     std::uint8_t tail_cl, std::optional<std::uint8_t> owner_flags_b0);
+
+// 414A8361..414A838C: six ordered DWORD stores in caller S+00..7F.
+// Returns a raw projection, not a full caller object; pointer fields remain raw32.
+std::array<std::uint8_t, 0x80> initialize_callback_context32(
+    const std::array<std::uint8_t, 0x80>& before, std::uint32_t caller_address);
+
+struct CallbackRaw32Region {
+    std::uint32_t address;
+    std::vector<std::uint8_t> bytes;
+};
+
+struct CallbackMissingRead32 {
+    std::uint32_t address;
+    std::uint8_t width;
+};
+
+enum class CallbackSettingsReadStop {
+    complete,
+    memory_unobserved,
+    index_handler_4149ec2d
+};
+
+struct CallbackSettingsResolution {
+    CallbackSettingsReadStop stop;
+    std::optional<CallbackSettingsObservation> observation;
+    std::optional<CallbackMissingRead32> missing;
+};
+
+// Interior settings-load block E7DF/E878/E8F4, not callback entry.
+// Stable, disjoint, non-wrapping regions; addresses/arithmetic are raw x86 DWORDs.
+// No host-pointer dereference, default provider, selector clamp or original call.
+CallbackSettingsResolution resolve_callback_settings32(
+    const std::vector<CallbackRaw32Region>& memory);
+
+struct CallbackOwnerFlagsResolution {
+    std::optional<std::uint8_t> flags;
+    std::optional<CallbackMissingRead32> missing;
+};
+
+// Entry at a reached E9D4/EBA4 flags read; owner is observed ESI, not caller S.
+// Reads DWORD[owner+4], then BYTE[pointee+B0], under the same snapshot contract.
+CallbackOwnerFlagsResolution resolve_callback_owner_flags32(
+    const std::vector<CallbackRaw32Region>& memory, std::uint32_t owner);
 
 // The floating-point APIs require binary32, round-to-nearest, no FTZ/DAZ or fast-math.
 // sNaNs, NaN payload selection and observable FP traps/flags are out of scope.

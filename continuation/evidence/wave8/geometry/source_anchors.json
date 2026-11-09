@@ -1,0 +1,249 @@
+{
+  "task": "W8-GEOMETRY",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "source": {
+    "archive": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_size": 149819978,
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "entry": "nl.bin",
+    "image_size": 55578624,
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_va_bias": "0x412a0000",
+    "runtime_base_proved": false,
+    "container": "workspace/input/dll/neverlose.dll",
+    "container_sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "resource_offset": "0x629b10"
+  },
+  "windows": {
+    "caller": {
+      "start": "0x414f3c90",
+      "end_exclusive": "0x414f3eb5",
+      "file_offset": "0x253c90",
+      "size": 549,
+      "sha256": "72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb",
+      "bytes": "5589e5575681ecbc0000008b450c8b4d108b150027264231ea8955f4f30f104908f30f106120f30f10401c0f118548fffffff30f59c10f118558fffffff30f104110f30f107104f30f105928f30f1051180f14ca0f118d68ffffff0f14d30f119578ffffff0f14de0f14f00f14c40f114588f30f1051140f14e2f20f1078080f59e7f30f104014660f1145980f28cff20f10c80f28c70fc6f921f30f1029f30f59c5f30f1049240f14d10f14cd0f16f10fc6ffc40f59f70f10ad68ffffff0f16ebf30f104818f30f1058100f14d90fc6db400f59eb0f28fd0fc6c410f30f10590c0f28eb0f16ec0fc6c5280f58c6f30f10611c0f14dcf30f10692c0f14e50f10b558ffffff0f14ee0f16dd0f58df0f58d80f115ddc0f1045980f14c00f105d880f59d80f14c90f59d10f108548ffffff0f14c00f108d78ffffff0f59c80f58ca8b7d148b55080f58e30f58e10f1365ecc745b40000803f0f57c00f1145b80f1145c5f30f10472cf30f104a18f30f59c8f20f1052100f14c00f59c2f30f1050300f1345a8f30f114db0b806250d87c1c00b2ddbeb6120c1cb20c1ce20c1c81a35a984a17d2d9b2699239090908945d88b45d8f30f115424088d4ddc894c24048d4da8890c248d4db4ffd083ec0c83c40cf30f1045b4befffffffff30f100d54a505420f2ec87628f30f59472cf30f11472c807dd4007404c64737010f1045b80f11470cf20f1045c8f20f11471c31f68b4df431e9e8b33d8b0089f081c4bc0000005e5f5dc3"
+    },
+    "postcall_consumer": {
+      "start": "0x414f3e60",
+      "end_exclusive": "0x414f3e9f",
+      "file_offset": "0x253e60",
+      "size": 63,
+      "sha256": "6530efbee3eb144ae52276436621a624393f9d16b79b681c685b13181e94efe1",
+      "bytes": "f30f1045b4befffffffff30f100d54a505420f2ec87628f30f59472cf30f11472c807dd4007404c64737010f1045b80f11470cf20f1045c8f20f11471c31f6"
+    },
+    "return_epilogue": {
+      "start": "0x414f3e9f",
+      "end_exclusive": "0x414f3eb5",
+      "file_offset": "0x253e9f",
+      "size": 22,
+      "sha256": "318e1885b75d4024b2a32f589de788977d78a1cae064aad2b9d86b4e2aa5f796",
+      "bytes": "8b4df431e9e8b33d8b0089f081c4bc0000005e5f5dc3"
+    },
+    "observed_call_boundary": {
+      "start": "0x414f3e42",
+      "end_exclusive": "0x414f3e60",
+      "file_offset": "0x253e42",
+      "size": 30,
+      "sha256": "2db85d394f361c7c6bef085c19d300e77a4aa755273b752fa7e18675453dfdd7",
+      "bytes": "f30f115424088d4ddc894c24048d4da8890c248d4db4ffd083ec0c83c40c"
+    },
+    "trace_wrapper_tail": {
+      "start": "0x413700dc",
+      "end_exclusive": "0x413700fc",
+      "file_offset": "0xd00dc",
+      "size": 32,
+      "sha256": "adcb925a6035ecc4659bda95957fef507888d663b00c2ff33c0931768ba75f19",
+      "bytes": "8b018d5c241056525753ff50148b4c246831e9e8687ba3008d65f45e5f5b5dc3"
+    }
+  },
+  "threshold": {
+    "va": "0x4205a554",
+    "bytes": "0000803f"
+  },
+  "instructions": [
+    {
+      "va": "0x414f3dd0",
+      "bytes": "8b7d14",
+      "decoded": "mov edi,DWORD PTR [ebp+0x14]"
+    },
+    {
+      "va": "0x414f3e55",
+      "bytes": "8d4db4",
+      "decoded": "lea ecx,[ebp-0x4c]"
+    },
+    {
+      "va": "0x414f3e58",
+      "bytes": "ffd0",
+      "decoded": "call eax"
+    },
+    {
+      "va": "0x414f3e60",
+      "bytes": "f30f1045b4",
+      "decoded": "movss xmm0,DWORD PTR [ebp-0x4c]"
+    },
+    {
+      "va": "0x414f3e65",
+      "bytes": "beffffffff",
+      "decoded": "mov esi,0xffffffff"
+    },
+    {
+      "va": "0x414f3e6a",
+      "bytes": "f30f100d54a50542",
+      "decoded": "movss xmm1,DWORD PTR ds:0x4205a554"
+    },
+    {
+      "va": "0x414f3e72",
+      "bytes": "0f2ec8",
+      "decoded": "ucomiss xmm1,xmm0"
+    },
+    {
+      "va": "0x414f3e75",
+      "bytes": "7628",
+      "decoded": "jbe 0x414f3e9f"
+    },
+    {
+      "va": "0x414f3e77",
+      "bytes": "f30f59472c",
+      "decoded": "mulss xmm0,DWORD PTR [edi+0x2c]"
+    },
+    {
+      "va": "0x414f3e7c",
+      "bytes": "f30f11472c",
+      "decoded": "movss DWORD PTR [edi+0x2c],xmm0"
+    },
+    {
+      "va": "0x414f3e81",
+      "bytes": "807dd400",
+      "decoded": "cmp BYTE PTR [ebp-0x2c],0x0"
+    },
+    {
+      "va": "0x414f3e85",
+      "bytes": "7404",
+      "decoded": "je 0x414f3e8b"
+    },
+    {
+      "va": "0x414f3e87",
+      "bytes": "c6473701",
+      "decoded": "mov BYTE PTR [edi+0x37],0x1"
+    },
+    {
+      "va": "0x414f3e8b",
+      "bytes": "0f1045b8",
+      "decoded": "movups xmm0,XMMWORD PTR [ebp-0x48]"
+    },
+    {
+      "va": "0x414f3e8f",
+      "bytes": "0f11470c",
+      "decoded": "movups XMMWORD PTR [edi+0xc],xmm0"
+    },
+    {
+      "va": "0x414f3e93",
+      "bytes": "f20f1045c8",
+      "decoded": "movsd xmm0,QWORD PTR [ebp-0x38]"
+    },
+    {
+      "va": "0x414f3e98",
+      "bytes": "f20f11471c",
+      "decoded": "movsd QWORD PTR [edi+0x1c],xmm0"
+    },
+    {
+      "va": "0x414f3e9d",
+      "bytes": "31f6",
+      "decoded": "xor esi,esi"
+    },
+    {
+      "va": "0x414f3ea9",
+      "bytes": "89f0",
+      "decoded": "mov eax,esi"
+    },
+    {
+      "va": "0x414f3eb4",
+      "bytes": "c3",
+      "decoded": "ret"
+    },
+    {
+      "va": "0x413700e6",
+      "bytes": "ff5014",
+      "decoded": "call DWORD PTR [eax+0x14]"
+    },
+    {
+      "va": "0x413700ef",
+      "bytes": "e8687ba300",
+      "decoded": "call 0x41da7c5c"
+    },
+    {
+      "va": "0x413700fb",
+      "bytes": "c3",
+      "decoded": "ret"
+    }
+  ],
+  "raw_layout": {
+    "observation": {
+      "minimal_size": "0x21",
+      "origin": "original EBP-0x4c after unresolved call returns",
+      "scalar_binary32_le": "0x00..0x03",
+      "opaque_copy_16": "0x04..0x13",
+      "opaque_copy_8": "0x14..0x1b",
+      "unread_gap": "0x1c..0x1f",
+      "nonzero_tested_byte": "0x20"
+    },
+    "output": {
+      "minimal_size": "0x38",
+      "origin": "original EDI (loaded from [EBP+0x14])",
+      "multiply_store_binary32_le": "0x2c..0x2f",
+      "conditional_one_store": "0x37",
+      "copy16_destination": "0x0c..0x1b",
+      "copy8_destination": "0x1c..0x23"
+    }
+  },
+  "proven_local_order": [
+    "ordered scalar < 1.0; otherwise return -1 without stores",
+    "scalar * old output+0x2c using MULSS, store output+0x2c",
+    "if observation+0x20 nonzero, store output+0x37=1; otherwise leave unchanged",
+    "copy 16 opaque bytes observation+4 -> output+0xc",
+    "copy 8 opaque bytes observation+0x14 -> output+0x1c",
+    "return 0 through ESI/EAX if cookie epilogue succeeds"
+  ],
+  "scope": {
+    "implementation": "one caller-side post-call consumer; not the external trace calculation",
+    "damage_41370710_touched": false,
+    "provider_target_or_ABI_proved": false,
+    "Point26_identity_proved": false,
+    "full_geometry_proved": false
+  },
+  "capture": {
+    "path": "objdump.txt",
+    "sha256": "23f367790788da5f4a309e22e93e5913b7533cccc0cd7d7fe216e43cf3ff7a65",
+    "commands": [
+      [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386",
+        "-Mintel",
+        "--insn-width=16",
+        "--adjust-vma=0x412a0000",
+        "--start-address=0x414f3c90",
+        "--stop-address=0x414f3eb5",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+      ],
+      [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386",
+        "-Mintel",
+        "--insn-width=16",
+        "--adjust-vma=0x412a0000",
+        "--start-address=0x413700dc",
+        "--stop-address=0x413700fc",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin"
+      ]
+    ],
+    "mode": "static decode only"
+  }
+}

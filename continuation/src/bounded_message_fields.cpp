@@ -101,4 +101,71 @@ BoundedMessageResult decode_bounded_message_fields(
     return result;
 }
 
+MessageReceiverPrefixResult evaluate_message_receiver_prefix(
+    std::uint32_t index_word,
+    const MessageReceiverPrefixObservations& observations,
+    MessageReceiverPrefixState& state)
+{
+    using Edge = MessageReceiverPrefixEdge;
+    const auto stop = [](Edge edge) {
+        return MessageReceiverPrefixResult{edge, std::nullopt};
+    };
+    if (signed_word(index_word) > 64) {
+        return stop(Edge::index_above_64);
+    }
+    if (!observations.dispatch_return_eax) {
+        return stop(Edge::dispatch_return_unobserved);
+    }
+    if (*observations.dispatch_return_eax == index_word) {
+        return stop(Edge::index_matches_dispatch);
+    }
+    if (!observations.guard_offset_word) {
+        return stop(Edge::guard_offset_unobserved);
+    }
+    if (*observations.guard_offset_word != 0) {
+        state.scratch_1c = *observations.guard_offset_word;
+        if (!observations.guard_epoch) {
+            return stop(Edge::guard_epoch_unobserved);
+        }
+        const auto& epoch = *observations.guard_epoch;
+        if (signed_word(epoch.global_word) > signed_word(epoch.thread_word)) {
+            return stop(Edge::guard_epoch_side_exit);
+        }
+        if (!observations.guard_word) {
+            return stop(Edge::guard_word_unobserved);
+        }
+        if (*observations.guard_word != 0) {
+            return stop(Edge::guard_word_nonzero);
+        }
+    }
+    state.exception_state_128 = UINT32_C(0xffffffff);
+    if (!observations.source_return_eax) {
+        return stop(Edge::source_return_unobserved);
+    }
+    state.scratch_1c = *observations.source_return_eax;
+    if (state.scratch_1c == 0) {
+        return stop(Edge::source_zero);
+    }
+    if (!observations.slot_epoch) {
+        return stop(Edge::slot_epoch_unobserved);
+    }
+    const auto& epoch = *observations.slot_epoch;
+    if (signed_word(epoch.global_word) > signed_word(epoch.thread_word)) {
+        return stop(Edge::slot_epoch_side_exit);
+    }
+    if (!observations.slot_base_word) {
+        return stop(Edge::slot_base_unobserved);
+    }
+    if (*observations.slot_base_word == 0) {
+        return stop(Edge::slot_base_zero_path);
+    }
+    const std::uint32_t address = *observations.slot_base_word +
+                                  state.scratch_1c + index_word;
+    if (!observations.slot_byte) {
+        return {Edge::slot_byte_unobserved, address};
+    }
+    return {*observations.slot_byte == 0 ? Edge::slot_byte_zero :
+                                         Edge::next_epoch_gate, address};
+}
+
 } // namespace rage::offline

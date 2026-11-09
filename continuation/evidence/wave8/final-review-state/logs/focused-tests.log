@@ -1,0 +1,64 @@
++ date -u +%FT%TZ
+2026-11-09T19:13:43Z
++ pwd
+/tmp/hoplite/232-w8-final-state
++ git rev-parse HEAD
+bc89d9d851d710208659fc702f1094a317023ab4
++ git status --short
+?? continuation/evidence/wave8/final-review-state/
++ g++ --version
++ head -1
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
++ make --version
++ head -1
+GNU Make 4.3
++ objdump --version
++ head -1
+GNU objdump (GNU Binutils for Ubuntu) 2.42
++ python3 --version
+Python 3.12.3
++ BUILD=/tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build
++ make -C continuation -j2 BUILD=/tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice_sanitize /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice_sanitize
+make: Entering directory '/tmp/hoplite/232-w8-final-state/continuation'
+mkdir -p /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/angle_slice.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/queue_context_slice.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp src/shot_result_slice.cpp tests/test_history_slot_slice.cpp -o /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/angle_slice.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/queue_context_slice.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp src/shot_result_slice.cpp tests/test_history_slot_slice.cpp -o /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/angle_slice.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/queue_context_slice.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp src/shot_result_slice.cpp tests/test_shot_result_slice.cpp -o /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/angle_slice.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/queue_context_slice.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp src/shot_result_slice.cpp tests/test_shot_result_slice.cpp -o /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice_sanitize
+make: Leaving directory '/tmp/hoplite/232-w8-final-state/continuation'
++ e=0
++ printf 'BUILD_EXIT=%s\n' 0
+BUILD_EXIT=0
++ '[' 0 -ne 0 ']'
++ result=0
++ for name in history_slot_slice shot_result_slice
++ /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice
+PASS test_history_slot_slice assertions=4351
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' history_slot_slice 0
+NATIVE_history_slot_slice_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_history_slot_slice_sanitize
+PASS test_history_slot_slice assertions=4351
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' history_slot_slice 0
+SANITIZE_history_slot_slice_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in history_slot_slice shot_result_slice
++ /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice
+PASS shot_result_slice: 250 assertions
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' shot_result_slice 0
+NATIVE_shot_result_slice_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-final-state/continuation/evidence/wave8/final-review-state/build/test_shot_result_slice_sanitize
+PASS shot_result_slice: 250 assertions
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' shot_result_slice 0
+SANITIZE_shot_result_slice_EXIT=0
++ '[' 0 -ne 0 ']'
++ exit 0

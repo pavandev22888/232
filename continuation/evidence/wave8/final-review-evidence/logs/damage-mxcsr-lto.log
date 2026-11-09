@@ -1,0 +1,4 @@
+$ /tmp/hoplite/232-w8-final-evidence/continuation/evidence/wave8/final-review-evidence/build/damage_mxcsr_lto
+damage MXCSR: nearest=3fa00001, upward=3fa00002
+
+EXIT_CODE=0

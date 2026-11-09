@@ -1,0 +1,98 @@
++ date -u +%FT%TZ
+2026-11-09T19:05:13Z
++ pwd
+/tmp/hoplite/232-w8-review-state
++ git rev-parse HEAD
+bcc5918568c162482b7ec4e1fd7ca7ec48d58940
++ git status --short
+?? continuation/evidence/wave8/review-state/
++ g++ --version
++ head -1
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
++ make --version
++ head -1
+GNU Make 4.3
++ objdump --version
++ head -1
+GNU objdump (GNU Binutils for Ubuntu) 2.42
++ python3 --version
+Python 3.12.3
++ BUILD=/tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build
++ make -C continuation -j2 BUILD=/tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation_sanitize /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields_sanitize /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor_sanitize /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table_sanitize
+make: Entering directory '/tmp/hoplite/232-w8-review-state/continuation'
+mkdir -p /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_aggregation.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_aggregation.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_message_fields.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_bounded_message_fields.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_predecessor.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_predecessor.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_table.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/actor_scalar_pipeline.cpp src/bounded_aggregation.cpp src/bounded_message_fields.cpp src/charge_state.cpp src/damage_slice.cpp src/geometry_slice.cpp src/history_slice.cpp src/history_slot_slice.cpp src/lifecycle_seed_slice.cpp src/marker_pipeline.cpp src/movement_slice.cpp src/position_lifecycle.cpp src/position_records.cpp src/release_state_slice.cpp src/reset_predecessor.cpp src/resolved_scalar_helper.cpp tests/test_reset_table.cpp -o /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table_sanitize
+make: Leaving directory '/tmp/hoplite/232-w8-review-state/continuation'
++ build_exit=0
++ printf 'BUILD_EXIT=%s\n' 0
+BUILD_EXIT=0
++ '[' 0 -ne 0 ']'
++ result=0
++ for name in bounded_aggregation bounded_message_fields reset_predecessor reset_table
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation
+23452 bounded aggregation assertions passed
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' bounded_aggregation 0
+NATIVE_bounded_aggregation_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_aggregation_sanitize
+23452 bounded aggregation assertions passed
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' bounded_aggregation 0
+SANITIZE_bounded_aggregation_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in bounded_aggregation bounded_message_fields reset_predecessor reset_table
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields
+bounded_message_fields: 1034 assertions passed
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' bounded_message_fields 0
+NATIVE_bounded_message_fields_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_bounded_message_fields_sanitize
+bounded_message_fields: 1034 assertions passed
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' bounded_message_fields 0
+SANITIZE_bounded_message_fields_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in bounded_aggregation bounded_message_fields reset_predecessor reset_table
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' reset_predecessor 0
+NATIVE_reset_predecessor_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_predecessor_sanitize
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' reset_predecessor 0
+SANITIZE_reset_predecessor_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in bounded_aggregation bounded_message_fields reset_predecessor reset_table
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table
+3622 reset table checks, 0 failures
++ e=0
++ printf 'NATIVE_%s_EXIT=%s\n' reset_table 0
+NATIVE_reset_table_EXIT=0
++ '[' 0 -ne 0 ']'
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
++ UBSAN_OPTIONS=halt_on_error=1
++ /tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/build/test_reset_table_sanitize
+3622 reset table checks, 0 failures
++ e=0
++ printf 'SANITIZE_%s_EXIT=%s\n' reset_table 0
+SANITIZE_reset_table_EXIT=0
++ '[' 0 -ne 0 ']'
++ exit 0

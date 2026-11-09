@@ -1,0 +1,10 @@
+$ python3 -B continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "instructions": 28,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "One caller/register/normal-epilogue observation, not a language or full ABI claim"
+}
+
+EXIT_CODE=0

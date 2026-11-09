@@ -1,0 +1,7 @@
+$ git diff --cached --check
+continuation/evidence/wave8/review-evidence/logs/publication-doc-followup.log:2: trailing whitespace.
++    18
+continuation/evidence/wave8/review-evidence/logs/publication-doc-followup.log:4: trailing whitespace.
++    20
+
+EXIT_CODE=2

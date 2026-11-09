@@ -1,0 +1,75 @@
+{
+  "task": "W8-AGGREGATE",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "cwd": "/tmp/hoplite/232-w8-aggregate",
+  "versions": {
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "python": "Python 3.12.3"
+  },
+  "file_sha256": {
+    "continuation/include/rage/bounded_aggregation.hpp": "54caeed74ccea34aca3acbb0a6571ba08ea9f535aa10346d9a2983e10a3e817c",
+    "continuation/src/bounded_aggregation.cpp": "63543306d46b391046ca1f336aa83c50fa5efedc017ee98f46fc448464a5e234",
+    "continuation/tests/test_bounded_aggregation.cpp": "f7cc0b9f211e681fb43c7546d075eb533917f2f6acbff5545118764d4d396f17",
+    "continuation/evidence/wave8/aggregate/anchors.json": "7308ea7aaa080e64555635693cc78ac307f4315f4dd4c8c584883089f757147c",
+    "continuation/evidence/wave8/aggregate/contract.json": "250ce3dc4937708f80a17d49a2350d94149d40b1f9ec1c21978d114f22175390",
+    "continuation/evidence/wave8/aggregate/source_objdump.txt": "7ef3badb32d91bf412804b3026c61b0b8c0db87e6a4fad364497a26224487972",
+    "continuation/evidence/wave8/aggregate/verify_source_bytes.py": "9af14ab87cc8f406732a70de4880c7c2aa4944f19443bb86c0241d7fb3d84bbd"
+  },
+  "checks": [
+    {
+      "command": "make -C continuation BUILD=\"/tmp/hoplite/232-w8-aggregate/runs/w8-aggregate/build\" \"/tmp/hoplite/232-w8-aggregate/runs/w8-aggregate/build/test_bounded_aggregation\" \"/tmp/hoplite/232-w8-aggregate/runs/w8-aggregate/build/test_bounded_aggregation_sanitize\"",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/build-acceptance.log",
+      "log_sha256": "1d8b286aaf07d6524c6de5d9dc28814c05a805bbd9d9e088972a1f2408192589"
+    },
+    {
+      "command": "runs/w8-aggregate/build/test_bounded_aggregation",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/native-acceptance.log",
+      "log_sha256": "52ae8fac23f97fdfb11a2bef4f6e3cda4b6e866d824d80404ef25c400cf4a3a4"
+    },
+    {
+      "command": "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 runs/w8-aggregate/build/test_bounded_aggregation_sanitize",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/sanitize-acceptance.log",
+      "log_sha256": "52ae8fac23f97fdfb11a2bef4f6e3cda4b6e866d824d80404ef25c400cf4a3a4"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave8/aggregate/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/static-acceptance.log",
+      "log_sha256": "3241a6fc9ff4dca77605702ca517ddd3155f2b5ef19e131117280c8892975d39"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave7/rank/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/w7-rank.log",
+      "log_sha256": "d55acd0cde97a8e5726671721c0b41254f0bacb0ac6e62aca7bff4b5f110e5e0"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/w7-abi.log",
+      "log_sha256": "9a81d709af77c54abd174f8d68f418a098cf6864b10111f53b0504dd925ea5c8"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/aggregate/logs/diff-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "native_assertions": 23452,
+  "sanitized_assertions": 23452,
+  "static_instructions": 164,
+  "static_spans": 14,
+  "static_constants": 3,
+  "not_run": [
+    "Coordinator full make -C continuation check at integrated SHA; new static gate must be added by coordinator because Makefile is outside this assignment.",
+    "Independent review at fixed integrated SHA."
+  ],
+  "inputs_unchanged": "No writes to shared handoff. New static gate checks full input ZIP, image, restored image equality and two support-source hashes.",
+  "original_execution_loading_emulation": false,
+  "full_gaps_closed": []
+}

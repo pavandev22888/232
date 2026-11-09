@@ -1,0 +1,128 @@
+[
+  {
+    "name": "angle-build",
+    "command": "make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build SOURCES=src/angle_slice.cpp evidence/wave8/final-review-flow/build/test_angle_slice evidence/wave8/final-review-flow/build/test_angle_slice_sanitize",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "angle-build.log",
+    "environment": {}
+  },
+  {
+    "name": "angle-native",
+    "command": "/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_angle_slice",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "angle-native.log",
+    "environment": {}
+  },
+  {
+    "name": "angle-sanitize",
+    "command": "/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_angle_slice_sanitize",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "angle-sanitize.log",
+    "environment": {
+      "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+      "UBSAN_OPTIONS": "halt_on_error=1"
+    }
+  },
+  {
+    "name": "angle-static",
+    "command": "python3 -B continuation/evidence/wave8/angle/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "angle-static.log",
+    "environment": {}
+  },
+  {
+    "name": "damage-build",
+    "command": "make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build SOURCES=src/damage_slice.cpp evidence/wave8/final-review-flow/build/test_damage_slice evidence/wave8/final-review-flow/build/test_damage_slice_sanitize",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "damage-build.log",
+    "environment": {}
+  },
+  {
+    "name": "damage-native",
+    "command": "/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_damage_slice",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "damage-native.log",
+    "environment": {}
+  },
+  {
+    "name": "damage-sanitize",
+    "command": "/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_damage_slice_sanitize",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "damage-sanitize.log",
+    "environment": {
+      "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+      "UBSAN_OPTIONS": "halt_on_error=1"
+    }
+  },
+  {
+    "name": "damage-static",
+    "command": "python3 -B continuation/evidence/wave8/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "damage-static.log",
+    "environment": {}
+  },
+  {
+    "name": "damage-mxcsr-current",
+    "command": "make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build mxcsr",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "log": "damage-mxcsr-current.log",
+    "environment": {}
+  },
+  {
+    "name": "damage-mxcsr-old-build",
+    "command": "g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/tests/regression_damage_mxcsr.cpp -o /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/damage_mxcsr_lto",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "log": "damage-mxcsr-old-build.log"
+  },
+  {
+    "name": "damage-mxcsr-old-expected-failure",
+    "command": "/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/damage_mxcsr_lto",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "log": "damage-mxcsr-old-expected-failure.log"
+  },
+  {
+    "name": "angle-original-static",
+    "command": "objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414af0f6 --stop-address=0x414af1d6 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "log": "angle-original-static.log"
+  },
+  {
+    "name": "angle-model-codegen",
+    "command": "objdump -d -Mintel --disassemble=_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_angle_slice",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "log": "angle-model-codegen.log"
+  },
+  {
+    "name": "damage-model-codegen",
+    "command": "objdump -d -Mintel --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_damage_slice",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "log": "damage-model-codegen.log"
+  },
+  {
+    "name": "damage-mxcsr-codegen",
+    "command": "objdump -d -Mintel --disassemble=main /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/damage_mxcsr_lto",
+    "cwd": "/tmp/hoplite/232-w8-final-flow",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "log": "damage-mxcsr-codegen.log"
+  }
+]

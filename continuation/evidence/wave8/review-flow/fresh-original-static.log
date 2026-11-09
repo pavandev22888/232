@@ -1,0 +1,330 @@
+UTC 2026-11-09T19:06:57.787063+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x413708da --stop-address=0x41370ab1 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413708da <.data+0xd08da>:
+413708da:	ff 50 30                                        	call   DWORD PTR [eax+0x30]
+413708dd:	d9 5d d0                                        	fstp   DWORD PTR [ebp-0x30]
+413708e0:	4b                                              	dec    ebx
+413708e1:	83 fb 07                                        	cmp    ebx,0x7
+413708e4:	0f 87 de 00 00 00                               	ja     0x413709c8
+413708ea:	f3 0f 10 4d d0                                  	movss  xmm1,DWORD PTR [ebp-0x30]
+413708ef:	ff 24 9d 2c dc 06 42                            	jmp    DWORD PTR [ebx*4+0x4206dc2c]
+413708f6:	f3 0f 59 0d 58 db 06 42                         	mulss  xmm1,DWORD PTR ds:0x4206db58
+413708fe:	e9 95 01 00 00                                  	jmp    0x41370a98
+41370903:	64 a1 30 00 00 00                               	mov    eax,fs:0x30
+41370909:	8b 88 a8 00 00 00                               	mov    ecx,DWORD PTR [eax+0xa8]
+4137090f:	03 88 a4 00 00 00                               	add    ecx,DWORD PTR [eax+0xa4]
+41370915:	03 88 b8 00 00 00                               	add    ecx,DWORD PTR [eax+0xb8]
+4137091b:	03 88 bc 00 00 00                               	add    ecx,DWORD PTR [eax+0xbc]
+41370921:	03 48 64                                        	add    ecx,DWORD PTR [eax+0x64]
+41370924:	83 fe 03                                        	cmp    esi,0x3
+41370927:	0f 85 a8 00 00 00                               	jne    0x413709d5
+4137092d:	b8 3f c7 98 f2                                  	mov    eax,0xf298c73f
+41370932:	c1 c9 20                                        	ror    ecx,0x20
+41370935:	c1 ce 20                                        	ror    esi,0x20
+41370938:	05 1c 4a 5f 00                                  	add    eax,0x5f4a1c
+4137093d:	05 98 bc aa 20                                  	add    eax,0x20aabc98
+41370942:	35 22 b0 2f 05                                  	xor    eax,0x52fb022
+41370947:	2d b1 7d 8d 16                                  	sub    eax,0x168d7db1
+4137094c:	90                                              	nop
+4137094d:	90                                              	nop
+4137094e:	90                                              	nop
+4137094f:	90                                              	nop
+41370950:	89 45 e0                                        	mov    DWORD PTR [ebp-0x20],eax
+41370953:	39 4d e0                                        	cmp    DWORD PTR [ebp-0x20],ecx
+41370956:	74 38                                           	je     0x41370990
+41370958:	88 f6                                           	mov    dh,dh
+4137095a:	0f be c9                                        	movsx  ecx,cl
+4137095d:	66 01 c1                                        	add    cx,ax
+41370960:	66 81 ed 5c 31                                  	sub    bp,0x315c
+41370965:	66 d3 c5                                        	rol    bp,cl
+41370968:	c1 cb 14                                        	ror    ebx,0x14
+4137096b:	66 c1 e9 09                                     	shr    cx,0x9
+4137096f:	66 c1 e7 18                                     	shl    di,0x18
+41370973:	0f ca                                           	bswap  edx
+41370975:	31 c2                                           	xor    edx,eax
+41370977:	66 0d 12 05                                     	or     ax,0x512
+4137097b:	66 21 ef                                        	and    di,bp
+4137097e:	f9                                              	stc
+4137097f:	ff e2                                           	jmp    edx
+41370981:	e1 72                                           	loope  0x413709f5
+41370983:	7a e9                                           	jp     0x4137096e
+41370985:	73 74                                           	jae    0x413709fb
+41370987:	7f 74                                           	jg     0x413709fd
+41370989:	72 74                                           	jb     0x413709ff
+4137098b:	ca e2 77                                        	retf   0x77e2
+4137098e:	74 7e                                           	je     0x41370a0e
+41370990:	b8 11 90 ed 8a                                  	mov    eax,0x8aed9011
+41370995:	05 80 10 8c 3e                                  	add    eax,0x3e8c1080
+4137099a:	c1 c8 07                                        	ror    eax,0x7
+4137099d:	35 0c 46 1e 78                                  	xor    eax,0x781e460c
+413709a2:	c1 c8 0f                                        	ror    eax,0xf
+413709a5:	c1 cf 20                                        	ror    edi,0x20
+413709a8:	c1 c0 08                                        	rol    eax,0x8
+413709ab:	2d 2a 98 9d 6c                                  	sub    eax,0x6c9d982a
+413709b0:	90                                              	nop
+413709b1:	90                                              	nop
+413709b2:	90                                              	nop
+413709b3:	89 45 e0                                        	mov    DWORD PTR [ebp-0x20],eax
+413709b6:	e9 90 00 00 00                                  	jmp    0x41370a4b
+413709bb:	f3 0f 59 0d 5c db 06 42                         	mulss  xmm1,DWORD PTR ds:0x4206db5c
+413709c3:	e9 d0 00 00 00                                  	jmp    0x41370a98
+413709c8:	f3 0f 10 0d 54 a5 05 42                         	movss  xmm1,DWORD PTR ds:0x4205a554
+413709d0:	e9 c3 00 00 00                                  	jmp    0x41370a98
+413709d5:	b8 2d 8b ef d7                                  	mov    eax,0xd7ef8b2d
+413709da:	c1 ca 20                                        	ror    edx,0x20
+413709dd:	c1 c8 0f                                        	ror    eax,0xf
+413709e0:	c1 c0 17                                        	rol    eax,0x17
+413709e3:	c1 c8 10                                        	ror    eax,0x10
+413709e6:	c1 c0 1c                                        	rol    eax,0x1c
+413709e9:	c1 c0 07                                        	rol    eax,0x7
+413709ec:	2d 50 70 19 69                                  	sub    eax,0x69197050
+413709f1:	35 29 0c a6 05                                  	xor    eax,0x5a60c29
+413709f6:	eb 00                                           	jmp    0x413709f8
+413709f8:	89 45 e0                                        	mov    DWORD PTR [ebp-0x20],eax
+413709fb:	39 4d e0                                        	cmp    DWORD PTR [ebp-0x20],ecx
+413709fe:	74 25                                           	je     0x41370a25
+41370a00:	66 89 db                                        	mov    bx,bx
+41370a03:	0f b6 c3                                        	movzx  eax,bl
+41370a06:	66 81 c7 66 55                                  	add    di,0x5566
+41370a0b:	28 de                                           	sub    dh,bl
+41370a0d:	66 c1 c2 1f                                     	rol    dx,0x1f
+41370a11:	d3 ce                                           	ror    esi,cl
+41370a13:	66 d3 ed                                        	shr    bp,cl
+41370a16:	66 d3 e5                                        	shl    bp,cl
+41370a19:	0f cd                                           	bswap  ebp
+41370a1b:	30 e9                                           	xor    cl,ch
+41370a1d:	09 f0                                           	or     eax,esi
+41370a1f:	66 21 eb                                        	and    bx,bp
+41370a22:	fa                                              	cli
+41370a23:	ff e3                                           	jmp    ebx
+41370a25:	b8 ef ad d2 df                                  	mov    eax,0xdfd2adef
+41370a2a:	35 ed 4d f3 70                                  	xor    eax,0x70f34ded
+41370a2f:	c1 cf 20                                        	ror    edi,0x20
+41370a32:	c1 c0 0b                                        	rol    eax,0xb
+41370a35:	35 1f ad 40 07                                  	xor    eax,0x740ad1f
+41370a3a:	c1 c8 1e                                        	ror    eax,0x1e
+41370a3d:	c1 c0 08                                        	rol    eax,0x8
+41370a40:	c1 c0 04                                        	rol    eax,0x4
+41370a43:	c1 cb 20                                        	ror    ebx,0x20
+41370a46:	eb 00                                           	jmp    0x41370a48
+41370a48:	89 45 e0                                        	mov    DWORD PTR [ebp-0x20],eax
+41370a4b:	8b 4d e0                                        	mov    ecx,DWORD PTR [ebp-0x20]
+41370a4e:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+41370a50:	ff 50 30                                        	call   DWORD PTR [eax+0x30]
+41370a53:	d9 5d d4                                        	fstp   DWORD PTR [ebp-0x2c]
+41370a56:	f3 0f 10 4d d4                                  	movss  xmm1,DWORD PTR [ebp-0x2c]
+41370a5b:	a1 84 08 50 42                                  	mov    eax,ds:0x42500884
+41370a60:	8b 0d 40 85 51 42                               	mov    ecx,DWORD PTR ds:0x42518540
+41370a66:	64 8b 15 2c 00 00 00                            	mov    edx,DWORD PTR fs:0x2c
+41370a6d:	8b 0c 8a                                        	mov    ecx,DWORD PTR [edx+ecx*4]
+41370a70:	3b 81 08 00 00 00                               	cmp    eax,DWORD PTR [ecx+0x8]
+41370a76:	0f 8f cf 00 00 00                               	jg     0x41370b4b
+41370a7c:	f3 0f 10 45 10                                  	movss  xmm0,DWORD PTR [ebp+0x10]
+41370a81:	a1 50 08 50 42                                  	mov    eax,ds:0x42500850
+41370a86:	80 3c 38 00                                     	cmp    BYTE PTR [eax+edi*1],0x0
+41370a8a:	74 08                                           	je     0x41370a94
+41370a8c:	f3 0f 59 0d 18 a5 05 42                         	mulss  xmm1,DWORD PTR ds:0x4205a518
+41370a94:	f3 0f 59 c8                                     	mulss  xmm1,xmm0
+41370a98:	8b 45 e8                                        	mov    eax,DWORD PTR [ebp-0x18]
+41370a9b:	64 a3 00 00 00 00                               	mov    fs:0x0,eax
+41370aa1:	f3 0f 11 4d d8                                  	movss  DWORD PTR [ebp-0x28],xmm1
+41370aa6:	d9 45 d8                                        	fld    DWORD PTR [ebp-0x28]
+41370aa9:	83 c4 24                                        	add    esp,0x24
+41370aac:	5e                                              	pop    esi
+41370aad:	5f                                              	pop    edi
+41370aae:	5b                                              	pop    ebx
+41370aaf:	5d                                              	pop    ebp
+41370ab0:	c3                                              	ret
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41370b4b --stop-address=0x41370b6f /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41370b4b <.data+0xd0b4b>:
+41370b4b:	68 84 08 50 42                                  	push   0x42500884
+41370b50:	f3 0f 11 4d dc                                  	movss  DWORD PTR [ebp-0x24],xmm1
+41370b55:	e8 10 71 a3 00                                  	call   0x41da7c6a
+41370b5a:	f3 0f 10 4d dc                                  	movss  xmm1,DWORD PTR [ebp-0x24]
+41370b5f:	83 c4 04                                        	add    esp,0x4
+41370b62:	83 3d 84 08 50 42 ff                            	cmp    DWORD PTR ds:0x42500884,0xffffffff
+41370b69:	0f 85 0d ff ff ff                               	jne    0x41370a7c
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414a5130 --stop-address=0x414a52dc /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a5130 <.data+0x205130>:
+414a5130:	53                                              	push   ebx
+414a5131:	83 ec 0c                                        	sub    esp,0xc
+414a5134:	a1 00 27 26 42                                  	mov    eax,ds:0x42262700
+414a5139:	31 e0                                           	xor    eax,esp
+414a513b:	89 44 24 08                                     	mov    DWORD PTR [esp+0x8],eax
+414a513f:	64 a1 30 00 00 00                               	mov    eax,fs:0x30
+414a5145:	8b 88 a8 00 00 00                               	mov    ecx,DWORD PTR [eax+0xa8]
+414a514b:	03 88 a4 00 00 00                               	add    ecx,DWORD PTR [eax+0xa4]
+414a5151:	03 88 b8 00 00 00                               	add    ecx,DWORD PTR [eax+0xb8]
+414a5157:	03 88 bc 00 00 00                               	add    ecx,DWORD PTR [eax+0xbc]
+414a515d:	03 48 64                                        	add    ecx,DWORD PTR [eax+0x64]
+414a5160:	b8 1c c5 af bb                                  	mov    eax,0xbbafc51c
+414a5165:	2d c4 ee 8d 0f                                  	sub    eax,0xf8deec4
+414a516a:	2d 90 4e 2a 35                                  	sub    eax,0x352a4e90
+414a516f:	c1 ca 20                                        	ror    edx,0x20
+414a5172:	35 56 a1 7c 52                                  	xor    eax,0x527ca156
+414a5177:	2d 96 26 8b 24                                  	sub    eax,0x248b2696
+414a517c:	c1 c0 02                                        	rol    eax,0x2
+414a517f:	90                                              	nop
+414a5180:	90                                              	nop
+414a5181:	90                                              	nop
+414a5182:	90                                              	nop
+414a5183:	89 44 24 04                                     	mov    DWORD PTR [esp+0x4],eax
+414a5187:	39 4c 24 04                                     	cmp    DWORD PTR [esp+0x4],ecx
+414a518b:	74 27                                           	je     0x414a51b4
+414a518d:	89 f8                                           	mov    eax,edi
+414a518f:	0f be d3                                        	movsx  edx,bl
+414a5192:	05 10 5d 20 28                                  	add    eax,0x28205d10
+414a5197:	66 29 ef                                        	sub    di,bp
+414a519a:	c1 d0 0e                                        	rcl    eax,0xe
+414a519d:	66 d3 c9                                        	ror    cx,cl
+414a51a0:	d3 ec                                           	shr    esp,cl
+414a51a2:	66 c1 e4 1c                                     	shl    sp,0x1c
+414a51a6:	0f c9                                           	bswap  ecx
+414a51a8:	80 f3 00                                        	xor    bl,0x0
+414a51ab:	66 09 cf                                        	or     di,cx
+414a51ae:	66 21 c4                                        	and    sp,ax
+414a51b1:	f9                                              	stc
+414a51b2:	ff e0                                           	jmp    eax
+414a51b4:	b8 b4 bd 5f 1d                                  	mov    eax,0x1d5fbdb4
+414a51b9:	35 43 c5 9b 1e                                  	xor    eax,0x1e9bc543
+414a51be:	c1 c0 10                                        	rol    eax,0x10
+414a51c1:	c1 c0 15                                        	rol    eax,0x15
+414a51c4:	c1 c9 20                                        	ror    ecx,0x20
+414a51c7:	05 33 ed 4e 4f                                  	add    eax,0x4f4eed33
+414a51cc:	2d 6a 03 00 7c                                  	sub    eax,0x7c00036a
+414a51d1:	35 19 b7 2d 63                                  	xor    eax,0x632db719
+414a51d6:	90                                              	nop
+414a51d7:	89 44 24 04                                     	mov    DWORD PTR [esp+0x4],eax
+414a51db:	8b 4c 24 04                                     	mov    ecx,DWORD PTR [esp+0x4]
+414a51df:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+414a51e1:	ff 50 34                                        	call   DWORD PTR [eax+0x34]
+414a51e4:	b3 01                                           	mov    bl,0x1
+414a51e6:	85 c0                                           	test   eax,eax
+414a51e8:	0f 85 dc 00 00 00                               	jne    0x414a52ca
+414a51ee:	64 a1 30 00 00 00                               	mov    eax,fs:0x30
+414a51f4:	8b 88 a8 00 00 00                               	mov    ecx,DWORD PTR [eax+0xa8]
+414a51fa:	03 88 a4 00 00 00                               	add    ecx,DWORD PTR [eax+0xa4]
+414a5200:	03 88 b8 00 00 00                               	add    ecx,DWORD PTR [eax+0xb8]
+414a5206:	03 88 bc 00 00 00                               	add    ecx,DWORD PTR [eax+0xbc]
+414a520c:	03 48 64                                        	add    ecx,DWORD PTR [eax+0x64]
+414a520f:	b8 e0 6b e8 95                                  	mov    eax,0x95e86be0
+414a5214:	c1 ca 20                                        	ror    edx,0x20
+414a5217:	2d 77 24 6b 5a                                  	sub    eax,0x5a6b2477
+414a521c:	2d 1e a1 18 07                                  	sub    eax,0x718a11e
+414a5221:	c1 ce 20                                        	ror    esi,0x20
+414a5224:	c1 c0 05                                        	rol    eax,0x5
+414a5227:	2d 4c fe 0e 1a                                  	sub    eax,0x1a0efe4c
+414a522c:	35 3a cb 85 72                                  	xor    eax,0x7285cb3a
+414a5231:	90                                              	nop
+414a5232:	89 44 24 04                                     	mov    DWORD PTR [esp+0x4],eax
+414a5236:	39 4c 24 04                                     	cmp    DWORD PTR [esp+0x4],ecx
+414a523a:	74 33                                           	je     0x414a526f
+414a523c:	89 e0                                           	mov    eax,esp
+414a523e:	0f be f6                                        	movsx  esi,dh
+414a5241:	66 81 c5 11 3f                                  	add    bp,0x3f11
+414a5246:	29 d8                                           	sub    eax,ebx
+414a5248:	c0 d1 0c                                        	rcl    cl,0xc
+414a524b:	66 c1 cb 0e                                     	ror    bx,0xe
+414a524f:	66 c1 ec 0e                                     	shr    sp,0xe
+414a5253:	c1 e6 0e                                        	shl    esi,0xe
+414a5256:	0f cd                                           	bswap  ebp
+414a5258:	66 81 f5 67 1b                                  	xor    bp,0x1b67
+414a525d:	09 eb                                           	or     ebx,ebp
+414a525f:	66 21 df                                        	and    di,bx
+414a5262:	f5                                              	cmc
+414a5263:	ff e2                                           	jmp    edx
+414a5265:	c2 e1 e0                                        	ret    0xe0e1
+414a5268:	e8 71 0f 7a 72                                  	call   0xb3c461de
+414a526d:	73 0f                                           	jae    0x414a527e
+414a526f:	b8 25 f9 b1 e5                                  	mov    eax,0xe5b1f925
+414a5274:	05 ee 57 1b 0c                                  	add    eax,0xc1b57ee
+414a5279:	2d 37 80 f3 17                                  	sub    eax,0x17f38037
+414a527e:	05 84 b8 fc 51                                  	add    eax,0x51fcb884
+414a5283:	2d de 96 69 32                                  	sub    eax,0x326996de
+414a5288:	c1 c0 15                                        	rol    eax,0x15
+414a528b:	35 9e cc ad 78                                  	xor    eax,0x78adcc9e
+414a5290:	eb 00                                           	jmp    0x414a5292
+414a5292:	89 44 24 04                                     	mov    DWORD PTR [esp+0x4],eax
+414a5296:	8b 4c 24 04                                     	mov    ecx,DWORD PTR [esp+0x4]
+414a529a:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+414a529c:	ff 50 30                                        	call   DWORD PTR [eax+0x30]
+414a529f:	d9 1c 24                                        	fstp   DWORD PTR [esp]
+414a52a2:	f3 0f 10 04 24                                  	movss  xmm0,DWORD PTR [esp]
+414a52a7:	f3 0f 51 c0                                     	sqrtss xmm0,xmm0
+414a52ab:	f3 0f 59 05 f4 cd 06 42                         	mulss  xmm0,DWORD PTR ds:0x4206cdf4
+414a52b3:	f3 0f 59 c0                                     	mulss  xmm0,xmm0
+414a52b7:	f3 0f 10 4c 24 14                               	movss  xmm1,DWORD PTR [esp+0x14]
+414a52bd:	0f 54 0d 40 a5 05 42                            	andps  xmm1,XMMWORD PTR ds:0x4205a540
+414a52c4:	0f 2e c8                                        	ucomiss xmm1,xmm0
+414a52c7:	0f 96 c3                                        	setbe  bl
+414a52ca:	8b 4c 24 08                                     	mov    ecx,DWORD PTR [esp+0x8]
+414a52ce:	31 e1                                           	xor    ecx,esp
+414a52d0:	e8 87 29 90 00                                  	call   0x41da7c5c
+414a52d5:	89 d8                                           	mov    eax,ebx
+414a52d7:	83 c4 0c                                        	add    esp,0xc
+414a52da:	5b                                              	pop    ebx
+414a52db:	c3                                              	ret
+EXIT 0
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414f3e42 --stop-address=0x414f3eb5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414f3e42 <.data+0x253e42>:
+414f3e42:	f3 0f 11 54 24 08                               	movss  DWORD PTR [esp+0x8],xmm2
+414f3e48:	8d 4d dc                                        	lea    ecx,[ebp-0x24]
+414f3e4b:	89 4c 24 04                                     	mov    DWORD PTR [esp+0x4],ecx
+414f3e4f:	8d 4d a8                                        	lea    ecx,[ebp-0x58]
+414f3e52:	89 0c 24                                        	mov    DWORD PTR [esp],ecx
+414f3e55:	8d 4d b4                                        	lea    ecx,[ebp-0x4c]
+414f3e58:	ff d0                                           	call   eax
+414f3e5a:	83 ec 0c                                        	sub    esp,0xc
+414f3e5d:	83 c4 0c                                        	add    esp,0xc
+414f3e60:	f3 0f 10 45 b4                                  	movss  xmm0,DWORD PTR [ebp-0x4c]
+414f3e65:	be ff ff ff ff                                  	mov    esi,0xffffffff
+414f3e6a:	f3 0f 10 0d 54 a5 05 42                         	movss  xmm1,DWORD PTR ds:0x4205a554
+414f3e72:	0f 2e c8                                        	ucomiss xmm1,xmm0
+414f3e75:	76 28                                           	jbe    0x414f3e9f
+414f3e77:	f3 0f 59 47 2c                                  	mulss  xmm0,DWORD PTR [edi+0x2c]
+414f3e7c:	f3 0f 11 47 2c                                  	movss  DWORD PTR [edi+0x2c],xmm0
+414f3e81:	80 7d d4 00                                     	cmp    BYTE PTR [ebp-0x2c],0x0
+414f3e85:	74 04                                           	je     0x414f3e8b
+414f3e87:	c6 47 37 01                                     	mov    BYTE PTR [edi+0x37],0x1
+414f3e8b:	0f 10 45 b8                                     	movups xmm0,XMMWORD PTR [ebp-0x48]
+414f3e8f:	0f 11 47 0c                                     	movups XMMWORD PTR [edi+0xc],xmm0
+414f3e93:	f2 0f 10 45 c8                                  	movsd  xmm0,QWORD PTR [ebp-0x38]
+414f3e98:	f2 0f 11 47 1c                                  	movsd  QWORD PTR [edi+0x1c],xmm0
+414f3e9d:	31 f6                                           	xor    esi,esi
+414f3e9f:	8b 4d f4                                        	mov    ecx,DWORD PTR [ebp-0xc]
+414f3ea2:	31 e9                                           	xor    ecx,ebp
+414f3ea4:	e8 b3 3d 8b 00                                  	call   0x41da7c5c
+414f3ea9:	89 f0                                           	mov    eax,esi
+414f3eab:	81 c4 bc 00 00 00                               	add    esp,0xbc
+414f3eb1:	5e                                              	pop    esi
+414f3eb2:	5f                                              	pop    edi
+414f3eb3:	5d                                              	pop    ebp
+414f3eb4:	c3                                              	ret
+EXIT 0

@@ -1,0 +1,55 @@
+{
+  "task": "W8-PROVIDER",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "status": "bounded_prerequisite_resolved_pending_independent_review",
+  "method": "One anchored complete leaf body; static source bytes, objdump and finite control-flow graph only",
+  "previous_frontier": "W5-FALLBACK24 left S_store=S_entry unproved across the direct call 41C610B4 -> 4200CF20",
+  "new_resolution": {
+    "scope": "Normal-flow ESI preservation across that one direct call",
+    "new_source_span": "4200CF20..4200D07A exclusive, raw offset D6CF20, 346 bytes / 89 instructions",
+    "source_span_sha256": "a926212d42a287f420bd22d103ff89eb9f842d37a088c203a60a3d8c9b44c978",
+    "proof": [
+      "Complete pinned leaf has 17 direct branch edges, all targeting pinned instruction boundaries; all fallthroughs are inside the same body.",
+      "Only three local terminal instructions exist: bare RET at 4200CF64, 4200D024 and 4200D079; there is no call or indirect jump.",
+      "No instruction reads or writes ESI/SI explicitly, and none has implicit ESI writes. REP STOSB F3 AA uses EDI, not ESI.",
+      "Every local normal path therefore preserves entry ESI independently of runtime feature-bit branch outcomes. This is conditional on the supported, unmodified code and ordinary normal flow, not proof every invocation returns.",
+      "Caller 41C610AA copied entry ECX into ESI; after the direct call, ADD ESP,0xC and the three immediate memory stores do not modify ESI.",
+      "At 41C610CA, S_store=S_entry, so DWORD[S_entry+0x1C]=0x3C888889 on the nominated supported normal continuation.",
+      "Inherited entry-to-first-call route passes O_entry+8 as initializer ECX, hence this write is at O_entry+0x24 in 32-bit address arithmetic."
+    ]
+  },
+  "identity_ledger": [
+    {"symbol": "O_entry", "meaning": "entry ECX at 41C5BDA0; concrete provider/type/validity unknown"},
+    {"symbol": "S_entry", "meaning": "entry ECX at 41C610A0; on inherited direct-call route O_entry+8"},
+    {"symbol": "S_store", "meaning": "ESI at 41C610CA; now equal to S_entry across the nominated nested call under the stated normal-flow preconditions"},
+    {"symbol": "V_install", "meaning": "post-parent-call ESI stored by 41C5E404; whole-parent ESI preservation still conditional under W5-ESI"},
+    {"symbol": "P_read", "meaning": "fresh DWORD read at 41C784D8; not equated to O_entry or V_install"}
+  ],
+  "preconditions": [
+    "Conditional raw address labels must correspond to the intended i386 code and data for any dynamic interpretation. Actual mapping/relocation is not established.",
+    "The nominated parent -> initializer -> leaf calls and subsequent store must actually be reached, with the supplied local bytes intact and no self-modification or external context/register alteration.",
+    "Ordinary valid stack/return addresses and expected instruction/segment support; all performed reads/writes must complete without faults, exceptions, unwinding, non-local control transfer or handler-induced register changes.",
+    "Destination/stack/code ranges must support the accesses without corrupting live control state. Writable extent, disjointness and lack of address wrap are conditions, not observed allocation properties.",
+    "The local conclusion applies to supported normal returns only; no termination, all-invocation success or exceptional ABI is asserted."
+  ],
+  "abi_observations_not_source_declarations": [
+    "Caller pushes 0x1520, zero, ECX; leaf reads entry [ESP+0xC] DWORD, [ESP+8] BYTE and [ESP+4] DWORD; caller adds 12 after bare RET.",
+    "No inferred __cdecl/__fastcall/thiscall declaration, original class layout or named allocator.",
+    "No inference of original language/standard/compiler from current C++17, decompiler .c text or the separate W5 type_info clue; no RTTI descriptor bound to this object."
+  ],
+  "float_and_width": "Selected initializer writes a literal 32-bit DWORD 0x3C888889. The new identity proof introduces no floating arithmetic, comparison, NaN/zero policy or runtime fallback value. XMM data movement/shuffle in the leaf is not used as a source-language or floating semantic claim.",
+  "exact_stop": "After the selected field store, at first unproved continuation 41C610D1: field-byte stability through remaining initializer/parent work to publication and the later fresh fallback read has not been established.",
+  "still_unresolved": [
+    "Parent 41C5BDA0 whole-entry-to-return preservation and frame/alias/stack discipline across its nine nested calls; W5 normal epilogue proof remains conditional.",
+    "Indirect provider [4226723C] runtime cell contents, loader/writer and mapping; W5 snapshot thunk goes to 42032493, whose allocation/return/error semantics remain unknown.",
+    "O_entry/V_install/P_read identity and same live storage generation; actual field stability, nullness, allocation extent, ownership/lifetime, alias mutations and ABA.",
+    "Writer-before-publication-before-read, scheduling/dominance, synchronization/visibility and re-establishment per helper invocation.",
+    "Original language/standard, compiler identity, whole-project ABI, full behavior and external equivalence/audit."
+  ],
+  "full_tasks_closed": [],
+  "original_language": "unresolved",
+  "original_standard": "unresolved",
+  "runtime_provider_implemented": false,
+  "original_executed_loaded_emulated": false,
+  "gate_left_to_coordinator": ["fixed-integrated-SHA review", "make -C continuation check HANDOFF=/absolute/path/RAGEBOT_HANDOFF_V10"]
+}

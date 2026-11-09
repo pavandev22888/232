@@ -1,0 +1,60 @@
+{
+  "task": "W8-DAMAGE",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "scope": "Conditional local switch/guard/float-store slice of 0x41370710, not full damage or any full GAP closure.",
+  "entry": "0x413708dd, after unresolved call at 0x413708da returns; requires its independently observed binary32 FSTP result.",
+  "output": "Raw binary32 bits at MOVSS [EBP-0x28],XMM1 (0x41370aa1), before FLD, x87 return or caller FSTP.",
+  "source_manifest": "source_anchors.json",
+  "source_manifest_sha256": "0484c3b6e8332c6c0347d8557d034461f32a0f57fbf8d3fb54ab88f39239bc7b",
+  "switch": {
+    "index": "uint32(live EBX at 0x413708e0) - 1, modulo 2^32; unsigned JA index > 7.",
+    "hitgroup_1": "FS:[30] field sum guards, then distinct provider at 0x41370a50 and signed TLS guard; on non-initializing edge, optional 0.5 MULSS before MULSS by postcall [EBP+0x10].",
+    "hitgroups_2_4_5_8": "MOVSS of first provider store, unchanged until result slot; no third-argument or flag read.",
+    "hitgroup_3": "First provider store multiplied by binary32 1.25, existing W7 API retained.",
+    "hitgroups_6_7": "First provider store multiplied by binary32 0.75.",
+    "out_of_range": "Load literal binary32 1.0 from 0x4205a554, regardless of first provider value. The provider call/store still precedes dispatch."
+  },
+  "hitgroup1_guards": {
+    "fields": "Actual separately observed FS:[30] DWORDs +A8,+A4,+B8,+BC,+64 at 0x41370903..0x41370921, in load/add order; sum is uint32 modulo 2^32.",
+    "esi_3": "Pinned immediate arithmetic at 0x4137092d..0x41370953 gives compare constant 0x20. Unequal route leads to unresolved JMP EDX at 0x4137097f.",
+    "esi_not_3": "Pinned immediate arithmetic at 0x413709d5..0x413709fb also gives 0x20. Unequal route leads to unresolved JMP EBX at 0x41370a23.",
+    "second_provider": "Equal routes calculate distinct ECX object operands 0x2e198140 (ESI==3) / 0x2e198210 (ESI!=3), outside nl.bin. [ECX] then [vtable+0x30] at 0x41370a50 remain runtime observations, not providers supplied by this model.",
+    "signed_tls": "After second provider FSTP at 0x41370a53, signed int32 global 0x42500884 > separately observed TLS DWORD [ECX+8] branches to 0x41370b4b. Equality and less continue to 0x41370a7c.",
+    "initialization_frontier": "Stop at entry 0x41370b4b, before MOVSS [EBP-0x24] at 0x41370b50 and CALL 0x41da7c6a at 0x41370b55. Effects, postcall guard, further initializer and rejoin are not fabricated.",
+    "byte_and_argument": "Only non-initializing edge consumes separately observed binary32 [EBP+0x10] at 0x41370a7c and BYTE [DWORD(0x42500850)+EDI] at 0x41370a86. Any nonzero byte causes MULSS by 0.5; it is not assigned an armor/heavy-armor meaning."
+  },
+  "store_contract": [
+    "float_stores is an ordered observation trace of selected float-data stores only, not a simulated memory image or complete trace of SEH/obfuscation/provider stores.",
+    "0x413708dd FSTP [EBP-0x30] always precedes dispatch when first return is observed.",
+    "0x41370a53 FSTP [EBP-0x2c] occurs only after hitgroup-1 guard success and independent second return observation.",
+    "0x41370aa1 MOVSS [EBP-0x28],XMM1 is appended only on a completed route.",
+    "Missing observations stop without rolling back prior observed stores and without manufacturing a float result."
+  ],
+  "preconditions": [
+    "This slice is reached through the original prefix; early 0x41370710 guards, TLS initialization, first provider binding and original path feasibility are not established by model tests.",
+    "All supplied register, field, call-result, argument and byte observations refer to their named instruction points, not a pre-call snapshot assumed unchanged across either provider.",
+    "The first and second FSTP observations have already been rounded to binary32; x87 extended precision and exception behavior before those stores are not modeled.",
+    "The reconstruction runs as its own x86 SSE GNU-compatible C++17 code. MULSS is emitted with fixed destination/source order to avoid optimizer NaN-payload commutation or reassociation; this says nothing about the original source language/toolchain.",
+    "Comparisons to the original arithmetic require matching MXCSR rounding/DAZ/FTZ and masked-exception settings. Fresh tests use host default round-to-nearest, non-flushing SSE. Exception flags/traps are not API outputs.",
+    "NaN payload/quieting and signed-zero checks describe the local SSE slot. FLD at 0x41370aa6 can alter signaling-NaN behavior; no exact bit claim is made for the later x87/caller store.",
+    "Raw-word edge-case tests are synthetic, not proof that every such observation is reachable through the original FSTP or guard paths."
+  ],
+  "focused_tests": [
+    "Original scale_hitgroup3_case API and assertions retained.",
+    "All eight hitgroup targets and out-of-range signed extremes; provider store retained on default.",
+    "Distinct provider values and missing-return boundaries; ordered partial and completed float stores.",
+    "Both ESI alternatives; PEB-field unsigned wrap; unknown/mismatched guards.",
+    "Post-second-call signed TLS less/equal/greater and int32 extremes; missing byte and any-nonzero byte semantics.",
+    "Binary32 NaN payloads/quieting and fixed operand order, infinity/invalid, positive/negative zero.",
+    "Subnormal witnesses prove 0.5 multiplication rounds before the final multiplication, not a fused/reassociated factor.",
+    "Coordinator unity/LTO regression switches MXCSR round-to-nearest/upward between identical calls and restores the saved control state; volatile memory-barrier MULSS prevents reuse across those calls."
+  ],
+  "remaining_unknowns": [
+    "Entry guards, initializers and first provider identity/effects/reachability before 0x413708dd.",
+    "Runtime mappings/objects/vtables for 0x2e198140 and 0x2e198210, despite known ECX operand constants; same +0x30 slot does not establish provider identity.",
+    "Unequal guard indirect targets/register effects and hitgroup-1 initialization route at 0x41370b4b.",
+    "Meaning, producer, ownership and lifetime of byte table 0x42500850 and stack argument; no armor-chain semantics inferred from the 0.5 factor.",
+    "Geometry/traces, caller integration, weapon/surface/armor dependencies, original language/ABI declarations and whole damage function remain open."
+  ],
+  "verification_boundary": "Focused make BUILD targets and standalone --handoff verifier only in this worktree. Full integrated make check and independent fixed-SHA review belong to coordinator; make evidence has hard-coded scratch writes outside this task's allowed paths."
+}

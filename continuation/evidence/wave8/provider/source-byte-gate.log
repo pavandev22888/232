@@ -1,0 +1,26 @@
+$ python3 -B continuation/evidence/wave8/provider/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+CWD /tmp/hoplite/232-w8-provider
+STDOUT
+{
+  "passed": true,
+  "task": "W8-PROVIDER",
+  "source_pins": 10,
+  "zip_members": 2,
+  "windows": 3,
+  "fresh_instructions": 123,
+  "new_leaf_bytes": 346,
+  "new_leaf_instructions": 89,
+  "new_leaf_direct_edges": 17,
+  "normal_returns": [
+    "0x4200cf64",
+    "0x4200d024",
+    "0x4200d079"
+  ],
+  "resolved": "S_store=S_entry across the nominated 0x4200CF20 call on supported normal flow",
+  "frontier": "Later field stability, actual pointer publication/read identity, lifetime, runtime mapping and language/standard remain unresolved",
+  "original_executed_loaded_emulated": false
+}
+
+STDERR
+
+EXIT 0

@@ -1,0 +1,6 @@
+{
+  "command": "git diff --cached --check",
+  "exit_code": 2,
+  "stdout": "continuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:39: trailing whitespace.\n+    41ed:\t00 00 00 \ncontinuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:60: trailing whitespace.\n+    422f:\t00 \ncontinuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:68: trailing whitespace.\n+    424d:\t00 \ncontinuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:79: trailing whitespace.\n+    4280:\t00 \ncontinuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:90: trailing whitespace.\n+    42ad:\t00 00 00 \ncontinuation/evidence/wave8/movement/logs/native-predicate-codegen.txt:91: new blank line at EOF.\ncontinuation/evidence/wave8/movement/source_disassembly.txt:157: new blank line at EOF.\n",
+  "stderr": ""
+}

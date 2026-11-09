@@ -1,0 +1,78 @@
+$ python3 -c 'from pathlib import Path
+import collections,hashlib,json,subprocess
+root=Path.cwd(); audit=root/'"'"'continuation/evidence/wave8/audit'"'"'; handoff=Path('"'"'/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10'"'"')
+def git(*args): return subprocess.check_output(['"'"'git'"'"',*args],text=True).strip()
+def raw_at(commit,path): return subprocess.check_output(['"'"'git'"'"','"'"'show'"'"',commit+'"'"':'"'"'+path])
+def sha(data): return hashlib.sha256(data).hexdigest()
+h=json.loads((audit/'"'"'history.json'"'"').read_text()); rows=[json.loads(s) for s in (audit/'"'"'commits.jsonl'"'"').read_text().splitlines()]
+ids=[r['"'"'sha'"'"'] for r in rows]; cutoff=h['"'"'inventory_tip'"'"']; base=h['"'"'base_commit'"'"']; reviewed=git('"'"'rev-parse'"'"','"'"'HEAD'"'"')
+assert len(ids)==len(set(ids))==93
+assert set(ids)==set(git('"'"'rev-list'"'"',cutoff).splitlines())
+refs=h['"'"'refs_at_cutoff'"'"']; assert len(refs)==14
+assert set(ids)==set(git('"'"'rev-list'"'"',*sorted(set(refs.values()))).splitlines())
+for row in rows:
+ actual=git('"'"'show'"'"','"'"'-s'"'"','"'"'--format=%H%n%P%n%T%n%cI%n%s'"'"',row['"'"'sha'"'"']).splitlines()
+ assert actual==[row['"'"'sha'"'"'],'"'"' '"'"'.join(row['"'"'parents'"'"']),row['"'"'tree'"'"'],row['"'"'committed_at'"'"'],row['"'"'subject'"'"']],row['"'"'sha'"'"']
+ changes=git('"'"'diff-tree'"'"','"'"'--root'"'"','"'"'--no-commit-id'"'"','"'"'--name-status'"'"','"'"'-r'"'"',row['"'"'sha'"'"']).splitlines()
+ assert [s.replace('"'"'\t'"'"','"'"':'"'"',1) for s in changes]==row['"'"'changes'"'"'],('"'"'changed paths'"'"',row['"'"'sha'"'"'])
+assert dict(collections.Counter(r['"'"'category'"'"'] for r in rows))==h['"'"'category_counts'"'"']
+counts=[len(git('"'"'rev-list'"'"','"'"'514479c'"'"').splitlines()),len(git('"'"'rev-list'"'"','"'"'514479c'"'"','"'"'0fe371b'"'"').splitlines()),len(git('"'"'rev-list'"'"',base).splitlines()),len(ids)]
+assert counts==[90,91,92,93]
+print('"'"'PASS frozen ancestry: 93 unique commits, 14 frozen refs, exact parents/tree/time/subject/changed paths; counts 90/91/92/93'"'"')
+source_changes=[r['"'"'sha'"'"'] for r in rows if r['"'"'sha'"'"']!='"'"'0fe371bf61446ee799c3ad671b16f23bb7f6a643'"'"' and any(s.split('"'"':'"'"',1)[-1].startswith(('"'"'continuation/src/'"'"','"'"'continuation/include/'"'"','"'"'continuation/tests/'"'"')) for s in r['"'"'changes'"'"'])]
+assert len(source_changes)==h['"'"'source_change_commit_count_excluding_squash'"'"']==21
+print('"'"'PASS all 21 source/include/test-changing commits excluding squash are inventoried'"'"')
+trees={git('"'"'rev-parse'"'"',x+'"'"'^{tree}'"'"') for x in ['"'"'514479c'"'"','"'"'0fe371b'"'"',base]}; assert trees=={h['"'"'tree_identity'"'"']['"'"'shared_tree'"'"']}
+assert not git('"'"'diff'"'"','"'"'--name-only'"'"',h['"'"'tree_identity'"'"']['"'"'reviewed_code_unchanged_since'"'"'],base,'"'"'--'"'"','"'"'continuation/src'"'"','"'"'continuation/include'"'"','"'"'continuation/tests'"'"','"'"'continuation/Makefile'"'"','"'"':(glob)continuation/**/*.py'"'"')
+baseline='"'"'ed9df79c028e63ca56fc191a226f5fe2f221df64'"'"'; assert git('"'"'cat-file'"'"','"'"'-t'"'"',baseline)=='"'"'commit'"'"'
+assert subprocess.run(['"'"'git'"'"','"'"'merge-base'"'"','"'"'--is-ancestor'"'"',baseline,'"'"'514479c'"'"']).returncode==0
+assert subprocess.run(['"'"'git'"'"','"'"'merge-base'"'"','"'"'--is-ancestor'"'"',baseline,'"'"'0fe371b'"'"']).returncode==1
+archives=h['"'"'archive_history'"'"']; changing=git('"'"'log'"'"','"'"'--format=%H'"'"',cutoff,'"'"'--'"'"',*archives['"'"'paths'"'"']).splitlines(); assert changing==[archives['"'"'only_changing_commit'"'"']]
+print('"'"'PASS shared publication tree, unchanged reviewed W7 code at audit base, retained ed9df79 baseline, unchanged six archives/history prompt after import'"'"')
+c=json.loads((audit/'"'"'coverage.json'"'"').read_text()); w5raw=raw_at(base,c['"'"'source_inventory'"'"']); assert sha(w5raw)==c['"'"'source_inventory_sha256'"'"']; w5=json.loads(w5raw)
+assert len(c['"'"'domains'"'"'])==len({d['"'"'id'"'"'] for d in c['"'"'domains'"'"']})==24
+assert [d['"'"'id'"'"'] for d in c['"'"'domains'"'"']]==[d['"'"'id'"'"'] for d in w5['"'"'domains'"'"']]
+assert not c['"'"'full_tasks_closed'"'"'] and c['"'"'full_ragebot_reconstructed'"'"'] is False
+receipts=c['"'"'root_module_receipts'"'"']; assert len(receipts)==15; checked=0
+for name,pins in receipts.items():
+ for path,digest in pins.items(): assert sha(raw_at(base,path))==digest,(name,path); checked+=1
+for d in c['"'"'domains'"'"']:
+ assert d['"'"'remaining'"'"'] and d['"'"'next_bounded_anchor'"'"']
+ assert set(d['"'"'root_modules'"'"'])<=set(receipts)
+ for path in d['"'"'current_evidence'"'"']: assert raw_at(base,path)
+ assert set(d['"'"'archive_source_keys'"'"'])<=set(c['"'"'read_only_archive_navigation_receipts'"'"'])
+for label,pin in c['"'"'read_only_archive_navigation_receipts'"'"'].items():
+ path=(handoff/pin['"'"'path_relative_to_handoff'"'"']).resolve(); assert path.is_relative_to(handoff)
+ assert path.stat().st_size==pin['"'"'size_bytes'"'"'] and sha(path.read_bytes())==pin['"'"'sha256'"'"'],label
+print(f'"'"'PASS ordered 24-domain W5 identity, 15 baseline module triplets/{checked} hashes, all baseline evidence paths and 14 archived-navigation hash/size receipts'"'"')
+assert not git('"'"'diff'"'"','"'"'--name-only'"'"',base,reviewed,'"'"'--'"'"','"'"'continuation/evidence'"'"','"'"':(exclude)continuation/evidence/wave8/**'"'"')
+assert not git('"'"'diff'"'"','"'"'--name-only'"'"',base,reviewed,'"'"'--'"'"',*archives['"'"'paths'"'"'])
+print('"'"'PASS inherited root evidence outside wave8 and source archives unchanged from audit base to reviewed SHA'"'"')
+p=json.loads((audit/'"'"'publication.json'"'"').read_text()); captures={}
+for name,pin in p['"'"'captures'"'"'].items():
+ data=Path(pin['"'"'path'"'"']).read_bytes(); assert sha(data)==pin['"'"'sha256'"'"']; captures[name]=json.loads(data)
+pr=captures['"'"'pr1-state.json'"'"']; assert p['"'"'pr'"'"']=={k:pr[k] for k in p['"'"'pr'"'"']}
+thread=captures['"'"'pr1-review-threads.json'"'"']['"'"'data'"'"']['"'"'repository'"'"']['"'"'pullRequest'"'"']; assert thread['"'"'reviewThreads'"'"']==p['"'"'review_threads'"'"']; assert thread['"'"'headRefOid'"'"']==p['"'"'head_ref_oid'"'"']
+assert pr['"'"'state'"'"']=='"'"'MERGED'"'"' and pr['"'"'mergeCommit'"'"']['"'"'oid'"'"']=='"'"'0fe371bf61446ee799c3ad671b16f23bb7f6a643'"'"' and not pr['"'"'reviews'"'"'] and not pr['"'"'statusCheckRollup'"'"'] and not thread['"'"'reviewThreads'"'"']['"'"'nodes'"'"']
+actual=captures['"'"'github-events.json'"'"']; assert len(actual)==len(p['"'"'events'"'"'])==4
+for saved,event in zip(p['"'"'events'"'"'],actual):
+ for key in ['"'"'id'"'"','"'"'type'"'"','"'"'created_at'"'"']: assert saved[key]==event[key]
+ for key in ['"'"'action'"'"','"'"'ref'"'"','"'"'before'"'"','"'"'head'"'"','"'"'push_id'"'"']:
+  if key in saved: assert saved[key]==event['"'"'payload'"'"'][key]
+ if saved['"'"'type'"'"']=='"'"'PushEvent'"'"': assert set(saved['"'"'reachable_commit_delta'"'"'])==set(git('"'"'rev-list'"'"',saved['"'"'head'"'"'],'"'"'^'"'"'+saved['"'"'before'"'"']).splitlines())
+print('"'"'PASS SHA-bound parent captures: PR1 merged, no recorded reviews/threads/checks; 4 events, 2 one-commit push deltas only; no exhaustive-push/CI-pass claim'"'"')
+v=json.loads((audit/'"'"'verification.json'"'"').read_text())
+for name,digest in v['"'"'artifacts_sha256_excluding_this_file'"'"'].items(): assert sha((audit/name).read_bytes())==digest,name
+print('"'"'PASS all 15 audit artifact hashes; audit preparation failure remains separately preserved'"'"')
+print('"'"'BOUNDARY audit coverage is frozen at 9b2a75f/08283dd, not current W8 source completeness or current all-ref count; no original execution/loading/emulation'"'"')
+'
+PASS frozen ancestry: 93 unique commits, 14 frozen refs, exact parents/tree/time/subject/changed paths; counts 90/91/92/93
+PASS all 21 source/include/test-changing commits excluding squash are inventoried
+PASS shared publication tree, unchanged reviewed W7 code at audit base, retained ed9df79 baseline, unchanged six archives/history prompt after import
+PASS ordered 24-domain W5 identity, 15 baseline module triplets/45 hashes, all baseline evidence paths and 14 archived-navigation hash/size receipts
+PASS inherited root evidence outside wave8 and source archives unchanged from audit base to reviewed SHA
+PASS SHA-bound parent captures: PR1 merged, no recorded reviews/threads/checks; 4 events, 2 one-commit push deltas only; no exhaustive-push/CI-pass claim
+PASS all 15 audit artifact hashes; audit preparation failure remains separately preserved
+BOUNDARY audit coverage is frozen at 9b2a75f/08283dd, not current W8 source completeness or current all-ref count; no original execution/loading/emulation
+
+EXIT_CODE=0

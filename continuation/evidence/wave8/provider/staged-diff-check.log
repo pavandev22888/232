@@ -1,0 +1,7 @@
+$ git diff --cached --check
+CWD /tmp/hoplite/232-w8-provider
+STDOUT
+
+STDERR
+
+EXIT 0

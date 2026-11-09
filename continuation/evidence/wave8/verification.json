@@ -1,0 +1,154 @@
+{
+  "task": "W8",
+  "status": "accepted_bounded_scope",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "reviewed_code_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+  "tested_head": "8de396c395fe97289c00d855b98a23cbf42f74de",
+  "tested_code_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+  "tested_vs_reviewed_difference": "Assignment metadata only; coordinator verified implementation/include/tests/Makefile trees identical at reviewed, tested and post-review heads.",
+  "commands": [
+    {
+      "command": "make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w8-final-check/build",
+      "exit_code": 0,
+      "log": "verification.log",
+      "log_sha256": "8b200f26bdabf1eaaa04310f67658657e182df6b03c5dfdb91c91b99263f38f1"
+    },
+    {
+      "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+      "exit_code": 0,
+      "log": "bundle.log",
+      "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+    },
+    {
+      "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+      "exit_code": 0,
+      "log": "integrity.log",
+      "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+    }
+  ],
+  "native_tests": "passed",
+  "asan_ubsan": "passed",
+  "static_evidence": "passed",
+  "modules": 19,
+  "test_programs": 21,
+  "instrumented_checks_per_mode": 78293,
+  "counted_checks_by_program_per_mode": {
+    "actor_scalar_pipeline": 119,
+    "angle_slice": 615,
+    "bounded_aggregation": 23452,
+    "bounded_message_fields": 1034,
+    "charge_state": 3490,
+    "damage_slice": 336,
+    "geometry_slice": 78,
+    "history_slice": 22,
+    "history_slot_slice": 4351,
+    "lifecycle_seed_slice": 2820,
+    "marker_pipeline": 13255,
+    "movement_slice": 198,
+    "position_lifecycle": 208,
+    "position_pipeline": 392,
+    "position_records": 2601,
+    "queue_context_slice": 106,
+    "release_state_slice": 21291,
+    "reset_table": 3622,
+    "resolved_scalar_helper": 53,
+    "shot_result_slice": 250
+  },
+  "additional_uncounted_tests": [
+    "reset_predecessor"
+  ],
+  "mxcsr_unity_lto": "passed; separate 2-result regression included in check, not counted above",
+  "new_w8_static_gates": 11,
+  "python_unit_tests": 13,
+  "bundle_files": 960,
+  "restored_integrity_records": 64087,
+  "independent_agent_reviews": {
+    "result": "accepted_bounded_scope_with_explicit_frontiers",
+    "initial_reviewed_head": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+    "final_reviewed_head": "bc89d9d851d710208659fc702f1094a317023ab4",
+    "reports": [
+      "evidence/wave8/final-review-flow/report.json",
+      "evidence/wave8/final-review-evidence/report.json",
+      "evidence/wave8/integration/state-review-receipt.json"
+    ],
+    "blocking_findings_remaining": 0,
+    "resolved_finding": "Damage non-volatile MULSS reused under unity/LTO after MXCSR change; fixed dc18d0b and reproduced independently old-fail/new-pass.",
+    "external_audit": false
+  },
+  "initial_integrated_gate": "integration/initial-check.json",
+  "earlier_failures_preserved": [
+    "integration/baseline.json",
+    "integration/baseline-failure-excerpt.log",
+    "integration/damage-mxcsr/before.log",
+    "review-flow/",
+    "per-task initial failure logs"
+  ],
+  "audit_snapshot": {
+    "commits": 93,
+    "refs": 14,
+    "push_events": 2,
+    "full_push_history_available": false,
+    "report": "audit/history.json",
+    "limit": "Frozen historical snapshot; not the current growing all-ref count."
+  },
+  "full_tasks_closed": [],
+  "original_language_established": false,
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "input_and_work_modified": false,
+  "publication_head_gate": "After this metadata-only receipt commit repeat all gates on its exact HEAD and put the final SHA, commands and exit codes in PR #2. A committed receipt cannot name its own commit SHA; no merge or queue is authorized.",
+  "publication_candidate_gate": {
+    "tested_head": "d3e526faf2a0053b14547b05bded41ff0972f8e8",
+    "commands": [
+      {
+        "command": "make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w8-final-check/build",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/check.log",
+        "log_sha256": "5411f6f95da041de7a85fe11c0e76dd20fddae97857511bc34d371c0cfdfd7bc"
+      },
+      {
+        "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "command": "python3 -B runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "command": "git diff --check",
+        "exit_code": 0,
+        "workspace_log": "runs/w8-publication/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "log_retention": "Complete logs retained in the ignored workspace runs/w8-publication directory; hashes recorded here. Earlier committed integration logs retain their original tested SHA.",
+    "reviewed_code_identity": "git diff --exit-code bc89d9d851d710208659fc702f1094a317023ab4 d3e526faf2a0053b14547b05bded41ff0972f8e8 -- continuation/src continuation/include continuation/tests continuation/Makefile: exit 0",
+    "committed_diff_check": "git diff --check origin/main HEAD at d3e526faf2a0053b14547b05bded41ff0972f8e8: exit 0"
+  },
+  "publication_snapshot": {
+    "observed_at_utc": "2026-11-09T19:20:40.140387+00:00",
+    "url": "https://github.com/pavandev22888/232/pull/2",
+    "state": "OPEN",
+    "observed_head": "d3e526faf2a0053b14547b05bded41ff0972f8e8",
+    "base_head": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+    "mergeable": "MERGEABLE",
+    "merge_state_status": "CLEAN",
+    "github_check_count": 0,
+    "github_actions_run_count": 0,
+    "github_review_count": 0,
+    "unresolved_review_threads": 0,
+    "github_auto_merge_request": null,
+    "thread_review_loop": {
+      "enabled": true,
+      "autoMerge": false,
+      "source": "thread_link_pull_request after PR creation"
+    },
+    "merge_or_queue_performed": false,
+    "scope": "Initial publication snapshot, not a live status. No GitHub CI/checks were present; local PASS is not a green GitHub CI result."
+  }
+}

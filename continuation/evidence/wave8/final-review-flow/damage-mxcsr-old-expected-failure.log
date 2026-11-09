@@ -1,0 +1,5 @@
+CWD /tmp/hoplite/232-w8-final-flow
+CMD /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/damage_mxcsr_lto
+EXPECTED_EXIT 1
+damage MXCSR: nearest=3fa00001, upward=3fa00001
+EXIT 1

@@ -1975,6 +1975,401 @@
         "verification": "continuation/evidence/wave7/verification.json",
         "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
       }
+    },
+    {
+      "id": "W8-AUDIT",
+      "owner": "w8-audit",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-audit",
+      "branch": "hoplite/tanagra-adb72df5--w8-audit",
+      "write_paths": [
+        "continuation/evidence/wave8/audit/"
+      ],
+      "scope": "Audit all reachable commits/refs and preserved publication evidence; identify actual remaining transitive gaps, stale publication claims and newly useful source anchors. No code changes or claim to unavailable historical pushes.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "4be052034bbf48d0877bbc7d700c55af7b005d00",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-AGGREGATE",
+      "owner": "w8-aggregate",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-aggregate",
+      "branch": "hoplite/tanagra-adb72df5--w8-aggregate",
+      "write_paths": [
+        "continuation/evidence/wave8/aggregate/",
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp"
+      ],
+      "scope": "Beyond W7 normal ranking: decode 0x4149EC2D index handler and immediate owner+4/+B0 dependencies. Implement a new contiguous source-backed body if possible; no fabricated setting/provider.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "c3b217274b1093f2e981699a79452e422e0a9694",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-DAMAGE",
+      "owner": "w8-damage",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-damage",
+      "branch": "hoplite/tanagra-adb72df5--w8-damage",
+      "write_paths": [
+        "continuation/evidence/wave8/damage/",
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp"
+      ],
+      "scope": "Extend 0x41370710 beyond hitgroup 3 into other byte-backed hitgroups/guards/armor logic; preserve provider observations, float order and stores. No guessed weapon/surface semantics.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "ee3b54c60ae9468cde11927b1d83437db6bc9a3e",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-MOVEMENT",
+      "owner": "w8-movement",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-movement",
+      "branch": "hoplite/tanagra-adb72df5--w8-movement",
+      "write_paths": [
+        "continuation/evidence/wave8/movement/",
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp"
+      ],
+      "scope": "Reconstruct missing callee 0x414A5130 beyond W7 caller; prove branch/operation order and connect to existing caller only at established boundary. No assumed command/global providers.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "6286ad1506e1eed6d8133418554ada017e430d16",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-HISTORY",
+      "owner": "w8-history",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-history",
+      "branch": "hoplite/tanagra-adb72df5--w8-history",
+      "write_paths": [
+        "continuation/evidence/wave8/history/",
+        "continuation/include/rage/history_slot_slice.hpp",
+        "continuation/src/history_slot_slice.cpp",
+        "continuation/tests/test_history_slot_slice.cpp"
+      ],
+      "scope": "Extend 0x413F88F0 storage beyond W7 no-growth path: decode adjacent growth/initialization and implement deterministic local state changes with explicit allocator/postcall observations; do not assume power-of-two capacity or identity through opaque calls.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "f31fd6bd076491a3b950ce23c041989601f4d25b",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-MESSAGE",
+      "owner": "w8-message",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-message",
+      "branch": "hoplite/tanagra-adb72df5--w8-message",
+      "write_paths": [
+        "continuation/evidence/wave8/message/",
+        "continuation/include/rage/bounded_message_fields.hpp",
+        "continuation/src/bounded_message_fields.cpp",
+        "continuation/tests/test_bounded_message_fields.cpp"
+      ],
+      "scope": "Beyond W6 message static frontier/W5 bounded fields: trace one immediate message receiver/consumer body from existing source anchors and implement source-backed local transform if possible, otherwise document new precise dependency. No broad repeated xref scans or invented network sender.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "5308ba376afa4cfd873ff0b064fe766f3148fd09",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-GEOMETRY",
+      "owner": "w8-geometry",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-geometry",
+      "branch": "hoplite/tanagra-adb72df5--w8-geometry",
+      "write_paths": [
+        "continuation/evidence/wave8/geometry/",
+        "continuation/include/rage/geometry_slice.hpp",
+        "continuation/src/geometry_slice.cpp",
+        "continuation/tests/test_geometry_slice.cpp"
+      ],
+      "scope": "Beyond W6 0x4136FFA0 geometry frontier: reconstruct one immediate trace-result transform/consumer with exact raw layout and guards, using new geometry_slice module only if evidence suffices. Do not duplicate damage writes or invent a trace provider.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "d060a446ccfab698b5b394d86f118e5365dab499",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-PROVIDER",
+      "owner": "w8-provider",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/232-w8-provider",
+      "branch": "hoplite/tanagra-adb72df5--w8-provider",
+      "write_paths": [
+        "continuation/evidence/wave8/provider/"
+      ],
+      "scope": "Resolve one concrete runtime binding/language/ABI prerequisite beyond W7 ABI and W5 fallback24/indirect evidence. Inspect local source boundary and type descriptors at anchored caller/provider; do not infer original language/standard from decompiler or reconstruction. Stop with precise evidence-backed frontier if unresolved.",
+      "acceptance": [
+        "New source/hash/byte anchors and explicit identity/ABI/float preconditions.",
+        "Source-backed implementation where possible with focused native and ASan/UBSan checks, static verifier and no original execution.",
+        "Independent fixed integrated SHA review and coordinator make check."
+      ],
+      "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge.",
+      "integrated_commit": "ceab1a75f7c0e1f4fb1b93cf67d846c4643ff75d",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-RESET",
+      "owner": "primary-coordinator",
+      "status": "done",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/workspace/runs/worktrees/w8-reset",
+      "branch": "hoplite/tanagra-adb72df5--w8-reset",
+      "write_paths": [
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_table.cpp",
+        "continuation/evidence/wave8/reset/"
+      ],
+      "scope": "New immediate EAX source at 0x415DEBDE resolves six iterations of local reset table; compose existing body/fallthrough projections, not full reset entry/scheduling.",
+      "acceptance": [
+        "Pinned immediate source and contiguous loop bytes.",
+        "Raw six-record preservation tests, native/sanitizers and integrated fixed-SHA review."
+      ],
+      "stop_condition": "Six-iteration local table plus accepted fallthrough stores; no external caller or scheduling inference.",
+      "integrated_commit": "6cd669c139a688f20261c3143868731a89aeb853",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-REVIEW-FLOW",
+      "owner": "w8-review-flow",
+      "status": "done",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-flow",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-flow",
+      "write_paths": [
+        "continuation/evidence/wave8/review-flow/"
+      ],
+      "scope": "Damage switch, movement predicate/caller and geometry postcall; exact float/unordered/store behavior, site-specific provider observations and source bytes. Check x86 compiler assumptions and nonvolatile MULSS inline asm versus claimed MXCSR semantics.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-REVIEW-STATE",
+      "owner": "w8-review-state",
+      "status": "done",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-state",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-state",
+      "write_paths": [
+        "continuation/evidence/wave8/review-state/"
+      ],
+      "scope": "Callback context/settings/owner raw32 reads, message receiver, reset six-record table; actual byte provenance, address wrapping, identity, widths, store order and stop boundaries. History may arrive separately for fixed-SHA followup.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-REVIEW-EVIDENCE",
+      "owner": "w8-review-evidence",
+      "status": "done",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-evidence",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-evidence",
+      "write_paths": [
+        "continuation/evidence/wave8/review-evidence/"
+      ],
+      "scope": "Independently assess audit history/ref/publication facts and provider ESI proof, all W8 evidence quality/static gates, regression claims and unproven full-goal boundaries. No source-language overclaims.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion.",
+      "result": "Frozen bcc5918 review completed; damage MXCSR P2 fixed in dc18d0b, final followup assigned separately.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-ANGLE",
+      "owner": "w8-angle",
+      "status": "done",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-angle",
+      "branch": "hoplite/tanagra-adb72df5--w8-angle",
+      "write_paths": [
+        "continuation/evidence/wave8/angle/",
+        "continuation/include/rage/angle_slice.hpp",
+        "continuation/src/angle_slice.cpp",
+        "continuation/tests/test_angle_slice.cpp"
+      ],
+      "scope": "Audit uncovered angle/recoil domain: new local guard/numeric effect at 0x414AE770 or 0x414AF1A5..0x414AF1CC, with caller 0x4147A2A0 as navigation only. Preserve exact FP chain; unknown command/settings remain explicit.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure.",
+      "integrated_commit": "b95aa5cd6542821c723a1824b54a5264d33f7a5e"
+    },
+    {
+      "id": "W8-SHOT",
+      "owner": "w8-shot",
+      "status": "done",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-shot",
+      "branch": "hoplite/tanagra-adb72df5--w8-shot",
+      "write_paths": [
+        "continuation/evidence/wave8/shot/",
+        "continuation/include/rage/shot_result_slice.hpp",
+        "continuation/src/shot_result_slice.cpp",
+        "continuation/tests/test_shot_result_slice.cpp"
+      ],
+      "scope": "Audit uncovered shot accounting: one source-store-consumer body at 0x414C0A50, Cring stride0x98/mod150 and R stride0xF1A0 only if freshly proved. No guessed hit/miss/server semantics.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure.",
+      "integrated_commit": "ac04b9e07ee039dc5434ae851da3c13565cdcd2a"
+    },
+    {
+      "id": "W8-QUEUE",
+      "owner": "w8-queue",
+      "status": "done",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-queue",
+      "branch": "hoplite/tanagra-adb72df5--w8-queue",
+      "write_paths": [
+        "continuation/evidence/wave8/queue/",
+        "continuation/include/rage/queue_context_slice.hpp",
+        "continuation/src/queue_context_slice.cpp",
+        "continuation/tests/test_queue_context_slice.cpp"
+      ],
+      "scope": "Audit uncovered worker dependency: 0x414B2930 to0x414AC2D0 context capture/enqueue/consumer relation with original raw layout/ownership order. Do not invent scheduler/provider/lifetime; initializer table only navigation.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure.",
+      "integrated_commit": "fb215563cf2d9b7f97b42b947ee5436f2efa5449"
+    },
+    {
+      "id": "W8-FINAL-FLOW",
+      "owner": "w8-review-flow",
+      "status": "done",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-flow",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-flow",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-flow/"
+      ],
+      "scope": "Review angle tail and coordinator damage MXCSR fix, unity/LTO regression and preserved prior flow contracts. No broad new reconstruction.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-FINAL-STATE",
+      "owner": "w8-review-state",
+      "status": "done",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-state",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-state",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-state/"
+      ],
+      "scope": "Review integrated history growth and shot raw index/store/postcall slice; exact widths, bounds, cursor distinction, postcall identity and stop boundaries.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
+    },
+    {
+      "id": "W8-FINAL-EVIDENCE",
+      "owner": "w8-review-evidence",
+      "status": "done",
+      "base_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "worktree": "/tmp/hoplite/232-w8-final-evidence",
+      "branch": "hoplite/tanagra-adb72df5--w8-final-evidence",
+      "write_paths": [
+        "continuation/evidence/wave8/final-review-evidence/"
+      ],
+      "scope": "Review integrated queue capture/task/worker snapshot chain, lifecycle/frontiers and all four new history/shot/angle/queue source gates; no implied scheduler or complete language/ABI.",
+      "acceptance": [
+        "Read bytes/code independently, focused native and ASan/UBSan as relevant plus source gates; report blocking findings or bounded acceptance on the fixed SHA.",
+        "Commit concise report.json or README.md, commands/exits and logs only in assigned directory."
+      ],
+      "stop_condition": "Review assigned delta, no new implementation or unrelated tests; preserve initial findings; no push/merge.",
+      "acceptance_report": "continuation/evidence/wave8/verification.json",
+      "acceptance_scope": "Only assigned bounded result; no full CODE01/GAP closure."
     }
   ],
   "goal_correction": {
@@ -2005,6 +2400,20 @@
     "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a"
   },
   "current_continuation": {
+    "id": "W8",
+    "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "coordinator": "primary-coordinator",
+    "status": "accepted_bounded_scope",
+    "ownership_check": "Only current running thread visible; no prior active owners. PR #1 merged; current branch incorporates origin/main without changing inherited tree.",
+    "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "full_tasks_closed": [],
+    "manifest": "continuation/evidence/wave8/assignment.json",
+    "integrated_candidate": "bc89d9d851d710208659fc702f1094a317023ab4",
+    "report": "continuation/evidence/wave8/verification.json",
+    "coordinator_gate_head": "8de396c395fe97289c00d855b98a23cbf42f74de",
+    "active_assignments": []
+  },
+  "previous_continuation_w7": {
     "id": "W7",
     "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
     "coordinator": "primary-coordinator",

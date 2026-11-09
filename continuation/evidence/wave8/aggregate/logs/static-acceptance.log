@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "instructions": 164,
+  "spans": 14,
+  "constants": 3,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "raw_image_source": "pinned input ZIP",
+  "original_execution_loading_emulation": false,
+  "scope": "Context initialization, observed raw32 relations and pinned handler frontier; not runtime providers"
+}

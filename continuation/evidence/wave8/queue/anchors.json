@@ -1,0 +1,210 @@
+{
+  "task": "W8-QUEUE",
+  "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624,
+    "image_base": "0x412a0000",
+    "archive_path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "archive_member": "nl.bin"
+  },
+  "regions": [
+    {
+      "label": "stack context capture and pinned caller arguments",
+      "va": "0x4148fda1",
+      "size": 71,
+      "sha256": "db41e218a9d98bdf1e27bcc3200bf5e60b233e4562623df693bdb1ea5a0fc36c",
+      "bytes": "c7856cfdffff00000000c78570fdffff0000000031c087856cfdffffc78564fdffff10d94a418d8564ffffff898568fdffff8d8d64fdffff6880000000688c902342e8482b0200"
+    },
+    {
+      "label": "dispatcher context address identity and range stores",
+      "va": "0x414b293e",
+      "size": 31,
+      "sha256": "04b91b3b5c6a29e6833eb571d4e4888b4acfe376bf2bc1f95893681dc70caab3",
+      "bytes": "89cf8b5d0c8b45088b15fc0850428d0c98874708894f0c89d18b0285c0752f"
+    },
+    {
+      "label": "opaque worker-count provider and signed branch",
+      "va": "0x414b298c",
+      "size": 23,
+      "sha256": "11a5fc9d147b236462160cc6a68450b1e7e74598c33ae09abf73486ccc0f731f",
+      "bytes": "894e14ff501c4b39c30f4dd885db897e100f8e15010000"
+    },
+    {
+      "label": "opaque enqueue arguments and loop",
+      "va": "0x414b29d0",
+      "size": 31,
+      "sha256": "32f8b66b988eaee447428935fd1d4862a1eced0adf5b14796622865a48ffe418",
+      "bytes": "4b895e1489f96a086a008b5e0c5350ff525083c3fc895e0c8b5e1485db7455"
+    },
+    {
+      "label": "allocation call and raw task preparation",
+      "va": "0x414b29ef",
+      "size": 49,
+      "sha256": "ac2bee5b35f686985d0c776ab9893809a7f80d5df1220afa15db918ed1f69e01",
+      "bytes": "6a18e886518f0083c404c70004810742c74008f0800742c7400c01000000c74010d0c24a418b4e108948148b1785d275b0"
+    },
+    {
+      "label": "caller drain then per-handle opaque wait and virtual release",
+      "va": "0x414b2a44",
+      "size": 116,
+      "sha256": "ebfb0334a47f4a17ec239a34a65d8e53750b1f00e5d2a62775082ae49ec8f64b",
+      "bytes": "8b7e108b47088b4f0c39c17644894e0ceb14662e0f1f8400000000008b4e0c39cb8b7e10732bbb04000000f00fc15f088d7b0439cf0f43f939df76e08b4e10ff710453ff1183c40883c30439fb72edebcb31ff8b5e18660f1f4400008b0cbbe88898ffff8b0cbb8b01ff500447397e1c75eaeb4d"
+    },
+    {
+      "label": "no-task local drain and dispatcher return",
+      "va": "0x414b2ab8",
+      "size": 87,
+      "sha256": "93d1ae330b6a389270698d173a275e43ad07e720b8e5831ee6317ff01d5e75d4",
+      "bytes": "8b47088b4f0c39c17643894e0ceb13660f1f8400000000008b4e0c39cb8b7e10732bbb04000000f00fc15f088d7b0439cf0f43f939df76e08b4e10ff710453ff1183c40883c30439fb72edebcb8d65f45e5f5b5dc20800"
+    },
+    {
+      "label": "complete worker body",
+      "va": "0x414ac2d0",
+      "size": 87,
+      "sha256": "73b0a52131204198eb397e1092aca14a6539c027d2e65aac1861f270ee30349e",
+      "bytes": "555357568b41088b790c39c7764489ceeb1266666666662e0f1f84000000000039fb732ebb04000000f00fc15e088d6b0439fd0f43ef39dd76e6660f1f440000ff760453ff1683c40883c30439eb72f0ebce5e5f5b5dc3"
+    },
+    {
+      "label": "task ECX forwarding wrapper",
+      "va": "0x4149bfc0",
+      "size": 8,
+      "sha256": "a5841d355f57069f5d73a7868157f1d48162513d59c1afc7bc854439981b9bc8",
+      "bytes": "89c88b4914ff6010"
+    },
+    {
+      "label": "task primary virtual table first four entries",
+      "va": "0x42078104",
+      "size": 16,
+      "sha256": "52f2d41164b43c8de5084b64e81e44fe7431ac588ad5f4b04c83cb0ffb4c2eb8",
+      "bytes": "903b3441101f3541d0552c41c0bf4941"
+    },
+    {
+      "label": "task secondary virtual table two entries",
+      "va": "0x420780f0",
+      "size": 8,
+      "sha256": "129b4556ea524b084b5d1793061dcb58c8ca42fe7c48f6835e80f030611cfe16",
+      "bytes": "10683441105c2a41"
+    },
+    {
+      "label": "wait prefix with runtime-bound function pointer",
+      "va": "0x414ac330",
+      "size": 143,
+      "sha256": "3529b6e6eea7c2862bd93b07820b821265123ff04a5e9f649ea95fa672b1248e",
+      "bytes": "5589e553575683e4f081ec8000000089e6896e6889cf89666cc74678ffffffff8d4670c7467470494b41648b0d00000000894e7064a300000000a1fc5750428b0d40855142648b152c0000008b0c8a3b81080000007f22c74678ffffffff89f96a01ff15f05750428b467064a3000000008d65f45e5f5b5dc368fc575042e8b7b88f0083c404833dfc575042ff75c8"
+    },
+    {
+      "label": "task virtual release entry with refcount and further indirect calls",
+      "va": "0x41351f10",
+      "size": 44,
+      "sha256": "7acac96eea89ce55395a03f6484e61320be824075fc3c7112d0ae7be8e2c8539",
+      "bytes": "5756befffffffff00fc1710c4e751889cf83c1088b4708ff500484c074098b0789f96a01ff500889f05e5fc3"
+    }
+  ],
+  "archive_navigation": [
+    {
+      "path": "workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "size": 26243,
+      "sha256": "b0449b823dbd179b924aa71c90294293cdccbc452495866fa893f596f785699d",
+      "role": "navigation only, not byte authority"
+    },
+    {
+      "path": "workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "size": 19478,
+      "sha256": "688eb78d48dafb4f5c2f94cbc9368f356be8387ee9b3c9fba68cb21d4b00e964",
+      "role": "navigation only, not byte authority"
+    },
+    {
+      "path": "docs/Карта_кода_и_доказательств.md",
+      "size": 7888,
+      "sha256": "9cb7d6aad11e5520a4030890a27b99d539daf6aff9e04b85506fa0270be23323",
+      "role": "navigation only, not byte authority"
+    }
+  ],
+  "scope": "One raw context capture/preparation to task-entry and one observed worker-claim transform; conditional static chain, not a live queue implementation.",
+  "source_inventory": "continuation/evidence/wave5/scope/coverage.json#services_queue",
+  "audit_domain": "continuation/evidence/wave8/audit/coverage.json#services_queue",
+  "proof_edges": [
+    {
+      "source": "0x4148FDA1..0x4148FDD9",
+      "transform": "Zero +8/+C, XCHG +8 with zero, +0=0x414AD910, +4=EBP-0x9C, ECX=EBP-0x29C. The raw 0x10-byte context is stack-owned at this caller.",
+      "api": "capture_queue_context",
+      "test": "capture_preparation_and_consumer"
+    },
+    {
+      "source": "0x4148FDD9..0x4148FDE8; 0x414B293E..0x414B2955",
+      "transform": "Pinned caller supplies begin=0x4223908C and count=128; dispatcher saves ECX as EDI and XCHGs +8 with begin, then stores begin+count*4 modulo 2^32 at +C. +0/+4 remain untouched in this prefix.",
+      "api": "prepare_queue_range",
+      "test": "unsigned_range_and_entry_edges"
+    },
+    {
+      "source": "0x414B29EF..0x414B2A20",
+      "transform": "On a successful writable 0x18-byte allocation, stores +0=0x42078104, +8=0x420780F0, +C=1, +10=0x414AC2D0, +14=original ECX context address from [ESI+10]. Offset +4 is not initialized by this pinned store slice. No context payload is copied.",
+      "api": "prepare_queue_task",
+      "test": "capture_preparation_and_consumer"
+    },
+    {
+      "source": "0x414B29D0..0x414B29E2",
+      "transform": "At the nonzero-vtable enqueue edge, ECX=observed manager, push 8,0,output-handle-address,task-address then call [EDX+0x50]. This proves outgoing raw arguments and site, not provider behavior, ownership or task invocation.",
+      "api": null
+    },
+    {
+      "source": "0x42078110 -> 0x4149BFC0..0x4149BFC8",
+      "transform": "Primary static task table slot +C points to wrapper; wrapper loads ECX=task[+14] and jumps task[+10]. With unmodified prepared fields this conditionally enters 0x414AC2D0 on the same stack context. Selection of this table slot by a runtime manager is not proved.",
+      "api": "observe_queue_task_entry",
+      "test": "capture_preparation_and_consumer"
+    },
+    {
+      "source": "0x414AC2D4..0x414AC2E2",
+      "transform": "Load cursor+8 then save end+C once; unsigned end<=cursor returns before any claim.",
+      "api": "observe_queue_worker_entry",
+      "test": "unsigned_range_and_entry_edges"
+    },
+    {
+      "source": "0x414AC2F0..0x414AC320",
+      "transform": "Given an independently observed XADD old value O and entry end E: cursor write N=O+4 modulo 2^32; chunk end=min_unsigned(N,E). Callback only if chunk_end>O. At most one call in this inner chunk: on normal return EBX=O+4, otherwise EBX=O. Outer unsigned EBX>=E returns, else another observation is needed. A wrapped increment can skip the callback yet request another claim.",
+      "api": "project_queue_worker_claim",
+      "test": "claim_boundaries"
+    },
+    {
+      "source": "0x414AC310..0x414AC319",
+      "transform": "Fresh callback-site observation loads context+4, pushes that raw value then the slot ADDRESS, calls through context+0 and removes 8 stack bytes. It does not dereference the slot or synthesize a callback result. End remains the entry snapshot.",
+      "api": "observe_queue_callback",
+      "test": "observations_are_not_a_scheduler_or_callback_provider"
+    }
+  ],
+  "preconditions": [
+    "Original path observations are supplied by caller; unit tests use synthetic snapshots, not original runtime observations.",
+    "All addresses and arithmetic are uint32 little-endian; no target address becomes a native pointer.",
+    "Raw arrays are stable snapshots representing the specified load sites; they are not atomic storage. prepare_queue_range models XCHG sequentially only.",
+    "Task preparation requires observed successful allocation and writable 0x18 bytes; no failure, allocator or reference ownership policy is supplied.",
+    "Task entry is conditional on invocation of the proven wrapper with the observed task record.",
+    "Worker claim projection requires entry claim_required or the previous iteration claim_required and a separate actual/synthetic old-XADD observation, not a fabricated schedule.",
+    "Continuation after a callback is conditional on its normal ABI-preserving return; no callback is run by this module."
+  ],
+  "lifetime_edge": {
+    "status": "unresolved",
+    "positive_identity": "Capture at EBP-0x29C, dispatcher saved ECX, task+14 and wrapper ECX are the same raw address; no ownership extension or context copy is proved.",
+    "observed_order": "0x414B29DF opaque enqueue -> caller local drain -> for each returned handle CALL 0x414AC330 at 0x414B2AA3 -> reload handle then virtual +4 at 0x414B2AAD -> dispatcher RET 8 at 0x414B2B0C. This is site order on normal paths, not a proved completion barrier.",
+    "wait_frontier": "0x414AC392 calls [0x425057F0] with observed handle in ECX and argument 1; binding/semantics and initializer success are unresolved. Prefix also depends on TLS/init state; no guard is assumed away.",
+    "release_frontier": "Static task vtable+4=0x41351F10; code LOCK XADD -1 at task+C, then indirect secondary-vtable+4 and primary-vtable+8 on the zero-count branch. Other owners, final destruction and the stack-context lifetime are not thereby proved.",
+    "remaining": [
+      "Prove actual enqueue provider invocation and its chosen task entry.",
+      "Prove allocator/errors, returned handle identity and wait binding/completion guarantee.",
+      "Prove every callback ceases before caller stack storage is reused, including exceptions/cancellation.",
+      "Prove task reference/ownership edges; task refcount does not establish stack context ownership."
+    ]
+  },
+  "not_claimed": [
+    "worker scheduler or concurrent interleavings",
+    "runtime callback/provider binding or execution",
+    "original load, execution or emulation",
+    "initializer table survey or initializer errors reconstruction",
+    "full services_queue/GAP closure",
+    "source-language or original ABI declaration recovery"
+  ],
+  "full_tasks_closed": [],
+  "original_loaded_run_or_emulated": false
+}

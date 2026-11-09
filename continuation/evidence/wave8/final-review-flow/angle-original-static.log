@@ -1,0 +1,60 @@
+CWD /tmp/hoplite/232-w8-final-flow
+CMD objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414af0f6 --stop-address=0x414af1d6 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+EXPECTED_EXIT 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414af0f6 <.data+0x20f0f6>:
+414af0f6:	f3 0f 10 47 14                                  	movss  xmm0,DWORD PTR [edi+0x14]
+414af0fb:	f3 0f 11 45 c0                                  	movss  DWORD PTR [ebp-0x40],xmm0
+414af100:	f3 0f 11 45 d0                                  	movss  DWORD PTR [ebp-0x30],xmm0
+414af105:	56                                              	push   esi
+414af106:	e8 10 7c b7 00                                  	call   0x42026d1b
+414af10b:	f3 0f 10 45 c0                                  	movss  xmm0,DWORD PTR [ebp-0x40]
+414af110:	83 c4 04                                        	add    esp,0x4
+414af113:	66 83 f8 02                                     	cmp    ax,0x2
+414af117:	74 19                                           	je     0x414af132
+414af119:	f3 0f 11 45 d0                                  	movss  DWORD PTR [ebp-0x30],xmm0
+414af11e:	56                                              	push   esi
+414af11f:	e8 f7 7b b7 00                                  	call   0x42026d1b
+414af124:	f3 0f 10 4d c0                                  	movss  xmm1,DWORD PTR [ebp-0x40]
+414af129:	83 c4 04                                        	add    esp,0x4
+414af12c:	66 83 f8 01                                     	cmp    ax,0x1
+414af130:	75 03                                           	jne    0x414af135
+414af132:	0f 57 c9                                        	xorps  xmm1,xmm1
+414af135:	83 ec 10                                        	sub    esp,0x10
+414af138:	f2 0f 10 05 c8 cd 06 42                         	movsd  xmm0,QWORD PTR ds:0x4206cdc8
+414af140:	f2 0f 11 44 24 08                               	movsd  QWORD PTR [esp+0x8],xmm0
+414af146:	0f 57 c0                                        	xorps  xmm0,xmm0
+414af149:	f3 0f 5a c1                                     	cvtss2sd xmm0,xmm1
+414af14d:	f2 0f 11 04 24                                  	movsd  QWORD PTR [esp],xmm0
+414af152:	e8 e9 1e b8 00                                  	call   0x42031040
+414af157:	83 c4 10                                        	add    esp,0x10
+414af15a:	d9 5d b4                                        	fstp   DWORD PTR [ebp-0x4c]
+414af15d:	f3 0f 10 45 b4                                  	movss  xmm0,DWORD PTR [ebp-0x4c]
+414af162:	f3 0f 10 0d d0 cd 06 42                         	movss  xmm1,DWORD PTR ds:0x4206cdd0
+414af16a:	f3 0f 58 c8                                     	addss  xmm1,xmm0
+414af16e:	f3 0f 10 15 d4 cd 06 42                         	movss  xmm2,DWORD PTR ds:0x4206cdd4
+414af176:	f3 0f c2 d0 01                                  	cmpltss xmm2,xmm0
+414af17b:	0f 54 ca                                        	andps  xmm1,xmm2
+414af17e:	0f 55 d0                                        	andnps xmm2,xmm0
+414af181:	0f 56 d1                                        	orps   xmm2,xmm1
+414af184:	f3 0f 10 0d d8 cd 06 42                         	movss  xmm1,DWORD PTR ds:0x4206cdd8
+414af18c:	f3 0f 58 ca                                     	addss  xmm1,xmm2
+414af190:	0f 28 c2                                        	movaps xmm0,xmm2
+414af193:	f3 0f c2 05 dc cd 06 42 01                      	cmpltss xmm0,DWORD PTR ds:0x4206cddc
+414af19c:	0f 54 c8                                        	andps  xmm1,xmm0
+414af19f:	0f 55 c2                                        	andnps xmm0,xmm2
+414af1a2:	0f 56 c1                                        	orps   xmm0,xmm1
+414af1a5:	f2 0f 10 4f 0c                                  	movsd  xmm1,QWORD PTR [edi+0xc]
+414af1aa:	0f 5f 0d 90 7f 07 42                            	maxps  xmm1,XMMWORD PTR ds:0x42077f90
+414af1b1:	0f 5d 0d a0 7f 07 42                            	minps  xmm1,XMMWORD PTR ds:0x42077fa0
+414af1b8:	f3 0f 5f 05 10 fc 06 42                         	maxss  xmm0,DWORD PTR ds:0x4206fc10
+414af1c0:	0f 13 4f 0c                                     	movlps QWORD PTR [edi+0xc],xmm1
+414af1c4:	f3 0f 5d 05 14 fc 06 42                         	minss  xmm0,DWORD PTR ds:0x4206fc14
+414af1cc:	f3 0f 11 47 14                                  	movss  DWORD PTR [edi+0x14],xmm0
+414af1d1:	e9 d7 04 00 00                                  	jmp    0x414af6ad
+EXIT 0

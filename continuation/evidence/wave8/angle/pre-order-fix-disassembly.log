@@ -1,0 +1,35 @@
+Own-code pre-fix static disassembly; source SHA-256:
+9ce7ccfd1a6b7e761298e5bac65acae3db0eab207ff4979effccbc481cbfaf2f  continuation/src/angle_slice.cpp
+COMMAND: objdump -d -Mintel --start-address=0x13e0 --stop-address=0x144f continuation/evidence/wave8/angle/.build/test_angle_slice
+
+continuation/evidence/wave8/angle/.build/test_angle_slice:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000013e0 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x130>:
+    13e0:	49 8b 41 0c          	mov    rax,QWORD PTR [r9+0xc]
+    13e4:	f3 0f 5f 1d 84 1c 00 	maxss  xmm3,DWORD PTR [rip+0x1c84]        # 3070 <_IO_stdin_used+0x70>
+    13eb:	00
+    13ec:	66 0f ef ff          	pxor   xmm7,xmm7
+    13f0:	49 c7 40 58 02 00 00 	mov    QWORD PTR [r8+0x58],0x2
+    13f7:	00
+    13f8:	0f 29 7c 24 e8       	movaps XMMWORD PTR [rsp-0x18],xmm7
+    13fd:	48 89 44 24 e8       	mov    QWORD PTR [rsp-0x18],rax
+    1402:	0f 28 44 24 e8       	movaps xmm0,XMMWORD PTR [rsp-0x18]
+    1407:	0f 5f 05 42 1c 00 00 	maxps  xmm0,XMMWORD PTR [rip+0x1c42]        # 3050 <_IO_stdin_used+0x50>
+    140e:	0f 28 cb             	movaps xmm1,xmm3
+    1411:	41 c6 40 54 01       	mov    BYTE PTR [r8+0x54],0x1
+    1416:	f3 0f 5d 0d 62 1c 00 	minss  xmm1,DWORD PTR [rip+0x1c62]        # 3080 <_IO_stdin_used+0x80>
+    141d:	00
+    141e:	41 c7 00 05 00 00 00 	mov    DWORD PTR [r8],0x5
+    1425:	0f 28 d0             	movaps xmm2,xmm0
+    1428:	0f 5d 15 31 1c 00 00 	minps  xmm2,XMMWORD PTR [rip+0x1c31]        # 3060 <_IO_stdin_used+0x60>
+    142f:	66 0f 62 d9          	punpckldq xmm3,xmm1
+    1433:	66 41 0f 7e 49 14    	movd   DWORD PTR [r9+0x14],xmm1
+    1439:	66 41 0f d6 58 4c    	movq   QWORD PTR [r8+0x4c],xmm3
+    143f:	66 0f 6c c2          	punpcklqdq xmm0,xmm2
+    1443:	66 41 0f d6 51 0c    	movq   QWORD PTR [r9+0xc],xmm2
+    1449:	41 0f 11 40 3c       	movups XMMWORD PTR [r8+0x3c],xmm0
+    144e:	eb                   	.byte 0xeb
+EXIT=0

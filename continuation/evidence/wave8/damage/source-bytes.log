@@ -1,0 +1,6 @@
+PASS nl.bin/DLL SHA-256 and exact embedded-resource identity
+PASS 5 byte ranges, 134 static instruction decodes
+PASS eight switch targets, four binary32 constants, both guards == 0x20
+PASS distinct provider operands 0x2e198140 / 0x2e198210; bindings remain unknown
+
+exit_code=0

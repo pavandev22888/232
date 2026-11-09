@@ -1,0 +1,347 @@
+{
+  "task": "W8-ANGLE",
+  "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+  "source": {
+    "image": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_size": 55578624,
+    "va_base": "0x412a0000",
+    "container": "workspace/input/dll/neverlose.dll",
+    "container_sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "resource_offset": "0x629b10",
+    "resource_size": 55578624
+  },
+  "range_start": "0x414af0f6",
+  "model_start": "0x414af113",
+  "range_end_exclusive": "0x414af1d6",
+  "range_bytes": "f30f104714f30f1145c0f30f1145d056e8107cb700f30f1045c083c4046683f8027419f30f1145d056e8f77bb700f30f104dc083c4046683f80175030f57c983ec10f20f1005c8cd0642f20f114424080f57c0f30f5ac1f20f110424e8e91eb80083c410d95db4f30f1045b4f30f100dd0cd0642f30f58c8f30f1015d4cd0642f30fc2d0010f54ca0f55d00f56d1f30f100dd8cd0642f30f58ca0f28c2f30fc205dccd0642010f54c80f55c20f56c1f20f104f0c0f5f0d907f07420f5d0da07f0742f30f5f0510fc06420f134f0cf30f5d0514fc0642f30f114714e9d7040000",
+  "instructions": [
+    {
+      "va": "0x414af0f6",
+      "bytes": "f30f104714",
+      "decoded": "movss xmm0,DWORD PTR [edi+0x14]"
+    },
+    {
+      "va": "0x414af0fb",
+      "bytes": "f30f1145c0",
+      "decoded": "movss DWORD PTR [ebp-0x40],xmm0"
+    },
+    {
+      "va": "0x414af100",
+      "bytes": "f30f1145d0",
+      "decoded": "movss DWORD PTR [ebp-0x30],xmm0"
+    },
+    {
+      "va": "0x414af105",
+      "bytes": "56",
+      "decoded": "push esi"
+    },
+    {
+      "va": "0x414af106",
+      "bytes": "e8107cb700",
+      "decoded": "call 0x42026d1b"
+    },
+    {
+      "va": "0x414af10b",
+      "bytes": "f30f1045c0",
+      "decoded": "movss xmm0,DWORD PTR [ebp-0x40]"
+    },
+    {
+      "va": "0x414af110",
+      "bytes": "83c404",
+      "decoded": "add esp,0x4"
+    },
+    {
+      "va": "0x414af113",
+      "bytes": "6683f802",
+      "decoded": "cmp ax,0x2"
+    },
+    {
+      "va": "0x414af117",
+      "bytes": "7419",
+      "decoded": "je 0x414af132"
+    },
+    {
+      "va": "0x414af119",
+      "bytes": "f30f1145d0",
+      "decoded": "movss DWORD PTR [ebp-0x30],xmm0"
+    },
+    {
+      "va": "0x414af11e",
+      "bytes": "56",
+      "decoded": "push esi"
+    },
+    {
+      "va": "0x414af11f",
+      "bytes": "e8f77bb700",
+      "decoded": "call 0x42026d1b"
+    },
+    {
+      "va": "0x414af124",
+      "bytes": "f30f104dc0",
+      "decoded": "movss xmm1,DWORD PTR [ebp-0x40]"
+    },
+    {
+      "va": "0x414af129",
+      "bytes": "83c404",
+      "decoded": "add esp,0x4"
+    },
+    {
+      "va": "0x414af12c",
+      "bytes": "6683f801",
+      "decoded": "cmp ax,0x1"
+    },
+    {
+      "va": "0x414af130",
+      "bytes": "7503",
+      "decoded": "jne 0x414af135"
+    },
+    {
+      "va": "0x414af132",
+      "bytes": "0f57c9",
+      "decoded": "xorps xmm1,xmm1"
+    },
+    {
+      "va": "0x414af135",
+      "bytes": "83ec10",
+      "decoded": "sub esp,0x10"
+    },
+    {
+      "va": "0x414af138",
+      "bytes": "f20f1005c8cd0642",
+      "decoded": "movsd xmm0,QWORD PTR ds:0x4206cdc8"
+    },
+    {
+      "va": "0x414af140",
+      "bytes": "f20f11442408",
+      "decoded": "movsd QWORD PTR [esp+0x8],xmm0"
+    },
+    {
+      "va": "0x414af146",
+      "bytes": "0f57c0",
+      "decoded": "xorps xmm0,xmm0"
+    },
+    {
+      "va": "0x414af149",
+      "bytes": "f30f5ac1",
+      "decoded": "cvtss2sd xmm0,xmm1"
+    },
+    {
+      "va": "0x414af14d",
+      "bytes": "f20f110424",
+      "decoded": "movsd QWORD PTR [esp],xmm0"
+    },
+    {
+      "va": "0x414af152",
+      "bytes": "e8e91eb800",
+      "decoded": "call 0x42031040"
+    },
+    {
+      "va": "0x414af157",
+      "bytes": "83c410",
+      "decoded": "add esp,0x10"
+    },
+    {
+      "va": "0x414af15a",
+      "bytes": "d95db4",
+      "decoded": "fstp DWORD PTR [ebp-0x4c]"
+    },
+    {
+      "va": "0x414af15d",
+      "bytes": "f30f1045b4",
+      "decoded": "movss xmm0,DWORD PTR [ebp-0x4c]"
+    },
+    {
+      "va": "0x414af162",
+      "bytes": "f30f100dd0cd0642",
+      "decoded": "movss xmm1,DWORD PTR ds:0x4206cdd0"
+    },
+    {
+      "va": "0x414af16a",
+      "bytes": "f30f58c8",
+      "decoded": "addss xmm1,xmm0"
+    },
+    {
+      "va": "0x414af16e",
+      "bytes": "f30f1015d4cd0642",
+      "decoded": "movss xmm2,DWORD PTR ds:0x4206cdd4"
+    },
+    {
+      "va": "0x414af176",
+      "bytes": "f30fc2d001",
+      "decoded": "cmpltss xmm2,xmm0"
+    },
+    {
+      "va": "0x414af17b",
+      "bytes": "0f54ca",
+      "decoded": "andps xmm1,xmm2"
+    },
+    {
+      "va": "0x414af17e",
+      "bytes": "0f55d0",
+      "decoded": "andnps xmm2,xmm0"
+    },
+    {
+      "va": "0x414af181",
+      "bytes": "0f56d1",
+      "decoded": "orps xmm2,xmm1"
+    },
+    {
+      "va": "0x414af184",
+      "bytes": "f30f100dd8cd0642",
+      "decoded": "movss xmm1,DWORD PTR ds:0x4206cdd8"
+    },
+    {
+      "va": "0x414af18c",
+      "bytes": "f30f58ca",
+      "decoded": "addss xmm1,xmm2"
+    },
+    {
+      "va": "0x414af190",
+      "bytes": "0f28c2",
+      "decoded": "movaps xmm0,xmm2"
+    },
+    {
+      "va": "0x414af193",
+      "bytes": "f30fc205dccd064201",
+      "decoded": "cmpltss xmm0,DWORD PTR ds:0x4206cddc"
+    },
+    {
+      "va": "0x414af19c",
+      "bytes": "0f54c8",
+      "decoded": "andps xmm1,xmm0"
+    },
+    {
+      "va": "0x414af19f",
+      "bytes": "0f55c2",
+      "decoded": "andnps xmm0,xmm2"
+    },
+    {
+      "va": "0x414af1a2",
+      "bytes": "0f56c1",
+      "decoded": "orps xmm0,xmm1"
+    },
+    {
+      "va": "0x414af1a5",
+      "bytes": "f20f104f0c",
+      "decoded": "movsd xmm1,QWORD PTR [edi+0xc]"
+    },
+    {
+      "va": "0x414af1aa",
+      "bytes": "0f5f0d907f0742",
+      "decoded": "maxps xmm1,XMMWORD PTR ds:0x42077f90"
+    },
+    {
+      "va": "0x414af1b1",
+      "bytes": "0f5d0da07f0742",
+      "decoded": "minps xmm1,XMMWORD PTR ds:0x42077fa0"
+    },
+    {
+      "va": "0x414af1b8",
+      "bytes": "f30f5f0510fc0642",
+      "decoded": "maxss xmm0,DWORD PTR ds:0x4206fc10"
+    },
+    {
+      "va": "0x414af1c0",
+      "bytes": "0f134f0c",
+      "decoded": "movlps QWORD PTR [edi+0xc],xmm1"
+    },
+    {
+      "va": "0x414af1c4",
+      "bytes": "f30f5d0514fc0642",
+      "decoded": "minss xmm0,DWORD PTR ds:0x4206fc14"
+    },
+    {
+      "va": "0x414af1cc",
+      "bytes": "f30f114714",
+      "decoded": "movss DWORD PTR [edi+0x14],xmm0"
+    },
+    {
+      "va": "0x414af1d1",
+      "bytes": "e9d7040000",
+      "decoded": "jmp 0x414af6ad"
+    }
+  ],
+  "data": [
+    {
+      "va": "0x4206cdc8",
+      "bytes": "0000000000807640",
+      "decoded_values": [
+        360.0
+      ]
+    },
+    {
+      "va": "0x4206cdd0",
+      "bytes": "0000b4c3000034430000b443000034c3",
+      "decoded_values": [
+        -360.0,
+        180.0,
+        360.0,
+        -180.0
+      ]
+    },
+    {
+      "va": "0x42077f90",
+      "bytes": "0000b2c2000034c30000000000000000",
+      "decoded_values": [
+        -89.0,
+        -180.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "va": "0x42077fa0",
+      "bytes": "0000b242000034430000000000000000",
+      "decoded_values": [
+        89.0,
+        180.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "va": "0x4206fc10",
+      "bytes": "000034c200003442",
+      "decoded_values": [
+        -45.0,
+        45.0
+      ]
+    }
+  ],
+  "contract": {
+    "scope": "Conditional AX guards, argument conversion, explicit unknown-call FSTP32 boundary, single ordered wrap adjustment and final EDI stores. Not the entry/body of 0x414AE770.",
+    "inputs": [
+      "First AX is observed at 0x414AF113, after the first nested call and saved-word reload. Only its low 16 bits are compared.",
+      "If first AX != 2, observe the separate second call AX and the word reloaded from [EBP-0x40] at 0x414AF124. No equality between call results or scratch slots is assumed.",
+      "The [EBP-0x40] reload precedes the second AX comparison, including when AX==1.",
+      "[EBP-0x4C] after FSTP32 at 0x414AF15A is an independent post-call observation; no replacement of 0x42031040 is supplied.",
+      "Destination is the EDI memory at the 0x414AF1A5 reload, not memory preserved across unknown calls. Its +0x14 old word is not used by this tail."
+    ],
+    "numeric_environment": [
+      "x86 little-endian SSE2 binary32 and CVTSS2SD binary64 conversion; nearest-even rounding, FTZ=DAZ=0, masked FP exceptions.",
+      "Arithmetic and bit-selection operand order are retained. NaN payload/sign and signed zero survive the selection masks; MAX/MIN select their second operand for unordered/equal lanes.",
+      "The unknown x87 return is not reconstructed: its rounded FSTP32 word is supplied explicitly. FP flags, traps and non-default rounding/environment are excluded."
+    ],
+    "actions": [
+      "First AX==2 skips the second call and XORPS-selects +0; otherwise second AX==1 selects +0, other AX values select the independently reloaded saved word.",
+      "CVTSS2SD forwards the selected word as a binary64 first argument; binary64 360.0 is the second argument at 0x414AF140. The call output remains independent.",
+      "At 0x414AF16A compute -360+r, then use ordered 180<r to select it or the raw r bits. Compute 360+selected, then use ordered selected<-180 to select it or the raw selected bits. These are single adjustments, not a replacement remainder loop.",
+      "At 0x414AF1AA/B1 packed MAXPS then MINPS clamp low lanes to [-89,89] and [-180,180], with constants as second operands.",
+      "At 0x414AF1B8 clamp scalar lower bound -45; store eight bytes at EDI+0x0C (0x414AF1C0); then scalar MINSS +45 (0x414AF1C4), then store four bytes at EDI+0x14 (0x414AF1CC). Continue at 0x414AF6AD."
+    ],
+    "offline_only": [
+      "Null/short destination rejection and optional-observation stop enums are adapter behavior, not recovered original branches or rollback.",
+      "Trace fields and store count describe this own-code model; memory bus atomicity and concurrent access are not claimed.",
+      "Only EDI destination stores are reconstructed; scratch-stack stores/call machinery in the instruction range are evidence, not an emulated stack.",
+      "An empty GNU-compatible x86 asm compiler barrier preserves the eight-byte store -> scalar MINSS -> four-byte store sequence against optimizer reordering; it does not execute original code or establish an original compiler/language."
+    ],
+    "unresolved": [
+      "Reachability and entry predicates of 0x414AE770 and caller 0x4147A2A0.",
+      "Original command/settings/recoil providers, EDI object identity/lifetime and ABI outside this local boundary.",
+      "Bodies and environments of 0x42026D1B and 0x42031040; no fresh classifier code or mathematical remainder kernel is claimed.",
+      "Original source language/standard, exceptional paths and complete GAP closure remain unknown."
+    ]
+  },
+  "original_loaded_executed_emulated": false
+}

@@ -1,0 +1,122 @@
+CWD /tmp/hoplite/232-w8-final-flow
+CMD objdump -d -Mintel --disassemble=_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_angle_slice
+EXPECTED_EXIT 0
+
+/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_angle_slice:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+00000000000012b0 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE>:
+    12b0:	f3 0f 1e fa          	endbr64
+    12b4:	31 c0                	xor    eax,eax
+    12b6:	49 89 d1             	mov    r9,rdx
+    12b9:	80 7e 02 00          	cmp    BYTE PTR [rsi+0x2],0x0
+    12bd:	48 89 ca             	mov    rdx,rcx
+    12c0:	b9 0c 00 00 00       	mov    ecx,0xc
+    12c5:	49 89 f8             	mov    r8,rdi
+    12c8:	f3 48 ab             	rep stos QWORD PTR es:[rdi],rax
+    12cb:	0f 84 09 01 00 00    	je     13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+    12d1:	66 83 3e 02          	cmp    WORD PTR [rsi],0x2
+    12d5:	74 39                	je     1310 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x60>
+    12d7:	80 7e 06 00          	cmp    BYTE PTR [rsi+0x6],0x0
+    12db:	41 c7 00 01 00 00 00 	mov    DWORD PTR [r8],0x1
+    12e2:	0f 84 f2 00 00 00    	je     13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+    12e8:	80 7e 0c 00          	cmp    BYTE PTR [rsi+0xc],0x0
+    12ec:	41 c7 00 02 00 00 00 	mov    DWORD PTR [r8],0x2
+    12f3:	0f 84 e1 00 00 00    	je     13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+    12f9:	66 83 7e 04 01       	cmp    WORD PTR [rsi+0x4],0x1
+    12fe:	8b 46 08             	mov    eax,DWORD PTR [rsi+0x8]
+    1301:	74 0d                	je     1310 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x60>
+    1303:	66 0f 6e c8          	movd   xmm1,eax
+    1307:	eb 0d                	jmp    1316 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x66>
+    1309:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    1310:	66 0f ef c9          	pxor   xmm1,xmm1
+    1314:	31 c0                	xor    eax,eax
+    1316:	66 0f ef c0          	pxor   xmm0,xmm0
+    131a:	80 7e 14 00          	cmp    BYTE PTR [rsi+0x14],0x0
+    131e:	41 89 40 04          	mov    DWORD PTR [r8+0x4],eax
+    1322:	f3 0f 5a c1          	cvtss2sd xmm0,xmm1
+    1326:	41 c6 40 08 01       	mov    BYTE PTR [r8+0x8],0x1
+    132b:	41 c6 40 18 01       	mov    BYTE PTR [r8+0x18],0x1
+    1330:	41 c7 00 03 00 00 00 	mov    DWORD PTR [r8],0x3
+    1337:	66 41 0f d6 40 10    	movq   QWORD PTR [r8+0x10],xmm0
+    133d:	0f 84 97 00 00 00    	je     13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+    1343:	f3 0f 10 46 10       	movss  xmm0,DWORD PTR [rsi+0x10]
+    1348:	f3 0f 10 0d d0 1c 00 	movss  xmm1,DWORD PTR [rip+0x1cd0]        # 3020 <_IO_stdin_used+0x20>
+    134f:	00
+    1350:	f3 0f 10 2d b8 1c 00 	movss  xmm5,DWORD PTR [rip+0x1cb8]        # 3010 <_IO_stdin_used+0x10>
+    1357:	00
+    1358:	41 c6 40 38 01       	mov    BYTE PTR [r8+0x38],0x1
+    135d:	f3 0f c2 c8 01       	cmpltss xmm1,xmm0
+    1362:	f3 0f 58 e8          	addss  xmm5,xmm0
+    1366:	41 c7 00 04 00 00 00 	mov    DWORD PTR [r8],0x4
+    136d:	0f 28 d1             	movaps xmm2,xmm1
+    1370:	66 0f 7e c8          	movd   eax,xmm1
+    1374:	66 41 0f 7e 68 20    	movd   DWORD PTR [r8+0x20],xmm5
+    137a:	0f 55 d0             	andnps xmm2,xmm0
+    137d:	0f 28 c5             	movaps xmm0,xmm5
+    1380:	85 c0                	test   eax,eax
+    1382:	0f 54 c1             	andps  xmm0,xmm1
+    1385:	41 0f 95 40 24       	setne  BYTE PTR [r8+0x24]
+    138a:	0f 56 c2             	orps   xmm0,xmm2
+    138d:	f3 0f 10 15 9b 1c 00 	movss  xmm2,DWORD PTR [rip+0x1c9b]        # 3030 <_IO_stdin_used+0x30>
+    1394:	00
+    1395:	0f 28 e0             	movaps xmm4,xmm0
+    1398:	f3 0f 58 d0          	addss  xmm2,xmm0
+    139c:	f3 0f c2 25 9b 1c 00 	cmpltss xmm4,DWORD PTR [rip+0x1c9b]        # 3040 <_IO_stdin_used+0x40>
+    13a3:	00 01
+    13a5:	0f 28 da             	movaps xmm3,xmm2
+    13a8:	0f 28 f4             	movaps xmm6,xmm4
+    13ab:	0f 54 dc             	andps  xmm3,xmm4
+    13ae:	66 0f 7e e0          	movd   eax,xmm4
+    13b2:	0f 55 f0             	andnps xmm6,xmm0
+    13b5:	85 c0                	test   eax,eax
+    13b7:	66 0f 62 c2          	punpckldq xmm0,xmm2
+    13bb:	0f 56 de             	orps   xmm3,xmm6
+    13be:	66 41 0f d6 40 28    	movq   QWORD PTR [r8+0x28],xmm0
+    13c4:	41 0f 95 40 30       	setne  BYTE PTR [r8+0x30]
+    13c9:	66 41 0f 7e 58 34    	movd   DWORD PTR [r8+0x34],xmm3
+    13cf:	4d 85 c9             	test   r9,r9
+    13d2:	74 06                	je     13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+    13d4:	48 83 fa 17          	cmp    rdx,0x17
+    13d8:	77 06                	ja     13e0 <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x130>
+    13da:	4c 89 c0             	mov    rax,r8
+    13dd:	c3                   	ret
+    13de:	66 90                	xchg   ax,ax
+    13e0:	49 8b 41 0c          	mov    rax,QWORD PTR [r9+0xc]
+    13e4:	66 0f ef ff          	pxor   xmm7,xmm7
+    13e8:	f3 0f 5f 1d 80 1c 00 	maxss  xmm3,DWORD PTR [rip+0x1c80]        # 3070 <_IO_stdin_used+0x70>
+    13ef:	00
+    13f0:	0f 29 7c 24 e8       	movaps XMMWORD PTR [rsp-0x18],xmm7
+    13f5:	48 89 44 24 e8       	mov    QWORD PTR [rsp-0x18],rax
+    13fa:	0f 28 44 24 e8       	movaps xmm0,XMMWORD PTR [rsp-0x18]
+    13ff:	0f 5f 05 4a 1c 00 00 	maxps  xmm0,XMMWORD PTR [rip+0x1c4a]        # 3050 <_IO_stdin_used+0x50>
+    1406:	0f 28 d0             	movaps xmm2,xmm0
+    1409:	0f 5d 15 50 1c 00 00 	minps  xmm2,XMMWORD PTR [rip+0x1c50]        # 3060 <_IO_stdin_used+0x60>
+    1410:	66 41 0f d6 51 0c    	movq   QWORD PTR [r9+0xc],xmm2
+    1416:	0f 28 cb             	movaps xmm1,xmm3
+    1419:	49 83 40 58 02       	add    QWORD PTR [r8+0x58],0x2
+    141e:	66 0f 6c c2          	punpcklqdq xmm0,xmm2
+    1422:	41 80 78 54 00       	cmp    BYTE PTR [r8+0x54],0x0
+    1427:	f3 0f 5d 0d 51 1c 00 	minss  xmm1,DWORD PTR [rip+0x1c51]        # 3080 <_IO_stdin_used+0x80>
+    142e:	00
+    142f:	41 0f 11 40 3c       	movups XMMWORD PTR [r8+0x3c],xmm0
+    1434:	66 0f 62 d9          	punpckldq xmm3,xmm1
+    1438:	66 41 0f 7e 49 14    	movd   DWORD PTR [r9+0x14],xmm1
+    143e:	66 41 0f d6 58 4c    	movq   QWORD PTR [r8+0x4c],xmm3
+    1444:	75 05                	jne    144b <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x19b>
+    1446:	41 c6 40 54 01       	mov    BYTE PTR [r8+0x54],0x1
+    144b:	41 c7 00 05 00 00 00 	mov    DWORD PTR [r8],0x5
+    1452:	eb 86                	jmp    13da <_ZN4rage7offline19evaluate_angle_tailERKNS0_21AngleTailObservationsENS0_20AngleTailDestinationE+0x12a>
+
+Disassembly of section .fini:
+EXIT 0

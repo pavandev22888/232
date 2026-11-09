@@ -1,0 +1,12 @@
+$ python3 -B continuation/evidence/wave8/shot/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source/ZIP/member hashes and identity: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS 6 navigation receipt hashes
+PASS entry_and_opaque_frame_setup: 19 contiguous byte/decode pins
+PASS preceding_opaque_call: 3 contiguous byte/decode pins
+PASS signed_index_and_local_stores: 18 contiguous byte/decode pins
+PASS postcall_boundary: 8 contiguous byte/decode pins
+PASS raw_postcall_consumer: 9 contiguous byte/decode pins
+PASS 57 instructions; bounded raw index/store/postcall consumer only
+FRONTIER opaque 0x413F8AB0 / 0x414BD940 and intervening CFG; successors 0x414C2003 / 0x414C2233; R linkage and result semantics unproved
+
+EXIT_CODE=0

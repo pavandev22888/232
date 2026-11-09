@@ -223,6 +223,118 @@ void invalid_views_are_offline_guards()
         CHECK(reader.overflow == old.overflow);
     }
 }
+using PrefixEdge = MessageReceiverPrefixEdge;
+
+MessageReceiverPrefixObservations prefix_observations()
+{
+    return {7u, 0u, std::nullopt, std::nullopt, 0x200u,
+            MessageReceiverEpochObservation{5u, 5u}, 0x1000u, 1u};
+}
+
+void receiver_prefix_gates_and_writes()
+{
+    auto observation = prefix_observations();
+    MessageReceiverPrefixState state{0xaabbccddu, 42u};
+    const auto run = [&](std::uint32_t index = 64) {
+        return evaluate_message_receiver_prefix(index, observation, state);
+    };
+    observation = {};
+    CHECK(run(65).edge == PrefixEdge::index_above_64);
+    CHECK(run(0x7fffffffu).edge == PrefixEdge::index_above_64);
+    CHECK(state.scratch_1c == 0xaabbccddu);
+    CHECK(state.exception_state_128 == 42u);
+    for (const auto index : {0u, 64u, 0x80000000u, 0xffffffffu}) {
+        CHECK(run(index).edge == PrefixEdge::dispatch_return_unobserved);
+    }
+    observation.dispatch_return_eax = 64;
+    CHECK(run().edge == PrefixEdge::index_matches_dispatch);
+    observation.dispatch_return_eax = 7;
+    CHECK(run().edge == PrefixEdge::guard_offset_unobserved);
+    CHECK(state.scratch_1c == 0xaabbccddu);
+    observation.guard_offset_word = 0x80;
+    CHECK(run().edge == PrefixEdge::guard_epoch_unobserved);
+    CHECK(state.scratch_1c == 0x80);
+    CHECK(state.exception_state_128 == 42u);
+
+    observation.guard_epoch = MessageReceiverEpochObservation{1, 0};
+    CHECK(run().edge == PrefixEdge::guard_epoch_side_exit);
+    observation.guard_epoch = MessageReceiverEpochObservation{0x7fffffffu, 0x80000000u};
+    CHECK(run().edge == PrefixEdge::guard_epoch_side_exit);
+    observation.guard_epoch = MessageReceiverEpochObservation{0x80000000u, 0x7fffffffu};
+    CHECK(run().edge == PrefixEdge::guard_word_unobserved);
+    observation.guard_epoch = MessageReceiverEpochObservation{0xffffffffu, 0xffffffffu};
+    CHECK(run().edge == PrefixEdge::guard_word_unobserved);
+    observation.guard_word = 0x80000000u;
+    CHECK(run().edge == PrefixEdge::guard_word_nonzero);
+    CHECK(state.exception_state_128 == 42u);
+    observation.guard_word = 0;
+    CHECK(run().edge == PrefixEdge::source_return_unobserved);
+    CHECK(state.exception_state_128 == 0xffffffffu);
+    CHECK(state.scratch_1c == 0x80);
+    observation.source_return_eax = 0;
+    CHECK(run().edge == PrefixEdge::source_zero);
+    CHECK(state.scratch_1c == 0);
+    observation.source_return_eax = 0x200;
+    CHECK(run().edge == PrefixEdge::slot_epoch_unobserved);
+    CHECK(state.scratch_1c == 0x200);
+
+    observation.slot_epoch = MessageReceiverEpochObservation{0, 0xffffffffu};
+    CHECK(run().edge == PrefixEdge::slot_epoch_side_exit);
+    observation.slot_epoch = MessageReceiverEpochObservation{0xffffffffu, 0};
+    CHECK(run().edge == PrefixEdge::slot_base_unobserved);
+    observation.slot_base_word = 0;
+    CHECK(run().edge == PrefixEdge::slot_base_zero_path);
+    CHECK(!run().slot_address);
+    observation.slot_base_word = 0x1000;
+    CHECK(run().edge == PrefixEdge::slot_byte_unobserved);
+    CHECK(run().slot_address == 0x1240u);
+    observation.slot_byte = 0;
+    CHECK(run().edge == PrefixEdge::slot_byte_zero);
+    CHECK(run().slot_address == 0x1240u);
+    for (const auto byte : {1u, 128u, 255u}) {
+        observation.slot_byte = static_cast<std::uint8_t>(byte);
+        CHECK(run().edge == PrefixEdge::next_epoch_gate);
+    }
+
+    observation = prefix_observations();
+    observation.guard_epoch = MessageReceiverEpochObservation{1, 0};
+    observation.guard_word = 123;
+    CHECK(run().edge == PrefixEdge::next_epoch_gate); // zero offset skips guard
+    observation.slot_base_word = 0xfffffff0u;
+    observation.source_return_eax = 0x20;
+    CHECK(run().slot_address == 0x50u);
+    CHECK(run(0xffffffffu).slot_address == 0x0fu);
+    observation.dispatch_return_eax = 0xffffffffu;
+    CHECK(run(0xffffffffu).edge == PrefixEdge::index_matches_dispatch);
+}
+
+void parsed_index_reaches_conditional_receiver_prefix()
+{
+    const auto observation = prefix_observations();
+    for (std::uint32_t index = 0; index < 128; ++index) {
+        BitFixture fixture;
+        header(fixture, 100, index);
+        zero_body(fixture);
+        auto reader = fixture.reader();
+        const auto decoded = decode_bounded_message_fields(reader, {word, 100, 0});
+        CHECK(decoded.effect == MessageFieldEffect::ready_for_consumer);
+        MessageReceiverPrefixState state{9u, 42u};
+        const auto result = evaluate_message_receiver_prefix(
+            decoded.fields.zero_based_index + 1u, observation, state);
+        const auto expected = index >= 64 ? PrefixEdge::index_above_64 :
+            index == 6 ? PrefixEdge::index_matches_dispatch : PrefixEdge::next_epoch_gate;
+        CHECK(result.edge == expected);
+        if (expected == PrefixEdge::next_epoch_gate) {
+            CHECK(result.slot_address == 0x1201u + index);
+            CHECK(state.scratch_1c == 0x200);
+            CHECK(state.exception_state_128 == 0xffffffffu);
+        } else {
+            CHECK(!result.slot_address);
+            CHECK(state.scratch_1c == 9u);
+            CHECK(state.exception_state_128 == 42u);
+        }
+    }
+}
 } // namespace
 
 int main()
@@ -231,5 +343,7 @@ int main()
     branch_order_and_signed_window();
     coordinate_branches_and_truncation();
     invalid_views_are_offline_guards();
+    receiver_prefix_gates_and_writes();
+    parsed_index_reaches_conditional_receiver_prefix();
     std::cout << "bounded_message_fields: " << assertions << " assertions passed\n";
 }

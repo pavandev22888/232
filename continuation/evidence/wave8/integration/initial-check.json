@@ -1,0 +1,10 @@
+{
+  "tested_head": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+  "result": "passed",
+  "exit_code": 0,
+  "log": "initial-check.log",
+  "log_sha256": "d449a685d95dbcc0ee8ab08b3c796f74691d88a47decf1bdb818cdd847c1617d",
+  "scope": "Initial integrated W8 candidate, before history/angle/shot/queue and review fixes; not final acceptance.",
+  "test_programs_per_mode": 18,
+  "original_execution": false
+}

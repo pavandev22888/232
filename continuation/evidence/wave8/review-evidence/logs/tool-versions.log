@@ -1,0 +1,6 @@
+$ bash -lc 'python3 --version; git --version; objdump --version | head -1'
+Python 3.12.3
+git version 2.43.0
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+
+EXIT_CODE=0

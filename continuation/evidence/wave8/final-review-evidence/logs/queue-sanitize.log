@@ -1,0 +1,4 @@
+$ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w8-final-evidence/continuation/evidence/wave8/final-review-evidence/build/test_queue_context_slice_sanitize
+PASS: raw queue capture, task preparation and observed worker claim (106 assertions)
+
+EXIT_CODE=0

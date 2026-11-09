@@ -1,0 +1,29 @@
++ pwd
+/tmp/hoplite/232-w8-angle
++ git rev-parse HEAD
+e7661f42a8452562b033f6264d8d947bff15e424
++ g++ --version
++ head -n 1
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
++ objdump --version
++ head -n 1
+GNU objdump (GNU Binutils for Ubuntu) 2.42
++ sha256sum continuation/include/rage/angle_slice.hpp continuation/src/angle_slice.cpp continuation/tests/test_angle_slice.cpp continuation/evidence/wave8/angle/source_anchors.json continuation/evidence/wave8/angle/verify_source_bytes.py
+2f328d15608fd68aeeb49f33da39b969cdd1b0b3382a52775f113378ffd26877  continuation/include/rage/angle_slice.hpp
+fb4c89abe03da166962c534694e75807a0449cbb2d33c1d93448c3db7e80ed31  continuation/src/angle_slice.cpp
+e65ac80ee422c8b69bd5b5629e0d8a00d0f1f62b71b22eb948c946ec949f774b  continuation/tests/test_angle_slice.cpp
+855b11aa66a7723166f4b3a0f0cc211b8fd80c5f58c1656042c2476c3ced90b5  continuation/evidence/wave8/angle/source_anchors.json
+7d7b32e52331c7f8ed2d2b692830532e9c79511e1b32ed37de56977148c8784c  continuation/evidence/wave8/angle/verify_source_bytes.py
++ FLAGS=-std=c++17 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off
++ g++ -std=c++17 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O2 -Icontinuation/include continuation/src/angle_slice.cpp continuation/tests/test_angle_slice.cpp -o /tmp/hoplite/232-w8-angle/continuation/evidence/wave8/angle/.build/test_angle_slice
++ /tmp/hoplite/232-w8-angle/continuation/evidence/wave8/angle/.build/test_angle_slice
+angle_slice: 615 assertions, 0 failures
++ g++ -std=c++17 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined -Icontinuation/include continuation/src/angle_slice.cpp continuation/tests/test_angle_slice.cpp -o /tmp/hoplite/232-w8-angle/continuation/evidence/wave8/angle/.build/test_angle_slice_sanitize
++ ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/232-w8-angle/continuation/evidence/wave8/angle/.build/test_angle_slice_sanitize
+angle_slice: 615 assertions, 0 failures
++ python3 -B continuation/evidence/wave8/angle/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source SHA-256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; DLL resource matches
+PASS 49 fresh decoded instructions, 224 contiguous bytes, 5 constant blocks
+PASS distinct AX guards, CVTSS2SD/FSTP32 boundary, ordered selections and two EDI stores
+LIMIT: no original loading/execution/emulation; unknown call bodies/providers remain open
+FOCUSED_EXIT=0

@@ -9,7 +9,7 @@
 Для **нового** клона (существующий рабочий каталог не перезаписывать):
 
 ```sh
-git clone --branch hoplite/sikyon-46eee495 https://github.com/pavandev22888/232.git 232
+git clone --branch hoplite/tanagra-adb72df5 https://github.com/pavandev22888/232.git 232
 cd 232
 set -eu
 export PYTHONOPTIMIZE=0 PYTHONDONTWRITEBYTECODE=1
@@ -17,14 +17,15 @@ git status --short --branch
 git rev-parse HEAD
 ```
 
-`main` пока не содержит всего продолжения: PR #1 оставлен без слияния.
+PR #1 слит 2026-11-09: `main` содержит W1–W7 squash-коммитом `0fe371b`.
+Ветка выше содержит продолжение W8 и исходную историю для baseline-проверок.
 В существующей среде оставайтесь на назначенной ветке. Baseline-review вызывает
 `git show` для `ed9df79c028e63ca56fc191a226f5fe2f221df64` — одного shallow HEAD мало:
 
 ```sh
 if ! git cat-file -e ed9df79c028e63ca56fc191a226f5fe2f221df64^{commit} 2>/dev/null; then
   if test "$(git rev-parse --is-shallow-repository)" = true; then
-    git fetch --deepen=100 origin hoplite/sikyon-46eee495
+    git fetch --deepen=100 origin hoplite/tanagra-adb72df5
   else
     printf '%s\n' 'Baseline отсутствует в полной истории: проверьте репозиторий/ветку.' >&2
     exit 1
@@ -132,10 +133,12 @@ git status --short
 `check` включает native, ASan/UBSan и static evidence. Исторический W5-набор:
 23 354 assertions **на каждый режим**, десять программ и 13 Python-тестов;
 13 новых static verifiers включены в `make check`. W6 сохранена в
-`continuation/evidence/wave6/verification.json`; текущий W7 gate — в
+`continuation/evidence/wave6/verification.json`; исторический W7 gate — в
 `continuation/evidence/wave7/verification.json`: 16 программ на режим,
 67 660 counted checks плюс три программы без счётчика, 13 Python-тестов
-и шесть новых byte-gates. Исторические PASS не подтверждают новый HEAD. Историческая база W3–W4
+и шесть новых byte-gates. Текущий W8-набор: 21 программа на режим, 11 новых byte-gates и
+unity/LTO `make mxcsr`; точные результаты — в
+[W8 verification](../continuation/evidence/wave8/verification.json). Исторические PASS не подтверждают новый HEAD. Историческая база W3–W4
 имела 19 902 assertions, семь программ и восемь Python-тестов.
 H01: 162 byte checks плюс 33 fresh-static / 2 model-only / 12 historical-only;
 полный старый протокол не закрыт. Отдельный W5 pefile leaf №5 воспроизводится

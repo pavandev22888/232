@@ -1,0 +1,127 @@
+{
+  "task": "W8-PROVIDER",
+  "checked_at_utc": "2026-11-09T18:57:39.295740+00:00",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "branch": "hoplite/tanagra-adb72df5--w8-provider",
+  "scope": "Evidence-only prerequisite, not runtime provider/model implementation",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/tools-python.log",
+      "log_sha256": "a60ee494706589e60ee7f590c6f621e3e5d377c940125388c7414646d706b0ca"
+    },
+    {
+      "command": [
+        "objdump",
+        "--version"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/tools-objdump.log",
+      "log_sha256": "1fbff605f27e320f7f330388bf5abd9ff5b3be9980881c753afb08aecf146f3e"
+    },
+    {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/tools-git.log",
+      "log_sha256": "1f16013fc11bfc38ffbee683f5f2ef3b2cca31fd2c0311c73e33225a6045a789"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave8/provider/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/source-byte-gate.log",
+      "log_sha256": "85652452478671e8befa3dad3f3741f271a31ff17d9cc0195a17a44a9de402c7"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave5/fallback24/verify_initializer.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/inherited-fallback24-gate.log",
+      "log_sha256": "6c285aa8c218d6f0027432f7942c99baae38ca6497da68a3e5900d3bcf4a4a7b"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave5/esi/verify_preservation.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/inherited-esi-gate.log",
+      "log_sha256": "96451a6e41d2f6134612b0ed6d8f98390c86a37b55b5d2123f7d611b4c1a1c56"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/tmp/hoplite/232-w8-provider",
+      "exit_code": 0,
+      "log": "continuation/evidence/wave8/provider/staged-diff-check.log",
+      "log_sha256": "d1f25e19600e9b621b9d0832145b044b3396bb36f57a5f8843bdd85682b54ae2"
+    }
+  ],
+  "source_integrity": {
+    "scope": "The three handoff files read directly: input source ZIP, work raw image and work functions ZIP; this is not an all-handoff inventory",
+    "before_sha256": {
+      "workspace/work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "workspace/input/nl_handoff_2026-11-06.zip": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+      "workspace/work/recovered_nl/recovered_nl/functions.zip": "51cdaf33b4ff2fc92bb773540a815eeacb157638cbd2c1edec3cea382d332609"
+    },
+    "after_sha256": {
+      "workspace/work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "workspace/input/nl_handoff_2026-11-06.zip": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+      "workspace/work/recovered_nl/recovered_nl/functions.zip": "51cdaf33b4ff2fc92bb773540a815eeacb157638cbd2c1edec3cea382d332609"
+    },
+    "unchanged": true
+  },
+  "artifact_sha256": {
+    "anchors.json": "e2a4ab75d91364731af41d5442a3183a369301dfc25fab729fc017e020d660d1",
+    "source_objdump.txt": "623cbeaa52e94d89c2727e6090e1e54a52f400f12cc49834ac7b93acf8e89442",
+    "verify_source_bytes.py": "aa17b01585ba338c0563adab5545e8658bcc20f20bff32a07a7daf8204352a84",
+    "README.md": "fdb4babf4db0c17830aee794a56a691f2fcf8afbdc8f8886b0f2f52d9d0c8e8c",
+    "contract.json": "bf64cf84ef10bc3e81726f3d12442cb53ba814b4112487bfff67f82efbe3240e",
+    "tools-python.log": "a60ee494706589e60ee7f590c6f621e3e5d377c940125388c7414646d706b0ca",
+    "tools-objdump.log": "1fbff605f27e320f7f330388bf5abd9ff5b3be9980881c753afb08aecf146f3e",
+    "tools-git.log": "1f16013fc11bfc38ffbee683f5f2ef3b2cca31fd2c0311c73e33225a6045a789",
+    "source-byte-gate.log": "85652452478671e8befa3dad3f3741f271a31ff17d9cc0195a17a44a9de402c7",
+    "inherited-fallback24-gate.log": "6c285aa8c218d6f0027432f7942c99baae38ca6497da68a3e5900d3bcf4a4a7b",
+    "inherited-esi-gate.log": "96451a6e41d2f6134612b0ed6d8f98390c86a37b55b5d2123f7d611b4c1a1c56",
+    "staged-diff-check.log": "d1f25e19600e9b621b9d0832145b044b3396bb36f57a5f8843bdd85682b54ae2"
+  },
+  "legacy_output_caveat": "Frozen W5-FALLBACK24 still prints its historical nested ESI frontier; W8 only resolves this one join and does not rewrite that older evidence.",
+  "not_run": {
+    "native_asan_ubsan": "No new C++ code or executable model; static evidence only",
+    "integrated_make_check": "Coordinator-owned gate after integration",
+    "independent_review": "Pending fixed-integrated-SHA reviewer"
+  },
+  "original_executed_loaded_emulated": false,
+  "full_tasks_closed": [],
+  "passed": true
+}

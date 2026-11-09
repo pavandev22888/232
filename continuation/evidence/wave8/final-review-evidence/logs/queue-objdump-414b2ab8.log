@@ -1,0 +1,43 @@
+$ objdump -D -b binary -m i386 -M intel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414b2ab8 --stop-address=0x414b2b0f /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414b2ab8 <.data+0x212ab8>:
+414b2ab8:	8b 47 08                                        	mov    eax,DWORD PTR [edi+0x8]
+414b2abb:	8b 4f 0c                                        	mov    ecx,DWORD PTR [edi+0xc]
+414b2abe:	39 c1                                           	cmp    ecx,eax
+414b2ac0:	76 43                                           	jbe    0x414b2b05
+414b2ac2:	89 4e 0c                                        	mov    DWORD PTR [esi+0xc],ecx
+414b2ac5:	eb 13                                           	jmp    0x414b2ada
+414b2ac7:	66 0f 1f 84 00 00 00 00 00                      	nop    WORD PTR [eax+eax*1+0x0]
+414b2ad0:	8b 4e 0c                                        	mov    ecx,DWORD PTR [esi+0xc]
+414b2ad3:	39 cb                                           	cmp    ebx,ecx
+414b2ad5:	8b 7e 10                                        	mov    edi,DWORD PTR [esi+0x10]
+414b2ad8:	73 2b                                           	jae    0x414b2b05
+414b2ada:	bb 04 00 00 00                                  	mov    ebx,0x4
+414b2adf:	f0 0f c1 5f 08                                  	lock xadd DWORD PTR [edi+0x8],ebx
+414b2ae4:	8d 7b 04                                        	lea    edi,[ebx+0x4]
+414b2ae7:	39 cf                                           	cmp    edi,ecx
+414b2ae9:	0f 43 f9                                        	cmovae edi,ecx
+414b2aec:	39 df                                           	cmp    edi,ebx
+414b2aee:	76 e0                                           	jbe    0x414b2ad0
+414b2af0:	8b 4e 10                                        	mov    ecx,DWORD PTR [esi+0x10]
+414b2af3:	ff 71 04                                        	push   DWORD PTR [ecx+0x4]
+414b2af6:	53                                              	push   ebx
+414b2af7:	ff 11                                           	call   DWORD PTR [ecx]
+414b2af9:	83 c4 08                                        	add    esp,0x8
+414b2afc:	83 c3 04                                        	add    ebx,0x4
+414b2aff:	39 fb                                           	cmp    ebx,edi
+414b2b01:	72 ed                                           	jb     0x414b2af0
+414b2b03:	eb cb                                           	jmp    0x414b2ad0
+414b2b05:	8d 65 f4                                        	lea    esp,[ebp-0xc]
+414b2b08:	5e                                              	pop    esi
+414b2b09:	5f                                              	pop    edi
+414b2b0a:	5b                                              	pop    ebx
+414b2b0b:	5d                                              	pop    ebp
+414b2b0c:	c2 08 00                                        	ret    0x8
+
+EXIT_CODE=0

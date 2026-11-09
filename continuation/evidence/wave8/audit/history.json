@@ -1,0 +1,335 @@
+{
+  "task": "W8-AUDIT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "inventory_tip": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+  "inventory_file": "commits.jsonl",
+  "cutoff": "All refs first observed by this audit resolve within inventory_tip. Concurrent W8 commits/WIP refs created or advanced later are intentionally outside this historical cutoff.",
+  "recorded_at": "2026-11-09T18:59:18.062295+00:00",
+  "refs_at_cutoff": {
+    "refs/heads/hoplite/sikyon-46eee495": "514479c145689639dfac89ea902fe4da7d01070b",
+    "refs/heads/hoplite/tanagra-adb72df5": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+    "refs/hoplite/commits/514479c145689639dfac89ea902fe4da7d01070b": "514479c145689639dfac89ea902fe4da7d01070b",
+    "refs/hoplite/wip/thr_adb72df56afa448094573d530005226b/run_3b9860354e9746cb8091921a73d459c0-parent": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+    "refs/remotes/origin/hoplite/sikyon-46eee495": "514479c145689639dfac89ea902fe4da7d01070b",
+    "refs/remotes/origin/main": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-aggregate": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-audit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-damage": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-geometry": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-history": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-message": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-movement": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "refs/heads/hoplite/tanagra-adb72df5--w8-provider": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+  },
+  "scope_counts": {
+    "old_presquash_line_including_root": 90,
+    "old_line_plus_squash_before_history_merge": 91,
+    "audit_base_ancestry": 92,
+    "all_reachable_at_cutoff_including_w8_assignment": 93
+  },
+  "category_counts": {
+    "archive_import": 1,
+    "bounded_implementation": 18,
+    "coordination_or_assignment": 13,
+    "static_evidence_or_frontier": 18,
+    "bounded_review_or_test_evidence": 15,
+    "verification_gate_integration": 7,
+    "bounded_acceptance_record": 7,
+    "handoff_documentation": 2,
+    "goal_correction_and_static_gate": 1,
+    "review_retraction_or_resolution": 4,
+    "implementation_correction": 3,
+    "evidence_correction": 1,
+    "evidence_whitespace_correction": 1,
+    "squash_publication_tree_duplicate": 1,
+    "tree_preserving_history_merge": 1
+  },
+  "source_change_commit_count_excluding_squash": 21,
+  "is_shallow_repository": false,
+  "tree_identity": {
+    "old_head": "514479c145689639dfac89ea902fe4da7d01070b",
+    "squash_main": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+    "audit_base": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "shared_tree": "b42dd9e3a654d8e85fe4157c0983f4f674c50034",
+    "reviewed_code_unchanged_since": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "compared_paths": [
+      "continuation/src",
+      "continuation/include",
+      "continuation/tests",
+      "continuation/Makefile",
+      "continuation/**/*.py"
+    ],
+    "meaning": "Publication/ancestry changes do not add behavior; equal trees do not imply original equivalence."
+  },
+  "archive_history": {
+    "paths": [
+      "RAGEBOT_V10_часть_01_из_06.zip",
+      "RAGEBOT_V10_часть_02_из_06.zip",
+      "RAGEBOT_V10_часть_03_из_06.zip",
+      "RAGEBOT_V10_часть_04_из_06.zip",
+      "RAGEBOT_V10_часть_05_из_06.zip",
+      "RAGEBOT_V10_часть_06_из_06.zip",
+      "PROMPT_ДЛЯ_АГЕНТА_ЧАСТИ.txt"
+    ],
+    "only_changing_commit": "d7e41026d179e20fa9e93c1720645181f1686b69",
+    "frozen_history_has_no_subsequent_archive_or_historical_prompt_change": true
+  },
+  "local_reflogs": [
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-reset/HEAD@{2026-11-09T18:54:49+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-reset@{2026-11-09T18:54:48+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-reset/HEAD@{2026-11-09T18:54:48+00:00}",
+      "action": ""
+    },
+    {
+      "new": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5@{2026-11-09T18:52:49+00:00}",
+      "action": "commit: Assign W8 reconstruction dependencies and full-history audit"
+    },
+    {
+      "new": "08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+      "local_reflog_entry": "main-worktree/HEAD@{2026-11-09T18:52:49+00:00}",
+      "action": "commit: Assign W8 reconstruction dependencies and full-history audit"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-provider/HEAD@{2026-11-09T18:52:49+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-provider@{2026-11-09T18:52:48+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-geometry/HEAD@{2026-11-09T18:52:48+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-provider/HEAD@{2026-11-09T18:52:48+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-geometry@{2026-11-09T18:52:47+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-message/HEAD@{2026-11-09T18:52:47+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-geometry/HEAD@{2026-11-09T18:52:47+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-history@{2026-11-09T18:52:46+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-message@{2026-11-09T18:52:46+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-movement/HEAD@{2026-11-09T18:52:46+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-history/HEAD@{2026-11-09T18:52:46+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-history/HEAD@{2026-11-09T18:52:46+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-message/HEAD@{2026-11-09T18:52:46+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-movement@{2026-11-09T18:52:45+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-damage/HEAD@{2026-11-09T18:52:45+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-movement/HEAD@{2026-11-09T18:52:45+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-damage@{2026-11-09T18:52:44+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-aggregate/HEAD@{2026-11-09T18:52:44+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-damage/HEAD@{2026-11-09T18:52:44+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-aggregate@{2026-11-09T18:52:43+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5--w8-audit@{2026-11-09T18:52:43+00:00}",
+      "action": "branch: Created from 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "HEAD@{2026-11-09T18:52:43+00:00}",
+      "action": "reset: moving to HEAD"
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "HEAD@{2026-11-09T18:52:43+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "worktrees/232-w8-aggregate/HEAD@{2026-11-09T18:52:43+00:00}",
+      "action": ""
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5@{2026-11-09T18:52:28+00:00}",
+      "action": "merge origin/main: Merge made by the 'ort' strategy."
+    },
+    {
+      "new": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "local_reflog_entry": "main-worktree/HEAD@{2026-11-09T18:52:28+00:00}",
+      "action": "merge origin/main: Merge made by the 'ort' strategy."
+    },
+    {
+      "new": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+      "local_reflog_entry": "refs/remotes/origin/main@{2026-11-09T18:51:45+00:00}",
+      "action": "fetch origin +refs/heads/*:refs/remotes/origin/* --tags: storing head"
+    },
+    {
+      "new": "514479c145689639dfac89ea902fe4da7d01070b",
+      "local_reflog_entry": "refs/heads/hoplite/sikyon-46eee495@{2026-11-09T18:51:14+00:00}",
+      "action": "branch: Created from refs/hoplite/commits/514479c145689639dfac89ea902fe4da7d01070b"
+    },
+    {
+      "new": "514479c145689639dfac89ea902fe4da7d01070b",
+      "local_reflog_entry": "refs/heads/hoplite/tanagra-adb72df5@{2026-11-09T18:51:14+00:00}",
+      "action": "branch: Created from refs/hoplite/commits/514479c145689639dfac89ea902fe4da7d01070b"
+    },
+    {
+      "new": "514479c145689639dfac89ea902fe4da7d01070b",
+      "local_reflog_entry": "main-worktree/HEAD@{2026-11-09T18:51:14+00:00}",
+      "action": "checkout: moving from master to hoplite/tanagra-adb72df5"
+    },
+    {
+      "new": "514479c145689639dfac89ea902fe4da7d01070b",
+      "local_reflog_entry": "refs/remotes/origin/hoplite/sikyon-46eee495@{2026-11-09T18:51:13+00:00}",
+      "action": ""
+    }
+  ],
+  "reflog_capture_scope": "Captured during audit, restricted to frozen commits. These are local records, not reconstructed historical server pushes.",
+  "history_limits": [
+    "The 91 pre-merge commits reconcile as 90 old-line commits plus one squash publication.",
+    "Local reflogs show local fetch/branch/merge operations, not a complete server push audit.",
+    "Reachable commits are not pushes; the squash duplicates content but not original ancestry.",
+    "No remote deleted refs, force-push predecessors or expired server audit logs can be inferred from current refs.",
+    "No original DLL loading, execution, emulation, game access, source publication or merge was performed."
+  ],
+  "reproduction_commands": [
+    "git rev-list --reverse --topo-order 08283dd42ff62cab71ac9bcbfe3d10d8e1951706",
+    "git show -s --format=%H%n%P%n%T%n%cI%n%s <sha>",
+    "git diff --name-status <first-parent> <sha>",
+    "git diff-tree --root --no-commit-id -r --name-status <root-sha>",
+    "git for-each-ref --format=%(refname)\t%(objectname)",
+    "git reflog show --all --date=iso-strict --format=%H%x09%gD%x09%gs"
+  ],
+  "full_tasks_closed": [],
+  "review_corrections": [
+    {
+      "issue": "Callback CFG blocker",
+      "initial_commits": [
+        "0d934d4",
+        "5450183"
+      ],
+      "resolution_commits": [
+        "b4283fc",
+        "9ff3fd5",
+        "a47a028"
+      ],
+      "evidence": [
+        "continuation/evidence/wave6/review-callback/report.json",
+        "continuation/evidence/wave6/review-callback/resolution.json",
+        "continuation/evidence/wave6/review-callback/cfg-recheck.json"
+      ],
+      "disposition": "Withdrawn after fresh exact-byte reachable-path decode; sibling branch had been conflated. Original report and correction both retained. No code changed to satisfy the false blocker."
+    },
+    {
+      "issue": "History memcpy overlap W6RC-001",
+      "initial_commits": [
+        "3521b19"
+      ],
+      "resolution_commits": [
+        "ade36cb"
+      ],
+      "evidence": [
+        "continuation/evidence/wave6/review-integrated-code/report.json",
+        "continuation/evidence/wave6/review-integrated-code/resolution.json"
+      ],
+      "disposition": "Reviewer withdrew: two distinct memcpy calls use a separate local word; overlap between source/destination views is not overlapping arguments in either individual call. No source/test fix required."
+    },
+    {
+      "issue": "History local DWORD address F1",
+      "initial_commits": [
+        "1d8cc76"
+      ],
+      "resolution_commits": [
+        "c8a78c9",
+        "4c513fc"
+      ],
+      "evidence": [
+        "continuation/evidence/wave6/history/README.md",
+        "continuation/evidence/wave6/review-integrated-evidence/followup/report.json"
+      ],
+      "disposition": "Documentation fixed: read at 0x413F71A1, write at 0x413F71A4, not source-pointer load at 0x413F7102. Independently followed up at fixed correction SHA; not a behavioral source change."
+    }
+  ],
+  "goal_history": {
+    "mandatory_c17_plan_commits": [
+      "453fec5",
+      "c8d44fa",
+      "fecb194"
+    ],
+    "superseded_by": "b97bf7e",
+    "actual_c_port_implementation_added": false,
+    "current_language": "C++17 offline reconstruction only; original language/standard unknown"
+  }
+}

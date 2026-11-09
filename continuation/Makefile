@@ -10,8 +10,14 @@ TEST_NAMES := $(patsubst tests/%.cpp,%,$(wildcard tests/test_*.cpp))
 NATIVE_TESTS := $(addprefix $(BUILD)/,$(TEST_NAMES))
 SANITIZED_TESTS := $(addsuffix _sanitize,$(NATIVE_TESTS))
 
-.PHONY: test sanitize evidence check clean
-check: test sanitize evidence
+.PHONY: test sanitize evidence check mxcsr clean
+check: test sanitize evidence mxcsr
+
+mxcsr: $(BUILD)/damage_mxcsr_lto
+	$<
+
+$(BUILD)/damage_mxcsr_lto: tests/regression_damage_mxcsr.cpp src/damage_slice.cpp include/rage/damage_slice.hpp Makefile | $(BUILD)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -flto $< -o $@
 
 test: $(NATIVE_TESTS)
 	@set -e; for test in $(NATIVE_TESTS); do echo "RUN $$test"; "$$test"; done
@@ -51,6 +57,17 @@ evidence:
 	$(PYTHON) -B evidence/wave7/history/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave7/movement/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave7/damage/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/aggregate/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/damage/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/movement/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/message/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/geometry/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/provider/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/reset/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/history/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/shot/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/angle/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/queue/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/bindings/verify_resolution.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/charge/verify_full_reset.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/esi/verify_preservation.py --handoff "$(abspath $(HANDOFF))"

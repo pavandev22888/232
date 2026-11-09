@@ -1,0 +1,168 @@
+$ python3 -B continuation/evidence/wave8/queue/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "result": "passed",
+  "task": "W8-QUEUE",
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624,
+    "image_base": "0x412a0000",
+    "archive_path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "archive_member": "nl.bin"
+  },
+  "regions": [
+    {
+      "label": "stack context capture and pinned caller arguments",
+      "va": "0x4148fda1",
+      "size": 71,
+      "sha256": "db41e218a9d98bdf1e27bcc3200bf5e60b233e4562623df693bdb1ea5a0fc36c"
+    },
+    {
+      "label": "dispatcher context address identity and range stores",
+      "va": "0x414b293e",
+      "size": 31,
+      "sha256": "04b91b3b5c6a29e6833eb571d4e4888b4acfe376bf2bc1f95893681dc70caab3"
+    },
+    {
+      "label": "opaque worker-count provider and signed branch",
+      "va": "0x414b298c",
+      "size": 23,
+      "sha256": "11a5fc9d147b236462160cc6a68450b1e7e74598c33ae09abf73486ccc0f731f"
+    },
+    {
+      "label": "opaque enqueue arguments and loop",
+      "va": "0x414b29d0",
+      "size": 31,
+      "sha256": "32f8b66b988eaee447428935fd1d4862a1eced0adf5b14796622865a48ffe418"
+    },
+    {
+      "label": "allocation call and raw task preparation",
+      "va": "0x414b29ef",
+      "size": 49,
+      "sha256": "ac2bee5b35f686985d0c776ab9893809a7f80d5df1220afa15db918ed1f69e01"
+    },
+    {
+      "label": "caller drain then per-handle opaque wait and virtual release",
+      "va": "0x414b2a44",
+      "size": 116,
+      "sha256": "ebfb0334a47f4a17ec239a34a65d8e53750b1f00e5d2a62775082ae49ec8f64b"
+    },
+    {
+      "label": "no-task local drain and dispatcher return",
+      "va": "0x414b2ab8",
+      "size": 87,
+      "sha256": "93d1ae330b6a389270698d173a275e43ad07e720b8e5831ee6317ff01d5e75d4"
+    },
+    {
+      "label": "complete worker body",
+      "va": "0x414ac2d0",
+      "size": 87,
+      "sha256": "73b0a52131204198eb397e1092aca14a6539c027d2e65aac1861f270ee30349e"
+    },
+    {
+      "label": "task ECX forwarding wrapper",
+      "va": "0x4149bfc0",
+      "size": 8,
+      "sha256": "a5841d355f57069f5d73a7868157f1d48162513d59c1afc7bc854439981b9bc8"
+    },
+    {
+      "label": "task primary virtual table first four entries",
+      "va": "0x42078104",
+      "size": 16,
+      "sha256": "52f2d41164b43c8de5084b64e81e44fe7431ac588ad5f4b04c83cb0ffb4c2eb8"
+    },
+    {
+      "label": "task secondary virtual table two entries",
+      "va": "0x420780f0",
+      "size": 8,
+      "sha256": "129b4556ea524b084b5d1793061dcb58c8ca42fe7c48f6835e80f030611cfe16"
+    },
+    {
+      "label": "wait prefix with runtime-bound function pointer",
+      "va": "0x414ac330",
+      "size": 143,
+      "sha256": "3529b6e6eea7c2862bd93b07820b821265123ff04a5e9f649ea95fa672b1248e"
+    },
+    {
+      "label": "task virtual release entry with refcount and further indirect calls",
+      "va": "0x41351f10",
+      "size": 44,
+      "sha256": "7acac96eea89ce55395a03f6484e61320be824075fc3c7112d0ae7be8e2c8539"
+    }
+  ],
+  "direct_branches": [
+    {
+      "site": "0x4148fde3",
+      "target": "0x414b2930"
+    },
+    {
+      "site": "0x414b299d",
+      "target": "0x414b2ab8"
+    },
+    {
+      "site": "0x414b29ed",
+      "target": "0x414b2a44"
+    },
+    {
+      "site": "0x414b29f1",
+      "target": "0x41da7b7c"
+    },
+    {
+      "site": "0x414b2a1e",
+      "target": "0x414b29d0"
+    },
+    {
+      "site": "0x414b2a4f",
+      "target": "0x414b2a95"
+    },
+    {
+      "site": "0x414b2aa3",
+      "target": "0x414ac330"
+    },
+    {
+      "site": "0x414b2ab4",
+      "target": "0x414b2aa0"
+    },
+    {
+      "site": "0x414b2ac0",
+      "target": "0x414b2b05"
+    },
+    {
+      "site": "0x414ac2dc",
+      "target": "0x414ac322"
+    },
+    {
+      "site": "0x414ac2e0",
+      "target": "0x414ac2f4"
+    },
+    {
+      "site": "0x414ac2f2",
+      "target": "0x414ac322"
+    },
+    {
+      "site": "0x414ac308",
+      "target": "0x414ac2f0"
+    },
+    {
+      "site": "0x414ac31e",
+      "target": "0x414ac310"
+    },
+    {
+      "site": "0x414ac320",
+      "target": "0x414ac2f0"
+    },
+    {
+      "site": "0x414ac385",
+      "target": "0x414ac3a9"
+    },
+    {
+      "site": "0x414ac3bd",
+      "target": "0x414ac387"
+    }
+  ],
+  "lifetime": "unresolved: indirect enqueue/wait providers and ownership",
+  "original_loaded_run_or_emulated": false
+}
+
+EXIT_CODE=0
