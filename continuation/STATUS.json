@@ -1,5 +1,5 @@
 {
-  "stage": "V10 balanced parallel continuation: three conditional offline modules",
+  "stage": "V10 wave 2: four conditional offline modules and coherent pipeline tests",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -11,19 +11,31 @@
     "charge capacity with raw-byte branch semantics",
     "set-only mode latch and separate small counter gate",
     "local N+48 producer tail with resolved external observations",
-    "actor-position consumer with distinct copy/clear guard exits"
+    "actor-position consumer with distinct copy/clear guard exits",
+    "explicit local charge reset projection for latch, guard C and previous counter",
+    "local scalar helper with explicit fallback-step observation",
+    "optional N+50 output with age-ramp, MAXSS ordering and bounded aliases"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
-    "report": "evidence/parallel_verification.json",
-    "log": "evidence/parallel_verification.log",
+    "report": "evidence/wave2/verification.json",
+    "log": "evidence/wave2/verification.log",
     "native_tests": "passed",
     "asan_ubsan": "passed",
-    "assertions_per_run": 5856,
-    "modules": 3,
+    "assertions_per_run": 6528,
+    "modules": 4,
+    "test_programs": 5,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 8,
     "static_evidence": "passed",
     "h01_byte_assertions_replayed": 162,
-    "h01_other_checks_not_replayed": 47,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
     "bundle_files": 960,
     "restored_integrity_records": 64087,
     "final_bundle_integrity": "passed",
@@ -33,57 +45,58 @@
     {
       "id": "CODE01",
       "status": "partial",
-      "change": "Assigned aggregation task unperformed; previous typed N chain preserved; broader code still incomplete"
+      "change": "Baseline review plus 20 coherent pipeline scenarios; aggregation remains unimplemented"
     },
     {
       "id": "GAP01",
       "status": "open",
-      "change": "32 selected byte/provenance checks clarify candidates; Point+26, T+F4 and G425009BC first positive sources remain open"
+      "change": "Two further hypotheses checked with 118 fresh decodes; all three first-positive sources remain open"
     },
     {
       "id": "GAP02",
       "status": "open",
-      "change": "Assigned task unperformed; T+68 consumer remains open and N+68 remains separate"
+      "change": "Archival T+68/N+68 inventory verified; no threshold consumer implementation or new typed consumer proof"
     },
     {
       "id": "GAP03",
       "status": "partial",
-      "change": "Added raw-byte charge limits, set-only latch and small gate; full automaton, external guards and original call order unresolved"
+      "change": "Added explicit same-address reset projection; full automaton, entry predicate and scheduling remain unresolved"
     },
     {
       "id": "GAP04",
       "status": "open",
-      "change": "Static address chain and 16 PE candidates verified; no runtime module-base or binding assigned"
+      "change": "Implemented bounded scalar helper 41C784B0 and tested N composition; fallback/tolerance providers and runtime bindings remain open"
     },
     {
       "id": "GAP05",
       "status": "partial",
-      "change": "Added local N+48 producer and actor consumer with resolved inputs and distinct early exits; full upstream/lifecycle/sender/consumers unresolved"
+      "change": "Added optional N+50 age-ramp/MAXSS output and alias ordering; upstream seed and complete lifecycle/sender remain open"
     },
     {
       "id": "GAP06",
       "status": "partial",
-      "change": "Baseline-module source review, integrated native/sanitized checks, fresh 162 H01 byte checks; other 47 checks and independent external audit unresolved"
+      "change": "Replayed 162 instruction checks; classified remaining 47 as 33 static rechecks, 2 models, 12 historical-only; original protocol and external audit unresolved"
     }
   ],
   "unresolved_boundaries": [
     "Point+26, T+F4 and G425009BC first positive sources",
-    "T+68 threshold consumer and aggregation task",
+    "T+68 threshold consumer and target aggregation",
     "external entity/weapon resolution",
-    "external providers and original runtime bindings",
+    "scalar helper fallback/tolerance providers and original runtime bindings",
     "TLS/FS guards, opaque dispatch and exceptional paths",
-    "complete N+48 upstream seed and lifecycle",
+    "charge reset entry predicate, other reset stores and original scheduling",
+    "complete N+48 upstream seed, N+14/N+50 provenance and full lifecycle",
     "complete message format and sender",
     "remaining consumers and complete modes",
     "original out-of-range index handler",
-    "full historical H01 protocol and independent external audit"
+    "12 historical-only H01 entries, full original protocol and independent external audit"
   ],
   "original_dll_execution": false,
   "original_dll_loading": false,
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "No automatic second wave; unresolved sources, upstream N+48 observations and external proof boundaries remain listed",
+  "next_task": "No automatic next wave; unresolved field sources, full lifecycle, T consumer, runtime observations and historical gates remain open",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -126,5 +139,44 @@
     "constants": 5,
     "final_bundle_integrity": "passed",
     "final_input_and_work_integrity": "passed"
+  },
+  "parallel_wave_2": {
+    "status": "completed_limited_deliverables",
+    "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "requested_model": "gpt-6.1-sol",
+    "effort_setting": "not_exposed_by_spawn_tool",
+    "fast_mode": "not_exposed_by_spawn_tool",
+    "user_priority": "balanced",
+    "agents": [
+      "sol-code01-integration-review",
+      "sol-gap01-source-evidence",
+      "sol-gap02-proof-inventory",
+      "sol-gap03-charge-continuation",
+      "sol-gap04-provider-contract",
+      "sol-gap05-marker-continuation",
+      "sol-gap06-historical-replay"
+    ],
+    "code01_gap02_scope": "Existing-source review/inventory only; declined implementations not retried",
+    "acceptance": "Coordinator-reviewed and make check passed after final corrections",
+    "accepted_limited_deliverables": [
+      "CODE01",
+      "GAP01",
+      "GAP02",
+      "GAP03",
+      "GAP04",
+      "GAP05",
+      "GAP06"
+    ],
+    "full_tasks_closed": [],
+    "agents_still_running": 0,
+    "acceptance_report": "evidence/wave2/verification.json",
+    "additional_followups": [
+      "coherent producer-reader-actor regression tests",
+      "read-only cross-review of optional N+50 output"
+    ],
+    "remaining_unperformed_implementations": [
+      "CODE01 target aggregation",
+      "GAP02 threshold consumer"
+    ]
   }
 }

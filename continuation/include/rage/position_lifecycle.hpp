@@ -14,8 +14,8 @@ enum class ActorTransition {
     inactive_record,
     marker_gate_rejected,
     copied_record_position,
-    traced_position_applied,
-    trace_observation_missing
+    resolved_position_applied,
+    provider_observation_missing
 };
 
 // Caller-resolved association. The owner pointer is opaque; no actor ID is inferred.
@@ -32,12 +32,21 @@ enum class ActorGuardOutcome {
     exit_clear_marker
 };
 
+struct ActorSide50Output {
+    // External initialized scalar, disjoint from N and both position sinks.
+    // May share the external scalar used by marker_output.
+    float* value = nullptr;
+    bool age_ramp_enabled = false; // Resolved selected cfg +274/+275 byte.
+    float now = 0.0f; // Resolved float behind 0x4223CA04.
+};
+
 struct ActorConsumerInputs {
     bool reader_result_al; // Not derived from PositionRead::status.
     ActorGuardOutcome guard_outcome;
-    bool geometry_option_enabled; // Selected configuration byte is nonzero.
-    std::optional<Vec3> traced_position; // Resolved three-axis provider result.
+    bool position_adjustment_enabled; // Selected configuration byte is nonzero.
+    std::optional<Vec3> resolved_position; // Resolved three-axis provider result.
     float* marker_output; // Optional N+48 output.
+    ActorSide50Output side50_output{};
 };
 
 struct ActorConsumerResult {
@@ -47,14 +56,15 @@ struct ActorConsumerResult {
     Vec3* actor_position_sink;
 };
 
-// Replays the bounded consumer slice at 414FD8xx..414FDB37 after resolved guards.
+// Replays the bounded consumer slice at 414FD8xx..414FDB4C after resolved guards.
+// Missing provider observations skip side50 stores (not an original exit).
 ActorConsumerResult update_actor_consumer(const ActorRecordBinding& binding,
                                           const ActorConsumerInputs& inputs);
 
 enum class MarkerProduction {
     direct_seed_stored,
     derived_marker_stored,
-    trace_observation_missing
+    provider_observation_missing
 };
 
 struct MarkerSideValues {
@@ -68,7 +78,7 @@ struct MarkerProducerInputs {
     float marker_seed; // Low XMM4 value at the local producer tail.
     std::uint8_t mode_byte; // BL; 8 seeds N+50 with 1.0.
     bool side54_seed_is_one; // Resolved XMM3 seed before the provider calls.
-    std::optional<MarkerSideValues> traced_side_values;
+    std::optional<MarkerSideValues> resolved_side_values;
 };
 
 // Replays the local N+48 producer tail at 414F868B..414F87BD.
