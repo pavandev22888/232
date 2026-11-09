@@ -1,0 +1,37 @@
+{
+  "task_id": "NEXT-MODES",
+  "base_commit": "553d229",
+  "status": "awaiting_review",
+  "language": "C++17 regression baseline; original language/ABI unknown",
+  "scope": "Local release-state slices only, NOT the full DT/HS state machine or scheduling.",
+  "typed_inputs": {
+    "entry": "AL returned by call 414F1240; then BYTE G42500C78 read at 415E01A8 if AL!=0.",
+    "post_helper": "Separate snapshot AFTER 414F2240, at 415E01B6: raw AL, BYTE G42506F30, DWORD G4223FE28, BYTE G42500C78, observed DWORD G424F4B18.",
+    "post_dispatch": "Separate observation AFTER indirect [425080E4], at 415E01DF: DWORD G4223FE28 and G424F4B18; only if equal, optional DWORD +4D30 on pointee loaded through G4223F428."
+  },
+  "proved": [
+    {
+      "addresses": "415E01A0..415E01B1",
+      "effect": "Zero raw AL -> 415E057C; otherwise zero pending BYTE -> 415E01D2; nonzero pending -> CALL 414F2240. No guessed helper call."
+    },
+    {
+      "addresses": "415E01B6..415E01D2",
+      "effect": "AL==0 sets BYTE G42506F30=1 (nonzero preserves raw prior byte); then DWORD G4223FE28=observed G424F4B18; then BYTE G42500C78=0."
+    },
+    {
+      "addresses": "415E01DF..415E0201",
+      "effect": "Unequal DWORD counter/current skips pointee read and store. Equality reads [G4223F428]+4D30; nonzero increments DWORD counter modulo 2^32; zero skips. Missing pointee observation is unresolved, not a fabricated zero."
+    }
+  ],
+  "preconditions": [
+    "Each API requires reaching its stated block with valid memory and observations at THAT block. No cross-call identity or writer-before-reader inferred.",
+    "Unknown 414F2240 and indirect [425080E4] may mutate globals. Post-helper and post-dispatch snapshots must be supplied independently; this API deliberately does not compose them as preserved state.",
+    "Raw BYTEs and DWORDs, no inferred game semantic field names. No concurrent mutation or observable intermediate writes in offline projection."
+  ],
+  "unresolved": [
+    "CALL 414F1240 result provenance/guards, CALL 414F2240 semantics and clobbers, indirect [425080E4] binding and effects; upstream whole-function reachability.",
+    "G4223F428 pointee identity/lifetime and +4D30 producer; original scheduling and all other release/mode paths.",
+    "Navigation label 415E0120 is not treated as a proved function entry: a naive fresh decode there yielded a mid/opaque window; local implemented entry is confirmed at 415E01A0 by pinned archival walk and fresh bytes."
+  ],
+  "tests": "All raw AL bytes, raw preserved flag bytes, zero/sign-bit/wrap DWORDs, optional observation only on equality, distinct API boundaries; native/sanitizers plus 23 fresh decodes."
+}

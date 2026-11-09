@@ -1571,6 +1571,30 @@
         "Check counter state before unresolved, arithmetic gates, MAXSS/UCOMISS NaNs/±0, raw copy and no invented ranking/provider."
       ],
       "stop_condition": "Report findings and exact reviewed SHA. No code edits, no external audit claim."
+    },
+    {
+      "id": "NEXT-MODES",
+      "owner": "primary-coordinator",
+      "status": "in_progress",
+      "base_commit": "553d2292393c2bb90283fd08dcd4150453a950a0",
+      "worktree": "/tmp/hoplite/workspace",
+      "branch": "hoplite/sikyon-46eee495",
+      "write_paths": [
+        "continuation/include/rage/release_state_slice.hpp",
+        "continuation/src/release_state_slice.cpp",
+        "continuation/tests/test_release_state_slice.cpp",
+        "continuation/evidence/wave6/modes/"
+      ],
+      "dependencies": [
+        "W5-CHARGE"
+      ],
+      "scope": "Local release gates 415E01A0..415E01D2 and post-dispatch counter 415E01DF..415E0201, with distinct call-boundary observations.",
+      "acceptance": [
+        "Fresh bytes/decodes, source pins, actual bounded bodies, native/sanitizer/byte tests.",
+        "No assumptions about 414F2240 or indirect 425080E4 clobbers, no inter-call snapshot identity.",
+        "Independent fixed integrated SHA review."
+      ],
+      "stop_condition": "Stop at unproved helper/indirect call and pointer binding; no full DT/HS state machine claim."
     }
   ],
   "goal_correction": {
