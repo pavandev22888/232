@@ -1,0 +1,7 @@
+UTC 2026-11-09T19:13:24.107335+00:00
+CWD /tmp/hoplite/232-w8-final-flow
+CMD /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_damage_slice_sanitize
+ENV ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
+ENV UBSAN_OPTIONS=halt_on_error=1
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+EXIT 0

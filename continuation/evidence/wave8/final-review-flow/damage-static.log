@@ -1,0 +1,8 @@
+UTC 2026-11-09T19:13:24.123043+00:00
+CWD /tmp/hoplite/232-w8-final-flow
+CMD python3 -B continuation/evidence/wave8/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS nl.bin/DLL SHA-256 and exact embedded-resource identity
+PASS 5 byte ranges, 134 static instruction decodes
+PASS eight switch targets, four binary32 constants, both guards == 0x20
+PASS distinct provider operands 0x2e198140 / 0x2e198210; bindings remain unknown
+EXIT 0

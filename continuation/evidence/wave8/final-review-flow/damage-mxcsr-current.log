@@ -1,0 +1,9 @@
+UTC 2026-11-09T19:13:24.315056+00:00
+CWD /tmp/hoplite/232-w8-final-flow
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build mxcsr
+make: Entering directory '/tmp/hoplite/232-w8-final-flow/continuation'
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto tests/regression_damage_mxcsr.cpp -o evidence/wave8/final-review-flow/build/damage_mxcsr_lto
+evidence/wave8/final-review-flow/build/damage_mxcsr_lto
+damage MXCSR: nearest=3fa00001, upward=3fa00002
+make: Leaving directory '/tmp/hoplite/232-w8-final-flow/continuation'
+EXIT 0

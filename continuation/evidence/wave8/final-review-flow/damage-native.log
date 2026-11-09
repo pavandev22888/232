@@ -1,0 +1,5 @@
+UTC 2026-11-09T19:13:24.104202+00:00
+CWD /tmp/hoplite/232-w8-final-flow
+CMD /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/test_damage_slice
+PASS: damage switch, hitgroup1 guards and ordered float stores (336 checks)
+EXIT 0

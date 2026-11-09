@@ -1,0 +1,6 @@
+Old implementation: git show bcc5918568c162482b7ec4e1fd7ca7ec48d58940:continuation/src/damage_slice.cpp
+The only implementation delta is the two-line dc18d0b repair, checked byte-for-byte. Header unchanged.
+Test copied byte-for-byte, same source for old and current build:
+8c2b6edadf448ceaafe675ecf2963210efa362601e06dce50abf07afff3a1f5f  continuation/tests/regression_damage_mxcsr.cpp
+6adae5522eea8b1fa68a2c77943b1cef82fd2d3a4b2de3f59e6f303de44c4127  old damage_slice.cpp
+ef1291074ec75882b5a4344f5410dc8162a6da1a01b0a65a71958d3728525b14  current damage_slice.cpp

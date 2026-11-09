@@ -1,0 +1,8 @@
+UTC 2026-11-09T19:13:22.476820+00:00
+CWD /tmp/hoplite/232-w8-final-flow
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build SOURCES=src/angle_slice.cpp evidence/wave8/final-review-flow/build/test_angle_slice evidence/wave8/final-review-flow/build/test_angle_slice_sanitize
+make: Entering directory '/tmp/hoplite/232-w8-final-flow/continuation'
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/angle_slice.cpp tests/test_angle_slice.cpp -o evidence/wave8/final-review-flow/build/test_angle_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/angle_slice.cpp tests/test_angle_slice.cpp -o evidence/wave8/final-review-flow/build/test_angle_slice_sanitize
+make: Leaving directory '/tmp/hoplite/232-w8-final-flow/continuation'
+EXIT 0

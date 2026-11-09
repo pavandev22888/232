@@ -1,0 +1,4 @@
+CWD /tmp/hoplite/232-w8-final-flow
+CMD g++ -Icontinuation/include -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -flto /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/tests/regression_damage_mxcsr.cpp -o /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/old-nonvolatile/damage_mxcsr_lto
+EXPECTED_EXIT 0
+EXIT 0

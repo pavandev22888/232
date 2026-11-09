@@ -1,0 +1,110 @@
+{
+  "task": "W8-FINAL-FLOW",
+  "reviewed_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+  "worktree": "/tmp/hoplite/232-w8-final-flow",
+  "branch": "hoplite/tanagra-adb72df5--w8-final-flow",
+  "reviewed_at_utc": "2026-11-09T19:14:34.587866+00:00",
+  "result": "accepted_bounded_scope",
+  "scope": [
+    "New angle_slice only: local 0x414AF113..0x414AF1D6 tail and independent call/postcall observations, not entry/body 0x414AE770.",
+    "Damage MXCSR repair dc18d0b6a7c97aebf3d1b6e07b27d28a3fbea73b relative to the initial bcc5918568c162482b7ec4e1fd7ca7ec48d58940 review, plus its permanent unity/LTO make mxcsr regression."
+  ],
+  "findings": [],
+  "initial_P2_disposition": {
+    "status": "closed_for_reviewed_supported_domain",
+    "anchor": "continuation/src/damage_slice.cpp:21-22",
+    "repair": "MULSS is now volatile with memory clobber, keeping destination/source order and preventing the observed cross-MXCSR CSE.",
+    "same_regression_sha256": "8c2b6edadf448ceaafe675ecf2963210efa362601e06dce50abf07afff3a1f5f",
+    "before": {
+      "implementation_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "log": "damage-mxcsr-old-expected-failure.log",
+      "exit_code": 1,
+      "nearest": "3fa00001",
+      "upward": "3fa00001",
+      "expected_upward": "3fa00002"
+    },
+    "after": {
+      "implementation_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+      "log": "damage-mxcsr-current.log",
+      "command": "make -C continuation CXX=g++ BUILD=evidence/wave8/final-review-flow/build mxcsr",
+      "exit_code": 0,
+      "nearest": "3fa00001",
+      "upward": "3fa00002"
+    },
+    "identity": "Byte-identical permanent regression used for old/current; old header identical; exact implementation delta verified as the two-line dc18d0b repair. No further optimization matrix run.",
+    "boundary": "Acceptance covers GCC 13.3 x86_64 with repository no-fast-math/no-contraction flags and this unity/LTO regression; not universal proof of scheduling under arbitrary compilers or manually reordered external FP-control assembly. Damage exception flags/traps are not API outputs.",
+    "host_documentation": "Damage contract.json:37-40 explicitly requires own x86 SSE GNU-compatible C++17 host, matching MXCSR controls and masked exceptions; it does not infer the original source language."
+  },
+  "angle_acceptance": {
+    "source": "nl.bin SHA256 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; exact neverlose.dll resource identity verified. Conditional VA bias 0x412A0000 is not a proved runtime base.",
+    "anchors": [
+      "0x414AF113 CMP AX,2 and 0x414AF12C CMP AX,1 remain separate observations; 0x414AF124 saved-word reload occurs before the second comparison.",
+      "0x414AF149 CVTSS2SD conversion is separated from unresolved 0x414AF152 call and supplied binary32 0x414AF15A FSTP observation.",
+      "0x414AF16A..0x414AF1A2 implements one ordered upper/lower wrap adjustment, not a loop or substitute remainder kernel.",
+      "0x414AF1A5 reloads destination memory after unknown calls. 0x414AF1AA/B1 MAXPS/MINPS and 0x414AF1B8/C4 MAXSS/MINSS keep constants as second operands, including unordered cases.",
+      "Native codegen confirms eight-byte destination +0x0C store, then scalar MINSS, then four-byte +0x14 store."
+    ],
+    "edge_cases": "615 assertions per mode cover distinct AX cases, missing observations, binary32-to-binary64 NaN quieting, NaN/signed-zero selection and clamps, threshold neighbors, infinities, subnormals, null/short adapter views and untouched destination bytes.",
+    "environment": "GNU-compatible x86 SSE2, nearest-even, FTZ/DAZ disabled, masked FP exceptions. Flags/traps and nondefault environment excluded by public header and source_anchors contract.",
+    "boundary": "Null/short destination rejection and optional stop enums are offline adapters, not original branches. No unknown call/provider implementation or recoil/command identity is supplied."
+  },
+  "verification": {
+    "checks_manifest": "checks.json",
+    "all_expected_exits_observed": true,
+    "native": {
+      "angle": 615,
+      "damage": 336,
+      "exit_codes": [
+        0,
+        0
+      ]
+    },
+    "asan_ubsan": {
+      "angle": 615,
+      "damage": 336,
+      "exit_codes": [
+        0,
+        0
+      ]
+    },
+    "static_gates": {
+      "angle": {
+        "exit_code": 0,
+        "fresh_decodes": 49,
+        "contiguous_bytes": 224,
+        "constant_blocks": 5
+      },
+      "damage": {
+        "exit_code": 0,
+        "fresh_decodes": 134,
+        "ranges": 5
+      }
+    },
+    "codegen_logs": [
+      "angle-model-codegen.log",
+      "damage-model-codegen.log",
+      "damage-mxcsr-codegen.log"
+    ],
+    "fresh_original_static_log": "angle-original-static.log",
+    "log_hashes": "SHA256SUMS",
+    "full_make_check": "Not run by this bounded reviewer; coordinator owns integrated full check."
+  },
+  "precise_exclusions": [
+    "No fresh re-review of movement, geometry, reset, provider, queue, shot, history or other W8 deltas. Initial review evidence is unchanged.",
+    "No whole-function angle/damage reconstruction, unknown classifiers/remainder/provider internals, original path feasibility, call ABI, object lifetime or full GAP closure.",
+    "No claim to the original source language/standard from x86, GNU asm, C++17 code or successful tests.",
+    "No original DLL loading, execution, emulation, injection or game connection. Handoff was read-only.",
+    "No implementation/test/shared Makefile/status edits, push or merge. Only final-review-flow evidence and ignored build artifacts written."
+  ],
+  "source_sha256": {
+    "continuation/src/angle_slice.cpp": "fb4c89abe03da166962c534694e75807a0449cbb2d33c1d93448c3db7e80ed31",
+    "continuation/include/rage/angle_slice.hpp": "2f328d15608fd68aeeb49f33da39b969cdd1b0b3382a52775f113378ffd26877",
+    "continuation/tests/test_angle_slice.cpp": "e65ac80ee422c8b69bd5b5629e0d8a00d0f1f62b71b22eb948c946ec949f774b",
+    "continuation/evidence/wave8/angle/source_anchors.json": "855b11aa66a7723166f4b3a0f0cc211b8fd80c5f58c1656042c2476c3ced90b5",
+    "continuation/evidence/wave8/angle/verify_source_bytes.py": "7d7b32e52331c7f8ed2d2b692830532e9c79511e1b32ed37de56977148c8784c",
+    "continuation/src/damage_slice.cpp": "ef1291074ec75882b5a4344f5410dc8162a6da1a01b0a65a71958d3728525b14",
+    "continuation/tests/regression_damage_mxcsr.cpp": "8c2b6edadf448ceaafe675ecf2963210efa362601e06dce50abf07afff3a1f5f",
+    "continuation/evidence/wave8/damage/contract.json": "bdcc796c3c3e159c476beb226b69800d637213c9e4ae949b839454dc55074c83",
+    "continuation/Makefile": "5e1c731b80b1f2f5cd74ea06581ac8f9ddec10718161ca5d0330b7a8c45a3cd2"
+  }
+}

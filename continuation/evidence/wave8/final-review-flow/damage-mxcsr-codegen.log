@@ -1,0 +1,75 @@
+CWD /tmp/hoplite/232-w8-final-flow
+CMD objdump -d -Mintel --disassemble=main /tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/damage_mxcsr_lto
+EXPECTED_EXIT 0
+
+/tmp/hoplite/232-w8-final-flow/continuation/evidence/wave8/final-review-flow/build/damage_mxcsr_lto:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	55                   	push   rbp
+    1085:	53                   	push   rbx
+    1086:	48 83 ec 58          	sub    rsp,0x58
+    108a:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    1091:	00 00
+    1093:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+    1098:	31 c0                	xor    eax,eax
+    109a:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    109f:	8b 54 24 0c          	mov    edx,DWORD PTR [rsp+0xc]
+    10a3:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10aa:	00
+    10ab:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10b0:	f3 0f 10 0d 50 0f 00 	movss  xmm1,DWORD PTR [rip+0xf50]        # 2008 <_IO_stdin_used+0x8>
+    10b7:	00
+    10b8:	f3 0f 10 05 44 0f 00 	movss  xmm0,DWORD PTR [rip+0xf44]        # 2004 <_IO_stdin_used+0x4>
+    10bf:	00
+    10c0:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    10c4:	c6 44 24 3c 01       	mov    BYTE PTR [rsp+0x3c],0x1
+    10c9:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10d0:	00
+    10d1:	66 0f 7e 44 24 38    	movd   DWORD PTR [rsp+0x38],xmm0
+    10d7:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10dc:	f3 0f 10 05 20 0f 00 	movss  xmm0,DWORD PTR [rip+0xf20]        # 2004 <_IO_stdin_used+0x4>
+    10e3:	00
+    10e4:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    10e8:	89 54 24 0c          	mov    DWORD PTR [rsp+0xc],edx
+    10ec:	66 0f 7e c3          	movd   ebx,xmm0
+    10f0:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f5:	31 ed                	xor    ebp,ebp
+    10f7:	80 7c 24 3c 00       	cmp    BYTE PTR [rsp+0x3c],0x0
+    10fc:	74 04                	je     1102 <main+0x82>
+    10fe:	8b 6c 24 38          	mov    ebp,DWORD PTR [rsp+0x38]
+    1102:	89 ea                	mov    edx,ebp
+    1104:	31 c0                	xor    eax,eax
+    1106:	89 d9                	mov    ecx,ebx
+    1108:	bf 02 00 00 00       	mov    edi,0x2
+    110d:	48 8d 35 fc 0e 00 00 	lea    rsi,[rip+0xefc]        # 2010 <_IO_stdin_used+0x10>
+    1114:	e8 57 ff ff ff       	call   1070 <__printf_chk@plt>
+    1119:	81 fd 01 00 a0 3f    	cmp    ebp,0x3fa00001
+    111f:	0f 95 c0             	setne  al
+    1122:	81 fb 02 00 a0 3f    	cmp    ebx,0x3fa00002
+    1128:	0f 95 c2             	setne  dl
+    112b:	09 d0                	or     eax,edx
+    112d:	0f b6 c0             	movzx  eax,al
+    1130:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    1135:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+    113c:	00 00
+    113e:	75 07                	jne    1147 <main+0xc7>
+    1140:	48 83 c4 58          	add    rsp,0x58
+    1144:	5b                   	pop    rbx
+    1145:	5d                   	pop    rbp
+    1146:	c3                   	ret
+    1147:	e8 14 ff ff ff       	call   1060 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:
+EXIT 0
