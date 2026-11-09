@@ -1627,6 +1627,56 @@
       "stop_condition": "Stop at unproved helper/indirect call and pointer binding; no full DT/HS state machine claim.",
       "result_commit": "47af79a",
       "remaining_frontier": "Independent post-call observations only; helpers, indirect dispatch, pointee identity, full state machine and scheduling unknown."
+    },
+    {
+      "id": "W6-REVIEW-CODE",
+      "owner": "w6-review-code",
+      "status": "in_progress",
+      "base_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "worktree": "/tmp/hoplite/232-w6-review-code",
+      "branch": "hoplite/sikyon-46eee495--w6-review-code",
+      "write_paths": [
+        "continuation/evidence/wave6/review-integrated-code/"
+      ],
+      "dependencies": [
+        "NEXT-AGGREGATE",
+        "NEXT-RESET",
+        "NEXT-MODES",
+        "NEXT-HISTORY",
+        "NEXT-GEOMETRY",
+        "NEXT-MESSAGE"
+      ],
+      "scope": "New callback/release/reset/history C++ semantics, tests and fresh full make check",
+      "acceptance": [
+        "Independent fixed-SHA source review and fresh commands/exit codes",
+        "No full GAP/original-language/external-audit claim"
+      ],
+      "stop_condition": "Commit report only; report actionable blockers, no source edits or push."
+    },
+    {
+      "id": "W6-REVIEW-EVIDENCE",
+      "owner": "w6-review-evidence",
+      "status": "in_progress",
+      "base_commit": "d99dd375160c7fccfd489598942232430d78da2f",
+      "worktree": "/tmp/hoplite/232-w6-review-evidence",
+      "branch": "hoplite/sikyon-46eee495--w6-review-evidence",
+      "write_paths": [
+        "continuation/evidence/wave6/review-integrated-evidence/"
+      ],
+      "dependencies": [
+        "NEXT-AGGREGATE",
+        "NEXT-RESET",
+        "NEXT-MODES",
+        "NEXT-HISTORY",
+        "NEXT-GEOMETRY",
+        "NEXT-MESSAGE"
+      ],
+      "scope": "Six W6 byte gates, source pins, contracts/frontiers and integrity",
+      "acceptance": [
+        "Independent fixed-SHA source review and fresh commands/exit codes",
+        "No full GAP/original-language/external-audit claim"
+      ],
+      "stop_condition": "Commit report only; report actionable blockers, no source edits or push."
     }
   ],
   "goal_correction": {
@@ -1662,7 +1712,8 @@
     "coordinator": "primary-coordinator",
     "ownership_check": "Only current thread visible; existing registry has 22 done / 9 blocked, no active tasks; clean current checkout.",
     "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "status": "awaiting_integrated_review",
-    "full_tasks_closed": []
+    "status": "in_review",
+    "full_tasks_closed": [],
+    "review_base_commit": "d99dd375160c7fccfd489598942232430d78da2f"
   }
 }

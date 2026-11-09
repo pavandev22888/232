@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_integration_and_review",
+  "status": "awaiting_independent_review",
   "baseline_head": "180616d1227235fc952ad07202cdd7529c0272e8",
   "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
   "restoration": {
@@ -78,5 +78,154 @@
       "scope": "input integrity only; no algorithmic correctness claimed"
     },
     "recorded_before": "1215d91"
+  },
+  "integrated_code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+  "integration_ledger": [
+    {
+      "task": "NEXT-AGGREGATE",
+      "source_commits": [
+        "35b8ada"
+      ],
+      "integration_commits": [
+        "35b8ada"
+      ],
+      "result": "Non-direct local gates + tail statistics/initial copy; unknown settings/handler/ranking remain."
+    },
+    {
+      "task": "NEXT-MODES",
+      "source_commits": [
+        "47af79a"
+      ],
+      "integration_commits": [
+        "47af79a"
+      ],
+      "result": "Independent post-call observations; not a complete state machine."
+    },
+    {
+      "task": "NEXT-MESSAGE",
+      "source_commits": [
+        "8faa025"
+      ],
+      "integration_commits": [
+        "a63b998",
+        "23198f7"
+      ],
+      "result": "Evidence only; caller/callee frontier 5325D3E8 outside image."
+    },
+    {
+      "task": "NEXT-GEOMETRY",
+      "source_commits": [
+        "b9be3bd"
+      ],
+      "integration_commits": [
+        "1215d91"
+      ],
+      "result": "Evidence only; 289A6D60 binding/ABI unresolved; candidates remain separate."
+    },
+    {
+      "task": "NEXT-RESET",
+      "source_commits": [
+        "de19628",
+        "e9b3c7d"
+      ],
+      "integration_commits": [
+        "14cc881",
+        "c5e496f"
+      ],
+      "result": "ADD/CMP/JNE -> eleven-store projection, not loop/scheduling; initial byte failure retained."
+    },
+    {
+      "task": "NEXT-HISTORY",
+      "source_commits": [
+        "2a3e717",
+        "46c1738"
+      ],
+      "integration_commits": [
+        "5859dd2",
+        "a940ea6"
+      ],
+      "result": "Ordered store slice with little-endian local observation; unknown suitability/slot/matrix paths."
+    },
+    {
+      "task": "NEXT-DAMAGE",
+      "source_commits": [],
+      "integration_commits": [],
+      "result": "No implementation/tests/evidence; task not completed, no source-unresolvability inference."
+    }
+  ],
+  "callback_review": {
+    "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+    "initial_report": "review-callback/report.json",
+    "resolution": "review-callback/resolution.json",
+    "status": "initial finding withdrawn after fresh CFG trace; source/tests unchanged",
+    "source_report_commits": [
+      "5ca65dd",
+      "25f66a7",
+      "d1fe45c",
+      "9084d92"
+    ],
+    "integration_report_commits": [
+      "0d934d4",
+      "5450183",
+      "b4283fc",
+      "9ff3fd5"
+    ],
+    "coordinator_static_gate_exit": 0
+  },
+  "preliminary_gate": {
+    "head": "62d7775bf5ca183c9fb35146c3dec2ec6d04ea4f",
+    "started_at": "2026-11-09T16:55:21.519691+00:00",
+    "commands": [
+      {
+        "name": "make-check",
+        "command": [
+          "make",
+          "-C",
+          "continuation",
+          "check",
+          "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/make-check.log",
+        "log_sha256": "99b94c1707faf3059d9639fc2c721e0dc1af83ab05d63fc1e6d58ffa6ae83570"
+      },
+      {
+        "name": "bundle",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/bundle.log",
+        "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+      },
+      {
+        "name": "integrity",
+        "command": [
+          "python3",
+          "-B",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+          "--root",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/integrity.log",
+        "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+      },
+      {
+        "name": "diff-check",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/integrated-before-history/diff-check.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "finished_at": "2026-11-09T16:56:36.070108+00:00",
+    "scope": "Before history integration; not final W6 acceptance. Only handoff documentation was edited while these commands ran."
   }
 }
