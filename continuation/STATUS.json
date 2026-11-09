@@ -92,7 +92,7 @@
     {
       "id": "GAP06",
       "status": "partial",
-      "change": "Integrated native/sanitizer/static checks passed; independent W5 reviews pending. One pefile H01 #5 library leaf rerun; old producer/full protocol and external audit remain unresolved."
+      "change": "Integrated native/sanitizer/static checks passed; three independent fixed-SHA W5 agent reviews accepted bounded scope; no external audit. One pefile H01 #5 library leaf rerun; old producer/full protocol and external audit remain unresolved."
     }
   ],
   "unresolved_boundaries": [
@@ -250,7 +250,9 @@
     "workflow": "docs/AGENT_WORKFLOW.md",
     "prompts": "docs/AGENT_PROMPTS.md",
     "paths_relative_to": "repository root",
-    "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure."
+    "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure.",
+    "transfer_summary": "docs/HANDOFF.md",
+    "immediate_start_prompt": "docs/START_NEXT_AGENT.md"
   },
   "latest_bounded_wave": {
     "task": "W5",

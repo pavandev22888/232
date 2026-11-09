@@ -8,6 +8,8 @@
   исходного языка или стандарта оригинала. См. `docs/GOAL.md`.
 - Начните с `README.md`, `docs/GOAL.md`, `docs/SOURCE_INDEX.md`,
   `continuation/STATUS.json`, `docs/ROADMAP.md`, `docs/TASKS.json`.
+- Полная передача после W5: `docs/HANDOFF.md`; готовый промпт продолжения
+  без заполнителей: `docs/START_NEXT_AGENT.md`.
 - Восстановление и проверки: `docs/BOOTSTRAP.md`. Правила совместной работы:
   `docs/AGENT_WORKFLOW.md`; готовые задания: `docs/AGENT_PROMPTS.md`.
 - `continuation/PLAN_NEXT.md` и `SPEC_NEXT.md` описывают уже завершённые W3–W4,
