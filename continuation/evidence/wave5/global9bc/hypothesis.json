@@ -1,0 +1,27 @@
+{
+  "task": "W5-GLOBAL9BC",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f0",
+  "field": "byte at conditional VA 0x425009BC",
+  "hypothesis_id": "H3_TLS_COUNTER_STORE",
+  "recorded_before_investigation": true,
+  "candidate": "0x41DA7D1B: 89 81 08 00 00 00, MOV DWORD [ECX+8],EAX, after FS:[2C] -> table[G42518540] -> ECX; could overlap G425009BC only if that indirect base has the required alias.",
+  "prior_rejected": "W2 H2 excluded BC only from two explicit DWORD argument stores through &G425009B8; it explicitly left TLS-derived writes unresolved. H3 investigates the different indirect destination, not those rejected stores.",
+  "known_upstream_anchors": [
+    "0x41DA7CF4: 8B 0D EC 26 26 42",
+    "0x41DA7CFD: 41",
+    "0x41DA7CFE: 89 0D EC 26 26 42",
+    "0x41DA7D07: 64 A1 2C 00 00 00",
+    "0x41DA7D0D: 8B 0D 40 85 51 42",
+    "0x41DA7D13: 8B 0C 88",
+    "0x41DA7D16: A1 EC 26 26 42",
+    "0x41DA7D1B: 89 81 08 00 00 00"
+  ],
+  "evidence_basis": "continuation/evidence/wave2/gap01/results.json, g_b8_footer_body; not a fresh broad search",
+  "bounded_plan": [
+    "Freshly verify the exact footer sequence and the two known zero stores from pinned nl.bin.",
+    "Inspect only PE/TLS metadata and fixed cells supporting this selected TLS-derived destination.",
+    "Derive exact byte-overlap and nonzero conditions, then stop at proved relation or precise alias/value frontier."
+  ],
+  "stop": "One selected TLS indirect-write chain; no further candidate, no broad literal scan, no original execution/emulation, no positive stub."
+}
