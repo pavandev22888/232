@@ -1,0 +1,67 @@
+{
+  "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+  "tasks": [
+    {
+      "id": "W8-ANGLE",
+      "owner": "w8-angle",
+      "status": "in_progress",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-angle",
+      "branch": "hoplite/tanagra-adb72df5--w8-angle",
+      "write_paths": [
+        "continuation/evidence/wave8/angle/",
+        "continuation/include/rage/angle_slice.hpp",
+        "continuation/src/angle_slice.cpp",
+        "continuation/tests/test_angle_slice.cpp"
+      ],
+      "scope": "Audit uncovered angle/recoil domain: new local guard/numeric effect at 0x414AE770 or 0x414AF1A5..0x414AF1CC, with caller 0x4147A2A0 as navigation only. Preserve exact FP chain; unknown command/settings remain explicit.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits."
+    },
+    {
+      "id": "W8-SHOT",
+      "owner": "w8-shot",
+      "status": "in_progress",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-shot",
+      "branch": "hoplite/tanagra-adb72df5--w8-shot",
+      "write_paths": [
+        "continuation/evidence/wave8/shot/",
+        "continuation/include/rage/shot_result_slice.hpp",
+        "continuation/src/shot_result_slice.cpp",
+        "continuation/tests/test_shot_result_slice.cpp"
+      ],
+      "scope": "Audit uncovered shot accounting: one source-store-consumer body at 0x414C0A50, Cring stride0x98/mod150 and R stride0xF1A0 only if freshly proved. No guessed hit/miss/server semantics.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits."
+    },
+    {
+      "id": "W8-QUEUE",
+      "owner": "w8-queue",
+      "status": "in_progress",
+      "base_commit": "e7661f42a8452562b033f6264d8d947bff15e424",
+      "worktree": "/tmp/hoplite/232-w8-queue",
+      "branch": "hoplite/tanagra-adb72df5--w8-queue",
+      "write_paths": [
+        "continuation/evidence/wave8/queue/",
+        "continuation/include/rage/queue_context_slice.hpp",
+        "continuation/src/queue_context_slice.cpp",
+        "continuation/tests/test_queue_context_slice.cpp"
+      ],
+      "scope": "Audit uncovered worker dependency: 0x414B2930 to0x414AC2D0 context capture/enqueue/consumer relation with original raw layout/ownership order. Do not invent scheduler/provider/lifetime; initializer table only navigation.",
+      "acceptance": [
+        "Fresh original hashes/bytes, readable body with exact observations or precise unresolved dependency.",
+        "Native and ASan/UBSan focused tests, standalone byte gate, final fixed-SHA independent review."
+      ],
+      "stop_condition": "One contiguous newly uncovered source dependency; no broad scans, invented providers, original execution or common-file edits."
+    }
+  ],
+  "source": "continuation/evidence/wave8/audit/coverage.json",
+  "model": "gpt-6.1-sol"
+}
