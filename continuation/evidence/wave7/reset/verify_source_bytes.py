@@ -71,6 +71,33 @@ def main():
     args = parser.parse_args()
 
     evidence = json.loads(EVIDENCE_PATH.read_text())
+    contract = evidence["contract"]
+    application = contract["body_snapshot_application"]
+    require(application["api"] ==
+            "ResetBodySnapshot apply_reset_body_record(const ResetBodySnapshot&)",
+            "raw snapshot API contract differs")
+    require(application["input"]["type"] ==
+            "std::array<std::uint8_t, 0xc8>" and
+            application["input"]["caller_provided"] and
+            not application["input"]["input_mutated"],
+            "raw snapshot input contract differs")
+    require(application["stores"] == {
+        "count": 25,
+        "width_bytes": 4,
+        "value": "0xffffffff",
+        "first_offset": "0x00",
+        "stride_bytes": 8,
+        "last_offset": "0xc0",
+    }, "raw snapshot store contract differs")
+    require(application["preserved_bytes"] == {
+        "between_store_gaps": "offsets +0x4..+0x7 for every 8-byte slot",
+        "record_tail": "0xc4..0xc7",
+    }, "raw snapshot preservation contract differs")
+    trace = contract["body_store_trace"]
+    require(trace["separate_from_raw_snapshot_application"] and
+            "does not read or mutate raw record bytes" in trace["semantics"],
+            "body trace must remain distinct from raw snapshot mutation")
+
     image_info = evidence["image"]
     require(image_info["sha256"] == EXPECTED_IMAGE_SHA256,
             "evidence image pin differs from accepted source")
@@ -166,6 +193,7 @@ def main():
         text=True,
     ).stdout
     require_rows(parse_instructions(objdump), manifest_rows, "fresh objdump")
+    print("PASS: raw snapshot mutation contract distinct from metadata trace")
 
     print(
         "PASS: pinned image SHA256; 43 exact instruction bytes/decodes; "

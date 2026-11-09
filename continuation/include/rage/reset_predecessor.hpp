@@ -15,6 +15,9 @@ enum class ResetPredecessorBranch {
 };
 
 inline constexpr std::size_t kResetBodyStoreCount = 25;
+inline constexpr std::size_t kResetBodyRecordByteCount = 0xc8u;
+using ResetBodySnapshot =
+    std::array<std::uint8_t, kResetBodyRecordByteCount>;
 
 struct ResetFallthroughSnapshot {
     std::uint32_t dword_424fdda8{};
@@ -57,8 +60,15 @@ ResetPredecessorBranch apply_reset_predecessor_projection(
     std::uint32_t eax_before_add,
     ChargeResetSnapshot& snapshot);
 
+// Returns a transformed copy of one caller-provided 0xc8-byte record.
+// The 25 DWORD stores are applied at offsets 0, 8, ..., 0xc0; other bytes
+// are preserved. This does not infer the record's address or provider.
+ResetBodySnapshot apply_reset_body_record(
+    const ResetBodySnapshot& snapshot);
+
 // Records one source-backed table-body iteration and the local fallthrough
-// stores. EAX is caller-supplied; this does not infer its provider or entry.
+// stores. This metadata trace does not mutate raw record bytes. EAX is
+// caller-supplied; this does not infer its provider or entry.
 ResetPredecessorBranch apply_reset_predecessor_projection(
     std::uint32_t eax_before_add,
     ResetPredecessorSnapshot& snapshot,

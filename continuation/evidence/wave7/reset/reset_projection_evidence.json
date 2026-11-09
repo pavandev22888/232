@@ -358,6 +358,33 @@
       "Outer entry predicate, caller/call order, reset scheduling and reachability.",
       "Semantic names/meaning of the reset destinations and state synchronization.",
       "Behavior beyond 0x415ded53; no claim that the bounded projection is the full routine."
-    ]
+    ],
+    "body_snapshot_application": {
+      "api": "ResetBodySnapshot apply_reset_body_record(const ResetBodySnapshot&)",
+      "input": {
+        "type": "std::array<std::uint8_t, 0xc8>",
+        "caller_provided": true,
+        "input_mutated": false
+      },
+      "stores": {
+        "count": 25,
+        "width_bytes": 4,
+        "value": "0xffffffff",
+        "first_offset": "0x00",
+        "stride_bytes": 8,
+        "last_offset": "0xc0"
+      },
+      "preserved_bytes": {
+        "between_store_gaps": "offsets +0x4..+0x7 for every 8-byte slot",
+        "record_tail": "0xc4..0xc7"
+      },
+      "semantics": "Returns a transformed copy; applies only the source-backed body stores to this raw record snapshot.",
+      "provider": "No address, EAX value, provider, or record identity is inferred."
+    },
+    "body_store_trace": {
+      "api": "apply_reset_predecessor_projection(std::uint32_t, ResetPredecessorSnapshot&, ResetPredecessorRecord&)",
+      "semantics": "Emits the 25 body store descriptors and predecessor/fallthrough result as metadata; does not read or mutate raw record bytes.",
+      "separate_from_raw_snapshot_application": true
+    }
   }
 }

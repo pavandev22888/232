@@ -7,8 +7,10 @@
 using rage::offline::ChargeResetSnapshot;
 using rage::offline::ResetPredecessorBranch;
 using rage::offline::ResetPredecessorRecord;
+using rage::offline::ResetBodySnapshot;
 using rage::offline::ResetPredecessorSnapshot;
 using rage::offline::ResetStoreWidth;
+using rage::offline::apply_reset_body_record;
 using rage::offline::apply_reset_predecessor_projection;
 
 namespace {
@@ -27,6 +29,14 @@ ChargeResetSnapshot seeded_snapshot()
     return {0xa5u, 0x5au, 0x01020304u, 0x11121314u, 0x21222324u,
             0x31323334u, 0x41424344u, 0x96u, 0x51525354u, 0x61626364u,
             0x71727374u};
+}
+
+ResetBodySnapshot seeded_body_record()
+{
+    ResetBodySnapshot snapshot{};
+    for (std::size_t index = 0; index < snapshot.size(); ++index)
+        snapshot[index] = static_cast<std::uint8_t>(index * 37u + 11u);
+    return snapshot;
 }
 
 ResetPredecessorSnapshot seeded_projection()
@@ -104,6 +114,34 @@ int main()
                  "one above repeats the loop");
     check_repeat(0xffffff38u, "32-bit add wraps before equality");
 
+    const auto body_before = seeded_body_record();
+    auto body_expected = body_before;
+    for (std::size_t index = 0; index < 25u; ++index) {
+        const auto offset = index * 8u;
+        for (std::size_t byte = 0; byte < 4u; ++byte)
+            body_expected[offset + byte] = 0xffu;
+    }
+    const auto body_after = apply_reset_body_record(body_before);
+    check(body_after == body_expected,
+          "raw snapshot applies all 25 DWORD writes and preserves all other bytes");
+    check(body_before == seeded_body_record(),
+          "pure raw snapshot application leaves input unchanged");
+    bool preserved_gaps = true;
+    for (std::size_t index = 0; index < 25u; ++index) {
+        const auto gap = index * 8u + 4u;
+        for (std::size_t byte = 0; byte < 4u; ++byte)
+            preserved_gaps = preserved_gaps &&
+                             body_after[gap + byte] == body_before[gap + byte];
+    }
+    check(preserved_gaps, "all +4..+7 inter-store bytes are preserved");
+    bool preserved_tail = true;
+    for (std::size_t offset = 0xc4u; offset < 0xc8u; ++offset)
+        preserved_tail = preserved_tail &&
+                         body_after[offset] == body_before[offset];
+    check(preserved_tail, "last 0xc4..0xc7 bytes remain unchanged");
+    check(apply_reset_body_record(body_after) == body_after,
+          "raw snapshot application is idempotent");
+
     auto projection = seeded_projection();
     ResetPredecessorRecord record{};
     check(apply_reset_predecessor_projection(eax_before_add_for_equal,
@@ -180,6 +218,6 @@ int main()
 
     if (failures != 0)
         return 1;
-    std::cout << "PASS: reset predecessor branch, byte-backed store order, widths and bounds\n";
+    std::cout << "PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds\n";
     return 0;
 }
