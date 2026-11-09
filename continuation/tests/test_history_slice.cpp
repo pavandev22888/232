@@ -67,15 +67,26 @@ std::uint32_t get_word(const std::uint8_t* bytes, std::size_t offset)
     return word;
 }
 
+void write_expected_little_endian(std::uint8_t* destination, std::uint32_t word)
+{
+    destination[0] = static_cast<std::uint8_t>(word);
+    destination[1] = static_cast<std::uint8_t>(word >> 8);
+    destination[2] = static_cast<std::uint8_t>(word >> 16);
+    destination[3] = static_cast<std::uint8_t>(word >> 24);
+}
+
 void apply_expected(const std::uint8_t* source, std::uint8_t* destination,
-                    std::uint32_t local_word)
+                    std::uint32_t local_word_observation)
 {
     for (const ExpectedStore& store : expected_stores) {
         std::uint32_t word = 0;
         if (store.source == ExpectedSource::record)
             std::memcpy(&word, source + store.source_offset, sizeof(word));
-        else if (store.source == ExpectedSource::local_word)
-            word = local_word;
+        else if (store.source == ExpectedSource::local_word) {
+            write_expected_little_endian(destination + store.destination_offset,
+                                         local_word_observation);
+            continue;
+        }
         std::memcpy(destination + store.destination_offset, &word, sizeof(word));
     }
 }
@@ -105,7 +116,10 @@ bool projected_fields_preserve_bits_and_order()
     CHECK(get_word(destination.data(), 0x00) == 0x7fc12345u);
     CHECK(get_word(destination.data(), 0x04) == 0x80000000u);
     CHECK(get_word(destination.data(), 0x08) == 0x00000000u);
-    CHECK(get_word(destination.data(), 0x3c) == local_word);
+    CHECK(destination[0x3c] == 0xbe);
+    CHECK(destination[0x3d] == 0xba);
+    CHECK(destination[0x3e] == 0xfe);
+    CHECK(destination[0x3f] == 0xca);
     CHECK(get_word(destination.data(), 0x80) == 0xdeadbeefu);
     CHECK(get_word(destination.data(), 0xb0) == 0);
     return true;
@@ -145,12 +159,12 @@ bool overlapping_views_follow_store_order()
     for (std::size_t i = 0; i < actual.size(); ++i)
         actual[i] = static_cast<std::uint8_t>(i * 13u + 5u);
     auto expected = actual;
-    constexpr std::uint32_t local_word = 0x87654321u;
-    apply_expected(expected.data(), expected.data(), local_word);
+    constexpr std::uint32_t local_word_observation = 0x87654321u;
+    apply_expected(expected.data(), expected.data(), local_word_observation);
 
     CHECK(rage::offline::copy_history_store_prefix(
               {actual.data(), rage::offline::history_slice_source_bytes},
-              {actual.data(), actual.size()}, local_word) ==
+              {actual.data(), actual.size()}, local_word_observation) ==
           rage::offline::HistorySliceStatus::copied);
     CHECK(actual == expected);
     return true;

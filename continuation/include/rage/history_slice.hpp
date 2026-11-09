@@ -26,11 +26,13 @@ enum class HistorySliceStatus {
 
 // Models the local 32-bit store prefix after source and slot pointers are resolved.
 // The views are independent opaque pointers; selection and identity are not inferred.
+// local_word_observation is the DWORD read from [ebp-0x38] after opaque call 0x41B70930;
+// it is serialized little-endian without assuming identity or aliasing of that stack slot.
 // Short/null views are rejected by this offline adapter, not by a recovered branch.
 HistorySliceStatus copy_history_store_prefix(
     HistorySourceBytes source,
     HistoryDestinationBytes destination,
-    std::uint32_t local_word_at_ebp_minus_38) noexcept;
+    std::uint32_t local_word_observation) noexcept;
 
 } // namespace rage::offline
 #endif

@@ -64,12 +64,20 @@ static_assert(count_kind(WordKind::float32_bits) == 19);
 static_assert(count_kind(WordKind::opaque32) == 3);
 static_assert(count_kind(WordKind::literal32) == 1);
 
+void write_little_endian_u32(std::uint8_t* destination, std::uint32_t value) noexcept
+{
+    destination[0] = static_cast<std::uint8_t>(value);
+    destination[1] = static_cast<std::uint8_t>(value >> 8);
+    destination[2] = static_cast<std::uint8_t>(value >> 16);
+    destination[3] = static_cast<std::uint8_t>(value >> 24);
+}
+
 } // namespace
 
 HistorySliceStatus copy_history_store_prefix(
     HistorySourceBytes source,
     HistoryDestinationBytes destination,
-    std::uint32_t local_word_at_ebp_minus_38) noexcept
+    std::uint32_t local_word_observation) noexcept
 {
     if (source.data == nullptr || source.size < history_slice_source_bytes ||
         destination.data == nullptr ||
@@ -81,7 +89,9 @@ HistorySliceStatus copy_history_store_prefix(
         if (store.source == WordSource::record) {
             std::memcpy(&word, source.data + store.source_offset, sizeof(word));
         } else if (store.source == WordSource::local_word) {
-            word = local_word_at_ebp_minus_38;
+            write_little_endian_u32(destination.data + store.destination_offset,
+                                    local_word_observation);
+            continue;
         }
         std::memcpy(destination.data + store.destination_offset, &word, sizeof(word));
     }
