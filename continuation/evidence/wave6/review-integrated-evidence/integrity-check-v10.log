@@ -1,0 +1,10 @@
+COMMAND: python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v10/reproduction_inputs/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}

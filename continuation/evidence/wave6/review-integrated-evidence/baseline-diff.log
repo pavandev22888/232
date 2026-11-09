@@ -1,0 +1,36 @@
+COMMAND: git diff --name-status 180616d1227235fc952ad07202cdd7529c0272e8..d99dd375160c7fccfd489598942232430d78da2f -- continuation/evidence/wave6
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+A	continuation/evidence/wave6/aggregate/anchors.json
+A	continuation/evidence/wave6/aggregate/contract.json
+A	continuation/evidence/wave6/aggregate/execution.json
+A	continuation/evidence/wave6/aggregate/verify_callback.py
+A	continuation/evidence/wave6/geometry/anchors.json
+A	continuation/evidence/wave6/geometry/contract.md
+A	continuation/evidence/wave6/geometry/objdump.txt
+A	continuation/evidence/wave6/geometry/verify_geometry.py
+A	continuation/evidence/wave6/history/README.md
+A	continuation/evidence/wave6/history/byte-check.log
+A	continuation/evidence/wave6/history/full-check.log
+A	continuation/evidence/wave6/history/native.log
+A	continuation/evidence/wave6/history/sanitizer.log
+A	continuation/evidence/wave6/history/source_disassembly.txt
+A	continuation/evidence/wave6/history/verification.txt
+A	continuation/evidence/wave6/history/verify_source_bytes.py
+A	continuation/evidence/wave6/message/byte_anchors.json
+A	continuation/evidence/wave6/message/verify_message_frontier.py
+A	continuation/evidence/wave6/modes/anchors.json
+A	continuation/evidence/wave6/modes/contract.json
+A	continuation/evidence/wave6/modes/execution.json
+A	continuation/evidence/wave6/modes/verify_release.py
+A	continuation/evidence/wave6/reset/reset_predecessor_evidence.json
+A	continuation/evidence/wave6/reset/reset_predecessor_objdump.txt
+A	continuation/evidence/wave6/reset/verification_initial_failure.log
+A	continuation/evidence/wave6/reset/verify_reset_predecessor.py
+A	continuation/evidence/wave6/review-callback/README.md
+A	continuation/evidence/wave6/review-callback/report.json
+A	continuation/evidence/wave6/review-callback/report.md
+A	continuation/evidence/wave6/review-callback/resolution.json
+A	continuation/evidence/wave6/review-callback/verification.log
+A	continuation/evidence/wave6/verification.json

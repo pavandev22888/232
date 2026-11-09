@@ -1,0 +1,114 @@
+=== message-zero ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41512aa6 --stop-address=0x41512ab9 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41512aa6 <.data+0x272aa6>:
+41512aa6:	80 be a8 00 00 00 00                            	cmp    BYTE PTR [esi+0xa8],0x0
+41512aad:	0f 94 c2                                        	sete   dl
+41512ab0:	89 56 08                                        	mov    DWORD PTR [esi+0x8],edx
+41512ab3:	0f 84 17 01 00 00                               	je     0x41512bd0
+
+=== message-caller ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41512bd0 --stop-address=0x41512bed /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41512bd0 <.data+0x272bd0>:
+41512bd0:	8b 56 10                                        	mov    edx,DWORD PTR [esi+0x10]
+41512bd3:	42                                              	inc    edx
+41512bd4:	8b 0d c0 46 4f 42                               	mov    ecx,DWORD PTR ds:0x424f46c0
+41512bda:	50                                              	push   eax
+41512bdb:	6a 01                                           	push   0x1
+41512bdd:	8d 86 50 02 00 00                               	lea    eax,[esi+0x250]
+41512be3:	50                                              	push   eax
+41512be4:	52                                              	push   edx
+41512be5:	ff 76 14                                        	push   DWORD PTR [esi+0x14]
+41512be8:	e8 13 7f ff ff                                  	call   0x4150ab00
+
+=== message-frontier ===
+COMMAND: objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150ab00 --stop-address=0x4150abee /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4150ab00 <.data+0x26ab00>:
+4150ab00:	55                                              	push   ebp
+4150ab01:	89 e5                                           	mov    ebp,esp
+4150ab03:	53                                              	push   ebx
+4150ab04:	57                                              	push   edi
+4150ab05:	56                                              	push   esi
+4150ab06:	83 e4 f0                                        	and    esp,0xfffffff0
+4150ab09:	81 ec 30 01 00 00                               	sub    esp,0x130
+4150ab0f:	89 e6                                           	mov    esi,esp
+4150ab11:	89 ae 18 01 00 00                               	mov    DWORD PTR [esi+0x118],ebp
+4150ab17:	89 cb                                           	mov    ebx,ecx
+4150ab19:	89 a6 1c 01 00 00                               	mov    DWORD PTR [esi+0x11c],esp
+4150ab1f:	c7 86 28 01 00 00 ff ff ff ff                   	mov    DWORD PTR [esi+0x128],0xffffffff
+4150ab29:	8d 86 20 01 00 00                               	lea    eax,[esi+0x120]
+4150ab2f:	c7 86 24 01 00 00 00 7c 50 41                   	mov    DWORD PTR [esi+0x124],0x41507c00
+4150ab39:	64 8b 0d 00 00 00 00                            	mov    ecx,DWORD PTR fs:0x0
+4150ab40:	89 8e 20 01 00 00                               	mov    DWORD PTR [esi+0x120],ecx
+4150ab46:	64 a3 00 00 00 00                               	mov    fs:0x0,eax
+4150ab4c:	64 a1 30 00 00 00                               	mov    eax,fs:0x30
+4150ab52:	8b 88 a8 00 00 00                               	mov    ecx,DWORD PTR [eax+0xa8]
+4150ab58:	03 88 a4 00 00 00                               	add    ecx,DWORD PTR [eax+0xa4]
+4150ab5e:	03 88 b8 00 00 00                               	add    ecx,DWORD PTR [eax+0xb8]
+4150ab64:	03 88 bc 00 00 00                               	add    ecx,DWORD PTR [eax+0xbc]
+4150ab6a:	03 48 64                                        	add    ecx,DWORD PTR [eax+0x64]
+4150ab6d:	8b 7d 0c                                        	mov    edi,DWORD PTR [ebp+0xc]
+4150ab70:	b8 4f 88 21 6b                                  	mov    eax,0x6b21884f
+4150ab75:	c1 c8 04                                        	ror    eax,0x4
+4150ab78:	c1 c9 20                                        	ror    ecx,0x20
+4150ab7b:	c1 c8 11                                        	ror    eax,0x11
+4150ab7e:	35 2c 5f 89 23                                  	xor    eax,0x23895f2c
+4150ab83:	35 be a2 13 62                                  	xor    eax,0x6213a2be
+4150ab88:	2d ab 86 d8 4d                                  	sub    eax,0x4dd886ab
+4150ab8d:	c1 cb 20                                        	ror    ebx,0x20
+4150ab90:	90                                              	nop
+4150ab91:	90                                              	nop
+4150ab92:	90                                              	nop
+4150ab93:	89 46 20                                        	mov    DWORD PTR [esi+0x20],eax
+4150ab96:	39 4e 20                                        	cmp    DWORD PTR [esi+0x20],ecx
+4150ab99:	74 25                                           	je     0x4150abc0
+4150ab9b:	66 89 e7                                        	mov    di,sp
+4150ab9e:	0f b6 d5                                        	movzx  edx,ch
+4150aba1:	80 c3 6c                                        	add    bl,0x6c
+4150aba4:	66 29 d5                                        	sub    bp,dx
+4150aba7:	c0 c0 1d                                        	rol    al,0x1d
+4150abaa:	66 c1 df 13                                     	rcr    di,0x13
+4150abae:	c0 eb 06                                        	shr    bl,0x6
+4150abb1:	c1 e0 07                                        	shl    eax,0x7
+4150abb4:	0f cf                                           	bswap  edi
+4150abb6:	31 f8                                           	xor    eax,edi
+4150abb8:	66 09 eb                                        	or     bx,bp
+4150abbb:	21 c8                                           	and    eax,ecx
+4150abbd:	fc                                              	cld
+4150abbe:	ff e7                                           	jmp    edi
+4150abc0:	b8 40 2e f2 1a                                  	mov    eax,0x1af22e40
+4150abc5:	c1 c8 08                                        	ror    eax,0x8
+4150abc8:	35 f4 e5 ab 67                                  	xor    eax,0x67abe5f4
+4150abcd:	35 23 46 1b 54                                  	xor    eax,0x541b4623
+4150abd2:	c1 c0 12                                        	rol    eax,0x12
+4150abd5:	35 8d d8 be 13                                  	xor    eax,0x13bed88d
+4150abda:	c1 c9 20                                        	ror    ecx,0x20
+4150abdd:	35 cc c5 7e 07                                  	xor    eax,0x77ec5cc
+4150abe2:	90                                              	nop
+4150abe3:	89 46 20                                        	mov    DWORD PTR [esi+0x20],eax
+4150abe6:	8b 4e 20                                        	mov    ecx,DWORD PTR [esi+0x20]
+4150abe9:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+4150abeb:	ff 50 30                                        	call   DWORD PTR [eax+0x30]

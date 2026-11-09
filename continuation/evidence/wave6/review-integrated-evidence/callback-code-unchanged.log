@@ -1,0 +1,4 @@
+COMMAND: git diff --stat 35b8ada917cdfa018d0f259b1e930d9bc44f5e07..d99dd375160c7fccfd489598942232430d78da2f -- continuation/src/bounded_aggregation.cpp continuation/tests/test_bounded_aggregation.cpp
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---

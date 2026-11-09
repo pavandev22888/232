@@ -1,0 +1,10 @@
+COMMAND: python3 -B continuation/evidence/wave6/message/verify_message_frontier.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+CWD: /tmp/hoplite/232-w6-review-evidence
+EXIT_CODE: 0
+--- stdout+stderr ---
+PASS caller_zero_gate: 4 fresh decoded instructions; 4 byte/decode pins
+PASS caller_arguments_and_direct_call: 10 fresh decoded instructions; 10 byte/decode pins
+PASS direct_callee_entry_to_indirect_call: 65 fresh decoded instructions; 26 byte/decode pins
+PASS source SHA256 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS dispatch expression -> 0x5325d3e8, outside pinned image
+FRONTIER 0x4150ab39: FS-relative state; guard input 0x4150ab4c; unequal register jump and equal-edge runtime dereference remain unresolved
