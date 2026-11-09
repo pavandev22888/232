@@ -8,12 +8,16 @@ namespace rage::offline {
 namespace {
 constexpr float actor_fallback_distance = 100.0f; // 0x4206CDC0
 constexpr float marker_side50_scale = -0.5f; // 0x4205A530
+constexpr float side50_age_scale = 0x1.555556p+0f; // 0x42074CF4
+constexpr float side50_age_limit = 0.75f; // 0x4206DB58
 
 // These float words stay opaque in the shared record header.
+constexpr std::size_t side50_reference_offset = offsetof(PositionRecord, opaque_10) + 4;
 constexpr std::size_t marker_side50_offset = offsetof(PositionRecord, opaque_4c) + 4;
 constexpr std::size_t marker_side54_offset = offsetof(PositionRecord, opaque_4c) + 8;
 static_assert(marker_side50_offset == 0x50);
 static_assert(marker_side54_offset == 0x54);
+static_assert(side50_reference_offset == 0x14);
 
 void write_opaque_float(PositionRecord& record, std::size_t offset, float value)
 {
@@ -27,6 +31,23 @@ float read_opaque_float(const PositionRecord& record, std::size_t offset)
     const auto* bytes = reinterpret_cast<const unsigned char*>(&record);
     std::memcpy(&value, bytes + offset, sizeof(value));
     return value;
+}
+
+float side50_age_output(const PositionRecord& record, const ActorSide50Output& output)
+{
+    if (!output.age_ramp_enabled)
+        return 1.0f;
+    const float elapsed = output.now - read_opaque_float(record, side50_reference_offset);
+    const float scaled = side50_age_scale * elapsed;
+    // CMPLTSS masks preserve unordered scaled values and nonnegative signed zero.
+    const float nonnegative = elapsed < 0.0f ? 0.0f : scaled;
+    return side50_age_limit < elapsed ? 1.0f : nonnegative;
+}
+
+float maxss_output(float record_value, float output_value)
+{
+    // MAXSS selects its second operand on equality or unordered, unlike fmax.
+    return record_value > output_value ? record_value : output_value;
 }
 
 bool zero_ge_marker(float marker)
@@ -48,7 +69,7 @@ float actor_record_distance(const Vec3& actor, const Vec3& record)
 
 bool distance_takes_fallback(float distance)
 {
-    // JAE after UCOMISS: unordered distances continue into the trace path.
+    // JAE after UCOMISS: unordered distances continue into the provider path.
     return !std::isnan(distance) && distance >= actor_fallback_distance;
 }
 } // namespace
@@ -67,6 +88,12 @@ ActorConsumerResult update_actor_consumer(const ActorRecordBinding& binding,
                 *inputs.marker_output = 0.0f;
             }
         }
+        if (record && !clear_marker && inputs.side50_output.value &&
+            transition != ActorTransition::provider_observation_missing) {
+            *inputs.side50_output.value = maxss_output(
+                read_opaque_float(*record, marker_side50_offset),
+                *inputs.side50_output.value);
+        }
         return ActorConsumerResult{transition, binding.actor_owner, record,
                                    &binding.actor_position_sink};
     };
@@ -84,17 +111,19 @@ ActorConsumerResult update_actor_consumer(const ActorRecordBinding& binding,
 
     const float distance = actor_record_distance(record->actor_position,
                                                  record->position);
-    const bool use_record_position = !inputs.geometry_option_enabled ||
+    const bool use_record_position = !inputs.position_adjustment_enabled ||
                                      distance_takes_fallback(distance);
-    if (!use_record_position && !inputs.traced_position)
-        return finish(ActorTransition::trace_observation_missing);
+    if (!use_record_position && !inputs.resolved_position)
+        return finish(ActorTransition::provider_observation_missing);
 
     const Vec3 next = use_record_position ? record->position
-                                          : *inputs.traced_position;
+                                          : *inputs.resolved_position;
     record->actor_position = next;
     binding.actor_position_sink = next;
+    if (inputs.side50_output.value)
+        *inputs.side50_output.value = side50_age_output(*record, inputs.side50_output);
     return finish(use_record_position ? ActorTransition::copied_record_position
-                                      : ActorTransition::traced_position_applied);
+                                      : ActorTransition::resolved_position_applied);
 }
 
 MarkerProduction produce_resolved_validity_marker(
@@ -110,10 +139,10 @@ MarkerProduction produce_resolved_validity_marker(
     const bool ordered_nonzero_seed = !std::isnan(inputs.marker_seed) &&
                                       inputs.marker_seed != 0.0f;
     if (ordered_nonzero_seed) {
-        if (!inputs.traced_side_values)
-            return MarkerProduction::trace_observation_missing;
-        side50 = inputs.traced_side_values->at_50;
-        side54 = inputs.traced_side_values->at_54;
+        if (!inputs.resolved_side_values)
+            return MarkerProduction::provider_observation_missing;
+        side50 = inputs.resolved_side_values->at_50;
+        side54 = inputs.resolved_side_values->at_54;
     } else {
         side50 = inputs.mode_byte == 8 ? 1.0f : 0.0f;
         side54 = inputs.side54_seed_is_one ? 1.0f : 0.0f;

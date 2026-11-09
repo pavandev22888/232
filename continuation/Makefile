@@ -27,6 +27,14 @@ evidence:
 	$(PYTHON) evidence/gap04/check_bindings.py --handoff "$(HANDOFF)"
 	$(PYTHON) evidence/gap05/replay_position_lifecycle.py "$(HANDOFF)"
 	$(PYTHON) evidence/gap06/verify_h01_replay.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/code01/review_baseline.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap01/verify_gap01_wave2.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap02/verify_inventory.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap03/verify_reset_evidence.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap04/verify_scalar_helper.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap05/verify_optional_output.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B evidence/wave2/gap06/verify_remaining_h01.py --handoff "$(HANDOFF)"
+	$(PYTHON) -B -m unittest discover -s evidence/wave2/gap06 -p 'test_*.py' -v
 
 $(BUILD):
 	mkdir -p $@

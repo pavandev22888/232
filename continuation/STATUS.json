@@ -83,7 +83,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "No automatic second wave; unresolved sources, upstream N+48 observations and external proof boundaries remain listed",
+  "next_task": "Wave 2 running: bounded module extensions, evidence inventories and remaining H01 categories",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -126,5 +126,24 @@
     "constants": 5,
     "final_bundle_integrity": "passed",
     "final_input_and_work_integrity": "passed"
+  },
+  "parallel_wave_2": {
+    "status": "running",
+    "baseline_commit": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "requested_model": "gpt-6.1-sol",
+    "effort_setting": "not_exposed_by_spawn_tool",
+    "fast_mode": "not_exposed_by_spawn_tool",
+    "user_priority": "balanced",
+    "agents": [
+      "sol-code01-integration-review",
+      "sol-gap01-source-evidence",
+      "sol-gap02-proof-inventory",
+      "sol-gap03-charge-continuation",
+      "sol-gap04-provider-contract",
+      "sol-gap05-marker-continuation",
+      "sol-gap06-historical-replay"
+    ],
+    "code01_gap02_scope": "Existing-source review/inventory only; declined implementations not retried",
+    "acceptance": "Pending coordinator review and integrated checks"
   }
 }
