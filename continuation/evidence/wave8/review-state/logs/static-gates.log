@@ -1,0 +1,218 @@
++ export PYTHONOPTIMIZE=0 PYTHONDONTWRITEBYTECODE=1
++ PYTHONOPTIMIZE=0
++ PYTHONDONTWRITEBYTECODE=1
++ export TMPDIR=/tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/tmp
++ TMPDIR=/tmp/hoplite/232-w8-review-state/continuation/evidence/wave8/review-state/logs/tmp
++ HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
++ result=0
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS nl.bin/DLL SHA-256 and exact embedded-resource identity
+PASS 5 byte ranges, 134 static instruction decodes
+PASS eight switch targets, four binary32 constants, both guards == 0x20
+PASS distinct provider operands 0x2e198140 / 0x2e198210; bindings remain unknown
++ e=0
++ printf 'W8_%s_EXIT=%s\n' damage 0
+W8_damage_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "branches": [
+    {
+      "site": "0x4148cc4d",
+      "target": "0x4148d7b9"
+    },
+    {
+      "site": "0x4148cc56",
+      "target": "0x4148d7b9"
+    },
+    {
+      "site": "0x4148cc63",
+      "target": "0x4148cc8c"
+    },
+    {
+      "site": "0x4148cc7c",
+      "target": "0x414a5130"
+    },
+    {
+      "site": "0x4148cc86",
+      "target": "0x4148d7b7"
+    },
+    {
+      "site": "0x414a518b",
+      "target": "0x414a51b4"
+    },
+    {
+      "site": "0x414a51e8",
+      "target": "0x414a52ca"
+    },
+    {
+      "site": "0x414a523a",
+      "target": "0x414a526f"
+    },
+    {
+      "site": "0x414a5290",
+      "target": "0x414a5292"
+    },
+    {
+      "site": "0x414a52d0",
+      "target": "0x41da7c5c"
+    }
+  ],
+  "distinct_external_ecx_literals": [
+    "0x28f3bfb0",
+    "0x28f2e100"
+  ],
+  "guard_comparison_values": [
+    "0x20",
+    "0x20"
+  ],
+  "original_loaded_run_or_emulated": false,
+  "pins": [
+    {
+      "label": "W7 caller boundary",
+      "sha256": "8242c24ce71228fc5676bc23fa7a76cead107950f3a0cd5f2497fcf2aa4e8a13",
+      "size": 72,
+      "va": "0x4148cc44"
+    },
+    {
+      "label": "entire callee including unmodeled alternate-control blocks",
+      "sha256": "b16ab989f4ad69b5b13e9ffe00970f55ee48fc967f51f35010bb829352f29351",
+      "size": 428,
+      "va": "0x414a5130"
+    },
+    {
+      "label": "low-lane sign mask and other lanes",
+      "sha256": "c66856d3622ef1af1acca8762554ca873b9ea946fc38967d2d42caba297dc8d7",
+      "size": 16,
+      "va": "0x4205a540"
+    },
+    {
+      "label": "MULSS constant",
+      "sha256": "75e253f50979177eba47b2d0805ad36038789108924514d2a761a70de057d16f",
+      "size": 4,
+      "va": "0x4206cdf4"
+    }
+  ],
+  "result": "passed",
+  "source": {
+    "archive_member": "nl.bin",
+    "archive_path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "archive_sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "image_base": "0x412a0000",
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size": 55578624
+  }
+}
++ e=0
++ printf 'W8_%s_EXIT=%s\n' movement 0
+W8_movement_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/message/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS source/ZIP/member SHA256 and identity: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS index_origin: 1 fresh contiguous byte/decode pins
+PASS receiver_prefix: 33 fresh contiguous byte/decode pins
+PASS nonzero_slot_base_gate: 3 fresh contiguous byte/decode pins
+PASS next_epoch_gate: 6 fresh contiguous byte/decode pins
+PASS return_target: 8 fresh contiguous byte/decode pins
+PASS guard_epoch_side_exit_entry: 5 fresh contiguous byte/decode pins
+PASS slot_epoch_side_exit_entry: 5 fresh contiguous byte/decode pins
+PASS zero_slot_base_entry: 2 fresh contiguous byte/decode pins
+PASS zero_slot_base_tail: 4 fresh contiguous byte/decode pins
+PASS 67 instructions; conditional receiver prefix only
+FRONTIER 0x4150afb4: next TLS epoch gate; side exits 0x4150b77c / 0x4150b831 / 0x4150ac88 remain unimplemented
++ e=0
++ printf 'W8_%s_EXIT=%s\n' message 0
+W8_message_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/geometry/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS pinned ZIP/nl.bin and neverlose.dll embedded resource identity
+PASS caller: [0x414f3c90,0x414f3eb5) SHA-256 72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb
+PASS postcall_consumer: [0x414f3e60,0x414f3e9f) SHA-256 6530efbee3eb144ae52276436621a624393f9d16b79b681c685b13181e94efe1
+PASS return_epilogue: [0x414f3e9f,0x414f3eb5) SHA-256 318e1885b75d4024b2a32f589de788977d78a1cae064aad2b9d86b4e2aa5f796
+PASS observed_call_boundary: [0x414f3e42,0x414f3e60) SHA-256 2db85d394f361c7c6bef085c19d300e77a4aa755273b752fa7e18675453dfdd7
+PASS trace_wrapper_tail: [0x413700dc,0x413700fc) SHA-256 adcb925a6035ecc4659bda95957fef507888d663b00c2ff33c0931768ba75f19
+PASS 23 fresh static instruction decodes and threshold bytes
+BOUNDARY: external observations only; no provider identity, ABI, runtime base or full geometry proof
++ e=0
++ printf 'W8_%s_EXIT=%s\n' geometry 0
+W8_geometry_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/provider/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "task": "W8-PROVIDER",
+  "source_pins": 10,
+  "zip_members": 2,
+  "windows": 3,
+  "fresh_instructions": 123,
+  "new_leaf_bytes": 346,
+  "new_leaf_instructions": 89,
+  "new_leaf_direct_edges": 17,
+  "normal_returns": [
+    "0x4200cf64",
+    "0x4200d024",
+    "0x4200d079"
+  ],
+  "resolved": "S_store=S_entry across the nominated 0x4200CF20 call on supported normal flow",
+  "frontier": "Later field stability, actual pointer publication/read identity, lifetime, runtime mapping and language/standard remain unresolved",
+  "original_executed_loaded_emulated": false
+}
++ e=0
++ printf 'W8_%s_EXIT=%s\n' provider 0
+W8_provider_EXIT=0
++ '[' 0 -ne 0 ']'
++ for name in damage movement message geometry provider reset
++ python3 -B continuation/evidence/wave8/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: immediate EAX source, 25 ordered stores, stride/end/back-edge, six records
++ e=0
++ printf 'W8_%s_EXIT=%s\n' reset 0
+W8_reset_EXIT=0
++ '[' 0 -ne 0 ']'
++ python3 -B -
+ORIGINAL_VERIFIER_SHA256 9af14ab87cc8f406732a70de4880c7c2aa4944f19443bb86c0241d7fb3d84bbd
+SCRATCH_ONLY_IN_MEMORY_REDIRECT scratch = here.parents[3] / "runs/w8-aggregate/static" => scratch = here.parents[0] / "review-state/logs/tmp/w8-aggregate"
+{
+  "passed": true,
+  "instructions": 164,
+  "spans": 14,
+  "constants": 3,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "raw_image_source": "pinned input ZIP",
+  "original_execution_loading_emulation": false,
+  "scope": "Context initialization, observed raw32 relations and pinned handler frontier; not runtime providers"
+}
++ e=0
++ printf 'W8_aggregate_EXIT=%s\n' 0
+W8_aggregate_EXIT=0
++ '[' 0 -ne 0 ']'
++ for path in wave5/charge/verify_full_reset.py wave6/reset/verify_reset_predecessor.py wave7/reset/verify_source_bytes.py
++ python3 -B continuation/evidence/wave5/charge/verify_full_reset.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: 3 immutable source hashes, 11 zero stores/fresh objdump instructions (3 BYTE, 8 DWORD); entry and scheduling remain unresolved
++ e=0
++ printf 'INHERITED_%s_EXIT=%s\n' wave5/charge/verify_full_reset.py 0
+INHERITED_wave5/charge/verify_full_reset.py_EXIT=0
++ '[' 0 -ne 0 ']'
++ for path in wave5/charge/verify_full_reset.py wave6/reset/verify_reset_predecessor.py wave7/reset/verify_source_bytes.py
++ python3 -B continuation/evidence/wave6/reset/verify_reset_predecessor.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: 5 source hashes, predecessor add/cmp/JNE, 11 reset stores, fresh objdump
+UNRESOLVED: EAX provider/identity, entry reachability, loop and scheduling
++ e=0
++ printf 'INHERITED_%s_EXIT=%s\n' wave6/reset/verify_reset_predecessor.py 0
+INHERITED_wave6/reset/verify_reset_predecessor.py_EXIT=0
++ '[' 0 -ne 0 ']'
++ for path in wave5/charge/verify_full_reset.py wave6/reset/verify_reset_predecessor.py wave7/reset/verify_source_bytes.py
++ python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: raw snapshot mutation contract distinct from metadata trace
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+UNRESOLVED: EAX provider/identity, initial table base, entry reachability, outer scheduling and reset-field semantics
++ e=0
++ printf 'INHERITED_%s_EXIT=%s\n' wave7/reset/verify_source_bytes.py 0
+INHERITED_wave7/reset/verify_source_bytes.py_EXIT=0
++ '[' 0 -ne 0 ']'
++ exit 0

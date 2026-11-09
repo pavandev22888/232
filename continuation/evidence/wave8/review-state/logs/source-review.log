@@ -1,0 +1,321 @@
++ git rev-parse HEAD
+bcc5918568c162482b7ec4e1fd7ca7ec48d58940
++ git branch --show-current
+hoplite/tanagra-adb72df5--w8-review-state
++ git status --short
+?? continuation/evidence/wave8/review-state/
++ HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
++ IMAGE=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
++ stat -c '%n %s bytes' /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/nl_handoff_2026-11-06.zip
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin 55578624 bytes
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/nl_handoff_2026-11-06.zip 149819978 bytes
++ sha256sum /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/nl_handoff_2026-11-06.zip
+682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49  /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/input/nl_handoff_2026-11-06.zip
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x415debde 0x415ded53
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x415debde --stop-address=0x415ded53 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+415debde <.data+0x33ebde>:
+415debde:	b8 ec 2b 50 42                                  	mov    eax,0x42502bec
+415debe3:	66 66 66 66 2e 0f 1f 84 00 00 00 00 00          	data16 data16 data16 nop WORD PTR cs:[eax+eax*1+0x0]
+415debf0:	c7 00 ff ff ff ff                               	mov    DWORD PTR [eax],0xffffffff
+415debf6:	c7 40 08 ff ff ff ff                            	mov    DWORD PTR [eax+0x8],0xffffffff
+415debfd:	c7 40 10 ff ff ff ff                            	mov    DWORD PTR [eax+0x10],0xffffffff
+415dec04:	c7 40 18 ff ff ff ff                            	mov    DWORD PTR [eax+0x18],0xffffffff
+415dec0b:	c7 40 20 ff ff ff ff                            	mov    DWORD PTR [eax+0x20],0xffffffff
+415dec12:	c7 40 28 ff ff ff ff                            	mov    DWORD PTR [eax+0x28],0xffffffff
+415dec19:	c7 40 30 ff ff ff ff                            	mov    DWORD PTR [eax+0x30],0xffffffff
+415dec20:	c7 40 38 ff ff ff ff                            	mov    DWORD PTR [eax+0x38],0xffffffff
+415dec27:	c7 40 40 ff ff ff ff                            	mov    DWORD PTR [eax+0x40],0xffffffff
+415dec2e:	c7 40 48 ff ff ff ff                            	mov    DWORD PTR [eax+0x48],0xffffffff
+415dec35:	c7 40 50 ff ff ff ff                            	mov    DWORD PTR [eax+0x50],0xffffffff
+415dec3c:	c7 40 58 ff ff ff ff                            	mov    DWORD PTR [eax+0x58],0xffffffff
+415dec43:	c7 40 60 ff ff ff ff                            	mov    DWORD PTR [eax+0x60],0xffffffff
+415dec4a:	c7 40 68 ff ff ff ff                            	mov    DWORD PTR [eax+0x68],0xffffffff
+415dec51:	c7 40 70 ff ff ff ff                            	mov    DWORD PTR [eax+0x70],0xffffffff
+415dec58:	c7 40 78 ff ff ff ff                            	mov    DWORD PTR [eax+0x78],0xffffffff
+415dec5f:	c7 80 80 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0x80],0xffffffff
+415dec69:	c7 80 88 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0x88],0xffffffff
+415dec73:	c7 80 90 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0x90],0xffffffff
+415dec7d:	c7 80 98 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0x98],0xffffffff
+415dec87:	c7 80 a0 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0xa0],0xffffffff
+415dec91:	c7 80 a8 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0xa8],0xffffffff
+415dec9b:	c7 80 b0 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0xb0],0xffffffff
+415deca5:	c7 80 b8 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0xb8],0xffffffff
+415decaf:	c7 80 c0 00 00 00 ff ff ff ff                   	mov    DWORD PTR [eax+0xc0],0xffffffff
+415decb9:	05 c8 00 00 00                                  	add    eax,0xc8
+415decbe:	3d 9c 30 50 42                                  	cmp    eax,0x4250309c
+415decc3:	0f 85 27 ff ff ff                               	jne    0x415debf0
+415decc9:	c7 05 a8 dd 4f 42 ff ff ff ff                   	mov    DWORD PTR ds:0x424fdda8,0xffffffff
+415decd3:	c7 05 7c 4b 4f 42 00 00 00 00                   	mov    DWORD PTR ds:0x424f4b7c,0x0
+415decdd:	c7 05 cc 08 50 42 ff ff ff ff                   	mov    DWORD PTR ds:0x425008cc,0xffffffff
+415dece7:	c6 05 e9 09 50 42 00                            	mov    BYTE PTR ds:0x425009e9,0x0
+415decee:	c6 05 bc 09 50 42 00                            	mov    BYTE PTR ds:0x425009bc,0x0
+415decf5:	c6 05 2c f4 23 42 00                            	mov    BYTE PTR ds:0x4223f42c,0x0
+415decfc:	c7 05 74 1c 4b 42 00 00 00 00                   	mov    DWORD PTR ds:0x424b1c74,0x0
+415ded06:	c7 05 a0 2b 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x42502ba0,0x0
+415ded10:	c7 05 f8 57 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x425057f8,0x0
+415ded1a:	c7 05 7c 09 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x4250097c,0x0
+415ded24:	c7 05 24 6f 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x42506f24,0x0
+415ded2e:	c6 05 d4 09 50 42 00                            	mov    BYTE PTR ds:0x425009d4,0x0
+415ded35:	c7 05 50 58 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x42505850,0x0
+415ded3f:	c7 05 e4 56 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x425056e4,0x0
+415ded49:	c7 05 3c 85 50 42 00 00 00 00                   	mov    DWORD PTR ds:0x4250853c,0x0
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x415debde 0x415ded53 0
+OBJDUMP_0x415debde_0x415ded53_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x414a8361 0x414a838c
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414a8361 --stop-address=0x414a838c /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a8361 <.data+0x208361>:
+414a8361:	c7 46 70 00 00 00 00                            	mov    DWORD PTR [esi+0x70],0x0
+414a8368:	c7 46 30 00 00 00 00                            	mov    DWORD PTR [esi+0x30],0x0
+414a836f:	c7 46 34 00 00 00 00                            	mov    DWORD PTR [esi+0x34],0x0
+414a8376:	c7 46 38 00 00 00 00                            	mov    DWORD PTR [esi+0x38],0x0
+414a837d:	8d 46 70                                        	lea    eax,[esi+0x70]
+414a8380:	89 46 50                                        	mov    DWORD PTR [esi+0x50],eax
+414a8383:	8d 86 80 00 00 00                               	lea    eax,[esi+0x80]
+414a8389:	89 46 54                                        	mov    DWORD PTR [esi+0x54],eax
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x414a8361 0x414a838c 0
+OBJDUMP_0x414a8361_0x414a838c_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x414a8d56 0x414a8d79
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414a8d56 --stop-address=0x414a8d79 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414a8d56 <.data+0x208d56>:
+414a8d56:	80 be c0 00 00 00 00                            	cmp    BYTE PTR [esi+0xc0],0x0
+414a8d5d:	74 0e                                           	je     0x414a8d6d
+414a8d5f:	8d 4e 50                                        	lea    ecx,[esi+0x50]
+414a8d62:	8d 96 a0 00 00 00                               	lea    edx,[esi+0xa0]
+414a8d68:	e8 23 5a ff ff                                  	call   0x4149e790
+414a8d6d:	8b 7e 30                                        	mov    edi,DWORD PTR [esi+0x30]
+414a8d70:	8b 56 34                                        	mov    edx,DWORD PTR [esi+0x34]
+414a8d73:	8b 86 a0 01 00 00                               	mov    eax,DWORD PTR [esi+0x1a0]
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x414a8d56 0x414a8d79 0
+OBJDUMP_0x414a8d56_0x414a8d79_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149e790 0x4149e812
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149e790 --stop-address=0x4149e812 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e790 <.data+0x1fe790>:
+4149e790:	55                                              	push   ebp
+4149e791:	53                                              	push   ebx
+4149e792:	57                                              	push   edi
+4149e793:	56                                              	push   esi
+4149e794:	50                                              	push   eax
+4149e795:	8b 01                                           	mov    eax,DWORD PTR [ecx]
+4149e797:	ff 00                                           	inc    DWORD PTR [eax]
+4149e799:	8b 41 04                                        	mov    eax,DWORD PTR [ecx+0x4]
+4149e79c:	0f b6 48 07                                     	movzx  ecx,BYTE PTR [eax+0x7]
+4149e7a0:	8b 7a 1c                                        	mov    edi,DWORD PTR [edx+0x1c]
+4149e7a3:	89 fe                                           	mov    esi,edi
+4149e7a5:	83 e6 fe                                        	and    esi,0xfffffffe
+4149e7a8:	83 fe 02                                        	cmp    esi,0x2
+4149e7ab:	0f 84 bb 01 00 00                               	je     0x4149e96c
+4149e7b1:	8b 30                                           	mov    esi,DWORD PTR [eax]
+4149e7b3:	80 be c0 00 00 00 00                            	cmp    BYTE PTR [esi+0xc0],0x0
+4149e7ba:	0f 84 ab 00 00 00                               	je     0x4149e86b
+4149e7c0:	8b 9e 8c 00 00 00                               	mov    ebx,DWORD PTR [esi+0x8c]
+4149e7c6:	83 e3 fe                                        	and    ebx,0xfffffffe
+4149e7c9:	83 fb 02                                        	cmp    ebx,0x2
+4149e7cc:	0f 85 9a 01 00 00                               	jne    0x4149e96c
+4149e7d2:	80 78 06 00                                     	cmp    BYTE PTR [eax+0x6],0x0
+4149e7d6:	0f 84 14 01 00 00                               	je     0x4149e8f0
+4149e7dc:	89 0c 24                                        	mov    DWORD PTR [esp],ecx
+4149e7df:	8b 1d 9c 63 4f 42                               	mov    ebx,DWORD PTR ds:0x424f639c
+4149e7e5:	8b ab 2c 01 01 00                               	mov    ebp,DWORD PTR [ebx+0x1012c]
+4149e7eb:	8b ad cc 02 00 00                               	mov    ebp,DWORD PTR [ebp+0x2cc]
+4149e7f1:	83 fd 10                                        	cmp    ebp,0x10
+4149e7f4:	0f 83 33 04 00 00                               	jae    0x4149ec2d
+4149e7fa:	69 ed d8 05 00 00                               	imul   ebp,ebp,0x5d8
+4149e800:	8d 0c 2b                                        	lea    ecx,[ebx+ebp*1]
+4149e803:	0f b6 9c 2b 2c 04 01 00                         	movzx  ebx,BYTE PTR [ebx+ebp*1+0x1042c]
+4149e80b:	8b 9c 99 24 04 01 00                            	mov    ebx,DWORD PTR [ecx+ebx*4+0x10424]
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149e790 0x4149e812 0
+OBJDUMP_0x4149e790_0x4149e812_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149e878 0x4149e8ab
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149e878 --stop-address=0x4149e8ab /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e878 <.data+0x1fe878>:
+4149e878:	8b 1d 9c 63 4f 42                               	mov    ebx,DWORD PTR ds:0x424f639c
+4149e87e:	8b 8b 2c 01 01 00                               	mov    ecx,DWORD PTR [ebx+0x1012c]
+4149e884:	8b a9 cc 02 00 00                               	mov    ebp,DWORD PTR [ecx+0x2cc]
+4149e88a:	83 fd 10                                        	cmp    ebp,0x10
+4149e88d:	0f 83 9a 03 00 00                               	jae    0x4149ec2d
+4149e893:	69 cd d8 05 00 00                               	imul   ecx,ebp,0x5d8
+4149e899:	8d 2c 0b                                        	lea    ebp,[ebx+ecx*1]
+4149e89c:	0f b6 8c 0b 2c 04 01 00                         	movzx  ecx,BYTE PTR [ebx+ecx*1+0x1042c]
+4149e8a4:	8b 9c 8d 24 04 01 00                            	mov    ebx,DWORD PTR [ebp+ecx*4+0x10424]
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149e878 0x4149e8ab 0
+OBJDUMP_0x4149e878_0x4149e8ab_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149e8f4 0x4149e927
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149e8f4 --stop-address=0x4149e927 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e8f4 <.data+0x1fe8f4>:
+4149e8f4:	8b 0d 9c 63 4f 42                               	mov    ecx,DWORD PTR ds:0x424f639c
+4149e8fa:	8b 99 2c 01 01 00                               	mov    ebx,DWORD PTR [ecx+0x1012c]
+4149e900:	8b 9b cc 02 00 00                               	mov    ebx,DWORD PTR [ebx+0x2cc]
+4149e906:	83 fb 10                                        	cmp    ebx,0x10
+4149e909:	0f 83 1e 03 00 00                               	jae    0x4149ec2d
+4149e90f:	69 db d8 05 00 00                               	imul   ebx,ebx,0x5d8
+4149e915:	8d 2c 19                                        	lea    ebp,[ecx+ebx*1]
+4149e918:	0f b6 8c 19 2c 04 01 00                         	movzx  ecx,BYTE PTR [ecx+ebx*1+0x1042c]
+4149e920:	8b 9c 8d 24 04 01 00                            	mov    ebx,DWORD PTR [ebp+ecx*4+0x10424]
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149e8f4 0x4149e927 0
+OBJDUMP_0x4149e8f4_0x4149e927_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149e9c8 0x4149e9e0
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149e9c8 --stop-address=0x4149e9e0 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149e9c8 <.data+0x1fe9c8>:
+4149e9c8:	89 cf                                           	mov    edi,ecx
+4149e9ca:	80 78 08 00                                     	cmp    BYTE PTR [eax+0x8],0x0
+4149e9ce:	0f 84 8c 00 00 00                               	je     0x4149ea60
+4149e9d4:	8b 4e 04                                        	mov    ecx,DWORD PTR [esi+0x4]
+4149e9d7:	f6 81 b0 00 00 00 04                            	test   BYTE PTR [ecx+0xb0],0x4
+4149e9de:	75 5f                                           	jne    0x4149ea3f
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149e9c8 0x4149e9e0 0
+OBJDUMP_0x4149e9c8_0x4149e9e0_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149eba4 0x4149ebb0
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149eba4 --stop-address=0x4149ebb0 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149eba4 <.data+0x1feba4>:
+4149eba4:	8b 46 04                                        	mov    eax,DWORD PTR [esi+0x4]
+4149eba7:	f6 80 b0 00 00 00 04                            	test   BYTE PTR [eax+0xb0],0x4
+4149ebae:	75 18                                           	jne    0x4149ebc8
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149eba4 0x4149ebb0 0
+OBJDUMP_0x4149eba4_0x4149ebb0_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4149ec2d 0x4149ec33
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149ec2d --stop-address=0x4149ec33 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149ec2d <.data+0x1fec2d>:
+4149ec2d:	e8 ce 06 e1 ff                                  	call   0x412af300
+4149ec32:	cc                                              	int3
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4149ec2d 0x4149ec33 0
+OBJDUMP_0x4149ec2d_0x4149ec33_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4150abee 0x4150ac88
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150abee --stop-address=0x4150ac88 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4150abee <.data+0x26abee>:
+4150abee:	83 ff 40                                        	cmp    edi,0x40
+4150abf1:	0f 8f 65 09 00 00                               	jg     0x4150b55c
+4150abf7:	39 f8                                           	cmp    eax,edi
+4150abf9:	0f 84 5d 09 00 00                               	je     0x4150b55c
+4150abff:	a1 60 fe 23 42                                  	mov    eax,ds:0x4223fe60
+4150ac04:	8b 00                                           	mov    eax,DWORD PTR [eax]
+4150ac06:	85 c0                                           	test   eax,eax
+4150ac08:	74 36                                           	je     0x4150ac40
+4150ac0a:	89 46 1c                                        	mov    DWORD PTR [esi+0x1c],eax
+4150ac0d:	a1 5c 77 50 42                                  	mov    eax,ds:0x4250775c
+4150ac12:	8b 0d 40 85 51 42                               	mov    ecx,DWORD PTR ds:0x42518540
+4150ac18:	64 8b 15 2c 00 00 00                            	mov    edx,DWORD PTR fs:0x2c
+4150ac1f:	8b 0c 8a                                        	mov    ecx,DWORD PTR [edx+ecx*4]
+4150ac22:	3b 81 08 00 00 00                               	cmp    eax,DWORD PTR [ecx+0x8]
+4150ac28:	0f 8f 4e 0b 00 00                               	jg     0x4150b77c
+4150ac2e:	a1 0c 77 50 42                                  	mov    eax,ds:0x4250770c
+4150ac33:	8b 4e 1c                                        	mov    ecx,DWORD PTR [esi+0x1c]
+4150ac36:	83 3c 08 00                                     	cmp    DWORD PTR [eax+ecx*1],0x0
+4150ac3a:	0f 85 1c 09 00 00                               	jne    0x4150b55c
+4150ac40:	c7 86 28 01 00 00 ff ff ff ff                   	mov    DWORD PTR [esi+0x128],0xffffffff
+4150ac4a:	e8 21 1a 66 00                                  	call   0x41b6c670
+4150ac4f:	89 46 1c                                        	mov    DWORD PTR [esi+0x1c],eax
+4150ac52:	85 c0                                           	test   eax,eax
+4150ac54:	0f 84 02 09 00 00                               	je     0x4150b55c
+4150ac5a:	a1 5c 06 50 42                                  	mov    eax,ds:0x4250065c
+4150ac5f:	8b 0d 40 85 51 42                               	mov    ecx,DWORD PTR ds:0x42518540
+4150ac65:	64 8b 15 2c 00 00 00                            	mov    edx,DWORD PTR fs:0x2c
+4150ac6c:	8b 0c 8a                                        	mov    ecx,DWORD PTR [edx+ecx*4]
+4150ac6f:	3b 81 08 00 00 00                               	cmp    eax,DWORD PTR [ecx+0x8]
+4150ac75:	0f 8f b6 0b 00 00                               	jg     0x4150b831
+4150ac7b:	a1 9c dd 4f 42                                  	mov    eax,ds:0x424fdd9c
+4150ac80:	85 c0                                           	test   eax,eax
+4150ac82:	0f 85 1f 03 00 00                               	jne    0x4150afa7
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4150abee 0x4150ac88 0
+OBJDUMP_0x4150abee_0x4150ac88_EXIT=0
++ for span in '0x415debde 0x415ded53' '0x414a8361 0x414a838c' '0x414a8d56 0x414a8d79' '0x4149e790 0x4149e812' '0x4149e878 0x4149e8ab' '0x4149e8f4 0x4149e927' '0x4149e9c8 0x4149e9e0' '0x4149eba4 0x4149ebb0' '0x4149ec2d 0x4149ec33' '0x4150abee 0x4150ac88' '0x4150afa7 0x4150afd5'
++ set -- 0x4150afa7 0x4150afd5
++ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150afa7 --stop-address=0x4150afd5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4150afa7 <.data+0x26afa7>:
+4150afa7:	03 46 1c                                        	add    eax,DWORD PTR [esi+0x1c]
+4150afaa:	80 3c 07 00                                     	cmp    BYTE PTR [edi+eax*1],0x0
+4150afae:	0f 84 a8 05 00 00                               	je     0x4150b55c
+4150afb4:	a1 c0 18 50 42                                  	mov    eax,ds:0x425018c0
+4150afb9:	8b 0d 40 85 51 42                               	mov    ecx,DWORD PTR ds:0x42518540
+4150afbf:	64 8b 15 2c 00 00 00                            	mov    edx,DWORD PTR fs:0x2c
+4150afc6:	8b 0c 8a                                        	mov    ecx,DWORD PTR [edx+ecx*4]
+4150afc9:	3b 81 08 00 00 00                               	cmp    eax,DWORD PTR [ecx+0x8]
+4150afcf:	0f 8f 00 09 00 00                               	jg     0x4150b8d5
++ printf 'OBJDUMP_%s_%s_EXIT=%s\n' 0x4150afa7 0x4150afd5 0
+OBJDUMP_0x4150afa7_0x4150afd5_EXIT=0
++ python3 -B -
+RESET_TABLE_ROW_BASES ['0x42502bec', '0x42502cb4', '0x42502d7c', '0x42502e44', '0x42502f0c', '0x42502fd4']
+RESET_TABLE_END 0x4250309c EXPECTED 0x4250309c
+RAW_WINDOW 0x415debde 0x415ded53 373 6da8d7618161e85cf0f3ac2c587b3411b5a6c59640577f816efb519444b9d739 b8ec2b5042666666662e0f1f840000000000c700ffffffffc74008ffffffffc74010ffffffffc74018ffffffffc74020ffffffffc74028ffffffffc74030ffffffffc74038ffffffffc74040ffffffffc74048ffffffffc74050ffffffffc74058ffffffffc74060ffffffffc74068ffffffffc74070ffffffffc74078ffffffffc78080000000ffffffffc78088000000ffffffffc78090000000ffffffffc78098000000ffffffffc780a0000000ffffffffc780a8000000ffffffffc780b0000000ffffffffc780b8000000ffffffffc780c0000000ffffffff05c80000003d9c3050420f8527ffffffc705a8dd4f42ffffffffc7057c4b4f4200000000c705cc085042ffffffffc605e909504200c605bc09504200c6052cf4234200c705741c4b4200000000c705a02b504200000000c705f857504200000000c7057c09504200000000c705246f504200000000c605d409504200c7055058504200000000c705e456504200000000c7053c85504200000000
+RAW_WINDOW 0x414a8361 0x414a838c 43 81b7ad697296fe5d629e5f344671d1e49de70ad3154d97a02427ef04af78c33c c7467000000000c7463000000000c7463400000000c74638000000008d46708946508d8680000000894654
+RAW_WINDOW 0x4150abee 0x4150ac88 154 7f06338a2f7d0c7e73e478cd7bb67505023a498092f4b2dda2d968f2ea0f10d6 83ff400f8f6509000039f80f845d090000a160fe23428b0085c0743689461ca15c7750428b0d40855142648b152c0000008b0c8a3b81080000000f8f4e0b0000a10c7750428b4e1c833c08000f851c090000c78628010000ffffffffe8211a660089461c85c00f8402090000a15c0650428b0d40855142648b152c0000008b0c8a3b81080000000f8fb60b0000a19cdd4f4285c00f851f030000
+RAW_WINDOW 0x4150afa7 0x4150afb4 13 b371b9597a37f5711c6b12ffcc0542d8fefff880aed3104a2a7beea94a67d8b2 03461c803c07000f84a8050000
+STATIC_LITERAL_WITH_TERMINATOR 696e76616c69642061727261793c542c204e3e207375627363726970
++ printf 'SOURCE_READS_EXIT=%s\n' 0
+SOURCE_READS_EXIT=0
