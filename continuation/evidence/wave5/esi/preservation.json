@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "task": "W5-ESI",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "owner": "w5-esi-sol",
+  "scope": "Only normal-exit ESI preservation of 0x41C5BDA0 called at 0x41C5E3F0. No indirect-provider body, scalar contents/tolerance, or pointer-cell reference rescan.",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "mapping": {
+    "base": "0x412a0000",
+    "kind": "Raw VA = file offset + conditional base, not observed runtime module base."
+  },
+  "sources": [
+    {
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff"
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/fallback_provider.json",
+      "sha256": "9ab27eb48603ed01dfdb3bc75f993c2454d62b3017221e94af5779358e9e636a"
+    },
+    {
+      "commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+      "path": "continuation/evidence/wave5/assignment.json",
+      "sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4"
+    },
+    {
+      "commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+      "path": "docs/TASKS.json",
+      "sha256": "8bb3844bafbba824cc49bfd30dcde99a542b5fa5414d4371e2c93b37005cf1e9"
+    }
+  ],
+  "callee": {
+    "start": "0x41c5bda0",
+    "end_exclusive": "0x41c5c719",
+    "raw_offset": "0x9bbda0",
+    "size": 2425,
+    "sha256": "41ed1ac9b270e4e3028f65cf577ce31b5db118d17e067ea3edcfa4290dc8311a",
+    "instruction_count": 383,
+    "table": "callee.tsv",
+    "table_sha256": "c4cf937fe51e2f56d298449302468caabcfc1d6e44c0f7830fdc8aa14e55de05",
+    "boundary_qualification": "Entry-rooted local normal-flow interval through ret 4; not a global function/exception-handler ownership claim."
+  },
+  "caller": {
+    "start": "0x41c5e3eb",
+    "end_exclusive": "0x41c5e3fb",
+    "raw_offset": "0x9be3eb",
+    "bytes": "89c689c153e8abd9ffff89be3c490000",
+    "sha256": "dec362bb2e47ffc8688aa5870d08130be9ce4bff90489f2dfff29f53bb87267c",
+    "instructions": [
+      [
+        "0x41c5e3eb",
+        "89c6",
+        "mov esi,eax"
+      ],
+      [
+        "0x41c5e3ed",
+        "89c1",
+        "mov ecx,eax"
+      ],
+      [
+        "0x41c5e3ef",
+        "53",
+        "push ebx"
+      ],
+      [
+        "0x41c5e3f0",
+        "e8abd9ffff",
+        "call 0x41c5bda0"
+      ],
+      [
+        "0x41c5e3f5",
+        "89be3c490000",
+        "mov dword ptr [esi+0x493c],edi"
+      ]
+    ]
+  },
+  "anchors": [
+    [
+      "0x41c5bda5",
+      "56",
+      "push esi"
+    ],
+    [
+      "0x41c5bdaf",
+      "89e6",
+      "mov esi,esp"
+    ],
+    [
+      "0x41c5bdb1",
+      "89ae98000000",
+      "mov dword ptr [esi+0x98],ebp"
+    ],
+    [
+      "0x41c5bdb9",
+      "89a69c000000",
+      "mov dword ptr [esi+0x9c],esp"
+    ],
+    [
+      "0x41c5bdcf",
+      "c786a40000001097c741",
+      "mov dword ptr [esi+0xa4],0x41c79710"
+    ],
+    [
+      "0x41c5bdd9",
+      "648b0d00000000",
+      "mov ecx,dword ptr fs:0x0"
+    ],
+    [
+      "0x41c5bde0",
+      "898ea0000000",
+      "mov dword ptr [esi+0xa0],ecx"
+    ],
+    [
+      "0x41c5bde6",
+      "64a300000000",
+      "mov fs:0x0,eax"
+    ],
+    [
+      "0x41c5c701",
+      "8b86a0000000",
+      "mov eax,dword ptr [esi+0xa0]"
+    ],
+    [
+      "0x41c5c707",
+      "64a300000000",
+      "mov fs:0x0,eax"
+    ],
+    [
+      "0x41c5c70f",
+      "8d65f4",
+      "lea esp,[ebp-0xc]"
+    ],
+    [
+      "0x41c5c712",
+      "5e",
+      "pop esi"
+    ],
+    [
+      "0x41c5c716",
+      "c20400",
+      "ret 0x4"
+    ]
+  ],
+  "nested_calls": [
+    [
+      "0x41c5bdf5",
+      "e8a6520000",
+      "call 0x41c610a0"
+    ],
+    [
+      "0x41c5be0d",
+      "e82eda0000",
+      "call 0x41c69840"
+    ],
+    [
+      "0x41c5be1e",
+      "e8ed92ffff",
+      "call 0x41c55110"
+    ],
+    [
+      "0x41c5bfe6",
+      "e84ae41400",
+      "call 0x41daa435"
+    ],
+    [
+      "0x41c5c1a9",
+      "e8720d3b00",
+      "call 0x4200cf20"
+    ],
+    [
+      "0x41c5c1c0",
+      "e86b83feff",
+      "call 0x41c44530"
+    ],
+    [
+      "0x41c5c2a1",
+      "ff153c722642",
+      "call dword ptr ds:0x4226723c"
+    ],
+    [
+      "0x41c5c6a1",
+      "e87a083b00",
+      "call 0x4200cf20"
+    ],
+    [
+      "0x41c5c6d5",
+      "e846083b00",
+      "call 0x4200cf20"
+    ]
+  ],
+  "local_cfg": {
+    "calls": "Opaque summaries with a normal-return edge to the next instruction; targets not inspected.",
+    "blocks_half_open": [
+      [
+        "0x41c5bda0",
+        "0x41c5c250"
+      ],
+      [
+        "0x41c5c250",
+        "0x41c5c256"
+      ],
+      [
+        "0x41c5c256",
+        "0x41c5c719"
+      ]
+    ],
+    "edges": [
+      [
+        "0x41c5c24e",
+        "0x41c5c250",
+        "not taken"
+      ],
+      [
+        "0x41c5c24e",
+        "0x41c5c256",
+        "taken"
+      ],
+      [
+        "0x41c5c250",
+        "0x41c5c256",
+        "fallthrough"
+      ]
+    ],
+    "supported_returns": [
+      [
+        "0x41c5c716",
+        "c20400",
+        "ret 0x4"
+      ]
+    ],
+    "qualification": "Two syntactic branch choices reconverge at 0x41C5C256; not a dynamic path-feasibility, runtime-reachability or exception-flow proof."
+  },
+  "saved_slot": {
+    "width_bytes": 4,
+    "notation": "S = entry ESP; B = S - 4 = EBP after 0x41C5BDA1; V = entry ESI; ordinary 32-bit stack without address wrap/fault.",
+    "push": "0x41c5bda5",
+    "address": "S - 0x10 = B - 0x0c",
+    "separate_frame_metadata": "[ESI+0x98] stores B, not V; [ESI+0x9c] stores aligned local ESP, not V.",
+    "frame": "L = align_down(S - 0x10, 16) - 0xb0; 0x41C5BDAF changes ESI to L.",
+    "direct_frame_store_extent": "57 explicit DWORD stores based on ESI have offsets in [0,0xac); no other direct ESI-based memory destination in this interval. With ESI=L, they lie below the saved slot because L+0xb0 <= S-0x10.",
+    "alias_caveat": "This does not rule out object/global/indirect/nested writes aliasing the saved slot."
+  },
+  "claims": {
+    "proven_local": [
+      "PUSH ESI stores incoming ESI before stack alignment and ESI mutation.",
+      "Only explicit ESI register writes in the frozen local decode are MOV ESI,ESP and POP ESI. EBP is assigned once at entry, restored at exit.",
+      "0x41C5C70F resets ESP from B-0x0c, then 0x41C5C712 loads the saved DWORD into ESI. Subsequent POPs and RET 4 do not modify ESI.",
+      "The one supported local normal return is 0x41C5C716; the only local conditional branch rejoins before this epilogue. No computed local jump occurs in the supported interval."
+    ],
+    "epilogue_sufficient_preconditions": [
+      "Control reaches 0x41C5C70F with EBP=B.",
+      "DWORD [B-0x0c] still equals V; valid readable stack; instructions complete without faults/non-local interruption."
+    ],
+    "epilogue_conclusion": "At supported RET 4, ESI=V regardless of ESI and ESP immediately before 0x41C5C70F. This local epilogue result itself does not require nested ESI preservation.",
+    "conditional_entry_to_return": [
+      "Entry is 0x41C5BDA0 with an ordinary valid 32-bit stack and memory for all performed accesses.",
+      "All 9 nested calls return normally to their following instruction, with expected stack/argument discipline. Their bodies and actual register/memory effects were not established.",
+      "For intended frame-based body accesses, nested calls preserve ESI=L and EBP=B; object/global/pointer stores and nested/external writes do not clobber the saved ESI DWORD or required frame/return state.",
+      "No exception-handler entry, unwind/resume, longjmp or other non-local transfer bypasses the supported normal flow."
+    ],
+    "caller_conclusion": "Conditionally, ESI at 0x41C5E3F5 equals the ESI saved on callee entry, which the caller copied from its pre-call EAX at 0x41C5E3EB. No provider type/content/lifetime or later pointer-cell identity follows."
+  },
+  "frontier": [
+    "Nested-call register, stack and memory contracts (8 direct sites, 1 indirect site) not verified.",
+    "FS:[0] chain installation/removal and local pointer value 0x41C79710 are visible. Its handler role/body and exceptional/non-local continuation graph are not established here.",
+    "No unconditional all-path/whole-function ABI preservation, scheduling, provider provenance, alias/lifetime or scalar-value claim. R03/GAP04 remain open."
+  ],
+  "verification": {
+    "kind": "Fresh original-byte hashing and static objdump decoding only; tests check evidence rejection, not original program behavior.",
+    "command": "python3 -B continuation/evidence/wave5/esi/verify_preservation.py --handoff /absolute/path/RAGEBOT_HANDOFF_V10",
+    "tests": "python3 -B -m unittest discover -s continuation/evidence/wave5/esi -p test_*.py -v",
+    "coordinator_gate": "Full make -C continuation check HANDOFF=... and independent fixed-integrated-SHA review remain coordinator obligations. Child does not repeat the 767-reference scan."
+  }
+}
