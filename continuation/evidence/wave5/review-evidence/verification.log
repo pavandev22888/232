@@ -1,0 +1,246 @@
+tested_sha=f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+diff_base=3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b
+cwd=/tmp/hoplite/232-w5-review-evidence
+PYTHONOPTIMIZE=0
+PYTHONDONTWRITEBYTECODE=1
+python=3.12.3
+objdump=GNU Binutils for Ubuntu 2.42
+git=2.43.0
+
+reviewed_source_sha256 a174e7fab0045731713ef1f5be93880734d0580e2e69e6b50c892070e7e55a4b continuation/evidence/wave5/scope/coverage.json
+reviewed_source_sha256 d8867dd7da494f82871910ffe460495a11237c213d18a91195a91faf6f966097 continuation/evidence/wave5/scope/static_evidence.json
+reviewed_source_sha256 638735a862db202e32ebbba456dd5993cf5181dd5c3522d8c98c0ae6e4d3febd continuation/evidence/wave5/point26/anchors.json
+reviewed_source_sha256 b58142ba96e9ec79f134ef14f33e954ecf6e8b7fa606eb0e49596adba9647fd0 continuation/evidence/wave5/point26/hypothesis.json
+reviewed_source_sha256 fc34ed9a081e50224d503e416393dcd8c67bd5f17c4500f31bc8c96692015436 continuation/evidence/wave5/point26/verify_point26.py
+reviewed_source_sha256 2f777e35558f5dd9f6a64666b37390c166d678d3b1caf220edbfa79d95df3883 continuation/evidence/wave5/tf4/anchors.json
+reviewed_source_sha256 41fca9ecbea6c10aac5b66631623d24e114cf7d1ca81353020fcbbde05892429 continuation/evidence/wave5/tf4/verify_tf4.py
+reviewed_source_sha256 5ffdbdd335d9f39bff78236a092f6bd3cc5c2758cbea44c3582fa8ea1aeb3cbe continuation/evidence/wave5/global9bc/chain.json
+reviewed_source_sha256 6b412307d1a17cdb659e247feeaba99204ff2b383b4313210fee7c266a234261 continuation/evidence/wave5/global9bc/hypothesis.json
+reviewed_source_sha256 c601e5b0c9124a9bc075f7882c575ae1f56da3330c03a2449f9ab07ae58d7400 continuation/evidence/wave5/global9bc/verify_chain.py
+reviewed_source_sha256 438bc63014b6a695b4d9ff0f161870c25ec358f0888c83e6a3bb1ddb0037c37c continuation/evidence/wave5/threshold/byte_anchors.tsv
+reviewed_source_sha256 cf7466c400f38a7cdccb06e6a3e9781f9c084f23e7e0594ec3013615a102476f continuation/evidence/wave5/threshold/consumer_frontier.json
+reviewed_source_sha256 b7d455e59abae63050665188a1213d0ce885c3550017b70ff5de0ec810a27c11 continuation/evidence/wave5/threshold/verify_threshold_frontier.py
+reviewed_source_sha256 dafdd0cc3a64532942a188adb40cd51f93aee955dc383788a6dabb5d4308678a continuation/evidence/wave5/bindings/anchors.json
+reviewed_source_sha256 30ef77b1c8a104cefe36aa354c5aaa102c772fbd9fa682947ebcde617dffa150 continuation/evidence/wave5/bindings/contract.md
+reviewed_source_sha256 67d9e22d218c9e317f88454f89c3a6fa379ff4d7088ee640163a8a02577fdb44 continuation/evidence/wave5/bindings/verify_resolution.py
+reviewed_source_sha256 5ac3fa6a1a9d2556af3114ea0177e42110a64248e7426486ed4470b5b01aaf41 continuation/evidence/wave5/guards/guard_path.json
+reviewed_source_sha256 42176860bfd926bc82f9df20ec7c876493b95493d4dff2960c0154d5cb207368 continuation/evidence/wave5/guards/verify_guards.py
+
+$ python3 -B continuation/evidence/wave5/point26/verify_point26.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "blocks_checked": 7,
+  "saved_rows_and_fresh_decodes": 36,
+  "unique_instruction_starts": 35,
+  "selected_hypotheses": 1,
+  "write_offsets_inclusive": [
+    "0x25",
+    "0x28"
+  ],
+  "local_alias_on_selected_fallthrough": "EAX retains DWORD[G424B004C] through ADD; that value was also stored to DWORD[ESI+0x3C]",
+  "selected_edge_condition": "unsigned EBX >= 0x41 bypasses JB and reaches PUSHF before ADD, if no fault",
+  "conditional_byte_formula": "new26 = (old26 + (old25 >= 0x96)) modulo 256",
+  "conditional_zero_to_nonzero": "old26 == 0 and old25 >= 0x96 implies new26 == 1 at this ADD",
+  "frontier": [
+    "No proof that loaded G424B004C pointee is the consumed Point.",
+    "No positive byte+25 source or actual pre-ADD byte+26 value established.",
+    "No full CFG/reachability or nonalias proof for earlier stores, PUSHF, or later calls; first-positive ordering is not established.",
+    "No same-object/lifetime/order bridge to the Point+26 -> T+96 propagation."
+  ],
+  "positive_point_sources_proved": 0,
+  "gap01_status": "open",
+  "original_dll_loaded_executed_or_emulated": false
+}
+exit_code=0
+stdout_sha256=7625bff2e401027a83e05c8501b56ac482a6775b4a04e52c080d4e701ba21dd1
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=7625bff2e401027a83e05c8501b56ac482a6775b4a04e52c080d4e701ba21dd1
+
+$ python3 -B continuation/evidence/wave5/tf4/verify_tf4.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "blocks_checked": 5,
+  "fresh_decoded_instructions": 100,
+  "saved_rows_rechecked": 79,
+  "bounded_hypotheses_checked": 1,
+  "typed_positive_t_f4_source_proved": false,
+  "frontier": "U == selector T, prologue ECX / slot / lifetime / order preservation, and primary positive R+24 source",
+  "original_execution_or_emulation": false
+}
+exit_code=0
+stdout_sha256=66ead471fefe617a6221130b6430b44d5de6d05e28ec3e20666c4017ac32bdfa
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=66ead471fefe617a6221130b6430b44d5de6d05e28ec3e20666c4017ac32bdfa
+
+$ python3 -B continuation/evidence/wave5/global9bc/verify_chain.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+{
+  "passed": true,
+  "task": "W5-GLOBAL9BC",
+  "hypotheses_checked": 1,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "fresh_decoded_instructions": 30,
+  "saved_caller_rows_rechecked": 3,
+  "overlap_cases": [
+    {
+      "Q": "0x425009b4",
+      "byte_index_in_W": 0,
+      "write_start": "0x425009bc",
+      "write_end_inclusive": "0x425009bf",
+      "nonzero_condition": "((W >> 0) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b3",
+      "byte_index_in_W": 1,
+      "write_start": "0x425009bb",
+      "write_end_inclusive": "0x425009be",
+      "nonzero_condition": "((W >> 8) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b2",
+      "byte_index_in_W": 2,
+      "write_start": "0x425009ba",
+      "write_end_inclusive": "0x425009bd",
+      "nonzero_condition": "((W >> 16) & 0xff) != 0"
+    },
+    {
+      "Q": "0x425009b1",
+      "byte_index_in_W": 3,
+      "write_start": "0x425009b9",
+      "write_end_inclusive": "0x425009bc",
+      "nonzero_condition": "((W >> 24) & 0xff) != 0"
+    }
+  ],
+  "positive_sources_proved": 0,
+  "G425009BC": "open",
+  "scope": "Pinned source hashes, exact selected windows, fresh objdump decoding, saved caller rows, static fixed cells, operand/width and overlap arithmetic. Not execution, emulation, CFG completeness, loader semantics or runtime reachability.",
+  "original_loaded_executed_or_emulated": false
+}
+exit_code=0
+stdout_sha256=b1f29bbb7357739f08218c52284d684da457460afa2ff0efc29654e31eeddff3
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=b1f29bbb7357739f08218c52284d684da457460afa2ff0efc29654e31eeddff3
+
+$ python3 -B continuation/evidence/wave5/threshold/verify_threshold_frontier.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS: 5 sources, 5 spans, 110 freshly decoded instructions; static consistency only; GAP02 open
+exit_code=0
+stdout_sha256=13c79c45706208bfe0d8af708745d08b2406efc101f6aada0a341f6ba3a737c8
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=13c79c45706208bfe0d8af708745d08b2406efc101f6aada0a341f6ba3a737c8
+
+$ python3 -B continuation/evidence/wave5/bindings/verify_resolution.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS 12 pinned source hashes
+PASS 2 byte windows and fresh objdump instruction boundaries
+PASS guarded static address 0x2cf551dc -> [vtable+0x10]; ownership unresolved
+PASS distinct repeated calls; first-zero skip; signed WORD -> N+1C DWORD
+PASS 16 existing geometry alternatives retained; no handle binding established
+UNRESOLVED object/vtable ownership, method target/ABI, entity supplier/index, metadata offsets, guards, repeated-call identity/lifetime and reachability
+exit_code=0
+stdout_sha256=4071c77a9136329578d60a4f91e7b21a5a22b3df76c98c9446af5d04420f2947
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=4071c77a9136329578d60a4f91e7b21a5a22b3df76c98c9446af5d04420f2947
+
+$ python3 -B continuation/evidence/wave5/guards/verify_guards.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+PASS: 6 source hashes, whole image SHA256, 14 windows, 99 instructions, 11 direct edges, 7 distinct unresolved boundaries
+Static local evidence only; no loading, execution, emulation, TLS resolution, callee contracts, original fault result or runtime equivalence.
+exit_code=0
+stdout_sha256=e344cab6d59d7f3d3db699d0bc5e6f7fea3ec354ae5d94054db0ee92c8d611e9
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=e344cab6d59d7f3d3db699d0bc5e6f7fea3ec354ae5d94054db0ee92c8d611e9
+
+$ python3 -B -c 'from pathlib import Path
+import hashlib,json,subprocess
+r=Path.cwd(); h=Path('"'"'/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10'"'"')
+p=r/'"'"'continuation/evidence/wave5/scope'"'"'; d=json.loads((p/'"'"'coverage.json'"'"').read_text()); e=json.loads((p/'"'"'static_evidence.json'"'"').read_text())
+assert d['"'"'base_commit'"'"']=='"'"'3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b'"'"'
+for key,s in d['"'"'sources'"'"'].items():
+ b=subprocess.check_output(['"'"'git'"'"','"'"'show'"'"',s['"'"'commit'"'"']+'"'"':'"'"'+s['"'"'path'"'"']]) if s['"'"'root'"'"']=='"'"'git'"'"' else ((r if s['"'"'root'"'"']=='"'"'repo'"'"' else h)/s['"'"'path'"'"']).read_bytes()
+ assert len(b)==s['"'"'size'"'"'] and hashlib.sha256(b).hexdigest()==s['"'"'sha256'"'"'],key
+ids={x['"'"'id'"'"'] for x in d['"'"'domains'"'"']}
+assert len(ids)==len(d['"'"'domains'"'"'])==24
+assert {x['"'"'goal_bullet'"'"'] for x in d['"'"'domains'"'"']}==set(range(8))
+for x in d['"'"'domains'"'"']:
+ assert x['"'"'sources'"'"'] and x['"'"'archival_navigation_anchors'"'"'] and x['"'"'unresolved'"'"'] and x['"'"'next_bounded_step'"'"'],x['"'"'id'"'"']
+ assert set(x['"'"'sources'"'"'])<=d['"'"'sources'"'"'].keys(),x['"'"'id'"'"']
+ assert set(x['"'"'dependencies_to_resolve'"'"'])<=ids,x['"'"'id'"'"']
+assert e['"'"'clue_budget'"'"']['"'"'examined_types'"'"']==len(e['"'"'clues'"'"'])==2
+assert e['"'"'source'"'"']==d['"'"'sources'"'"']['"'"'dll'"'"']
+assert not d['"'"'original_language_established'"'"'] and not d['"'"'full_tasks_closed'"'"']
+print('"'"'PASS: 24 domain rows, 39 source pins, all dependency/source references, 2 clue types; no closure claims'"'"')
+'
+PASS: 24 domain rows, 39 source pins, all dependency/source references, 2 clue types; no closure claims
+exit_code=0
+stdout_sha256=1623247b7dfc196767ad592a3e0bd4c20e3815028c8a03d13a3305e8398c38b1
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=1623247b7dfc196767ad592a3e0bd4c20e3815028c8a03d13a3305e8398c38b1
+
+$ sh -c 'HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 python3 -B -c '"'"'from pathlib import Path
+import hashlib,json,os,struct
+p=Path(os.environ['"'"'"'"'"'"'"'"'HANDOFF'"'"'"'"'"'"'"'"'])/'"'"'"'"'"'"'"'"'workspace/input/dll/neverlose.dll'"'"'"'"'"'"'"'"'; b=p.read_bytes()
+assert hashlib.sha256(b).hexdigest()=='"'"'"'"'"'"'"'"'c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c'"'"'"'"'"'"'"'"'
+pe=struct.unpack_from('"'"'"'"'"'"'"'"'<I'"'"'"'"'"'"'"'"',b,0x3c)[0]; op=pe+24
+assert pe==0x118 and b[pe:pe+24].hex()=='"'"'"'"'"'"'"'"'504500004c010500b687116a0000000000000000e0000221'"'"'"'"'"'"'"'"'
+assert b[op:op+4].hex()=='"'"'"'"'"'"'"'"'0b010e2c'"'"'"'"'"'"'"'"'
+assert b[0x260:0x278].hex()=='"'"'"'"'"'"'"'"'2e6461746100000000a82100005041000068210000324100'"'"'"'"'"'"'"'"'
+assert b[0x288:0x2a0].hex()=='"'"'"'"'"'"'"'"'2e72737263000000002e500300006300002e5003009a6200'"'"'"'"'"'"'"'"'
+needle=b'"'"'"'"'"'"'"'"'.?AVtype_info@@\0'"'"'"'"'"'"'"'"'; start=0; hits=[]
+while len(hits)<3:
+ o=b.find(needle,start)
+ if o<0: break
+ hits.append(o); start=o+len(needle)
+assert hits==[0x5ee278,0x1838c40,0x18dd2f0]
+assert b[0x5ee270:0x5ee288].hex()=='"'"'"'"'"'"'"'"'54113b10000000002e3f4156747970655f696e666f404000'"'"'"'"'"'"'"'"'
+print(json.dumps({'"'"'"'"'"'"'"'"'source_sha256'"'"'"'"'"'"'"'"':hashlib.sha256(b).hexdigest(),'"'"'"'"'"'"'"'"'pe_offset'"'"'"'"'"'"'"'"':hex(pe),'"'"'"'"'"'"'"'"'machine'"'"'"'"'"'"'"'"':'"'"'"'"'"'"'"'"'0x14c'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'magic'"'"'"'"'"'"'"'"':'"'"'"'"'"'"'"'"'0x10b'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'linker_bytes'"'"'"'"'"'"'"'"':'"'"'"'"'"'"'"'"'0e2c'"'"'"'"'"'"'"'"','"'"'"'"'"'"'"'"'bounded_type_info_hits'"'"'"'"'"'"'"'"':[hex(x) for x in hits]},sort_keys=True))
+'"'"''
+{"bounded_type_info_hits": ["0x5ee278", "0x1838c40", "0x18dd2f0"], "linker_bytes": "0e2c", "machine": "0x14c", "magic": "0x10b", "pe_offset": "0x118", "source_sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"}
+exit_code=0
+stdout_sha256=3f97dbe0dea11730ac0e7d1b5861c0d2af986a2d1498c54aafb0c973d28a72fb
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=3f97dbe0dea11730ac0e7d1b5861c0d2af986a2d1498c54aafb0c973d28a72fb
+
+$ python3 -B continuation/evidence/gap04/check_bindings.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+UNRESOLVED runtime base, module ownership, target identity, and execution/reachability
+exit_code=0
+stdout_sha256=b0e972ccee2b6f49486ed007200602cddc09e4faf6b9d7d01eb500f5af4824e4
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=b0e972ccee2b6f49486ed007200602cddc09e4faf6b9d7d01eb500f5af4824e4
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+exit_code=0
+stdout_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+exit_code=0
+stdout_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+
+$ git diff --check
+
+exit_code=0
+stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+combined_log_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855

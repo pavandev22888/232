@@ -1,0 +1,153 @@
+tested_sha=f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a
+source_sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+conditional_base=0x412a0000
+
+excerpt=point26_width
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4149bb7a --stop-address=0x4149bb96 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4149bb7a <.data+0x1fbb7a>:
+4149bb7a:	a1 4c 00 4b 42                                  	mov    eax,ds:0x424b004c
+4149bb7f:	89 46 3c                                        	mov    DWORD PTR [esi+0x3c],eax
+4149bb82:	c7 86 c8 00 00 00 02 00 00 00                   	mov    DWORD PTR [esi+0xc8],0x2
+4149bb8c:	83 fb 41                                        	cmp    ebx,0x41
+4149bb8f:	72 18                                           	jb     0x4149bba9
+4149bb91:	9c                                              	pushf
+4149bb92:	83 40 25 6a                                     	add    DWORD PTR [eax+0x25],0x6a
+exit_code=0
+stdout_sha256=3b80a163b01e49fa52acd231091767d3926720c104d8191167e1cff356ea24e8
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=tf4_raw_copy
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414c1ecf --stop-address=0x414c1edc /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414c1ecf <.data+0x221ecf>:
+414c1ecf:	f3 0f 10 47 24                                  	movss  xmm0,DWORD PTR [edi+0x24]
+414c1ed4:	f3 0f 11 80 f4 00 00 00                         	movss  DWORD PTR [eax+0xf4],xmm0
+exit_code=0
+stdout_sha256=d246e67787a1ff025d095fc758e05a33053d99e330013d2ff5d7df24db502d59
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=tf4_bit_compare
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41477e96 --stop-address=0x41477ea5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41477e96 <.data+0x1d7e96>:
+41477e96:	8b 82 f4 00 00 00                               	mov    eax,DWORD PTR [edx+0xf4]
+41477e9c:	39 84 31 f4 00 00 00                            	cmp    DWORD PTR [ecx+esi*1+0xf4],eax
+41477ea3:	75 6f                                           	jne    0x41477f14
+exit_code=0
+stdout_sha256=55d81b26553f7d2036c1859a97619022c765e0eefb207525d862b0d234d724eb
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=global9bc_indirect_store
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x41da7d07 --stop-address=0x41da7d21 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+41da7d07 <.data+0xb07d07>:
+41da7d07:	64 a1 2c 00 00 00                               	mov    eax,fs:0x2c
+41da7d0d:	8b 0d 40 85 51 42                               	mov    ecx,DWORD PTR ds:0x42518540
+41da7d13:	8b 0c 88                                        	mov    ecx,DWORD PTR [eax+ecx*4]
+41da7d16:	a1 ec 26 26 42                                  	mov    eax,ds:0x422626ec
+41da7d1b:	89 81 08 00 00 00                               	mov    DWORD PTR [ecx+0x8],eax
+exit_code=0
+stdout_sha256=2c52bbe2f8351c95dc34f9168d955265a32929a9e4e7c3a65927c721bc66f88f
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=bindings_receiver_and_slot
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4131318a --stop-address=0x4131319b /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4131318a <.data+0x7318a>:
+4131318a:	8b 45 f4                                        	mov    eax,DWORD PTR [ebp-0xc]
+4131318d:	50                                              	push   eax
+4131318e:	89 e2                                           	mov    edx,esp
+41313190:	8b 09                                           	mov    ecx,DWORD PTR [ecx]
+41313192:	89 0a                                           	mov    DWORD PTR [edx],ecx
+41313194:	8b 10                                           	mov    edx,DWORD PTR [eax]
+41313196:	89 c1                                           	mov    ecx,eax
+41313198:	ff 52 10                                        	call   DWORD PTR [edx+0x10]
+exit_code=0
+stdout_sha256=4d2d5cd9d8fd4442692b158c795b0c0b1b80fbd7bda71ed6058d51f05d59a860
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=guards_signed_cmp
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150b6c4 --stop-address=0x4150b6e5 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4150b6c4 <.data+0x26b6c4>:
+4150b6c4:	a1 40 85 51 42                                  	mov    eax,ds:0x42518540
+4150b6c9:	64 8b 0d 2c 00 00 00                            	mov    ecx,DWORD PTR fs:0x2c
+4150b6d0:	8b 04 81                                        	mov    eax,DWORD PTR [ecx+eax*4]
+4150b6d3:	8b 0d 08 04 4b 42                               	mov    ecx,DWORD PTR ds:0x424b0408
+4150b6d9:	3b 88 08 00 00 00                               	cmp    ecx,DWORD PTR [eax+0x8]
+4150b6df:	0f 8f 9d 02 00 00                               	jg     0x4150b982
+exit_code=0
+stdout_sha256=5aa643688aeed34fd97cac8b24a26ef79a3ef13052f7c7fb409794053e43cd09
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=index_unsigned_boundary
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x4150be95 --stop-address=0x4150beaf /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+4150be95 <.data+0x26be95>:
+4150be95:	ff 50 28                                        	call   DWORD PTR [eax+0x28]
+4150be98:	3d 00 08 00 00                                  	cmp    eax,0x800
+4150be9d:	0f 83 55 06 00 00                               	jae    0x4150c4f8
+4150bea3:	8b 4d 0c                                        	mov    ecx,DWORD PTR [ebp+0xc]
+4150bea6:	89 c3                                           	mov    ebx,eax
+4150bea8:	6b c0 74                                        	imul   eax,eax,0x74
+4150beab:	01 c7                                           	add    edi,eax
+4150bead:	89 39                                           	mov    DWORD PTR [ecx],edi
+exit_code=0
+stdout_sha256=bd560d8d8956ac5422b5762bd70708bc31979fc02a7584cd8baa6dda17ed903e
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+excerpt=separate_actor_hlt
+$ objdump -D -b binary -m i386 -Mintel --insn-width=16 --adjust-vma=0x412a0000 --start-address=0x414fd87d --stop-address=0x414fd890 /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+414fd87d <.data+0x25d87d>:
+414fd87d:	ff 50 28                                        	call   DWORD PTR [eax+0x28]
+414fd880:	85 c0                                           	test   eax,eax
+414fd882:	7e 0b                                           	jle    0x414fd88f
+414fd884:	8b 0d 04 ca 23 42                               	mov    ecx,DWORD PTR ds:0x4223ca04
+414fd88a:	3b 41 18                                        	cmp    eax,DWORD PTR [ecx+0x18]
+414fd88d:	7e 30                                           	jle    0x414fd8bf
+414fd88f:	f4                                              	hlt
+exit_code=0
+stdout_sha256=ff18ecc8866fc8bf79a9781bd7b8725df1e4a417be8102eea2b8637b883669cb
+stderr_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
