@@ -27,6 +27,8 @@
 | [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, отдельная запись T+F0; tail statistics и initial copy при C0=0 | [контракт](../continuation/evidence/wave5/aggregate/contract.json) |
 | [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
 | [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
+| [release_state_slice](../continuation/src/release_state_slice.cpp) | Отдельные post-call observations, latch stores и условный DWORD increment; не автомат DT/HS | [контракт W6](../continuation/evidence/wave6/modes/contract.json) |
+| [reset_predecessor](../continuation/src/reset_predecessor.cpp) | ADD/CMP/JNE и условная 11-store проекция; не цикл или полный entry predicate | [контракт W6](../continuation/evidence/wave6/reset/reset_predecessor_evidence.json) |
 
 Дополнительный `test_position_pipeline.cpp` проверяет связки. Успешные тесты
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное

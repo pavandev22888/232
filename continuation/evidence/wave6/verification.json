@@ -1,0 +1,82 @@
+{
+  "status": "awaiting_integration_and_review",
+  "baseline_head": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "restoration": {
+    "archive_sha256": "b5e3336edaa99b6f437f22368ab230107b7b781d9dfd54c83c6e00d9cfb8018f",
+    "assembly_exit_code": 0,
+    "bootstrap_exit_code": 0,
+    "git_baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "baseline_make_check_exit_code": 0,
+    "baseline_bundle": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    },
+    "baseline_integrity": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    }
+  },
+  "archive_integrity": {
+    "passed": true,
+    "files": [
+      {
+        "path": "RAGEBOT_V10_часть_01_из_06.zip",
+        "sha256": "4ef58ad83095d5d183e73d048e8618d134e1ae80a33135dbe8d5a0b99429910f",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_02_из_06.zip",
+        "sha256": "b82341ba07fe2154304ef0d88f7d86a8cf9abc22dff8364bd65e514582b946c8",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_03_из_06.zip",
+        "sha256": "c8ec867c86683d1ed5eec9191a16dd23f66ffe9291fa3a7696ddb032cd7b77cc",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_04_из_06.zip",
+        "sha256": "6cbe5dffca7ec442371c6f04d288201b0a0e02c86857164a4dcf8e55d06fa64a",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_05_из_06.zip",
+        "sha256": "3724c4981934579228e953552189cf4a7d9e4d6caf363dda51dde148eff38e5d",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      },
+      {
+        "path": "RAGEBOT_V10_часть_06_из_06.zip",
+        "sha256": "91a554eb07c81f1d0a1b2558131150c7a6f863e38a0cde596b34917788a82ff3",
+        "git_baseline": "180616d1227235fc952ad07202cdd7529c0272e8"
+      }
+    ]
+  },
+  "original_loading_execution_emulation": false,
+  "full_tasks_closed": [],
+  "external_audit": false,
+  "original_language_abi_established": false,
+  "execution_limitations": [
+    "Subagent checkpoint/event persistence timeouts interrupted reset and callback review; same worktrees/context resumed, no assumed acceptance.",
+    "NEXT-DAMAGE returned no implementation/tests/result commit; not evidence of source unresolvability."
+  ],
+  "preintegration_integrity": {
+    "bundle": {
+      "passed": true,
+      "verified_files": 960,
+      "errors": [],
+      "scope": "File integrity, not behaviour equivalence."
+    },
+    "input_work": {
+      "passed": true,
+      "checked_files": 64087,
+      "errors": [],
+      "scope": "input integrity only; no algorithmic correctness claimed"
+    },
+    "recorded_before": "1215d91"
+  }
+}

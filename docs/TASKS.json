@@ -1408,7 +1408,7 @@
     {
       "id": "NEXT-AGGREGATE",
       "owner": "primary-coordinator",
-      "status": "in_progress",
+      "status": "in_review",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1427,12 +1427,14 @@
         "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
-      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
+      "result_commit": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+      "remaining_frontier": "Settings provider, unknown index handler 4149EC2D and ranking for nonzero C0; whole callback remains partial."
     },
     {
       "id": "NEXT-RESET",
       "owner": "next-reset",
-      "status": "in_progress",
+      "status": "in_review",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-reset",
       "branch": "hoplite/sikyon-46eee495--next-reset",
@@ -1452,7 +1454,17 @@
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
       "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
-      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base."
+      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base.",
+      "result_commits": [
+        "de19628f8e541324f286814bc5ff331c55a8802b",
+        "e9b3c7d03936c901a64bcb10a974661ab5c84333"
+      ],
+      "integrated_commits": [
+        "14cc881",
+        "c5e496f"
+      ],
+      "result": "Local ADD/CMP/JNE and existing 11-store projection. Fresh full-encoding byte gate and native/sanitizer tests exit 0; initial failure preserved.",
+      "remaining_frontier": "EAX provenance, full entry predicate, loop effects, four fallthrough-prefix stores and scheduling not reconstructed."
     },
     {
       "id": "NEXT-MESSAGE",
@@ -1512,7 +1524,7 @@
     {
       "id": "NEXT-GEOMETRY",
       "owner": "next-geometry",
-      "status": "in_progress",
+      "status": "blocked",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-geometry",
       "branch": "hoplite/sikyon-46eee495--next-geometry",
@@ -1531,7 +1543,11 @@
         "Readable body if sufficient evidence, native/sanitizer/byte checks.",
         "Fixed integrated SHA independent review."
       ],
-      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure."
+      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure.",
+      "result_commit": "b9be3bd9bc5987ee08c65e12ddc20e622e3bd27d",
+      "integrated_commit": "1215d91",
+      "result": "Caller/input-output byte frontier recorded; no C++ geometry body. Static gate exit 0 after integration.",
+      "remaining_frontier": "0x289A6D60 provider/runtime base/ABI unresolved; preferred candidates 0x10876D60 and 0x103E6D60 remain separate."
     },
     {
       "id": "NEXT-HISTORY",
@@ -1560,7 +1576,7 @@
     {
       "id": "NEXT-REVIEW-CALLBACK",
       "owner": "review-callback",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
       "worktree": "/tmp/hoplite/232-review-callback",
       "branch": "hoplite/sikyon-46eee495--review-callback",
@@ -1574,12 +1590,16 @@
         "Independent read-only code and evidence review of integrated fixed SHA; fresh focused native/sanitizer/byte checks.",
         "Check counter state before unresolved, arithmetic gates, MAXSS/UCOMISS NaNs/±0, raw copy and no invented ranking/provider."
       ],
-      "stop_condition": "Report findings and exact reviewed SHA. No code edits, no external audit claim."
+      "stop_condition": "Report findings and exact reviewed SHA. No code edits, no external audit claim.",
+      "result_commit": "9084d92e323a96910b079fd8f46f1d755d9a3299",
+      "result": "Initial blocker withdrawn after fresh edge trace: sibling C0 paths were conflated. Original report preserved; resolution.json is authoritative for this finding.",
+      "acceptance_result": "prior finding resolved; not final integrated-SHA acceptance",
+      "remaining_frontier": "Separate final integrated-SHA review required."
     },
     {
       "id": "NEXT-MODES",
       "owner": "primary-coordinator",
-      "status": "in_progress",
+      "status": "in_review",
       "base_commit": "553d2292393c2bb90283fd08dcd4150453a950a0",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1598,7 +1618,9 @@
         "No assumptions about 414F2240 or indirect 425080E4 clobbers, no inter-call snapshot identity.",
         "Independent fixed integrated SHA review."
       ],
-      "stop_condition": "Stop at unproved helper/indirect call and pointer binding; no full DT/HS state machine claim."
+      "stop_condition": "Stop at unproved helper/indirect call and pointer binding; no full DT/HS state machine claim.",
+      "result_commit": "47af79a",
+      "remaining_frontier": "Independent post-call observations only; helpers, indirect dispatch, pointee identity, full state machine and scheduling unknown."
     }
   ],
   "goal_correction": {
@@ -1634,7 +1656,7 @@
     "coordinator": "primary-coordinator",
     "ownership_check": "Only current thread visible; existing registry has 22 done / 9 blocked, no active tasks; clean current checkout.",
     "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "status": "in_progress",
+    "status": "awaiting_history_and_integrated_review",
     "full_tasks_closed": []
   }
 }
