@@ -41,6 +41,7 @@ evidence:
 	$(PYTHON) -B evidence/wave5/aggregate/verify_contract.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave6/aggregate/verify_callback.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave6/modes/verify_release.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave6/message/verify_message_frontier.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/bindings/verify_resolution.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/charge/verify_full_reset.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/esi/verify_preservation.py --handoff "$(abspath $(HANDOFF))"

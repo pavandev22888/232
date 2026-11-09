@@ -1457,7 +1457,7 @@
     {
       "id": "NEXT-MESSAGE",
       "owner": "next-message",
-      "status": "in_progress",
+      "status": "blocked",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-message",
       "branch": "hoplite/sikyon-46eee495--next-message",
@@ -1477,7 +1477,11 @@
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
       "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
-      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base."
+      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base.",
+      "result_commit": "8faa0257be3ac7cf1f6c41a63eec98baf7c1875a",
+      "integrated_commit": "a63b998421707648b86a7aeb176f93d91aba05c3",
+      "completion_scope": "Fresh caller conditions/raw arguments and callee frontier only; no justified consumer body. Independent evidence review pending.",
+      "blocker": "FS-derived guard, unequal EDI jump, equal-edge runtime dereference 0x5325D3E8 outside nl.bin then indirect [eax+30]; semantic argument identity and provider effects unknown."
     },
     {
       "id": "NEXT-DAMAGE",
