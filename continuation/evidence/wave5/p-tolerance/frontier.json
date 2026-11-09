@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "task_id": "W5-P-TOLERANCE",
+  "parent_task": "R04",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "branch": "hoplite/sikyon-46eee495--w5-p-tolerance-sol",
+  "assignment": {
+    "sources": [
+      {
+        "path": "continuation/evidence/wave5/assignment.json",
+        "git_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+        "sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4"
+      },
+      {
+        "path": "docs/TASKS.json",
+        "git_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+        "sha256": "8bb3844bafbba824cc49bfd30dcde99a542b5fa5414d4371e2c93b37005cf1e9"
+      }
+    ],
+    "selected_entry_matches_live_registry_and_manifest": true,
+    "owner": "w5-p-tolerance-sol",
+    "write_paths": [
+      "continuation/evidence/wave5/p-tolerance/"
+    ],
+    "base_validated": true
+  },
+  "decision": {
+    "bounded_assignment_outcome": "stopped_at_explicit_prerequisite",
+    "r04": "blocked",
+    "gap04": "open",
+    "gap05": "partial",
+    "new_provider_writer_anchor": "not supplied in the enumerated inspected sources",
+    "absence_claim": false,
+    "new_chain_followed": false,
+    "cpp_or_model_changes": false
+  },
+  "inspection_scope": {
+    "selection": "Assigned read_first, indexed W4 acceptance, later R03 contract/review, and authoritative W5 assignment/registry. Fresh runs revalidate existing bounded W3/W2 windows only.",
+    "later_assignment_delta": [
+      "continuation/evidence/wave5/assignment.json",
+      "docs/TASKS.json"
+    ],
+    "limit": "No whole-image xref/literal scan, new candidate enumeration, callee expansion or broad negative search. Unlisted material is not claimed exhausted."
+  },
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "base": "0x412a0000",
+    "mapping": "file_offset = VA - conditional raw-image base; not an observed runtime base"
+  },
+  "source_pins": [
+    {
+      "path": "continuation/evidence/wave3/source/README.md",
+      "sha256": "71e7a4a6bf743ce4f7ce1bfd4c1f4f1c0957c84bb4197bffb926bb1a576ac645",
+      "role": "Accepted W3 local writer and explicit P/P+0/cross-call frontier."
+    },
+    {
+      "path": "continuation/evidence/wave3/source/ledger.json",
+      "sha256": "9a422a17b444d034e34fdc2bf76dbda28993817b0ab0436c5bad319a511dd8c3",
+      "role": "Pinned image, eight archival contexts, twelve windows; F1-F4 remain open."
+    },
+    {
+      "path": "continuation/evidence/wave3/source/verify_source.py",
+      "sha256": "314f65a6ce8d6a867259653c77c7b65853e7c18e16ee3b0b7bd5b82924427a67",
+      "role": "Read-only verifier used freshly; no upstream provider analysis."
+    },
+    {
+      "path": "continuation/evidence/wave2/gap04/contract.md",
+      "sha256": "575067ff9e314fbe752ed9b400d37556f63169f5b2d36ea4c80df14bc24fb7c2",
+      "role": "Known per-component P+0x14 tolerance consumption, not a provider."
+    },
+    {
+      "path": "continuation/evidence/wave2/gap04/scalar_helper.json",
+      "sha256": "545d274506c6c2328b50bc4855dd0d620efead620bed910c1638292bd468ae00",
+      "role": "Pinned actor caller/helper bytes; no P supplier or field writer established."
+    },
+    {
+      "path": "continuation/evidence/wave2/gap04/verify_scalar_helper.py",
+      "sha256": "08cf6191c300bf02ab424a8ff5456dc2fc19ceb3502a827cb6cfdb9b0b16882f",
+      "role": "Read-only byte/hash/fresh-decode verifier used freshly."
+    },
+    {
+      "path": "continuation/evidence/wave4/proof/acceptance.json",
+      "sha256": "401bad1db5b443e175edbd8a5b06970e172605b3f16cf34d53020d9b7d305ad5",
+      "role": "Accepted W3 boundary explicitly leaves P lifetime/writer and cross-call identity unknown."
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff",
+      "role": "Later R03 concerns a different cell 0x4252194C and offset +0x24; tolerance excluded."
+    },
+    {
+      "path": "continuation/evidence/next/scalar-provider-review/acceptance.json",
+      "sha256": "b0dbde32ab478ca8a025cd8bb5ac2516f31fbf4d72861ac37ca4313f5ae2acd4",
+      "role": "Later review leaves tolerance provider and per-call observations unresolved."
+    }
+  ],
+  "known_byte_anchors": [
+    {
+      "id": "K1",
+      "provenance": "existing W3, freshly reverified; not new provider evidence",
+      "source": "continuation/evidence/wave3/source/ledger.json",
+      "local_fact": "After entry to the selected block, +0/-0 or unordered old N+0x14 falls through UCOMISS/JNE. DWORD P_write is read from G=0x4223CA04, then four bytes at P_write+0 are copied to [EDI_N+0x14]. Ordered nonzero skips this store.",
+      "anchors": [
+        {
+          "va": "0x414f83f9",
+          "bytes": "0f57e4",
+          "instruction": "xorps xmm4,xmm4"
+        },
+        {
+          "va": "0x414f83fc",
+          "bytes": "0f2e6714",
+          "instruction": "ucomiss xmm4,dword ptr [edi+0x14]"
+        },
+        {
+          "va": "0x414f8400",
+          "bytes": "750e",
+          "instruction": "jne 0x414f8410"
+        },
+        {
+          "va": "0x414f8402",
+          "bytes": "a104ca2342",
+          "instruction": "mov eax,ds:0x4223ca04"
+        },
+        {
+          "va": "0x414f8407",
+          "bytes": "f30f1000",
+          "instruction": "movss xmm0,dword ptr [eax]"
+        },
+        {
+          "va": "0x414f840b",
+          "bytes": "f30f114714",
+          "instruction": "movss dword ptr [edi+0x14],xmm0"
+        }
+      ]
+    },
+    {
+      "id": "K2",
+      "provenance": "existing W3, freshly reverified; not new identity evidence",
+      "source": "continuation/evidence/wave3/source/ledger.json",
+      "local_fact": "A separate G read obtains P_age; SUBSS uses four bytes at P_age+0 and [EBP_N+0x14]. Same reader/layout/global slot does not prove EDI_N(t_write)==EBP_N(t_read), P_write==P_age, or continuity of either value.",
+      "anchors": [
+        {
+          "va": "0x414fdad6",
+          "bytes": "a104ca2342",
+          "instruction": "mov eax,ds:0x4223ca04"
+        },
+        {
+          "va": "0x414fdadb",
+          "bytes": "f30f1000",
+          "instruction": "movss xmm0,dword ptr [eax]"
+        },
+        {
+          "va": "0x414fdadf",
+          "bytes": "f30f5c4514",
+          "instruction": "subss xmm0,dword ptr [ebp+0x14]"
+        }
+      ]
+    },
+    {
+      "id": "K3",
+      "provenance": "existing W2, freshly reverified; not new tolerance-provider evidence",
+      "source": "continuation/evidence/wave2/gap04/scalar_helper.json",
+      "local_fact": "Three component calls independently reload G and read binary32 at pointee+0x14 for helper tolerance. This is not N+0x14, not P+0, and not fallback [*(0x4252194C)+0x24]. Outgoing [ESP+0x14] becomes callee argument [ESP+0x18].",
+      "anchors": [
+        {
+          "va": "0x414fd983",
+          "bytes": "8b0d04ca2342",
+          "instruction": "mov ecx,dword ptr ds:0x4223ca04"
+        },
+        {
+          "va": "0x414fd989",
+          "bytes": "f30f104914",
+          "instruction": "movss xmm1,dword ptr [ecx+0x14]"
+        },
+        {
+          "va": "0x414fd98e",
+          "bytes": "f30f114c2414",
+          "instruction": "movss dword ptr [esp+0x14],xmm1"
+        },
+        {
+          "va": "0x414fd9bd",
+          "bytes": "e8eeaa7700",
+          "instruction": "call 0x41c784b0"
+        },
+        {
+          "va": "0x414fd9c5",
+          "bytes": "8b0d04ca2342",
+          "instruction": "mov ecx,dword ptr ds:0x4223ca04"
+        },
+        {
+          "va": "0x414fd9cb",
+          "bytes": "f30f104114",
+          "instruction": "movss xmm0,dword ptr [ecx+0x14]"
+        },
+        {
+          "va": "0x414fd9d5",
+          "bytes": "f30f11442414",
+          "instruction": "movss dword ptr [esp+0x14],xmm0"
+        },
+        {
+          "va": "0x414fda04",
+          "bytes": "e8a7aa7700",
+          "instruction": "call 0x41c784b0"
+        },
+        {
+          "va": "0x414fda09",
+          "bytes": "a104ca2342",
+          "instruction": "mov eax,ds:0x4223ca04"
+        },
+        {
+          "va": "0x414fda0e",
+          "bytes": "f30f104014",
+          "instruction": "movss xmm0,dword ptr [eax+0x14]"
+        },
+        {
+          "va": "0x414fda18",
+          "bytes": "f30f11442414",
+          "instruction": "movss dword ptr [esp+0x14],xmm0"
+        },
+        {
+          "va": "0x414fda47",
+          "bytes": "e864aa7700",
+          "instruction": "call 0x41c784b0"
+        }
+      ]
+    }
+  ],
+  "missing_prerequisite": {
+    "required_before_unblocking_r04": "Coordinator records one concrete NEW byte-level supplier/writer anchor beyond W3 F1: either a definition supplying G=0x4223CA04 or a write to P+0 with dataflow establishing that its base is the P used by the selected reader.",
+    "required_evidence": [
+      "Exact source path, size and SHA-256; conditional mapping/base; bounded VA interval and bytes with fresh static decode.",
+      "Explicit operation width, source, destination and guard; why the anchor adds information beyond existing P reads and the N+0x14 copy.",
+      "One bounded immediate chain to inspect; separate its local proof from lifetime, ordering and cross-call identity assumptions."
+    ],
+    "insufficient": [
+      "Another load of G or P+0/P+0x14.",
+      "Same global address, same offset, manager slot or stride.",
+      "Zero initialization/reset of N+0x14, or a literal-search miss.",
+      "R03 writer to the different cell 0x4252194C."
+    ],
+    "tolerance_frontier": "Supplier/lifetime of the pointer observed at each actor call and writer/contents of pointee+0x14 are separately unknown. A P+0 writer would not establish tolerance; a +0x14 writer needs its own base-identity and guard proof."
+  },
+  "conditional": [
+    "Existing W3 local dataflow assumes normal calls preserving nonvolatile registers/stack and no hidden corruption of the record/output pointer. Opaque/TLS/virtual/overlapping paths and complete reachability remain open.",
+    "EDI_N(t_write)==EBP_N(t_read) requires equal observed manager and reader index at both calls. The same static slot 0x424F46C0 and stride 0x74 establish only a family/layout.",
+    "P_write, P_age and each P_tolerance observation are independent unless pointer equality, lifetime and noninterference are separately established. Equal addresses alone do not establish equal pointee contents.",
+    "W3 unordered-branch interpretation is quiet-NaN/nontrapping only. Original MXCSR/FTZ/DAZ, signaling NaNs, faults and FP flags are not established."
+  ],
+  "unresolved": [
+    "P supplier, pointee lifetime/owner and writers of P+0 and P+0x14.",
+    "Writer-before-read ordering, cross-call N identity, aliases, concurrency, other writers and full reachability.",
+    "External semantic type, original language/ABI, and positivity/finiteness/nonzero properties; no time object or unified snapshot invented."
+  ],
+  "verification": {
+    "mode": "static only; original image read as data",
+    "commands": [
+      {
+        "cwd": "/tmp/hoplite/232-w5-p-tolerance-sol",
+        "command": "python3 -B continuation/evidence/wave3/source/verify_source.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-p-tolerance/source.log"
+      },
+      {
+        "cwd": "/tmp/hoplite/232-w5-p-tolerance-sol",
+        "command": "python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "exit_code": 0,
+        "log": "runs/w5-p-tolerance/scalar.log"
+      }
+    ],
+    "log": "continuation/evidence/wave5/p-tolerance/verification.log",
+    "log_sha256": "18440f67b54db87f8ea561f0eac29817d2b8a3d12c9d434483ae7a02c7a6ea2d",
+    "w3_result": {
+      "pinned_contexts": 8,
+      "windows": 12,
+      "bytes": 1039,
+      "fresh_decoded_instructions": 257,
+      "anchored_claims": 6
+    },
+    "w2_result": {
+      "reference_hashes": 3,
+      "fresh_decoded_instructions": 111,
+      "constants": 3,
+      "direct_calls": 5,
+      "note": "Verifier stdout calls its instruction count \"instruction bytes\"; 111 is the decoded instruction count."
+    },
+    "read_sources_unchanged": {
+      "pinned_file_count": 10,
+      "canonical_path_hash_map_sha256_before": "ae5c3c98c6023112ca492bb82e02a8af7fd7dc793692bb35b0ca863dc822de91",
+      "canonical_path_hash_map_sha256_after": "ae5c3c98c6023112ca492bb82e02a8af7fd7dc793692bb35b0ca863dc822de91",
+      "scope": "Only the ten files read through W3/W2 manifests; not a whole-tree or six-archive integrity claim."
+    },
+    "native_and_sanitizers": "Not run: no C++ code or model changed; existing static checks are the local task checks.",
+    "coordinator_gate": "Full make -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 and independent review at fixed integrated SHA remain pending."
+  }
+}
