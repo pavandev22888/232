@@ -222,12 +222,12 @@
       "id": "R01",
       "title": "Transitive scope and evidence coverage map",
       "kind": "static_inventory",
-      "status": "in_progress",
+      "status": "review",
       "owner": "w5-scope-sol",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-scope-sol",
       "worktree": "/tmp/hoplite/232-w5-scope-sol",
-      "result_commit": null,
+      "result_commit": "ef00286377315e8ab31c47a9c793fc12d94735d7",
       "full_task_ids": [
         "CODE01",
         "GAP02"
@@ -263,13 +263,14 @@
       "wave5_children": [
         "W5-SCOPE"
       ],
-      "assignment_note": "Prior scope-map-agent assignment has no active agent/thread, branch, worktree or result in the visible current workspace; user explicitly requested orchestration of all unresolved details. Prior metadata preserved."
+      "assignment_note": "Prior scope-map-agent assignment has no active agent/thread, branch, worktree or result in the visible current workspace; user explicitly requested orchestration of all unresolved details. Prior metadata preserved.",
+      "wave5_result": "W5-SCOPE"
     },
     {
       "id": "R02",
       "title": "One first-positive-source hypothesis",
       "kind": "bounded_static_research",
-      "status": "ready",
+      "status": "blocked",
       "owner": null,
       "base_commit": null,
       "branch": null,
@@ -279,7 +280,7 @@
         "GAP01"
       ],
       "depends_on": [],
-      "blocked_reason": null,
+      "blocked_reason": "All three bounded positive-source hypotheses stop at object/value/order frontiers; no first-positive source established.",
       "write_paths": [
         "continuation/evidence/next/positive-source/"
       ],
@@ -323,7 +324,7 @@
         "GAP04"
       ],
       "depends_on": [],
-      "blocked_reason": "Bounded frontier: pointer-cell store 0x41C5E404 is established, but ESI preservation across 0x41C5BDA0, indirect provider, writer-before-read/lifetime and float +0x24 provenance remain unproved. New bounded scope required; not done.",
+      "blocked_reason": "Conditional normal-exit ESI restoration, snapshot dispatch edge and candidate +24 initializer are pinned; nested calls, runtime binding, identity/lifetime and writer-before-read remain unresolved.",
       "write_paths": [
         "continuation/evidence/next/scalar-provider/"
       ],
@@ -389,7 +390,7 @@
         "GAP05"
       ],
       "depends_on": [],
-      "blocked_reason": "No new byte-level basis beyond the accepted W3 frontier; do not repeat broad searches.",
+      "blocked_reason": "No new supplier/P+0 writer anchor beyond W3 in the enumerated sources. No broad negative search and no proof writers are absent.",
       "write_paths": [
         "continuation/evidence/next/n14-provider/"
       ],
@@ -421,12 +422,12 @@
       "id": "R05",
       "title": "One charge reset condition or remaining store",
       "kind": "bounded_static_research",
-      "status": "ready",
-      "owner": null,
+      "status": "review",
+      "owner": "w5-charge-sol",
       "base_commit": null,
       "branch": null,
       "worktree": null,
-      "result_commit": null,
+      "result_commit": "604966938718b7a4810837da6aa2c70532920cbf",
       "full_task_ids": [
         "GAP03"
       ],
@@ -458,18 +459,19 @@
       "wave5_children": [
         "W5-CHARGE"
       ],
-      "wave5_note": "Bounded child assignments cover this parent; no parent/full GAP completion implied. Existing blocked prerequisites remain in force."
+      "wave5_note": "Bounded child assignments cover this parent; no parent/full GAP completion implied. Existing blocked prerequisites remain in force.",
+      "wave5_result": "W5-CHARGE"
     },
     {
       "id": "V01",
       "title": "One remaining historical H01 gate",
       "kind": "verification",
-      "status": "ready",
-      "owner": null,
+      "status": "review",
+      "owner": "w5-historical-sol",
       "base_commit": null,
       "branch": null,
       "worktree": null,
-      "result_commit": null,
+      "result_commit": "960aeaaa91dfc8e24288401fd1857cd9fadcea83",
       "full_task_ids": [
         "GAP06"
       ],
@@ -501,7 +503,8 @@
       "wave5_children": [
         "W5-HISTORICAL"
       ],
-      "wave5_note": "Bounded child assignments cover this parent; no parent/full GAP completion implied. Existing blocked prerequisites remain in force."
+      "wave5_note": "Bounded child assignments cover this parent; no parent/full GAP completion implied. Existing blocked prerequisites remain in force.",
+      "wave5_result": "W5-HISTORICAL"
     },
     {
       "id": "I01",
@@ -592,7 +595,7 @@
       ],
       "owner": "w5-scope-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-scope-sol",
       "worktree": "/tmp/hoplite/232-w5-scope-sol",
@@ -610,7 +613,7 @@
         "transitive coverage: geometry, modes, configuration, remaining consumers"
       ],
       "bounded_deliverable": "Reconcile the existing domain inventory with the corrected goal. Build a row for every goal domain with source/evidence/unknowns and remaining work, including geometry, modes and unassigned consumers. Inspect at most two concrete original-language/compiler clues; current C++17 and decompiler .c are not proof. Do not reconstruct all algorithms or duplicate other W5 chains. No code here.",
-      "result_commit": null,
+      "result_commit": "ef00286377315e8ab31c47a9c793fc12d94735d7",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -620,7 +623,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "a6a7b408b381606ecc924d3f0e55389c113450e9",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-POINT26",
@@ -630,7 +636,7 @@
       ],
       "owner": "w5-point26-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-point26-sol",
       "worktree": "/tmp/hoplite/232-w5-point26-sol",
@@ -645,7 +651,7 @@
         "Point+26 first-positive source"
       ],
       "bounded_deliverable": "Select exactly Point+26. Revisit the known direct or helper writer provenance, choose ONE untested byte-supported alias/source hypothesis after reading rejected hypotheses, record it before research. Establish object identity, width and first-positive flow or precise frontier; do not substitute arbitrary positive values or repeat a rejected search.",
-      "result_commit": null,
+      "result_commit": "356f68ed378f719d8d36f2560ec03becbfc9b986",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -655,7 +661,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "79e40eb3c5c37771f6f8991ad541fe0a1e95b834",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-TF4",
@@ -665,7 +674,7 @@
       ],
       "owner": "w5-tf4-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-tf4-sol",
       "worktree": "/tmp/hoplite/232-w5-tf4-sol",
@@ -680,7 +689,7 @@
         "T+F4 first-positive source"
       ],
       "bounded_deliverable": "Select exactly T+F4. Investigate ONE bounded positive-source propagation hypothesis beyond the accepted T+96/frontier, recording actual anchors before edits. Preserve distinct T/Point/N objects; prove width, alias/identity and conditions, or stop at exact frontier. No positive-value stub.",
-      "result_commit": null,
+      "result_commit": "73850e3437bb5d141388df9c20ebba7d518ae2e1",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -690,7 +699,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "f3ca65e5b38144d44e4673c2862708546d1c1b66",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-GLOBAL9BC",
@@ -700,7 +712,7 @@
       ],
       "owner": "w5-global9bc-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-global9bc-sol",
       "worktree": "/tmp/hoplite/232-w5-global9bc-sol",
@@ -715,7 +727,7 @@
         "G425009BC first-positive source"
       ],
       "bounded_deliverable": "Select exactly global 0x425009BC. Read the two known stores and failed hypotheses, then follow at most ONE new byte-supported upstream expression/indirect write candidate. Name hypothesis first. Do not repeat a broad literal scan as new progress; zero stores alone do not prove absence of positive sources.",
-      "result_commit": null,
+      "result_commit": "7b352fecb217f45bb38f2accc3a47f4588388da7",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -725,7 +737,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "3dcebf983223a5c5e34ebc326988acf467ed5b2c",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-AGGREGATE",
@@ -735,7 +750,7 @@
       ],
       "owner": "w5-aggregate-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-aggregate-sol",
       "worktree": "/tmp/hoplite/232-w5-aggregate-sol",
@@ -754,7 +769,7 @@
         "target aggregation/selection"
       ],
       "bounded_deliverable": "Find ONE already anchored local aggregation contract in the archival V7/materials, map typed input-to-transform-to-consumer and identify exact missing original branch. If the full bounded local contract is byte-supported, add a readable offline C++ module with focused tests (not a generic target bot), preserving unknown branches as unresolved. Otherwise deliver exact frontier with fresh pinned anchors. Do not conflate T with N or claim full target selection.",
-      "result_commit": null,
+      "result_commit": "07bdc2617e69e4eb863fdc6e32010147c8e98dd3",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -764,7 +779,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "ba234c51a0c7cc1ac1c40d2a2ac3b9142865f7f9",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-THRESHOLD",
@@ -774,7 +792,7 @@
       ],
       "owner": "w5-threshold-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-threshold-sol",
       "worktree": "/tmp/hoplite/232-w5-threshold-sol",
@@ -793,7 +811,7 @@
         "typed T+68 threshold consumer"
       ],
       "bounded_deliverable": "Investigate ONE typed consumer hypothesis for T+68 using existing T threshold provenance. First establish actual base-object flow before any predicate/action implementation; N+68 is unrelated. New local code only if original operands, compares, branches and actions are actually established. Otherwise freeze a bounded frontier; no generic threshold selection stub.",
-      "result_commit": null,
+      "result_commit": "ac1de73ae472d6f139bd9541187ae150be556382",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -803,7 +821,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "c8c4f52273515065b584b0a1a9213bd2ccc56626",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-BINDINGS",
@@ -813,7 +834,7 @@
       ],
       "owner": "w5-bindings-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-bindings-sol",
       "worktree": "/tmp/hoplite/232-w5-bindings-sol",
@@ -830,7 +851,7 @@
         "original runtime bindings"
       ],
       "bounded_deliverable": "Separate entity and weapon provider boundaries and existing runtime-base alternatives. Inspect ONE already byte-supported resolution chain or additional distinguishing static anchor, without inventing runtime module ownership. Explain which entity/weapon dependencies remain separate. No hooks/signature scanner for live processes, no runtime binding guesses. Static contract/frontier only.",
-      "result_commit": null,
+      "result_commit": "62cce62299d02cd54879be4ad527dcf76bbc8bd8",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -840,7 +861,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "c17ff7858ed010bd94b12bed17c779c47250ccae",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-ESI",
@@ -850,7 +874,7 @@
       ],
       "owner": "w5-esi-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-esi-sol",
       "worktree": "/tmp/hoplite/232-w5-esi-sol",
@@ -865,7 +889,7 @@
         "ESI preservation across 0x41C5BDA0"
       ],
       "bounded_deliverable": "Use new R03 direct-call anchor 0x41C5E3F0 -> 0x41C5BDA0. Bound analysis to this callee normal-exit ESI preservation: identify saved stack slot, mutations and supported returns, nested-call assumptions. If indirect/exception paths prevent a whole-function claim, narrow it explicitly. Do not inspect indirect target 0x4226723C, +24 contents, tolerance, or repeat the 767-ref scan.",
-      "result_commit": null,
+      "result_commit": "c98256d07f033f3be13358f1794b4ead3c153a82",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -875,7 +899,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "c96112d28c2ab3a62c9636bd5b1d8f2cef703061",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-INDIRECT",
@@ -885,7 +912,7 @@
       ],
       "owner": "w5-indirect-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-indirect-sol",
       "worktree": "/tmp/hoplite/232-w5-indirect-sol",
@@ -900,7 +927,7 @@
         "indirect provider [0x4226723C]"
       ],
       "bounded_deliverable": "Trace ONE immediate static assignment/import/dispatch dependency for call [0x4226723C] at 0x41C5E3E2. Use import metadata only if file/RVA mapping is established. 0x4940 is not automatically allocation size or type. Do not infer runtime target from preferred address; stop at exact binding frontier. Do not duplicate ESI callee or +24 research.",
-      "result_commit": null,
+      "result_commit": "ff56de7cb06a67eff1bde978fea94943fd5910d9",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -910,7 +937,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "6ef572f671ac347f64741d837402ef25268b68ef",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-FALLBACK24",
@@ -920,7 +950,7 @@
       ],
       "owner": "w5-fallback24-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-fallback24-sol",
       "worktree": "/tmp/hoplite/232-w5-fallback24-sol",
@@ -937,7 +967,7 @@
         "writer-before-fallback ordering"
       ],
       "bounded_deliverable": "Start from accepted pointer installation and fallback read. Inspect ONE candidate direct +0x24 initializer/source chain in the identified construction path, only with preserved object identity. Separately record the temporal/lifetime conditions required to connect store to read; same global address is not enough. Do not reconstruct callee ESI proof (separate owner) or infer zero snapshot as runtime provider. No new broad literal inventory.",
-      "result_commit": null,
+      "result_commit": "82c7ccbde722f390a6debe5da6b2841ea150966a",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -947,7 +977,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "c057026415a74ea4c33bd2c200b0b0a887b882d7",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-P-TOLERANCE",
@@ -958,7 +991,7 @@
       ],
       "owner": "w5-p-tolerance-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-p-tolerance-sol",
       "worktree": "/tmp/hoplite/232-w5-p-tolerance-sol",
@@ -976,7 +1009,7 @@
         "N+14 cross-call identity"
       ],
       "bounded_deliverable": "Shared P cell 0x4223CA04 feeds N+14 (+0) and actor tolerance (+0x14). First check if existing sources contain a concrete NEW byte-level provider/writer anchor beyond W3. If none, keep R04 blocked and record this exact precondition, do not repeat broad scans. If available, inspect ONE immediate supplier chain, keeping +0/+14 meanings, lifetime and cross-call identity independent. No invented time object or unified snapshots.",
-      "result_commit": null,
+      "result_commit": "0b12da53baa8735ba8a6b7bfb8e6fea1bcce3f62",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -986,7 +1019,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "4924483ed23982fdf6bc704d8eaa5b18be5c6378",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-GUARDS",
@@ -997,7 +1033,7 @@
       ],
       "owner": "w5-guards-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-guards-sol",
       "worktree": "/tmp/hoplite/232-w5-guards-sol",
@@ -1016,7 +1052,7 @@
         "out-of-range index handler"
       ],
       "bounded_deliverable": "Enumerate concrete existing boundaries for TLS/FS, opaque dispatch, exceptional paths and out-of-range handler, then follow ONE anchored guard/index-fault path (prefer 4150B6C4..4150B6DF or an existing verified index/HLT anchor). Do not map unsupported fault to normal false; no execution/emulation. Report source-backed local effects and distinct unresolved gates, not a full runtime environment.",
-      "result_commit": null,
+      "result_commit": "37eeff868a096629afce2731e1d8d0a0fc798319",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -1026,7 +1062,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "7f5b493e8f03ddf3df8b2dbaabe6bcc4a7d09229",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-CHARGE",
@@ -1036,7 +1075,7 @@
       ],
       "owner": "w5-charge-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-charge-sol",
       "worktree": "/tmp/hoplite/232-w5-charge-sol",
@@ -1059,7 +1098,7 @@
         "original charge/reset scheduling"
       ],
       "bounded_deliverable": "Prioritize a genuine small code increment: reconstruct the remaining directly pinned stores of the local reset block (currently only 3 of 11 projected). Add a separate explicit full local reset snapshot/operation, if widths and stores are proven; preserve existing API/semantics and do not invent reset scheduling. Fresh byte checks and tests must distinguish local stores from unknown entry predicate/call order. Bound any entry investigation to one predecessor; full automaton stays open.",
-      "result_commit": null,
+      "result_commit": "604966938718b7a4810837da6aa2c70532920cbf",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -1069,7 +1108,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "fc4ac9adedc61574a6d2193762f2a491acbba8ab",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-LIFECYCLE",
@@ -1079,7 +1121,7 @@
       ],
       "owner": "w5-lifecycle-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-lifecycle-sol",
       "worktree": "/tmp/hoplite/232-w5-lifecycle-sol",
@@ -1102,7 +1144,7 @@
         "remaining N lifecycle/consumers"
       ],
       "bounded_deliverable": "Investigate ONE upstream seed-to-marker path not already implemented, preserving current-vs-target and separate snapshots. Map remaining N+48/N+50 lifecycle boundaries but do not reimplement accepted helper/compositions. If a complete local branch is proven, add a uniquely named offline module and tests; otherwise exact fresh frontier. P/N+14 and network sender belong to separate owners.",
-      "result_commit": null,
+      "result_commit": "4eede5c2f1e8e5ea0060e22bff28c19c0af2b51c",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -1112,7 +1154,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "c2e4a53ec9c579fd951e3b0d19ad8f287b0b0fa9",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-MESSAGES",
@@ -1122,7 +1167,7 @@
       ],
       "owner": "w5-messages-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-messages-sol",
       "worktree": "/tmp/hoplite/232-w5-messages-sol",
@@ -1142,7 +1187,7 @@
         "sender and tuple-to-packet link"
       ],
       "bounded_deliverable": "Inspect the existing archived bit/coordinate reader contracts and identify ONE concrete enclosing message/sender boundary. Prove bounded fields/order/call linkage if possible; tuple != complete packet. Prefer a genuinely byte-supported pure parser/body with tests if all local branches known, otherwise pin exact frontier. No game/network connection and no packet sender to a live service; offline only.",
-      "result_commit": null,
+      "result_commit": "e6c3481c14fd7af773cc7b21a896840a8d4d67e6",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -1152,7 +1197,10 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "0bd8c0c961ed2c3e02198f85d08432c3dc3bba62",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
     },
     {
       "id": "W5-HISTORICAL",
@@ -1162,7 +1210,7 @@
       ],
       "owner": "w5-historical-sol",
       "model": "gpt-6.1-sol",
-      "status": "in_progress",
+      "status": "review",
       "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
       "branch": "hoplite/sikyon-46eee495--w5-historical-sol",
       "worktree": "/tmp/hoplite/232-w5-historical-sol",
@@ -1180,7 +1228,7 @@
         "independent external audit"
       ],
       "bounded_deliverable": "Account for EACH of the 12 historical-only entries with its actual gate/prerequisites. Attempt at most ONE genuinely executable old gate in an isolated copy after reading scripts; otherwise give concrete unsupported dependency per entry, not historical PASS. Do not relabel our own tests as old protocol, do not install a broad toolchain, and no source DLL execution. External audit cannot be supplied by agent review: leave explicit obligation open.",
-      "result_commit": null,
+      "result_commit": "960aeaaa91dfc8e24288401fd1857cd9fadcea83",
       "depends_on": [],
       "blocked_reason": null,
       "acceptance": [
@@ -1190,7 +1238,58 @@
         "Result commit with exact commands/exit codes and frontier",
         "Coordinator full check and independent fixed-integrated-SHA review"
       ],
-      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure."
+      "stop": "One bounded chain or explicit prerequisite/frontier per assignment. Do not expand into whole-project reconstruction. No negative-search closure.",
+      "integrated_commit": "9ff28862833eae2f15a8f4e19c1aef28bacbc748",
+      "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "completion_scope": "Bounded assigned result only; parent/full GAP is not closed."
+    },
+    {
+      "id": "W5-REVIEW-CODE",
+      "owner": "w5-review-code",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-code",
+      "branch": "hoplite/sikyon-46eee495--w5-review-code",
+      "write_paths": [
+        "continuation/evidence/wave5/review-code/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
+    },
+    {
+      "id": "W5-REVIEW-EVIDENCE",
+      "owner": "w5-review-evidence",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-evidence",
+      "branch": "hoplite/sikyon-46eee495--w5-review-evidence",
+      "write_paths": [
+        "continuation/evidence/wave5/review-evidence/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
+    },
+    {
+      "id": "W5-REVIEW-PROVIDERS",
+      "owner": "w5-review-providers",
+      "model": "gpt-6.1-sol",
+      "base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+      "worktree": "/tmp/hoplite/232-w5-review-providers",
+      "branch": "hoplite/sikyon-46eee495--w5-review-providers",
+      "write_paths": [
+        "continuation/evidence/wave5/review-providers/"
+      ],
+      "status": "in_progress",
+      "acceptance": [
+        "Review only assigned W5 domains at fixed integrated SHA; read-only originals; exact commands/exits and findings.",
+        "Agent review is not an external audit."
+      ]
     }
   ],
   "goal_correction": {
@@ -1208,6 +1307,14 @@
     "parallelism": "Platform active allowance; remaining agents queue automatically",
     "ownership_check": "Only current thread visible; no active children at start; remote equals local; prior R01 active metadata stale, preserved before reassignment",
     "common_handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "review_gate": "independent fixed integrated SHA before acceptance/publication"
+    "review_gate": "independent fixed integrated SHA before acceptance/publication",
+    "state": "in_review",
+    "executor_count": 16,
+    "executors_completed": 16,
+    "active_executor_count": 0,
+    "review_base_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+    "review_assignment": "continuation/evidence/wave5/review-assignment.json",
+    "integration_ledger": "continuation/evidence/wave5/verification.json",
+    "full_tasks_closed": []
   }
 }
