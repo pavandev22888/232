@@ -1,5 +1,5 @@
 {
-  "stage": "V10 continuation: bounded R03 fallback-provider frontier reviewed; original-language goal corrected",
+  "stage": "W5: 16 bounded results integrated; four local code increments; independent fixed-SHA review pending",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -16,7 +16,11 @@
     "local scalar helper with explicit fallback-step observation",
     "optional N+50 output with age-ramp, MAXSS ordering and bounded aliases",
     "transactional offline marker helper/producer composition with separate fallback snapshots",
-    "pure three-axis scalar resolver with per-call observations and explicit unresolved axis"
+    "pure three-axis scalar resolver with per-call observations and explicit unresolved axis",
+    "direct +1C=2/3 callback score prefix and separate conditional T+F0 finalizer",
+    "explicit 11-store full local reset snapshot (3 BYTE, 8 DWORD), no scheduling",
+    "quarter-decay upstream seed composed with existing marker tail",
+    "bounded message fields/parser and consumer-call boundary, not full packet/sender"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
@@ -57,47 +61,47 @@
     {
       "id": "CODE01",
       "status": "partial",
-      "change": "Baseline review plus 20 coherent pipeline scenarios; aggregation remains unimplemented"
+      "change": "Added direct score prefix and T+F0 finalizer; non-direct branches, tail, ranking and full selection unresolved."
     },
     {
       "id": "GAP01",
       "status": "open",
-      "change": "Two further hypotheses checked with 118 fresh decodes; all three first-positive sources remain open"
+      "change": "Three bounded hypotheses pinned; Point+26, T+F4 and G425009BC first-positive sources remain unresolved."
     },
     {
       "id": "GAP02",
       "status": "open",
-      "change": "Archival T+68/N+68 inventory verified; no threshold consumer implementation or new typed consumer proof"
+      "change": "Immediate helper candidate uses +50/+54/+58/+19, not an established typed T+68 predicate/action; deeper calls unresolved."
     },
     {
       "id": "GAP03",
       "status": "partial",
-      "change": "Added explicit same-address reset projection; full automaton, entry predicate and scheduling remain unresolved"
+      "change": "All 11 local reset zero stores modeled explicitly; meanings of additional fields, entry, reachability and scheduling remain unresolved."
     },
     {
       "id": "GAP04",
       "status": "open",
-      "change": "R03 establishes one pointer-cell writer 0x41C5E404 and a pinned literal inventory. ESI preservation, indirect provider, writer-before-read, lifetime, float +0x24 contents and tolerance remain open; no replacement provider implementation."
+      "change": "Conditional ESI save/restore, raw dispatch edge, candidate P+24 initializer, entity/weapon and guard boundaries pinned. Runtime bindings/providers, nested calls, lifetime/order and tolerance remain open."
     },
     {
       "id": "GAP05",
       "status": "partial",
-      "change": "Added bounded helper/producer composition and N+14 immediate writer provenance; P/P+0 origins, cross-call identity, upstream seeds and full lifecycle/sender remain open"
+      "change": "Added quarter-decay seed path and bounded message parser; other seeds, P/P+0, repeated snapshot identity, full lifecycle, complete message/sender remain unresolved."
     },
     {
       "id": "GAP06",
       "status": "partial",
-      "change": "Baseline reproduced in separate worktree; integrated code independently reviewed and checked with 19902 assertions per mode and 8 Python tests; 12 H01 historical-only entries, original protocol and external audit remain open"
+      "change": "Integrated native/sanitizer/static checks passed; independent W5 reviews pending. One pefile H01 #5 library leaf rerun; old producer/full protocol and external audit remain unresolved."
     }
   ],
   "unresolved_boundaries": [
     "Point+26, T+F4 and G425009BC first positive sources",
-    "T+68 threshold consumer and target aggregation",
+    "T+68 typed consumer; non-direct aggregation branches, callback tail and full target selection",
     "external entity/weapon resolution",
     "scalar helper fallback/tolerance providers and original runtime bindings",
     "TLS/FS guards, opaque dispatch and exceptional paths",
-    "charge reset entry predicate, other reset stores and original scheduling",
-    "complete N+48 upstream seed, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
+    "charge reset entry predicate, additional-field meanings and original scheduling",
+    "other N+48 upstream seeds, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
     "complete message format and sender",
     "remaining consumers and complete modes",
     "original out-of-range index handler",
@@ -108,7 +112,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "R03 stopped at a reviewed frontier; needs a fresh bounded ESI-preservation or indirect-provider scope. R01 keeps its existing owner. Free ready R02/R05/V01 may proceed after ownership checks. C01-C04 mandatory C17 migration is superseded, not completed.",
+  "next_task": "Finish three independent reviews of W5 at f2003a7. Then choose a fresh bounded source-backed task from the 24-domain map; no mandatory C17 migration.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -248,6 +252,27 @@
     "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure."
   },
   "latest_bounded_wave": {
+    "task": "W5",
+    "status": "in_review",
+    "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+    "integrated_reviewed_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
+    "executors_completed": 16,
+    "reviewers": 3,
+    "model": "gpt-6.1-sol",
+    "new_original_logic_bodies": true,
+    "report": "evidence/wave5/verification.json",
+    "scope_map": "evidence/wave5/scope/coverage.json",
+    "native_assertions": 23354,
+    "asan_ubsan_assertions": 23354,
+    "test_programs": 10,
+    "modules": 9,
+    "python_tests": 13,
+    "new_static_verifiers": 13,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false
+  },
+  "previous_bounded_wave": {
     "task": "R03",
     "status": "blocked_frontier",
     "goal_correction": "Original logic on original source language; no mandatory C17 port",
