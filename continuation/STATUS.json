@@ -1,5 +1,5 @@
 {
-  "stage": "W7 bounded contracts accepted after fixed-SHA reviews and integrated gate; full reconstruction remains open",
+  "stage": "W8 bounded contracts accepted after fixed-SHA reviews and integrated gates; full original reconstruction remains open",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -30,56 +30,61 @@
     "25-DWORD raw reset snapshot preserving gap bytes and four conditional fallthrough stores",
     "no-growth existing history slot resolver with distinct cursor/index and explicit post-provider slot observation",
     "movement caller selector/guard/float-bits/AL projection, not movement helper",
-    "hitgroup-3 provider-observed float multiplied by 1.25f, not full damage or trace linkage"
+    "hitgroup-3 provider-observed float multiplied by 1.25f, not full damage or trace linkage",
+    "callback context and raw32 settings/owner reads with exact exceptional-dispatch frontier",
+    "damage switch and guarded hitgroup-1 ordered SSE stores; current MXCSR respected under unity/LTO",
+    "guarded movement predicate with explicit call-site observations",
+    "conditional message receiver prefix and slot-byte gate",
+    "geometry post-call result consumer, without producer identity",
+    "six fixed-source raw reset records and global fallthrough",
+    "history growth request/aligned header/copy-zero/release-request/publication and post-growth resolver",
+    "guarded angle tail with independent math-call return and ordered SSE clamps/stores",
+    "signed shot index modulo 150/stride 0x98 and independent raw postcall consumer",
+    "raw queue capture/task/entry and one observed worker claim, not synchronization or lifetime"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
-    "report": "evidence/wave7/verification.json",
-    "log": "evidence/wave7/verification.log",
     "native_tests": "passed",
     "asan_ubsan": "passed",
-    "instrumented_checks_per_mode": 67660,
-    "additional_uncounted_tests": [
-      "reset_predecessor",
-      "movement_slice",
-      "damage_slice"
-    ],
-    "modules": 15,
-    "test_programs": 16,
-    "pipeline_scenarios": 20,
-    "python_unit_tests": 13,
     "static_evidence": "passed",
-    "new_w7_static_gates": 6,
-    "h01_byte_assertions_replayed": 162,
-    "h01_other_checks": {
-      "freshly_rechecked": 33,
-      "model_only": 2,
-      "historical_only": 12,
-      "unresolved": 0
-    },
-    "h01_strict_old_protocol_repeated": false,
+    "modules": 19,
+    "test_programs": 21,
+    "instrumented_checks_per_mode": 78293,
+    "additional_uncounted_tests": [
+      "reset_predecessor"
+    ],
+    "mxcsr_unity_lto": "passed; separate 2-result regression included in check, not counted above",
+    "new_w8_static_gates": 11,
+    "python_unit_tests": 13,
     "bundle_files": 960,
     "restored_integrity_records": 64087,
-    "final_bundle_integrity": "passed",
-    "final_input_and_work_integrity": "passed",
-    "tested_code_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "tested_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "tested_head": "8de396c395fe97289c00d855b98a23cbf42f74de",
+    "tested_code_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
     "independent_agent_reviews": {
       "result": "accepted_bounded_scope_with_explicit_frontiers",
+      "initial_reviewed_head": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "final_reviewed_head": "bc89d9d851d710208659fc702f1094a317023ab4",
       "reports": [
-        "evidence/wave7/review-state/README.md",
-        "evidence/wave7/review-flow/report.json"
+        "evidence/wave8/final-review-flow/report.json",
+        "evidence/wave8/final-review-evidence/report.json",
+        "evidence/wave8/integration/state-review-receipt.json"
       ],
-      "blocking_findings": 0,
+      "blocking_findings_remaining": 0,
+      "resolved_finding": "Damage non-volatile MULSS reused under unity/LTO after MXCSR change; fixed dc18d0b and reproduced independently old-fail/new-pass.",
       "external_audit": false
     },
-    "publication_head_gate": "Separate fresh four-command gate and exact publication SHA recorded in PR #1; this ledger pins the tested candidate, not its future metadata commit."
+    "publication_head_gate": "After final metadata commit repeat all four gates on the exact HEAD; publish the receipt in the new PR, without merging or queueing.",
+    "report": "evidence/wave8/verification.json",
+    "log": "evidence/wave8/verification.log",
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "h01_strict_old_protocol_repeated": false
   },
   "open_tasks": [
     {
       "id": "CODE01",
       "status": "partial",
-      "change": "Accepted direct/non-direct gates, statistics, initial copy and bounded normal ranking/replacement tail. Runtime settings/owner flags, index handler, enumeration and full selection remain unresolved."
+      "change": "Added callback context/raw32 reads and byte-backed index-handler exception-chain frontier to prior ranking. Runtime settings/owner providers, object construction/unwind, enumeration and full selection remain unresolved."
     },
     {
       "id": "GAP01",
@@ -94,22 +99,22 @@
     {
       "id": "GAP03",
       "status": "partial",
-      "change": "Accepted eleven local reset stores, ADD/CMP/JNE predecessor, 25-DWORD raw snapshot, four fallthrough stores and separate release observations. EAX/helper providers, full entry/loop and DT/HS scheduling remain unresolved."
+      "change": "Added fixed-source six-record reset table and global fallthrough to previous reset/release slices. EAX/helper providers, full entry predicate/loop and DT/HS scheduling remain unresolved."
     },
     {
       "id": "GAP04",
       "status": "open",
-      "change": "Conditional ESI save/restore, raw dispatch edge, candidate P+24 initializer, entity/weapon and guard boundaries pinned. Runtime bindings/providers, nested calls, lifetime/order and tolerance remain open."
+      "change": "Proved nested fill-helper ESI preservation and local raw32/address dependencies. Actual runtime providers, writer-before-reader, object identity/lifetime, tolerance and full original ABI remain unresolved."
     },
     {
       "id": "GAP05",
       "status": "partial",
-      "change": "Added quarter-decay seed path and bounded message parser; other seeds, P/P+0, repeated snapshot identity, full lifecycle, complete message/sender remain unresolved."
+      "change": "Added conditional receiver-prefix/slot gate, bounded history growth and queue snapshot dependency. Other seeds, N+14/P/P+0, cross-call identity, full lifecycle, complete message and sender remain unresolved."
     },
     {
       "id": "GAP06",
       "status": "partial",
-      "change": "Fresh W6 native/sanitizer/static checks and independent fixed-SHA reviews accepted bounded scope; findings resolved or withdrawn, no external audit. Supplemental pefile H01 #5 does not recover the old producer/full protocol."
+      "change": "Fresh W8 native/sanitizer/static/unity-LTO and integrity gates passed; independent fixed-SHA reviews accepted bounded scopes after MXCSR repair. External audit, observed equivalence and full historical H01 producer/protocol remain open."
     }
   ],
   "unresolved_boundaries": [
@@ -122,20 +127,23 @@
     "other N+48 upstream seeds, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
     "complete message format and sender",
     "remaining consumers and complete modes",
-    "original out-of-range index handler",
+    "Out-of-range construction 0x4200AC82 and runtime [0x421B8F14] binding, exception unwind/return behavior",
     "12 historical-only H01 entries, full original protocol and independent external audit",
     "Release helper/indirect-call effects and post-call snapshots, G4223F428 pointee+4D30 provenance, full DT/HS scheduling",
-    "History allocator/growth, slot ownership/lifetime and continuity across opaque 0x41B70930, matrix path",
+    "History allocation/release/failure and null-slot 0x41DA7BAC, slot ownership/lifetime, continuity across opaque 0x41B70930 and matrix path",
     "Movement command/global providers and complete helper 0x414A5130 semantics",
-    "Damage vtable+0x30 provider, trace result linkage, remaining hitgroups and full armor/surface/weapon path",
-    "Original source language/standard and complete ABI beyond local ECX/EDX observations"
+    "Damage vtable+0x30 providers, TLS initializer 0x41370B4B, trace result linkage and full armor/surface/weapon path",
+    "Original source language/standard and complete ABI beyond local ECX/EDX observations",
+    "Angle 0x42026D1B/0x42031040 bodies, command/settings/recoil providers and EDI identity",
+    "Shot intervening CFG, 0x413F8AB0/0x414BD940, R linkage and event/hit/miss/server semantics",
+    "Queue enqueue/wait bindings, returned-handle identity, ownership, callback completion barrier and stack lifetime"
   ],
   "original_dll_execution": false,
   "original_dll_loading": false,
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Assign one new source-backed dependency beyond the accepted W7 slices, e.g. owner+4/B0 provider or 0x4149EC2D handler only with a concrete new anchor. Do not repeat completed slices or reopen blocked broad searches; full GAPs remain open.",
+  "next_task": "After checking ownership, choose one new source-backed frontier from evidence/wave8/README.md; no active W8 reconstruction assignment remains. Do not repeat completed slices or infer full GAP closure.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -272,27 +280,28 @@
     "workflow": "docs/AGENT_WORKFLOW.md",
     "prompts": "docs/AGENT_PROMPTS.md",
     "paths_relative_to": "repository root",
-    "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure.",
+    "scope": "Current W8 bounded code, reproducible verification and exact open dependencies; not full reconstruction.",
     "transfer_summary": "docs/HANDOFF.md",
     "immediate_start_prompt": "docs/START_NEXT_AGENT.md"
   },
   "latest_bounded_wave": {
-    "task": "W7",
+    "task": "W8",
     "status": "accepted_bounded_scope",
-    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
-    "integrated_reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "fresh_gate_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "report": "evidence/wave7/verification.json",
-    "modules": 15,
-    "test_programs": 16,
+    "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "integrated_reviewed_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+    "fresh_gate_head": "8de396c395fe97289c00d855b98a23cbf42f74de",
+    "report": "evidence/wave8/verification.json",
+    "modules": 19,
+    "test_programs": 21,
     "python_tests": 13,
-    "new_static_verifiers": 6,
+    "new_static_verifiers": 11,
     "full_tasks_closed": [],
     "external_audit": false,
     "original_language_established": false,
     "review_reports": [
-      "evidence/wave7/review-state/README.md",
-      "evidence/wave7/review-flow/report.json"
+      "evidence/wave8/final-review-flow/report.json",
+      "evidence/wave8/final-review-evidence/report.json",
+      "evidence/wave8/integration/state-review-receipt.json"
     ]
   },
   "previous_bounded_wave": {
@@ -356,18 +365,19 @@
     }
   },
   "current_continuation": {
-    "task": "W7",
+    "task": "W8",
     "status": "accepted_bounded_scope",
-    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
-    "report": "evidence/wave7/verification.json",
+    "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "report": "evidence/wave8/verification.json",
     "full_tasks_closed": [],
     "external_audit": false,
     "original_language_established": false,
-    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
-    "coordinator_gate": "passed_at_candidate",
+    "integrated_candidate": "bc89d9d851d710208659fc702f1094a317023ab4",
+    "coordinator_gate": "passed_at_tested_head",
     "review_reports": [
-      "evidence/wave7/review-state/README.md",
-      "evidence/wave7/review-flow/report.json"
+      "evidence/wave8/final-review-flow/report.json",
+      "evidence/wave8/final-review-evidence/report.json",
+      "evidence/wave8/integration/state-review-receipt.json"
     ]
   },
   "previous_verification_w5": {
@@ -485,6 +495,82 @@
       "evidence/wave6/review-integrated-code/resolution.json",
       "evidence/wave6/review-integrated-evidence/report.json",
       "evidence/wave6/review-integrated-evidence/followup/report.json"
+    ]
+  },
+  "previous_verification_w7": {
+    "report": "evidence/wave7/verification.json",
+    "log": "evidence/wave7/verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "instrumented_checks_per_mode": 67660,
+    "additional_uncounted_tests": [
+      "reset_predecessor",
+      "movement_slice",
+      "damage_slice"
+    ],
+    "modules": 15,
+    "test_programs": 16,
+    "pipeline_scenarios": 20,
+    "python_unit_tests": 13,
+    "static_evidence": "passed",
+    "new_w7_static_gates": 6,
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks": {
+      "freshly_rechecked": 33,
+      "model_only": 2,
+      "historical_only": 12,
+      "unresolved": 0
+    },
+    "h01_strict_old_protocol_repeated": false,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "tested_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "independent_agent_reviews": {
+      "result": "accepted_bounded_scope_with_explicit_frontiers",
+      "reports": [
+        "evidence/wave7/review-state/README.md",
+        "evidence/wave7/review-flow/report.json"
+      ],
+      "blocking_findings": 0,
+      "external_audit": false
+    },
+    "publication_head_gate": "Separate fresh four-command gate and exact publication SHA recorded in PR #1; this ledger pins the tested candidate, not its future metadata commit."
+  },
+  "previous_bounded_wave_w7": {
+    "task": "W7",
+    "status": "accepted_bounded_scope",
+    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "integrated_reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "fresh_gate_head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "report": "evidence/wave7/verification.json",
+    "modules": 15,
+    "test_programs": 16,
+    "python_tests": 13,
+    "new_static_verifiers": 6,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "review_reports": [
+      "evidence/wave7/review-state/README.md",
+      "evidence/wave7/review-flow/report.json"
+    ]
+  },
+  "previous_continuation_w7": {
+    "task": "W7",
+    "status": "accepted_bounded_scope",
+    "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+    "report": "evidence/wave7/verification.json",
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "coordinator_gate": "passed_at_candidate",
+    "review_reports": [
+      "evidence/wave7/review-state/README.md",
+      "evidence/wave7/review-flow/report.json"
     ]
   }
 }

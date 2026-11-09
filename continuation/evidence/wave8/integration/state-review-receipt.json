@@ -1,0 +1,24 @@
+{
+  "authored_by": "primary-coordinator",
+  "provenance": "Reviewer final result plus immutable review commit message and committed fresh logs; not a reviewer-authored standalone report.",
+  "review_commit": "11ea47f3962ad02e210cbea9252d5f7b92be5764",
+  "integrated_commit": "ccfc2cfb4d5c7a232056b8a5642992862ac77834",
+  "reviewed_commit": "bc89d9d851d710208659fc702f1094a317023ab4",
+  "result": "accepted_bounded_scope",
+  "blocking_findings": 0,
+  "scope": [
+    "history growth",
+    "shot signed raw32 prefix and independent postcall consumer"
+  ],
+  "native_and_sanitized_assertions": {
+    "history": 4351,
+    "shot": 250
+  },
+  "evidence": "../final-review-state/logs/",
+  "exclusions": [
+    "allocation/release/failure behavior",
+    "runtime identity and lifetime",
+    "later shot branches and R/event/hit/miss linkage",
+    "original source language, full ABI, full GAP closure"
+  ]
+}

@@ -7,14 +7,15 @@ C++17 — стандарт текущей офлайн-реконструкци�
 Для старта без истории чата передайте агенту [готовый промпт](START_NEXT_AGENT.md).
 Этот пакет передаёт работу, но сам не назначает следующую волну и не закрывает GAP.
 
-**Обновление W7:** ниже сохранён исторический снимок W5. Текущая интеграция —
-[W7 scope](../continuation/evidence/wave7/README.md),
-[verification](../continuation/evidence/wave7/verification.json),
-[STATUS](../continuation/STATUS.json) и [TASKS](TASKS.json). W7 добавляет normal
-ranking/replacement tail, локальную caller ABI-связь, raw reset snapshot,
-existing-slot history resolver, movement caller и hitgroup-3 damage arm.
-Не начинать их заново по старому списку W5/W6. Исторические W5/W6 PASS не
-подтверждают W7; её fixed-SHA gate и ревью фиксируются отдельно.
+**Обновление W8:** ниже сохранён исторический снимок W5, а не текущий перечень
+незавершённых локальных модулей. Текущий код, точные frontiers и приёмка:
+[W8 scope](../continuation/evidence/wave8/README.md),
+[verification](../continuation/evidence/wave8/verification.json),
+[STATUS](../continuation/STATUS.json), [TASKS](TASKS.json).
+W8 расширяет callback, damage, movement, message, geometry, history, reset и ABI;
+добавляет angle/shot/queue slices. Их нельзя повторно назначать по снимку W5/W7.
+Исторические PASS не подтверждают текущий HEAD. Аудит 93 commits/14 refs —
+зафиксированный срез; два сохранённых PushEvent не являются полной push-историей.
 
 ## 1. Точка передачи и источники истины
 
@@ -251,7 +252,8 @@ native/ASan+UBSan режиме**, 13 Python unit tests, 13 новых static ver
 Обновлять STATUS/TASKS/SOURCE_INDEX/DECISIONS и свежие evidence, не старые журналы.
 Отчёт: код и границы, источник/hash/адреса/байты, команды и exit codes, проверенный
 и опубликованный SHA, результаты ревью и что осталось. Только после этого commit/push
-в существующую ветку с явным refspec, обновить PR #1; никаких merge/queue/auto-merge.
+в существующую ветку с явным refspec, создать/обновить новый PR продолжения (не слитый PR #1);
+никаких merge/queue/auto-merge.
 Не публиковать распакованные DLL, build, секреты или необработанные приватные логи.
 Отсутствие GitHub checks не называть зелёным CI. Полная готовность определяется
 [GOAL](GOAL.md), а не успешностью локальной модели или этой таблицей.
