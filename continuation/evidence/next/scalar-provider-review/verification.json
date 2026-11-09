@@ -1,0 +1,130 @@
+{
+  "recorded_at": "2026-11-09",
+  "scope": "R03 bounded fallback-provider frontier, original-language goal correction, and fixed-SHA verification; no new Ragebot function body",
+  "remote_base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+  "integrated_reviewed_commit": "b97bf7e22da6568a938bddf071761428b0426137",
+  "branch": "hoplite/sikyon-46eee495",
+  "model": "gpt-6.1-sol",
+  "goal_correction": "Recover original logic in its original source language. Mandatory C17 migration withdrawn; original language/standard not established by current C++17 modules.",
+  "implementation_delta": {
+    "new_original_logic_bodies": false,
+    "new_static_python_verifier": true,
+    "existing_cpp_src_include_tests_unchanged": true
+  },
+  "assignment": {
+    "task": "R03",
+    "owner": "r03-fallback-sol",
+    "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+    "assignment_commit": "89ed8b83ad44b28853679e18119a1518c469b6ac",
+    "write_paths": [
+      "continuation/evidence/next/scalar-provider/"
+    ],
+    "worktree": "/tmp/hoplite/232-r03-fallback-sol",
+    "branch": "hoplite/sikyon-46eee495--r03-fallback-sol",
+    "stop": "One immediate writer/provider chain; stop at exact frontier without closing R03/GAP04"
+  },
+  "integration_ledger": [
+    {
+      "role": "implementation_of_static_verifier_and_research",
+      "agent_commit": "4e0dd8b0ab1d433363568336fecec315b54a2605",
+      "integrated_commit": "f88bae1",
+      "paths": "continuation/evidence/next/scalar-provider/"
+    },
+    {
+      "role": "independent_fixed_SHA_review",
+      "agent_commit": "001c1926ec4a6f78b9e057bf7097882ee94a5443",
+      "integrated_commit": "3e04709aec45c93dfd57a0c1461665f153214d00",
+      "paths": [
+        "continuation/evidence/next/scalar-provider-review/acceptance.json",
+        "continuation/evidence/next/scalar-provider-review/review.log"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": "python3 -B continuation/evidence/next/scalar-provider/verify_fallback_provider.py --handoff \"$HANDOFF\"",
+      "exit_code": 0,
+      "log_sha256": "56f96bb7d4ef3c49783c455c620f36b19b45b710f111ff0f06745e2f5453339d"
+    },
+    {
+      "command": "make -C continuation check HANDOFF=\"$PWD/runs/handoff/RAGEBOT_HANDOFF_V10\"",
+      "exit_code": 0,
+      "log_sha256": "98b727c328eb8b004301d02da6976f823748921a3dc326c0602db1ea607929e7"
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/tools/check_bundle.py\"",
+      "exit_code": 0,
+      "result": {
+        "passed": true,
+        "verified_files": 960,
+        "errors": [],
+        "scope": "File integrity, not behaviour equivalence."
+      }
+    },
+    {
+      "command": "python3 -B \"$HANDOFF/workspace/orchestration/v1/approval_package/check_integrity.py\" --root \"$HANDOFF/workspace\"",
+      "exit_code": 0,
+      "result": {
+        "passed": true,
+        "checked_files": 64087,
+        "errors": [],
+        "scope": "input integrity only; no algorithmic correctness claimed"
+      }
+    },
+    {
+      "command": "git diff --exit-code fecb19440f91c9dddbb60247c386fe55ef4e0c92 HEAD -- RAGEBOT*.zip continuation/src continuation/include continuation/tests",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check fecb19440f91c9dddbb60247c386fe55ef4e0c92 HEAD",
+      "exit_code": 0
+    }
+  ],
+  "results": {
+    "assertions_per_mode": 19902,
+    "native_programs": 7,
+    "asan_ubsan_programs": 7,
+    "python_tests": 8,
+    "new_verifier": {
+      "source_pins": 6,
+      "literal_references_with_nominated_decodes": 767,
+      "hashed_windows": 5,
+      "window_instructions": 49,
+      "rel32_checked": true
+    },
+    "overlapping_checks_not_independent_additive_proofs": true
+  },
+  "independent_review": {
+    "reviewed_sha": "b97bf7e22da6568a938bddf071761428b0426137",
+    "report": "acceptance.json",
+    "log": "review.log",
+    "model": "gpt-6.1-sol",
+    "worktree": "/tmp/hoplite/232-r03-review-sol",
+    "branch": "hoplite/sikyon-46eee495--r03-review-sol",
+    "blocking_findings": 0,
+    "acceptance": "bounded frontier accepted; not full provider",
+    "F01_resolution": "Coordinator now records R03 blocked, result commits, evidence and frontier; never done.",
+    "external_audit": false
+  },
+  "result_state": {
+    "R03": "blocked_frontier",
+    "GAP04": "open",
+    "full_tasks_closed": [],
+    "full_original_reconstructed": false
+  },
+  "frontier": [
+    "Indirect target/contract [0x4226723C]",
+    "ESI preservation across 0x41C5BDA0 is unproved",
+    "Writer-before-read, lifetime, aliases, runtime identity/bindings",
+    "Source/contents of float +0x24 and tolerance provider"
+  ],
+  "next_step": "A fresh bounded assignment can investigate the complete ESI preservation contract or the indirect target; neither alone closes temporal identity or float provenance. Do not repeat the literal inventory as new progress.",
+  "verification_limitations": [
+    "No original loading/execution/emulation, game or process injection",
+    "Standalone optional archival V10-V6 replay not repeated; current make check did run",
+    "12 H01 historical-only obligations, observed equivalence and external audit remain open",
+    "No fresh CI status claimed; inspect live PR separately"
+  ],
+  "publication_policy": "Existing PR #1 only; no merge, merge queue or auto-merge",
+  "post_review_delta": "Final registry/status/source-index/decision/report updates only; checked implementation, verifier, proof and Makefile stay identical to reviewed SHA."
+}

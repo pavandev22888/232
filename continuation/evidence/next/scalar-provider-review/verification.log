@@ -1,0 +1,57 @@
+# Integrated check: selected output, NOT the full transcript.
+# SHA: b97bf7e22da6568a938bddf071761428b0426137
+# Command: make -C continuation check HANDOFF="$PWD/runs/handoff/RAGEBOT_HANDOFF_V10"
+# Exit code: 0
+# Full log SHA256: 98b727c328eb8b004301d02da6976f823748921a3dc326c0602db1ea607929e7
+
+RUN build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_charge_state
+PASS: 3274 charge-state checks
+RUN build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN build/test_charge_state_sanitize
+PASS: 3274 charge-state checks
+RUN build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only
+Ran 8 tests in 0.003s
+OK
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+UNRESOLVED: fallback-step contents/owner, actor tolerance, upstream guards, runtime mapping/reachability, and unrelated 0x289A6D60 binding
+PASS marker composition: 3 evidence pins; 19 producer anchors; 25 fresh decoded instructions; 2 producer constants
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+Open: upstream P/P+0 source, cross-call instance identity, other writers/aliases, reachability.
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+COUNTS: {"read": 759, "read-add": 4, "read-compare": 2, "write-immediate": 1, "write-register": 1}
+FRONTIER: indirect provider, intervening callee contract, aliases/lifetime, and writer-to-fallback temporal identity unresolved; R03/GAP04 not closed.

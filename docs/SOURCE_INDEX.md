@@ -50,6 +50,19 @@
 это не доказывает происхождение/положительность значения или равенство N между вызовами.
 Исследование этой границы не расширять без нового конкретного байтового основания.
 
+## Новая ограниченная граница R03
+
+[Контракт](../continuation/evidence/next/scalar-provider/contract.md) и
+[verifier](../continuation/evidence/next/scalar-provider/verify_fallback_provider.py)
+фиксируют одну pointer-cell цепочку fallback: условный store `0x41C5E404`
+в `0x4252194C`, отдельное чтение при `0x41C784D8`, затем float `+0x24`.
+767 литеральных совпадений — не CFG и не доказательство отсутствия иных writers.
+Сохранение ESI через callee, indirect provider, порядок writer-before-read,
+время жизни и источник float не доказаны. **R03 blocked/frontier, GAP04 open**;
+новое тело функции Ragebot не добавлено. Свежие проверки и fixed-SHA review:
+[verification](../continuation/evidence/next/scalar-provider-review/verification.json),
+[acceptance](../continuation/evidence/next/scalar-provider-review/acceptance.json).
+
 ## Исходный handoff — не потерян и не заменён новыми отчётами
 
 После [восстановления](BOOTSTRAP.md) читать внутри **HANDOFF**:

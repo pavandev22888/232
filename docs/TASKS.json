@@ -285,17 +285,17 @@
       "id": "R03",
       "title": "One scalar external-observation provider",
       "kind": "bounded_static_research",
-      "status": "in_progress",
+      "status": "blocked",
       "owner": "r03-fallback-sol",
       "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
       "branch": "hoplite/sikyon-46eee495--r03-fallback-sol",
       "worktree": "/tmp/hoplite/232-r03-fallback-sol",
-      "result_commit": null,
+      "result_commit": "4e0dd8b0ab1d433363568336fecec315b54a2605",
       "full_task_ids": [
         "GAP04"
       ],
       "depends_on": [],
-      "blocked_reason": null,
+      "blocked_reason": "Bounded frontier: pointer-cell store 0x41C5E404 is established, but ESI preservation across 0x41C5BDA0, indirect provider, writer-before-read/lifetime and float +0x24 provenance remain unproved. New bounded scope required; not done.",
       "write_paths": [
         "continuation/evidence/next/scalar-provider/"
       ],
@@ -324,8 +324,13 @@
           "Separate fixed-integrated-SHA review",
           "Bundle/input/work integrity before and after"
         ],
-        "stop": "Stop with byte-supported typed dependency or exact frontier after the one chain. A negative search or unresolved provider keeps R03 blocked and GAP04 open; no synthetic provider."
-      }
+        "stop": "Stop with byte-supported typed dependency or exact frontier after the one chain. A negative search or unresolved provider keeps R03 blocked and GAP04 open; no synthetic provider.",
+        "active": false
+      },
+      "integrated_commit": "f88bae139e5ae3d761fff3bb9d2d2f2653a88404",
+      "reviewed_commit": "b97bf7e22da6568a938bddf071761428b0426137",
+      "review_report": "continuation/evidence/next/scalar-provider-review/acceptance.json",
+      "verification_report": "continuation/evidence/next/scalar-provider-review/verification.json"
     },
     {
       "id": "R04",

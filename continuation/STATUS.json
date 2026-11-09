@@ -1,5 +1,5 @@
 {
-  "stage": "V10 waves 3–4: integrated scalar compositions and isolated peer acceptance",
+  "stage": "V10 continuation: bounded R03 fallback-provider frontier reviewed; original-language goal corrected",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -77,7 +77,7 @@
     {
       "id": "GAP04",
       "status": "open",
-      "change": "Composed scalar helper with marker and three independent actor axes; fallback/tolerance providers and original runtime bindings remain open"
+      "change": "R03 establishes one pointer-cell writer 0x41C5E404 and a pinned literal inventory. ESI preservation, indirect provider, writer-before-read, lifetime, float +0x24 contents and tolerance remain open; no replacement provider implementation."
     },
     {
       "id": "GAP05",
@@ -108,7 +108,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "R03 bounded fallback-provider frontier awaiting integrated acceptance; R01 remains assigned. C01-C04 mandatory C17 migration suspended after user goal correction; do not duplicate R01 or resume obsolete port contracts.",
+  "next_task": "R03 stopped at a reviewed frontier; needs a fresh bounded ESI-preservation or indirect-provider scope. R01 keeps its existing owner. Free ready R02/R05/V01 may proceed after ownership checks. C01-C04 mandatory C17 migration is superseded, not completed.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -246,5 +246,25 @@
     "prompts": "docs/AGENT_PROMPTS.md",
     "paths_relative_to": "repository root",
     "scope": "Documentation and reproducible handoff; no new reconstructed behavior or full GAP closure."
+  },
+  "latest_bounded_wave": {
+    "task": "R03",
+    "status": "blocked_frontier",
+    "goal_correction": "Original logic on original source language; no mandatory C17 port",
+    "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+    "integrated_reviewed_commit": "b97bf7e22da6568a938bddf071761428b0426137",
+    "new_original_logic_bodies": false,
+    "new_static_verifier": true,
+    "report": "evidence/next/scalar-provider-review/verification.json",
+    "independent_review": "evidence/next/scalar-provider-review/acceptance.json",
+    "native_assertions": 19902,
+    "asan_ubsan_assertions": 19902,
+    "python_tests": 8,
+    "bundle_files": 960,
+    "input_work_records": 64087,
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "model": "gpt-6.1-sol",
+    "reviewer_finding_F01": "resolved in task registry: stopped blocked frontier, not done"
   }
 }
