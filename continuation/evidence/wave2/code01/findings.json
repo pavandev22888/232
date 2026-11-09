@@ -1,0 +1,716 @@
+{
+  "schema_version": 1,
+  "task": "CODE01 / wave2: read-only source-level integration review",
+  "baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+  "scope": "Only the existing position_records, charge_state, position_lifecycle modules and tests; exact recovered src/sdk/tests inventory. No target aggregation or target selection reconstruction.",
+  "result": {
+    "bounded_review": "completed",
+    "original_CODE01": "partial; original broad task remains open",
+    "wave1_aggregation_assignment": "unperformed; not retried",
+    "production_behavior_bugs_validated": 0,
+    "validated_test_contract_mismatches": 2,
+    "independent_equivalence_audit": false
+  },
+  "constraints": {
+    "source_changes": false,
+    "common_docs_changes": false,
+    "old_evidence_changes": false,
+    "original_DLL_execution": false,
+    "original_DLL_loading": false,
+    "original_emulation": false,
+    "game_connection": false,
+    "injection": false,
+    "live_inputs": false,
+    "handoff_input_work_changes": false,
+    "builds": "TemporaryDirectory /tmp/code01-baseline-*; no shared continuation/build use",
+    "shared_worktree_note": "Findings refer only to immutable git show baseline; other agents may change charge_state and position_lifecycle concurrently."
+  },
+  "completion_inventory": {
+    "original_recovered_root": "runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/recovered_nl/recovered_nl",
+    "original_recovered_scope": "All regular files directly in src, sdk, tests; set equality against the 13-file baseline inventory, sizes, line counts and SHA-256 rechecked. Original C/test code was read, not executed.",
+    "original_public_C_bodies": [
+      {
+        "path": "src/nl_core.c",
+        "bodies": [
+          {
+            "name": "nl_crc32_update",
+            "lines": [
+              5,
+              15
+            ]
+          },
+          {
+            "name": "nl_lag_compensation_unavailable",
+            "lines": [
+              19,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/nl_netvar.c",
+        "bodies": [
+          {
+            "name": "nl_netvar_find_in_table",
+            "lines": [
+              11,
+              56
+            ]
+          },
+          {
+            "name": "nl_netvar_find",
+            "lines": [
+              58,
+              80
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/nl_rage_math.c",
+        "bodies": [
+          {
+            "name": "nl_command_tick_limit",
+            "lines": [
+              10,
+              16
+            ]
+          },
+          {
+            "name": "nl_tick_interval_metric",
+            "lines": [
+              18,
+              22
+            ]
+          },
+          {
+            "name": "nl_interpolation_seconds",
+            "lines": [
+              24,
+              30
+            ]
+          },
+          {
+            "name": "nl_backtrack_correction",
+            "lines": [
+              32,
+              39
+            ]
+          },
+          {
+            "name": "nl_hitchance_score",
+            "lines": [
+              41,
+              46
+            ]
+          },
+          {
+            "name": "nl_hits_to_kill",
+            "lines": [
+              48,
+              56
+            ]
+          },
+          {
+            "name": "nl_mean_expected_damage",
+            "lines": [
+              58,
+              66
+            ]
+          },
+          {
+            "name": "nl_apply_shot_buttons",
+            "lines": [
+              68,
+              71
+            ]
+          },
+          {
+            "name": "nl_prepare_movement",
+            "lines": [
+              73,
+              81
+            ]
+          }
+        ]
+      }
+    ],
+    "original_headers": "Six headers: declarations, partial layouts and comment-only inferred signatures; these are not additional function implementations.",
+    "original_tests": "Three portable C tests and one Windows detours test. None rerun by this bounded review.",
+    "baseline_continuation_files": [
+      {
+        "path": "continuation/Makefile",
+        "size": 1577,
+        "sha256": "e5ed2466bbdfac38e4f31c25852e7efaa42272c82dab639c0af5900e71296e83",
+        "lines": 41
+      },
+      {
+        "path": "continuation/include/rage/charge_state.hpp",
+        "size": 1363,
+        "sha256": "a176bce5e72bca17914efc0ee66da7c2cbbc8a8d912f7e3b30d91bd927df9558",
+        "lines": 55
+      },
+      {
+        "path": "continuation/include/rage/position_lifecycle.hpp",
+        "size": 2336,
+        "sha256": "b70e8e3e9e72b5e7f416e8af5c6a8b8152d6df1f49e4db9988c5342069d14d71",
+        "lines": 79
+      },
+      {
+        "path": "continuation/include/rage/position_records.hpp",
+        "size": 4898,
+        "sha256": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+        "lines": 151
+      },
+      {
+        "path": "continuation/src/charge_state.cpp",
+        "size": 3208,
+        "sha256": "3700344cfe178804c2f3d14e2fb670dfee46ac91e5104e9d778ab8c7e63a4ea4",
+        "lines": 109
+      },
+      {
+        "path": "continuation/src/position_lifecycle.cpp",
+        "size": 5377,
+        "sha256": "97001be1725726f55543d5d57ee1ee180e50811b8dd1335709e04a5f1ddbd0b0",
+        "lines": 134
+      },
+      {
+        "path": "continuation/src/position_records.cpp",
+        "size": 4994,
+        "sha256": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+        "lines": 133
+      },
+      {
+        "path": "continuation/tests/test_charge_state.cpp",
+        "size": 9055,
+        "sha256": "7f27ab24798945a6c411a80e41f39c3f46029e1a9f4d1b58710e81554d0f19bd",
+        "lines": 252
+      },
+      {
+        "path": "continuation/tests/test_position_lifecycle.cpp",
+        "size": 11870,
+        "sha256": "f0eb4c5b379b9f017ae4724f0cc5a683057f6d03dd7ab6b920dca0cf06025641",
+        "lines": 289
+      },
+      {
+        "path": "continuation/tests/test_position_records.cpp",
+        "size": 14184,
+        "sha256": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+        "lines": 367
+      }
+    ],
+    "original_inventory": [
+      {
+        "path": "work/recovered_nl/recovered_nl/src/nl_core.c",
+        "size": 893,
+        "sha256": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+        "lines": 25,
+        "referenced_nl_symbols": [
+          "nl_crc32_update",
+          "nl_lag_compensation_unavailable"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/src/nl_netvar.c",
+        "size": 3000,
+        "sha256": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+        "lines": 80,
+        "referenced_nl_symbols": [
+          "nl_netvar_find",
+          "nl_netvar_find_in_table"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/src/nl_rage_math.c",
+        "size": 2509,
+        "sha256": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+        "lines": 81,
+        "referenced_nl_symbols": [
+          "nl_apply_shot_buttons",
+          "nl_backtrack_correction",
+          "nl_command_tick_limit",
+          "nl_hitchance_score",
+          "nl_hits_to_kill",
+          "nl_interpolation_seconds",
+          "nl_mean_expected_damage",
+          "nl_prepare_movement",
+          "nl_tick_interval_metric"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/inferred_signatures.h",
+        "size": 1535492,
+        "sha256": "d057eda4f5b1a7049d2d292cca45a8bed947a431badf138c14845e3277892d4f",
+        "lines": 20336,
+        "referenced_nl_symbols": [],
+        "kind": "automatically inferred signature comments"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/nl_layouts.h",
+        "size": 1459,
+        "sha256": "d5fdca8059c521dda24a09d2391b9e047cf803bbdcdafe422e2287abff3c0d85",
+        "lines": 38,
+        "referenced_nl_symbols": [],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/nl_netvar.h",
+        "size": 1996,
+        "sha256": "a95ef5feb4a3dc22f9c3009ba362caddf56d493eb645132da488351665403187",
+        "lines": 60,
+        "referenced_nl_symbols": [
+          "nl_netvar_find",
+          "nl_netvar_find_in_table"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/nl_rage_math.h",
+        "size": 1766,
+        "sha256": "0213293a5d0a51da2d124af0adf6cd8058a6ea92b3bd73408ae7ed93d8fe1a66",
+        "lines": 35,
+        "referenced_nl_symbols": [
+          "nl_apply_shot_buttons",
+          "nl_backtrack_correction",
+          "nl_command_tick_limit",
+          "nl_hitchance_score",
+          "nl_hits_to_kill",
+          "nl_interpolation_seconds",
+          "nl_mean_expected_damage",
+          "nl_prepare_movement",
+          "nl_tick_interval_metric"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/nl_report_records.h",
+        "size": 1106,
+        "sha256": "107548f43193cdd1cc3aba89cf5ad00e6cff8df982708faf3749fc14a32b44dd",
+        "lines": 28,
+        "referenced_nl_symbols": [],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/sdk/nl_sdk.h",
+        "size": 3454,
+        "sha256": "8e3936131a4190f8892262d3dbde21f98472bd01af38160f52e6fb6c0c7d27d4",
+        "lines": 98,
+        "referenced_nl_symbols": [
+          "nl_crc32_update",
+          "nl_lag_compensation_unavailable"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/tests/test_core.c",
+        "size": 833,
+        "sha256": "b634fabc322b75c1552823dcba3ab45165f46c2c8f23f4c5d25c7315302f8f9b",
+        "lines": 22,
+        "referenced_nl_symbols": [
+          "nl_crc32_update",
+          "nl_lag_compensation_unavailable"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/tests/test_detours.cpp",
+        "size": 1144,
+        "sha256": "eb413ed56baacc51d04e880b403e23e48f698081e30e04c4545dab9f90f16cde",
+        "lines": 26,
+        "referenced_nl_symbols": [],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/tests/test_netvar.c",
+        "size": 2747,
+        "sha256": "6c6a8a0d15f3bfad64a274b2809f1a179131e0748d7e94e8140b4348491cdf2c",
+        "lines": 68,
+        "referenced_nl_symbols": [
+          "nl_netvar_find",
+          "nl_netvar_find_in_table"
+        ],
+        "kind": "existing source/header/test"
+      },
+      {
+        "path": "work/recovered_nl/recovered_nl/tests/test_rage_math.c",
+        "size": 1628,
+        "sha256": "0f1f64382f3ebe2379837b741807d9d4c4902fd2da54585c22f3b017f19afa06",
+        "lines": 44,
+        "referenced_nl_symbols": [
+          "nl_apply_shot_buttons",
+          "nl_backtrack_correction",
+          "nl_command_tick_limit",
+          "nl_hitchance_score",
+          "nl_hits_to_kill",
+          "nl_interpolation_seconds",
+          "nl_mean_expected_damage",
+          "nl_prepare_movement",
+          "nl_tick_interval_metric"
+        ],
+        "kind": "existing source/header/test"
+      }
+    ],
+    "modules": [
+      {
+        "name": "position_records",
+        "public_free_functions": 4,
+        "constructor": "PositionStore::PositionStore lines 39..43; at overloads inline header lines 70..71",
+        "source": "continuation/src/position_records.cpp",
+        "bodies": [
+          {
+            "name": "update_resolved_record",
+            "lines": [
+              45,
+              93
+            ]
+          },
+          {
+            "name": "store_resolved_item_definition",
+            "lines": [
+              95,
+              102
+            ]
+          },
+          {
+            "name": "read_resolved_record",
+            "lines": [
+              104,
+              126
+            ]
+          },
+          {
+            "name": "passes_item_consumer_gate",
+            "lines": [
+              128,
+              132
+            ]
+          }
+        ],
+        "implemented": "N layout 0x74; 2048-entry owned store; resolved update; signed WORD metadata store; conditional reader; two-test item-consumer entry gate",
+        "preconditions": "Resolved external gates/providers; stable snapshots; single thread; nonaliasing update inputs; ordinary binary32 environment per SOURCE_MAP. Host index rejection is not original handler behavior.",
+        "tests": {
+          "path": "continuation/tests/test_position_records.cpp",
+          "fixture_groups": 8,
+          "assertions_per_native_or_sanitized_run": 2601
+        }
+      },
+      {
+        "name": "charge_state",
+        "public_free_functions": 3,
+        "source": "continuation/src/charge_state.cpp",
+        "bodies": [
+          {
+            "name": "calculate_charge_capacity",
+            "lines": [
+              32,
+              78
+            ]
+          },
+          {
+            "name": "evaluate_small_charge_gate",
+            "lines": [
+              80,
+              95
+            ]
+          },
+          {
+            "name": "compose_charge_model_step",
+            "lines": [
+              97,
+              107
+            ]
+          }
+        ],
+        "implemented": "Raw-byte nonzero versus low-bit capacity branches; modulo DWORD arithmetic; set-only boolean latch; independent counter gate",
+        "preconditions": "External raw inputs supplied; helper composition is a model, not an established original call order; reset and full mode lifecycle unresolved.",
+        "tests": {
+          "path": "continuation/tests/test_charge_state.cpp",
+          "assertions_per_native_or_sanitized_run": 3170
+        }
+      },
+      {
+        "name": "position_lifecycle",
+        "public_free_functions": 2,
+        "source": "continuation/src/position_lifecycle.cpp",
+        "bodies": [
+          {
+            "name": "update_actor_consumer",
+            "lines": [
+              56,
+              98
+            ]
+          },
+          {
+            "name": "produce_resolved_validity_marker",
+            "lines": [
+              100,
+              132
+            ]
+          }
+        ],
+        "implemented": "Resolved local N+48 producer; opaque side fields +50/+54; actor position consumer with separate copy/clear exits",
+        "preconditions": "Borrowed N pointer, separate original-reader AL, caller-resolved owner/sink and normal guard outcome; provider outputs and upstream seed remain inputs. Full object identity, exceptional branches, optional +50 output and lifecycle not reconstructed.",
+        "tests": {
+          "path": "continuation/tests/test_position_lifecycle.cpp",
+          "assertions_per_native_or_sanitized_run": 85
+        }
+      }
+    ],
+    "integration_graph": [
+      {
+        "edge": "position_lifecycle -> position_records",
+        "support": [
+          {
+            "path": "continuation/include/rage/position_lifecycle.hpp",
+            "lines": [
+              4,
+              4
+            ],
+            "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+          },
+          {
+            "path": "continuation/src/position_lifecycle.cpp",
+            "lines": [
+              59,
+              59
+            ],
+            "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+          }
+        ],
+        "meaning": "Shares PositionRecord, borrowed PositionRead pointer and Vec3; owner/sink association is supplied, not derived."
+      },
+      {
+        "edge": "charge_state <-> position modules",
+        "meaning": "No composed production call path in the enumerated baseline bodies. All binaries link all sources via Makefile, but that is build integration only. Original runtime ordering must not be inferred."
+      }
+    ],
+    "broad_CODE01_remaining": [
+      "Target-aggregation assignment was declined and is not implemented or reconstructed here.",
+      "No complete target selection / T+68 consumer; N+68 remains snapshot_type.",
+      "No complete message format/sender, object/provider resolution, full guards or mode/marker lifecycle.",
+      "No runtime ABI/bindings, original execution proof or independent equivalence audit."
+    ],
+    "completion_claim_review": {
+      "baseline_README": "Accurately says three conditional offline modules, not a full Ragebot; no false full-completion claim found.",
+      "baseline_STATUS": "full_ragebot_reconstructed=false; CODE01 partial; aggregation unperformed; full_tasks_closed empty.",
+      "original_OPEN_TASKS": "CODE01 remains open; immutable handoff status is not rewritten.",
+      "assertion_counts": "3170+85+2601=5856 confirmed in native and sanitized builds. Counts are not independent semantic equivalence evidence."
+    }
+  },
+  "findings": [
+    {
+      "id": "W2-CODE01-01",
+      "severity": "medium",
+      "classification": "validated test-contract mismatch; not a demonstrated production-function bug",
+      "title": "Reader AL fixtures do not form a coherent original normal-return integration path",
+      "evidence": [
+        {
+          "path": "continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            54,
+            66
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            251,
+            259
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/src/position_records.cpp",
+          "lines": [
+            110,
+            125
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/include/rage/position_lifecycle.hpp",
+          "lines": [
+            35,
+            39
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        }
+      ],
+      "observed": "First fixture obtains source_unavailable and supplies reader_result_al=true. Connected producer fixture obtains usable and supplies reader_result_al=false. The low-level API intentionally accepts orthogonal observations, but these pairs are not the normal return AL of that same read.",
+      "byte_support": [
+        "4150BEB6 0f8423060000 -> 4150C4DF xor eax,eax (31c0): missing source AL=0.",
+        "4150C4DA 0f92c0 (setb al): normal active/age result is 0/1.",
+        "414FD82D e80ee60000 calls the reader; 414FD841 89c3 saves EAX; 414FD905 84db tests saved BL."
+      ],
+      "action": "Retain orthogonal-input fixtures as explicit local-contract tests, but add coherent read->consumer cases using the actual normal-read result (usable => AL=1, ordinary refusal => AL=0). Do not derive AL for outside_supported_domain/opaque or unknown original exits.",
+      "focused_reproduction": "review_baseline.py --run-tests confirms both fixture pairs and runs a separate 16-check sanitizer-enabled coherent normal-reader probe.",
+      "limitation": "No production caller bug is claimed. Existing fixtures are useful for input independence; they are insufficient by themselves for a connected original call-path claim."
+    },
+    {
+      "id": "W2-CODE01-02",
+      "severity": "medium",
+      "classification": "missing focused composite regression coverage at baseline",
+      "title": "Producer/reader/actor marker-policy transitions are tested mostly in isolation",
+      "evidence": [
+        {
+          "path": "continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            218,
+            277
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/tests/test_position_records.cpp",
+          "lines": [
+            240,
+            285
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/tests/test_position_lifecycle.cpp",
+          "lines": [
+            76,
+            113
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/src/position_records.cpp",
+          "lines": [
+            113,
+            125
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/src/position_lifecycle.cpp",
+          "lines": [
+            80,
+            83
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        }
+      ],
+      "observed": "Baseline producer->reader chain covers a positive derived marker; later zero/NaN producer results are asserted without rereading. Reader policy cases and actor marker cases are separate fixtures, so the effects of reader policy clearing active versus later AL bypass are not jointly checked.",
+      "action": "Add focused coherent chains for produced 0/NaN under policy-enabled versus policy-bypassed reads, and a negative marker with normal usable versus source-unavailable reads. Assert status, AL assumption, active mutation, actor transition and unchanged sink on rejection. Do not expand to full lifecycle reconstruction.",
+      "limitation": "Each individual branch already has unit coverage; this finding is about composition, not evidence of incorrect branch code. The review probe adds coherent usable-zero and expired-zero/positive cases outside baseline tests, not the whole suggested matrix."
+    },
+    {
+      "id": "W2-CODE01-03",
+      "severity": "low",
+      "classification": "confirmed oracle-independence limitation; no failed behavioral test",
+      "title": "2736 capacity checks compare structurally duplicated production/reference formulas",
+      "evidence": [
+        {
+          "path": "continuation/tests/test_charge_state.cpp",
+          "lines": [
+            39,
+            73
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/tests/test_charge_state.cpp",
+          "lines": [
+            113,
+            156
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        },
+        {
+          "path": "continuation/src/charge_state.cpp",
+          "lines": [
+            32,
+            78
+          ],
+          "revision": "ed9df79c028e63ca56fc191a226f5fe2f221df64"
+        }
+      ],
+      "observed": "144 wrapping-edge cases plus 2592 grid cases use reference_capacity, whose clamp, wrapping request, early return and selection branches repeat calculate_charge_capacity. Eight literal boundary cases and 18 raw-byte checks provide some separately specified expectations, but the 3170 count must not be presented as independent equivalence proof.",
+      "action": "Keep the broad grid; when charge changes land, add a few literal byte-anchored expectations for wrapping extremes and branch boundaries rather than a second copy of the same formula. No implementation-order claim or new target logic is needed.",
+      "limitation": "Independent oracle generation and full original equivalence are outside this review. Existing documentation already disclaims independent audit."
+    }
+  ],
+  "verification": {
+    "command": "python3 continuation/evidence/wave2/code01/review_baseline.py --run-tests",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "original_inventory_files": 13,
+    "original_inventory_method": "Full direct-directory file set equality plus SHA-256, byte size and line count for all 13 baseline entries; no absent-grep inference.",
+    "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "selected_byte_checks": {
+      "4150bead": "8939",
+      "4150beb6": "0f8423060000",
+      "4150c4da": "0f92c0",
+      "4150c4df": "31c0",
+      "414fd82d": "e80ee60000",
+      "414fd841": "89c3",
+      "414fd905": "84db",
+      "414fd907": "750d",
+      "414fd90c": "0f2e4548",
+      "414fd910": "0f8318020000"
+    },
+    "selected_byte_assertions": 10,
+    "contradictory_fixture_pairs_confirmed": 2,
+    "native_assertions": 5856,
+    "sanitized_assertions": 5856,
+    "coherent_probe_checks": 16,
+    "runs": [
+      {
+        "command": [
+          "make",
+          "-C",
+          "/tmp/code01-baseline-_4opp5ka",
+          "test",
+          "sanitize",
+          "BUILD=/tmp/code01-baseline-_4opp5ka/build"
+        ],
+        "exit_code": 0,
+        "stdout": "make: Entering directory '/tmp/code01-baseline-_4opp5ka'\nmkdir -p /tmp/code01-baseline-_4opp5ka/build\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_charge_state.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_charge_state\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_lifecycle.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_position_lifecycle\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_records.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_position_records\nRUN /tmp/code01-baseline-_4opp5ka/build/test_charge_state\nPASS: 3170 charge-state checks\nRUN /tmp/code01-baseline-_4opp5ka/build/test_position_lifecycle\nposition_lifecycle: 85 assertions passed\nRUN /tmp/code01-baseline-_4opp5ka/build/test_position_records\nPASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_charge_state.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_charge_state_sanitize\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_lifecycle.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_position_lifecycle_sanitize\ng++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_records.cpp -o /tmp/code01-baseline-_4opp5ka/build/test_position_records_sanitize\nRUN /tmp/code01-baseline-_4opp5ka/build/test_charge_state_sanitize\nPASS: 3170 charge-state checks\nRUN /tmp/code01-baseline-_4opp5ka/build/test_position_lifecycle_sanitize\nposition_lifecycle: 85 assertions passed\nRUN /tmp/code01-baseline-_4opp5ka/build/test_position_records_sanitize\nPASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence\nmake: Leaving directory '/tmp/code01-baseline-_4opp5ka'\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-fno-fast-math",
+          "-ffp-contract=off",
+          "-fno-omit-frame-pointer",
+          "-fsanitize=address,undefined",
+          "-I",
+          "/tmp/code01-baseline-_4opp5ka/include",
+          "/tmp/code01-baseline-_4opp5ka/src/position_records.cpp",
+          "/tmp/code01-baseline-_4opp5ka/src/position_lifecycle.cpp",
+          "/tmp/code01-baseline-_4opp5ka/integration_probe.cpp",
+          "-o",
+          "/tmp/code01-baseline-_4opp5ka/probe"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/tmp/code01-baseline-_4opp5ka/probe"
+        ],
+        "exit_code": 0,
+        "stdout": "coherent normal-reader integration: 16 checks passed\n",
+        "stderr": ""
+      }
+    ],
+    "static_review_only_limits": "Image read as bytes only; no objdump/whole-image replay rerun needed for this bounded review. No historical H01 rerun, original C tests, Windows test, live/game or managed browser verification."
+  },
+  "coordinator_handoff": "Observations are pinned to baseline. Review fixes against integrated charge_state/position_lifecycle head; keep original CODE01 open. No aggregation implementation is authorized or supplied."
+}
