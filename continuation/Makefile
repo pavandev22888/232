@@ -66,6 +66,7 @@ evidence:
 	$(PYTHON) -B evidence/wave8/reset/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave8/history/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave8/shot/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
+	$(PYTHON) -B evidence/wave8/angle/verify_source_bytes.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/bindings/verify_resolution.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/charge/verify_full_reset.py --handoff "$(abspath $(HANDOFF))"
 	$(PYTHON) -B evidence/wave5/esi/verify_preservation.py --handoff "$(abspath $(HANDOFF))"
