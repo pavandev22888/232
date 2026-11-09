@@ -2,7 +2,7 @@
   "schema_version": 1,
   "created_at": "2026-11-09",
   "created_from_commit": "a21c2ac8045617278280de8ffb33f67dbf743c87",
-  "goal": "Full original Ragebot and its necessary transitive dependencies as readable C17.",
+  "goal": "Full original Ragebot and necessary transitive dependencies in the original language; determine that language first.",
   "current_implementation_language": "C++17 (bounded offline modules); archived partial C helpers also exist.",
   "path_base": "repository root",
   "assignment_protocol": "docs/AGENT_WORKFLOW.md",
@@ -17,20 +17,45 @@
   ],
   "tasks": [
     {
+      "id": "L01",
+      "title": "Original-language provenance audit",
+      "kind": "research",
+      "status": "in_progress",
+      "owner": "primary-coordinator",
+      "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+      "branch": "hoplite/sikyon-46eee495",
+      "worktree": "/tmp/hoplite/workspace",
+      "result_commit": null,
+      "depends_on": [],
+      "write_paths": [
+        "continuation/evidence/language/"
+      ],
+      "read_first": [
+        "docs/GOAL.md",
+        "docs/SOURCE_INDEX.md"
+      ],
+      "bounded_deliverable": "Static evidence report on source language, distinguishing target binary from dependencies and reconstructed files. Unknown is a valid bounded result.",
+      "acceptance": [
+        "Record hashes and reproducible static checks; never execute/load/emulate original DLLs.",
+        "Separate C++ components/toolchain clues from proof of the language of the Ragebot logic.",
+        "Do not select C17/C++17 from reconstructed file extensions or runtime/library presence."
+      ]
+    },
+    {
       "id": "C01",
       "title": "C17 pilot: scalar helper",
       "kind": "implementation",
-      "status": "in_progress",
+      "status": "blocked",
       "owner": "primary-coordinator",
       "base_commit": "c8d44fa0946a222734b092f16247a3bd95eb84a9",
       "branch": "hoplite/sikyon-46eee495--c01-scalar",
       "worktree": "/tmp/hoplite/worktrees/sikyon-c01-scalar",
-      "result_commit": null,
+      "result_commit": "2342db2832d35b71e154f0905381d21319d8fce6",
       "full_task_ids": [
         "GAP04"
       ],
       "depends_on": [],
-      "blocked_reason": null,
+      "blocked_reason": "Original language and reconstruction target pending evidence; no further C17 implementation or integration authorized by this plan.",
       "write_paths": [
         "continuation/c17/include/rage/resolved_scalar_helper.h",
         "continuation/c17/src/resolved_scalar_helper.c",
@@ -52,7 +77,9 @@
         "Native and ASan/UBSan; NaN, signed zero, ordering and missing fallback cases.",
         "Bitwise differential checks against C++ within its documented domain; keep original tests.",
         "Fixed-SHA peer review; no claim of equivalence to the original binary."
-      ]
+      ],
+      "language_scope": "Historical C17 model-port experiment, not evidence of original language or an approved final target.",
+      "result_note": "Isolated result exists; not integrated. Preserve as model-port experiment, not language evidence."
     },
     {
       "id": "C02",
@@ -72,7 +99,7 @@
       "depends_on": [
         "C01"
       ],
-      "blocked_reason": "C01 must establish the accepted C API/build/test pattern first.",
+      "blocked_reason": "Original language and reconstruction target pending evidence; no further C17 implementation or integration authorized by this plan.",
       "write_paths": [
         "continuation/c17/include/rage/position_records.h",
         "continuation/c17/src/position_records.c",
@@ -90,7 +117,8 @@
         "C17 layout/size assertions and all existing bounded cases.",
         "C/C++ state and bit comparisons, including unchanged bytes and outside-supported-domain results.",
         "Native/sanitizer checks and peer review."
-      ]
+      ],
+      "language_scope": "Historical C17 model-port experiment, not evidence of original language or an approved final target."
     },
     {
       "id": "C03",
@@ -108,7 +136,7 @@
       "depends_on": [
         "C01"
       ],
-      "blocked_reason": "C01 API/build/test pattern pending.",
+      "blocked_reason": "Original language and reconstruction target pending evidence; no further C17 implementation or integration authorized by this plan.",
       "write_paths": [
         "continuation/c17/include/rage/charge_state.h",
         "continuation/c17/src/charge_state.c",
@@ -127,7 +155,8 @@
         "Raw AL values 0, 1, 2, 3, 254, 255 and branch semantics retained.",
         "No assumed reset scheduling; compare only supported state projections.",
         "C17/native/sanitizer checks and peer review."
-      ]
+      ],
+      "language_scope": "Historical C17 model-port experiment, not evidence of original language or an approved final target."
     },
     {
       "id": "C04",
@@ -147,7 +176,7 @@
         "C01",
         "C02"
       ],
-      "blocked_reason": "Requires accepted C scalar helper and N representation.",
+      "blocked_reason": "Original language and reconstruction target pending evidence; no further C17 implementation or integration authorized by this plan.",
       "write_paths": [
         "continuation/c17/include/rage/position_lifecycle.h",
         "continuation/c17/src/position_lifecycle.c",
@@ -172,7 +201,8 @@
         "Per-call observations, consumer bypasses, bounded aliases, float order and byte preservation retained.",
         "Unresolved rollback labelled as offline API convention, not original behavior.",
         "C17/native/sanitizer and C++ regression/differential checks; fixed-SHA review."
-      ]
+      ],
+      "language_scope": "Historical C17 model-port experiment, not evidence of original language or an approved final target."
     },
     {
       "id": "R01",
@@ -380,7 +410,7 @@
         "C04",
         "R01"
       ],
-      "blocked_reason": "C ports and transitive scope inventory not yet accepted.",
+      "blocked_reason": "Original language and reconstruction target pending evidence; no further C17 implementation or integration authorized by this plan.",
       "write_paths": [
         "continuation/Makefile",
         "continuation/c17/tests/test_position_pipeline.c",
@@ -397,7 +427,8 @@
         "C library builds as C17 without a C++ runtime dependency.",
         "Existing C++ make check plus native/sanitized C tests and differential harness.",
         "Input integrity unchanged; independent code/evidence and reproducibility reviews."
-      ]
+      ],
+      "language_scope": "Historical C17 model-port experiment, not evidence of original language or an approved final target."
     },
     {
       "id": "FULL01",
@@ -424,21 +455,24 @@
         "R03",
         "R04",
         "R05",
-        "V01"
+        "V01",
+        "L01"
       ],
-      "blocked_reason": "Full tasks remain open/partial; no full C port, full behavioral proof or external audit.",
+      "blocked_reason": "Full tasks remain open/partial; original language unresolved, full behavioral proof and external audit missing.",
       "write_paths": [],
       "read_first": [
         "docs/GOAL.md",
         "continuation/STATUS.json",
         "docs/SOURCE_INDEX.md"
       ],
-      "bounded_deliverable": "Close the actual complete transitive Ragebot contour in readable C, including tasks discovered by R01 and later evidence; no claim that the listed bounded cards alone suffice.",
+      "bounded_deliverable": "Close the actual complete transitive Ragebot contour in readable code in the original language, including tasks discovered by R01 and later evidence; no claim that the listed bounded cards alone suffice.",
       "acceptance": [
         "All criteria in docs/GOAL.md met; no critical unknown providers, branches or placeholder logic.",
         "Complete dependency/mode/environment map and reproducible behavioral protocol.",
         "Independent external audit and original-equivalence obligations actually satisfied, or completion remains blocked."
       ]
     }
-  ]
+  ],
+  "original_language": "unknown / pending evidence",
+  "target_language": "unknown / pending evidence"
 }
