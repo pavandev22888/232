@@ -1,0 +1,143 @@
+{
+  "task": "GAP01",
+  "status": "partial; all three positive-source gates remain open",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_base": "0x412A0000"
+  },
+  "verification": {
+    "command": "python3 continuation/evidence/gap01/verify_gap01.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "passed": true,
+    "saved_rows_rechecked": 32,
+    "fresh_objdump_decodes": 32,
+    "scope_limit": "Selected bytes and mapping to supplied static walks only; not search completeness, runtime reachability/state, or DLL equivalence."
+  },
+  "gates": [
+    {
+      "field": "Point+26",
+      "status": "open",
+      "anchors": [
+        {
+          "va": "0x4149BB7A",
+          "bytes": "a14c004b42",
+          "instruction": "mov eax,ds:0x424b004c",
+          "source": "orchestration/v5/target_builder_walk.json"
+        },
+        {
+          "va": "0x4149BB8C",
+          "bytes": "83fb41",
+          "instruction": "cmp ebx,0x41",
+          "source": "orchestration/v5/target_builder_walk.json"
+        },
+        {
+          "va": "0x4149BB8F",
+          "bytes": "7218",
+          "instruction": "jb 0x4149bba9",
+          "source": "orchestration/v5/target_builder_walk.json"
+        },
+        {
+          "va": "0x4149BB92",
+          "bytes": "8340256a",
+          "instruction": "add DWORD PTR [eax+0x25],0x6a",
+          "source": "orchestration/v5/target_builder_walk.json"
+        }
+      ],
+      "known_condition": "Unsigned EBX < 65 skips the candidate block; reaching its ADD requires EBX >= 65.",
+      "limit": "The DWORD write overlaps byte +26, but EAX identity as Point is not proven. It is not accepted as a Point setter. Existing Point+26 to T+96 evidence is propagation only; positive origin remains open."
+    },
+    {
+      "field": "T+F4",
+      "status": "open",
+      "anchors": [
+        {
+          "va": "0x4148B48E",
+          "bytes": "0f1187ec000000",
+          "instruction": "movups XMMWORD PTR [edi+0xec],xmm0",
+          "source": "orchestration/v5/target_constructor_walk.json"
+        },
+        {
+          "va": "0x4147A2A9",
+          "bytes": "81ec10050000",
+          "instruction": "sub esp,0x510",
+          "source": "orchestration/v5/support_target_coordinator_walk.json"
+        },
+        {
+          "va": "0x4147A2AF",
+          "bytes": "89e6",
+          "instruction": "mov esi,esp",
+          "source": "orchestration/v5/support_target_coordinator_walk.json"
+        },
+        {
+          "va": "0x4147F648",
+          "bytes": "c786f40000008f65ca6f",
+          "instruction": "mov DWORD PTR [esi+0xf4],0x6fca658f",
+          "source": "orchestration/v5/support_target_coordinator_walk.json"
+        },
+        {
+          "va": "0x41477E96",
+          "bytes": "8b82f4000000",
+          "instruction": "mov eax,DWORD PTR [edx+0xf4]",
+          "source": "orchestration/v7/support_selector_walk.json"
+        },
+        {
+          "va": "0x41477E9C",
+          "bytes": "398431f4000000",
+          "instruction": "cmp DWORD PTR [ecx+esi*1+0xf4],eax",
+          "source": "orchestration/v7/support_selector_walk.json"
+        },
+        {
+          "va": "0x41477EA3",
+          "bytes": "756f",
+          "instruction": "jne 0x41477f14",
+          "source": "orchestration/v7/support_selector_walk.json"
+        }
+      ],
+      "known_condition": "Selector checks F0 equality first, then F4 equality; F4 mismatch branches to rejection.",
+      "limit": "Constructor zeroing covers T+F4. The positive literal candidate is stack-local scratch (ESI=ESP), not T. Typed positive setter and field meaning remain open."
+    },
+    {
+      "field": "G425009BC (старый +BC)",
+      "status": "open",
+      "anchors": [
+        {
+          "va": "0x41595497",
+          "bytes": "c605bc09504200",
+          "instruction": "mov BYTE PTR ds:0x425009bc,0x0",
+          "source": "orchestration/v5/command_preparation_walk.json"
+        },
+        {
+          "va": "0x415DECEE",
+          "bytes": "c605bc09504200",
+          "instruction": "mov BYTE PTR ds:0x425009bc,0x0",
+          "source": "orchestration/v5/historical_reset_block_walk.json"
+        },
+        {
+          "va": "0x4148CBF0",
+          "bytes": "0a05bc095042",
+          "instruction": "or al,BYTE PTR ds:0x425009bc",
+          "source": "orchestration/v5/stop_complete_walk.json"
+        },
+        {
+          "va": "0x4147ADAE",
+          "bytes": "803dbc09504200",
+          "instruction": "cmp BYTE PTR ds:0x425009bc,0x0",
+          "source": "orchestration/v5/support_target_coordinator_walk.json"
+        }
+      ],
+      "known_direct_store_count": 2,
+      "known_direct_stores_are_positive": false,
+      "limit": "Both known direct writes are resets; consumers are identified. A positive setter, computed alias, or complete state lifecycle is not established."
+    }
+  ],
+  "explicit_unresolved_gates": [
+    "Point+26 positive typed source, condition, and consumer chain",
+    "T+F4 positive setter on the T object, condition, and semantic identity",
+    "G425009BC positive setter or alias, condition, and full consumer/state chain"
+  ],
+  "safety_scope": {
+    "original_dll_loaded": false,
+    "original_dll_executed": false,
+    "original_dll_emulated": false
+  }
+}
