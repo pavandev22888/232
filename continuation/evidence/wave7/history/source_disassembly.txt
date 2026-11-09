@@ -1,0 +1,91 @@
+STATIC DISASSEMBLY FROM VERIFIED READ-ONLY nl.bin
+nl.bin sha256: 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+
+COMMAND: objdump -D -b binary -m i386 -M intel --adjust-vma=0x412a0000 --start-address=0x413f88f0 --stop-address=0x413f89b0 nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f88f0 <.data+0x1588f0>:
+413f88f0:	53                   	push   ebx
+413f88f1:	57                   	push   edi
+413f88f2:	56                   	push   esi
+413f88f3:	89 ce                	mov    esi,ecx
+413f88f5:	8b 41 08             	mov    eax,DWORD PTR [ecx+0x8]
+413f88f8:	8b 49 10             	mov    ecx,DWORD PTR [ecx+0x10]
+413f88fb:	41                   	inc    ecx
+413f88fc:	39 c8                	cmp    eax,ecx
+413f88fe:	77 0c                	ja     0x413f890c
+413f8900:	89 f1                	mov    ecx,esi
+413f8902:	6a 01                	push   0x1
+413f8904:	e8 87 af ff ff       	call   0x413f3890
+413f8909:	8b 46 08             	mov    eax,DWORD PTR [esi+0x8]
+413f890c:	8d 58 ff             	lea    ebx,[eax-0x1]
+413f890f:	8b 7e 0c             	mov    edi,DWORD PTR [esi+0xc]
+413f8912:	21 df                	and    edi,ebx
+413f8914:	89 7e 0c             	mov    DWORD PTR [esi+0xc],edi
+413f8917:	0f 44 f8             	cmove  edi,eax
+413f891a:	4f                   	dec    edi
+413f891b:	21 fb                	and    ebx,edi
+413f891d:	8b 46 04             	mov    eax,DWORD PTR [esi+0x4]
+413f8920:	8b 04 98             	mov    eax,DWORD PTR [eax+ebx*4]
+413f8923:	85 c0                	test   eax,eax
+413f8925:	75 1b                	jne    0x413f8942
+413f8927:	6a 20                	push   0x20
+413f8929:	68 c0 f0 00 00       	push   0xf0c0
+413f892e:	e8 79 f2 9a 00       	call   0x41da7bac
+413f8933:	83 c4 08             	add    esp,0x8
+413f8936:	8b 4e 04             	mov    ecx,DWORD PTR [esi+0x4]
+413f8939:	89 04 99             	mov    DWORD PTR [ecx+ebx*4],eax
+413f893c:	8b 46 04             	mov    eax,DWORD PTR [esi+0x4]
+413f893f:	8b 04 98             	mov    eax,DWORD PTR [eax+ebx*4]
+413f8942:	0f 57 c0             	xorps  xmm0,xmm0
+413f8945:	0f 29 40 30          	movaps XMMWORD PTR [eax+0x30],xmm0
+413f8949:	c7 40 41 00 00 00 00 	mov    DWORD PTR [eax+0x41],0x0
+413f8950:	c7 40 3d 00 00 00 00 	mov    DWORD PTR [eax+0x3d],0x0
+413f8957:	0f 11 40 48          	movups XMMWORD PTR [eax+0x48],xmm0
+413f895b:	0f 11 40 7c          	movups XMMWORD PTR [eax+0x7c],xmm0
+413f895f:	0f 11 40 6c          	movups XMMWORD PTR [eax+0x6c],xmm0
+413f8963:	0f 11 40 5c          	movups XMMWORD PTR [eax+0x5c],xmm0
+413f8967:	0f 11 80 8c 00 00 00 	movups XMMWORD PTR [eax+0x8c],xmm0
+413f896e:	0f 11 80 9c 00 00 00 	movups XMMWORD PTR [eax+0x9c],xmm0
+413f8975:	0f 28 0d d0 af 05 42 	movaps xmm1,XMMWORD PTR ds:0x4205afd0
+413f897c:	0f 11 88 ac 00 00 00 	movups XMMWORD PTR [eax+0xac],xmm1
+413f8983:	0f 29 00             	movaps XMMWORD PTR [eax],xmm0
+413f8986:	0f 29 40 10          	movaps XMMWORD PTR [eax+0x10],xmm0
+413f898a:	0f 29 40 20          	movaps XMMWORD PTR [eax+0x20],xmm0
+413f898e:	0f 11 40 2c          	movups XMMWORD PTR [eax+0x2c],xmm0
+413f8992:	0f 11 40 74          	movups XMMWORD PTR [eax+0x74],xmm0
+413f8996:	0f 11 40 64          	movups XMMWORD PTR [eax+0x64],xmm0
+413f899a:	89 7e 0c             	mov    DWORD PTR [esi+0xc],edi
+413f899d:	ff 46 10             	inc    DWORD PTR [esi+0x10]
+413f89a0:	8b 46 04             	mov    eax,DWORD PTR [esi+0x4]
+413f89a3:	8b 4e 08             	mov    ecx,DWORD PTR [esi+0x8]
+413f89a6:	49                   	dec    ecx
+413f89a7:	21 f9                	and    ecx,edi
+413f89a9:	8b 04 88             	mov    eax,DWORD PTR [eax+ecx*4]
+413f89ac:	5e                   	pop    esi
+413f89ad:	5f                   	pop    edi
+413f89ae:	5b                   	pop    ebx
+413f89af:	c3                   	ret
+
+COMMAND: objdump -D -b binary -m i386 -M intel --adjust-vma=0x412a0000 --start-address=0x413f70f1 --stop-address=0x413f7114 nl.bin
+
+/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+413f70f1 <.data+0x1570f1>:
+413f70f1:	89 f9                	mov    ecx,edi
+413f70f3:	e8 f8 17 00 00       	call   0x413f88f0
+413f70f8:	89 c3                	mov    ebx,eax
+413f70fa:	8b 4d 08             	mov    ecx,DWORD PTR [ebp+0x8]
+413f70fd:	e8 2e 98 77 00       	call   0x41b70930
+413f7102:	8b 55 d8             	mov    edx,DWORD PTR [ebp-0x28]
+413f7105:	f3 0f 10 42 10       	movss  xmm0,DWORD PTR [edx+0x10]
+413f710a:	f3 0f 11 03          	movss  DWORD PTR [ebx],xmm0
+413f710e:	f3 0f 10 42 14       	movss  xmm0,DWORD PTR [edx+0x14]
+413f7113:	f3           	movss  DWORD PTR [ebx+0x4],xmm0
