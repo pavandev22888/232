@@ -1676,7 +1676,19 @@
         "Independent fixed-SHA source review and fresh commands/exit codes",
         "No full GAP/original-language/external-audit claim"
       ],
-      "stop_condition": "Commit report only; report actionable blockers, no source edits or push."
+      "stop_condition": "Commit report only; report actionable blockers, no source edits or push.",
+      "followup_review": {
+        "owner": "w6-review-evidence",
+        "status": "in_progress",
+        "base_commit": "c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653",
+        "worktree": "/tmp/hoplite/232-w6-review-evidence-followup",
+        "branch": "hoplite/sikyon-46eee495--w6-review-evidence-followup",
+        "write_paths": [
+          "continuation/evidence/wave6/review-integrated-evidence/followup/"
+        ],
+        "scope": "Independently verify F1 history DWORD read/store correction and unchanged W6 code/tests/gates versus d99dd375160c7fccfd489598942232430d78da2f. Fresh history byte gate and objdump, no whole-GAP acceptance.",
+        "stop_condition": "Commit only followup report/logs with exact SHA, commands, exits and hashes; no implementation edits, push or merge."
+      }
     }
   ],
   "goal_correction": {
