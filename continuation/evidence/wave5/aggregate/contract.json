@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "task_id": "W5-AGGREGATE",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "owner": "w5-aggregate-sol",
+  "language": "Current offline C++17 baseline, not proof of original source language or ABI.",
+  "contract": "Projection of ONE direct callback prefix and the T+F0 finalization block. Not target selection or a complete callback.",
+  "typed_input": {
+    "TargetScoreProjection.callback_count_bits": "Raw DWORD counter; INC wraps modulo 2^32, finalizer tests it as signed 32-bit.",
+    "TargetScoreProjection.weighted_sum": "Observed binary32 accumulator at callback context +4 -> accumulator +18.",
+    "ScorePointFields.field_1c": "Raw DWORD at point +1C. Only values 2 and 3 take the byte-proven direct arithmetic branch.",
+    "ScorePointFields.recorded_chance_34": "Binary32 loaded at point +34; archival V7 calls it recorded chance. Upstream calculation is not implemented.",
+    "ScorePointFields.damage_3c": "Binary32 loaded at point +3C; archival V7 calls it damage. Upstream calculation is not implemented."
+  },
+  "proven_local": [
+    {
+      "anchors": [
+        "0x414a557a"
+      ],
+      "claim": "Incoming ECX (T) is saved at local frame +0C; this is not an inferred EBP argument."
+    },
+    {
+      "anchors": [
+        "0x414a8361",
+        "0x414a837d",
+        "0x414a8380",
+        "0x414a8383",
+        "0x414a8389"
+      ],
+      "claim": "Caller zeroes count at frame+70; callback context frame+50 contains &frame+70 and &frame+80. Sum accessed at accumulator+18 therefore denotes frame+98. This contract does not infer the original initial sum."
+    },
+    {
+      "anchors": [
+        "0x414a8603",
+        "0x414a8606",
+        "0x414a8609",
+        "0x414a8d5f",
+        "0x414a8d62",
+        "0x414a8d68"
+      ],
+      "claim": "Caller passes context in ECX and the point pointer in EDX at two local call sites. These are distinct observed point sources, not assumed identical objects."
+    },
+    {
+      "anchors": [
+        "0x4149e795",
+        "0x4149e797",
+        "0x4149e7a0",
+        "0x4149e7a5",
+        "0x4149e7a8",
+        "0x4149e7ab"
+      ],
+      "claim": "Counter increments before inspecting +1C. (field_1c & 0xfffffffe)==2 jumps directly to 4149E96C, bypassing intervening settings gates."
+    },
+    {
+      "anchors": [
+        "0x4149e96c",
+        "0x4149e971",
+        "0x4149e979",
+        "0x4149e97e",
+        "0x4149e983",
+        "0x4206f174"
+      ],
+      "claim": "Binary32 point+3C * constant(0x3c23d70a), then * point+34, then + previous sum, each rounded in instruction order; store to accumulator+18."
+    },
+    {
+      "anchors": [
+        "0x414a8d96",
+        "0x414a8d99",
+        "0x414a8d9b",
+        "0x414a8da4",
+        "0x414a8da8",
+        "0x414a8db0",
+        "0x414a8db4",
+        "0x414a8db8",
+        "0x414a8dbb"
+      ],
+      "claim": "If signed count >0, convert count to binary32, divide frame+98 by that count, truncate with CVTTSS2SI and write DWORD T+F0. Signed nonpositive count branches to 414A8E25 without this write."
+    },
+    {
+      "anchors": [
+        "0x41477e83",
+        "0x41477e89",
+        "0x41477e90",
+        "0x41477e96",
+        "0x41477e9c",
+        "0x41477ea3"
+      ],
+      "claim": "Local selector consumer compares raw F0 DWORDs and then raw F4 DWORDs; either inequality goes to 41477F14. Equal F0 alone cannot determine that branch."
+    }
+  ],
+  "api_boundary": {
+    "accumulate_direct_score_prefix": "Returns a complete projected after-state only for raw +1C=2/3; otherwise nullopt means unresolved. The original already increments its counter on non-direct paths; nullopt must NOT be interpreted as an original rollback/no-op.",
+    "target_score_f0_write": "Consumes an explicitly observed projection at 414A8D96. nullopt is a proven skipped write, not an unresolved input. Invalid masked CVTTSS2SI returns INT32_MIN, which is also the valid conversion of -2^31.",
+    "composition": "Synthetic tests compose direct prefixes and finalization. Actual scheduling, callback tail effects and cross-call object identity are not established by those tests."
+  },
+  "preconditions": [
+    "Reached stated blocks with valid, non-overlapping counter/accumulator/point memory and unchanged pointer bindings.",
+    "Input sum and count are observations, not reconstructed global initialization; only counter initialization has been pinned here.",
+    "Original arithmetic uses masked SSE exceptions, round-to-nearest binary32, no FTZ/DAZ. Offline code uses FLT_EVAL_METHOD=0, no fast-math or FP contraction.",
+    "sNaNs, NaN payload/sign selection and observable floating-point exception flags/traps are excluded. Quiet NaN classification, infinities, signed zero and subnormal value behavior are tested."
+  ],
+  "unresolved": [
+    {
+      "frontier": "Non-direct callback branch at 4149E7AB not taken -> 4149E7B1 and settings-dependent CFG. Out-of-range unsigned index >=16 branches at 4149E7F4 to 4149EC2D: call 412AF300 followed by INT3. No guessed handler or generic target acceptance is implemented.",
+      "anchors": [
+        "0x4149e7ab",
+        "0x4149e7b1",
+        "0x4149e7f1",
+        "0x4149e7f4",
+        "0x4149ec2d",
+        "0x4149ec32"
+      ]
+    },
+    {
+      "frontier": "Prefix stops after 4149E983. Sibling accumulators, callback tail / best-point updates, original point enumeration, scan entry guards, and T+E8/+EC derivations are outside this one projection."
+    },
+    {
+      "frontier": "After F0 equality the consumer still needs T+F4 at 41477E96..41477EA3. Its first nonzero writer and actual value are not supplied here; full ranking/action and same-instance producer-to-selector scheduling remain unresolved. No negative search closure claimed."
+    },
+    {
+      "frontier": "This T record is not N (the separate 0x74 position record); no N field, T+68, T+F4 writer or target-selection policy is inferred from matching offsets."
+    }
+  ],
+  "focused_tests": "test_bounded_aggregation.cpp: direct/unresolved branch, exact constant and staged rounding, weighted-not-raw example, uint32 count wrap, signed count gate, NaN/Inf/zero/subnormal, truncation and CVTT bounds, count-to-float rounding.",
+  "acceptance_remaining": "Coordinator integrated-SHA full check and independent review; full CODE01 remains partial."
+}

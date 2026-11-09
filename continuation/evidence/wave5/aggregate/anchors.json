@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "base": "0x412a0000"
+  },
+  "sources": [
+    {
+      "path": "workspace/orchestration/v7/support_target_scan_walk.json",
+      "size": 596754,
+      "sha256": "7a3bd601aa211b002432607b94f1b4d7e5b351f68653d3fb5527ad1bd9d74608"
+    },
+    {
+      "path": "workspace/orchestration/v7/support_best_point_update_walk.json",
+      "size": 38382,
+      "sha256": "a37ae4a208ddd886ba402f26b93542e50525ca6ac1dfc0057bb5cc9030be194e"
+    },
+    {
+      "path": "workspace/orchestration/v7/support_selector_walk.json",
+      "size": 67587,
+      "sha256": "8f0ecd1ca54d75968cf87ed3d0b3ff1b84674e03dc09314d5e1bd80a018ada7d"
+    },
+    {
+      "path": "workspace/orchestration/v7/proof_spec.json",
+      "size": 3269,
+      "sha256": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9"
+    },
+    {
+      "path": "workspace/orchestration/v7/score_model.c",
+      "size": 702,
+      "sha256": "9113009566998dab1068262ed8e4be7e9d9ae8d91d87f96d655aa1c095722804"
+    },
+    {
+      "path": "workspace/orchestration/v7/Итоги_работы_по_доступным_материалам_V7.md",
+      "size": 26924,
+      "sha256": "038f887cd44d99e7cdd0928c822e38d2a0df9fdacf00fac3ef8904399ab738e1"
+    }
+  ],
+  "instructions": [
+    {
+      "va": "0x41477e52",
+      "bytes": "8b55d8",
+      "size": 3,
+      "instruction": "mov edx,DWORD PTR [ebp-0x28]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e55",
+      "bytes": "8b4a04",
+      "size": 3,
+      "instruction": "mov ecx,DWORD PTR [edx+0x4]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e58",
+      "bytes": "0fb689b0000000",
+      "size": 7,
+      "instruction": "movzx ecx,BYTE PTR [ecx+0xb0]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e6d",
+      "bytes": "8b8298000000",
+      "size": 6,
+      "instruction": "mov eax,DWORD PTR [edx+0x98]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e73",
+      "bytes": "8b4dd0",
+      "size": 3,
+      "instruction": "mov ecx,DWORD PTR [ebp-0x30]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e76",
+      "bytes": "39843198000000",
+      "size": 7,
+      "instruction": "cmp DWORD PTR [ecx+esi*1+0x98],eax",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e7d",
+      "bytes": "0f8591000000",
+      "size": 6,
+      "instruction": "jne 0x41477f14",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e83",
+      "bytes": "8b82f0000000",
+      "size": 6,
+      "instruction": "mov eax,DWORD PTR [edx+0xf0]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e89",
+      "bytes": "398431f0000000",
+      "size": 7,
+      "instruction": "cmp DWORD PTR [ecx+esi*1+0xf0],eax",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e90",
+      "bytes": "0f857e000000",
+      "size": 6,
+      "instruction": "jne 0x41477f14",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e96",
+      "bytes": "8b82f4000000",
+      "size": 6,
+      "instruction": "mov eax,DWORD PTR [edx+0xf4]",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477e9c",
+      "bytes": "398431f4000000",
+      "size": 7,
+      "instruction": "cmp DWORD PTR [ecx+esi*1+0xf4],eax",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x41477ea3",
+      "bytes": "756f",
+      "size": 2,
+      "instruction": "jne 0x41477f14",
+      "source": "workspace/orchestration/v7/support_selector_walk.json"
+    },
+    {
+      "va": "0x4149e795",
+      "bytes": "8b01",
+      "size": 2,
+      "instruction": "mov eax,DWORD PTR [ecx]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e797",
+      "bytes": "ff00",
+      "size": 2,
+      "instruction": "inc DWORD PTR [eax]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e799",
+      "bytes": "8b4104",
+      "size": 3,
+      "instruction": "mov eax,DWORD PTR [ecx+0x4]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e79c",
+      "bytes": "0fb64807",
+      "size": 4,
+      "instruction": "movzx ecx,BYTE PTR [eax+0x7]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7a0",
+      "bytes": "8b7a1c",
+      "size": 3,
+      "instruction": "mov edi,DWORD PTR [edx+0x1c]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7a3",
+      "bytes": "89fe",
+      "size": 2,
+      "instruction": "mov esi,edi",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7a5",
+      "bytes": "83e6fe",
+      "size": 3,
+      "instruction": "and esi,0xfffffffe",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7a8",
+      "bytes": "83fe02",
+      "size": 3,
+      "instruction": "cmp esi,0x2",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7ab",
+      "bytes": "0f84bb010000",
+      "size": 6,
+      "instruction": "je 0x4149e96c",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7b1",
+      "bytes": "8b30",
+      "size": 2,
+      "instruction": "mov esi,DWORD PTR [eax]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7eb",
+      "bytes": "8badcc020000",
+      "size": 6,
+      "instruction": "mov ebp,DWORD PTR [ebp+0x2cc]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7f1",
+      "bytes": "83fd10",
+      "size": 3,
+      "instruction": "cmp ebp,0x10",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e7f4",
+      "bytes": "0f8333040000",
+      "size": 6,
+      "instruction": "jae 0x4149ec2d",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e96c",
+      "bytes": "f30f10423c",
+      "size": 5,
+      "instruction": "movss xmm0,DWORD PTR [edx+0x3c]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e971",
+      "bytes": "f30f590574f10642",
+      "size": 8,
+      "instruction": "mulss xmm0,DWORD PTR ds:0x4206f174",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e979",
+      "bytes": "f30f594234",
+      "size": 5,
+      "instruction": "mulss xmm0,DWORD PTR [edx+0x34]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e97e",
+      "bytes": "f30f584018",
+      "size": 5,
+      "instruction": "addss xmm0,DWORD PTR [eax+0x18]",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149e983",
+      "bytes": "f30f114018",
+      "size": 5,
+      "instruction": "movss DWORD PTR [eax+0x18],xmm0",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149ec2d",
+      "bytes": "e8ce06e1ff",
+      "size": 5,
+      "instruction": "call 0x412af300",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x4149ec32",
+      "bytes": "cc",
+      "size": 1,
+      "instruction": "int3",
+      "source": "workspace/orchestration/v7/support_best_point_update_walk.json"
+    },
+    {
+      "va": "0x414a557a",
+      "bytes": "894e0c",
+      "size": 3,
+      "instruction": "mov DWORD PTR [esi+0xc],ecx",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8361",
+      "bytes": "c7467000000000",
+      "size": 7,
+      "instruction": "mov DWORD PTR [esi+0x70],0x0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8368",
+      "bytes": "c7463000000000",
+      "size": 7,
+      "instruction": "mov DWORD PTR [esi+0x30],0x0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a836f",
+      "bytes": "c7463400000000",
+      "size": 7,
+      "instruction": "mov DWORD PTR [esi+0x34],0x0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8376",
+      "bytes": "c7463800000000",
+      "size": 7,
+      "instruction": "mov DWORD PTR [esi+0x38],0x0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a837d",
+      "bytes": "8d4670",
+      "size": 3,
+      "instruction": "lea eax,[esi+0x70]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8380",
+      "bytes": "894650",
+      "size": 3,
+      "instruction": "mov DWORD PTR [esi+0x50],eax",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8383",
+      "bytes": "8d8680000000",
+      "size": 6,
+      "instruction": "lea eax,[esi+0x80]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8389",
+      "bytes": "894654",
+      "size": 3,
+      "instruction": "mov DWORD PTR [esi+0x54],eax",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8603",
+      "bytes": "8d4e50",
+      "size": 3,
+      "instruction": "lea ecx,[esi+0x50]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8606",
+      "bytes": "8b5610",
+      "size": 3,
+      "instruction": "mov edx,DWORD PTR [esi+0x10]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8609",
+      "bytes": "e88261ffff",
+      "size": 5,
+      "instruction": "call 0x4149e790",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d5f",
+      "bytes": "8d4e50",
+      "size": 3,
+      "instruction": "lea ecx,[esi+0x50]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d62",
+      "bytes": "8d96a0000000",
+      "size": 6,
+      "instruction": "lea edx,[esi+0xa0]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d68",
+      "bytes": "e8235affff",
+      "size": 5,
+      "instruction": "call 0x4149e790",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d96",
+      "bytes": "8b4670",
+      "size": 3,
+      "instruction": "mov eax,DWORD PTR [esi+0x70]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d99",
+      "bytes": "85c0",
+      "size": 2,
+      "instruction": "test eax,eax",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8d9b",
+      "bytes": "0f8e84000000",
+      "size": 6,
+      "instruction": "jle 0x414a8e25",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8da1",
+      "bytes": "0f57c0",
+      "size": 3,
+      "instruction": "xorps xmm0,xmm0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8da4",
+      "bytes": "f30f2ac0",
+      "size": 4,
+      "instruction": "cvtsi2ss xmm0,eax",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8da8",
+      "bytes": "f30f108e98000000",
+      "size": 8,
+      "instruction": "movss xmm1,DWORD PTR [esi+0x98]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8db0",
+      "bytes": "f30f5ec8",
+      "size": 4,
+      "instruction": "divss xmm1,xmm0",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8db4",
+      "bytes": "f30f2cc1",
+      "size": 4,
+      "instruction": "cvttss2si eax,xmm1",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8db8",
+      "bytes": "8b4e0c",
+      "size": 3,
+      "instruction": "mov ecx,DWORD PTR [esi+0xc]",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    },
+    {
+      "va": "0x414a8dbb",
+      "bytes": "8981f0000000",
+      "size": 6,
+      "instruction": "mov DWORD PTR [ecx+0xf0],eax",
+      "source": "workspace/orchestration/v7/support_target_scan_walk.json"
+    }
+  ],
+  "constant": {
+    "va": "0x4206f174",
+    "bytes": "0ad7233c",
+    "binary32_bits": "0x3c23d70a"
+  }
+}
