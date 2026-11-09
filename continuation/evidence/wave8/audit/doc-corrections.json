@@ -1,0 +1,79 @@
+{
+  "task": "W8-AUDIT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "applied": false,
+  "scope": "Exact current-document corrections proposed to coordinator only; no common documents or old evidence modified.",
+  "corrections": [
+    {
+      "path": "README.md",
+      "anchor": "93-94, final publication paragraph",
+      "replace_with": "PR #1 слит 2026-11-09T18:06:11Z squash-коммитом 0fe371bf61446ee799c3ad671b16f23bb7f6a643. Его дерево и origin/main совпадают с 514479c145689639dfac89ea902fe4da7d01070b. Старую ветку сохранить как доступную линейную историю/baseline; текущую работу продолжать на назначенной ветке. Merge не закрывает полные GAP и не является внешним ревью."
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "anchor": "22-23, section 1 branch/PR bullet",
+      "replace_with": "Историческая ветка W3–W7: hoplite/sikyon-46eee495 (514479c145689639dfac89ea902fe4da7d01070b). PR #1 MERGED 2026-11-09T18:06:11Z, squash 0fe371bf61446ee799c3ad671b16f23bb7f6a643; origin/main имеет то же дерево. Текущую рабочую ветку/назначения получать у координатора; прежние verification SHA остаются историческими."
+    },
+    {
+      "path": "docs/BOOTSTRAP.md",
+      "anchor": "20-35, main/baseline guidance",
+      "replace_with": "main содержит дерево W7 после squash PR #1, но НЕ содержит линейную ancestry baseline ed9df79c028e63ca56fc191a226f5fe2f221df64. Для make check получить также сохранённую ветку hoplite/sikyon-46eee495, затем проверить git cat-file -e baseline^{commit}. Углубление одного main не восстановит отсутствующую ветвь истории. В существующей среде оставаться на назначенной ветке.",
+      "exact_read_only_fetch_if_required": "git fetch --no-tags origin refs/heads/hoplite/sikyon-46eee495:refs/remotes/origin/hoplite/sikyon-46eee495",
+      "shallow_note": "If that fetched retained branch is still shallow, use git fetch --deepen=100 origin hoplite/sikyon-46eee495 and repeat the baseline object check; do not silently skip it."
+    },
+    {
+      "path": "docs/START_NEXT_AGENT.md",
+      "anchor": "12-14 metadata and step 1 (23-25)",
+      "replace_with": "PR #1 уже MERGED (0fe371bf61446ee799c3ad671b16f23bb7f6a643); origin/main содержит то же дерево, что W7 head 514479c145689639dfac89ea902fe4da7d01070b. Существующую назначенную ветку не менять. Старую ветку hoplite/sikyon-46eee495 получить отдельно при необходимости baseline ed9df79. Для последующей публикации нужен новый актуальный PR; без нового указания не merge/queue/auto-merge. Текущий статус брать из реестра, не из исторического W5-снимка."
+    },
+    {
+      "path": "continuation/STATUS.json",
+      "anchor": "new top-level publication_state; /isolated_waves/publication_policy is historical",
+      "suggested_value": {
+        "pr": 1,
+        "state": "MERGED",
+        "merged_at": "2026-11-09T18:06:11Z",
+        "merge_commit": "0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+        "presquash_head": "514479c145689639dfac89ea902fe4da7d01070b",
+        "tree_identity_confirmed_at_base": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+        "github_reviews": 0,
+        "review_threads": 0,
+        "actions_runs_parent_observation": 0,
+        "new_publication_requires_new_pr": true
+      },
+      "preserve": "Do not rewrite isolated_waves publication_policy or old acceptance ledgers; label them historical and add current factual publication state separately."
+    },
+    {
+      "path": "continuation/STATUS.json",
+      "anchor": "/open_tasks GAP06 change",
+      "replace_with": "Fresh W7 fixed-SHA native/sanitizer/static checks and agent reviews accepted bounded scope. H01 original-producer/protocol obligations, original equivalence and independent external audit remain open. Merge and empty GitHub checks/reviews are not acceptance evidence."
+    },
+    {
+      "path": "docs/TASKS.json",
+      "anchor": "NEXT-AGGREGATE, NEXT-RESET, NEXT-HISTORY remaining_frontier fields",
+      "recommendation": "Keep these W6 card outcomes historical, but add superseded_by/current_frontier cross-references to W7-RANK, W7-RESET and W7-HISTORY. Normal ranking, four prefix stores and the bounded no-growth helper are no longer entirely missing. Do not relabel the complete selector/reset/history task done."
+    },
+    {
+      "path": "docs/TASKS.json",
+      "anchor": "NEXT-DAMAGE and NEXT-MESSAGE legacy blocked cards",
+      "recommendation": "Retain their original unperformed/blocked outcomes. Add follow-up links: W7-DAMAGE implements only hitgroup 3; W8-DAMAGE/W8-MESSAGE are separately assigned in W8 assignment. Original implementation inability was not a source-level proof. Coordinate live W8 owners before any duplicate work."
+    },
+    {
+      "paths": [
+        "AGENTS.md",
+        "docs/AGENT_WORKFLOW.md",
+        "docs/ROADMAP.md"
+      ],
+      "anchor": "future review-only/no-merge policy",
+      "recommendation": "Do not remove the future no-merge/queue/auto-merge restriction merely because PR #1 is already merged. Add a factual PR #1 history note where useful; historical fact and authorization for future actions are separate."
+    }
+  ],
+  "bootstrap_evidence": {
+    "baseline": "ed9df79c028e63ca56fc191a226f5fe2f221df64",
+    "baseline_object_available_locally": true,
+    "baseline_is_ancestor_of_squash_main": false,
+    "baseline_is_ancestor_of_retained_old_head": true,
+    "required_by": "continuation/evidence/wave2/code01/review_baseline.py:11"
+  },
+  "policy_limit": "Observed merge is a fact, not new authorization to change publication policy, push or merge."
+}

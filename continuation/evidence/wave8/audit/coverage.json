@@ -1,0 +1,729 @@
+{
+  "task": "W8-AUDIT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "source_inventory": "continuation/evidence/wave5/scope/coverage.json",
+  "source_inventory_sha256": "a174e7fab0045731713ef1f5be93880734d0580e2e69e6b50c892070e7e55a4b",
+  "domains": [
+    {
+      "id": "language_abi",
+      "domain": "Исходный язык, compiler и ABI",
+      "audit_class": "current_static_frontier",
+      "root_modules": [],
+      "current_evidence": [
+        "continuation/evidence/wave7/abi/contract.json",
+        "continuation/evidence/wave5/scope/static_evidence.json"
+      ],
+      "increment_through_base": "W7 proves one local ECX/EDX/normal-return boundary only.",
+      "remaining": "Original language/standard, necessary type ownership and complete ABI remain unknown.",
+      "next_bounded_anchor": "Bind a necessary type descriptor/provider to one body; W8-PROVIDER already owns this work.",
+      "archived_navigation_only": [
+        "docs/GOAL.md: Язык оригинала и текущая реализация",
+        "static_evidence.json#/clues"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "dll"
+      ]
+    },
+    {
+      "id": "target_selection",
+      "domain": "Выбор цели",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "bounded_aggregation"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave5/aggregate/contract.json",
+        "continuation/evidence/wave6/aggregate/contract.json",
+        "continuation/evidence/wave7/rank/contract.json"
+      ],
+      "increment_through_base": "W6 non-direct gates/statistics/initial copy and W7 normal ranking/replacement are real source increments.",
+      "remaining": "owner+4 -> +B0 observations, settings, index handler 0x4149EC2D, candidate enumeration and full selector remain open.",
+      "next_bounded_anchor": "W8-AGGREGATE owns one immediate provider/handler dependency; do not repeat the normal tail.",
+      "archived_navigation_only": [
+        "archive_map:41; 0x41477AF0",
+        "v8_status#/0",
+        "v9_report §3: Выбор цели и оценка точки"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v9_report"
+      ]
+    },
+    {
+      "id": "point_evaluation",
+      "domain": "Выбор/оценка точки и агрегация",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "bounded_aggregation"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave7/rank/contract.json",
+        "continuation/evidence/wave5/point26/anchors.json",
+        "continuation/evidence/wave5/tf4/anchors.json"
+      ],
+      "increment_through_base": "Direct/non-direct score, T+F0 and bounded normal replacement exist.",
+      "remaining": "Point construction/filters, first-positive Point+26, T+F4 and G425009BC plus original reachability remain open.",
+      "next_bounded_anchor": "Inspect one fresh point construction/filter source-to-action edge at 0x4149C740 or 0x414A52E0 only after confirming same-object identity.",
+      "archived_navigation_only": [
+        "archive_map:41; 0x4149C740, 0x414A52E0",
+        "v7_report: 0x414A8D96..0x414A8DBB, T+F0"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v7_report"
+      ]
+    },
+    {
+      "id": "geometry_hit",
+      "domain": "Геометрия, попадание и варианты положения",
+      "audit_class": "current_static_frontier",
+      "root_modules": [],
+      "current_evidence": [
+        "continuation/evidence/wave6/geometry/contract.md"
+      ],
+      "increment_through_base": "W6 adds a static caller frontier, not an offline geometry provider.",
+      "remaining": "0x414F3C90 -> computed 0x289A6D60 binding/ABI is unresolved; client candidates 0x10876D60 and 0x103E6D60 remain distinct.",
+      "next_bounded_anchor": "W8-GEOMETRY owns a separate immediate trace-result consumer beyond 0x4136FFA0; do not conflate with unresolved capsule binding.",
+      "archived_navigation_only": [
+        "archive_map:42; 0x41352470 -> 0x414F45B0 -> 0x414F62C0",
+        "geometry_frontier#/new_external_caller: 0x414F3C90 -> 0x289A6D60",
+        "client candidates 0x10876D60 / 0x103E6D60"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "geometry_frontier",
+        "v9_report"
+      ]
+    },
+    {
+      "id": "chance_thresholds",
+      "domain": "Шанс и два порога",
+      "audit_class": "archival_contract_and_current_frontier",
+      "root_modules": [],
+      "current_evidence": [
+        "continuation/evidence/wave5/threshold/consumer_frontier.json",
+        "continuation/evidence/wave2/gap02/inventory.json"
+      ],
+      "increment_through_base": "W5 pins a conditional same-object search frontier, not a typed T+68 action.",
+      "remaining": "Need same T -> T+68 read -> compare -> branch -> action; N+68 is not evidence for T+68.",
+      "next_bounded_anchor": "Inspect one immediate consumer near 0x4149E315/0x4148F830 with typed object continuity, not a broad offset scan.",
+      "archived_navigation_only": [
+        "v8_status#/1; v8_report §§2–3",
+        "T+60 -> T+64/T+68; 0x4149E315 — архивный DWORD store T+68",
+        "0x4148F830; 0x414AD910; 0x414B2930"
+      ],
+      "archive_source_keys": [
+        "v8_status",
+        "v8_report",
+        "archive_math"
+      ]
+    },
+    {
+      "id": "damage",
+      "domain": "Урон и hitgroup",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "damage_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave7/damage/README.md"
+      ],
+      "increment_through_base": "W7 introduces only hitgroup 3: observed binary32 provider value multiplied by 1.25f.",
+      "remaining": "Other hitgroups, guards, vtable+0x30 provider, trace linkage, weapon/surface/armor remain unresolved.",
+      "next_bounded_anchor": "W8-DAMAGE owns adjacent source-backed hitgroup/guard/armor extension at 0x41370710.",
+      "archived_navigation_only": [
+        "archive_map:43; 0x4136FFA0, 0x41370710",
+        "v8_status#/2; v8_report §§1,4"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v8_report",
+        "archive_math"
+      ]
+    },
+    {
+      "id": "penetration",
+      "domain": "Пробитие и препятствия",
+      "audit_class": "archival_contract_only",
+      "root_modules": [],
+      "current_evidence": [],
+      "increment_through_base": "No new standalone root penetration module appears through audit base.",
+      "remaining": "Trace/surface providers, complete exits and final damage linkage remain unresolved.",
+      "next_bounded_anchor": "Use archived 0x41371D00 final exit or a single indirect-provider boundary; avoid work owned by W8-DAMAGE/GEOMETRY.",
+      "archived_navigation_only": [
+        "0x41371D00; v8_report §4; v8_status#/2"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ]
+    },
+    {
+      "id": "armor",
+      "domain": "Броня и предикат применимости",
+      "audit_class": "archival_contract_only",
+      "root_modules": [],
+      "current_evidence": [],
+      "increment_through_base": "No new standalone root armor-applicability module appears through audit base.",
+      "remaining": "Need external object applicability predicate and weapon coefficient provenance, not only arithmetic.",
+      "next_bounded_anchor": "One raw operand/guard -> exit at 0x41370D00 or 0x4136CC20; coordinate overlap with W8-DAMAGE.",
+      "archived_navigation_only": [
+        "0x41370D00; 0x4136CC20",
+        "v8_report §5; v8_status#/2"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ]
+    },
+    {
+      "id": "history",
+      "domain": "История и варианты состояния H",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "history_slice",
+        "history_slot_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave6/history/README.md",
+        "continuation/evidence/wave7/history/README.md"
+      ],
+      "increment_through_base": "W6 ordered copy, W7 no-growth resolver/init and corrected cursor/index plus independent post-call slot are implemented.",
+      "remaining": "Growth/allocator, lifetime/ownership, continuity through 0x41B70930, suitability and matrix path remain open.",
+      "next_bounded_anchor": "W8-HISTORY owns adjacent growth/initialization at 0x413F88F0; next distinct anchor is matrix/restoration at 0x413F3A40/0x413FE970.",
+      "archived_navigation_only": [
+        "archive_map:34,44; 0x413F6DE0/0x413F88F0, 0x4134E630, 0x413F3A40, 0x413FE970, 0x414AB5D0",
+        "v8_status#/3; v9_report §3"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v9_report",
+        "archive_core",
+        "archive_math"
+      ]
+    },
+    {
+      "id": "settings",
+      "domain": "Настройки и configuration",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "bounded_aggregation"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave5/aggregate/contract.json",
+        "continuation/evidence/wave6/aggregate/contract.json"
+      ],
+      "increment_through_base": "Offline callback consumes supplied settings observations; it does not reconstruct configuration providers.",
+      "remaining": "Source -> typed settings field -> consumer and weapon/mode selection remain unresolved.",
+      "next_bounded_anchor": "One untouched typed field at 0x4149DFE0, excluding W8 aggregate owner/index dependency.",
+      "archived_navigation_only": [
+        "0x4149DFE0; T+54, T+60, T+64/T+68",
+        "v8_report §§1–2; v8_status#/4"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ]
+    },
+    {
+      "id": "filters",
+      "domain": "Фильтры целей/точек/недавних записей",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "bounded_aggregation"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave6/aggregate/contract.json",
+        "continuation/evidence/wave7/rank/contract.json"
+      ],
+      "increment_through_base": "Only local callback gates/ranking conditions are implemented.",
+      "remaining": "Full eligibility/safety/filter order and Point+26 positive source remain unresolved.",
+      "next_bounded_anchor": "One typed R-stride-0xF1A0/T+C8/Point+25 branch from archived selector; do not infer identity from offsets.",
+      "archived_navigation_only": [
+        "v8_report §6; v8_status#/0, /6",
+        "R stride 0xF1A0; T+C8; Point+25/+26"
+      ],
+      "archive_source_keys": [
+        "v8_report",
+        "v8_status",
+        "archive_map"
+      ]
+    },
+    {
+      "id": "angle_correction",
+      "domain": "Коррекция углов и отдача",
+      "audit_class": "archival_contract_only",
+      "root_modules": [],
+      "current_evidence": [],
+      "increment_through_base": "No standalone root angle/recoil correction module appears through audit base.",
+      "remaining": "Entry predicates, command identity, settings and full float/exception chain remain unresolved.",
+      "next_bounded_anchor": "0x4147A2A0 -> 0x414AE770 or 0x414AF1A5..0x414AF1CC: one guard -> numeric effect; preserve NaN/Inf/order.",
+      "archived_navigation_only": [
+        "0x414AE770; input 0x4147A2A0",
+        "v9_report §1: Числа и ограничения углов; 0x414AF1A5..0x414AF1CC",
+        "0x42026D1B; 0x42031040 -> 0x42048809 -> 0x4216A840 -> 0x420498D0"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v9_report",
+        "v8_status"
+      ]
+    },
+    {
+      "id": "movement_stop",
+      "domain": "Движение и остановка",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "movement_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave7/movement/receipt.json"
+      ],
+      "increment_through_base": "W7 models selector/bit0 gate, raw argument and observed AL branch at 0x4148CC44..0x4148CC8C.",
+      "remaining": "Helper body 0x414A5130 and command/global providers remain unresolved at base.",
+      "next_bounded_anchor": "W8-MOVEMENT owns 0x414A5130. Do not mislabel batch dispatcher 0x414B2930 as stopping logic.",
+      "archived_navigation_only": [
+        "0x414A5130; 0x4148CAE0",
+        "v9_report §1: Одна проверка движения; v8_status#/5",
+        "0x414B2930 — batch dispatcher, не stop-feasibility"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v9_report",
+        "archive_math",
+        "v8_status"
+      ]
+    },
+    {
+      "id": "modes_dt_hs",
+      "domain": "Режимы DT/HS и выпуск команд",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "charge_state",
+        "release_state_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave6/modes/contract.json"
+      ],
+      "increment_through_base": "W6 release stores and increment use separate post-call observations.",
+      "remaining": "Full DT/HS graph, helpers/indirect effects, post-call globals and original scheduling remain unresolved.",
+      "next_bounded_anchor": "One mode predecessor at 0x414F1240/0x414F30C0 or 0x415E0120; no guessed release state machine.",
+      "archived_navigation_only": [
+        "0x414F1240; 0x414F30C0; 0x415E0120",
+        "v9_report §1: Внутренние лимиты и малое условие режима; §3"
+      ],
+      "archive_source_keys": [
+        "v9_report",
+        "v8_status"
+      ]
+    },
+    {
+      "id": "charge_resets",
+      "domain": "Зарядка, переходы и сбросы",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "charge_state",
+        "reset_predecessor"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave5/charge/full_reset_evidence.json",
+        "continuation/evidence/wave6/reset/reset_predecessor_evidence.json",
+        "continuation/evidence/wave7/reset/reset_projection_evidence.json"
+      ],
+      "increment_through_base": "All 11 local reset stores, ADD/CMP/JNE, four prefix stores and 25-DWORD raw reset are present.",
+      "remaining": "EAX provider, raw record address/identity, full entry/loop and scheduling remain unresolved.",
+      "next_bounded_anchor": "Prove one actual EAX/record provider before extending loop; do not repeat already applied snapshot stores.",
+      "archived_navigation_only": [
+        "reset contract: 0x415DECEE..0x415DED52",
+        "STATUS GAP03"
+      ],
+      "archive_source_keys": [
+        "v9_report"
+      ]
+    },
+    {
+      "id": "network_state",
+      "domain": "Необходимые сетевые/позиционные состояния N",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "position_records",
+        "position_lifecycle",
+        "resolved_scalar_helper",
+        "marker_pipeline",
+        "actor_scalar_pipeline",
+        "lifecycle_seed_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave3/marker/composition.json",
+        "continuation/evidence/wave3/actor/provenance.json",
+        "continuation/evidence/wave5/lifecycle/seed_path.json"
+      ],
+      "increment_through_base": "W5 quarter-decay seed supplements earlier N+48 marker/actor compositions.",
+      "remaining": "Other seeds, complete N+50/+54 provenance, P/P+0 -> N+14 identity and remaining readers remain unresolved.",
+      "next_bounded_anchor": "Only a new concrete P/P+0 or upstream seed anchor justifies reopening R04; do not repeat failed broad writer scans.",
+      "archived_navigation_only": [
+        "N stride 0x74; 0x4150AB00, 0x4150BE40, 0x414F8330, 0x414FD800",
+        "0x413650D2; 0x412C2F20"
+      ],
+      "archive_source_keys": []
+    },
+    {
+      "id": "messages",
+      "domain": "Форматы сообщений, валидация и sender",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "bounded_message_fields"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave5/messages/byte_anchors.json",
+        "continuation/evidence/wave6/message/byte_anchors.json"
+      ],
+      "increment_through_base": "W5 bounded 32/7/32, Z/Y/X, 7-bit parser; W6 static receiver frontier without new consumer.",
+      "remaining": "Full message framing/initialization, FS/register jump, runtime 0x5325D3E8 dereference and sender remain unresolved.",
+      "next_bounded_anchor": "W8-MESSAGE owns one immediate receiver/consumer beyond 0x41512BD0..0x41512BE8; no live sender.",
+      "archived_navigation_only": [
+        "0x41B873F0, 0x41B87580, 0x41B87230, 0x41B87430",
+        "0x41511CC0; error 0x41512AA6..0x41512AAD; handoff 0x41512BD0..0x41512BE8",
+        "v10_gaps#/4"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v9_report",
+        "v10_gaps"
+      ]
+    },
+    {
+      "id": "shot_result",
+      "domain": "Учёт результата выстрела",
+      "audit_class": "archival_contract_only",
+      "root_modules": [],
+      "current_evidence": [],
+      "increment_through_base": "No standalone root shot-result accounting module appears through audit base.",
+      "remaining": "Result/R/command-ring linkage, miss cause and server-confirmed hit are unproved.",
+      "next_bounded_anchor": "0x414C0A50: one store/consumer with Cring stride 0x98/modulo 150 and R stride 0xF1A0; not server equivalence.",
+      "archived_navigation_only": [
+        "0x414C0A50; v8_status#/6",
+        "Cring stride 0x98/index modulo 150; R stride 0xF1A0"
+      ],
+      "archive_source_keys": [
+        "archive_map",
+        "v8_status",
+        "v9_report"
+      ]
+    },
+    {
+      "id": "interfaces",
+      "domain": "Интерфейсы, entity/weapon и runtime bindings",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "resolved_scalar_helper"
+      ],
+      "current_evidence": [
+        "continuation/evidence/next/scalar-provider/contract.md",
+        "continuation/evidence/wave5/fallback24/initializer.json",
+        "continuation/evidence/wave5/bindings/anchors.json",
+        "continuation/evidence/wave7/abi/contract.json"
+      ],
+      "increment_through_base": "Provider chain is conditional static evidence; scalar helper consumes explicit observations.",
+      "remaining": "Entity/weapon bindings, nested calls, float +0x24/tolerance source and lifetime/order are not reconstructed.",
+      "next_bounded_anchor": "W8-PROVIDER owns one concrete binding/ABI prerequisite. Do not promote 0x4252194C writer or candidate +0x24 initializer to a runtime provider.",
+      "archived_navigation_only": [
+        "scalar helper 0x41C784B0; cell 0x4252194C; writer 0x41C5E404",
+        "indirect 0x4226723C; callee 0x41C5BDA0",
+        "P cell 0x4223CA04; archive netvar search != game-object ABI"
+      ],
+      "archive_source_keys": [
+        "geometry_frontier",
+        "archive_netvar"
+      ]
+    },
+    {
+      "id": "ownership_lifecycle",
+      "domain": "Владение, перенос, время жизни и snapshots",
+      "audit_class": "bounded_local_implementation",
+      "root_modules": [
+        "position_lifecycle",
+        "history_slot_slice",
+        "lifecycle_seed_slice"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave3/source/README.md",
+        "continuation/evidence/wave7/history/README.md",
+        "continuation/evidence/wave5/esi/preservation.json"
+      ],
+      "increment_through_base": "Local copy/init/snapshot contracts exist; cross-call object continuity is explicit, not inferred.",
+      "remaining": "Fallback writer-before-reader/lifetime, P supplier, Point/T/H/R/N ownership and aliasing remain unresolved.",
+      "next_bounded_anchor": "One T move/resource-owner edge (stride 0x170, copied prefix 0xF8) or untouched N transition; respect W8-HISTORY allocation ownership.",
+      "archived_navigation_only": [
+        "T stride 0x170; move prefix 0xF8; v7_report §3",
+        "P+0 -> N+14 writer 0x414F840B",
+        "N+48/+50/+54; fallback pointer +0x24"
+      ],
+      "archive_source_keys": [
+        "v7_report",
+        "archive_map"
+      ]
+    },
+    {
+      "id": "services_queue",
+      "domain": "Служебные зависимости: worker queue и инициализация",
+      "audit_class": "archival_contract_only",
+      "root_modules": [],
+      "current_evidence": [],
+      "increment_through_base": "No root worker queue or full initializer/lifetime module appears through audit base.",
+      "remaining": "Worker callback-context lifetime, initializer errors and runtime schedule remain unresolved.",
+      "next_bounded_anchor": "0x414B2930 -> 0x414AC2D0: one context capture -> enqueue -> callback-use edge; initializer array 0x421B7350..0x421B7644 is navigation only.",
+      "archived_navigation_only": [
+        "batch dispatcher 0x414B2930; worker 0x414AC2D0",
+        "initializer array 0x421B7350..0x421B7644; runner 0x42028C86; caller 0x42009D1C",
+        "position manager slot 67; mask initializer slot 155"
+      ],
+      "archive_source_keys": [
+        "v8_report",
+        "v9_report",
+        "archive_map"
+      ]
+    },
+    {
+      "id": "guards_dispatch",
+      "domain": "TLS/FS, opaque dispatch, исключения и out-of-range index",
+      "audit_class": "current_static_frontier",
+      "root_modules": [],
+      "current_evidence": [
+        "continuation/evidence/wave5/guards/guard_path.json",
+        "continuation/evidence/wave5/indirect/dispatch.json"
+      ],
+      "increment_through_base": "W5 preserves guard/fault/opaque dispatch boundaries without fake runtime implementations.",
+      "remaining": "TLS/FS environment, indirect and exceptional paths and out-of-range handler remain unresolved.",
+      "next_bounded_anchor": "One fresh environment/provider anchor only; do not equate offline bounds validation with source handler 0x4149EC2D.",
+      "archived_navigation_only": [
+        "STATUS unresolved_boundaries; v9_report §2",
+        "N index/frontier 0x4150B6C4..0x4150B6DF"
+      ],
+      "archive_source_keys": [
+        "v9_report"
+      ]
+    },
+    {
+      "id": "remaining_consumers",
+      "domain": "Остальные потребители транзитивного контура",
+      "audit_class": "incomplete_transitive_inventory",
+      "root_modules": [
+        "position_records",
+        "marker_pipeline",
+        "actor_scalar_pipeline"
+      ],
+      "current_evidence": [
+        "continuation/evidence/wave5/scope/coverage.json"
+      ],
+      "increment_through_base": "24-domain navigation map is not a complete call graph or closure proof.",
+      "remaining": "Settings/geometry/modes/shot readers and complete transitive dependencies remain unknown.",
+      "next_bounded_anchor": "Prefer an untouched domain above; establish typed source -> reader -> branch -> action, not another offset-name match.",
+      "archived_navigation_only": [
+        "v10_gaps#/1, /2, /4",
+        "T+54 -> point evaluator; T+C8 -> selector; T+64 -> chance worker; T+68 unknown",
+        "N reader -> item gate / actor; другие consumers неизвестны"
+      ],
+      "archive_source_keys": [
+        "v10_gaps",
+        "v8_status",
+        "v9_report"
+      ]
+    },
+    {
+      "id": "equivalence_audit",
+      "domain": "Воспроизводимость, соответствие оригиналу и внешний аудит",
+      "audit_class": "completion_gates_open",
+      "root_modules": [],
+      "current_evidence": [
+        "continuation/evidence/wave5/historical/frontier.json",
+        "continuation/evidence/wave7/verification.json"
+      ],
+      "increment_through_base": "Fresh static gate in this audit; preserved agent/native/sanitizer gates are bounded, not original execution.",
+      "remaining": "All 12 original historical-only H01 obligations, original behavior protocol and external audit remain open; pefile #5 supplemental leaf is not old producer replay.",
+      "next_bounded_anchor": "Coordinator fixed integrated SHA + full check + independent review; original-equivalence protocol must respect no-execution boundary and cannot be claimed from model tests.",
+      "archived_navigation_only": [
+        "docs/GOAL.md: Когда можно назвать проект полным",
+        "v10_gaps#/5, /6; 12 historical-only H01"
+      ],
+      "archive_source_keys": [
+        "v10_gaps"
+      ]
+    }
+  ],
+  "root_module_receipts": {
+    "actor_scalar_pipeline": {
+      "continuation/src/actor_scalar_pipeline.cpp": "f1efd4d255673fa9857f405781f57c2378c608f891549be69670a32077090a83",
+      "continuation/include/rage/actor_scalar_pipeline.hpp": "7bbbfaaaeffd2b851b8a67883cdedbc6d3e25117485cf6bed3466ee44ec6e85e",
+      "continuation/tests/test_actor_scalar_pipeline.cpp": "f556481f9110034428e9278eef72f8ad54266f33952371f5178a27d01858e9d0"
+    },
+    "bounded_aggregation": {
+      "continuation/src/bounded_aggregation.cpp": "3f6ba1547fd29191215ff8c5716714a8a72353873cde6f6e21ac72c998ef35d3",
+      "continuation/include/rage/bounded_aggregation.hpp": "b1fd4a9c1a132b0e9e0838ef5a6b93013b06a7953d60401120cf0d930923536b",
+      "continuation/tests/test_bounded_aggregation.cpp": "d188fd52e3d0492f30e887224e4179b9655385ca481c6865d6d83cdc9a0c66a1"
+    },
+    "bounded_message_fields": {
+      "continuation/src/bounded_message_fields.cpp": "a9c91b15f3ce9e152d10ee0870417aa959577c10e4ef3aa2bfd61e1fda743171",
+      "continuation/include/rage/bounded_message_fields.hpp": "175e5331b6ea6fab8be9c00889259df100a92029dca38d304f23b57ce2f7d4d9",
+      "continuation/tests/test_bounded_message_fields.cpp": "9aa16b7fbeac9f83b482af0b2a591f608b2b9bf173be464a2f421a05a30cead0"
+    },
+    "charge_state": {
+      "continuation/src/charge_state.cpp": "2ea50888e9394d21ddd13fa84eb6bce8f494f9846b86cbd1049891862e0a46a8",
+      "continuation/include/rage/charge_state.hpp": "60d6bdfac773f32cc082af794b924341029d19c2d5ae2999b2b7152be8a2c195",
+      "continuation/tests/test_charge_state.cpp": "d204bb04431214277ef068b223e6eae3a69a15a746c440dc9b1d67a112d47281"
+    },
+    "damage_slice": {
+      "continuation/src/damage_slice.cpp": "a1f007089d8473874118f9dcba68409ca46a6119973d90f397c363d6c52f2d39",
+      "continuation/include/rage/damage_slice.hpp": "22f2aed32dc1c6ef7bb115d11210f6f80c5d008b8e903b2329417b67623fd24f",
+      "continuation/tests/test_damage_slice.cpp": "789eca7b63f7fb3e50c763c21438065dd7acbb286d175cb817236bcd73ad2c62"
+    },
+    "history_slice": {
+      "continuation/src/history_slice.cpp": "9b7511c1e794551979a8e186447d337f2a38c3fdbf5b0af865f097f5b930ce15",
+      "continuation/include/rage/history_slice.hpp": "1b6c2fe644e1d618a1edb474cef6340781132c58507f66296c402d2f455ea7d4",
+      "continuation/tests/test_history_slice.cpp": "126584544886a5c99d591ecb42353bc8aa87bf36b1e8501477d3bdb063154872"
+    },
+    "history_slot_slice": {
+      "continuation/src/history_slot_slice.cpp": "261320bd5c8dcec59eeda0436bfb5402c50e44f26cd30d4d09cca70cd7667d01",
+      "continuation/include/rage/history_slot_slice.hpp": "82ef05fb682b773ca282a5443d03748035d7e36837cbca546801769f4f5c9b1a",
+      "continuation/tests/test_history_slot_slice.cpp": "1bb1fbbf6988c45cbfcd0e7eeb4b131f4d7bb6123467c19142b09c864bdd4ff6"
+    },
+    "lifecycle_seed_slice": {
+      "continuation/src/lifecycle_seed_slice.cpp": "c60199b21ded58e3b9ed01c9f54646fb24b6d78bc91524e3a6f8cebe16ce77bf",
+      "continuation/include/rage/lifecycle_seed_slice.hpp": "573936e6a95dd188a2a43e63bf05d8fbb5a94ffa3dc88e96f12a06fff1236af4",
+      "continuation/tests/test_lifecycle_seed_slice.cpp": "e1cd22a8fdb3574b261b011cb2c2af8f6dceb59f9821f65a2140aef12a5a2b8b"
+    },
+    "marker_pipeline": {
+      "continuation/src/marker_pipeline.cpp": "2311b49a11507e75c47706fb2e4f3b5a3bbbeb4dea69776de251a260e2eced4d",
+      "continuation/include/rage/marker_pipeline.hpp": "4881b3b931a6b79ab40c728da0215b1c407afe741213786063c7ec50f5781b50",
+      "continuation/tests/test_marker_pipeline.cpp": "4375005f919c3d3fc9342eb99ea131b1ac9d1196eeac5e5f465dcbb389436bce"
+    },
+    "movement_slice": {
+      "continuation/src/movement_slice.cpp": "debc7e3acc829db1be2462bc465b5400afb7964aeb6639d9e2ae4b28c2547d69",
+      "continuation/include/rage/movement_slice.hpp": "cc20f3a4042b347ca8379911251a5f04462a48a5980adda53a31f759c7ec77ee",
+      "continuation/tests/test_movement_slice.cpp": "e7e45fea26ef2b0ca9733086c128ca2ff8ba82700ceeca28fa0f0c23b676e980"
+    },
+    "position_lifecycle": {
+      "continuation/src/position_lifecycle.cpp": "8b921a16ed73020b42b823eed29d21db00e494260de78ad2cef3756fe88630ae",
+      "continuation/include/rage/position_lifecycle.hpp": "49d3426063fad5acfcfa887fd6bc7002ac6d95aba2726e661aba1cfc2f150801",
+      "continuation/tests/test_position_lifecycle.cpp": "4155df760e0ee35dce58af54e50feccf4a9f23f5264ed7a17eb17065bdfab79b"
+    },
+    "position_records": {
+      "continuation/src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+      "continuation/include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+      "continuation/tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97"
+    },
+    "release_state_slice": {
+      "continuation/src/release_state_slice.cpp": "dc5ddeaa4e8cfdc907ad8fcfa8eca20d19ad12611693ea3343789eaecfda0ad2",
+      "continuation/include/rage/release_state_slice.hpp": "25697aa10fa9de6a4992db844ce735bae146db1574d523542650d157e2555686",
+      "continuation/tests/test_release_state_slice.cpp": "c415b4896e7c28299ff20cc5527e5a0f0ddb7390b79bd16ad25bf45b1d0cbd3d"
+    },
+    "reset_predecessor": {
+      "continuation/src/reset_predecessor.cpp": "350c321a249353f4f6c1e09f652b3101aaa62679808a74e367836a08efea66f6",
+      "continuation/include/rage/reset_predecessor.hpp": "9d8524a003c63b4b5c6f442c27ab938e9a8a308e41f01c81270f89afe074021f",
+      "continuation/tests/test_reset_predecessor.cpp": "2ede9bf6eeb6e69e9168a2abae29c44e4835f6ca2c22de572e433ecfe87fc14a"
+    },
+    "resolved_scalar_helper": {
+      "continuation/src/resolved_scalar_helper.cpp": "cfde7d0df37d48489b5fe490a7a615ed24ee586069f86b57c443fdb1699b9ad1",
+      "continuation/include/rage/resolved_scalar_helper.hpp": "7544e3598881c5a3f711563d18f4d19e656daee8109411ace8464a0068de0f04",
+      "continuation/tests/test_resolved_scalar_helper.cpp": "d4f03e6b2d02d06ea76935d95f4238d821e5c834b93d280711e69d9769e1e1bd"
+    }
+  },
+  "read_only_archive_navigation_receipts": {
+    "archive_goal": {
+      "path_relative_to_handoff": "docs/Цель_и_критерии_готовности.md",
+      "sha256": "a4de35be72ab5cd9fa9975322a249e17342d04a59d8660fd7c6cfe2ac76c432e",
+      "size_bytes": 4312
+    },
+    "archive_map": {
+      "path_relative_to_handoff": "docs/Карта_кода_и_доказательств.md",
+      "sha256": "9cb7d6aad11e5520a4030890a27b99d539daf6aff9e04b85506fa0270be23323",
+      "size_bytes": 7888
+    },
+    "v7_report": {
+      "path_relative_to_handoff": "workspace/orchestration/v7/Итоги_работы_по_доступным_материалам_V7.md",
+      "sha256": "038f887cd44d99e7cdd0928c822e38d2a0df9fdacf00fac3ef8904399ab738e1",
+      "size_bytes": 26924
+    },
+    "v8_status": {
+      "path_relative_to_handoff": "workspace/orchestration/v8/module_status.json",
+      "sha256": "07723204ae9c6e091a6bacd53399806ab8d59e46ce26afd1745239f1ca24ea3a",
+      "size_bytes": 4622
+    },
+    "v8_report": {
+      "path_relative_to_handoff": "workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "sha256": "b0449b823dbd179b924aa71c90294293cdccbc452495866fa893f596f785699d",
+      "size_bytes": 26243
+    },
+    "v9_report": {
+      "path_relative_to_handoff": "workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "sha256": "688eb78d48dafb4f5c2f94cbc9368f356be8387ee9b3c9fba68cb21d4b00e964",
+      "size_bytes": 19478
+    },
+    "v10_gaps": {
+      "path_relative_to_handoff": "workspace/orchestration/v10/remaining_gaps.json",
+      "sha256": "1602fbfd1e18ca54fb972bece79197e63bafbdc516a888a1925be1ebb676738a",
+      "size_bytes": 5839
+    },
+    "geometry_frontier": {
+      "path_relative_to_handoff": "workspace/orchestration/v6/analysis_findings.json",
+      "sha256": "6e1afc63a7be820f680f77286710efef04450b9291bc6a3c165ac79f4f15a30d",
+      "size_bytes": 2343
+    },
+    "archive_math": {
+      "path_relative_to_handoff": "workspace/work/recovered_nl/recovered_nl/src/nl_rage_math.c",
+      "sha256": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+      "size_bytes": 2509
+    },
+    "archive_core": {
+      "path_relative_to_handoff": "workspace/work/recovered_nl/recovered_nl/src/nl_core.c",
+      "sha256": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+      "size_bytes": 893
+    },
+    "archive_netvar": {
+      "path_relative_to_handoff": "workspace/work/recovered_nl/recovered_nl/src/nl_netvar.c",
+      "sha256": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+      "size_bytes": 3000
+    },
+    "v8_spec": {
+      "path_relative_to_handoff": "workspace/orchestration/v8/proof_spec.json",
+      "sha256": "3470860aa88aa9688320b23831db87e3e947e215f771e0003387e0db7f5327ea",
+      "size_bytes": 2508
+    },
+    "dll": {
+      "path_relative_to_handoff": "workspace/input/dll/neverlose.dll",
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "size_bytes": 62201344
+    },
+    "integrity_checker": {
+      "path_relative_to_handoff": "workspace/orchestration/v1/approval_package/check_integrity.py",
+      "sha256": "22e7bbd5f489142bf6e5c9a32a88c0e71430481ee8389c288eda8115f3619c7a",
+      "size_bytes": 1322
+    }
+  },
+  "method": "Reconcile all 24 W5 domains with complete source-path history, critical correction diffs, current source/API boundaries and W6/W7 contracts. Archived navigation addresses are not fresh byte/control-flow proof; existing static verifiers are rerun separately.",
+  "scope_preconditions": [
+    "All binary addresses use their recorded image/hash mapping, not an inferred live module base.",
+    "Object identity, aliasing, lifetime and post-call observations must be established per boundary; offsets alone do not link T/H/R/Point/N/P.",
+    "Local ECX/EDX evidence does not identify a source declaration, compiler, whole-project language or standard.",
+    "Binary32/x87/SSE order, NaN/Inf/±0, unordered flags, MAXSS second-operand behavior and rounding/FTZ/DAZ assumptions remain local contracts; no fast-math or contraction.",
+    "Offline unresolved/transactional adapters do not prove original rollback or source reachability.",
+    "A passed static gate/model test does not resolve unknown providers or original behavior."
+  ],
+  "omissions_in_full_reconstruction": [
+    "Original language/standard and necessary runtime/type/ABI links remain open.",
+    "No full domain or transitive completeness criterion is discharged by the 15 current root modules.",
+    "Untouched root-code areas include angle/recoil, shot accounting, queue/context lifetime, full penetration/armor applicability and configuration providers; archival navigation exists for each.",
+    "Complete GAP01/GAP02 positive sources and typed T+68 action remain unresolved.",
+    "Historical H01 obligations, full original behavioral evidence and independent external audit are separate gates."
+  ],
+  "full_tasks_closed": [],
+  "full_ragebot_reconstructed": false,
+  "original_loaded_executed_emulated": false
+}

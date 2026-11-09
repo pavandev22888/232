@@ -1,0 +1,112 @@
+{
+  "task": "W8-AUDIT",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "cwd": "/tmp/hoplite/232-w8-audit",
+  "branch": "hoplite/tanagra-adb72df5--w8-audit",
+  "tools": {
+    "python": "3.12.3",
+    "git": "2.43.0",
+    "objdump": "GNU Binutils 2.42"
+  },
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make -C continuation evidence HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "static-check.log",
+      "scope": "43 Python invocations: 41 evidence/static scripts and two unittest suites (8+5 tests). No native or sanitizer programs run by this audit.",
+      "log_sha256": "0f5f23cedeb85d4f61ee2f861c229eb452d86c3c78c78f7acd9952e62b4920df"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py",
+      "exit_code": 0,
+      "log": "bundle-check.log",
+      "scope": "960 bundle files; integrity only.",
+      "log_sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f"
+    },
+    {
+      "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+      "exit_code": 0,
+      "log": "integrity-check.log",
+      "scope": "64087 input/work entries; no behavioral equivalence claim.",
+      "log_sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac"
+    },
+    {
+      "command": "git fsck --connectivity-only --no-dangling",
+      "exit_code": 0,
+      "log": "connectivity-check.log",
+      "scope": "Object connectivity, not completeness of absent server history.",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-c",
+        "from pathlib import Path\nimport hashlib,json,subprocess\nP=Path('continuation/evidence/wave8/audit')\ndef git(*args): return subprocess.check_output(['git',*args],text=True).rstrip('\\n')\nrows=[json.loads(x) for x in (P/'commits.jsonl').read_text().splitlines()]\nassert len(rows)==93 and len({x['sha'] for x in rows})==93\nassert [x['sha'] for x in rows]==git('rev-list','--reverse','--topo-order','08283dd42ff62cab71ac9bcbfe3d10d8e1951706').splitlines()\nfor row in rows:\n sha=row['sha'];parents=git('show','-s','--format=%P',sha).split()\n assert parents==row['parents'] and git('show','-s','--format=%T',sha)==row['tree']\n assert git('show','-s','--format=%s',sha)==row['subject']\n changes=git('diff','--name-status',parents[0],sha) if parents else git('diff-tree','--root','--no-commit-id','-r','--name-status',sha)\n assert [x.replace('\\t',':',1) for x in changes.splitlines()]==row['changes']\nh=json.load((P/'history.json').open());c=json.load((P/'coverage.json').open())\nassert all(git('rev-parse',sha+'^{tree}')==h['tree_identity']['shared_tree'] for sha in ['514479c145689639dfac89ea902fe4da7d01070b','0fe371bf61446ee799c3ad671b16f23bb7f6a643','9b2a75fbd2856fd4966cb6bf6c4933077c51bf41'])\nassert len(c['domains'])==24 and len({x['id'] for x in c['domains']})==24 and len(c['root_module_receipts'])==15\nassert {x['id'] for x in c['domains']}=={x['id'] for x in json.load(open('continuation/evidence/wave5/scope/coverage.json'))['domains']}\nfor domain in c['domains']:\n assert all(Path(x).exists() for x in domain['current_evidence'])\n assert all(x in c['root_module_receipts'] for x in domain['root_modules'])\nfor files in c['root_module_receipts'].values():\n for path,expected in files.items(): assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==expected\nfor path in P.glob('*.json'): json.loads(path.read_text())\nassert git('log','08283dd42ff62cab71ac9bcbfe3d10d8e1951706','--format=%H','--','*.zip','PROMPT_ДЛЯ_АГЕНТА_ЧАСТИ.txt')=='d7e41026d179e20fa9e93c1720645181f1686b69'\nprint('PASS 93 commit metadata/path sets; frozen tree identity; 24 domains; 45 source/header/test hashes; archive history invariant.')\n"
+      ],
+      "exit_code": 0,
+      "log": "inventory-check.log",
+      "scope": "Read-only inventory consistency replay; exact argv is retained here.",
+      "log_sha256": "980e5991bf16f65c1b3ac5a5a8405791f1b22d180caabe21e18ec4354a722e89"
+    },
+    {
+      "command": "git diff --exit-code 514479c145689639dfac89ea902fe4da7d01070b 0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --exit-code 514479c145689639dfac89ea902fe4da7d01070b 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --exit-code 562d1c78f2df1343cf9a9e3e3f91a115be2069ac 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41 -- continuation/src continuation/include continuation/tests continuation/Makefile 'continuation/**/*.py'",
+      "exit_code": 0
+    },
+    {
+      "command": "git cat-file -e ed9df79c028e63ca56fc191a226f5fe2f221df64^{commit}",
+      "exit_code": 0
+    },
+    {
+      "command": "git merge-base --is-ancestor ed9df79c028e63ca56fc191a226f5fe2f221df64 0fe371bf61446ee799c3ad671b16f23bb7f6a643",
+      "exit_code": 1,
+      "expected": "Baseline is NOT an ancestor of squash main."
+    },
+    {
+      "command": "git merge-base --is-ancestor ed9df79c028e63ca56fc191a226f5fe2f221df64 514479c145689639dfac89ea902fe4da7d01070b",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "preparation_failure": "preparation-errors.json records the failed initial metadata parse and its correction, separately from passing gates.",
+  "concurrent_git_activity": "Later fsck --unreachable observed objects outside the frozen 93-commit set. Three heads (a010d7a6fba5085025cd98b9d9fd6e31157bc21f, d845848281fdfe8bc852875a44b3a19c58323570, 3bf74c72f928077ef480e32571321084735717ef) were observed on refs/hoplite/wip during this audit and later became unreachable. This is concurrent local W8 activity, not evidence of deleted historical remote refs. Other out-of-cutoff objects were not inspected.",
+  "not_run": [
+    "Native/ASan/UBSan make check: no code changes in this task; coordinator must run it on integrated W8 SHA.",
+    "Fresh provider API/Actions query: used identified parent captures; no provider credentials required.",
+    "Original DLL execution/loading/emulation, game or live network interaction: prohibited, not attempted.",
+    "UI/browser checks: not applicable, no UI changes."
+  ],
+  "remaining_acceptance": [
+    "Parent must integrate this evidence commit and review a fixed integrated SHA.",
+    "Parent must run the integrated make check; this static-only audit is not that full gate.",
+    "Apply or adapt proposed current-doc corrections as coordinator; historical evidence must not be rewritten."
+  ],
+  "full_tasks_closed": [],
+  "artifacts_sha256_excluding_this_file": {
+    "bundle-check.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "bundle-check.log": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f",
+    "commits.jsonl": "7bfd88e123cfbcf3ba76183746c697955909b98fc7cd25f92957da3074d4b361",
+    "connectivity-check.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "connectivity-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "coverage.json": "8496325c691cb33554754291df0136e555ab27a892962cb36f3ef2a3100313a5",
+    "doc-corrections.json": "f31c74fe209dcc094c9bf59583396ebf1bf7ec21dea80e21ffbc724a59a932b5",
+    "history.json": "6b11fc3697f6cde3c437a8859b67fcaeab1d53c7e2a7d1de6fa7873939068424",
+    "integrity-check.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "integrity-check.log": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac",
+    "inventory-check.log": "980e5991bf16f65c1b3ac5a5a8405791f1b22d180caabe21e18ec4354a722e89",
+    "preparation-errors.json": "98b83462cb931106a5da3d3351d851cd1c72acf41cd5b2b30ab559841f3a8980",
+    "publication.json": "f15febdfeafe6c123b81e0e4301f76dce724cdc47096c6813cfa6b9e882d7c2e",
+    "static-check.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "static-check.log": "0f5f23cedeb85d4f61ee2f861c229eb452d86c3c78c78f7acd9952e62b4920df"
+  }
+}
