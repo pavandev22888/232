@@ -143,7 +143,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "After checking ownership, choose one new source-backed frontier from evidence/wave8/README.md; no active W8 reconstruction assignment remains. Do not repeat completed slices or infer full GAP closure.",
+  "next_task": "W9 is assigned to six isolated owners. Coordinate with current owners; do not duplicate active work. Each accepts only one new source-backed bounded slice, not full GAP closure.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -365,20 +365,11 @@
     }
   },
   "current_continuation": {
-    "task": "W8",
-    "status": "accepted_bounded_scope",
-    "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
-    "report": "evidence/wave8/verification.json",
-    "full_tasks_closed": [],
-    "external_audit": false,
-    "original_language_established": false,
-    "integrated_candidate": "bc89d9d851d710208659fc702f1094a317023ab4",
-    "coordinator_gate": "passed_at_tested_head",
-    "review_reports": [
-      "evidence/wave8/final-review-flow/report.json",
-      "evidence/wave8/final-review-evidence/report.json",
-      "evidence/wave8/integration/state-review-receipt.json"
-    ]
+    "task": "W9",
+    "status": "in_progress",
+    "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+    "report": "evidence/wave9/assignments.json",
+    "full_tasks_closed": []
   },
   "previous_verification_w5": {
     "report": "evidence/wave5/verification.json",
@@ -571,6 +562,22 @@
     "review_reports": [
       "evidence/wave7/review-state/README.md",
       "evidence/wave7/review-flow/report.json"
+    ]
+  },
+  "previous_continuation_w8": {
+    "task": "W8",
+    "status": "accepted_bounded_scope",
+    "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+    "report": "evidence/wave8/verification.json",
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false,
+    "integrated_candidate": "bc89d9d851d710208659fc702f1094a317023ab4",
+    "coordinator_gate": "passed_at_tested_head",
+    "review_reports": [
+      "evidence/wave8/final-review-flow/report.json",
+      "evidence/wave8/final-review-evidence/report.json",
+      "evidence/wave8/integration/state-review-receipt.json"
     ]
   }
 }

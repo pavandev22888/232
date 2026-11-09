@@ -1,0 +1,220 @@
+{
+  "wave": "W9",
+  "status": "in_progress",
+  "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "agent_model": "gpt-6.1-sol",
+  "max_parallel_agents": 6,
+  "assignments": [
+    {
+      "id": "W9-SELECTION",
+      "owner": "w9-selection",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-selection",
+      "branch": "hoplite/tanagra-adb72df5--w9-selection",
+      "write_paths": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/include/rage/marker_pipeline.hpp",
+        "continuation/src/marker_pipeline.cpp",
+        "continuation/tests/test_marker_pipeline.cpp",
+        "continuation/include/rage/actor_scalar_pipeline.hpp",
+        "continuation/src/actor_scalar_pipeline.cpp",
+        "continuation/tests/test_actor_scalar_pipeline.cpp",
+        "continuation/include/rage/resolved_scalar_helper.hpp",
+        "continuation/src/resolved_scalar_helper.cpp",
+        "continuation/tests/test_resolved_scalar_helper.cpp",
+        "continuation/evidence/wave9/selection/"
+      ],
+      "title": "Выбор цели, фильтры и первые положительные флаги",
+      "scope": "Start from W5 threshold/point26/tf4/global9bc and W8 aggregate/provider frontiers. Follow one previously unresolved direct callee or positive writer behind typed T+68 or first-positive T+F4/Point+26, with source -> transform -> consumer evidence. Do not repeat broad negative scans or rename nearby offsets as the target object. Out-of-range construction 0x4200AC82 is secondary backlog, not presumed required for first slice.",
+      "owned_frontiers": [
+        "Point+26, T+F4 and G425009BC first positive sources",
+        "T+68 typed consumer; runtime settings observations, owner+4/B0 provider, enumeration and full target selection",
+        "external entity/weapon resolution",
+        "Out-of-range construction 0x4200AC82 and runtime [0x421B8F14] binding, exception unwind/return behavior"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    },
+    {
+      "id": "W9-DAMAGE-GEOMETRY",
+      "owner": "w9-damage-geometry",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-damage-geometry",
+      "branch": "hoplite/tanagra-adb72df5--w9-damage-geometry",
+      "write_paths": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/include/rage/geometry_slice.hpp",
+        "continuation/src/geometry_slice.cpp",
+        "continuation/tests/test_geometry_slice.cpp",
+        "continuation/evidence/wave9/damage-geometry/"
+      ],
+      "title": "Урон, броня/пробитие и геометрия",
+      "scope": "Primary: inspect damage TLS initialization edge 0x41370B4B and its return into the hitgroup1 path; implement the smallest newly supported contiguous branch, with guard/call observations left explicit. Track armor/surface/weapon/trace and geometry provider 0x289A6D60 as separate remaining dependencies. Never conflate preferred-base candidates 0x10876D60 and 0x103E6D60.",
+      "owned_frontiers": [
+        "Damage vtable+0x30 providers, TLS initializer 0x41370B4B, trace result linkage and full armor/surface/weapon path"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    },
+    {
+      "id": "W9-ANGLE-MOVEMENT",
+      "owner": "w9-angle-movement",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-angle-movement",
+      "branch": "hoplite/tanagra-adb72df5--w9-angle-movement",
+      "write_paths": [
+        "continuation/include/rage/angle_slice.hpp",
+        "continuation/src/angle_slice.cpp",
+        "continuation/tests/test_angle_slice.cpp",
+        "continuation/include/rage/movement_slice.hpp",
+        "continuation/src/movement_slice.cpp",
+        "continuation/tests/test_movement_slice.cpp",
+        "continuation/evidence/wave9/angle-movement/"
+      ],
+      "title": "Углы, отдача, движение и остановка",
+      "scope": "Primary: inspect actual bodies at 0x42026D1B and 0x42031040 called by the W8 angle slice. Recover one finite, typed arithmetic/helper slice if source bytes support it, preserving SSE order, NaN, signed zero and MXCSR. Movement helper 0x414A5130 and command/settings/recoil providers remain separate backlog; no fabricated trig or engine provider.",
+      "owned_frontiers": [
+        "Movement command/global providers and complete helper 0x414A5130 semantics",
+        "Angle 0x42026D1B/0x42031040 bodies, command/settings/recoil providers and EDI identity"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    },
+    {
+      "id": "W9-HISTORY-SHOT",
+      "owner": "w9-history-shot",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-history-shot",
+      "branch": "hoplite/tanagra-adb72df5--w9-history-shot",
+      "write_paths": [
+        "continuation/include/rage/history_slot_slice.hpp",
+        "continuation/src/history_slot_slice.cpp",
+        "continuation/tests/test_history_slot_slice.cpp",
+        "continuation/include/rage/history_slice.hpp",
+        "continuation/src/history_slice.cpp",
+        "continuation/tests/test_history_slice.cpp",
+        "continuation/include/rage/shot_result_slice.hpp",
+        "continuation/src/shot_result_slice.cpp",
+        "continuation/tests/test_shot_result_slice.cpp",
+        "continuation/evidence/wave9/history-shot/"
+      ],
+      "title": "История, память и учёт результата выстрела",
+      "scope": "Primary: follow shot helper 0x413F8AB0 or 0x414BD940 from the existing W8 caller/store/consumer anchors; reconstruct one newly supported callee or direct consumer. Alternative only if directly more tractable: history null-slot 0x41DA7BAC. Preserve cursor vs masked index, allocation/release observations and distinct object identities; do not infer hit/miss/event meanings.",
+      "owned_frontiers": [
+        "History allocation/release/failure and null-slot 0x41DA7BAC, slot ownership/lifetime, continuity across opaque 0x41B70930 and matrix path",
+        "Shot intervening CFG, 0x413F8AB0/0x414BD940, R linkage and event/hit/miss/server semantics"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    },
+    {
+      "id": "W9-LIFECYCLE-MESSAGE",
+      "owner": "w9-lifecycle-message",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-lifecycle-message",
+      "branch": "hoplite/tanagra-adb72df5--w9-lifecycle-message",
+      "write_paths": [
+        "continuation/include/rage/bounded_message_fields.hpp",
+        "continuation/src/bounded_message_fields.cpp",
+        "continuation/tests/test_bounded_message_fields.cpp",
+        "continuation/include/rage/position_records.hpp",
+        "continuation/src/position_records.cpp",
+        "continuation/tests/test_position_records.cpp",
+        "continuation/include/rage/position_lifecycle.hpp",
+        "continuation/src/position_lifecycle.cpp",
+        "continuation/tests/test_position_lifecycle.cpp",
+        "continuation/include/rage/lifecycle_seed_slice.hpp",
+        "continuation/src/lifecycle_seed_slice.cpp",
+        "continuation/tests/test_lifecycle_seed_slice.cpp",
+        "continuation/include/rage/charge_state.hpp",
+        "continuation/src/charge_state.cpp",
+        "continuation/tests/test_charge_state.cpp",
+        "continuation/include/rage/release_state_slice.hpp",
+        "continuation/src/release_state_slice.cpp",
+        "continuation/tests/test_release_state_slice.cpp",
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_predecessor.cpp",
+        "continuation/tests/test_reset_table.cpp",
+        "continuation/evidence/wave9/lifecycle-message/"
+      ],
+      "title": "Сообщения, жизненный цикл данных, зарядка и DT/HS",
+      "scope": "Primary: follow the next direct receiver dependency after the W8 receiver-prefix/slot gate, using W5/W8 message anchors; recover one source-backed bounded body, not packet framing or sender guesses. Secondary backlog: N+14/P/P+0, other seeds, reset entry/EAX providers and full DT/HS scheduling. Keep missing identity/lifetime and caller predicates explicit.",
+      "owned_frontiers": [
+        "charge reset entry predicate, additional-field meanings and original scheduling",
+        "other N+48 upstream seeds, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
+        "complete message format and sender",
+        "Release helper/indirect-call effects and post-call snapshots, G4223F428 pointee+4D30 provenance, full DT/HS scheduling"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    },
+    {
+      "id": "W9-QUEUE-ABI",
+      "owner": "w9-queue-abi",
+      "status": "in_progress",
+      "base_commit": "82ede5e1ac90c393e7522afffc6f45f0faa7703e",
+      "worktree": "/tmp/hoplite/232-w9-queue-abi",
+      "branch": "hoplite/tanagra-adb72df5--w9-queue-abi",
+      "write_paths": [
+        "continuation/include/rage/queue_context_slice.hpp",
+        "continuation/src/queue_context_slice.cpp",
+        "continuation/tests/test_queue_context_slice.cpp",
+        "continuation/evidence/wave9/queue-abi/"
+      ],
+      "title": "Очередь, внешние зависимости, ABI и исходный язык",
+      "scope": "Primary: follow queue task completion/release edges after W8 worker claim, locating direct decrement/final-release code and actual enqueue/wait thunk/table evidence. Recover a bounded projection only if bytes prove it; never implement invented scheduler, completion barrier or runtime binding. Inventory source-language/toolchain evidence separately as clues vs proof, and track scalar fallback/TLS/opaque ABI prerequisites without changing their modules.",
+      "owned_frontiers": [
+        "scalar helper fallback/tolerance providers and original runtime bindings",
+        "TLS/FS guards, opaque dispatch and exceptional paths",
+        "Original source language/standard and complete ABI beyond local ECX/EDX observations",
+        "Queue enqueue/wait bindings, returned-handle identity, ownership, callback completion barrier and stack lifetime"
+      ],
+      "acceptance": [
+        "Fresh source/member hashes, addresses and byte checks for every new claim; explicit conditions and precise remaining frontier.",
+        "Implement only evidenced missing behavior, preserving regression APIs, then run focused native, ASan/UBSan and a standalone --handoff byte gate in own BUILD.",
+        "Return one committed bounded result with source anchors, tests/exits and preserved failed logs. Coordinator performs integration/full gates/fixed-SHA independent review."
+      ],
+      "stop_condition": "One coherent new vertical slice (at most two immediately connected helpers), or a precisely evidenced boundary after inspecting the direct source dependencies. No endless search, broad negative scans, fake providers, original DLL execution/loading/emulation, or full GAP closure."
+    }
+  ],
+  "coordinator": {
+    "owner": "parent",
+    "frontiers": [
+      "remaining consumers and complete modes",
+      "12 historical-only H01 entries, full original protocol and independent external audit"
+    ],
+    "scope": "Cross-domain coverage reconciliation, historical H01/external-audit boundary, integration, Makefile, docs/status, full tests, fixed-SHA independent review and review-only publication. External audit/observed equivalence cannot be supplied by agent tests."
+  },
+  "full_gap_statuses_unchanged": true
+}
