@@ -129,9 +129,11 @@ git diff --check
 git status --short
 ```
 
-`check` включает native, ASan/UBSan и static evidence. Текущий W5-набор:
+`check` включает native, ASan/UBSan и static evidence. Исторический W5-набор:
 23 354 assertions **на каждый режим**, десять программ и 13 Python-тестов;
-13 новых static verifiers включены в `make check`. Историческая база W3–W4
+13 новых static verifiers включены в `make check`. Приращения W6 и актуальные
+числа/результаты находятся в `continuation/evidence/wave6/verification.json`;
+исторический PASS W5 их не подтверждает. Историческая база W3–W4
 имела 19 902 assertions, семь программ и восемь Python-тестов.
 H01: 162 byte checks плюс 33 fresh-static / 2 model-only / 12 historical-only;
 полный старый протокол не закрыт. Отдельный W5 pefile leaf №5 воспроизводится

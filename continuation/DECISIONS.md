@@ -154,3 +154,21 @@
   не доказывает CFG/reachability.
 - W6 не закрывает CODE01/GAP01–GAP06, исходный язык/ABI, H01 или внешний аудит.
   Pending review не является accepted. Сбой исполнителя — не source blocker.
+
+## W6 integration: reset, history и конкретные frontiers
+
+- Reset ADD/CMP/JNE определяет только локальное попадание в существующую
+  11-store проекцию. EAX provider, весь цикл и четыре prefix stores не включены.
+  Первоначальный byte-gate failure сохранён; `--insn-width=16` исправляет
+  получение полного кодирования, а не ослабляет сравнение.
+- History копирует 21 raw DWORD в исходном порядке, затем/между ними пишет
+  отдельное DWORD observation и ноль. MOVSS не превращён в float-арифметику;
+  overlap не заменён предварительным снимком. Числовое local observation
+  сериализуется явно little-endian; invalid-view — защита offline adapter.
+- Message `0x5325D3E8` вне образа и geometry `0x289A6D60` остаются runtime
+  binding frontiers. Два client-кандидата геометрии не объединены.
+- Callback reviewer отозвал первоначальный blocker после свежего CFG decode;
+  исходные отчёты и отдельный resolution сохранены, код под ошибочный вывод
+  не изменялся. Это не подменяет финальное интеграционное ревью.
+- NEXT-DAMAGE не имеет кода, тестов или нового source evidence; невыполненное
+  задание не объявляется доказательством неразрешимости исходников.

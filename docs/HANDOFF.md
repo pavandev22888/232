@@ -7,6 +7,13 @@ C++17 — стандарт текущей офлайн-реконструкци�
 Для старта без истории чата передайте агенту [готовый промпт](START_NEXT_AGENT.md).
 Этот пакет передаёт работу, но сам не назначает следующую волну и не закрывает GAP.
 
+**Обновление после W5:** ниже сохранён снимок W5. Текущие приращения W6,
+ревью и команды — в [W6 verification](../continuation/evidence/wave6/verification.json),
+[STATUS](../continuation/STATUS.json) и [TASKS](TASKS.json). Non-direct callback,
+локальные tail stores, reset predecessor, release и history store slices реализованы;
+начинать их повторно по прежнему списку W5 не нужно. Приёмка W6 определяется
+её собственным статусом, а не историческим PASS W5.
+
 ## 1. Точка передачи и источники истины
 
 - Репозиторий: <https://github.com/pavandev22888/232>.

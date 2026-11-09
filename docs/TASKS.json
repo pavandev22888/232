@@ -1552,7 +1552,7 @@
     {
       "id": "NEXT-HISTORY",
       "owner": "next-history",
-      "status": "in_progress",
+      "status": "in_review",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-history",
       "branch": "hoplite/sikyon-46eee495--next-history",
@@ -1571,7 +1571,13 @@
         "Readable body if sufficient evidence, native/sanitizer/byte checks.",
         "Fixed integrated SHA independent review."
       ],
-      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure."
+      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure.",
+      "result_commits": [
+        "2a3e717d5585ae7eb2ad3cfabafeaa191b2c013f",
+        "46c1738e9c483c9852f7cecefc10c05f0371d140"
+      ],
+      "result": "21 ordered record word copies, one independently observed local DWORD encoded little-endian, one zero store. Focused byte/native/sanitizer checks passed (22 assertions per test).",
+      "remaining_frontier": "Suitability/identity/slot lifetime, helpers 413F88F0 and 41B70930, subsequent matrix path and full history selection unknown."
     },
     {
       "id": "NEXT-REVIEW-CALLBACK",
@@ -1656,7 +1662,7 @@
     "coordinator": "primary-coordinator",
     "ownership_check": "Only current thread visible; existing registry has 22 done / 9 blocked, no active tasks; clean current checkout.",
     "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
-    "status": "awaiting_history_and_integrated_review",
+    "status": "awaiting_integrated_review",
     "full_tasks_closed": []
   }
 }

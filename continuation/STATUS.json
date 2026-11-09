@@ -1,5 +1,5 @@
 {
-  "stage": "W6 continuation: callback and release local code implemented, independent review pending; full reconstruction remains open",
+  "stage": "W6 bounded callback/reset/release/history code integrated; independent final-SHA review pending; full reconstruction remains open",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -23,7 +23,9 @@
     "bounded message fields/parser and consumer-call boundary, not full packet/sender",
     "non-direct callback local gates with explicit settings observations and retained pre-branch counter increment",
     "callback statistics stores and initial 0x50-byte point copy when owner+C0==0",
-    "release local route, post-helper stores and separate post-dispatch counter update"
+    "release local route, post-helper stores and separate post-dispatch counter update",
+    "reset ADD/CMP/JNE predecessor and conditional eleven-store snapshot, not whole loop",
+    "history 21 raw-word copies plus observed little-endian local DWORD and zero store, not selector or matrix provider"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
@@ -343,7 +345,9 @@
     "status": "awaiting_review",
     "code_commits": [
       "35b8ada",
-      "47af79a"
+      "47af79a",
+      "14cc881",
+      "46c1738"
     ],
     "report": "evidence/wave6/verification.json",
     "full_tasks_closed": [],

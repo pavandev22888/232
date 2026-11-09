@@ -15,7 +15,7 @@ PR: https://github.com/pavandev22888/232/pull/1
 
 Цель — восстановить полную ОРИГИНАЛЬНУЮ логику Ragebot на её ИСХОДНОМ ЯЗЫКЕ
 вместе с необходимыми зависимостями, не написать типового бота. Обязательный
-C17-порт был ошибкой и отменён. Текущие девять C++17-модулей — ограниченная
+C17-порт был ошибкой и отменён. Текущие C++17-модули — ограниченная
 офлайн-реконструкция; язык/стандарт/ABI всего оригинального контура не доказаны.
 C01–C04 superseded: не продолжай их как обязательную миграцию.
 
@@ -32,20 +32,25 @@ C01–C04 superseded: не продолжай их как обязательну
    вложения из старого чата. Если HANDOFF уже есть, не распаковывай поверх него.
    Задай абсолютный HANDOFF, обеспечь нужный Git baseline и выполни свой make check
    и проверки целостности. Нельзя выдавать старые PASS за свежие.
-4. Возьми координацию. В реестре снимка W5 нет ready/in_progress; не жди готового
-   назначения. После сверки владельцев создай новую ограниченную карточку
-   NEXT-AGGREGATE (или другой свободный ID) с owner, actual base SHA, write paths,
+4. Возьми координацию. Сверь текущие W6-статусы, а не только снимок W5.
+   После сверки владельцев создай новую ограниченную карточку со свободным ID,
+   owner, actual base SHA, write paths,
    зависимостями, acceptance и stop condition. Не дублируй активную чужую работу.
-5. Первый участок: non-direct callback branch 0x4149E7B1 из
-   continuation/evidence/wave5/aggregate/contract.json. Установи typed inputs,
+5. Non-direct callback 0x4149E7B1, tail statistics и initial copy при C0==0
+   уже реализованы в W6; не начинай их заново. Следующий callback frontier —
+   ranking при ненулевом owner+C0 после 0x4149E9BD; смотри
+   continuation/evidence/wave6/aggregate/contract.json. Установи typed inputs,
    условия и один локальный эффект свежими bytes/decodes. При достаточном
    доказательстве добавь читаемое тело и native/sanitizer/byte tests. Сохрани
    существующий direct-prefix/F0 API; counter increment до non-direct ветви
-   не превращай в rollback. Unknown index handler и callback tail не выдумывай.
+   не превращай в rollback. Settings provider, unknown index handler
+   0x4149EC2D и недоказанный ranking не выдумывай.
 6. Если упёрся в конкретный недоказанный provider, сохрани новый frontier и
-   переходи к следующему независимому участку: callback-tail store, reset
-   predecessor, enclosing message consumer, затем geometry/damage/history/modes
-   и прочим строкам HANDOFF. Не гоняй заново уже завершённые широкие поиски.
+   переходи к следующему независимому участку из актуальных TASKS/STATUS.
+   W6 reset predecessor и отдельные release observations не повторять;
+   их остаток — EAX provider, полный entry predicate и scheduling.
+   Message/geometry остановлены на конкретных runtime bindings, не на
+   отсутствующем типовом алгоритме. Не гоняй заново завершённые широкие поиски.
    Цель — закрывать зависимости и добавлять доказанную исходную логику, а не
    бесконечно увеличивать число отчётов без реализации.
 7. При доступном делегировании распараллель независимые участки и ревью по
