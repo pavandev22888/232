@@ -2137,6 +2137,26 @@
         "Independent fixed integrated SHA review and coordinator make check."
       ],
       "stop_condition": "One contiguous dependency/body or precise new frontier. Do not repeat completed searches, invent defaults, promote full GAPs, alter common status/Makefile, push or merge."
+    },
+    {
+      "id": "W8-RESET",
+      "owner": "primary-coordinator",
+      "status": "in_progress",
+      "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+      "worktree": "/tmp/hoplite/workspace/runs/worktrees/w8-reset",
+      "branch": "hoplite/tanagra-adb72df5--w8-reset",
+      "write_paths": [
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_table.cpp",
+        "continuation/evidence/wave8/reset/"
+      ],
+      "scope": "New immediate EAX source at 0x415DEBDE resolves six iterations of local reset table; compose existing body/fallthrough projections, not full reset entry/scheduling.",
+      "acceptance": [
+        "Pinned immediate source and contiguous loop bytes.",
+        "Raw six-record preservation tests, native/sanitizers and integrated fixed-SHA review."
+      ],
+      "stop_condition": "Six-iteration local table plus accepted fallthrough stores; no external caller or scheduling inference."
     }
   ],
   "goal_correction": {
