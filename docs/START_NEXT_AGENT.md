@@ -33,23 +33,23 @@ C01–C04 superseded: не продолжай их как обязательну
    вложения из старого чата. Если HANDOFF уже есть, не распаковывай поверх него.
    Задай абсолютный HANDOFF, обеспечь нужный Git baseline и выполни свой make check
    и проверки целостности. Нельзя выдавать старые PASS за свежие.
-4. Возьми координацию. Сверь текущие W7-статусы, а не только снимок W5.
+4. Возьми координацию. Сверь текущие W8-статусы, а не только снимок W5.
    После сверки владельцев создай новую ограниченную карточку со свободным ID,
    owner, actual base SHA, write paths,
    зависимостями, acceptance и stop condition. Не дублируй активную чужую работу.
-5. W7 normal ranking tail после 0x4149E9BD, reset snapshot, existing-slot
-   history resolver, movement caller и hitgroup-3 arm уже реализованы; не
-   начинай их повторно. Сначала прочитай continuation/evidence/wave7/README.md
-   и verification.json. Следующая ограниченная callback-зависимость — реальный
-   owner+4→+B0 provider или handler 0x4149EC2D, только при конкретном новом
-   source anchor. Выбери один source→transform→consumer участок, зафиксируй
-   bytes/decodes, inputs, assumptions и unknowns. При достаточной опоре добавь
-   тело и native/sanitizer/byte tests; иначе сохрани точный новый frontier.
-   Сохрани direct-prefix/F0 API, increment до non-direct ветви и per-path
-   observation requirements. Не подменяй provider удобным значением.
+5. Прочитай continuation/evidence/wave8/README.md и verification.json.
+   Callback/raw32, damage switch, movement predicate, message receiver-prefix,
+   geometry consumer, reset table, history growth, ESI proof и angle/shot/queue
+   slices уже реализованы в ограниченных контрактах. Не повторяй их по W5/W7.
+   Выбери один новый frontier: например null-slot allocator 0x41DA7BAC,
+   damage initializer 0x41370B4B или конкретный queue enqueue/wait provider.
+   Это варианты, не автоматические назначения. Нужны новый source anchor,
+   source→transform→consumer, bytes/decodes, assumptions и unknowns.
+   При достаточной опоре добавь тело и native/sanitizer/byte tests; иначе
+   сохрани точную недостающую связь. Не подставляй удобные providers.
 6. Если упёрся в конкретный недоказанный provider, сохрани новый frontier и
    переходи к следующему независимому участку из актуальных TASKS/STATUS.
-   W7 reset projection и прежние release observations не повторять;
+   W8 reset table и прежние release observations не повторять;
    их остаток — EAX provider, полный entry predicate и scheduling.
    Message/geometry остановлены на конкретных runtime bindings, не на
    отсутствующем типовом алгоритме. Не гоняй заново завершённые широкие поиски.
