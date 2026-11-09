@@ -10,6 +10,7 @@
 using rage::offline::ChargeCapacity;
 using rage::offline::ChargeCapacityInput;
 using rage::offline::ChargeObservation;
+using rage::offline::ChargeResetSnapshot;
 using rage::offline::ChargeState;
 using rage::offline::SmallGateInput;
 
@@ -302,6 +303,52 @@ void test_explicit_reset_and_relatch()
     check(state.mode_latched && state.small_gate_result,
           "zero does not reset relatched mode and cleared C permits gate");
 }
+
+void test_full_local_reset_snapshot()
+{
+    constexpr std::array<std::uint8_t ChargeResetSnapshot::*, 3> bytes{{
+        &ChargeResetSnapshot::byte_425009bc,
+        &ChargeResetSnapshot::byte_4223f42c,
+        &ChargeResetSnapshot::byte_425009d4
+    }};
+    constexpr std::array<std::uint32_t ChargeResetSnapshot::*, 8> dwords{{
+        &ChargeResetSnapshot::dword_424b1c74,
+        &ChargeResetSnapshot::dword_42502ba0,
+        &ChargeResetSnapshot::dword_425057f8,
+        &ChargeResetSnapshot::dword_4250097c,
+        &ChargeResetSnapshot::dword_42506f24,
+        &ChargeResetSnapshot::dword_42505850,
+        &ChargeResetSnapshot::dword_425056e4,
+        &ChargeResetSnapshot::dword_4250853c
+    }};
+    for (const auto byte : {std::uint8_t{0}, std::uint8_t{0x80},
+                           std::uint8_t{0xff}}) {
+        for (const auto dword : {0u, 0x80000000u, 0xffffffffu}) {
+            struct {
+                std::uint32_t before;
+                ChargeResetSnapshot snapshot;
+                std::uint32_t after;
+            } guarded{0x12345678u, {}, 0xabcdef01u};
+            for (const auto field : bytes)
+                guarded.snapshot.*field = byte;
+            for (const auto field : dwords)
+                guarded.snapshot.*field = dword;
+
+            for (int repetition = 0; repetition < 2; ++repetition) {
+                rage::offline::apply_full_local_charge_reset(guarded.snapshot);
+                for (const auto field : bytes)
+                    check(guarded.snapshot.*field == 0,
+                          "full local reset clears raw BYTE, including high bit");
+                for (const auto field : dwords)
+                    check(guarded.snapshot.*field == 0,
+                          "full local reset clears entire DWORD");
+                check(guarded.before == 0x12345678u &&
+                      guarded.after == 0xabcdef01u,
+                      "full local reset preserves surrounding storage");
+            }
+        }
+    }
+}
 } // namespace
 
 int main()
@@ -313,6 +360,7 @@ int main()
     test_raw_mode_byte_branches();
     test_reset_slice_projection();
     test_explicit_reset_and_relatch();
+    test_full_local_reset_snapshot();
     if (failures != 0) {
         std::cerr << failures << " of " << checks << " checks failed\n";
         return 1;

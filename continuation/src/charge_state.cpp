@@ -5,6 +5,7 @@
 
 namespace rage::offline {
 namespace {
+static_assert(sizeof(std::uint8_t) == 1);
 static_assert(sizeof(std::int32_t) == 4);
 static_assert(sizeof(std::uint32_t) == 4);
 static_assert(std::numeric_limits<std::int32_t>::is_signed);
@@ -99,6 +100,21 @@ void apply_charge_reset_slice(ChargeState& state, SmallGateInput& gate)
     state.mode_latched = false;
     gate.guard_c = false;
     gate.previous_counter = 0;
+}
+
+void apply_full_local_charge_reset(ChargeResetSnapshot& snapshot)
+{
+    snapshot.byte_425009bc = 0;
+    snapshot.byte_4223f42c = 0;
+    snapshot.dword_424b1c74 = 0;
+    snapshot.dword_42502ba0 = 0;
+    snapshot.dword_425057f8 = 0;
+    snapshot.dword_4250097c = 0;
+    snapshot.dword_42506f24 = 0;
+    snapshot.byte_425009d4 = 0;
+    snapshot.dword_42505850 = 0;
+    snapshot.dword_425056e4 = 0;
+    snapshot.dword_4250853c = 0;
 }
 
 void compose_charge_model_step(ChargeState& state,
