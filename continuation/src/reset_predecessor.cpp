@@ -4,6 +4,9 @@ namespace rage::offline {
 namespace {
 constexpr std::uint32_t kCursorStride = 0xc8u;
 constexpr std::uint32_t kCursorEnd = 0x4250309cu;
+constexpr std::uint32_t kTableStart = 0x42502becu;
+static_assert(kCursorEnd - kTableStart ==
+              kResetTableRecordCount * kCursorStride);
 
 constexpr std::array<ResetFallthroughStore, 4> kFallthroughStores{{
     {0x424fdda8u, 0xffffffffu, ResetStoreWidth::dword},
@@ -22,6 +25,17 @@ constexpr bool enters_reset_block(std::uint32_t eax_before_add)
     return eax_before_add + kCursorStride == kCursorEnd;
 }
 } // namespace
+
+ResetTableSnapshot apply_reset_table_snapshot(const ResetTableSnapshot& snapshot)
+{
+    auto result = snapshot;
+    for (auto& record : result.records)
+        record = apply_reset_body_record(record);
+    ResetPredecessorRecord trace{};
+    apply_reset_predecessor_projection(kCursorEnd - kCursorStride,
+                                      result.globals, trace);
+    return result;
+}
 
 ResetBodySnapshot apply_reset_body_record(
     const ResetBodySnapshot& snapshot)

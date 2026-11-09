@@ -1,0 +1,35 @@
+{
+  "task": "W8-RESET",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "status": "awaiting_integrated_review",
+  "cwd": "/tmp/hoplite/workspace/runs/worktrees/w8-reset",
+  "checks": [
+    {
+      "command": "g++ -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/reset_predecessor.cpp continuation/src/charge_state.cpp continuation/tests/test_reset_table.cpp -o runs/w8-reset/test && runs/w8-reset/test",
+      "exit_code": 0,
+      "log": "runs/w8-reset/native.log",
+      "sha256": "1f4dbb6c3b0dfcc65a09519661d10e05deda90bdbf15523f6ab89504cc30f173",
+      "output": "3622 reset table checks, 0 failures"
+    },
+    {
+      "command": "g++ -std=c++17 -O1 -fno-omit-frame-pointer -fsanitize=address,undefined -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/reset_predecessor.cpp continuation/src/charge_state.cpp continuation/tests/test_reset_table.cpp -o runs/w8-reset/test_sanitize && ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 runs/w8-reset/test_sanitize",
+      "exit_code": 0,
+      "log": "runs/w8-reset/sanitize.log",
+      "sha256": "1f4dbb6c3b0dfcc65a09519661d10e05deda90bdbf15523f6ab89504cc30f173",
+      "output": "3622 reset table checks, 0 failures"
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave8/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0,
+      "log": "runs/w8-reset/static.log",
+      "sha256": "185e3479557be1d9695f9381d293c9a13edda9963ee400265598a5306b22ccd1",
+      "output": "PASS: immediate EAX source, 25 ordered stores, stride/end/back-edge, six records"
+    }
+  ],
+  "tooling": {
+    "compiler": "g++ 13.3.0",
+    "python": "3.12.3",
+    "objdump": "2.42"
+  },
+  "original_executed": false
+}
