@@ -1,0 +1,57 @@
+{
+  "review_base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+  "tasks": [
+    {
+      "id": "W8-REVIEW-FLOW",
+      "owner": "w8-review-flow",
+      "status": "in_progress",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-flow",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-flow",
+      "write_paths": [
+        "continuation/evidence/wave8/review-flow/"
+      ],
+      "scope": "Damage switch, movement predicate/caller and geometry postcall; exact float/unordered/store behavior, site-specific provider observations and source bytes. Check x86 compiler assumptions and nonvolatile MULSS inline asm versus claimed MXCSR semantics.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+    },
+    {
+      "id": "W8-REVIEW-STATE",
+      "owner": "w8-review-state",
+      "status": "in_progress",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-state",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-state",
+      "write_paths": [
+        "continuation/evidence/wave8/review-state/"
+      ],
+      "scope": "Callback context/settings/owner raw32 reads, message receiver, reset six-record table; actual byte provenance, address wrapping, identity, widths, store order and stop boundaries. History may arrive separately for fixed-SHA followup.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+    },
+    {
+      "id": "W8-REVIEW-EVIDENCE",
+      "owner": "w8-review-evidence",
+      "status": "in_progress",
+      "base_commit": "bcc5918568c162482b7ec4e1fd7ca7ec48d58940",
+      "worktree": "/tmp/hoplite/232-w8-review-evidence",
+      "branch": "hoplite/tanagra-adb72df5--w8-review-evidence",
+      "write_paths": [
+        "continuation/evidence/wave8/review-evidence/"
+      ],
+      "scope": "Independently assess audit history/ref/publication facts and provider ESI proof, all W8 evidence quality/static gates, regression claims and unproven full-goal boundaries. No source-language overclaims.",
+      "acceptance": [
+        "Independent fixed SHA source/implementation review with fresh focused tests/static gates.",
+        "Report blocking findings or bounded acceptance; never edit reviewed code."
+      ],
+      "stop_condition": "One report with source support and exact commands/exits, no original execution or full-GAP promotion."
+    }
+  ],
+  "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+}
