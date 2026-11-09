@@ -1,0 +1,59 @@
+{
+  "task": "W7-RANK",
+  "status": "awaiting_independent_review",
+  "entry": "0x4149E9BD after accepted score/statistics; owner ESI loaded from accumulator EAX+0; candidate EDX; incoming tail CL saved in EDI",
+  "exit": "0x4149EB28 normal epilogue; static local CFG through 0x4149EC28 only. Unknown index handler 0x4149EC2D excluded.",
+  "api": "rank_callback_point(before, point, accumulator_05, accumulator_08, tail_cl, optional owner_flags_b0)",
+  "input_layout": {
+    "before": "80 raw bytes owner+70..BF plus raw BYTE C0; saved point fields at +70+offset",
+    "candidate": "80 raw bytes point+00..4F, little endian; DWORD +1C/+28/+2C/+30, BYTE +21/+22/+23/+25, float +34/+38/+3C",
+    "flags": "BYTE from owner+4 -> pointee+B0, bit 4. Absent observation returns unresolved only on a path that reads it; not zero and not a runtime provider.",
+    "accumulator": "raw BYTE +05 and +08; low CL carried from accepted prefix, not inferred from accumulator+07 after gates"
+  },
+  "effects": [
+    {
+      "range": "4149E9BD..4149EA3F",
+      "claim": "C0==0 uses accepted initial 0x50-byte copy then C0=1; nonzero C0 keeps raw C0 unchanged."
+    },
+    {
+      "range": "4149E9C8..4149EA60",
+      "claim": "When accumulator+08!=0: bit4 swaps priorities of raw +25 difference and signed +28>=3 versus saved +28<3. Branch to EAB5 tests low BL, not normalized equality of +25 bytes."
+    },
+    {
+      "range": "4149EA60..4149EAB9",
+      "claim": "If incoming CL nonzero and direct kind class (DWORD & fffffffe)==2 differs, prefer candidate direct class. Then compare (+23!=0 && +25!=0); unequal pair prefers candidate true."
+    },
+    {
+      "range": "4149EB30..4149EB72",
+      "claim": "SUB wraps DWORD +30 difference; NEG/CMOVS yields unsigned magnitude including 80000000. Limit is 0 or 1 from (both +23 nonzero)||accumulator+05!=0; unsigned magnitude>limit prefers only ordered greater candidate damage."
+    },
+    {
+      "range": "4149EB72..4149EBA4",
+      "claim": "Single binary32 chance subtraction, ANDPS abs mask; ordered abs(delta)>5 uses ordered greater candidate chance. Equality and unordered abs(delta) enter subsequent tie logic."
+    },
+    {
+      "range": "4149EBA4..4149EBDE and 4149EC15..4149EC20",
+      "claim": "Bit4 determines signed DWORD lexicographic priority +28 then +2C or +2C then +28. JG consumes flags of the last differing CMP."
+    },
+    {
+      "range": "4149EBDE..4149EC2D",
+      "claim": "Nonzero ordered delta uses chance comparison; unordered delta falls through like zero. Raw +21 then +22 difference prefers nonzero candidate byte. Otherwise ordered saved+38>=candidate+38 retains; less or unordered proceeds to ordered damage comparison."
+    },
+    {
+      "range": "4149EAB9..4149EB28",
+      "claim": "Replacement copies 0x50 bytes: six DWORDs +00..14, 16-byte blocks +18/+28/+38, QWORD +48. MOVSS/MOVUPS/MOVSD copy bits, not numeric conversion."
+    }
+  ],
+  "preconditions": [
+    "Reached stated interior entry; valid stable point/owner/accumulator and +4->+B0 if that path reads it. Non-overlapping raw source/destination and no concurrent or observable intermediate stores.",
+    "Memory byte snapshots use little endian. Raw +28/+2C comparisons signed 32-bit; +30 operations modulo 2^32 with unsigned magnitude compare.",
+    "Binary32 masked round-to-nearest, no FTZ/DAZ, no fast-math/contraction. sNaNs in compared/arithmetic fields, FP traps/flags and arithmetic NaN payload selection excluded. Copying arbitrary raw words, including sNaN patterns, supported."
+  ],
+  "unresolved": [
+    "Runtime owner+4/B0 binding, settings chain, invocation reachability/lifetime and same-object ordering.",
+    "Index handler 4149EC2D, enumeration and complete selector including T+E8/+EC and first-positive fields.",
+    "Original source language/standard, complete ABI, whole-program equivalence and external audit."
+  ],
+  "tests": "test_bounded_aggregation.cpp: preserves prior prefix/F0/statistics cases; raw-byte, signed boundaries, priority swaps, wrap/INT_MIN, optional flags per-read, 5.0 boundary/nextafter, qNaN/Inf/±0/subnormal, tie bytes and 80-byte replacement/C0 preservation.",
+  "not_claimed": "This reconstructs the local normal ranking tail given observations; not full Ragebot or provider recovery."
+}

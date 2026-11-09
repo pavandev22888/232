@@ -1,0 +1,35 @@
+{
+  "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+  "scope": "uncommitted W7 rank candidate, not final integrated SHA",
+  "commands": [
+    "make -C continuation build/test_bounded_aggregation build/test_bounded_aggregation_sanitize",
+    "continuation/build/test_bounded_aggregation",
+    "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 continuation/build/test_bounded_aggregation_sanitize",
+    "python3 -B continuation/evidence/wave7/rank/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+  ],
+  "logs": {
+    "build": {
+      "path": "runs/w7/rank/build.log",
+      "sha256": "d0420c7c54087b4abce6caaad89ab58a54ddbe2d4ebc22ec52d16e34cab24a9f",
+      "exit_code": 0
+    },
+    "native": {
+      "path": "runs/w7/rank/native.log",
+      "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4",
+      "exit_code": 0
+    },
+    "sanitize": {
+      "path": "runs/w7/rank/sanitize.log",
+      "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4",
+      "exit_code": 0
+    },
+    "static": {
+      "path": "runs/w7/rank/static.log",
+      "sha256": "d55acd0cde97a8e5726671721c0b41254f0bacb0ac6e62aca7bff4b5f110e5e0",
+      "exit_code": 0
+    }
+  },
+  "native_and_sanitized_assertions_each": 23002,
+  "independent_review": "pending",
+  "original_executed_loaded_emulated": false
+}

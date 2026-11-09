@@ -252,6 +252,138 @@ void tail_statistics_and_initial_copy()
     CHECK(!initialize_callback_point(1, raw));
     CHECK(!initialize_callback_point(0xff, raw));
 }
+void ranking_tail()
+{
+    using Raw = std::array<std::uint8_t, 0x50>;
+    const auto put = [](Raw& raw, std::size_t offset, std::uint32_t value) {
+        for (unsigned i = 0; i < 4; ++i)
+            raw[offset + i] = static_cast<std::uint8_t>(value >> (8 * i));
+    };
+    const auto fput = [&](Raw& raw, std::size_t offset, float value) { put(raw, offset, bits(value)); };
+    const auto run = [&](const Raw& current, const Raw& point, std::uint8_t a5,
+                         std::uint8_t a8, std::uint8_t cl, std::optional<std::uint8_t> flags,
+                         CallbackRankStop stop, bool replace, std::uint8_t c0 = 0x80) {
+        const CallbackInitialPoint before{current, c0};
+        const auto result = rank_callback_point(before, point, a5, a8, cl, flags);
+        CHECK(result.stop == stop);
+        CHECK(result.replaced == replace);
+        CHECK(result.after.owner_c0 == (c0 == 0 ? 1 : c0));
+        CHECK(result.after.owner_70_bf == (replace ? point : current));
+        CHECK(before.owner_70_bf == current && before.owner_c0 == c0);
+    };
+    const auto done = CallbackRankStop::return_4149eb28;
+    const auto missing = CallbackRankStop::owner_flags_b0_unresolved;
+    Raw saved{}, point{};
+    for (std::size_t i = 0; i < point.size(); ++i)
+        point[i] = static_cast<std::uint8_t>(i * 17 + 3);
+    run(saved, point, 0, 0, 0, std::nullopt, done, true, 0);
+    run(saved, point, 0, 1, 0, std::nullopt, missing, false);
+
+    // Raw byte priority differs from boolean pair priority; flag 4 swaps priorities.
+    for (const auto flags : {0u, 4u, 0xffu})
+        for (const auto p25 : {0u, 1u, 2u, 0x80u, 0xffu})
+            for (const auto s25 : {0u, 1u, 2u, 0x80u, 0xffu})
+                for (const auto p28 : {0xffffffffu, 2u, 3u, 0x7fffffffu, 0x80000000u})
+                    for (const auto s28 : {2u, 3u, 0x80000000u}) {
+                        saved = {}; point = {};
+                        saved[0x25] = s25; point[0x25] = p25;
+                        put(saved, 0x28, s28); put(point, 0x28, p28);
+                        put(point, 0x30, 2); fput(point, 0x3c, -1);
+                        const bool pg = p28 >= 3 && p28 < 0x80000000u;
+                        const bool sg = s28 >= 3 && s28 < 0x80000000u;
+                        bool win = false;
+                        if ((flags & 4u) != 0 && pg != sg) win = pg;
+                        else if (p25 != s25) win = p25 != 0;
+                        else if (pg != sg) win = pg;
+                        run(saved, point, 0, 0xff, 0, static_cast<std::uint8_t>(flags), done, win);
+                    }
+    // The early kind/pair decisions need no B0 observation when +08 is zero.
+    for (const auto pk : {0u, 1u, 2u, 3u, 0x80000002u})
+        for (const auto sk : {0u, 2u, 3u})
+            for (const auto cl : {0u, 1u, 0xffu}) {
+                saved = {}; point = {};
+                put(saved, 0x1c, sk); put(point, 0x1c, pk);
+                put(point, 0x30, 2); fput(point, 0x3c, -1);
+                const bool pd = pk == 2 || pk == 3, sd = sk == 2 || sk == 3;
+                run(saved, point, 0, 0, cl, std::nullopt, done, cl != 0 && pd != sd && pd);
+            }
+    for (const auto p23 : {0u, 2u, 0xffu})
+        for (const auto s23 : {0u, 0x80u})
+            for (const auto p25 : {0u, 0x80u})
+                for (const auto s25 : {0u, 0xffu}) {
+                    saved = {}; point = {};
+                    saved[0x23] = s23; point[0x23] = p23;
+                    saved[0x25] = s25; point[0x25] = p25;
+                    put(point, 0x30, 2); fput(point, 0x3c, -1);
+                    run(saved, point, 0, 0, 0, std::nullopt, done,
+                        (p23 != 0 && p25 != 0) && !(s23 != 0 && s25 != 0));
+                }
+    struct DifferenceCase { std::uint32_t p, s, magnitude; };
+    for (const auto c : {DifferenceCase{0, 0, 0}, {1, 0, 1}, {0, 1, 1},
+                         {0, 0xffffffffu, 1}, {0x80000000u, 0, 0x80000000u},
+                         {0, 0x80000000u, 0x80000000u}, {0x7fffffffu, 0xffffffffu, 0x80000000u}})
+        for (const auto a5 : {0u, 0x80u})
+            for (const bool paired : {false, true}) {
+                saved = {}; point = {};
+                if (paired) saved[0x23] = point[0x23] = 0x80;
+                put(saved, 0x30, c.s); put(point, 0x30, c.p);
+                fput(point, 0x3c, 1);
+                const bool wide = c.magnitude > static_cast<unsigned>(a5 != 0 || paired);
+                run(saved, point, a5, 0, 0, std::nullopt, wide ? done : missing, wide);
+            }
+    // Near chance threshold, signed +28/+2C comparison precedes the finer chance test.
+    for (const auto flags : {0u, 4u}) {
+        saved = {}; point = {};
+        put(point, 0x28, 2); put(saved, 0x28, 3);
+        put(point, 0x2c, 1); put(saved, 0x2c, 0xffffffffu);
+        fput(point, 0x34, 5.0f);
+        run(saved, point, 0, 0, 0, flags, done, flags == 0);
+        fput(point, 0x34, std::nextafter(5.0f, 6.0f));
+        run(saved, point, 0, 0, 0, std::nullopt, done, true);
+        fput(point, 0x34, -std::nextafter(5.0f, 6.0f));
+        run(saved, point, 0, 0, 0, std::nullopt, done, false);
+    }
+    for (const auto offset : {0x28u, 0x2cu})
+        for (const auto pv : {0u, 0x7fffffffu, 0x80000000u, 0xffffffffu})
+            for (const auto sv : {0u, 0x7fffffffu, 0x80000000u, 0xffffffffu}) {
+                saved = {}; point = {};
+                put(point, offset, pv); put(saved, offset, sv);
+                run(saved, point, 0, 0, 0, 0, done, (pv ^ 0x80000000u) > (sv ^ 0x80000000u));
+            }
+    const float qnan = from_bits(0x7fc01234u), inf = std::numeric_limits<float>::infinity();
+    struct ChanceCase { float p, s; bool win; };
+    for (const auto c : {ChanceCase{1, 0, true}, {-1, 0, false}, {from_bits(1), 0, true},
+                         {-0.0f, 0.0f, false}, {inf, 0, true}, {0, inf, false},
+                         {qnan, 0, false}, {0, qnan, false}, {inf, inf, false}}) {
+        saved = {}; point = {};
+        fput(point, 0x34, c.p); fput(saved, 0x34, c.s);
+        run(saved, point, 0, 0, 0, 0, done, c.win);
+    }
+    // Unordered delta follows equality into byte tie-breaks (not C++ NaN != 0).
+    for (const auto offset : {0x21u, 0x22u})
+        for (const auto pv : {0u, 2u, 0x80u})
+            for (const auto sv : {0u, 1u, 0xffu}) {
+                saved = {}; point = {};
+                point[offset] = pv; saved[offset] = sv;
+                fput(point, 0x34, qnan);
+                run(saved, point, 0, 0, 0, 0, done, pv != sv && pv != 0);
+            }
+    for (const auto p38 : {0.0f, 1.0f, -1.0f, qnan})
+        for (const auto s38 : {0.0f, qnan})
+            for (const auto damage : {1.0f, -1.0f, qnan, inf}) {
+                saved = {}; point = {};
+                fput(point, 0x38, p38); fput(saved, 0x38, s38);
+                fput(point, 0x3c, damage);
+                run(saved, point, 0, 0, 0, 4, done, !(s38 >= p38) && damage > 0);
+            }
+    // Replacement preserves every raw bit and the existing noncanonical C0 byte.
+    saved = {};
+    for (std::size_t i = 0; i < point.size(); ++i)
+        point[i] = static_cast<std::uint8_t>(i * 23 + 11);
+    point[0x25] = 0x80;
+    put(point, 0x00, 0x7fa01234u); put(point, 0x04, 0x80000000u);
+    run(saved, point, 0, 1, 0, 0, done, true, 0xff);
+}
 } // namespace
 
 int main()
@@ -262,5 +394,6 @@ int main()
     finalizer();
     non_direct_prefix();
     tail_statistics_and_initial_copy();
+    ranking_tail();
     std::cout << assertions << " bounded aggregation assertions passed\n";
 }

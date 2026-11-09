@@ -1,6 +1,7 @@
 #include "rage/bounded_aggregation.hpp"
 
 #include <cfloat>
+#include <cstring>
 #include <limits>
 
 namespace rage::offline {
@@ -130,6 +131,112 @@ std::optional<CallbackInitialPoint> initialize_callback_point(
             result.owner_70_bf[offset + i] = point[offset + i];
     result.owner_c0 = 1;
     return result;
+}
+
+CallbackRankResult rank_callback_point(
+    const CallbackInitialPoint& before,
+    const std::array<std::uint8_t, 0x50>& point,
+    std::uint8_t accumulator_05, std::uint8_t accumulator_08,
+    std::uint8_t tail_cl, std::optional<std::uint8_t> owner_flags_b0)
+{
+    if (before.owner_c0 == 0)
+        return {*initialize_callback_point(0, point), CallbackRankStop::return_4149eb28, true};
+
+    const auto& saved = before.owner_70_bf;
+    const auto word = [](const auto& bytes, std::size_t offset) {
+        return std::uint32_t{bytes[offset]} | (std::uint32_t{bytes[offset + 1]} << 8) |
+            (std::uint32_t{bytes[offset + 2]} << 16) | (std::uint32_t{bytes[offset + 3]} << 24);
+    };
+    const auto scalar = [&](const auto& bytes, std::size_t offset) {
+        const auto raw = word(bytes, offset);
+        float value;
+        std::memcpy(&value, &raw, sizeof(value));
+        return value;
+    };
+    const auto signed_key = [](std::uint32_t value) { return value ^ 0x80000000u; };
+    const auto finish = [&](bool replace) {
+        CallbackRankResult result{before, CallbackRankStop::return_4149eb28, replace};
+        if (replace) {
+            // EAB9..EB28: six DWORDs, three 16-byte blocks, then one QWORD.
+            const auto copy = [&](std::size_t offset, std::size_t count) {
+                for (std::size_t i = 0; i < count; ++i)
+                    result.after.owner_70_bf[offset + i] = point[offset + i];
+            };
+            for (std::size_t offset = 0; offset < 0x18; offset += 4)
+                copy(offset, 4);
+            for (const auto offset : {0x18u, 0x28u, 0x38u})
+                copy(offset, 16);
+            copy(0x48, 8);
+        }
+        return result;
+    };
+    const auto unresolved = [&] {
+        return CallbackRankResult{before, CallbackRankStop::owner_flags_b0_unresolved, false};
+    };
+    const bool point_ge3 = signed_key(word(point, 0x28)) >= signed_key(3u);
+    const bool saved_lt3 = signed_key(word(saved, 0x28)) < signed_key(3u);
+    if (accumulator_08 != 0) {
+        if (!owner_flags_b0)
+            return unresolved();
+        if ((*owner_flags_b0 & 4u) == 0) {
+            if (point[0x25] != saved[0x25])
+                return finish(point[0x25] != 0);
+            if (point_ge3 == saved_lt3)
+                return finish(point_ge3);
+        } else {
+            if (point_ge3 == saved_lt3)
+                return finish(point_ge3);
+            if (point[0x25] != saved[0x25])
+                return finish(point[0x25] != 0);
+        }
+    }
+    const bool point_direct = (word(point, 0x1c) & 0xfffffffeu) == 2u;
+    const bool saved_direct = (word(saved, 0x1c) & 0xfffffffeu) == 2u;
+    if (tail_cl != 0 && point_direct != saved_direct)
+        return finish(point_direct);
+    const bool point_pair = point[0x23] != 0 && point[0x25] != 0;
+    const bool saved_pair = saved[0x23] != 0 && saved[0x25] != 0;
+    if (point_pair != saved_pair)
+        return finish(point_pair);
+
+    const std::uint32_t difference = word(point, 0x30) - word(saved, 0x30);
+    // SUB/NEG/CMOVS forms an unsigned magnitude, including 0x80000000.
+    const std::uint32_t magnitude = (difference & 0x80000000u) != 0 ? 0u - difference : difference;
+    const std::uint32_t limit = (point[0x23] != 0 && saved[0x23] != 0) || accumulator_05 != 0;
+    const auto damage_wins = [&] { return scalar(point, 0x3c) > scalar(saved, 0x3c); };
+    if (magnitude > limit)
+        return finish(damage_wins());
+
+    const float chance = scalar(point, 0x34);
+    const float saved_chance = scalar(saved, 0x34);
+    const float delta = chance - saved_chance;
+    std::uint32_t absolute_bits;
+    std::memcpy(&absolute_bits, &delta, sizeof(delta));
+    absolute_bits &= 0x7fffffffu;
+    float absolute_delta;
+    std::memcpy(&absolute_delta, &absolute_bits, sizeof(absolute_delta));
+    if (absolute_delta > 5.0f)
+        return finish(chance > saved_chance);
+    if (!owner_flags_b0)
+        return unresolved();
+
+    const std::size_t first = (*owner_flags_b0 & 4u) != 0 ? 0x28 : 0x2c;
+    const std::size_t second = first == 0x28 ? 0x2c : 0x28;
+    for (const auto offset : {first, second}) {
+        const auto candidate = word(point, offset);
+        const auto current = word(saved, offset);
+        if (candidate != current)
+            return finish(signed_key(candidate) > signed_key(current));
+    }
+    // UCOMISS/JNE falls through for both zero and unordered delta.
+    if (delta < 0.0f || delta > 0.0f)
+        return finish(chance > saved_chance);
+    for (const auto offset : {0x21u, 0x22u})
+        if (point[offset] != saved[offset])
+            return finish(point[offset] != 0);
+    if (scalar(saved, 0x38) >= scalar(point, 0x38))
+        return finish(false);
+    return finish(damage_wins());
 }
 
 } // namespace rage::offline

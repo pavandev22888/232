@@ -1842,6 +1842,30 @@
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
       "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+    },
+    {
+      "id": "W7-DAMAGE",
+      "owner": "w7-damage",
+      "status": "in_progress",
+      "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+      "worktree": "/tmp/hoplite/232-w7-damage",
+      "branch": "hoplite/sikyon-46eee495--w7-damage",
+      "write_paths": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/evidence/wave7/damage/"
+      ],
+      "scope": "Retry unimplemented NEXT-DAMAGE: one exact local case 4136FFA0/41370710 through result/store, typed inputs and FP order, no invented weapon/surface provider. Earlier execution limitation is not proof of unresolvable source.",
+      "dependencies": [
+        "W5-SCOPE"
+      ],
+      "acceptance": [
+        "Fresh hashes/bytes and typed source-transform-consumer.",
+        "Native/sanitizer tests plus byte gate if implementable.",
+        "Fixed integrated SHA independent review."
+      ],
+      "stop_condition": "One proved local body or specific new prerequisite frontier. No original loading/execution/emulation or broad repeat scanning."
     }
   ],
   "goal_correction": {

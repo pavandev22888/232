@@ -89,7 +89,26 @@ struct CallbackInitialPoint {
 std::optional<CallbackInitialPoint> initialize_callback_point(
     std::uint8_t owner_c0, const std::array<std::uint8_t, 0x50>& point);
 
-// Both APIs require binary32, round-to-nearest, no FTZ/DAZ or fast-math.
+enum class CallbackRankStop {
+    return_4149eb28,
+    owner_flags_b0_unresolved
+};
+
+struct CallbackRankResult {
+    CallbackInitialPoint after;
+    CallbackRankStop stop;
+    bool replaced;
+};
+
+// Entry at E9BD after score/statistics; +4->+B0 is an observation, not a provider.
+// Point and owner bytes are little-endian snapshots; no aliasing/concurrent writes.
+CallbackRankResult rank_callback_point(
+    const CallbackInitialPoint& before,
+    const std::array<std::uint8_t, 0x50>& point,
+    std::uint8_t accumulator_05, std::uint8_t accumulator_08,
+    std::uint8_t tail_cl, std::optional<std::uint8_t> owner_flags_b0);
+
+// The floating-point APIs require binary32, round-to-nearest, no FTZ/DAZ or fast-math.
 // sNaNs, NaN payload selection and observable FP traps/flags are out of scope.
 } // namespace rage::offline
 #endif
