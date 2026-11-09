@@ -384,6 +384,138 @@ void ranking_tail()
     put(point, 0x00, 0x7fa01234u); put(point, 0x04, 0x80000000u);
     run(saved, point, 0, 1, 0, 0, done, true, 0xff);
 }
+CallbackRaw32Region raw_word(std::uint32_t address, std::uint32_t word)
+{
+    return {address, {static_cast<std::uint8_t>(word),
+                      static_cast<std::uint8_t>(word >> 8),
+                      static_cast<std::uint8_t>(word >> 16),
+                      static_cast<std::uint8_t>(word >> 24)}};
+}
+
+void callback_context_initialization()
+{
+    std::array<std::uint8_t, 0x80> before;
+    for (std::size_t i = 0; i < before.size(); ++i)
+        before[i] = static_cast<std::uint8_t>(0xa5u ^ i);
+    for (const auto caller : {0u, 0x12345678u, 0xffffffe0u}) {
+        const auto after = initialize_callback_context32(before, caller);
+        auto expected = before;
+        for (const auto offset : {0x70u, 0x30u, 0x34u, 0x38u, 0x50u, 0x54u}) {
+            const std::uint32_t value = offset == 0x50u ? caller + 0x70u :
+                offset == 0x54u ? caller + 0x80u : 0;
+            for (std::size_t i = 0; i < 4; ++i)
+                expected[offset + i] = static_cast<std::uint8_t>(value >> (i * 8u));
+        }
+        for (std::size_t i = 0; i < before.size(); ++i)
+            CHECK(after[i] == expected[i]);
+    }
+    const auto after = initialize_callback_context32(before, 0x1000u);
+    const auto word = [&](std::size_t offset) {
+        return std::uint32_t{after[offset]} | (std::uint32_t{after[offset + 1]} << 8) |
+            (std::uint32_t{after[offset + 2]} << 16) | (std::uint32_t{after[offset + 3]} << 24);
+    };
+    CHECK(word(0x50) == 0x1070u && word(0x54) == 0x1080u);
+    CHECK(word(0x70) == 0 && word(0x38) == 0);
+    // The sum at S+98 is outside this projection and remains an independent observation.
+    const auto prefix = accumulate_direct_score_prefix(
+        {word(0x70), 7.0f}, {2, 10.0f, 100.0f});
+    CHECK(prefix && prefix->callback_count_bits == 1 && prefix->weighted_sum == 17.0f);
+    CHECK(word(0x38) == 0);
+}
+
+void raw32_dependencies()
+{
+    using Stop = CallbackSettingsReadStop;
+    std::vector<CallbackRaw32Region> memory;
+    const auto missing = [&](std::uint32_t address, std::uint8_t width,
+                             std::optional<std::uint32_t> index) {
+        const auto r = resolve_callback_settings32(memory);
+        CHECK(r.stop == Stop::memory_unobserved);
+        CHECK(r.missing && r.missing->address == address && r.missing->width == width);
+        CHECK(r.observation.has_value() == index.has_value());
+        if (index) {
+            CHECK(r.observation->index == *index);
+            CHECK(!r.observation->selected_flags);
+        }
+    };
+    missing(0x424f639cu, 4, std::nullopt);
+    memory.push_back({0x424f639cu, {0, 0x10, 0}});
+    missing(0x424f639cu, 4, std::nullopt);
+    memory[0] = raw_word(0x424f639cu, 0x1000u);
+    missing(0x1112cu, 4, std::nullopt);
+    memory.push_back(raw_word(0x1112cu, 0x2000u));
+    missing(0x22ccu, 4, std::nullopt);
+    memory.push_back(raw_word(0x22ccu, 15u));
+    const std::uint32_t slot = 0x1000u + 15u * 0x5d8u;
+    missing(slot + 0x1042cu, 1, 15u);
+    memory.push_back({slot + 0x1042cu, {255}});
+    missing(slot + 0x10424u + 255u * 4u, 4, 15u);
+    memory.push_back(raw_word(slot + 0x10424u + 255u * 4u, 0x8000000cu));
+    const auto resolved = resolve_callback_settings32(memory);
+    CHECK(resolved.stop == Stop::complete && !resolved.missing);
+    CHECK(resolved.observation->index == 15u);
+    CHECK(resolved.observation->selected_flags == 0x8000000cu);
+    const auto prefix = accumulate_callback_score_prefix(
+        {0xffffffffu, -0.0f}, {{1u, 10.0f, 100.0f}, 1, 2, 0},
+        {1, 2, 2, 1}, 1, 0xff, resolved.observation);
+    CHECK(prefix.stop == CallbackPrefixStop::score_tail_4149e988);
+    CHECK(prefix.after.callback_count_bits == 0 && prefix.after.weighted_sum == 10.0f);
+
+    for (const auto index : {16u, 17u, 0x80000000u, 0xffffffffu}) {
+        memory.resize(3);
+        memory[2] = raw_word(0x22ccu, index);
+        const auto r = resolve_callback_settings32(memory);
+        CHECK(r.stop == Stop::index_handler_4149ec2d && !r.missing);
+        CHECK(r.observation->index == index && !r.observation->selected_flags);
+        const auto p = accumulate_callback_score_prefix(
+            {1, -0.0f}, {{1u, 10.0f, 100.0f}, 1, 2, 0},
+            {1, 2, 2, 1}, 1, 1, r.observation);
+        CHECK(p.stop == CallbackPrefixStop::unknown_index_handler_4149ec2d);
+        CHECK(p.after.callback_count_bits == 2 && bits(p.after.weighted_sum) == 0x80000000u);
+    }
+
+    // Selector 2 aliases the low byte of the selected DWORD; it is not clamped.
+    for (const auto selector : {0u, 1u, 2u, 255u}) {
+        const std::uint32_t root = 0xfffefbe0u;
+        const std::uint32_t selector_address = root + 0x1042cu;
+        const std::uint32_t flags_address = root + 0x10424u + selector * 4u;
+        memory = {raw_word(0x424f639cu, root), raw_word(root + 0x1012cu, 0xfffffd34u),
+                  raw_word(0, 0)};
+        if (selector != 2u)
+            memory.push_back({selector_address, {static_cast<std::uint8_t>(selector)}});
+        memory.push_back(raw_word(flags_address, 0xaabbcc00u | selector));
+        const auto r = resolve_callback_settings32(memory);
+        CHECK(r.stop == Stop::complete && !r.missing);
+        CHECK(r.observation->index == 0);
+        CHECK(r.observation->selected_flags == (0xaabbcc00u | selector));
+    }
+
+    memory = {{0xfffffffeu, {0x50, 0xff}}, {0, {0xff, 0xff}}};
+    const auto crossing = resolve_callback_owner_flags32(memory, 0xfffffffau);
+    CHECK(!crossing.flags && crossing.missing->address == 0xfffffffeu &&
+          crossing.missing->width == 4);
+    memory.clear();
+    auto flags = resolve_callback_owner_flags32(memory, 0xfffffffdu);
+    CHECK(!flags.flags && flags.missing->address == 1 && flags.missing->width == 4);
+    // A DWORD may span adjacent snapshot regions without host alignment requirements.
+    memory = {{1, {0x50, 0xff}}, {3, {0xff, 0xff}}};
+    flags = resolve_callback_owner_flags32(memory, 0xfffffffdu);
+    CHECK(!flags.flags && flags.missing->address == 0 && flags.missing->width == 1);
+    memory.push_back({0, {0xff}});
+    flags = resolve_callback_owner_flags32(memory, 0xfffffffdu);
+    CHECK(flags.flags == 0xff && !flags.missing);
+    memory.back().bytes[0] = 0;
+    flags = resolve_callback_owner_flags32(memory, 0xfffffffdu);
+    CHECK(flags.flags == 0 && !flags.missing);
+
+    CallbackInitialPoint saved{};
+    saved.owner_c0 = 0x80;
+    std::array<std::uint8_t, 0x50> point{};
+    point[0x25] = 0x80;
+    const auto rank = rank_callback_point(saved, point, 0, 1, 0, flags.flags);
+    CHECK(rank.stop == CallbackRankStop::return_4149eb28 && rank.replaced);
+    CHECK(rank.after.owner_c0 == 0x80 && rank.after.owner_70_bf == point);
+}
 } // namespace
 
 int main()
@@ -395,5 +527,7 @@ int main()
     non_direct_prefix();
     tail_statistics_and_initial_copy();
     ranking_tail();
+    callback_context_initialization();
+    raw32_dependencies();
     std::cout << assertions << " bounded aggregation assertions passed\n";
 }

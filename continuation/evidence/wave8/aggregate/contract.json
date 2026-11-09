@@ -1,0 +1,59 @@
+{
+  "task": "W8-AGGREGATE",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "scope": "New contiguous caller context initialization, raw32 settings/owner read relations, and decode of the index handler into an exact new dependency frontier. Existing W5/W6/W7 APIs and normal ranking behavior unchanged.",
+  "source_to_transform_to_consumer": [
+    {
+      "source": "Caller ESI=S, interior arrival at 414A8361; raw S+00..7F projection",
+      "bytes": "414A8361..414A838C: four zero DWORD stores then two raw32 pointer stores, contiguous body newly reconstructed",
+      "transform": "In source order: DWORD[S+70]=0; DWORD[S+30]=0; DWORD[S+34]=0; DWORD[S+38]=0; DWORD[S+50]=S+70; DWORD[S+54]=S+80. Preserve all other projection bytes. Pointer addition is modulo 2^32.",
+      "consumer": "initialize_callback_context32 gives context at S+50. Caller 414A8D5F/62/68 passes ECX=S+50 and EDX=S+A0; callback 4149E795/797 reads/increments counter through [context], and E799/E7B1 reads accumulator=[context+4], owner=[accumulator]. Conditional on the context stores remaining unchanged, counter is S+70 and owner is DWORD[S+80], not S. The callback sum is accumulator+18=S+98, outside this projection and NOT initialized by the S+38 zero store. No intervening-call identity or writer of DWORD[S+80] is inferred."
+    },
+    {
+      "source": "DWORD[424F639C] -> root; DWORD[root+1012C] -> manager; DWORD[manager+2CC] -> unsigned index",
+      "bytes": "4149E7DF..4149E812, 4149E878..4149E8AB, 4149E8F4..4149E927 (exclusive ends)",
+      "transform": "Unsigned index>=16 branches to 4149EC2D before selector/flags reads. Otherwise slot=(root+index*5D8) mod 2^32; selector=BYTE[slot+1042C] zero-extended with no guard/mask; flags=DWORD[slot+10424+selector*4], little endian.",
+      "consumer": "resolve_callback_settings32 -> CallbackSettingsObservation -> existing accumulate_callback_score_prefix, including the existing unknown_index_handler_4149ec2d stop. Resolve only upon arrival at the interior settings-load block, not eagerly at callback entry."
+    },
+    {
+      "source": "Observed callback owner ESI; DWORD[owner+4] -> pointee; BYTE[pointee+B0] -> raw flags",
+      "bytes": "4149E9D4..4149E9DE and 4149EBA4..4149EBAE, both TEST bit 04; surrounding guards pinned",
+      "transform": "All effective-address additions modulo 2^32; DWORD pointer is decoded from four bytes, never cast to a host pointer; full BYTE preserved, including zero/noncanonical values.",
+      "consumer": "resolve_callback_owner_flags32.flags -> existing rank_callback_point owner_flags_b0. Missing read remains nullopt, never default zero. Same observed byte for both read sites requires a stable snapshot; no inferred caller-S identity or writer."
+    }
+  ],
+  "new_raw_layout_constraints": [
+    "Snapshot regions are disjoint stable non-wrapping ranges within the 32-bit address space. The vector and wrapper structs are offline storage, not asserted original layouts.",
+    "Address arithmetic wraps at 32 bits; a DWORD load itself must not cross the top of the address space. Unavailable/nonrepresentable reads return the first whole address/width request, not an invented value, machine fault or exception simulation.",
+    "An unaligned DWORD may be assembled from adjacent regions. Its little-endian width is exactly four bytes on a 64-bit host.",
+    "Selector 2 reads the DWORD at the selector byte itself; do not create independent inconsistent typed fields for this overlapping layout. Selector 255 is not clamped.",
+    "No callback effects such as INC are executed by these interior adapters. The existing prefix retains its own increment/FP/CL contract; earlier bypass branches still do not require settings observations.",
+    "The initialization API returns only S+00..7F byte state; it does not initialize or dereference S+80. Stable/non-observable intermediate stores and valid destination ranges are required. It models no register result, reachability, heap allocation or full caller frame.",
+    "Snapshots use the pinned image's recorded absolute-address domain; runtime relocation/rebasing is not reconstructed."
+  ],
+  "handler_frontier": {
+    "entry": "All three unsigned JAE edges target 4149EC2D; e8ce06e1ff CALL 412AF300, then cc INT3 at 4149EC32 if it returns. No normal callback epilogue on this fallthrough.",
+    "new_chain": [
+      "412AF300 pushes 4217783F, calls 41DA8D0D, then INT3 if returned.",
+      "4217783F contains exactly the NUL-terminated literal invalid array<T, N> subscript. Literal syntax alone is not proof of source language, type or template use.",
+      "41DA8D0D constructs 12 stack bytes via 41DA8E3D, then passes their address and static 42231F3C to 4200A118; INT3 follows if returned.",
+      "41DA8E3D calls 41DA88F1, writes 420F2F28 at object+0 and returns with RET 4. 41DA88F1 writes 4205A0E4, zeros object+4/+8, then calls 4200AC82 with two stack pointers.",
+      "4200A118 is fully pinned through RET 8. It reads metadata flags, conditionally calls [42529000] and ESI, then supplies stack arguments 0xE06D7363, 1, 3, address-of-three-words to indirect CALL DWORD[421B8F14] at 4200A178. With the pinned first metadata DWORD=0 and unchanged metadata, the optional branches are skipped and the first of three words is 0x19930520."
+    ],
+    "exact_unresolved": [
+      "Opaque object construction helper 4200AC82, reached at 41DA8918, including its memory/lifetime effects.",
+      "Runtime binding of DWORD[421B8F14] at 4200A178 and downstream dispatch/unwinding/termination or return; static cell bytes do not establish that binding.",
+      "Exceptional callback register/stack restoration and caller behavior; INT3 fallthrough is not implemented as an offline throw, a normal return, or an assumed noreturn."
+    ],
+    "not_claimed": "No runtime provider, exception-class identity, named source ABI, original language/standard or actual failure behavior is inferred from literal strings, code values or helper shapes."
+  },
+  "floating_point": "No changes to existing arithmetic or ranking. Binary32 round-to-nearest, no FTZ/DAZ/fast-math/contraction; original sNaN/flags/trap/payload exclusions remain. New adapters only copy integer bytes.",
+  "tests": "Contiguous initialization: byte-for-byte preservation outside six DWORD destinations, raw32 pointer wrap, zero DWORD bits and count-only composition with an independently observed sum. Existing full aggregation test retained; new cases cover every missing load, partial DWORD, indices 0/15/16/17/80000000/FFFFFFFF, raw selectors 0/1/2/255, selector alias, root/manager/owner/pointee addition wrap, segmented unaligned DWORD, top-crossing read rejection, zero/noncanonical flags and direct composition into prefix/ranking.",
+  "remaining": [
+    "Reaching the initializer and maintaining its S/context identity across the caller loop and opaque calls; the origin/content of owner=DWORD[S+80] remains observed, not inferred.",
+    "Writers, identity/lifetime and actual runtime contents of 424F639C, root+1012C, manager+2CC, slot selector/flags and owner+4/B0.",
+    "Invocation/enumeration, callback exceptional path, complete selector/T+68 consumer, language and full ABI; no full GAP closure or observed equivalence."
+  ],
+  "verification": "Focused native and ASan/UBSan test_bounded_aggregation; standalone verify_source_bytes.py --handoff. Coordinator must rerun full make check and fixed-integrated-SHA independent review.",
+  "original_execution_loading_emulation": false
+}
