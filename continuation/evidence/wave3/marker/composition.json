@@ -1,0 +1,170 @@
+{
+  "task": "W3-M bounded offline scalar/marker composition",
+  "baseline_commit": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+  "classification": "Static byte-anchored composition with caller-supplied snapshots; not an original execution or complete reconstruction.",
+  "pinned_repository_evidence": [
+    {
+      "path": "continuation/evidence/wave2/gap04/verify_scalar_helper.py",
+      "sha256": "08cf6191c300bf02ab424a8ff5456dc2fc19ceb3502a827cb6cfdb9b0b16882f"
+    },
+    {
+      "path": "continuation/evidence/wave2/gap04/scalar_helper.json",
+      "sha256": "545d274506c6c2328b50bc4855dd0d620efead620bed910c1638292bd468ae00"
+    },
+    {
+      "path": "continuation/evidence/gap05/position_lifecycle.json",
+      "sha256": "54d6fd2e75624437eb1815eee53d5c7084c7f7ccf51c9db413b802df9252620f"
+    }
+  ],
+  "reused_helper_verifier": "continuation/evidence/wave2/gap04/verify_scalar_helper.py",
+  "reused_helper_proof": "continuation/evidence/wave2/gap04/scalar_helper.json",
+  "reused_producer_proof": "continuation/evidence/gap05/position_lifecycle.json",
+  "producer_decode_windows": [
+    "0x414f868b",
+    "0x414f871f",
+    "0x414f8729",
+    "0x414f8790"
+  ],
+  "additional_seed_window": {
+    "start": "0x414f8709",
+    "end_exclusive": "0x414f871f",
+    "raw_offset": "0x258709",
+    "bytes": "80fb080f1055d074050f57c0eb08f30f100554a50542",
+    "sha256": "a5789029cd644d23cd9a94e0631c52110a4ec78a77455269d8f0cc61324bdfa8",
+    "instructions": [
+      {
+        "va": "0x414f8709",
+        "bytes": "80fb08",
+        "instruction": "cmp bl,0x8"
+      },
+      {
+        "va": "0x414f870c",
+        "bytes": "0f1055d0",
+        "instruction": "movups xmm2,xmmword ptr [ebp-0x30]"
+      },
+      {
+        "va": "0x414f8710",
+        "bytes": "7405",
+        "instruction": "je 0x414f8717"
+      },
+      {
+        "va": "0x414f8712",
+        "bytes": "0f57c0",
+        "instruction": "xorps xmm0,xmm0"
+      },
+      {
+        "va": "0x414f8715",
+        "bytes": "eb08",
+        "instruction": "jmp 0x414f871f"
+      },
+      {
+        "va": "0x414f8717",
+        "bytes": "f30f100554a50542",
+        "instruction": "movss xmm0,dword ptr ds:0x4205a554"
+      }
+    ]
+  },
+  "composition_ledger": [
+    {
+      "claim": "The caller has already resolved N and derived-branch, marker seed, BL and XMM3 (0/1) observations. Full upstream seed production and guards remain outside this API.",
+      "support": [
+        "GAP05 model_assumptions",
+        "GAP05 0x414f868b..0x414f8695",
+        "saved 0x414f8709..0x414f871f"
+      ]
+    },
+    {
+      "claim": "Only a derived branch with ordered nonzero marker seed executes the two helpers. Direct/zero/unordered paths reuse the existing producer without fallback observations.",
+      "support": [
+        "GAP05 0x414f868b..0x414f8695",
+        "GAP04 marker_callers 0x414f8729/0x414f872c",
+        "GAP05 0x414f8790..0x414f87c2"
+      ]
+    },
+    {
+      "claim": "Current values are the previous N+50 and N+54 float words. Targets are mode_byte==8 ? 1 : 0 and the separately resolved XMM3 seed. They are not reversed.",
+      "support": [
+        "saved 0x414f8709..0x414f871f",
+        "GAP04 marker_callers 0x414f871f..0x414f8798",
+        "GAP04 scalar_helper 0x41c784b0..0x41c7852c"
+      ]
+    },
+    {
+      "claim": "Calls are ordered +50 at 0x414f8753, then +54 at 0x414f877a. Divisors are bits 0x3e800000/0x3ccccccd, bounds 0/1, tolerance 0x3c23d70a and requested step -1.",
+      "support": [
+        "GAP04 marker_callers",
+        "GAP04 marker_side50_arguments @0x4209ba60",
+        "GAP04 marker_side54_arguments @0x4209baa0"
+      ]
+    },
+    {
+      "claim": "Each helper receives its own optional fallback snapshot; equality/unordered bypasses fallback. A shared source address does not establish temporal value equality.",
+      "support": [
+        "GAP04 scalar_helper 0x41c784be..0x41c784e3",
+        "SPEC_NEXT.md general requirements 5 and 7"
+      ]
+    },
+    {
+      "claim": "Successful helper outputs feed MarkerSideValues into produce_resolved_validity_marker. Its original multiplication order is unchanged; only N+48/+50/+54 may change.",
+      "support": [
+        "GAP04 marker_callers 0x414f8786..0x414f878e",
+        "GAP05 0x414f8798..0x414f87c2"
+      ]
+    },
+    {
+      "claim": "Missing actually required fallback returns a side-specific unresolved outcome, without committing any N bytes. This transactional no-change rule is an offline API convention, not inferred original rollback; the original first helper can already have written N before the second call.",
+      "support": [
+        "SPEC_NEXT.md general requirement 6",
+        "GAP04 scalar_helper stores and ordered marker calls"
+      ]
+    }
+  ],
+  "proof_boundaries": [
+    "Raw address base 0x412a0000 is a file-coordinate convention, not an observed runtime mapping.",
+    "Input snapshots must be resolved by the caller. No discovery, implicit global reads, provider owner identity, full reachability or alias-based observation inference.",
+    "Requires binary32, round-to-nearest, no fast-math/FP contraction, FTZ/DAZ or signaling NaNs. FP exception flags/traps and original ABI are not modeled.",
+    "No original image loading, execution/emulation, game connection, injection, sender or target selection.",
+    "Native/sanitized tests execute only the authored offline C++ model. No full equivalence, GAP04/GAP05 closure or independent review is claimed."
+  ],
+  "verification": {
+    "date_utc": "2026-11-09",
+    "working_directory": "/tmp/hoplite/worktrees/sikyon-w3-marker",
+    "branch": "hoplite/sikyon-46eee495--w3-marker",
+    "pre_change_head": "775ac620349bc7ce5c9fd1b56d219135c3c00901",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "decoder": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+    "common_flags": "-Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off",
+    "sanitizer_extra_flags": "-O1 -fno-omit-frame-pointer -fsanitize=address,undefined",
+    "commands": [
+      "python3 -B continuation/evidence/wave3/marker/verify_composition.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "make -C continuation -j2 BUILD=/tmp/hoplite/worktrees/sikyon-w3-marker/continuation/evidence/wave3/marker/.build test sanitize",
+      "ASAN_OPTIONS=detect_leaks=1:halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 /tmp/hoplite/worktrees/sikyon-w3-marker/continuation/evidence/wave3/marker/.build/test_marker_pipeline_sanitize",
+      "git diff --cached --check"
+    ],
+    "native_and_sanitized_assertions_per_suite": {
+      "charge_state": 3274,
+      "marker_pipeline": 13255,
+      "position_lifecycle": 208,
+      "position_pipeline": 392,
+      "position_records": 2601,
+      "resolved_scalar_helper": 53
+    },
+    "assertions_per_mode": 19783,
+    "new_marker_assertions_per_mode": 13255,
+    "cpp_modes_passed": [
+      "native",
+      "ASan+UBSan with leak detection and halt-on-error"
+    ],
+    "evidence_checks": {
+      "reused_scalar_instructions": 111,
+      "reused_scalar_constants": 3,
+      "reused_direct_calls": 5,
+      "producer_context_byte_anchors": 19,
+      "producer_and_seed_fresh_instructions": 25,
+      "producer_constants": 2,
+      "pinned_repository_evidence_files": 3,
+      "original_image_and_3_reference_hashes_match_before_and_after": true
+    },
+    "pending": "Coordinator integration, independent wave4 review and final make check; no original execution or dynamic equivalence proof."
+  }
+}
