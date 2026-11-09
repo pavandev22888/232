@@ -1,0 +1,40 @@
+{
+  "task": "W7-ABI",
+  "owner": "primary-coordinator",
+  "base_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
+  "status": "awaiting_independent_review",
+  "prior_executor": {
+    "result": "No analysis result, modified files, commit or tests. Execution limitation, not evidence of source impossibility.",
+    "branch_base": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133"
+  },
+  "method": "Fresh bounded static caller/prologue/normal-epilogue decode. Existing RTTI clue not promoted or repeatedly scanned.",
+  "observations": [
+    {
+      "address": "414A8D56..414A8D6D",
+      "claim": "On same caller-local S=ESI snapshot with BYTE[S+C0]!=0, LEA ECX=S+50; LEA EDX=S+A0; relative CALL targets 4149E790. No argument PUSH is present between this gate and call."
+    },
+    {
+      "address": "4149E790..4149E7B1",
+      "claim": "Callee pushes EBP/EBX/EDI/ESI then EAX scratch, reads [ECX] pointer and increments its DWORD, reads [ECX+4] accumulator pointer then BYTE[accumulator+7]; reads DWORD[EDX+1C]. Thus this caller supplies context address and point address in ECX/EDX."
+    },
+    {
+      "address": "4149EB28..4149EB30",
+      "claim": "Normal epilogue ADD ESP,4 discards scratch, POP ESI/EDI/EBX/EBP then bare RET; no RET immediate argument cleanup. Conditional on balanced normal CFG and intact stack, caller nonvolatile registers restored."
+    },
+    {
+      "address": "414A8D6D..414A8D79",
+      "claim": "After return caller reads [ESI+30], [ESI+34], [ESI+1A0] and overwrites EAX. This window does not consume a typed return value; not proof all callers ignore return."
+    }
+  ],
+  "not_inferred": [
+    "A named source declaration such as __fastcall, thiscall or a C++ class from ECX/EDX alone.",
+    "Identity of caller S with callback owner: [S+54] and its pointee chain are not flattened by equal offsets.",
+    "Stack arguments elsewhere, exceptional/index handler behavior, reachability, caller-context construction/lifetime or all callers.",
+    "RTTI ownership of callback, a single source language/toolchain/standard, or ABI of other boundaries."
+  ],
+  "original_language": "unresolved",
+  "original_standard": "unresolved",
+  "runtime_type_binding": "unresolved",
+  "external_audit": false,
+  "original_executed_loaded_emulated": false
+}

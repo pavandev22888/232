@@ -1823,11 +1823,11 @@
     },
     {
       "id": "W7-ABI",
-      "owner": "w7-abi",
-      "status": "in_progress",
+      "owner": "primary-coordinator",
+      "status": "review",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
-      "worktree": "/tmp/hoplite/232-w7-abi",
-      "branch": "hoplite/sikyon-46eee495--w7-abi",
+      "worktree": "/tmp/hoplite/workspace",
+      "branch": "hoplite/sikyon-46eee495",
       "write_paths": [
         "continuation/evidence/wave7/abi/"
       ],
@@ -1841,7 +1841,9 @@
         "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
-      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
+      "previous_executor_result": "Assigned executor produced no evidence, code, commit or tests. Execution limitation, not a source/ABI impossibility proof.",
+      "result": "Local ECX/EDX caller/prologue/normal-epilogue relation recorded by coordinator; no source-language or complete-ABI proof."
     },
     {
       "id": "W7-DAMAGE",
@@ -1866,6 +1868,27 @@
         "Fixed integrated SHA independent review."
       ],
       "stop_condition": "One proved local body or specific new prerequisite frontier. No original loading/execution/emulation or broad repeat scanning."
+    },
+    {
+      "id": "W7-REVIEW-RANK",
+      "owner": "w7-review-rank",
+      "status": "in_progress",
+      "base_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
+      "worktree": "/tmp/hoplite/232-w7-review-rank",
+      "branch": "hoplite/sikyon-46eee495--w7-review-rank",
+      "write_paths": [
+        "continuation/evidence/wave7/review-rank/"
+      ],
+      "scope": "Independent exact-byte CFG/code/test review of callback ranking tail at fixed SHA; no implementation writes.",
+      "dependencies": [
+        "W7-RANK"
+      ],
+      "acceptance": [
+        "Check actual instruction bytes/branches and C++ behavior including FP, signedness and unresolved observations.",
+        "Run focused native/sanitizer/static checks and retain exact commands/exits.",
+        "Report findings with precise pins, not whole-project acceptance."
+      ],
+      "stop_condition": "One bounded independent review report; no changes to implementation or old evidence."
     }
   ],
   "goal_correction": {

@@ -1,0 +1,9 @@
+{
+  "base_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
+  "scope": "Coordinator local ABI evidence candidate, not final integrated acceptance",
+  "command": "python3 -B continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "exit_code": 0,
+  "log_sha256": "9a81d709af77c54abd174f8d68f418a098cf6864b10111f53b0504dd925ea5c8",
+  "stdout": "{\n  \"passed\": true,\n  \"instructions\": 28,\n  \"image_sha256\": \"682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e\",\n  \"original_execution_loading_emulation\": false,\n  \"scope\": \"One caller/register/normal-epilogue observation, not a language or full ABI claim\"\n}\n",
+  "independent_review": "pending"
+}
