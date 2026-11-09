@@ -94,6 +94,13 @@ bool evaluate_small_charge_gate(const SmallGateInput& input,
     return input.enabled_d;
 }
 
+void apply_charge_reset_slice(ChargeState& state, SmallGateInput& gate)
+{
+    state.mode_latched = false;
+    gate.guard_c = false;
+    gate.previous_counter = 0;
+}
+
 void compose_charge_model_step(ChargeState& state,
                                const ChargeObservation& observation)
 {

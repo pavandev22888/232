@@ -45,6 +45,10 @@ struct ChargeState {
     bool small_gate_result{};
 };
 
+// Projects the saved reset block onto the latch and the same-global gate
+// snapshot. Entry scheduling and the block's other stores are not modeled.
+void apply_charge_reset_slice(ChargeState& state, SmallGateInput& gate);
+
 // Composes the byte-anchored local transitions; the original caller order for
 // the separate small-gate helper is not established by the saved walks.
 void compose_charge_model_step(ChargeState& state,
