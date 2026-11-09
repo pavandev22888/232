@@ -1,0 +1,65 @@
+{
+  "task_id": "W6-REVIEW-CODE",
+  "finding_id": "W6RC-001",
+  "reviewed_code_sha": "d99dd375160c7fccfd489598942232430d78da2f",
+  "resolution": "retracted_incorrect_finding",
+  "conclusion": "The alleged memcpy overlap was a mistaken conflation of two sequential memcpy calls. With source and destination views backed by the same buffer, neither individual memcpy call has overlapping source and destination byte ranges. No W6RC-001 blocker remains.",
+  "exact_implementation": {
+    "path": "continuation/src/history_slice.cpp",
+    "sha256": "9b7511c1e794551979a8e186447d337f2a38c3fdbf5b0af865f097f5b930ce15",
+    "git_blob_at_reviewed_sha": "4cb3162277c7510aa8c5e0a88c74962c00ff53fd",
+    "local_word": {
+      "line": 88,
+      "declaration": "std::uint32_t word = 0;",
+      "size_bytes": 4
+    },
+    "calls": [
+      {
+        "line": 90,
+        "expression": "std::memcpy(&word, source.data + store.source_offset, sizeof(word));",
+        "destination_range": "[&word, &word + 4)",
+        "source_range_when_views_alias_buffer_B": "[B + store.source_offset, B + store.source_offset + 4)",
+        "ranges_overlap": false
+      },
+      {
+        "line": 96,
+        "expression": "std::memcpy(destination.data + store.destination_offset, &word, sizeof(word));",
+        "destination_range_when_views_alias_buffer_B": "[B + store.destination_offset, B + store.destination_offset + 4)",
+        "source_range": "[&word, &word + 4)",
+        "ranges_overlap": false
+      }
+    ],
+    "offset_0x40_case": "For the final record store, source_offset and destination_offset are both 0x40. The read call copies B[0x40..0x44) into local word; only after it returns, the write call copies local word back to B[0x40..0x44). Those ranges coincide across two different calls, not within either call; this is defined ordered load-then-store behavior."
+  },
+  "exact_test_oracle": {
+    "path": "continuation/tests/test_history_slice.cpp",
+    "sha256": "126584544886a5c99d591ecb42353bc8aa87bf36b1e8501477d3bdb063154872",
+    "git_blob_at_reviewed_sha": "89e00dd31a44723d51f57cc66c133e5797931239",
+    "local_word_line": 82,
+    "read_memcpy_line": 84,
+    "write_memcpy_line": 90,
+    "same_array_call_line": 163,
+    "actual_same_array_view_lines": [165, 168],
+    "finding": "apply_expected uses the same two-call local-word staging as production. Its source and destination pointers are equal at the view level, but each individual memcpy pairs the external array with a separate local uint32_t. Therefore the oracle's +0x40 case is also defined."
+  },
+  "prior_report": {
+    "path": "continuation/evidence/wave6/review-integrated-code/report.json",
+    "sha256_unchanged": "e74aa28175e73ada4d89bfd1082e6e1e3bb3026549854e47f52846c3c3ef4736",
+    "status": "left unchanged; W6RC-001 conclusion is superseded only by this resolution"
+  },
+  "review_log": {
+    "path": "continuation/evidence/wave6/review-integrated-code/review.log",
+    "sha256_unchanged": "60d718ce8010f5a3db13976671188da376ddbbc0c45daaa8c3b04c224f069db3",
+    "status": "left unchanged"
+  },
+  "verification": {
+    "command": "git diff --exit-code d99dd375160c7fccfd489598942232430d78da2f HEAD -- continuation/src/history_slice.cpp continuation/tests/test_history_slice.cpp",
+    "cwd": "/tmp/hoplite/232-w6-review-code",
+    "exit_code": 0,
+    "scope": "Confirmed reviewed source and test are byte-identical to the requested fixed SHA. Exact call operands were checked at the listed lines; no code or test was edited and no broad search or test rerun was needed for this source-level correction."
+  },
+  "scope_limits": [
+    "This retracts only W6RC-001; it does not claim full Ragebot/GAP completeness, original language/ABI, or external audit.",
+    "No implementation, test, Makefile, old report, or review log was changed."
+  ]
+}
