@@ -1,0 +1,87 @@
+{
+  "task": "W4 independent source/API review",
+  "reviewer": "w4-proof-review",
+  "model": "gpt-6.1-sol",
+  "tested_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+  "worktree": "/tmp/hoplite/worktrees/sikyon-w4-proof",
+  "branch": "hoplite/sikyon-46eee495--w4-proof",
+  "delivery": "Reviewer returned findings through the agent result; coordinator persisted this summary. Reviewer produced no tracked report or commit.",
+  "reviewer_commit": null,
+  "verdict": "bounded_acceptance",
+  "blocking_findings": [],
+  "findings": [
+    {
+      "path": "src/marker_pipeline.cpp:35-59",
+      "result": "Old N+50/+54 are current values; seeds are targets. Call order, divisors, bounds, tolerance and independent fallback snapshots match the call sites. Rollback is explicitly an offline API convention.",
+      "anchors": [
+        "0x414f8753 e858fd7700",
+        "0x414f877a e831fd7700",
+        "0x4209ba60",
+        "0x4209baa0"
+      ]
+    },
+    {
+      "path": "src/actor_scalar_pipeline.cpp:25-46",
+      "result": "Old N+30/+34/+38 and targets N+24/+28/+2C correctly oriented; separate X/Y/Z observations, divisor 0x3DAE147B, bounds +/-FLT_MAX and step -1.",
+      "anchors": [
+        "0x414fd9bd",
+        "0x414fda04",
+        "0x414fda47"
+      ]
+    },
+    {
+      "path": "src/resolved_scalar_helper.cpp:15-39",
+      "result": "Both compositions reuse equality/unordered and signed-zero behavior, fallback-before-tolerance, arithmetic order and MAXSS second-operand selection."
+    },
+    {
+      "path": "src/position_lifecycle.cpp:101-126",
+      "result": "Resolver does not decide consumer eligibility, bypass gates or commit external output."
+    },
+    {
+      "path": "evidence/wave3/source/README.md:39-52",
+      "result": "Immediate four-byte N+14 source is bounded by explicit call/identity assumptions. P lifetime/writer, cross-call identity, aliases and reachability stay unknown.",
+      "anchors": [
+        "0x414f8402 a104ca2342",
+        "0x414f8407 f30f1000",
+        "0x414f840b f30f114714"
+      ]
+    }
+  ],
+  "reviewer_reported_commands": [
+    {
+      "command": "python3 -B continuation/evidence/wave2/gap04/verify_scalar_helper.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave3/marker/verify_composition.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B continuation/evidence/wave3/source/verify_source.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B continuation/evidence/gap05/replay_position_lifecycle.py /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+      "exit_code": 0
+    }
+  ],
+  "reviewer_reported_checks": {
+    "scalar_instructions": 111,
+    "marker_fresh_decodes": 25,
+    "source_fresh_decodes": 257,
+    "source_bytes": 1039,
+    "lifecycle_fresh_decodes": 47,
+    "post_review_image_and_eight_source_hashes_matched": true
+  },
+  "coordinator_cross_check": {
+    "worktree_head_matches": true,
+    "worktree_clean": true,
+    "same_static_checks_passed_in": "../../wave3/verification.log",
+    "input_integrity_report": "../../wave3/verification.json"
+  },
+  "limitations": [
+    "No C++ suite rerun by this reviewer; assigned to W4 test reviewer.",
+    "No original loading, execution or emulation.",
+    "No proof of original runtime reachability, whole-function equivalence, missing providers or external independent audit."
+  ]
+}

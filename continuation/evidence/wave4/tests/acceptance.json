@@ -1,0 +1,76 @@
+{
+  "task": "W4 independent test/repro review",
+  "reviewer": "w4-test-review",
+  "model": "gpt-6.1-sol",
+  "tested_source_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+  "worktree": "/tmp/hoplite/worktrees/sikyon-w4-tests",
+  "branch": "hoplite/sikyon-46eee495--w4-tests",
+  "delivery": "Reviewer committed execution logs and returned review findings; coordinator persisted this summary.",
+  "verdict": "bounded_acceptance",
+  "blocking_findings": [],
+  "material_coverage_gaps_found": [],
+  "reviewed_coverage": [
+    "Unresolved at each step/axis",
+    "Second-step marker rollback and byte preservation",
+    "Independent fallback/tolerance observations",
+    "Equality/unordered early exits, NaN and signed zero",
+    "Consumer bypasses without unused observations",
+    "Successful consumer composition",
+    "Literal numeric/bit expected values in addition to existing-producer comparisons"
+  ],
+  "initial_attempt": {
+    "exit_code": 2,
+    "status": "blocked_not_pass",
+    "cause": "Coordinator imposed a review-only ban on handoff imports; temporary process guard rejected the existing pinned PE parser.",
+    "evidence": "check.sanitized.log",
+    "agent_commit": "6d6211fffbc819adef545529734617898bbab523",
+    "integrated_commit": "5ee21c05f92d89c64c8d9cf819650c598a103909"
+  },
+  "corrected_attempt": {
+    "exit_code": 0,
+    "command": "env -u PYTHONPATH PYTHONDONTWRITEBYTECODE=1 TMPDIR=\"$PWD/continuation/build/w4-tests/tmp\" make -C continuation -j2 check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=build/w4-tests",
+    "evidence": "check.corrected.sanitized.log",
+    "agent_commit": "201403aeabf2363498be7486696f126aa849d1f0",
+    "integrated_commit": "8f79396847ec93ca7c048f657e158f986ea15f98",
+    "production_tests_and_evidence_gates_unchanged": true
+  },
+  "scope_clarification": {
+    "allowed_python_parser": "workspace/orchestration/v7/pe_data.py",
+    "sha256": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "inspection": "Coordinator read the entire parser: pathlib/struct imports and read-only PE class. Existing verifier checks this pin before import; mapped() is not used. This is Python static parsing, not original DLL loading/execution.",
+    "fix_kind": "Review-only boundary corrected; no repository implementation fix, skipped test or weakened assertion."
+  },
+  "results": {
+    "native_programs": 7,
+    "native_assertions": 19902,
+    "sanitized_programs": 7,
+    "sanitized_assertions": 19902,
+    "sanitizer_diagnostics": 0,
+    "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1",
+    "python_unit_tests": 8,
+    "marker_producer_anchors": 19,
+    "marker_fresh_decodes": 25,
+    "source_windows": 12,
+    "source_bytes": 1039,
+    "source_fresh_decodes": 257
+  },
+  "h01": {
+    "supported_checks_passed": true,
+    "freshly_rechecked": 33,
+    "model_only": 2,
+    "historical_only": 12,
+    "inputs_unchanged_during_replay": true,
+    "all_209_repeated": false,
+    "strict_old_protocol_repeated": false
+  },
+  "log_sha256": {
+    "check.sanitized.log": "56c4e56297310f1be000b2c52d36f201c659fc40a25c34b6b8522a060079e510",
+    "check.corrected.sanitized.log": "8ee303468e1400e544e6f558b55515e191f476b5de738efd065d3c78b1357221"
+  },
+  "limits": [
+    "Not an external independent audit or full original equivalence.",
+    "Named pefile/LIEF, Rizin and five VEX checks remain unrerun.",
+    "No original-image loading, execution or emulation."
+  ]
+}

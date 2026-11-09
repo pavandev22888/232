@@ -1,5 +1,5 @@
 {
-  "stage": "V10 wave 2: four conditional offline modules and coherent pipeline tests",
+  "stage": "V10 waves 3–4: integrated scalar compositions and isolated peer acceptance",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -14,17 +14,19 @@
     "actor-position consumer with distinct copy/clear guard exits",
     "explicit local charge reset projection for latch, guard C and previous counter",
     "local scalar helper with explicit fallback-step observation",
-    "optional N+50 output with age-ramp, MAXSS ordering and bounded aliases"
+    "optional N+50 output with age-ramp, MAXSS ordering and bounded aliases",
+    "transactional offline marker helper/producer composition with separate fallback snapshots",
+    "pure three-axis scalar resolver with per-call observations and explicit unresolved axis"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
-    "report": "evidence/wave2/verification.json",
-    "log": "evidence/wave2/verification.log",
+    "report": "evidence/wave3/verification.json",
+    "log": "evidence/wave3/verification.log",
     "native_tests": "passed",
     "asan_ubsan": "passed",
-    "assertions_per_run": 6528,
-    "modules": 4,
-    "test_programs": 5,
+    "assertions_per_run": 19902,
+    "modules": 6,
+    "test_programs": 7,
     "pipeline_scenarios": 20,
     "python_unit_tests": 8,
     "static_evidence": "passed",
@@ -39,7 +41,17 @@
     "bundle_files": 960,
     "restored_integrity_records": 64087,
     "final_bundle_integrity": "passed",
-    "final_input_and_work_integrity": "passed"
+    "final_input_and_work_integrity": "passed",
+    "tested_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+    "independent_agent_reviews": {
+      "source_api": "passed_bounded_scope",
+      "tests_repro": "passed_bounded_scope_after_review_only_import_clarification",
+      "reports": [
+        "evidence/wave4/proof/acceptance.json",
+        "evidence/wave4/tests/acceptance.json"
+      ],
+      "external_audit": false
+    }
   },
   "open_tasks": [
     {
@@ -65,17 +77,17 @@
     {
       "id": "GAP04",
       "status": "open",
-      "change": "Implemented bounded scalar helper 41C784B0 and tested N composition; fallback/tolerance providers and runtime bindings remain open"
+      "change": "Composed scalar helper with marker and three independent actor axes; fallback/tolerance providers and original runtime bindings remain open"
     },
     {
       "id": "GAP05",
       "status": "partial",
-      "change": "Added optional N+50 age-ramp/MAXSS output and alias ordering; upstream seed and complete lifecycle/sender remain open"
+      "change": "Added bounded helper/producer composition and N+14 immediate writer provenance; P/P+0 origins, cross-call identity, upstream seeds and full lifecycle/sender remain open"
     },
     {
       "id": "GAP06",
       "status": "partial",
-      "change": "Replayed 162 instruction checks; classified remaining 47 as 33 static rechecks, 2 models, 12 historical-only; original protocol and external audit unresolved"
+      "change": "Baseline reproduced in separate worktree; integrated code independently reviewed and checked with 19902 assertions per mode and 8 Python tests; 12 H01 historical-only entries, original protocol and external audit remain open"
     }
   ],
   "unresolved_boundaries": [
@@ -85,7 +97,7 @@
     "scalar helper fallback/tolerance providers and original runtime bindings",
     "TLS/FS guards, opaque dispatch and exceptional paths",
     "charge reset entry predicate, other reset stores and original scheduling",
-    "complete N+48 upstream seed, N+14/N+50 provenance and full lifecycle",
+    "complete N+48 upstream seed, N+14 P/P+0 origin and cross-call identity, complete N+50 provenance and lifecycle",
     "complete message format and sender",
     "remaining consumers and complete modes",
     "original out-of-range index handler",
@@ -96,7 +108,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Wave 3 running in isolated worktrees; wave 4 peer acceptance follows integration",
+  "next_task": "Bounded waves completed; review PR without merging. Any further reconstruction requires a separate evidence-driven scope.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -180,7 +192,7 @@
     ]
   },
   "isolated_waves": {
-    "status": "wave3_running",
+    "status": "completed_bounded_deliverables",
     "plan": "PLAN_NEXT.md",
     "specification": "SPEC_NEXT.md",
     "orchestration": "ORCHESTRATION_WORKTREES.md",
@@ -198,6 +210,19 @@
       "w3-source-worktree",
       "w3-repro-worktree"
     ],
-    "wave4": "pending_integrated_commit"
+    "wave4": "completed_bounded_acceptance",
+    "integrated_code_commit": "52c513e2b83761b6ea2d758483a4d883907b4341",
+    "wave4_agents": [
+      "w4-proof-review",
+      "w4-test-review"
+    ],
+    "agents_still_running": 0,
+    "full_tasks_closed": [],
+    "acceptance_report": "evidence/wave3/verification.json",
+    "review_reports": [
+      "evidence/wave4/proof/acceptance.json",
+      "evidence/wave4/tests/acceptance.json"
+    ],
+    "publication_policy": "Existing PR #1; no merge or merge queue; auto-merge disabled"
   }
 }
