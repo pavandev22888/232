@@ -1,0 +1,6 @@
+Command: python3 -B continuation/evidence/wave6/reset/verify_reset_predecessor.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+Exit: 1
+Output: FAIL: fresh objdump mismatch at 0x415decc9
+Diagnosis: GNU objdump displayed at most seven instruction bytes on the mnemonic line for the 10-byte MOV encoding; the verifier initially expected all ten bytes on that line. The raw-image check independently compares the complete encoding. The verifier now compares the disassembler's displayed prefix while retaining the full raw-byte comparison.
+
+Review check: a whitespace scan found alignment padding at the ends of saved objdump lines. Those trailing spaces were removed; instruction text and address/byte evidence are unchanged.

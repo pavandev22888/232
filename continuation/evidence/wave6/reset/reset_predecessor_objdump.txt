@@ -1,0 +1,75 @@
+
+work/nl_handoff_2026-11-06/nl.bin:     file format binary
+
+
+Disassembly of section .data:
+
+415debf0 <.data+0x33ebf0>:
+415debf0:	c7 00 ff ff ff ff    	mov    DWORD PTR [eax],0xffffffff
+415debf6:	c7 40 08 ff ff ff ff 	mov    DWORD PTR [eax+0x8],0xffffffff
+415debfd:	c7 40 10 ff ff ff ff 	mov    DWORD PTR [eax+0x10],0xffffffff
+415dec04:	c7 40 18 ff ff ff ff 	mov    DWORD PTR [eax+0x18],0xffffffff
+415dec0b:	c7 40 20 ff ff ff ff 	mov    DWORD PTR [eax+0x20],0xffffffff
+415dec12:	c7 40 28 ff ff ff ff 	mov    DWORD PTR [eax+0x28],0xffffffff
+415dec19:	c7 40 30 ff ff ff ff 	mov    DWORD PTR [eax+0x30],0xffffffff
+415dec20:	c7 40 38 ff ff ff ff 	mov    DWORD PTR [eax+0x38],0xffffffff
+415dec27:	c7 40 40 ff ff ff ff 	mov    DWORD PTR [eax+0x40],0xffffffff
+415dec2e:	c7 40 48 ff ff ff ff 	mov    DWORD PTR [eax+0x48],0xffffffff
+415dec35:	c7 40 50 ff ff ff ff 	mov    DWORD PTR [eax+0x50],0xffffffff
+415dec3c:	c7 40 58 ff ff ff ff 	mov    DWORD PTR [eax+0x58],0xffffffff
+415dec43:	c7 40 60 ff ff ff ff 	mov    DWORD PTR [eax+0x60],0xffffffff
+415dec4a:	c7 40 68 ff ff ff ff 	mov    DWORD PTR [eax+0x68],0xffffffff
+415dec51:	c7 40 70 ff ff ff ff 	mov    DWORD PTR [eax+0x70],0xffffffff
+415dec58:	c7 40 78 ff ff ff ff 	mov    DWORD PTR [eax+0x78],0xffffffff
+415dec5f:	c7 80 80 00 00 00 ff 	mov    DWORD PTR [eax+0x80],0xffffffff
+415dec66:	ff ff ff
+415dec69:	c7 80 88 00 00 00 ff 	mov    DWORD PTR [eax+0x88],0xffffffff
+415dec70:	ff ff ff
+415dec73:	c7 80 90 00 00 00 ff 	mov    DWORD PTR [eax+0x90],0xffffffff
+415dec7a:	ff ff ff
+415dec7d:	c7 80 98 00 00 00 ff 	mov    DWORD PTR [eax+0x98],0xffffffff
+415dec84:	ff ff ff
+415dec87:	c7 80 a0 00 00 00 ff 	mov    DWORD PTR [eax+0xa0],0xffffffff
+415dec8e:	ff ff ff
+415dec91:	c7 80 a8 00 00 00 ff 	mov    DWORD PTR [eax+0xa8],0xffffffff
+415dec98:	ff ff ff
+415dec9b:	c7 80 b0 00 00 00 ff 	mov    DWORD PTR [eax+0xb0],0xffffffff
+415deca2:	ff ff ff
+415deca5:	c7 80 b8 00 00 00 ff 	mov    DWORD PTR [eax+0xb8],0xffffffff
+415decac:	ff ff ff
+415decaf:	c7 80 c0 00 00 00 ff 	mov    DWORD PTR [eax+0xc0],0xffffffff
+415decb6:	ff ff ff
+415decb9:	05 c8 00 00 00       	add    eax,0xc8
+415decbe:	3d 9c 30 50 42       	cmp    eax,0x4250309c
+415decc3:	0f 85 27 ff ff ff    	jne    0x415debf0
+415decc9:	c7 05 a8 dd 4f 42 ff 	mov    DWORD PTR ds:0x424fdda8,0xffffffff
+415decd0:	ff ff ff
+415decd3:	c7 05 7c 4b 4f 42 00 	mov    DWORD PTR ds:0x424f4b7c,0x0
+415decda:	00 00 00
+415decdd:	c7 05 cc 08 50 42 ff 	mov    DWORD PTR ds:0x425008cc,0xffffffff
+415dece4:	ff ff ff
+415dece7:	c6 05 e9 09 50 42 00 	mov    BYTE PTR ds:0x425009e9,0x0
+415decee:	c6 05 bc 09 50 42 00 	mov    BYTE PTR ds:0x425009bc,0x0
+415decf5:	c6 05 2c f4 23 42 00 	mov    BYTE PTR ds:0x4223f42c,0x0
+415decfc:	c7 05 74 1c 4b 42 00 	mov    DWORD PTR ds:0x424b1c74,0x0
+415ded03:	00 00 00
+415ded06:	c7 05 a0 2b 50 42 00 	mov    DWORD PTR ds:0x42502ba0,0x0
+415ded0d:	00 00 00
+415ded10:	c7 05 f8 57 50 42 00 	mov    DWORD PTR ds:0x425057f8,0x0
+415ded17:	00 00 00
+415ded1a:	c7 05 7c 09 50 42 00 	mov    DWORD PTR ds:0x4250097c,0x0
+415ded21:	00 00 00
+415ded24:	c7 05 24 6f 50 42 00 	mov    DWORD PTR ds:0x42506f24,0x0
+415ded2b:	00 00 00
+415ded2e:	c6 05 d4 09 50 42 00 	mov    BYTE PTR ds:0x425009d4,0x0
+415ded35:	c7 05 50 58 50 42 00 	mov    DWORD PTR ds:0x42505850,0x0
+415ded3c:	00 00 00
+415ded3f:	c7 05 e4 56 50 42 00 	mov    DWORD PTR ds:0x425056e4,0x0
+415ded46:	00 00 00
+415ded49:	c7 05 3c 85 50 42 00 	mov    DWORD PTR ds:0x4250853c,0x0
+415ded50:	00 00 00
+415ded53:	c6 05 cc 09 50 42 00 	mov    BYTE PTR ds:0x425009cc,0x0
+415ded5a:	c6 05 e1 2b 50 42 00 	mov    BYTE PTR ds:0x42502be1,0x0
+415ded61:	c6 05 e8 2b 50 42 00 	mov    BYTE PTR ds:0x42502be8,0x0
+415ded68:	c7 05 bc 2b 50 42 00 	mov    DWORD PTR ds:0x42502bbc,0x0
+415ded6f:	00
