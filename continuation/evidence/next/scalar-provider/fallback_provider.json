@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "task": "R03",
+  "base_commit": "fecb19440f91c9dddbb60247c386fe55ef4e0c92",
+  "owner": "r03-fallback-sol",
+  "model": "gpt-6.1-sol",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "size": 55578624,
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "conditional_base": "0x412a0000",
+  "cell": "0x4252194c",
+  "mapping": "Raw VA = offset + conditional base; not an observed loaded-module base.",
+  "sources": [
+    {
+      "root": "repo",
+      "path": "continuation/evidence/gap04/README.md",
+      "sha256": "13611c4f073f52938274df81b4626c38a75a0ad27bb3aae4f735b7a1ddf1dedf"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/contract.md",
+      "sha256": "575067ff9e314fbe752ed9b400d37556f63169f5b2d36ea4c80df14bc24fb7c2"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/scalar_helper.json",
+      "sha256": "545d274506c6c2328b50bc4855dd0d620efead620bed910c1638292bd468ae00"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave2/gap04/verify_scalar_helper.py",
+      "sha256": "08cf6191c300bf02ab424a8ff5456dc2fc19ceb3502a827cb6cfdb9b0b16882f"
+    },
+    {
+      "root": "repo",
+      "path": "continuation/evidence/wave3/actor/provenance.json",
+      "sha256": "7b8bd799325227ee8d2203664761e3164d2755d2b5100960e5882b73acf875ee"
+    },
+    {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/functions/41C784B0.c",
+      "sha256": "9ada89162b4734545d1565ac01e962e406cb346400ca6a48cff9a88f9d4060b3"
+    }
+  ],
+  "inventory": {
+    "path": "direct_refs.tsv",
+    "sha256": "7557a75d408a876dde1102e5788ca0e5bbe462770cc3f7a34a73ff4ccede39af",
+    "literal_count": 767,
+    "counts": {
+      "read": 759,
+      "read-compare": 2,
+      "write-immediate": 1,
+      "write-register": 1,
+      "read-add": 4
+    },
+    "qualification": "All overlapping LE32 literal matches, with nominated absolute-operand instruction decodes. No global control-flow/code map, alias coverage, computed addresses or reachability proof."
+  },
+  "windows": [
+    {
+      "name": "fallback_entry",
+      "start": "0x41c784b0",
+      "end_exclusive": "0x41c784e3",
+      "raw_offset": "0x9d84b0",
+      "bytes": "f30f104424088b442404f30f10080f2ec87501c3f30f1054241cf30f105c24180f57e40f2ed4730b8b0d4c195242f30f105124",
+      "sha256": "6f592d465d4edf84d77df4d8a0e812eda90115d07cce27ad24550ca944849e49",
+      "instructions": [
+        [
+          "0x41c784b0",
+          "f30f10442408",
+          "movss xmm0,dword ptr [esp+0x8]"
+        ],
+        [
+          "0x41c784b6",
+          "8b442404",
+          "mov eax,dword ptr [esp+0x4]"
+        ],
+        [
+          "0x41c784ba",
+          "f30f1008",
+          "movss xmm1,dword ptr [eax]"
+        ],
+        [
+          "0x41c784be",
+          "0f2ec8",
+          "ucomiss xmm1,xmm0"
+        ],
+        [
+          "0x41c784c1",
+          "7501",
+          "jne 0x41c784c4"
+        ],
+        [
+          "0x41c784c3",
+          "c3",
+          "ret"
+        ],
+        [
+          "0x41c784c4",
+          "f30f1054241c",
+          "movss xmm2,dword ptr [esp+0x1c]"
+        ],
+        [
+          "0x41c784ca",
+          "f30f105c2418",
+          "movss xmm3,dword ptr [esp+0x18]"
+        ],
+        [
+          "0x41c784d0",
+          "0f57e4",
+          "xorps xmm4,xmm4"
+        ],
+        [
+          "0x41c784d3",
+          "0f2ed4",
+          "ucomiss xmm2,xmm4"
+        ],
+        [
+          "0x41c784d6",
+          "730b",
+          "jae 0x41c784e3"
+        ],
+        [
+          "0x41c784d8",
+          "8b0d4c195242",
+          "mov ecx,dword ptr ds:0x4252194c"
+        ],
+        [
+          "0x41c784de",
+          "f30f105124",
+          "movss xmm2,dword ptr [ecx+0x24]"
+        ]
+      ]
+    },
+    {
+      "name": "selected_install",
+      "start": "0x41c5e3b0",
+      "end_exclusive": "0x41c5e40a",
+      "raw_offset": "0x9be3b0",
+      "bytes": "5553575681eca40900008b9c24bc0900008bbc24b8090000a14c19524285c07406ff8080030000ff35481952426840490000ff153c72264283c40889c689c153e8abd9ffff89be3c490000833d4c19524200750689354c195242",
+      "sha256": "cf76e168220548bcd49b96cf3019d61cb24efdb693b121a06cb03b940c495a37",
+      "instructions": [
+        [
+          "0x41c5e3b0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c5e3b1",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5e3b2",
+          "57",
+          "push edi"
+        ],
+        [
+          "0x41c5e3b3",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c5e3b4",
+          "81eca4090000",
+          "sub esp,0x9a4"
+        ],
+        [
+          "0x41c5e3ba",
+          "8b9c24bc090000",
+          "mov ebx,dword ptr [esp+0x9bc]"
+        ],
+        [
+          "0x41c5e3c1",
+          "8bbc24b8090000",
+          "mov edi,dword ptr [esp+0x9b8]"
+        ],
+        [
+          "0x41c5e3c8",
+          "a14c195242",
+          "mov eax,ds:0x4252194c"
+        ],
+        [
+          "0x41c5e3cd",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x41c5e3cf",
+          "7406",
+          "je 0x41c5e3d7"
+        ],
+        [
+          "0x41c5e3d1",
+          "ff8080030000",
+          "inc dword ptr [eax+0x380]"
+        ],
+        [
+          "0x41c5e3d7",
+          "ff3548195242",
+          "push dword ptr ds:0x42521948"
+        ],
+        [
+          "0x41c5e3dd",
+          "6840490000",
+          "push 0x4940"
+        ],
+        [
+          "0x41c5e3e2",
+          "ff153c722642",
+          "call dword ptr ds:0x4226723c"
+        ],
+        [
+          "0x41c5e3e8",
+          "83c408",
+          "add esp,0x8"
+        ],
+        [
+          "0x41c5e3eb",
+          "89c6",
+          "mov esi,eax"
+        ],
+        [
+          "0x41c5e3ed",
+          "89c1",
+          "mov ecx,eax"
+        ],
+        [
+          "0x41c5e3ef",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5e3f0",
+          "e8abd9ffff",
+          "call 0x41c5bda0"
+        ],
+        [
+          "0x41c5e3f5",
+          "89be3c490000",
+          "mov dword ptr [esi+0x493c],edi"
+        ],
+        [
+          "0x41c5e3fb",
+          "833d4c19524200",
+          "cmp dword ptr ds:0x4252194c,0x0"
+        ],
+        [
+          "0x41c5e402",
+          "7506",
+          "jne 0x41c5e40a"
+        ],
+        [
+          "0x41c5e404",
+          "89354c195242",
+          "mov dword ptr ds:0x4252194c,esi"
+        ]
+      ]
+    },
+    {
+      "name": "intervening_callee_entry_only",
+      "start": "0x41c5bda0",
+      "end_exclusive": "0x41c5bdc9",
+      "raw_offset": "0x9bbda0",
+      "bytes": "5589e553575683e4f081ecb000000089e689ae9800000089cf89a69c000000c786a8000000ffffffff",
+      "sha256": "1f2a116ffc35be014b45cffd0e7147679f75f156d1b98ba1bd0a2fdca3bee57c",
+      "instructions": [
+        [
+          "0x41c5bda0",
+          "55",
+          "push ebp"
+        ],
+        [
+          "0x41c5bda1",
+          "89e5",
+          "mov ebp,esp"
+        ],
+        [
+          "0x41c5bda3",
+          "53",
+          "push ebx"
+        ],
+        [
+          "0x41c5bda4",
+          "57",
+          "push edi"
+        ],
+        [
+          "0x41c5bda5",
+          "56",
+          "push esi"
+        ],
+        [
+          "0x41c5bda6",
+          "83e4f0",
+          "and esp,0xfffffff0"
+        ],
+        [
+          "0x41c5bda9",
+          "81ecb0000000",
+          "sub esp,0xb0"
+        ],
+        [
+          "0x41c5bdaf",
+          "89e6",
+          "mov esi,esp"
+        ],
+        [
+          "0x41c5bdb1",
+          "89ae98000000",
+          "mov dword ptr [esi+0x98],ebp"
+        ],
+        [
+          "0x41c5bdb7",
+          "89cf",
+          "mov edi,ecx"
+        ],
+        [
+          "0x41c5bdb9",
+          "89a69c000000",
+          "mov dword ptr [esi+0x9c],esp"
+        ],
+        [
+          "0x41c5bdbf",
+          "c786a8000000ffffffff",
+          "mov dword ptr [esi+0xa8],0xffffffff"
+        ]
+      ]
+    },
+    {
+      "name": "other_write_inventory_only",
+      "start": "0x41c5dc06",
+      "end_exclusive": "0x41c5dc10",
+      "raw_offset": "0x9bdc06",
+      "bytes": "c7054c19524200000000",
+      "sha256": "ce7e5c3ff0ffb4e9d4d613b3c1b260c41f0fbdf15c45e9d3259fd40bf32bcb08",
+      "instructions": [
+        [
+          "0x41c5dc06",
+          "c7054c19524200000000",
+          "mov dword ptr ds:0x4252194c,0x0"
+        ]
+      ]
+    },
+    {
+      "name": "cell_image_snapshot",
+      "start": "0x4252194c",
+      "end_exclusive": "0x42521950",
+      "raw_offset": "0x128194c",
+      "bytes": "00000000",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    }
+  ],
+  "selected_chain": {
+    "store": "0x41c5e404",
+    "source_register": "esi",
+    "zero_compare": "0x41c5e3fb",
+    "skip_store_branch": "0x41c5e402",
+    "indirect_call": "0x41c5e3e2",
+    "indirect_target_cell": "0x4226723c",
+    "eax_to_esi": "0x41c5e3eb",
+    "direct_call": "0x41c5e3f0",
+    "direct_target": "0x41c5bda0",
+    "fallback_pointer_read": "0x41c784d8",
+    "fallback_float_read": "0x41c784de",
+    "cross_call_esi_preservation": "unproved; conditional only",
+    "writer_before_consumer": "unproved; no static dominance or runtime ordering claim"
+  },
+  "status": "frontier; R03 incomplete / GAP04 open"
+}
