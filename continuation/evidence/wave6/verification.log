@@ -190,3 +190,20 @@ Ran 5 tests in 0.003s
   "errors": [],
   "scope": "input integrity only; no algorithmic correctness claimed"
 }
+
+
+=== Late-delivered callback CFG report: integration check ===
+TESTED_HEAD: a47a028a3e4c8dafd71f99fc02100d586047fb51
+SOURCE_REPORT_COMMIT: 96c756242b104c78ae350bbf919045383065467d
+REPORT: review-callback/cfg-recheck.json
+COMMAND: python3 -B continuation/evidence/wave6/aggregate/verify_callback.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+EXIT_CODE: 0
+FULL_LOG: runs/w6/callback-supplement/gate.log
+FULL_LOG_SHA256: ddd6d78f05c8e8eaf2a5f9df71380773c3eb5c30b0076c85733e86341de1a0af
+{
+  "passed": true,
+  "instructions": 175,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local static windows, not runtime bindings or whole callback"
+}

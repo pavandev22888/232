@@ -1611,7 +1611,10 @@
       "result_commit": "9084d92e323a96910b079fd8f46f1d755d9a3299",
       "result": "Initial blocker withdrawn after fresh edge trace: sibling C0 paths were conflated. Original report preserved; resolution.json is authoritative for this finding.",
       "acceptance_result": "prior finding resolved; not final integrated-SHA acceptance",
-      "remaining_frontier": "Separate final integrated-SHA review required."
+      "remaining_frontier": "This early review is not final-SHA acceptance; subsequent W6 integrated reviews and their resolutions are recorded in verification.json. Settings providers, unknown-index handler and full ranking remain unresolved.",
+      "supplemental_result_commit": "96c756242b104c78ae350bbf919045383065467d",
+      "supplemental_integrated_commit": "a47a028a3e4c8dafd71f99fc02100d586047fb51",
+      "supplemental_report": "continuation/evidence/wave6/review-callback/cfg-recheck.json"
     },
     {
       "id": "NEXT-MODES",

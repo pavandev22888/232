@@ -162,15 +162,40 @@
       "5ca65dd0f7142da76fbe114487f3f894df762d56",
       "25f66a7747b50665b8d166989f7ed4a1593ad0fb",
       "d1fe45cd5d20d8705e9e7b7a19af0e2a85068672",
-      "9084d92e323a96910b079fd8f46f1d755d9a3299"
+      "9084d92e323a96910b079fd8f46f1d755d9a3299",
+      "96c756242b104c78ae350bbf919045383065467d"
     ],
     "integration_report_commits": [
       "0d934d4922597211680d2e8d3fb2ac49af4220b7",
       "545018304a3ff24530cc11d78220e39d954b1a69",
       "b4283fc9ae5a38521c7a372f6d5e4c4ae01ae412",
-      "9ff3fd56a724f9dc401f1719adfe0ba6bdf350c6"
+      "9ff3fd56a724f9dc401f1719adfe0ba6bdf350c6",
+      "a47a028a3e4c8dafd71f99fc02100d586047fb51"
     ],
-    "coordinator_static_gate_exit": 0
+    "coordinator_static_gate_exit": 0,
+    "supplemental_cfg_recheck": {
+      "report": "review-callback/cfg-recheck.json",
+      "report_sha256": "99ebed97b115fba2f8b14867114618263e44144a9717266bbbbf4d053412db25",
+      "source_commit": "96c756242b104c78ae350bbf919045383065467d",
+      "integration_commit": "a47a028a3e4c8dafd71f99fc02100d586047fb51",
+      "reviewed_code_sha": "35b8ada917cdfa018d0f259b1e930d9bc44f5e07",
+      "scope": "Additional preserved evidence for the already withdrawn sibling-path finding, not a new review of the final integrated SHA.",
+      "current_source_test_hashes_match_report": true,
+      "coordinator_gate": {
+        "tested_head": "a47a028a3e4c8dafd71f99fc02100d586047fb51",
+        "command": [
+          "python3",
+          "-B",
+          "continuation/evidence/wave6/aggregate/verify_callback.py",
+          "--handoff",
+          "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+        ],
+        "exit_code": 0,
+        "log": "runs/w6/callback-supplement/gate.log",
+        "log_sha256": "ddd6d78f05c8e8eaf2a5f9df71380773c3eb5c30b0076c85733e86341de1a0af"
+      },
+      "geometry_reset_delivery": "Rechecked against b9be3bd and e9b3c7d: their assigned files already match the published W6 exactly; no reintegration needed."
+    }
   },
   "preliminary_gate": {
     "head": "62d7775bf5ca183c9fb35146c3dec2ec6d04ea4f",
@@ -324,8 +349,8 @@
   },
   "sanitized_log": {
     "path": "verification.log",
-    "sha256": "fadcbdbcfb658e35c541f1df040b94bfc256ecc4b4c9cdde5e4d8bc6e34da129",
-    "scope": "Selected outputs from historical integrated gate and the separately labeled fresh post-correction candidate gate; not complete raw logs."
+    "sha256": "a8de2956603d770916dcf54d30200f48c799b6bc5116d3f0b90266bee27f7e21",
+    "scope": "Separately labeled historical integrated, fresh post-correction candidate and callback-supplement outputs; not complete raw logs. Final publication-head receipts are in PR #1."
   },
   "review_corrections": [
     {
