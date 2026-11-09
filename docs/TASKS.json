@@ -1404,6 +1404,95 @@
       "review_report": "continuation/evidence/wave5/review-providers/acceptance.json",
       "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
       "completion_scope": "Assigned fixed-SHA agent review only; not an external audit."
+    },
+    {
+      "id": "NEXT-AGGREGATE",
+      "owner": "next-aggregate",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "branch": "hoplite/datala-625e4bd5--next-aggregate",
+      "worktree": "/tmp/hoplite/232-next-aggregate",
+      "write_paths": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/evidence/next/aggregate-callback/"
+      ],
+      "bounded_deliverable": "Extend one non-direct callback branch at 0x4149E7B1 with typed inputs and one byte-supported local effect; retain unknown callback providers and tail.",
+      "depends_on": [],
+      "acceptance": [
+        "Pinned original source hashes/bytes and explicit assumptions for new claims",
+        "Focused native and sanitizer tests for new C++17 code",
+        "Coordinator integration, full make check, fixed-SHA separate review"
+      ],
+      "stop": "One bounded implemented chain or precise source-backed frontier. Do not expand to whole reconstruction.",
+      "blocked_reason": null
+    },
+    {
+      "id": "NEXT-RESET",
+      "owner": "next-reset",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "branch": "hoplite/datala-625e4bd5--next-reset",
+      "worktree": "/tmp/hoplite/232-next-reset",
+      "write_paths": [
+        "continuation/include/rage/charge_state.hpp",
+        "continuation/src/charge_state.cpp",
+        "continuation/tests/test_charge_state.cpp",
+        "continuation/evidence/next/reset-entry/"
+      ],
+      "bounded_deliverable": "Recover one immediate predecessor of the eleven-store reset block, preserving unresolved entry/scheduling beyond the bounded slice.",
+      "depends_on": [],
+      "acceptance": [
+        "Pinned original source hashes/bytes and explicit assumptions for new claims",
+        "Focused native and sanitizer tests for new C++17 code",
+        "Coordinator integration, full make check, fixed-SHA separate review"
+      ],
+      "stop": "One bounded implemented chain or precise source-backed frontier. Do not expand to whole reconstruction.",
+      "blocked_reason": null
+    },
+    {
+      "id": "NEXT-MESSAGE",
+      "owner": "next-message",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "branch": "hoplite/datala-625e4bd5--next-message",
+      "worktree": "/tmp/hoplite/232-next-message",
+      "write_paths": [
+        "continuation/include/rage/bounded_message_fields.hpp",
+        "continuation/src/bounded_message_fields.cpp",
+        "continuation/tests/test_bounded_message_fields.cpp",
+        "continuation/evidence/next/message-boundary/"
+      ],
+      "bounded_deliverable": "Recover one enclosing validation or consumer effect at/after 0x41512BD0..0x41512BE8 without inventing sender/framing or downstream acceptance.",
+      "depends_on": [],
+      "acceptance": [
+        "Pinned original source hashes/bytes and explicit assumptions for new claims",
+        "Focused native and sanitizer tests for new C++17 code",
+        "Coordinator integration, full make check, fixed-SHA separate review"
+      ],
+      "stop": "One bounded implemented chain or precise source-backed frontier. Do not expand to whole reconstruction.",
+      "blocked_reason": null
+    },
+    {
+      "id": "NEXT-BASELINE",
+      "owner": "next-baseline",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "branch": "hoplite/datala-625e4bd5--next-baseline",
+      "worktree": "/tmp/hoplite/232-next-baseline",
+      "write_paths": [
+        "continuation/evidence/next/baseline/"
+      ],
+      "bounded_deliverable": "Fresh full baseline check, integrity and archived V6-V10 replay; inventory all 46 branch commits and existing modules without rewriting historical reports.",
+      "depends_on": [],
+      "acceptance": [
+        "Pinned original source hashes/bytes and explicit assumptions for new claims",
+        "Focused native and sanitizer tests for new C++17 code",
+        "Coordinator integration, full make check, fixed-SHA separate review"
+      ],
+      "stop": "One bounded implemented chain or precise source-backed frontier. Do not expand to whole reconstruction.",
+      "blocked_reason": null
     }
   ],
   "goal_correction": {
@@ -1432,5 +1521,11 @@
     "full_tasks_closed": [],
     "status": "accepted_bounded_scope",
     "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a"
+  },
+  "current_continuation": {
+    "id": "NEXT",
+    "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+    "coordinator_branch": "hoplite/datala-625e4bd5",
+    "scope": "Three disjoint post-W5 slices and fresh baseline; previous W5 metadata is historical."
   }
 }
