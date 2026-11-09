@@ -1,0 +1,1160 @@
+{
+  "task": "W5-SCOPE",
+  "base_commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b",
+  "assignment_commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+  "branch": "hoplite/sikyon-46eee495--w5-scope-sol",
+  "owner": "w5-scope-sol",
+  "handoff_read_only": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+  "scope": "Source-backed reconciliation of every corrected GOAL domain; navigation inventory, not full dependency/algorithm reconstruction.",
+  "interpretation": {
+    "goal_bullet": {
+      "0": "Язык/ABI — отдельный gate",
+      "1": "Выбор цели/точки, геометрия/попадание, шанс/пороги",
+      "2": "Урон/пробитие/броня, история/варианты",
+      "3": "Настройки, фильтры, углы, движение/остановка",
+      "4": "DT/HS, зарядка/переходы/сбросы",
+      "5": "Сеть/форматы и учёт результата",
+      "6": "Интерфейсы/владение/lifecycle/служебные зависимости",
+      "7": "Полнота/эквивалентность/аудит"
+    },
+    "evidence_levels": "Existing contracts are cited as archival/current bounded evidence. Fresh work here checks file hashes, reference existence and the two original-byte clues only; no historical behavior or algorithm proof is promoted to fresh.",
+    "archival_addresses": "Hex navigation labels; not newly established function boundaries, live module bases or reachability.",
+    "current_code": "Pinned at assigned base before parallel W5 integration; historical .c and current C++17 do not establish original language.",
+    "next_steps": "Proposals only; not new assignments or a full project plan. Related W5 owners are not duplicated.",
+    "source_pins": "Repository sources are immutable Git blobs at base_commit, assignment sources at assignment_commit; parallel W5 changes must not retroactively alter this snapshot. Handoff sources are checked read-only by path/hash."
+  },
+  "sources": {
+    "goal": {
+      "root": "git",
+      "path": "docs/GOAL.md",
+      "size": 8705,
+      "sha256": "4e597f663fe9a07b8563e600c36fdde17ddac4e39c7dbc2f2d2104e58b758a45",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "source_index": {
+      "root": "git",
+      "path": "docs/SOURCE_INDEX.md",
+      "size": 11079,
+      "sha256": "d7816fe35dc5beddd396f12744d614acbb031ed338e9f4deed29a800c5b47825",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "plan": {
+      "root": "git",
+      "path": "continuation/PLAN.md",
+      "size": 5612,
+      "sha256": "eaab0b3cee3ec1aadb09bf4f722c61100bdcd60b38c3efffc18ddaded038b2f6",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "status": {
+      "root": "git",
+      "path": "continuation/STATUS.json",
+      "size": 10825,
+      "sha256": "0f52ac0dc1fb9eebe6b47e119ef6af93380a45b374986ee213f40136704a6550",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "inventory": {
+      "root": "git",
+      "path": "continuation/evidence/inventory.json",
+      "size": 5149,
+      "sha256": "74d4c8f588a5438539c5c007fcdd259984f669faa54a4243e81370395dd74cd0",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "code01": {
+      "root": "git",
+      "path": "continuation/evidence/wave2/code01/README.md",
+      "size": 2769,
+      "sha256": "5ea3a8d34aa6e7333cb0d1b55cd8ce17e1bd4b804cb7991e968343203444a38d",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "gap02": {
+      "root": "git",
+      "path": "continuation/evidence/wave2/gap02/README.md",
+      "size": 11529,
+      "sha256": "be57e0ef66860778c719e8c348ad1dd88e55582e4441a9ff5490e0fe2ea1ae17",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "position": {
+      "root": "git",
+      "path": "continuation/src/position_records.cpp",
+      "size": 4994,
+      "sha256": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "charge": {
+      "root": "git",
+      "path": "continuation/src/charge_state.cpp",
+      "size": 3374,
+      "sha256": "5a5ff3e592a4e9133896984d353255877f0e93b15757c3ac6294e5559a2fa4ce",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "lifecycle": {
+      "root": "git",
+      "path": "continuation/src/position_lifecycle.cpp",
+      "size": 6815,
+      "sha256": "8b921a16ed73020b42b823eed29d21db00e494260de78ad2cef3756fe88630ae",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "scalar": {
+      "root": "git",
+      "path": "continuation/src/resolved_scalar_helper.cpp",
+      "size": 1544,
+      "sha256": "cfde7d0df37d48489b5fe490a7a615ed24ee586069f86b57c443fdb1699b9ad1",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "marker": {
+      "root": "git",
+      "path": "continuation/src/marker_pipeline.cpp",
+      "size": 2977,
+      "sha256": "2311b49a11507e75c47706fb2e4f3b5a3bbbeb4dea69776de251a260e2eced4d",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "actor": {
+      "root": "git",
+      "path": "continuation/src/actor_scalar_pipeline.cpp",
+      "size": 1951,
+      "sha256": "f1efd4d255673fa9857f405781f57c2378c608f891549be69670a32077090a83",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "source_map": {
+      "root": "git",
+      "path": "continuation/evidence/SOURCE_MAP.md",
+      "size": 11410,
+      "sha256": "b466b805f83abe89d869418d3533af097c8987d53f9b70c9c0d36a2175f349e2",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "charge_contract": {
+      "root": "git",
+      "path": "continuation/evidence/wave2/gap03/reset_slice_contract.md",
+      "size": 5178,
+      "sha256": "8ff325d52acc1d802e686a87813fa26e48055e2bd73d918550460ae2abdac8ca",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "lifecycle_contract": {
+      "root": "git",
+      "path": "continuation/evidence/gap05/position_lifecycle.json",
+      "size": 19636,
+      "sha256": "54d6fd2e75624437eb1815eee53d5c7084c7f7ccf51c9db413b802df9252620f",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "scalar_contract": {
+      "root": "git",
+      "path": "continuation/evidence/wave2/gap04/contract.md",
+      "size": 9522,
+      "sha256": "575067ff9e314fbe752ed9b400d37556f63169f5b2d36ea4c80df14bc24fb7c2",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "marker_contract": {
+      "root": "git",
+      "path": "continuation/evidence/wave3/marker/composition.json",
+      "size": 7503,
+      "sha256": "ac486c03bd04e9c9deb286372506d2d885107976ce7bd73ecc8129965671692e",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "actor_contract": {
+      "root": "git",
+      "path": "continuation/evidence/wave3/actor/provenance.json",
+      "size": 6786,
+      "sha256": "7b8bd799325227ee8d2203664761e3164d2755d2b5100960e5882b73acf875ee",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "p_frontier": {
+      "root": "git",
+      "path": "continuation/evidence/wave3/source/README.md",
+      "size": 6662,
+      "sha256": "71e7a4a6bf743ce4f7ce1bfd4c1f4f1c0957c84bb4197bffb926bb1a576ac645",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "bindings": {
+      "root": "git",
+      "path": "continuation/evidence/gap04/README.md",
+      "size": 3518,
+      "sha256": "13611c4f073f52938274df81b4626c38a75a0ad27bb3aae4f735b7a1ddf1dedf",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "fallback": {
+      "root": "git",
+      "path": "continuation/evidence/next/scalar-provider/contract.md",
+      "size": 9313,
+      "sha256": "e32ae22d0b6a81f94240d6e988337c336d84a780f8e1a070abf4cf73697980ff",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "historical": {
+      "root": "git",
+      "path": "continuation/evidence/wave2/gap06/README.md",
+      "size": 4496,
+      "sha256": "3714e1dbadf259fdc58470b319cbe1c5ba7223af62583d025f04fa462e7fe9c8",
+      "commit": "3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b"
+    },
+    "archive_goal": {
+      "root": "handoff",
+      "path": "docs/Цель_и_критерии_готовности.md",
+      "size": 4312,
+      "sha256": "a4de35be72ab5cd9fa9975322a249e17342d04a59d8660fd7c6cfe2ac76c432e"
+    },
+    "archive_map": {
+      "root": "handoff",
+      "path": "docs/Карта_кода_и_доказательств.md",
+      "size": 7888,
+      "sha256": "9cb7d6aad11e5520a4030890a27b99d539daf6aff9e04b85506fa0270be23323"
+    },
+    "v7_report": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v7/Итоги_работы_по_доступным_материалам_V7.md",
+      "size": 26924,
+      "sha256": "038f887cd44d99e7cdd0928c822e38d2a0df9fdacf00fac3ef8904399ab738e1"
+    },
+    "v8_status": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/module_status.json",
+      "size": 4622,
+      "sha256": "07723204ae9c6e091a6bacd53399806ab8d59e46ce26afd1745239f1ca24ea3a"
+    },
+    "v8_report": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/Частично_изученные_блоки_итоги_V8.md",
+      "size": 26243,
+      "sha256": "b0449b823dbd179b924aa71c90294293cdccbc452495866fa893f596f785699d"
+    },
+    "v9_report": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v9/Частичные_блоки_новые_контракты_V9.md",
+      "size": 19478,
+      "sha256": "688eb78d48dafb4f5c2f94cbc9368f356be8387ee9b3c9fba68cb21d4b00e964"
+    },
+    "v10_gaps": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v10/remaining_gaps.json",
+      "size": 5839,
+      "sha256": "1602fbfd1e18ca54fb972bece79197e63bafbdc516a888a1925be1ebb676738a"
+    },
+    "geometry_frontier": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v6/analysis_findings.json",
+      "size": 2343,
+      "sha256": "6e1afc63a7be820f680f77286710efef04450b9291bc6a3c165ac79f4f15a30d"
+    },
+    "archive_math": {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/src/nl_rage_math.c",
+      "size": 2509,
+      "sha256": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0"
+    },
+    "archive_core": {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/src/nl_core.c",
+      "size": 893,
+      "sha256": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a"
+    },
+    "archive_netvar": {
+      "root": "handoff",
+      "path": "workspace/work/recovered_nl/recovered_nl/src/nl_netvar.c",
+      "size": 3000,
+      "sha256": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6"
+    },
+    "v8_spec": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v8/proof_spec.json",
+      "size": 2508,
+      "sha256": "3470860aa88aa9688320b23831db87e3e947e215f771e0003387e0db7f5327ea"
+    },
+    "dll": {
+      "root": "handoff",
+      "path": "workspace/input/dll/neverlose.dll",
+      "size": 62201344,
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c"
+    },
+    "integrity_checker": {
+      "root": "handoff",
+      "path": "workspace/orchestration/v1/approval_package/check_integrity.py",
+      "size": 1322,
+      "sha256": "22e7bbd5f489142bf6e5c9a32a88c0e71430481ee8389c288eda8115f3619c7a"
+    },
+    "w5_assignment": {
+      "root": "git",
+      "commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+      "path": "continuation/evidence/wave5/assignment.json",
+      "size": 31481,
+      "sha256": "5c48a95decce869227bcf88d6ed55c053efc37a60b6e35a35e49b90a324f4dc4"
+    },
+    "w5_registry": {
+      "root": "git",
+      "commit": "dada7f078479219fd76e0ecacd2f056a440d8431",
+      "path": "docs/TASKS.json",
+      "size": 56937,
+      "sha256": "8bb3844bafbba824cc49bfd30dcde99a542b5fa5414d4371e2c93b37005cf1e9"
+    }
+  },
+  "domains": [
+    {
+      "id": "language_abi",
+      "domain": "Исходный язык, compiler и ABI",
+      "goal_bullet": 0,
+      "sources": [
+        "goal",
+        "archive_map",
+        "dll"
+      ],
+      "archival_navigation_anchors": [
+        "docs/GOAL.md: Язык оригинала и текущая реализация",
+        "static_evidence.json#/clues"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "unresolved_with_two_static_clues",
+      "existing_evidence_boundary": "PE32/i386 заголовок и один вид декорированного RTTI-маркера проверены свежим чтением исходного neverlose.dll; это признаки отдельных компонентов, не доказательство языка всего Ragebot.",
+      "unresolved": [
+        "Язык исходного транзитивного контура и его стандарт",
+        "Конкретный compiler, toolchain и calling conventions каждой границы",
+        "Связь внешнего контейнера/RTTI с нужными телами nl.bin"
+      ],
+      "dependencies_to_resolve": [
+        "interfaces",
+        "ownership_lifecycle"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "После этой ограниченной карты отдельно доказать принадлежность уже найденного RTTI/ABI одному необходимому типу; не объявлять весь проект C++ по библиотеке или заголовку."
+    },
+    {
+      "id": "target_selection",
+      "domain": "Выбор цели",
+      "goal_bullet": 1,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v9_report",
+        "code01"
+      ],
+      "archival_navigation_anchors": [
+        "archive_map:41; 0x41477AF0",
+        "v8_status#/0",
+        "v9_report §3: Выбор цели и оценка точки"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Сохранены локальные фильтры и T+C8; существующий CODE01 прямо оставляет агрегацию и выбор не реализованными.",
+      "unresolved": [
+        "Полный порядок сравнения кандидатов и все ветви",
+        "Значение/первичный источник T+F4",
+        "Достижимость и внешние наблюдения"
+      ],
+      "dependencies_to_resolve": [
+        "point_evaluation",
+        "history",
+        "filters",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-AGGREGATE",
+        "W5-TF4"
+      ],
+      "next_bounded_step": "Использовать результат W5-AGGREGATE; затем взять только одну оставшуюся ветвь селектора, не подменять полным новым target bot."
+    },
+    {
+      "id": "point_evaluation",
+      "domain": "Выбор/оценка точки и агрегация",
+      "goal_bullet": 1,
+      "sources": [
+        "archive_map",
+        "v7_report",
+        "code01"
+      ],
+      "archival_navigation_anchors": [
+        "archive_map:41; 0x4149C740, 0x414A52E0",
+        "v7_report: 0x414A8D96..0x414A8DBB, T+F0"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив V7 описывает взвешенную оценку и её локальный потребитель; это не новая реализация в текущих шести модулях.",
+      "unresolved": [
+        "Все способы создания/фильтрации Point",
+        "Положительный Point+26 и его связь с T+96",
+        "Полные варианты выбора точки/применения результата"
+      ],
+      "dependencies_to_resolve": [
+        "geometry_hit",
+        "damage",
+        "chance_thresholds",
+        "ownership_lifecycle"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-AGGREGATE",
+        "W5-POINT26",
+        "W5-TF4",
+        "W5-GLOBAL9BC"
+      ],
+      "next_bounded_step": "После W5-AGGREGATE явно сопоставить его локальный контракт с одним потребителем T+F0; другие ветви оставить открытыми."
+    },
+    {
+      "id": "geometry_hit",
+      "domain": "Геометрия, попадание и варианты положения",
+      "goal_bullet": 1,
+      "sources": [
+        "archive_map",
+        "geometry_frontier",
+        "v9_report"
+      ],
+      "archival_navigation_anchors": [
+        "archive_map:42; 0x41352470 -> 0x414F45B0 -> 0x414F62C0",
+        "geometry_frontier#/new_external_caller: 0x414F3C90 -> 0x289A6D60",
+        "client candidates 0x10876D60 / 0x103E6D60"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_binding_frontier",
+      "existing_evidence_boundary": "Сохранены локальные геометрические цепочки и раздельные кандидаты внешней capsule-связки. Текущий scalar helper не является восстановленной геометрией.",
+      "unresolved": [
+        "Однозначная привязка внешнего адреса к реально необходимой функции",
+        "Применимость ко всем hitbox/вариантам положения",
+        "Все входы, быстрые выходы и потребители геометрии"
+      ],
+      "dependencies_to_resolve": [
+        "history",
+        "interfaces",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-BINDINGS"
+      ],
+      "next_bounded_step": "Предлагаемая, не назначенная карточка GEOMETRY: один существующий capsule caller, его вход/выход и неразрешённая таблица/привязка; не повторять W5-BINDINGS и не склеивать два client-кандидата."
+    },
+    {
+      "id": "chance_thresholds",
+      "domain": "Шанс и два порога",
+      "goal_bullet": 1,
+      "sources": [
+        "v8_status",
+        "v8_report",
+        "gap02",
+        "archive_math"
+      ],
+      "archival_navigation_anchors": [
+        "v8_status#/1; v8_report §§2–3",
+        "T+60 -> T+64/T+68; 0x4149E315 — архивный DWORD store T+68",
+        "0x4148F830; 0x414AD910; 0x414B2930"
+      ],
+      "current_or_archived_code": [
+        "archive_math: nl_hitchance_score; ограниченный helper, не полный шанс"
+      ],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив связывает настройки с порогами; T+64 связан с бюджетом и callback. T+68 и N+68 относятся к разным объектам.",
+      "unresolved": [
+        "Типизированный T+68 consumer: тот же T -> чтение -> сравнение -> ветвь -> действие",
+        "Полная геометрическая/рабочая цепочка",
+        "Среда округления, все входы и worker scheduling"
+      ],
+      "dependencies_to_resolve": [
+        "settings",
+        "geometry_hit",
+        "services_queue",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-THRESHOLD"
+      ],
+      "next_bounded_step": "Принять только доказанную локальную цепочку W5-THRESHOLD; не закрывать GAP02 чтением N+68."
+    },
+    {
+      "id": "damage",
+      "domain": "Урон и hitgroup",
+      "goal_bullet": 2,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v8_report",
+        "archive_math"
+      ],
+      "archival_navigation_anchors": [
+        "archive_map:43; 0x4136FFA0, 0x41370710",
+        "v8_status#/2; v8_report §§1,4"
+      ],
+      "current_or_archived_code": [
+        "archive_math: nl_hits_to_kill, nl_mean_expected_damage; не полный модуль"
+      ],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Сохранены арифметика минимального урона, hitgroup-таблица и отдельные чистые helpers.",
+      "unresolved": [
+        "Полный вход/выход урона и все пути вычисления",
+        "Источники параметров оружия/поверхностей",
+        "Применимость локальных коэффициентов к необходимому контуру"
+      ],
+      "dependencies_to_resolve": [
+        "settings",
+        "penetration",
+        "armor",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-BINDINGS"
+      ],
+      "next_bounded_step": "Предлагаемая карточка DAMAGE: один уже сохранённый hitgroup case с доказанной шириной входа и одним downstream store; без нового общего симулятора урона."
+    },
+    {
+      "id": "penetration",
+      "domain": "Пробитие и препятствия",
+      "goal_bullet": 2,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ],
+      "archival_navigation_anchors": [
+        "0x41371D00; v8_report §4; v8_status#/2"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив различает предварительную таблицу материалов и финальное уменьшение урона; порядок записи урона/отказа/бюджета описан локально.",
+      "unresolved": [
+        "Все trace/surface providers",
+        "Полные входы, выходы и непрямые места",
+        "Нельзя переносить локальный порядок одного отказа на всю функцию"
+      ],
+      "dependencies_to_resolve": [
+        "geometry_hit",
+        "interfaces",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-BINDINGS"
+      ],
+      "next_bounded_step": "Предлагаемая карточка PENETRATION: один оставшийся indirect provider или один финальный выход; не объединять таблицу допустимой толщины с окончательным damage."
+    },
+    {
+      "id": "armor",
+      "domain": "Броня и предикат применимости",
+      "goal_bullet": 2,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ],
+      "archival_navigation_anchors": [
+        "0x41370D00; 0x4136CC20",
+        "v8_report §5; v8_status#/2"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Арифметика обычной/тяжёлой брони выделена в архивной модели при заданных входах, отдельно от применимости.",
+      "unresolved": [
+        "Полный предикат применимости к внешним объектам",
+        "Все режимы и необъяснённые выходы",
+        "Происхождение коэффициента оружия"
+      ],
+      "dependencies_to_resolve": [
+        "damage",
+        "interfaces",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-BINDINGS"
+      ],
+      "next_bounded_step": "Предлагаемая карточка ARMOR: один сохранённый выход applicability helper с исходными operands и действием; не распространять чистую арифметику на недоказанный guard."
+    },
+    {
+      "id": "history",
+      "domain": "История и варианты состояния H",
+      "goal_bullet": 2,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v9_report",
+        "archive_core",
+        "archive_math"
+      ],
+      "archival_navigation_anchors": [
+        "archive_map:34,44; 0x413F6DE0/0x413F88F0, 0x4134E630, 0x413F3A40, 0x413FE970, 0x414AB5D0",
+        "v8_status#/3; v9_report §3"
+      ],
+      "current_or_archived_code": [
+        "archive_core: nl_lag_compensation_unavailable",
+        "archive_math: nl_interpolation_seconds, nl_backtrack_correction"
+      ],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив отделяет H от журнала R и командного кольца; восстановлены отдельные источники/временные формулы, не вся история.",
+      "unresolved": [
+        "Все условия пригодности и варианты восстановления",
+        "Применимость матриц/положения к реальному состоянию",
+        "Сквозная связь истории с выбором точки"
+      ],
+      "dependencies_to_resolve": [
+        "geometry_hit",
+        "interfaces",
+        "ownership_lifecycle"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "Предлагаемая карточка HISTORY: один вариант H из сохранённых walks V3/V4 с входом, восстановлением и одним потребителем; не выдавать поля H за скорость без доказательства."
+    },
+    {
+      "id": "settings",
+      "domain": "Настройки и configuration",
+      "goal_bullet": 3,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v8_report"
+      ],
+      "archival_navigation_anchors": [
+        "0x4149DFE0; T+54, T+60, T+64/T+68",
+        "v8_report §§1–2; v8_status#/4"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Существуют локальные цепочки минимального урона и шанса, включая альтернативные ветви; это не полный configuration graph.",
+      "unresolved": [
+        "Остальные настройки и привязка к режимам/оружию",
+        "Полная цепочка configuration source -> typed field -> consumer",
+        "Порядок применения альтернативных настроек"
+      ],
+      "dependencies_to_resolve": [
+        "interfaces",
+        "modes_dt_hs",
+        "remaining_consumers"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-AGGREGATE",
+        "W5-THRESHOLD"
+      ],
+      "next_bounded_step": "Предлагаемая карточка CONFIG: одно ещё не охваченное поле settings и один typed consumer, после исключения цепочек W5-AGGREGATE/THRESHOLD."
+    },
+    {
+      "id": "filters",
+      "domain": "Фильтры целей/точек/недавних записей",
+      "goal_bullet": 3,
+      "sources": [
+        "v8_report",
+        "v8_status",
+        "archive_map"
+      ],
+      "archival_navigation_anchors": [
+        "v8_report §6; v8_status#/0, /6",
+        "R stride 0xF1A0; T+C8; Point+25/+26"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Недавняя сильная R-запись и приоритет времени описаны локально. R не равен H; локальная запись не является подтверждением сервера.",
+      "unresolved": [
+        "Полный набор eligibility/safety/mode filters",
+        "Входы и порядок применения всех фильтров",
+        "Положительный источник Point+26"
+      ],
+      "dependencies_to_resolve": [
+        "history",
+        "settings",
+        "shot_result",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-AGGREGATE",
+        "W5-POINT26"
+      ],
+      "next_bounded_step": "Предлагаемая карточка FILTER: один неохваченный safety/eligibility branch из сохранённого selector/point caller, с тем же объектом и эффектом."
+    },
+    {
+      "id": "angle_correction",
+      "domain": "Коррекция углов и отдача",
+      "goal_bullet": 3,
+      "sources": [
+        "archive_map",
+        "v9_report",
+        "v8_status"
+      ],
+      "archival_navigation_anchors": [
+        "0x414AE770; input 0x4147A2A0",
+        "v9_report §1: Числа и ограничения углов; 0x414AF1A5..0x414AF1CC",
+        "0x42026D1B; 0x42031040 -> 0x42048809 -> 0x4216A840 -> 0x420498D0"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "В архиве выделены классификация, вычитание, остаток и ограничения; это числовой путь, не все условия включения коррекции.",
+      "unresolved": [
+        "Все entry predicates и непрямые передачи",
+        "Математическая среда/исключения",
+        "Полная связка settings -> исходные углы -> корректированные команды"
+      ],
+      "dependencies_to_resolve": [
+        "settings",
+        "interfaces",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "Предлагаемая карточка ANGLES: одна сохранённая входная ветвь recoil caller до числового контракта, сохраняя NaN/Inf и FP порядок."
+    },
+    {
+      "id": "movement_stop",
+      "domain": "Движение и остановка",
+      "goal_bullet": 3,
+      "sources": [
+        "archive_map",
+        "v9_report",
+        "archive_math",
+        "v8_status"
+      ],
+      "archival_navigation_anchors": [
+        "0x414A5130; 0x4148CAE0",
+        "v9_report §1: Одна проверка движения; v8_status#/5",
+        "0x414B2930 — batch dispatcher, не stop-feasibility"
+      ],
+      "current_or_archived_code": [
+        "archive_math: nl_prepare_movement; защитный чистый helper"
+      ],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Сохранён локальный числовой предикат с unordered-случаем, отдельно от полного модуля движения.",
+      "unresolved": [
+        "Полные guards и режимы остановки/выхода из укрытия",
+        "Смысл всех входов и обновлений команд",
+        "Реальное расписание и включение"
+      ],
+      "dependencies_to_resolve": [
+        "settings",
+        "modes_dt_hs",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "Предлагаемая карточка MOVEMENT: один predecessor/consumer предиката 0x414A5130; 0x414B2930 не переименовывать в остановку."
+    },
+    {
+      "id": "modes_dt_hs",
+      "domain": "Режимы DT/HS и выпуск команд",
+      "goal_bullet": 4,
+      "sources": [
+        "v9_report",
+        "v8_status",
+        "charge_contract",
+        "charge"
+      ],
+      "archival_navigation_anchors": [
+        "0x414F1240; 0x414F30C0; 0x415E0120",
+        "v9_report §1: Внутренние лимиты и малое условие режима; §3"
+      ],
+      "current_or_archived_code": [
+        "charge: capacity, set-only latch, small counter gate"
+      ],
+      "coverage_class": "conditional_offline_subset",
+      "existing_evidence_boundary": "Текущий код реализует локальные лимиты/флаг/счётчик; отдельные observations не являются единым снимком и не задают полный DT/HS.",
+      "unresolved": [
+        "Полный граф режимов DT/HS и переключений",
+        "Все источники флагов/счётчиков и release scheduling",
+        "Связь mode -> charge -> command release"
+      ],
+      "dependencies_to_resolve": [
+        "charge_resets",
+        "interfaces",
+        "services_queue"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-CHARGE"
+      ],
+      "next_bounded_step": "Предлагаемая карточка MODES после W5-CHARGE: одна существующая ветвь release 0x415E0120 и её состояние; не восстанавливать сразу весь автомат."
+    },
+    {
+      "id": "charge_resets",
+      "domain": "Зарядка, переходы и сбросы",
+      "goal_bullet": 4,
+      "sources": [
+        "charge",
+        "charge_contract",
+        "v9_report",
+        "status"
+      ],
+      "archival_navigation_anchors": [
+        "reset contract: 0x415DECEE..0x415DED52",
+        "STATUS GAP03"
+      ],
+      "current_or_archived_code": [
+        "charge: локальная reset-проекция трёх полей на базе W5"
+      ],
+      "coverage_class": "conditional_offline_subset",
+      "existing_evidence_boundary": "Существующая проекция reset не задаёт вход в блок или расписание; другие stores отдельно назначены W5-CHARGE.",
+      "unresolved": [
+        "Полный reset entry predicate",
+        "Остальные исходные stores и lifecycle",
+        "Межвызовный порядок reset/charge/release"
+      ],
+      "dependencies_to_resolve": [
+        "modes_dt_hs",
+        "interfaces",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-CHARGE"
+      ],
+      "next_bounded_step": "Использовать bounded W5-CHARGE; затем разрешить один predecessor только при новом конкретном байтовом основании."
+    },
+    {
+      "id": "network_state",
+      "domain": "Необходимые сетевые/позиционные состояния N",
+      "goal_bullet": 5,
+      "sources": [
+        "position",
+        "lifecycle",
+        "marker",
+        "actor",
+        "source_map",
+        "lifecycle_contract",
+        "marker_contract",
+        "actor_contract"
+      ],
+      "archival_navigation_anchors": [
+        "N stride 0x74; 0x4150AB00, 0x4150BE40, 0x414F8330, 0x414FD800",
+        "0x413650D2; 0x412C2F20"
+      ],
+      "current_or_archived_code": [
+        "position",
+        "lifecycle",
+        "marker",
+        "actor"
+      ],
+      "coverage_class": "conditional_offline_subset",
+      "existing_evidence_boundary": "Есть update/snapshot/reader/item gate и условные helper/marker/actor compositions; внешние guards и наблюдения явные.",
+      "unresolved": [
+        "Upstream N+48, полный N+50/+54 provenance",
+        "P/P+0 -> N+14 и cross-call identity",
+        "Все необходимые конечные consumers и их reachability"
+      ],
+      "dependencies_to_resolve": [
+        "messages",
+        "interfaces",
+        "ownership_lifecycle",
+        "remaining_consumers"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-LIFECYCLE",
+        "W5-P-TOLERANCE",
+        "W5-GUARDS"
+      ],
+      "next_bounded_step": "Использовать результаты соответствующих владельцев; не смешивать N+68 с T+68 и не превращать offline transactional API в rollback оригинала."
+    },
+    {
+      "id": "messages",
+      "domain": "Форматы сообщений, валидация и sender",
+      "goal_bullet": 5,
+      "sources": [
+        "archive_map",
+        "v9_report",
+        "v10_gaps"
+      ],
+      "archival_navigation_anchors": [
+        "0x41B873F0, 0x41B87580, 0x41B87230, 0x41B87430",
+        "0x41511CC0; error 0x41512AA6..0x41512AAD; handoff 0x41512BD0..0x41512BE8",
+        "v10_gaps#/4"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Биты, координаты, маски и локальная передача tuple описаны; tuple не равен полному пакету или sender.",
+      "unresolved": [
+        "Полный формат/границы буфера/инициализация",
+        "Enclosing message и sender",
+        "Все validators и tuple -> state -> consumers"
+      ],
+      "dependencies_to_resolve": [
+        "network_state",
+        "interfaces",
+        "services_queue"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-MESSAGES"
+      ],
+      "next_bounded_step": "Использовать W5-MESSAGES; если полный enclosing body не установлен, оставить sender/format frontier без живой сети."
+    },
+    {
+      "id": "shot_result",
+      "domain": "Учёт результата выстрела",
+      "goal_bullet": 5,
+      "sources": [
+        "archive_map",
+        "v8_status",
+        "v9_report"
+      ],
+      "archival_navigation_anchors": [
+        "0x414C0A50; v8_status#/6",
+        "Cring stride 0x98/index modulo 150; R stride 0xF1A0"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив различает локальную классификацию/учёт и подтверждение результата сервером.",
+      "unresolved": [
+        "Все пути результата и связи R/command ring",
+        "Причины промаха и server-confirmed hit",
+        "Связь выстрела с сетевым событием и жизненным циклом"
+      ],
+      "dependencies_to_resolve": [
+        "messages",
+        "history",
+        "filters",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "Предлагаемая карточка SHOT: один существующий store/consumer локального результата в 0x414C0A50, без утверждения server equivalence."
+    },
+    {
+      "id": "interfaces",
+      "domain": "Интерфейсы, entity/weapon и runtime bindings",
+      "goal_bullet": 6,
+      "sources": [
+        "bindings",
+        "fallback",
+        "scalar_contract",
+        "scalar",
+        "geometry_frontier",
+        "archive_netvar"
+      ],
+      "archival_navigation_anchors": [
+        "scalar helper 0x41C784B0; cell 0x4252194C; writer 0x41C5E404",
+        "indirect 0x4226723C; callee 0x41C5BDA0",
+        "P cell 0x4223CA04; archive netvar search != game-object ABI"
+      ],
+      "current_or_archived_code": [
+        "scalar: явный fallback observation",
+        "archive_netvar: нормализованный поиск"
+      ],
+      "coverage_class": "conditional_offline_subset",
+      "existing_evidence_boundary": "Локальные helper/body и pointer-cell anchors отделены от реальных внешних providers.",
+      "unresolved": [
+        "Entity и weapon resolution по отдельности",
+        "ESI, indirect provider, fallback +0x24, tolerance",
+        "Однозначное владение модулем/адресом, структура ABI"
+      ],
+      "dependencies_to_resolve": [
+        "language_abi",
+        "ownership_lifecycle",
+        "guards_dispatch"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-BINDINGS",
+        "W5-ESI",
+        "W5-INDIRECT",
+        "W5-FALLBACK24",
+        "W5-P-TOLERANCE"
+      ],
+      "next_bounded_step": "Не дублировать пять chains W5; соединять результаты только при доказанной идентичности и выполненных предусловиях."
+    },
+    {
+      "id": "ownership_lifecycle",
+      "domain": "Владение, перенос, время жизни и snapshots",
+      "goal_bullet": 6,
+      "sources": [
+        "v7_report",
+        "archive_map",
+        "lifecycle_contract",
+        "p_frontier",
+        "fallback",
+        "marker_contract",
+        "actor_contract"
+      ],
+      "archival_navigation_anchors": [
+        "T stride 0x170; move prefix 0xF8; v7_report §3",
+        "P+0 -> N+14 writer 0x414F840B",
+        "N+48/+50/+54; fallback pointer +0x24"
+      ],
+      "current_or_archived_code": [
+        "position",
+        "lifecycle",
+        "marker",
+        "actor"
+      ],
+      "coverage_class": "conditional_offline_subset",
+      "existing_evidence_boundary": "Архив описывает перенос/очистку T; текущие N compositions сохраняют раздельные snapshots. Одинаковая pointer cell не доказывает lifetime/ordering.",
+      "unresolved": [
+        "Writer-before-reader и lifetime fallback",
+        "Полный lifecycle N и P supplier",
+        "Точное владение/aliasing всех необходимых T/H/Point resources"
+      ],
+      "dependencies_to_resolve": [
+        "interfaces",
+        "network_state"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-FALLBACK24",
+        "W5-LIFECYCLE",
+        "W5-P-TOLERANCE"
+      ],
+      "next_bounded_step": "После W5 выделить один остающийся resource-owner transition T или N; не переносить layout/поля между Point/T/H/R/N/P."
+    },
+    {
+      "id": "services_queue",
+      "domain": "Служебные зависимости: worker queue и инициализация",
+      "goal_bullet": 6,
+      "sources": [
+        "v8_report",
+        "v9_report",
+        "archive_map"
+      ],
+      "archival_navigation_anchors": [
+        "batch dispatcher 0x414B2930; worker 0x414AC2D0",
+        "initializer array 0x421B7350..0x421B7644; runner 0x42028C86; caller 0x42009D1C",
+        "position manager slot 67; mask initializer slot 155"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "partial_archival_contracts",
+      "existing_evidence_boundary": "Архив описывает локальное распределение слотов и таблицы инициализации, не реальное выполнение потоков или запуск initializer.",
+      "unresolved": [
+        "Все schedules и lifetime callback context",
+        "Фактический порядок инициализации/ошибки",
+        "Все необходимые worker/runtime dependencies"
+      ],
+      "dependencies_to_resolve": [
+        "interfaces",
+        "guards_dispatch",
+        "ownership_lifecycle"
+      ],
+      "related_w5_owners_not_researched_here": [],
+      "next_bounded_step": "Предлагаемая карточка QUEUE: одна закреплённая callback-context lifetime цепочка; не называть модель потока выполнением оригинала."
+    },
+    {
+      "id": "guards_dispatch",
+      "domain": "TLS/FS, opaque dispatch, исключения и out-of-range index",
+      "goal_bullet": 6,
+      "sources": [
+        "status",
+        "source_map",
+        "v9_report",
+        "lifecycle_contract"
+      ],
+      "archival_navigation_anchors": [
+        "STATUS unresolved_boundaries; v9_report §2",
+        "N index/frontier 0x4150B6C4..0x4150B6DF"
+      ],
+      "current_or_archived_code": [
+        "position: только поддержанный индекс/явные unresolved guards"
+      ],
+      "coverage_class": "unresolved_environment_gates",
+      "existing_evidence_boundary": "Условия с зависимостью от памяти не отсечены как мусор; unsupported fault не является обычным false.",
+      "unresolved": [
+        "Исходная TLS/FS среда",
+        "Все непрямые и exceptional paths",
+        "Оригинальный handler индекса вне диапазона"
+      ],
+      "dependencies_to_resolve": [
+        "interfaces",
+        "language_abi"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-GUARDS"
+      ],
+      "next_bounded_step": "Использовать W5-GUARDS; оставшиеся environment gates явно отделить от нормальных выходов."
+    },
+    {
+      "id": "remaining_consumers",
+      "domain": "Остальные потребители транзитивного контура",
+      "goal_bullet": 6,
+      "sources": [
+        "source_index",
+        "plan",
+        "v10_gaps",
+        "v8_status",
+        "v9_report"
+      ],
+      "archival_navigation_anchors": [
+        "v10_gaps#/1, /2, /4",
+        "T+54 -> point evaluator; T+C8 -> selector; T+64 -> chance worker; T+68 unknown",
+        "N reader -> item gate / actor; другие consumers неизвестны"
+      ],
+      "current_or_archived_code": [
+        "position",
+        "lifecycle",
+        "marker",
+        "actor"
+      ],
+      "coverage_class": "incomplete_dependency_inventory",
+      "existing_evidence_boundary": "Названные локальные цепочки не образуют полный call graph; наличие шести modules не означает покрытия остальных consumers.",
+      "unresolved": [
+        "Все требуемые readers T/H/R/Point/N вне текущих локальных chains",
+        "Связи settings/geometry/modes/shot consumers",
+        "Полная транзитивная граница — открыта, а не доказана отрицательным поиском"
+      ],
+      "dependencies_to_resolve": [
+        "settings",
+        "geometry_hit",
+        "modes_dt_hs",
+        "shot_result",
+        "network_state"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-AGGREGATE",
+        "W5-THRESHOLD",
+        "W5-LIFECYCLE",
+        "W5-MESSAGES"
+      ],
+      "next_bounded_step": "Координатору после W5 назначить одну typed source -> reader -> branch -> action связь из незакрытых доменов; список предложений не является разрешением дублировать текущую волну."
+    },
+    {
+      "id": "equivalence_audit",
+      "domain": "Воспроизводимость, соответствие оригиналу и внешний аудит",
+      "goal_bullet": 7,
+      "sources": [
+        "goal",
+        "historical",
+        "status",
+        "v10_gaps"
+      ],
+      "archival_navigation_anchors": [
+        "docs/GOAL.md: Когда можно назвать проект полным",
+        "v10_gaps#/5, /6; 12 historical-only H01"
+      ],
+      "current_or_archived_code": [],
+      "coverage_class": "open_completion_gates",
+      "existing_evidence_boundary": "Сохранённые native/sanitizer и агентные reviews — baseline доказательств ограниченных моделей, не внешний аудит и не наблюдаемая эквивалентность.",
+      "unresolved": [
+        "12 старых протоколов и исходные prerequisites",
+        "Полный воспроизводимый original behavior protocol",
+        "Независимый внешний аудит; не выполняется субагентом"
+      ],
+      "dependencies_to_resolve": [
+        "language_abi",
+        "remaining_consumers",
+        "interfaces"
+      ],
+      "related_w5_owners_not_researched_here": [
+        "W5-HISTORICAL"
+      ],
+      "next_bounded_step": "Использовать per-entry frontier W5-HISTORICAL; полный check и fixed-integrated-SHA review остаются координатору; запрет исполнения оригинала не снимается."
+    }
+  ],
+  "stop": "Every corrected GOAL domain mapped; exactly two bounded original-byte clue types examined. No algorithm implementation, no broad source search, no whole-project closure.",
+  "full_tasks_closed": [],
+  "original_language_established": false,
+  "original_execution": false,
+  "original_emulation": false,
+  "common_docs_modified": false,
+  "pending_acceptance": [
+    "Coordinator integrated make check",
+    "Independent review on fixed integrated SHA",
+    "External audit and original equivalence remain open, not granted by this map"
+  ],
+  "verification": {
+    "cwd": "/tmp/hoplite/232-w5-scope-sol",
+    "python": "from pathlib import Path\nimport hashlib,json,subprocess\nr=Path.cwd(); h=Path('/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10')\np=r/'continuation/evidence/wave5/scope'; d=json.loads((p/'coverage.json').read_text()); e=json.loads((p/'static_evidence.json').read_text())\nassert d['base_commit']=='3e5fd5f8f1ac3dadd635d19ed8b946ee2567fd3b'\nfor key,s in d['sources'].items():\n b=subprocess.check_output(['git','show',s['commit']+':'+s['path']]) if s['root']=='git' else ((r if s['root']=='repo' else h)/s['path']).read_bytes()\n assert len(b)==s['size'] and hashlib.sha256(b).hexdigest()==s['sha256'],key\nids={x['id'] for x in d['domains']}\nassert len(ids)==len(d['domains'])==24\nassert {x['goal_bullet'] for x in d['domains']}==set(range(8))\nfor x in d['domains']:\n assert x['sources'] and x['archival_navigation_anchors'] and x['unresolved'] and x['next_bounded_step'],x['id']\n assert set(x['sources'])<=d['sources'].keys(),x['id']\n assert set(x['dependencies_to_resolve'])<=ids,x['id']\nassert e['clue_budget']['examined_types']==len(e['clues'])==2\nassert e['source']==d['sources']['dll']\nassert not d['original_language_established'] and not d['full_tasks_closed']\nprint('PASS: 24 domain rows, 39 source pins, all dependency/source references, 2 clue types; no closure claims')\n",
+    "command": "python3 -B -c \"$(jq -r '.verification.python' continuation/evidence/wave5/scope/coverage.json)\"",
+    "exit_code": 0,
+    "scope": "JSON/source/reference integrity, not original behavior or complete call-graph proof",
+    "cpp_native_sanitizers": "not run by W5-SCOPE: no C/C++ source changes; coordinator full integrated check pending",
+    "stdout": "PASS: 24 domain rows, 39 source pins, all dependency/source references, 2 clue types; no closure claims",
+    "other_commands": [
+      {
+        "command": "sh -c \"$(jq -r '.reproduction.command' continuation/evidence/wave5/scope/static_evidence.json)\"",
+        "exit_code": 0,
+        "scope": "Fresh original-byte reproduction only; result stdout in static_evidence.json"
+      },
+      {
+        "command": "python3 -m json.tool continuation/evidence/wave5/scope/coverage.json >/dev/null",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 -m json.tool continuation/evidence/wave5/scope/static_evidence.json >/dev/null",
+        "exit_code": 0
+      },
+      {
+        "command": "git diff --check -- continuation/evidence/wave5/scope",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace",
+        "exit_code": 0,
+        "stdout": {
+          "passed": true,
+          "checked_files": 64087,
+          "errors": [],
+          "scope": "input integrity only; no algorithmic correctness claimed"
+        },
+        "scope": "Read-only integrity of all 64087 manifest records; no algorithm correctness claimed"
+      }
+    ]
+  }
+}
