@@ -1404,6 +1404,102 @@
       "review_report": "continuation/evidence/wave5/review-providers/acceptance.json",
       "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a",
       "completion_scope": "Assigned fixed-SHA agent review only; not an external audit."
+    },
+    {
+      "id": "NEXT-AGGREGATE",
+      "owner": "primary-coordinator",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/workspace",
+      "branch": "hoplite/sikyon-46eee495",
+      "write_paths": [
+        "continuation/include/rage/bounded_aggregation.hpp",
+        "continuation/src/bounded_aggregation.cpp",
+        "continuation/tests/test_bounded_aggregation.cpp",
+        "continuation/evidence/wave6/aggregate/"
+      ],
+      "scope": "Non-direct callback 4149E7B1: typed inputs, conditions, first proved local effect; preserve direct/F0 APIs and pre-branch increment. Then one callback-tail store.",
+      "dependencies": [
+        "W5-AGGREGATE"
+      ],
+      "acceptance": [
+        "Fresh source hashes and bytes/decodes establish typed inputs, branch and local effect.",
+        "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
+        "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
+      ],
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+    },
+    {
+      "id": "NEXT-RESET",
+      "owner": "next-reset",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/232-next-reset",
+      "branch": "hoplite/sikyon-46eee495--next-reset",
+      "write_paths": [
+        "continuation/include/rage/reset_predecessor.hpp",
+        "continuation/src/reset_predecessor.cpp",
+        "continuation/tests/test_reset_predecessor.cpp",
+        "continuation/evidence/wave6/reset/"
+      ],
+      "scope": "One predecessor of 415DECEE..415DED52; reconstruct bounded entry predicate/effect or exact provider stop.",
+      "dependencies": [
+        "W5-CHARGE"
+      ],
+      "acceptance": [
+        "Fresh source hashes and bytes/decodes establish typed inputs, branch and local effect.",
+        "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
+        "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
+      ],
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+    },
+    {
+      "id": "NEXT-MESSAGE",
+      "owner": "next-message",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/232-next-message",
+      "branch": "hoplite/sikyon-46eee495--next-message",
+      "write_paths": [
+        "continuation/include/rage/message_consumer.hpp",
+        "continuation/src/message_consumer.cpp",
+        "continuation/tests/test_message_consumer.cpp",
+        "continuation/evidence/wave6/message/"
+      ],
+      "scope": "One enclosing validator/consumer after 41512BD0..41512BE8, then next directly adjacent provable dependency; no sender or network.",
+      "dependencies": [
+        "W5-MESSAGES"
+      ],
+      "acceptance": [
+        "Fresh source hashes and bytes/decodes establish typed inputs, branch and local effect.",
+        "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
+        "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
+      ],
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+    },
+    {
+      "id": "NEXT-DAMAGE",
+      "owner": "next-damage",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/232-next-damage",
+      "branch": "hoplite/sikyon-46eee495--next-damage",
+      "write_paths": [
+        "continuation/include/rage/damage_slice.hpp",
+        "continuation/src/damage_slice.cpp",
+        "continuation/tests/test_damage_slice.cpp",
+        "continuation/evidence/wave6/damage/"
+      ],
+      "scope": "One case 4136FFA0/41370710 through downstream store, typed operands/FP order; no invented providers.",
+      "dependencies": [
+        "W5-SCOPE"
+      ],
+      "acceptance": [
+        "Fresh source hashes and bytes/decodes establish typed inputs, branch and local effect.",
+        "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
+        "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
+      ],
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
     }
   ],
   "goal_correction": {
@@ -1432,5 +1528,14 @@
     "full_tasks_closed": [],
     "status": "accepted_bounded_scope",
     "reviewed_code_commit": "f2003a7c47d58be6e07c8a9eb2bf7ffe9abfc65a"
+  },
+  "current_continuation": {
+    "id": "W6",
+    "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+    "coordinator": "primary-coordinator",
+    "ownership_check": "Only current thread visible; existing registry has 22 done / 9 blocked, no active tasks; clean current checkout.",
+    "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+    "status": "in_progress",
+    "full_tasks_closed": []
   }
 }
