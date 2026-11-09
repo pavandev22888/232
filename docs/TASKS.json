@@ -1451,7 +1451,8 @@
         "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
-      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
+      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base."
     },
     {
       "id": "NEXT-MESSAGE",
@@ -1475,12 +1476,13 @@
         "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
-      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
+      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base."
     },
     {
       "id": "NEXT-DAMAGE",
       "owner": "next-damage",
-      "status": "in_progress",
+      "status": "blocked",
       "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
       "worktree": "/tmp/hoplite/232-next-damage",
       "branch": "hoplite/sikyon-46eee495--next-damage",
@@ -1499,7 +1501,57 @@
         "Readable body when evidence suffices, native/ASan+UBSan and byte tests.",
         "Integrated fixed-SHA independent review before acceptance; no full GAP closure."
       ],
-      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans."
+      "stop_condition": "Stop assigned slice at first unsupported provider/identity/reachability boundary; preserve frontier without invented behavior or repeated broad scans.",
+      "completion_scope": "Executor declined assigned implementation; no changes, tests or result commit. This is an execution limitation, not evidence that the source slice is unresolvable.",
+      "continuation_note": "Previous run child handles unavailable after user continuation; clean worktrees verified before relaunch at same base."
+    },
+    {
+      "id": "NEXT-GEOMETRY",
+      "owner": "next-geometry",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/232-next-geometry",
+      "branch": "hoplite/sikyon-46eee495--next-geometry",
+      "write_paths": [
+        "continuation/include/rage/geometry_slice.hpp",
+        "continuation/src/geometry_slice.cpp",
+        "continuation/tests/test_geometry_slice.cpp",
+        "continuation/evidence/wave6/geometry/"
+      ],
+      "scope": "One capsule caller 414F3C90 -> 289A6D60: typed input/output and local transform/effect. Never conflate client candidates 10876D60/103E6D60; stop at unknown binding.",
+      "dependencies": [
+        "W5-SCOPE"
+      ],
+      "acceptance": [
+        "Fresh hashes/bytes/decodes and bounded typed contract.",
+        "Readable body if sufficient evidence, native/sanitizer/byte checks.",
+        "Fixed integrated SHA independent review."
+      ],
+      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure."
+    },
+    {
+      "id": "NEXT-HISTORY",
+      "owner": "next-history",
+      "status": "in_progress",
+      "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+      "worktree": "/tmp/hoplite/232-next-history",
+      "branch": "hoplite/sikyon-46eee495--next-history",
+      "write_paths": [
+        "continuation/include/rage/history_slice.hpp",
+        "continuation/src/history_slice.cpp",
+        "continuation/tests/test_history_slice.cpp",
+        "continuation/evidence/wave6/history/"
+      ],
+      "scope": "One variant of 413F6DE0/413F88F0 with restoration and local consumer. Typed widths/identity and effect; stop at unknown suitability/matrix provider.",
+      "dependencies": [
+        "W5-SCOPE"
+      ],
+      "acceptance": [
+        "Fresh hashes/bytes/decodes and bounded typed contract.",
+        "Readable body if sufficient evidence, native/sanitizer/byte checks.",
+        "Fixed integrated SHA independent review."
+      ],
+      "stop_condition": "First concrete unknown provider/identity frontier, or proved local body; no repeated broad scan or full GAP closure."
     }
   ],
   "goal_correction": {

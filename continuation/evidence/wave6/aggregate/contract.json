@@ -1,0 +1,57 @@
+{
+  "task_id": "NEXT-AGGREGATE",
+  "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
+  "assignment_commit": "6dc50dc",
+  "status": "awaiting_review",
+  "language": "C++17 regression baseline, not proof of original language/ABI",
+  "typed_inputs": {
+    "point": "EDX: DWORD +1C, BYTE +25, signed DWORD +28, raw DWORD +30, binary32 +34/+3C; initial-copy bytes +00..+4F",
+    "accumulator": "EAX from callback ECX+4: pointer +0 to owner O, BYTE +6/+7; floats +0C/+10/+14/+18. O is not identified with N/H/R/P or other objects by offset.",
+    "owner": "ESI from accumulator+0: BYTE +C0/+138, DWORD +8C, raw DWORD +A0. Stable readable instance, no inter-call identity inferred.",
+    "settings": "Explicit optional index observation from [G424F639C]+1012C -> pointee+2CC; unsigned range <16; selected DWORD flags from base+index*5D8+10424+4*BYTE[base+index*5D8+1042C]. Optional flags absence stops before any guessed read; no provider binding claimed.",
+    "counter": "DWORD reached via incoming ECX+0: INC wraps modulo 2^32 before all branches, including missing observations and unknown handler."
+  },
+  "proved": [
+    {
+      "range": "4149E790..4149E7B1",
+      "effect": "Unconditional counter increment; point +1C=2/3 bypass settings to score, preserving accumulator+7 as CL."
+    },
+    {
+      "range": "4149E7B1..4149E96C",
+      "effect": "Non-direct local branches reconstructed, with exact C0/8C/6/7 and settings gates. Missing index/flags stops are offline observation boundaries. Index>=16 stops at original unknown handler, not a guessed exception/return. Return_4149EB28 means no sum/tail stores but retains increment."
+    },
+    {
+      "range": "4149E81E..4149E82A and 4149E933..4149E943",
+      "effect": "DWORD SUB modulo then CMP signed >1 of wrapped result (not widened signed subtraction). Flag 8 may send to score or clear CL. BYTE flags preserve raw nonzero behavior."
+    },
+    {
+      "range": "4149E945..4149E96A",
+      "effect": "CL set to 1, or to (owner+138 !=0 && signed point+28 <3) under kind=1/flag4/point+25 gates; no invented tail decision."
+    },
+    {
+      "range": "4149E96C..4149E983",
+      "effect": "Damage * binary32 0.01, then * chance, then + prior sum in SSE order. Existing direct-prefix/F0 APIs remain unchanged."
+    },
+    {
+      "range": "4149E988..4149E9BD",
+      "effect": "Ordered chance>=accumulator+14 updates +14 then MAXSS(old +10, point damage) to +10. Independently nonzero point+25 and ordered damage>+0C writes +0C. Equality/unordered MAXSS takes second operand; UCOMISS/JB excludes unordered chance; UCOMISS/JBE excludes unordered damage."
+    },
+    {
+      "range": "4149E9BD..4149EA3A -> 4149EB28",
+      "effect": "Only owner+C0==0: copy point 50 bytes into owner+70..BF, blocks +40,+30,+20,+10,+00, then BYTE owner+C0=1 and local return. Nonzero C0 leaves ranking unresolved."
+    }
+  ],
+  "preconditions": [
+    "Reached callback entry or explicitly named interior entry; valid non-overlapping point/counter/accumulator/owner memory, stable pointer bindings, no concurrent mutation or observable intermediate stores.",
+    "Settings values are observations at each actual path, not fabricated defaults or established runtime providers. No read is required on bypass paths.",
+    "Binary32 masked SSE, round-to-nearest, no FTZ/DAZ, no fast-math/contraction. sNaNs, payload/sign selection of NaN arithmetic, FP traps/flags excluded; raw copy preserves all bits.",
+    "Offline return of a projection is not an original transaction/rollback. Only low CL is modeled for the next tail entry, not full ECX or machine ABI."
+  ],
+  "unresolved": [
+    "Runtime settings chain bindings, selected-table provenance/lifetime and same-instance scheduling; missing observations cannot be filled.",
+    "Out-of-range index >=16 -> 4149EC2D CALL 412AF300 then INT3; handler body/semantics untouched.",
+    "After statistics, owner+C0!=0 -> 4149E9C8 ranking depends on owner+4/B0 and other fields; no complete callback tail, best-point ranking, scan/enumeration, T+E8/+EC, selector or Point+26 proof.",
+    "Existing first-positive fields, T+68, fallback/tolerance, full language/ABI, equivalence protocol and external audit remain open."
+  ],
+  "tests": "Native/sanitizer direct regressions + non-direct gates, raw byte booleans, index/flags absence, range, wrapped signed difference, CL path, counter wrap, tail ordered/unordered/equality/NaN/Inf/±0/subnormals, initial-copy bytes and C0 stop."
+}
