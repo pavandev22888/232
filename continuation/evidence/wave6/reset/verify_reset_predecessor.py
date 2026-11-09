@@ -27,8 +27,7 @@ def normalized(line):
 
 
 def expected_line(row):
-    # GNU objdump prints at most seven instruction bytes on a mnemonic line.
-    raw = bytes.fromhex(row["bytes"])[:7]
+    raw = bytes.fromhex(row["bytes"])
     byte_tokens = " ".join(raw[index:index + 1].hex() for index in range(len(raw)))
     return normalized(f"{row['va'][2:]}: {byte_tokens} {row['instruction']}")
 
@@ -81,6 +80,7 @@ def main():
             "binary",
             "-m",
             "i386",
+            "--insn-width=16",
             f"--adjust-vma={evidence['image']['image_base']}",
             f"--start-address={focused['start']}",
             f"--stop-address={focused['end_exclusive']}",
