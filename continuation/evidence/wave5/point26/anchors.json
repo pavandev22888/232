@@ -1,0 +1,257 @@
+{
+  "task": "W5-POINT26",
+  "hypothesis_id": "W5-P26-H1",
+  "image": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "conditional_base": "0x412a0000"
+  },
+  "saved_sources": {
+    "workspace/orchestration/v5/target_builder_walk.json": "7fc8c252c6e6c5be7aa7213c74662a063f339dbca7e06dc351e26603dd526ab1"
+  },
+  "blocks": [
+    {
+      "id": "load_predecessor",
+      "start_va": "0x4149bb4c",
+      "end_va_exclusive": "0x4149bb53",
+      "sha256": "6accba0c312999e1864f49c124478d849733d608c7bcbfac129162bf19a1b4ea",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bb4c",
+          "bytes": "39c1",
+          "instruction": "cmp ecx,eax"
+        },
+        {
+          "va": "0x4149bb4e",
+          "bytes": "895e0c",
+          "instruction": "mov dword ptr [esi+0xc],ebx"
+        },
+        {
+          "va": "0x4149bb51",
+          "bytes": "7327",
+          "instruction": "jae 0x4149bb7a"
+        }
+      ]
+    },
+    {
+      "id": "helper_predecessor",
+      "start_va": "0x4149bb53",
+      "end_va_exclusive": "0x4149bb7a",
+      "sha256": "9d181be3d4fb8836909a3ed1b9e1c0a7ab75233df2acc3778f48022a2bc8bf18",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bb53",
+          "bytes": "3d4316b200",
+          "instruction": "cmp eax,0xb21643"
+        },
+        {
+          "va": "0x4149bb58",
+          "bytes": "0f8321030000",
+          "instruction": "jae 0x4149be7f"
+        },
+        {
+          "va": "0x4149bb5e",
+          "bytes": "c786c800000002000000",
+          "instruction": "mov dword ptr [esi+0xc8],0x2"
+        },
+        {
+          "va": "0x4149bb68",
+          "bytes": "8d8690000000",
+          "instruction": "lea eax,[esi+0x90]"
+        },
+        {
+          "va": "0x4149bb6e",
+          "bytes": "8b4d18",
+          "instruction": "mov ecx,dword ptr [ebp+0x18]"
+        },
+        {
+          "va": "0x4149bb71",
+          "bytes": "50",
+          "instruction": "push eax"
+        },
+        {
+          "va": "0x4149bb72",
+          "bytes": "e8d92a0100",
+          "instruction": "call 0x414ae650"
+        },
+        {
+          "va": "0x4149bb77",
+          "bytes": "8b5e0c",
+          "instruction": "mov ebx,dword ptr [esi+0xc]"
+        }
+      ]
+    },
+    {
+      "id": "load_to_add",
+      "start_va": "0x4149bb7a",
+      "end_va_exclusive": "0x4149bb96",
+      "sha256": "0359ecf0b32576195fc2bf436269c4af8ac0e85807db4f982e6ecdeced836ce2",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bb7a",
+          "bytes": "a14c004b42",
+          "instruction": "mov eax,ds:0x424b004c"
+        },
+        {
+          "va": "0x4149bb7f",
+          "bytes": "89463c",
+          "instruction": "mov dword ptr [esi+0x3c],eax"
+        },
+        {
+          "va": "0x4149bb82",
+          "bytes": "c786c800000002000000",
+          "instruction": "mov dword ptr [esi+0xc8],0x2"
+        },
+        {
+          "va": "0x4149bb8c",
+          "bytes": "83fb41",
+          "instruction": "cmp ebx,0x41"
+        },
+        {
+          "va": "0x4149bb8f",
+          "bytes": "7218",
+          "instruction": "jb 0x4149bba9"
+        },
+        {
+          "va": "0x4149bb91",
+          "bytes": "9c",
+          "instruction": "pushf"
+        },
+        {
+          "va": "0x4149bb92",
+          "bytes": "8340256a",
+          "instruction": "add dword ptr [eax+0x25],0x6a"
+        }
+      ]
+    },
+    {
+      "id": "post_add_frontier",
+      "start_va": "0x4149bb96",
+      "end_va_exclusive": "0x4149bba1",
+      "sha256": "a448aecac9de568eed551e61d3d6cac624e81fd382acb1474096a1c97d9e9817",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bb96",
+          "bytes": "7f98",
+          "instruction": "jg 0x4149bb30"
+        },
+        {
+          "va": "0x4149bb98",
+          "bytes": "5c",
+          "instruction": "pop esp"
+        },
+        {
+          "va": "0x4149bb99",
+          "bytes": "7574",
+          "instruction": "jne 0x4149bc0f"
+        },
+        {
+          "va": "0x4149bb9b",
+          "bytes": "7fca",
+          "instruction": "jg 0x4149bb67"
+        },
+        {
+          "va": "0x4149bb9d",
+          "bytes": "8537",
+          "instruction": "test dword ptr [edi],esi"
+        },
+        {
+          "va": "0x4149bb9f",
+          "bytes": "eb05",
+          "instruction": "jmp 0x4149bba6"
+        }
+      ]
+    },
+    {
+      "id": "alternate_overlap",
+      "start_va": "0x4149bba6",
+      "end_va_exclusive": "0x4149bbaa",
+      "sha256": "b456e5197cb757c7d7e65fe475c92c1636072a06bf1f8164bc9786597375544b",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bba6",
+          "bytes": "7577",
+          "instruction": "jne 0x4149bc1f"
+        },
+        {
+          "va": "0x4149bba8",
+          "bytes": "a4",
+          "instruction": "movs byte ptr es:[edi],byte ptr ds:[esi]"
+        },
+        {
+          "va": "0x4149bba9",
+          "bytes": "53",
+          "instruction": "push ebx"
+        }
+      ]
+    },
+    {
+      "id": "unsigned_skip",
+      "start_va": "0x4149bba9",
+      "end_va_exclusive": "0x4149bbbf",
+      "sha256": "1176bec1d2bdb31d03ac301e65d17c26b0377886430384c5c1e11a92e87f7253",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bba9",
+          "bytes": "53",
+          "instruction": "push ebx"
+        },
+        {
+          "va": "0x4149bbaa",
+          "bytes": "e8717feaff",
+          "instruction": "call 0x41343b20"
+        },
+        {
+          "va": "0x4149bbaf",
+          "bytes": "8b560c",
+          "instruction": "mov edx,dword ptr [esi+0xc]"
+        },
+        {
+          "va": "0x4149bbb2",
+          "bytes": "83c404",
+          "instruction": "add esp,0x4"
+        },
+        {
+          "va": "0x4149bbb5",
+          "bytes": "85c0",
+          "instruction": "test eax,eax"
+        },
+        {
+          "va": "0x4149bbb7",
+          "bytes": "743a",
+          "instruction": "je 0x4149bbf3"
+        },
+        {
+          "va": "0x4149bbb9",
+          "bytes": "69ca40090100",
+          "instruction": "imul ecx,edx,0x10940"
+        }
+      ]
+    },
+    {
+      "id": "slot_index_use",
+      "start_va": "0x4149bbbf",
+      "end_va_exclusive": "0x4149bbc9",
+      "sha256": "85d744dd699bd6ff9ef307ab138e8b9820ccebe715ede0cfe60f8e8e57393d8b",
+      "saved_source": "workspace/orchestration/v5/target_builder_walk.json",
+      "rows": [
+        {
+          "va": "0x4149bbbf",
+          "bytes": "8b7e3c",
+          "instruction": "mov edi,dword ptr [esi+0x3c]"
+        },
+        {
+          "va": "0x4149bbc2",
+          "bytes": "8bbc0f30090100",
+          "instruction": "mov edi,dword ptr [edi+ecx*1+0x10930]"
+        }
+      ]
+    }
+  ]
+}
