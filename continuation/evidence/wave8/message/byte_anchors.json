@@ -1,0 +1,509 @@
+{
+  "task": "W8-MESSAGE",
+  "base_commit": "9b2a75fbd2856fd4966cb6bf6c4933077c51bf41",
+  "source": {
+    "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "size_bytes": 55578624,
+    "image_base": "0x412a0000"
+  },
+  "source_archive": {
+    "path": "workspace/input/nl_handoff_2026-11-06.zip",
+    "sha256": "cc7fcb0e3a34d1f5b3adf884e889e9458c02158ee9823a0c45e161786920dd49",
+    "size_bytes": 149819978,
+    "member": "nl.bin",
+    "member_size_bytes": 55578624,
+    "member_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "preceding_evidence": [
+    {
+      "path": "continuation/evidence/wave5/messages/byte_anchors.json",
+      "sha256": "f72d3a552af10de3ea19d73bd601575489b91748b4b144d145b7b0ce5e05ff4b"
+    },
+    {
+      "path": "continuation/evidence/wave6/message/byte_anchors.json",
+      "sha256": "a1fcff00a3119efcb2841aa436f878b82cadea0dcc15518fbd75d57e803e330b"
+    }
+  ],
+  "decoder": "GNU objdump 2.42, i386, intel syntax; static reads only",
+  "windows": [
+    {
+      "name": "index_origin",
+      "role": "context",
+      "start": "0x4150ab6d",
+      "end": "0x4150ab70",
+      "instructions": [
+        [
+          "0x4150ab6d",
+          "8b7d0c",
+          "mov edi,dword ptr [ebp+0xc]"
+        ]
+      ]
+    },
+    {
+      "name": "receiver_prefix",
+      "role": "implemented",
+      "start": "0x4150abee",
+      "end": "0x4150ac88",
+      "instructions": [
+        [
+          "0x4150abee",
+          "83ff40",
+          "cmp edi,0x40"
+        ],
+        [
+          "0x4150abf1",
+          "0f8f65090000",
+          "jg 0x4150b55c"
+        ],
+        [
+          "0x4150abf7",
+          "39f8",
+          "cmp eax,edi"
+        ],
+        [
+          "0x4150abf9",
+          "0f845d090000",
+          "je 0x4150b55c"
+        ],
+        [
+          "0x4150abff",
+          "a160fe2342",
+          "mov eax,ds:0x4223fe60"
+        ],
+        [
+          "0x4150ac04",
+          "8b00",
+          "mov eax,dword ptr [eax]"
+        ],
+        [
+          "0x4150ac06",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x4150ac08",
+          "7436",
+          "je 0x4150ac40"
+        ],
+        [
+          "0x4150ac0a",
+          "89461c",
+          "mov dword ptr [esi+0x1c],eax"
+        ],
+        [
+          "0x4150ac0d",
+          "a15c775042",
+          "mov eax,ds:0x4250775c"
+        ],
+        [
+          "0x4150ac12",
+          "8b0d40855142",
+          "mov ecx,dword ptr ds:0x42518540"
+        ],
+        [
+          "0x4150ac18",
+          "648b152c000000",
+          "mov edx,dword ptr fs:0x2c"
+        ],
+        [
+          "0x4150ac1f",
+          "8b0c8a",
+          "mov ecx,dword ptr [edx+ecx*4]"
+        ],
+        [
+          "0x4150ac22",
+          "3b8108000000",
+          "cmp eax,dword ptr [ecx+0x8]"
+        ],
+        [
+          "0x4150ac28",
+          "0f8f4e0b0000",
+          "jg 0x4150b77c"
+        ],
+        [
+          "0x4150ac2e",
+          "a10c775042",
+          "mov eax,ds:0x4250770c"
+        ],
+        [
+          "0x4150ac33",
+          "8b4e1c",
+          "mov ecx,dword ptr [esi+0x1c]"
+        ],
+        [
+          "0x4150ac36",
+          "833c0800",
+          "cmp dword ptr [eax+ecx*1],0x0"
+        ],
+        [
+          "0x4150ac3a",
+          "0f851c090000",
+          "jne 0x4150b55c"
+        ],
+        [
+          "0x4150ac40",
+          "c78628010000ffffffff",
+          "mov dword ptr [esi+0x128],0xffffffff"
+        ],
+        [
+          "0x4150ac4a",
+          "e8211a6600",
+          "call 0x41b6c670"
+        ],
+        [
+          "0x4150ac4f",
+          "89461c",
+          "mov dword ptr [esi+0x1c],eax"
+        ],
+        [
+          "0x4150ac52",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x4150ac54",
+          "0f8402090000",
+          "je 0x4150b55c"
+        ],
+        [
+          "0x4150ac5a",
+          "a15c065042",
+          "mov eax,ds:0x4250065c"
+        ],
+        [
+          "0x4150ac5f",
+          "8b0d40855142",
+          "mov ecx,dword ptr ds:0x42518540"
+        ],
+        [
+          "0x4150ac65",
+          "648b152c000000",
+          "mov edx,dword ptr fs:0x2c"
+        ],
+        [
+          "0x4150ac6c",
+          "8b0c8a",
+          "mov ecx,dword ptr [edx+ecx*4]"
+        ],
+        [
+          "0x4150ac6f",
+          "3b8108000000",
+          "cmp eax,dword ptr [ecx+0x8]"
+        ],
+        [
+          "0x4150ac75",
+          "0f8fb60b0000",
+          "jg 0x4150b831"
+        ],
+        [
+          "0x4150ac7b",
+          "a19cdd4f42",
+          "mov eax,ds:0x424fdd9c"
+        ],
+        [
+          "0x4150ac80",
+          "85c0",
+          "test eax,eax"
+        ],
+        [
+          "0x4150ac82",
+          "0f851f030000",
+          "jne 0x4150afa7"
+        ]
+      ]
+    },
+    {
+      "name": "nonzero_slot_base_gate",
+      "role": "implemented",
+      "start": "0x4150afa7",
+      "end": "0x4150afb4",
+      "instructions": [
+        [
+          "0x4150afa7",
+          "03461c",
+          "add eax,dword ptr [esi+0x1c]"
+        ],
+        [
+          "0x4150afaa",
+          "803c0700",
+          "cmp byte ptr [edi+eax*1],0x0"
+        ],
+        [
+          "0x4150afae",
+          "0f84a8050000",
+          "je 0x4150b55c"
+        ]
+      ]
+    },
+    {
+      "name": "next_epoch_gate",
+      "role": "frontier",
+      "start": "0x4150afb4",
+      "end": "0x4150afd5",
+      "instructions": [
+        [
+          "0x4150afb4",
+          "a1c0185042",
+          "mov eax,ds:0x425018c0"
+        ],
+        [
+          "0x4150afb9",
+          "8b0d40855142",
+          "mov ecx,dword ptr ds:0x42518540"
+        ],
+        [
+          "0x4150afbf",
+          "648b152c000000",
+          "mov edx,dword ptr fs:0x2c"
+        ],
+        [
+          "0x4150afc6",
+          "8b0c8a",
+          "mov ecx,dword ptr [edx+ecx*4]"
+        ],
+        [
+          "0x4150afc9",
+          "3b8108000000",
+          "cmp eax,dword ptr [ecx+0x8]"
+        ],
+        [
+          "0x4150afcf",
+          "0f8f00090000",
+          "jg 0x4150b8d5"
+        ]
+      ]
+    },
+    {
+      "name": "return_target",
+      "role": "context",
+      "start": "0x4150b55c",
+      "end": "0x4150b572",
+      "instructions": [
+        [
+          "0x4150b55c",
+          "8b8620010000",
+          "mov eax,dword ptr [esi+0x120]"
+        ],
+        [
+          "0x4150b562",
+          "64a300000000",
+          "mov fs:0x0,eax"
+        ],
+        [
+          "0x4150b568",
+          "8d65f4",
+          "lea esp,[ebp-0xc]"
+        ],
+        [
+          "0x4150b56b",
+          "5e",
+          "pop esi"
+        ],
+        [
+          "0x4150b56c",
+          "5f",
+          "pop edi"
+        ],
+        [
+          "0x4150b56d",
+          "5b",
+          "pop ebx"
+        ],
+        [
+          "0x4150b56e",
+          "5d",
+          "pop ebp"
+        ],
+        [
+          "0x4150b56f",
+          "c21400",
+          "ret 0x14"
+        ]
+      ]
+    },
+    {
+      "name": "guard_epoch_side_exit_entry",
+      "role": "frontier",
+      "start": "0x4150b77c",
+      "end": "0x4150b796",
+      "instructions": [
+        [
+          "0x4150b77c",
+          "685c775042",
+          "push 0x4250775c"
+        ],
+        [
+          "0x4150b781",
+          "e8e4c48900",
+          "call 0x41da7c6a"
+        ],
+        [
+          "0x4150b786",
+          "83c404",
+          "add esp,0x4"
+        ],
+        [
+          "0x4150b789",
+          "833d5c775042ff",
+          "cmp dword ptr ds:0x4250775c,0xffffffff"
+        ],
+        [
+          "0x4150b790",
+          "0f8598f4ffff",
+          "jne 0x4150ac2e"
+        ]
+      ]
+    },
+    {
+      "name": "slot_epoch_side_exit_entry",
+      "role": "frontier",
+      "start": "0x4150b831",
+      "end": "0x4150b84b",
+      "instructions": [
+        [
+          "0x4150b831",
+          "685c065042",
+          "push 0x4250065c"
+        ],
+        [
+          "0x4150b836",
+          "e82fc48900",
+          "call 0x41da7c6a"
+        ],
+        [
+          "0x4150b83b",
+          "83c404",
+          "add esp,0x4"
+        ],
+        [
+          "0x4150b83e",
+          "833d5c065042ff",
+          "cmp dword ptr ds:0x4250065c,0xffffffff"
+        ],
+        [
+          "0x4150b845",
+          "0f8530f4ffff",
+          "jne 0x4150ac7b"
+        ]
+      ]
+    },
+    {
+      "name": "zero_slot_base_entry",
+      "role": "frontier",
+      "start": "0x4150ac88",
+      "end": "0x4150ac96",
+      "instructions": [
+        [
+          "0x4150ac88",
+          "c74624e3682e7c",
+          "mov dword ptr [esi+0x24],0x7c2e68e3"
+        ],
+        [
+          "0x4150ac8f",
+          "c7462058f6fe82",
+          "mov dword ptr [esi+0x20],0x82fef658"
+        ]
+      ]
+    },
+    {
+      "name": "zero_slot_base_tail",
+      "role": "context",
+      "start": "0x4150af99",
+      "end": "0x4150afa7",
+      "instructions": [
+        [
+          "0x4150af99",
+          "50",
+          "push eax"
+        ],
+        [
+          "0x4150af9a",
+          "e8c1566b00",
+          "call 0x41bc0660"
+        ],
+        [
+          "0x4150af9f",
+          "83c410",
+          "add esp,0x10"
+        ],
+        [
+          "0x4150afa2",
+          "a19cdd4f42",
+          "mov eax,ds:0x424fdd9c"
+        ]
+      ]
+    }
+  ],
+  "contract": {
+    "api": "evaluate_message_receiver_prefix(index_word, observations, state)",
+    "entry": "0x4150abee, only after a normal return from the unresolved indirect call at 0x4150abeb",
+    "index": "Actual EDI bit pattern at entry, tested signed >64 before EAX equality. No lower bound is present. W5 parser index7+1 is 1..128 only if intervening code/providers preserve the established argument/register identity.",
+    "branches": [
+      "Signed index >64 or EAX == EDI goes to original return 0x4150b55c without selected frame stores.",
+      "guard_offset_word == 0 bypasses the first TLS compare and guard-word read.",
+      "Nonzero guard_offset_word is stored at frame+1c before signed comparison global[4250775c] > TLS+8. Taken edge to 0x4150b77c is not implemented.",
+      "When the first epoch compare is not greater, DWORD[[4250770c]+guard_offset_word] !=0 returns. Zero proceeds to 0x4150ac40.",
+      "frame+128 is written ffffffff before the unresolved direct call 0x41b6c670. Observed EAX is then stored to frame+1c even when zero; zero returns.",
+      "Signed global[4250065c] > TLS+8 selects unimplemented 0x4150b831 before loading [424fdd9c].",
+      "A zero [424fdd9c] selects the unresolved local path 0x4150ac88; no table base is invented.",
+      "A nonzero [424fdd9c] branches to 0x4150afa7, adds frame+1c modulo 2^32, and tests BYTE[index_word+sum]. Zero returns, any nonzero reaches 0x4150afb4."
+    ],
+    "provider_observations": {
+      "dispatch_return_eax": "EAX returned at 4150ABEB, not reconstructed target/effects; optional absence is not zero.",
+      "guard_offset_word": "DWORD at address loaded from [4223FE60], only if the prior index/dispatch gates pass.",
+      "guard_epoch": "DWORD [4250775C] and DWORD TLS+8 at 4150AC0D..4150AC28. TLS is [FS:2C + 4*[42518540]].",
+      "guard_word": "DWORD[[4250770C]+guard_offset_word] at 4150AC36, only after nonzero offset and non-greater epoch.",
+      "source_return_eax": "EAX at 4150AC4F after normal return of 41B6C670; opaque word, not a typed object or host pointer.",
+      "slot_epoch": "DWORD [4250065C] and the separately read DWORD TLS+8 at 4150AC5A..4150AC75; must be post-call observations.",
+      "slot_base_word": "DWORD [424FDD9C] at 4150AC7B, only after nonzero source return and non-greater epoch.",
+      "slot_byte": "Byte actually observed at returned slot_address; caller is responsible for the address/observation identity."
+    },
+    "writes": [
+      {
+        "address": "0x4150ac0a",
+        "target": "frame+0x1c",
+        "value": "nonzero guard_offset_word"
+      },
+      {
+        "address": "0x4150ac40",
+        "target": "frame+0x128",
+        "value": "0xffffffff"
+      },
+      {
+        "address": "0x4150ac4f",
+        "target": "frame+0x1c",
+        "value": "source_return_eax, including zero"
+      }
+    ],
+    "preconditions": [
+      "This is a conditional suffix, not a solution to W6 FS:0/FS:30 guard, register jump, out-of-image object or dispatch provider.",
+      "Inputs are observations at their individual read points, not a claim that one immutable runtime snapshot supplies all reads.",
+      "Normal provider returns and the observed register/frame continuity are required; unobserved provider side effects, exceptions and concurrent writes are outside this local transform.",
+      "Supplied guard_word and slot_byte correspond to the original 32-bit effective addresses and readable memory; the offline code never dereferences those addresses.",
+      "State contains only two selected direct frame writes. Initial state is supplied and is retained on earlier stops; no original stack initialization is inferred.",
+      "Result edges diagnose local control flow. next_epoch_gate is not message acceptance, a PositionRecord write, or proof of whole-path reachability.",
+      "No new floating-point operations. Integer observations retain exact 32-bit patterns and signed CMP/JG comparisons without host signed overflow.",
+      "Existing C++17 is the offline reconstruction language, not evidence of original source language/standard or complete ABI."
+    ],
+    "tests": "continuation/tests/test_bounded_message_fields.cpp: receiver_prefix_gates_and_writes and parsed_index_reaches_conditional_receiver_prefix, plus unchanged parser regressions"
+  },
+  "new_frontier": {
+    "successful_prefix": "0x4150afb4, global [425018c0] / FS:2c TLS compare at 0x4150afcf; taken edge 0x4150b8d5, before signed slot-DWORD gate and known resolved record updater.",
+    "conditional_side_exits": [
+      "0x4150b77c first epoch/helper branch",
+      "0x4150b831 second epoch/helper branch",
+      "0x4150ac88 zero-slot-base construction path"
+    ],
+    "unknowns": [
+      "Original W6 entry guards and runtime dispatch object/target remain unresolved.",
+      "Call 0x41b6c670 body/effects and the runtime meaning/lifetime/writers of the returned word.",
+      "Runtime binding and population of the guard DWORD table and slot byte table.",
+      "Side-exit helper effects, TLS initialization/lifetime and subsequent slot-DWORD/entity/trace provider chain.",
+      "No automatic parser-to-PositionRecord connection: post-prefix provider gates and object identity are not established.",
+      "Complete payload origin/framing/sender and original language/ABI remain unresolved."
+    ],
+    "not_new_work": "Do not reimplement update_resolved_record: it already models the terminal record update from 4150B3AC conditionally on resolved providers."
+  },
+  "original_load_run_emulate": false
+}
