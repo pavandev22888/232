@@ -1,0 +1,75 @@
+CANDIDATE ONLY; repository implementation unchanged
+CWD /tmp/hoplite/232-w8-review-flow
+PATCH __asm__("mulss %1, %0" : "+x"(destination) : "x"(source)); -> __asm__ volatile("mulss %1, %0" : "+x"(destination) : "x"(source) : "memory");
+PROBE same as public-mxcsr-unity-o2-lto.log with include replaced by reviewed source and one-line patch
+CMD g++ -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-candidate
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00002 (want 3fa00002)
+RUN_EXIT 0
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-candidate:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	55                   	push   rbp
+    1085:	53                   	push   rbx
+    1086:	48 83 ec 58          	sub    rsp,0x58
+    108a:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    1091:	00 00
+    1093:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+    1098:	31 c0                	xor    eax,eax
+    109a:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    109f:	8b 54 24 0c          	mov    edx,DWORD PTR [rsp+0xc]
+    10a3:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10aa:	00
+    10ab:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10b0:	f3 0f 10 0d 50 0f 00 	movss  xmm1,DWORD PTR [rip+0xf50]        # 2008 <_IO_stdin_used+0x8>
+    10b7:	00
+    10b8:	f3 0f 10 05 44 0f 00 	movss  xmm0,DWORD PTR [rip+0xf44]        # 2004 <_IO_stdin_used+0x4>
+    10bf:	00
+    10c0:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    10c4:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10cb:	00
+    10cc:	66 0f 7e 44 24 38    	movd   DWORD PTR [rsp+0x38],xmm0
+    10d2:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10d7:	f3 0f 10 05 25 0f 00 	movss  xmm0,DWORD PTR [rip+0xf25]        # 2004 <_IO_stdin_used+0x4>
+    10de:	00
+    10df:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    10e3:	89 54 24 0c          	mov    DWORD PTR [rsp+0xc],edx
+    10e7:	66 0f 7e c3          	movd   ebx,xmm0
+    10eb:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10f0:	31 c0                	xor    eax,eax
+    10f2:	8b 6c 24 38          	mov    ebp,DWORD PTR [rsp+0x38]
+    10f6:	89 d9                	mov    ecx,ebx
+    10f8:	bf 02 00 00 00       	mov    edi,0x2
+    10fd:	48 8d 35 0c 0f 00 00 	lea    rsi,[rip+0xf0c]        # 2010 <_IO_stdin_used+0x10>
+    1104:	89 ea                	mov    edx,ebp
+    1106:	e8 65 ff ff ff       	call   1070 <__printf_chk@plt>
+    110b:	81 fb 02 00 a0 3f    	cmp    ebx,0x3fa00002
+    1111:	0f 95 c0             	setne  al
+    1114:	81 fd 01 00 a0 3f    	cmp    ebp,0x3fa00001
+    111a:	0f 95 c2             	setne  dl
+    111d:	09 d0                	or     eax,edx
+    111f:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    1124:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+    112b:	00 00
+    112d:	75 0a                	jne    1139 <main+0xb9>
+    112f:	48 83 c4 58          	add    rsp,0x58
+    1133:	0f b6 c0             	movzx  eax,al
+    1136:	5b                   	pop    rbx
+    1137:	5d                   	pop    rbp
+    1138:	c3                   	ret
+    1139:	e8 22 ff ff ff       	call   1060 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:

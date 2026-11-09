@@ -1,0 +1,5 @@
+UTC 2026-11-09T19:05:02.348341+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice
+PASS: movement caller/callee, guarded frontiers and exact SSE bits (198 assertions)
+EXIT 0

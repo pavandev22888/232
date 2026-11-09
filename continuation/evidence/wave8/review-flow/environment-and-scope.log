@@ -1,0 +1,45 @@
+UTC 2026-11-09T19:06:57.913137+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD git rev-parse HEAD
+bcc5918568c162482b7ec4e1fd7ca7ec48d58940
+EXIT 0
+CMD git branch --show-current
+hoplite/tanagra-adb72df5--w8-review-flow
+EXIT 0
+CMD git status --short
+?? continuation/evidence/wave8/review-flow/
+EXIT 0
+CMD g++ --version
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+EXIT 0
+CMD objdump --version
+GNU objdump (GNU Binutils for Ubuntu) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+EXIT 0
+CMD python3 --version
+Python 3.12.3
+EXIT 0
+CMD uname -m
+x86_64
+EXIT 0
+CMD git diff --check
+EXIT 0
+CMD git diff 9b2a75fbd2856fd4966cb6bf6c4933077c51bf41..HEAD --stat -- continuation/include/rage/damage_slice.hpp continuation/src/damage_slice.cpp continuation/tests/test_damage_slice.cpp continuation/include/rage/movement_slice.hpp continuation/src/movement_slice.cpp continuation/tests/test_movement_slice.cpp continuation/include/rage/geometry_slice.hpp continuation/src/geometry_slice.cpp continuation/tests/test_geometry_slice.cpp
+ continuation/include/rage/damage_slice.hpp   |  49 ++++++
+ continuation/include/rage/geometry_slice.hpp |  24 +++
+ continuation/include/rage/movement_slice.hpp |  64 ++++++++
+ continuation/src/damage_slice.cpp            |  77 +++++++++
+ continuation/src/geometry_slice.cpp          |  52 ++++++
+ continuation/src/movement_slice.cpp          | 113 +++++++++++++
+ continuation/tests/test_damage_slice.cpp     | 173 +++++++++++++++++++-
+ continuation/tests/test_geometry_slice.cpp   | 136 ++++++++++++++++
+ continuation/tests/test_movement_slice.cpp   | 231 ++++++++++++++++++++++++++-
+ 9 files changed, 916 insertions(+), 3 deletions(-)
+EXIT 0

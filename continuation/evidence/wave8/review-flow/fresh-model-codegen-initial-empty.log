@@ -1,0 +1,104 @@
+UTC 2026-11-09T19:06:57.884545+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline22evaluate_damage_switchERKNS0_24DamageSwitchObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice_sanitize
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_damage_slice_sanitize:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline27evaluate_movement_predicateERKNS0_29MovementPredicateObservationsE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_movement_slice_sanitize:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0
+CMD objdump -d -Mintel --demangle --disassemble=_ZN4rage7offline25consume_geometry_postcallERKSt5arrayIhLm33EERS1_IhLm56EE /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/test_geometry_slice_sanitize:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+Disassembly of section .fini:
+EXIT 0

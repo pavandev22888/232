@@ -1,0 +1,80 @@
+CWD /tmp/hoplite/232-w8-review-flow
+SOURCE (stdin):
+#include "continuation/src/damage_slice.cpp"
+#include <xmmintrin.h>
+#include <cstdio>
+int main() {
+    const unsigned saved = _mm_getcsr();
+    rage::offline::DamageSwitchObservations o{3, 0, 0x3f800001u, {}};
+    _mm_setcsr(0x1f80);
+    const auto nearest = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(0x5f80);
+    const auto upward = rage::offline::evaluate_damage_switch(o);
+    _mm_setcsr(saved);
+    std::printf("public API nearest=%08x (want 3fa00001), upward=%08x (want 3fa00002)\n", *nearest.result_slot_bits,*upward.result_slot_bits);
+    return *nearest.result_slot_bits==0x3fa00001u && *upward.result_slot_bits==0x3fa00002u ? 0:1;
+}
+CMD g++ -I. -Icontinuation/include -std=c++17 -O2 -flto -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -x c++ - -o /tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-unity-o2-lto
+COMPILE_EXIT 0
+public API nearest=3fa00001 (want 3fa00001), upward=3fa00001 (want 3fa00002)
+RUN_EXIT 1
+
+/tmp/hoplite/232-w8-review-flow/continuation/evidence/wave8/review-flow/.build/public-mxcsr-unity-o2-lto:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	53                   	push   rbx
+    1085:	48 83 ec 50          	sub    rsp,0x50
+    1089:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    1090:	00 00
+    1092:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+    1097:	31 c0                	xor    eax,eax
+    1099:	0f ae 5c 24 0c       	stmxcsr DWORD PTR [rsp+0xc]
+    109e:	8b 44 24 0c          	mov    eax,DWORD PTR [rsp+0xc]
+    10a2:	c7 44 24 0c 80 1f 00 	mov    DWORD PTR [rsp+0xc],0x1f80
+    10a9:	00
+    10aa:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10af:	f3 0f 10 05 4d 0f 00 	movss  xmm0,DWORD PTR [rip+0xf4d]        # 2004 <_IO_stdin_used+0x4>
+    10b6:	00
+    10b7:	f3 0f 10 0d 49 0f 00 	movss  xmm1,DWORD PTR [rip+0xf49]        # 2008 <_IO_stdin_used+0x8>
+    10be:	00
+    10bf:	c7 44 24 0c 80 5f 00 	mov    DWORD PTR [rsp+0xc],0x5f80
+    10c6:	00
+    10c7:	f3 0f 59 c1          	mulss  xmm0,xmm1
+    10cb:	66 0f 7e c3          	movd   ebx,xmm0
+    10cf:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10d4:	89 44 24 0c          	mov    DWORD PTR [rsp+0xc],eax
+    10d8:	0f ae 54 24 0c       	ldmxcsr DWORD PTR [rsp+0xc]
+    10dd:	31 c0                	xor    eax,eax
+    10df:	89 da                	mov    edx,ebx
+    10e1:	89 d9                	mov    ecx,ebx
+    10e3:	bf 02 00 00 00       	mov    edi,0x2
+    10e8:	48 8d 35 21 0f 00 00 	lea    rsi,[rip+0xf21]        # 2010 <_IO_stdin_used+0x10>
+    10ef:	e8 7c ff ff ff       	call   1070 <__printf_chk@plt>
+    10f4:	81 fb 02 00 a0 3f    	cmp    ebx,0x3fa00002
+    10fa:	0f 95 c0             	setne  al
+    10fd:	81 fb 01 00 a0 3f    	cmp    ebx,0x3fa00001
+    1103:	0f 95 c2             	setne  dl
+    1106:	09 d0                	or     eax,edx
+    1108:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    110d:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+    1114:	00 00
+    1116:	75 09                	jne    1121 <main+0xa1>
+    1118:	48 83 c4 50          	add    rsp,0x50
+    111c:	0f b6 c0             	movzx  eax,al
+    111f:	5b                   	pop    rbx
+    1120:	c3                   	ret
+    1121:	e8 3a ff ff ff       	call   1060 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:

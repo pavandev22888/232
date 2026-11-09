@@ -1,0 +1,8 @@
+UTC 2026-11-09T19:04:59.585927+00:00
+CWD /tmp/hoplite/232-w8-review-flow
+CMD make -C continuation CXX=g++ BUILD=evidence/wave8/review-flow/.build SOURCES=src/movement_slice.cpp evidence/wave8/review-flow/.build/test_movement_slice evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+make: Entering directory '/tmp/hoplite/232-w8-review-flow/continuation'
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/movement_slice.cpp tests/test_movement_slice.cpp -o evidence/wave8/review-flow/.build/test_movement_slice
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/movement_slice.cpp tests/test_movement_slice.cpp -o evidence/wave8/review-flow/.build/test_movement_slice_sanitize
+make: Leaving directory '/tmp/hoplite/232-w8-review-flow/continuation'
+EXIT 0
