@@ -1,0 +1,110 @@
+{
+  "task": "GAP04 external binding evidence boundary",
+  "classification": "byte-anchored static call target; runtime module binding unresolved",
+  "images": [
+    {
+      "path": "workspace/input/dll/client.dll",
+      "sha256": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+      "machine": "0x014c",
+      "image_base": "0x10000000"
+    },
+    {
+      "path": "workspace/input/dll/engine.dll",
+      "sha256": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+      "machine": "0x014c",
+      "image_base": "0x10000000"
+    },
+    {
+      "path": "workspace/input/dll/neverlose.dll",
+      "sha256": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+      "machine": "0x014c",
+      "image_base": "0x10000000"
+    },
+    {
+      "path": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+      "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+      "conditional_address_base": "0x412a0000",
+      "note": "Raw dump address convention only; not an observed runtime module base."
+    }
+  ],
+  "target_chain": {
+    "value": "0x289a6d60",
+    "source_va_range": ["0x414f3e19", "0x414f3e5a"],
+    "raw_file_offset_range": ["0x253e19", "0x253e5a"],
+    "source_walk": "workspace/orchestration/v6/geometry_capsule_caller_walk.json",
+    "bytes": "b806250d87c1c00b2ddb eb6120c1cb20c1ce20c1c81a35a984a17d2d9b2699239090908945d88b45d8f30f115424088d4ddc894c24048d4da8890c248d4db4ffd0",
+    "instruction_path": [
+      "mov eax,0x870d2506",
+      "rol eax,0xb",
+      "sub eax,0x2061ebdb",
+      "ror eax,0x1a",
+      "xor eax,0x7da184a9",
+      "sub eax,0x2399269b",
+      "mov [ebp-0x28],eax; mov eax,[ebp-0x28]",
+      "call eax at 0x414f3e58"
+    ],
+    "result": "0x289a6d60",
+    "claim": "The selected static caller path computes this value and calls it indirectly if reached.",
+    "not_proved": [
+      "that the path executes in a real process",
+      "that the target address is mapped at runtime",
+      "which loaded module owns the target",
+      "any module load base or resolved function identity"
+    ]
+  },
+  "candidate_comparison": [
+    {
+      "address": "0x10876d60",
+      "module": "client.dll",
+      "rva": "0x876d60",
+      "raw_file_offset": "0x876160",
+      "prefix": "558bec83e4f883ec348b450cf30f1002",
+      "candidate_runtime_base_hypothesis": "0x28130000",
+      "v6_evidence": "workspace/orchestration/v6/capsule_candidate_walk.json; workspace/orchestration/v6/geometry_capsule_caller_walk.json",
+      "observed_code": "push ebp; mov ebp,esp; and esp,0xfffffff8; sub esp,0x34; vector-coordinate float operations",
+      "assessment": "Strongest structural/entry-shape candidate for the geometry call path; not a proved runtime binding."
+    },
+    {
+      "address": "0x103e6d60",
+      "module": "client.dll",
+      "rva": "0x3e6d60",
+      "raw_file_offset": "0x3e6160",
+      "prefix": "f30f1165fc89b574ffffff4783ff400f",
+      "candidate_runtime_base_hypothesis": "0x285c0000",
+      "v6_evidence": "workspace/orchestration/v6/alternate_client_candidate_walk.json",
+      "observed_code": "Instruction sequence continues a loop; conditional branch at 0x103e6d6f targets 0x103e6bc7.",
+      "assessment": "Byte-valid countercandidate, but no separate function entry or caller link established at this address. Do not reject possible overlap as impossible."
+    },
+    {
+      "address": "0x10076d60",
+      "module": "client.dll",
+      "rva": "0x76d60",
+      "raw_file_offset": "0x76160",
+      "prefix": "83ec10e818f68200c3cccccccccccccc",
+      "candidate_runtime_base_hypothesis": "0x28930000",
+      "v6_evidence": "workspace/orchestration/v6/external_congruence_candidates.json",
+      "observed_code": "sub esp,0x10; call 0x108a6380; ret; padding",
+      "assessment": "Byte-valid, structurally weak alternative; not a proved runtime binding."
+    }
+  ],
+  "inventories_not_closed": {
+    "v6_candidate_rows": 16,
+    "v6_rows_byte_matched_to_supplied_pe": 16,
+    "v6_rows_mapping_to_target_under_distinct_unobserved_base_hypotheses": 16,
+    "v5_ambiguous_signatures": 14,
+    "v5_rows_runtime_observed": 0,
+    "v6_external_requirements": 16,
+    "v6_external_requirement_note": "Loader failure paths are recorded; direct Ragebot consumers are unproven. This inventory is distinct from the 16 congruence candidates."
+  },
+  "named_assumptions": [
+    "The V6 preferred addresses are interpreted using the supplied PE ImageBase 0x10000000; bytes and section mapping are verified against the hashed files.",
+    "The nl.bin addresses use the conditional 0x412A0000 base stated in the existing source map.",
+    "A candidate runtime base is only a hypothesis needed to map its PE RVA to 0x289A6D60; no candidate base was observed.",
+    "No claim is made that a 32-bit address is currently mapped, callable, or owned by a specific module."
+  ],
+  "unresolved_frontier": [
+    "Independent runtime module-base or relocation evidence needed to select among candidates.",
+    "Proof of target ownership and function identity at 0x289A6D60.",
+    "The V5 14 ambiguous bindings and V6 16 external requirements remain open."
+  ]
+}
