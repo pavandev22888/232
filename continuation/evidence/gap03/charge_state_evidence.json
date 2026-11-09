@@ -1,0 +1,882 @@
+{
+  "baseline_commit": "20b7907ea54c471fcea164f9088dc0ffb08a0b45",
+  "classification": "bounded conditional local reconstruction; not a full DT/HS or release state machine",
+  "image": {
+    "path": "work/nl_handoff_2026-11-06/nl.bin",
+    "sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "image_base": "0x412a0000",
+    "file_offset_rule": "VA - image_base"
+  },
+  "source_sha256": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "orchestration/v5/charge_gate_walk.json": "cd4646dff9b8d9ba8305f2fe338a68b08fc87d0ecfd87dfededba03da044477e",
+    "orchestration/v5/charge_gate_focused.asm": "ddaf5bf603b6e7c09d2d7074e2c56a4149f8455a62e8342549d4d5c99615ad01",
+    "orchestration/v9/charge_small_gate_walk.json": "7010295009323013c053231b15744d72e55845f21673c899ba03342d6293e400",
+    "orchestration/v9/contract_models.c": "aa8a05e24dafe5ea42e9ca3b790e0f31a3ca0df181d7fdcbccd3ca0ba7ff6c61",
+    "orchestration/v9/test_contracts.py": "80eada38a601e66d451f8a027f1d24978ed971b6588d2db7512a93815997aa82",
+    "orchestration/v9/proof_spec.json": "f6249fcea1527e970363938d53bd8bec41d3ca60b5bf7b0a472d0013537d25ca",
+    "orchestration/v8/branch_frontier.json": "62901088334456af96b7809a1fc0feb3290444e6dcf3609f7f972d93ee9193ad",
+    "orchestration/v2/charge_release_walk.json": "c41cdec63b8fe011e33205212f64b9fdbb83851432117e85282e6897445d8c7c"
+  },
+  "machine_byte_assertions": [
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1268",
+      "bytes": "648b0d00000000",
+      "instruction": "mov ecx,DWORD PTR fs:0x0"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f126f",
+      "bytes": "894e70",
+      "instruction": "mov DWORD PTR [esi+0x70],ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1272",
+      "bytes": "64a300000000",
+      "instruction": "mov fs:0x0,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1278",
+      "bytes": "a1206f5042",
+      "instruction": "mov eax,ds:0x42506f20"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f127d",
+      "bytes": "8b0d40855142",
+      "instruction": "mov ecx,DWORD PTR ds:0x42518540"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1283",
+      "bytes": "648b152c000000",
+      "instruction": "mov edx,DWORD PTR fs:0x2c"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f128a",
+      "bytes": "8b0c8a",
+      "instruction": "mov ecx,DWORD PTR [edx+ecx*4]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f128d",
+      "bytes": "3b8108000000",
+      "instruction": "cmp eax,DWORD PTR [ecx+0x8]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1293",
+      "bytes": "0f8fd9090000",
+      "instruction": "jg 0x414f1c72"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1299",
+      "bytes": "c74678ffffffff",
+      "instruction": "mov DWORD PTR [esi+0x78],0xffffffff"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12a0",
+      "bytes": "e8dbbc6700",
+      "instruction": "call 0x41b6cf80"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12a5",
+      "bytes": "84c0",
+      "instruction": "test al,al"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12a7",
+      "bytes": "7413",
+      "instruction": "je 0x414f12bc"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12a9",
+      "bytes": "e8727f6700",
+      "instruction": "call 0x41b69220"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12ae",
+      "bytes": "3401",
+      "instruction": "xor al,0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12b0",
+      "bytes": "0fb6c0",
+      "instruction": "movzx eax,al"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12b3",
+      "bytes": "8d048503000000",
+      "instruction": "lea eax,[eax*4+0x3]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12ba",
+      "bytes": "eb0b",
+      "instruction": "jmp 0x414f12c7"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12bc",
+      "bytes": "8b0db86c5042",
+      "instruction": "mov ecx,DWORD PTR ds:0x42506cb8"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12c2",
+      "bytes": "8b01",
+      "instruction": "mov eax,DWORD PTR [ecx]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12c4",
+      "bytes": "ff5034",
+      "instruction": "call DWORD PTR [eax+0x34]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12c7",
+      "bytes": "a328e32342",
+      "instruction": "mov ds:0x4223e328,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12cc",
+      "bytes": "e8afbc6700",
+      "instruction": "call 0x41b6cf80"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12d1",
+      "bytes": "84c0",
+      "instruction": "test al,al"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12d3",
+      "bytes": "7407",
+      "instruction": "je 0x414f12dc"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12d5",
+      "bytes": "c6052cf4234201",
+      "instruction": "mov BYTE PTR ds:0x4223f42c,0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12dc",
+      "bytes": "8b0d28e32342",
+      "instruction": "mov ecx,DWORD PTR ds:0x4223e328"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12e2",
+      "bytes": "83f911",
+      "instruction": "cmp ecx,0x11"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12e5",
+      "bytes": "ba11000000",
+      "instruction": "mov edx,0x11"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12ea",
+      "bytes": "0f4cd1",
+      "instruction": "cmovl edx,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12ed",
+      "bytes": "85c9",
+      "instruction": "test ecx,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12ef",
+      "bytes": "b93b000000",
+      "instruction": "mov ecx,0x3b"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12f4",
+      "bytes": "0f45ca",
+      "instruction": "cmovne ecx,edx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12f7",
+      "bytes": "890d28e32342",
+      "instruction": "mov DWORD PTR ds:0x4223e328,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f12fd",
+      "bytes": "8d51fe",
+      "instruction": "lea edx,[ecx-0x2]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1300",
+      "bytes": "89560c",
+      "instruction": "mov DWORD PTR [esi+0xc],edx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1303",
+      "bytes": "84c0",
+      "instruction": "test al,al"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1305",
+      "bytes": "88461f",
+      "instruction": "mov BYTE PTR [esi+0x1f],al"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1308",
+      "bytes": "740e",
+      "instruction": "je 0x414f1318"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f130a",
+      "bytes": "83f902",
+      "instruction": "cmp ecx,0x2"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f130d",
+      "bytes": "b801000000",
+      "instruction": "mov eax,0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1312",
+      "bytes": "0f4dc1",
+      "instruction": "cmovge eax,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1315",
+      "bytes": "48",
+      "instruction": "dec eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1316",
+      "bytes": "eb0e",
+      "instruction": "jmp 0x414f1326"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1318",
+      "bytes": "83f903",
+      "instruction": "cmp ecx,0x3"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f131b",
+      "bytes": "b802000000",
+      "instruction": "mov eax,0x2"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1320",
+      "bytes": "0f4dc1",
+      "instruction": "cmovge eax,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1323",
+      "bytes": "83c0fe",
+      "instruction": "add eax,0xfffffffe"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1326",
+      "bytes": "a320fe2342",
+      "instruction": "mov ds:0x4223fe20,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f132b",
+      "bytes": "8b1d9c634f42",
+      "instruction": "mov ebx,DWORD PTR ds:0x424f639c"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1331",
+      "bytes": "0fb693740d0000",
+      "instruction": "movzx edx,BYTE PTR [ebx+0xd74]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1338",
+      "bytes": "89c7",
+      "instruction": "mov edi,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f133a",
+      "bytes": "2bbc936c0d0000",
+      "instruction": "sub edi,DWORD PTR [ebx+edx*4+0xd6c]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1341",
+      "bytes": "47",
+      "instruction": "inc edi"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1342",
+      "bytes": "83f904",
+      "instruction": "cmp ecx,0x4"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1345",
+      "bytes": "ba01000000",
+      "instruction": "mov edx,0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f134a",
+      "bytes": "0f4d560c",
+      "instruction": "cmovge edx,DWORD PTR [esi+0xc]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f134e",
+      "bytes": "39d7",
+      "instruction": "cmp edi,edx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1350",
+      "bytes": "0f4cd7",
+      "instruction": "cmovl edx,edi"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1353",
+      "bytes": "891560262442",
+      "instruction": "mov DWORD PTR ds:0x42242660,edx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1359",
+      "bytes": "31ff",
+      "instruction": "xor edi,edi"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f135b",
+      "bytes": "83f802",
+      "instruction": "cmp eax,0x2"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f135e",
+      "bytes": "725e",
+      "instruction": "jb 0x414f13be"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1360",
+      "bytes": "80bb7e0c000001",
+      "instruction": "cmp BYTE PTR [ebx+0xc7e],0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1367",
+      "bytes": "bf7d0c0000",
+      "instruction": "mov edi,0xc7d"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f136c",
+      "bytes": "83df00",
+      "instruction": "sbb edi,0x0"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f136f",
+      "bytes": "803c3b00",
+      "instruction": "cmp BYTE PTR [ebx+edi*1],0x0"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1373",
+      "bytes": "89d7",
+      "instruction": "mov edi,edx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1375",
+      "bytes": "7547",
+      "instruction": "jne 0x414f13be"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1377",
+      "bytes": "8b93480b0000",
+      "instruction": "mov edx,DWORD PTR [ebx+0xb48]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f137d",
+      "bytes": "0fb6ba8c010000",
+      "instruction": "movzx edi,BYTE PTR [edx+0x18c]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1384",
+      "bytes": "83bcba8401000002",
+      "instruction": "cmp DWORD PTR [edx+edi*4+0x184],0x2"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f138c",
+      "bytes": "0f95c2",
+      "instruction": "setne dl"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f138f",
+      "bytes": "8a761f",
+      "instruction": "mov dh,BYTE PTR [esi+0x1f]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1392",
+      "bytes": "f6d6",
+      "instruction": "not dh"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1394",
+      "bytes": "84d6",
+      "instruction": "test dh,dl"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1396",
+      "bytes": "7515",
+      "instruction": "jne 0x414f13ad"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1398",
+      "bytes": "83f903",
+      "instruction": "cmp ecx,0x3"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f139b",
+      "bytes": "bf01000000",
+      "instruction": "mov edi,0x1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13a0",
+      "bytes": "8b4e0c",
+      "instruction": "mov ecx,DWORD PTR [esi+0xc]"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13a3",
+      "bytes": "0f4df9",
+      "instruction": "cmovge edi,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13a6",
+      "bytes": "39c8",
+      "instruction": "cmp eax,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13a8",
+      "bytes": "0f4cf8",
+      "instruction": "cmovl edi,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13ab",
+      "bytes": "eb11",
+      "instruction": "jmp 0x414f13be"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13ad",
+      "bytes": "89c8",
+      "instruction": "mov eax,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13af",
+      "bytes": "c1e81f",
+      "instruction": "shr eax,0x1f"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13b2",
+      "bytes": "01c8",
+      "instruction": "add eax,ecx"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13b4",
+      "bytes": "d1f8",
+      "instruction": "sar eax,1"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13b6",
+      "bytes": "31ff",
+      "instruction": "xor edi,edi"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13b8",
+      "bytes": "85c0",
+      "instruction": "test eax,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13ba",
+      "bytes": "0f4ff8",
+      "instruction": "cmovg edi,eax"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13bd",
+      "bytes": "47",
+      "instruction": "inc edi"
+    },
+    {
+      "block": "v5 mode-latch and capacity",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f13be",
+      "bytes": "893d3c1a2442",
+      "instruction": "mov DWORD PTR ds:0x42241a3c,edi"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30c0",
+      "bytes": "803d9c1c4b4200",
+      "instruction": "cmp BYTE PTR ds:0x424b1c9c,0x0"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30c7",
+      "bytes": "742e",
+      "instruction": "je 0x414f30f7"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30c9",
+      "bytes": "803d2cf4234200",
+      "instruction": "cmp BYTE PTR ds:0x4223f42c,0x0"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30d0",
+      "bytes": "741a",
+      "instruction": "je 0x414f30ec"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30d2",
+      "bytes": "8b0d7c4b4f42",
+      "instruction": "mov ecx,DWORD PTR ds:0x424f4b7c"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30d8",
+      "bytes": "49",
+      "instruction": "dec ecx"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30d9",
+      "bytes": "31c0",
+      "instruction": "xor eax,eax"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30db",
+      "bytes": "3b0de4565042",
+      "instruction": "cmp ecx,DWORD PTR ds:0x425056e4"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30e1",
+      "bytes": "7413",
+      "instruction": "je 0x414f30f6"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30e3",
+      "bytes": "803dd409504200",
+      "instruction": "cmp BYTE PTR ds:0x425009d4,0x0"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30ea",
+      "bytes": "750a",
+      "instruction": "jne 0x414f30f6"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30ec",
+      "bytes": "803dd918504200",
+      "instruction": "cmp BYTE PTR ds:0x425018d9,0x0"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30f3",
+      "bytes": "0f95c0",
+      "instruction": "setne al"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30f6",
+      "bytes": "c3",
+      "instruction": "ret"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30f7",
+      "bytes": "b001",
+      "instruction": "mov al,0x1"
+    },
+    {
+      "block": "v9 small mode gate",
+      "walk": "orchestration/v9/charge_small_gate_walk.json",
+      "va": "0x414f30f9",
+      "bytes": "c3",
+      "instruction": "ret"
+    },
+    {
+      "block": "unresolved branch frontier",
+      "walk": "orchestration/v5/charge_gate_walk.json",
+      "va": "0x414f1d07",
+      "bytes": "ffe7",
+      "instruction": "jmp edi"
+    },
+    {
+      "block": "unresolved branch frontier",
+      "walk": "orchestration/v2/charge_release_walk.json",
+      "va": "0x415e0154",
+      "bytes": "ffe1",
+      "instruction": "jmp ecx"
+    },
+    {
+      "block": "unresolved branch frontier",
+      "walk": "orchestration/v2/charge_release_walk.json",
+      "va": "0x415e0464",
+      "bytes": "ffe7",
+      "instruction": "jmp edi"
+    },
+    {
+      "block": "unresolved branch frontier",
+      "walk": "orchestration/v2/charge_release_walk.json",
+      "va": "0x415e0606",
+      "bytes": "ffe2",
+      "instruction": "jmp edx"
+    },
+    {
+      "block": "unresolved branch frontier",
+      "walk": "orchestration/v2/charge_release_walk.json",
+      "va": "0x415e0763",
+      "bytes": "eae9aac5308ee2",
+      "instruction": "jmp 0xe28e:0x30c5aae9"
+    }
+  ],
+  "unresolved_frontier_sites": [
+    {
+      "module": "charge",
+      "va": "0x414f1d07",
+      "bytes": "ffe7",
+      "instruction": "jmp edi",
+      "walk": "orchestration/v5/charge_gate_walk.json"
+    },
+    {
+      "module": "release",
+      "va": "0x415e0154",
+      "bytes": "ffe1",
+      "instruction": "jmp ecx",
+      "walk": "orchestration/v2/charge_release_walk.json"
+    },
+    {
+      "module": "release",
+      "va": "0x415e0464",
+      "bytes": "ffe7",
+      "instruction": "jmp edi",
+      "walk": "orchestration/v2/charge_release_walk.json"
+    },
+    {
+      "module": "release",
+      "va": "0x415e0606",
+      "bytes": "ffe2",
+      "instruction": "jmp edx",
+      "walk": "orchestration/v2/charge_release_walk.json"
+    },
+    {
+      "module": "release",
+      "va": "0x415e0763",
+      "bytes": "eae9aac5308ee2",
+      "instruction": "jmp 0xe28e:0x30c5aae9",
+      "walk": "orchestration/v2/charge_release_walk.json"
+    }
+  ],
+  "named_assumptions": [
+    "Boolean model inputs preserve zero/nonzero branch behavior; their external producers are not inferred.",
+    "mode_result is the zero/nonzero observation of the v5 call; the linked latch stores 1 only on its true edge in the selected block.",
+    "The small-gate helper is composed after capacity in the offline step for testability; no original caller/call-order edge between these walks is asserted.",
+    "All 32-bit arithmetic wraps modulo 2^32; signedness follows the corresponding x86 conditions.",
+    "No opaque/TLS/FS guard is pruned, and no unreachable branch is inferred from saved walk inputs."
+  ],
+  "scope": {
+    "implemented": [
+      "v5 mode-latch set-only local transition",
+      "v5 charge capacity/release arithmetic slice",
+      "v9 small counter/mode gate"
+    ],
+    "not_implemented": [
+      "external value providers",
+      "full charge/DT/HS mode automaton",
+      "v5 opaque predicates and indirect dispatch",
+      "v2 obfuscated release dispatcher",
+      "runtime field identity and complete latch lifecycle"
+    ],
+    "original_image_loaded": false,
+    "original_image_executed": false,
+    "original_cpu_emulated": false
+  }
+}
