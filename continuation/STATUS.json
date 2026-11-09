@@ -1,5 +1,5 @@
 {
-  "stage": "W5: 16 bounded results accepted after three independent fixed-SHA agent reviews; full reconstruction remains open",
+  "stage": "W6 continuation: callback and release local code implemented, independent review pending; full reconstruction remains open",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -20,7 +20,10 @@
     "direct +1C=2/3 callback score prefix and separate conditional T+F0 finalizer",
     "explicit 11-store full local reset snapshot (3 BYTE, 8 DWORD), no scheduling",
     "quarter-decay upstream seed composed with existing marker tail",
-    "bounded message fields/parser and consumer-call boundary, not full packet/sender"
+    "bounded message fields/parser and consumer-call boundary, not full packet/sender",
+    "non-direct callback local gates with explicit settings observations and retained pre-branch counter increment",
+    "callback statistics stores and initial 0x50-byte point copy when owner+C0==0",
+    "release local route, post-helper stores and separate post-dispatch counter update"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
@@ -62,7 +65,7 @@
     {
       "id": "CODE01",
       "status": "partial",
-      "change": "Added direct score prefix and T+F0 finalizer; non-direct branches, tail, ranking and full selection unresolved."
+      "change": "Added non-direct score gates, tail statistics and initial point copy. Runtime settings, index handler, nonzero-C0 ranking, enumeration and full selection remain unresolved; W6 review pending."
     },
     {
       "id": "GAP01",
@@ -97,7 +100,7 @@
   ],
   "unresolved_boundaries": [
     "Point+26, T+F4 and G425009BC first positive sources",
-    "T+68 typed consumer; non-direct aggregation branches, callback tail and full target selection",
+    "T+68 typed consumer; runtime settings observations, nonzero-C0 callback ranking, enumeration and full target selection",
     "external entity/weapon resolution",
     "scalar helper fallback/tolerance providers and original runtime bindings",
     "TLS/FS guards, opaque dispatch and exceptional paths",
@@ -106,14 +109,15 @@
     "complete message format and sender",
     "remaining consumers and complete modes",
     "original out-of-range index handler",
-    "12 historical-only H01 entries, full original protocol and independent external audit"
+    "12 historical-only H01 entries, full original protocol and independent external audit",
+    "Release helper/indirect-call effects and post-call snapshots, G4223F428 pointee+4D30 provenance, full DT/HS scheduling"
   ],
   "original_dll_execution": false,
   "original_dll_loading": false,
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Choose one fresh source-backed frontier from the accepted 24-domain W5 map and registry; no repeated completed searches, mandatory C17 migration or full-GAP closure without evidence.",
+  "next_task": "Complete independent integrated-SHA review and continue exact W6 frontiers; do not repeat W5 searches or implemented non-direct prefix.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
@@ -333,5 +337,17 @@
       ],
       "external_audit": false
     }
+  },
+  "current_continuation": {
+    "task": "W6",
+    "status": "awaiting_review",
+    "code_commits": [
+      "35b8ada",
+      "47af79a"
+    ],
+    "report": "evidence/wave6/verification.json",
+    "full_tasks_closed": [],
+    "external_audit": false,
+    "original_language_established": false
   }
 }

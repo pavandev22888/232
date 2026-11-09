@@ -14,7 +14,7 @@
 
 Для каждого модуля есть `.hpp` в `continuation/include/rage/`, `.cpp` в
 `continuation/src/` и `test_<module>.cpp` в `continuation/tests/`.
-Все девять — **C++17**, с явно переданными внешними observations.
+Текущие модули — **C++17**, с явно переданными внешними observations.
 
 | Модуль | Реализованный ограниченный контракт | Доказательства/контракт |
 |---|---|---|
@@ -24,7 +24,7 @@
 | [resolved_scalar_helper](../continuation/src/resolved_scalar_helper.cpp) | float-helper 0x41C784B0 с явным fallback | [scalar contract](../continuation/evidence/wave2/gap04/contract.md) |
 | [marker_pipeline](../continuation/src/marker_pipeline.cpp) | N+50/+54 helper calls → N+48 producer | [composition](../continuation/evidence/wave3/marker/composition.json), [W3 spec](../continuation/SPEC_NEXT.md) |
 | [actor_scalar_pipeline](../continuation/src/actor_scalar_pipeline.cpp) | независимые X/Y/Z observations; pure resolver, не решает guards | [provenance](../continuation/evidence/wave3/actor/provenance.json) |
-| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Прямой +1C=2/3 score-prefix, отдельная запись T+F0 | [контракт](../continuation/evidence/wave5/aggregate/contract.json) |
+| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, отдельная запись T+F0; tail statistics и initial copy при C0=0 | [контракт](../continuation/evidence/wave5/aggregate/contract.json) |
 | [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
 | [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
 
@@ -32,11 +32,25 @@
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное
 сохранение N при `unresolved` — соглашение офлайн API, не доказанный rollback оригинала.
 
+## Продолжение W6 (приёмка ещё не завершена)
+
+Новый [контракт callback](../continuation/evidence/wave6/aggregate/contract.json)
+сохраняет старые direct/F0 API и increment до non-direct ветви, не подставляет
+settings providers и index handler. Реализованы statistics stores и начальное
+копирование Point при `owner+C0==0`; ranking при ненулевом C0 остаётся открыт.
+
+[release_state_slice](../continuation/src/release_state_slice.cpp) восстанавливает
+локальные ветви/записи `415E01A0..415E0201` с отдельными observations после
+helper и indirect call: [контракт](../continuation/evidence/wave6/modes/contract.json).
+Это не полный автомат DT/HS; сохранность globals через вызовы не предполагается.
+Источники, hashes/bytes и свежие команды находятся в W6 evidence; финальная
+приёмка фиксированного интегрированного SHA отражается в STATUS/TASKS.
+
 ## Что остаётся открытым
 
 | Полный ID | Состояние | Точная граница / куда смотреть |
 |---|---|---|
-| CODE01 | partial | Прямой score-prefix/T+F0 реализован; остальные ветви и полный выбор цели открыты; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
+| CODE01 | partial | Direct/non-direct локальные ветви/T+F0 реализованы; settings bindings, ranking и полный выбор цели открыты; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
 | GAP01 | open | Первые положительные источники Point+26, T+F4, G425009BC; [W1](../continuation/evidence/gap01/RESULTS.md), [W2](../continuation/evidence/wave2/gap01/results.json) |
 | GAP02 | open | Типизированный T+68 consumer, связь того же T, сравнения, ветви и действия; [inventory](../continuation/evidence/wave2/gap02/README.md) |
 | GAP03 | partial | Полный автомат/entry predicate reset, смыслы дополнительных полей, реальное расписание; [reset contract](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |

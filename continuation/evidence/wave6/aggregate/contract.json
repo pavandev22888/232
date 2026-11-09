@@ -1,7 +1,7 @@
 {
   "task_id": "NEXT-AGGREGATE",
   "base_commit": "180616d1227235fc952ad07202cdd7529c0272e8",
-  "assignment_commit": "6dc50dc",
+  "assignment_commit": "6dc50dccf617945cda5326300314a472324b68ea",
   "status": "awaiting_review",
   "language": "C++17 regression baseline, not proof of original language/ABI",
   "typed_inputs": {

@@ -134,3 +134,23 @@
 - R01/R05/V01 и W5-карточки done только в пределах их bounded deliverable.
   Полные CODE01/GAP01–GAP06 остаются open/partial; R02/R03/R04 blocked.
   PR #1 остаётся без merge, очереди и auto-merge.
+
+
+## W6: локальные ветви и наблюдения после вызовов
+
+- Non-direct `4149E7B1` теперь имеет отдельный API: INC сохраняется даже при
+  неизвестном settings observation или index handler. Старый direct-prefix/F0
+  API не изменён; его nullopt по-прежнему не обозначает rollback оригинала.
+- `SUB DWORD; CMP; JG` сравнивает знаковый **обёрнутый** результат, не 64-битную
+  разность. CL моделируется отдельно; полный ECX/ABI не заявлен.
+- Tail `4149E988..E9BD`: ordered comparisons, MAXSS со вторым операндом на
+  равенстве/unordered. Только C0=0 позволяет начальный copy и C0=1; остальной
+  ranking не заменён удобным правилом.
+- Release observations до/после `414F2240` и `[425080E4]` не объединяются:
+  неизвестные вызовы могут менять globals. Локальные stores и counter increment
+  не доказывают расписание DT/HS или runtime providers.
+- Навигационный `415E0120` не принят за entry: новый контракт начинается с
+  подтверждённых инструкций `415E01A0`. Непрерывный decode произвольного окна
+  не доказывает CFG/reachability.
+- W6 не закрывает CODE01/GAP01–GAP06, исходный язык/ABI, H01 или внешний аудит.
+  Pending review не является accepted. Сбой исполнителя — не source blocker.

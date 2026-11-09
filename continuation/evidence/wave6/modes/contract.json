@@ -1,6 +1,6 @@
 {
   "task_id": "NEXT-MODES",
-  "base_commit": "553d229",
+  "base_commit": "553d2292393c2bb90283fd08dcd4150453a950a0",
   "status": "awaiting_review",
   "language": "C++17 regression baseline; original language/ABI unknown",
   "scope": "Local release-state slices only, NOT the full DT/HS state machine or scheduling.",
