@@ -151,5 +151,6 @@
     }
   ],
   "original_execution_loading_emulation": false,
-  "merge_auto_merge_queue": false
+  "merge_auto_merge_queue": false,
+  "semantics": "Initial assignment snapshot; task statuses/owners here are historical, not live completion. Current registry: docs/TASKS.json; integrated receipt: continuation/evidence/wave7/verification.json."
 }

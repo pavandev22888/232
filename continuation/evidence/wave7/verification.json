@@ -1,0 +1,364 @@
+{
+  "head": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+  "started": "2026-11-09T17:52:56.221382+00:00",
+  "commands": [
+    {
+      "name": "focused-build",
+      "argv": [
+        "make",
+        "-j2",
+        "-C",
+        "continuation",
+        "BUILD=/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation_sanitize",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor_sanitize",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice_sanitize",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice_sanitize",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice",
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "d75f5708080f294a747db0e6bfef4599049b77a0887a45c518014d947ef4735f",
+      "local_log": "runs/w7/integrated-562d1c7/focused-build.log"
+    },
+    {
+      "name": "bounded_aggregation",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation"
+      ],
+      "exit_code": 0,
+      "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4",
+      "local_log": "runs/w7/integrated-562d1c7/bounded_aggregation.log"
+    },
+    {
+      "name": "bounded_aggregation_sanitize",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4",
+      "local_log": "runs/w7/integrated-562d1c7/bounded_aggregation_sanitize.log"
+    },
+    {
+      "name": "reset_predecessor",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor"
+      ],
+      "exit_code": 0,
+      "sha256": "ed0f64d1540680cee3dfa2b5e8fbf12c7b690118c8e51cec6fcdc8e98cffe8ff",
+      "local_log": "runs/w7/integrated-562d1c7/reset_predecessor.log"
+    },
+    {
+      "name": "reset_predecessor_sanitize",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "ed0f64d1540680cee3dfa2b5e8fbf12c7b690118c8e51cec6fcdc8e98cffe8ff",
+      "local_log": "runs/w7/integrated-562d1c7/reset_predecessor_sanitize.log"
+    },
+    {
+      "name": "history_slot_slice",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice"
+      ],
+      "exit_code": 0,
+      "sha256": "65b32c9721f2715269a95e3881a9ecab6c1f3ee6d140337238fdde5a5393123d",
+      "local_log": "runs/w7/integrated-562d1c7/history_slot_slice.log"
+    },
+    {
+      "name": "history_slot_slice_sanitize",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "65b32c9721f2715269a95e3881a9ecab6c1f3ee6d140337238fdde5a5393123d",
+      "local_log": "runs/w7/integrated-562d1c7/history_slot_slice_sanitize.log"
+    },
+    {
+      "name": "movement_slice",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice"
+      ],
+      "exit_code": 0,
+      "sha256": "a5523651da5a80302ca7fee393ff027222f153e1f1789218a16049af76b85e75",
+      "local_log": "runs/w7/integrated-562d1c7/movement_slice.log"
+    },
+    {
+      "name": "movement_slice_sanitize",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "a5523651da5a80302ca7fee393ff027222f153e1f1789218a16049af76b85e75",
+      "local_log": "runs/w7/integrated-562d1c7/movement_slice_sanitize.log"
+    },
+    {
+      "name": "damage_slice",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice"
+      ],
+      "exit_code": 0,
+      "sha256": "431c844e192eb79c3c3682540b883984358fed4c75bfedeb7796ca3d7fbfbe11",
+      "local_log": "runs/w7/integrated-562d1c7/damage_slice.log"
+    },
+    {
+      "name": "damage_slice_sanitize",
+      "argv": [
+        "/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice_sanitize"
+      ],
+      "exit_code": 0,
+      "sha256": "431c844e192eb79c3c3682540b883984358fed4c75bfedeb7796ca3d7fbfbe11",
+      "local_log": "runs/w7/integrated-562d1c7/damage_slice_sanitize.log"
+    },
+    {
+      "name": "rank-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/rank/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "d55acd0cde97a8e5726671721c0b41254f0bacb0ac6e62aca7bff4b5f110e5e0",
+      "local_log": "runs/w7/integrated-562d1c7/rank-bytes.log"
+    },
+    {
+      "name": "abi-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/abi/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "9a81d709af77c54abd174f8d68f418a098cf6864b10111f53b0504dd925ea5c8",
+      "local_log": "runs/w7/integrated-562d1c7/abi-bytes.log"
+    },
+    {
+      "name": "reset-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/reset/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "7fb381767562a9f2814081772acbc23c7d9a0d45c5ad47848d20445277993328",
+      "local_log": "runs/w7/integrated-562d1c7/reset-bytes.log"
+    },
+    {
+      "name": "history-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/history/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "0ca25c2dcc8608e96e7b9e2183cff328a3960c6a5ae15422b883a37650c9e7ec",
+      "local_log": "runs/w7/integrated-562d1c7/history-bytes.log"
+    },
+    {
+      "name": "movement-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/movement/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "66222e1d5c4e2f6471798de71ab0e30e0746e1286c63f1033e332e7a7334f65c",
+      "local_log": "runs/w7/integrated-562d1c7/movement-bytes.log"
+    },
+    {
+      "name": "damage-bytes",
+      "argv": [
+        "python3",
+        "-B",
+        "continuation/evidence/wave7/damage/verify_source_bytes.py",
+        "--handoff",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10"
+      ],
+      "exit_code": 0,
+      "sha256": "1410a7f922ab18d34c81d1b4f866f8641376324726474a7b2a1a29d059758d56",
+      "local_log": "runs/w7/integrated-562d1c7/damage-bytes.log"
+    },
+    {
+      "name": "full-check",
+      "argv": [
+        "make",
+        "-j2",
+        "-C",
+        "continuation",
+        "check",
+        "HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
+        "BUILD=/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build"
+      ],
+      "exit_code": 0,
+      "sha256": "e8e95842c4f08891cd549e9b2f892742e9cf697c2d74d7965624e3b6b99c89bc",
+      "local_log": "runs/w7/integrated-562d1c7/full-check.log"
+    },
+    {
+      "name": "bundle",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py"
+      ],
+      "exit_code": 0,
+      "sha256": "e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f",
+      "local_log": "runs/w7/integrated-562d1c7/bundle.log"
+    },
+    {
+      "name": "integrity",
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py",
+        "--root",
+        "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace"
+      ],
+      "exit_code": 0,
+      "sha256": "3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac",
+      "local_log": "runs/w7/integrated-562d1c7/integrity.log"
+    },
+    {
+      "name": "diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_log": "runs/w7/integrated-562d1c7/diff-check.log"
+    }
+  ],
+  "status": "accepted_bounded_scope",
+  "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
+  "tested_code_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+  "environment": {
+    "CXX": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "Python": "3.12.3",
+    "Make": "4.3",
+    "objdump": "GNU Binutils 2.42",
+    "PYTHONOPTIMIZE": "0",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1"
+  },
+  "source": {
+    "nl_bin_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+  },
+  "counts": {
+    "modules": 15,
+    "native_programs": 16,
+    "sanitizer_programs": 16,
+    "instrumented_checks_per_mode": 67660,
+    "uncounted_programs": [
+      "reset_predecessor",
+      "movement_slice",
+      "damage_slice"
+    ],
+    "python_unit_tests": 13,
+    "new_w7_static_gates": 6,
+    "bundle_files": 960,
+    "input_work_records": 64087
+  },
+  "full_tasks_closed": [],
+  "original_language_established": false,
+  "original_dll_loading_execution_emulation": false,
+  "external_audit": false,
+  "reviews": [
+    {
+      "task": "W7-REVIEW-STATE",
+      "tested_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+      "source_commit": "76b04ee255283c94daf440c6c530cce4aebe3dda",
+      "integrated_commit": "730968e0eaac385f1fcac7e33cd5d9e2dd76ea90",
+      "report": "review-state/README.md",
+      "disposition": "accepted_bounded_scope",
+      "blocking_findings": 0,
+      "full_suite_run": false
+    },
+    {
+      "task": "W7-REVIEW-FLOW",
+      "tested_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+      "source_commit": "7e6e9988e1466a12fe9fb233f853c7d69be2efd3",
+      "integrated_commit": "93947c51681bcbc0c14b6412e10ec4ca27824653",
+      "report": "review-flow/report.json",
+      "disposition": "accepted_bounded_scope",
+      "blocking_findings": 0,
+      "full_suite_run": false
+    }
+  ],
+  "publication_gate": "Repeat four-command gate on final metadata/review HEAD; record exact SHA and log hashes in PR, avoiding a self-referential evidence commit.",
+  "scope": "Current C++17 conditional offline contracts and static source bytes; not original language, whole-program equivalence, runtime providers or external audit.",
+  "history_cursor_finding": {
+    "old_log": "integration/initial-failures/history-cursor/before.log",
+    "old_exit": 1,
+    "correction_commit": "f28f7e1a86038d44a27b4df1c4f3f077fffb673a",
+    "new_log": "integration/history-cursor-after.log",
+    "new_exit": 0,
+    "observed": "capacity5,cursor4: selected index0 but persisted cursor3; separate post-provider observation remains required",
+    "repro_build_command": "g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -Icontinuation/include continuation/src/history_slot_slice.cpp continuation/src/history_slice.cpp runs/w7/history-cursor-finding/repro.cpp -o runs/w7/integrated-562d1c7/history-cursor-repro"
+  },
+  "integration_ledger": [
+    {
+      "task": "W7-RANK",
+      "source_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
+      "integrated_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d"
+    },
+    {
+      "task": "W7-ABI",
+      "source_commit": "c457ac534f754a9a34ede7934bc0ae89171e6654",
+      "integrated_commit": "c457ac534f754a9a34ede7934bc0ae89171e6654"
+    },
+    {
+      "task": "W7-RESET",
+      "source_commit": "5ab1e2b51f20e3e1c315500e7b1e2d7785e1cb5f",
+      "integrated_commit": "d26a5724a50d56659a62d9895bbc12e5754bded1"
+    },
+    {
+      "task": "W7-RESET-FOLLOWUP",
+      "source_commit": "934b7da4869b838daf80aae095c19fd57b72ccf7",
+      "integrated_commit": "474c3ed7dc4e1ba5bd063ea5ed79a43c0c5dccda"
+    },
+    {
+      "task": "W7-HISTORY",
+      "source_commit": "d33b9bef5957593df0eadbfb915e047d7f973c11",
+      "integrated_commit": "38bef1e8f998dccb07e99b1857d651f82a21d022"
+    },
+    {
+      "task": "W7-HISTORY-FOLLOWUP",
+      "source_commit": "9cc1aa6f11c9f3ef7d59305d6f90738cabd8614b",
+      "integrated_commit": "f28f7e1a86038d44a27b4df1c4f3f077fffb673a"
+    },
+    {
+      "task": "W7-MOVEMENT",
+      "source_commit": "3d88e8df0099bf8429e4bab9167855f4ad3067ce",
+      "integrated_commit": "e7e142ab36f1bfc4a108b06cc33081513f68def7"
+    },
+    {
+      "task": "W7-DAMAGE",
+      "source_commit": "e5121d49f27a06fc4af3106395fcc36ee109e954",
+      "integrated_commit": "999db0a9fdaa447fc8b97c9c92466d5f0ba745a0"
+    },
+    {
+      "task": "W7-REVIEW-RANK",
+      "source_commit": "3e359cd20c56cbdd8a1805dc28356f8ee8f51aed",
+      "integrated_commit": "fb7a86f7018684bdb44e281d86f82e9eca9e3add"
+    }
+  ],
+  "reviewed_code_unchanged_after_candidate": true,
+  "acceptance": "Both independent integrated reviews found no blockers; coordinator focused/full/static/integrity checks passed on the same fixed candidate. Final publication HEAD gate is separately recorded in PR."
+}

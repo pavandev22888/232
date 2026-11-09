@@ -7,12 +7,14 @@ C++17 — стандарт текущей офлайн-реконструкци�
 Для старта без истории чата передайте агенту [готовый промпт](START_NEXT_AGENT.md).
 Этот пакет передаёт работу, но сам не назначает следующую волну и не закрывает GAP.
 
-**Обновление после W5:** ниже сохранён снимок W5. Текущие приращения W6,
-ревью и команды — в [W6 verification](../continuation/evidence/wave6/verification.json),
-[STATUS](../continuation/STATUS.json) и [TASKS](TASKS.json). Non-direct callback,
-локальные tail stores, reset predecessor, release и history store slices реализованы;
-начинать их повторно по прежнему списку W5 не нужно. Приёмка W6 определяется
-её собственным статусом, а не историческим PASS W5.
+**Обновление W7:** ниже сохранён исторический снимок W5. Текущая интеграция —
+[W7 scope](../continuation/evidence/wave7/README.md),
+[verification](../continuation/evidence/wave7/verification.json),
+[STATUS](../continuation/STATUS.json) и [TASKS](TASKS.json). W7 добавляет normal
+ranking/replacement tail, локальную caller ABI-связь, raw reset snapshot,
+existing-slot history resolver, movement caller и hitgroup-3 damage arm.
+Не начинать их заново по старому списку W5/W6. Исторические W5/W6 PASS не
+подтверждают W7; её fixed-SHA gate и ревью фиксируются отдельно.
 
 ## 1. Точка передачи и источники истины
 

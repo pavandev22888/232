@@ -1,6 +1,9 @@
 # Карта материалов и текущего знания
 
-Текущий интегрированный код W6: `d99dd375160c7fccfd489598942232430d78da2f`.
+Принятый ограниченный код W7: `562d1c78f2df1343cf9a9e3e3f91a115be2069ac`; приёмка — в
+[W7 verification](../continuation/evidence/wave7/verification.json).
+Ниже W6 и более ранние снимки отделены от текущих приращений.
+Исторический интегрированный код W6: `d99dd375160c7fccfd489598942232430d78da2f`.
 Ограниченные контракты приняты после независимых fixed-SHA ревью; поправка
 документации отдельно проверена на `c8a78c93b1f6d7cff7c0d9e4fc05c2dfd8915653`.
 Исторические снимки W3–W5/R03 и исходные замечания сохранены.
@@ -26,23 +29,35 @@
 | [resolved_scalar_helper](../continuation/src/resolved_scalar_helper.cpp) | float-helper 0x41C784B0 с явным fallback | [scalar contract](../continuation/evidence/wave2/gap04/contract.md) |
 | [marker_pipeline](../continuation/src/marker_pipeline.cpp) | N+50/+54 helper calls → N+48 producer | [composition](../continuation/evidence/wave3/marker/composition.json), [W3 spec](../continuation/SPEC_NEXT.md) |
 | [actor_scalar_pipeline](../continuation/src/actor_scalar_pipeline.cpp) | независимые X/Y/Z observations; pure resolver, не решает guards | [provenance](../continuation/evidence/wave3/actor/provenance.json) |
-| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, отдельная запись T+F0; tail statistics и initial copy при C0=0 | [W5](../continuation/evidence/wave5/aggregate/contract.json), [W6](../continuation/evidence/wave6/aggregate/contract.json) |
+| [bounded_aggregation](../continuation/src/bounded_aggregation.cpp) | Direct/non-direct score-prefix, T+F0; tail statistics, initial copy и normal ranking/replacement tail | [W5](../continuation/evidence/wave5/aggregate/contract.json), [W6](../continuation/evidence/wave6/aggregate/contract.json), [W7](../continuation/evidence/wave7/rank/contract.json) |
 | [lifecycle_seed_slice](../continuation/src/lifecycle_seed_slice.cpp) | Quarter-decay seed → существующий marker tail | [опоры](../continuation/evidence/wave5/lifecycle/seed_path.json) |
 | [bounded_message_fields](../continuation/src/bounded_message_fields.cpp) | 32/7/32, Z/Y/X, 7 бит; не полный packet/sender | [опоры](../continuation/evidence/wave5/messages/byte_anchors.json) |
 | [release_state_slice](../continuation/src/release_state_slice.cpp) | Отдельные post-call observations, latch stores и условный DWORD increment; не автомат DT/HS | [контракт W6](../continuation/evidence/wave6/modes/contract.json) |
-| [reset_predecessor](../continuation/src/reset_predecessor.cpp) | ADD/CMP/JNE и условная 11-store проекция; не цикл или полный entry predicate | [контракт W6](../continuation/evidence/wave6/reset/reset_predecessor_evidence.json) |
+| [reset_predecessor](../continuation/src/reset_predecessor.cpp) | 25 DWORD stores в raw 0xC8 snapshot; ADD/CMP/JNE, четыре fallthrough stores и прежняя 11-store проекция; не полный цикл | [W6](../continuation/evidence/wave6/reset/reset_predecessor_evidence.json), [W7](../continuation/evidence/wave7/reset/reset_projection_evidence.json) |
 | [history_slice](../continuation/src/history_slice.cpp) | 21 ordered raw-word copy, DWORD observation и zero store после неизвестного вызова; не selector/matrix path | [контракт W6](../continuation/evidence/wave6/history/README.md) |
+| [history_slot_slice](../continuation/src/history_slot_slice.cpp) | No-growth existing-slot resolver, отдельные cursor/index, init и независимо наблюдаемый post-call slot | [W7](../continuation/evidence/wave7/history/README.md) |
+| [movement_slice](../continuation/src/movement_slice.cpp) | Caller selector/bit0 gate, raw float argument и наблюдаемый AL; не тело helper | [W7](../continuation/evidence/wave7/movement/receipt.json) |
+| [damage_slice](../continuation/src/damage_slice.cpp) | Только hitgroup 3: observed provider float × 1.25f; не trace/armor/provider | [W7](../continuation/evidence/wave7/damage/README.md) |
 
 Дополнительный `test_position_pipeline.cpp` проверяет связки. Успешные тесты
 не устанавливают внешних providers и исходное расписание вызовов. Транзакционное
 сохранение N при `unresolved` — соглашение офлайн API, не доказанный rollback оригинала.
 
-## W6: принятые ограниченные контракты и открытые зависимости
+## W7: текущая ограниченная интеграция
+
+[Сводка W7](../continuation/evidence/wave7/README.md) фиксирует шесть участков,
+исправления cursor/index и reset snapshot, тесты и независимые ревью.
+Локальная [ABI-связь](../continuation/evidence/wave7/abi/contract.json)
+подтверждает caller ECX/EDX и обычный возврат, не source declaration/язык.
+Все runtime providers, полный selector и полные GAP остаются открыты.
+
+## W6: историческая приёмка до W7
 
 Новый [контракт callback](../continuation/evidence/wave6/aggregate/contract.json)
 сохраняет старые direct/F0 API и increment до non-direct ветви, не подставляет
 settings providers и index handler. Реализованы statistics stores и начальное
-копирование Point при `owner+C0==0`; ranking при ненулевом C0 остаётся открыт.
+копирование Point при `owner+C0==0`; на снимке W6 ranking оставался открыт.
+W7 добавляет ограниченный normal tail, не полный selector или его providers.
 
 [release_state_slice](../continuation/src/release_state_slice.cpp) восстанавливает
 локальные ветви/записи `415E01A0..415E0201` с отдельными observations после
@@ -58,13 +73,14 @@ History F1 исправлен: чтение `[ebp-0x38]` — `0x413F71A1`, за�
 [Независимый follow-up](../continuation/evidence/wave6/review-integrated-evidence/followup/report.json)
 подтвердил поправку без изменения кода/тестов. Ошибочные callback/overlap замечания
 отозваны отдельными resolutions, исходные отчёты не переписаны. Message/geometry
-остаются static frontiers без providers; damage не получил реализации или новых доказательств.
+остаются static frontiers без providers; на снимке W6 damage ещё не имел реализации.
+В W7 добавлена только отдельная hitgroup-3 ветвь, без связи с trace output.
 
 ## Что остаётся открытым
 
 | Полный ID | Состояние | Точная граница / куда смотреть |
 |---|---|---|
-| CODE01 | partial | Direct/non-direct локальные ветви/T+F0 реализованы; settings bindings, ranking и полный выбор цели открыты; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
+| CODE01 | partial | Direct/non-direct локальные ветви/T+F0 реализованы; normal ranking tail добавлен в W7; settings bindings, index handler, enumeration и полный выбор цели открыты; [baseline inventory](../continuation/evidence/wave2/code01/README.md) |
 | GAP01 | open | Первые положительные источники Point+26, T+F4, G425009BC; [W1](../continuation/evidence/gap01/RESULTS.md), [W2](../continuation/evidence/wave2/gap01/results.json) |
 | GAP02 | open | Типизированный T+68 consumer, связь того же T, сравнения, ветви и действия; [inventory](../continuation/evidence/wave2/gap02/README.md) |
 | GAP03 | partial | Полный автомат/entry predicate reset, смыслы дополнительных полей, реальное расписание; [reset contract](../continuation/evidence/wave2/gap03/reset_slice_contract.md) |

@@ -48,6 +48,17 @@ writer fallback-указателя, не готовый provider и не нов�
 закрепляют интегрированный SHA: полный `make check` сохранил 19 902 assertions
 на режим, 8 Python-тестов и целостность исходников. R03 остаётся frontier.
 
+## Продолжение W7
+
+Добавлены normal callback ranking/replacement tail, локальная ECX/EDX-связь,
+25-store raw reset snapshot, no-growth history slot resolver, movement caller
+и отдельная hitgroup-3 float-ветвь. В history исправлено различие сохранённого
+cursor и masked index; post-call slot наблюдается независимо от resolver.
+[W7 scope и остаток](continuation/evidence/wave7/README.md),
+[свежий gate и ревью](continuation/evidence/wave7/verification.json) относятся
+к фиксированному интегрированному SHA, не к прошлым исполнительским PASS.
+Provider/ABI/язык, полный selector/damage и другие полные GAP не закрыты.
+
 ## Продолжение W6
 
 Добавлены non-direct callback, локальные tail stores/initial copy, reset

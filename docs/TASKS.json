@@ -1724,7 +1724,7 @@
     {
       "id": "W7-RANK",
       "owner": "primary-coordinator",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1744,12 +1744,17 @@
         "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
-      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-RESET",
       "owner": "w7-reset",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/232-w7-reset",
       "branch": "hoplite/sikyon-46eee495--w7-reset",
@@ -1769,12 +1774,17 @@
         "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
-      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-HISTORY",
       "owner": "w7-history",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/232-w7-history",
       "branch": "hoplite/sikyon-46eee495--w7-history",
@@ -1794,12 +1804,17 @@
         "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
-      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-MOVEMENT",
       "owner": "w7-movement",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/232-w7-movement",
       "branch": "hoplite/sikyon-46eee495--w7-movement",
@@ -1819,12 +1834,17 @@
         "Readable local body when evidence suffices, native/sanitizer tests and new static gate; no regression API removal.",
         "Independent fixed integrated SHA review; full GAP stays open absent all prerequisites."
       ],
-      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion."
+      "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-ABI",
       "owner": "primary-coordinator",
-      "status": "review",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/workspace",
       "branch": "hoplite/sikyon-46eee495",
@@ -1843,12 +1863,16 @@
       ],
       "stop_condition": "One proved bounded body or concrete new source/provider frontier; no broad repeat scans, invented defaults, original execution/emulation or full-GAP promotion.",
       "previous_executor_result": "Assigned executor produced no evidence, code, commit or tests. Execution limitation, not a source/ABI impossibility proof.",
-      "result": "Local ECX/EDX caller/prologue/normal-epilogue relation recorded by coordinator; no source-language or complete-ABI proof."
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-DAMAGE",
       "owner": "w7-damage",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
       "worktree": "/tmp/hoplite/232-w7-damage",
       "branch": "hoplite/sikyon-46eee495--w7-damage",
@@ -1867,12 +1891,17 @@
         "Native/sanitizer tests plus byte gate if implementable.",
         "Fixed integrated SHA independent review."
       ],
-      "stop_condition": "One proved local body or specific new prerequisite frontier. No original loading/execution/emulation or broad repeat scanning."
+      "stop_condition": "One proved local body or specific new prerequisite frontier. No original loading/execution/emulation or broad repeat scanning.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     },
     {
       "id": "W7-REVIEW-RANK",
       "owner": "w7-review-rank",
-      "status": "in_progress",
+      "status": "done",
       "base_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d",
       "worktree": "/tmp/hoplite/232-w7-review-rank",
       "branch": "hoplite/sikyon-46eee495--w7-review-rank",
@@ -1888,7 +1917,64 @@
         "Run focused native/sanitizer/static checks and retain exact commands/exits.",
         "Report findings with precise pins, not whole-project acceptance."
       ],
-      "stop_condition": "One bounded independent review report; no changes to implementation or old evidence."
+      "stop_condition": "One bounded independent review report; no changes to implementation or old evidence.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "1380fca28d4a267f82656fc9362e8148a1d2d88d"
+      }
+    },
+    {
+      "id": "W7-REVIEW-STATE",
+      "owner": "w7-review-state",
+      "status": "done",
+      "base_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+      "worktree": "/tmp/hoplite/232-w7-review-state",
+      "branch": "hoplite/sikyon-46eee495--w7-review-state",
+      "write_paths": [
+        "continuation/evidence/wave7/review-state/"
+      ],
+      "scope": "Independent review of integrated reset/history snapshots, cursor/index distinction, post-call observations, bytes, contracts and tests.",
+      "dependencies": [
+        "W7-RESET",
+        "W7-HISTORY"
+      ],
+      "acceptance": [
+        "Fixed-SHA exact-byte review and focused native/ASan+UBSan tests; identify blocking findings or bounded acceptance."
+      ],
+      "stop_condition": "One bounded report with exact pins and evidence; no implementation writes, push, merge, execution/loading/emulation of originals.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
+    },
+    {
+      "id": "W7-REVIEW-FLOW",
+      "owner": "w7-review-flow",
+      "status": "done",
+      "base_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+      "worktree": "/tmp/hoplite/232-w7-review-flow",
+      "branch": "hoplite/sikyon-46eee495--w7-review-flow",
+      "write_paths": [
+        "continuation/evidence/wave7/review-flow/"
+      ],
+      "scope": "Independent review of integrated ranking/ABI/movement/damage, branches, raw float behavior, bytes, contracts and tests.",
+      "dependencies": [
+        "W7-RANK",
+        "W7-ABI",
+        "W7-MOVEMENT",
+        "W7-DAMAGE"
+      ],
+      "acceptance": [
+        "Fixed-SHA exact-byte review and focused native/ASan+UBSan tests; identify blocking findings or bounded acceptance."
+      ],
+      "stop_condition": "One bounded report with exact pins and evidence; no implementation writes, push, merge, execution/loading/emulation of originals.",
+      "result": {
+        "scope": "bounded_card_only; no full GAP/language/ABI/provider closure",
+        "verification": "continuation/evidence/wave7/verification.json",
+        "reviewed_commit": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac"
+      }
     }
   ],
   "goal_correction": {
@@ -1922,10 +2008,12 @@
     "id": "W7",
     "base_commit": "24aca6a6fdb8d5f20da528dc658d3d62baa1e133",
     "coordinator": "primary-coordinator",
-    "status": "in_progress",
+    "status": "accepted_bounded_scope",
     "ownership_check": "Only current running thread visible; no active children or registry tasks at start; clean checkout matches remote.",
     "handoff": "/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10",
     "full_tasks_closed": [],
-    "manifest": "continuation/evidence/wave7/assignment.json"
+    "manifest": "continuation/evidence/wave7/assignment.json",
+    "integrated_candidate": "562d1c78f2df1343cf9a9e3e3f91a115be2069ac",
+    "verification": "continuation/evidence/wave7/verification.json"
   }
 }

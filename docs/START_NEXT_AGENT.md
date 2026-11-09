@@ -32,22 +32,23 @@ C01–C04 superseded: не продолжай их как обязательну
    вложения из старого чата. Если HANDOFF уже есть, не распаковывай поверх него.
    Задай абсолютный HANDOFF, обеспечь нужный Git baseline и выполни свой make check
    и проверки целостности. Нельзя выдавать старые PASS за свежие.
-4. Возьми координацию. Сверь текущие W6-статусы, а не только снимок W5.
+4. Возьми координацию. Сверь текущие W7-статусы, а не только снимок W5.
    После сверки владельцев создай новую ограниченную карточку со свободным ID,
    owner, actual base SHA, write paths,
    зависимостями, acceptance и stop condition. Не дублируй активную чужую работу.
-5. Non-direct callback 0x4149E7B1, tail statistics и initial copy при C0==0
-   уже реализованы в W6; не начинай их заново. Следующий callback frontier —
-   ranking при ненулевом owner+C0 после 0x4149E9BD; смотри
-   continuation/evidence/wave6/aggregate/contract.json. Установи typed inputs,
-   условия и один локальный эффект свежими bytes/decodes. При достаточном
-   доказательстве добавь читаемое тело и native/sanitizer/byte tests. Сохрани
-   существующий direct-prefix/F0 API; counter increment до non-direct ветви
-   не превращай в rollback. Settings provider, unknown index handler
-   0x4149EC2D и недоказанный ranking не выдумывай.
+5. W7 normal ranking tail после 0x4149E9BD, reset snapshot, existing-slot
+   history resolver, movement caller и hitgroup-3 arm уже реализованы; не
+   начинай их повторно. Сначала прочитай continuation/evidence/wave7/README.md
+   и verification.json. Следующая ограниченная callback-зависимость — реальный
+   owner+4→+B0 provider или handler 0x4149EC2D, только при конкретном новом
+   source anchor. Выбери один source→transform→consumer участок, зафиксируй
+   bytes/decodes, inputs, assumptions и unknowns. При достаточной опоре добавь
+   тело и native/sanitizer/byte tests; иначе сохрани точный новый frontier.
+   Сохрани direct-prefix/F0 API, increment до non-direct ветви и per-path
+   observation requirements. Не подменяй provider удобным значением.
 6. Если упёрся в конкретный недоказанный provider, сохрани новый frontier и
    переходи к следующему независимому участку из актуальных TASKS/STATUS.
-   W6 reset predecessor и отдельные release observations не повторять;
+   W7 reset projection и прежние release observations не повторять;
    их остаток — EAX provider, полный entry predicate и scheduling.
    Message/geometry остановлены на конкретных runtime bindings, не на
    отсутствующем типовом алгоритме. Не гоняй заново завершённые широкие поиски.

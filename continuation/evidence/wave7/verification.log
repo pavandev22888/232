@@ -1,0 +1,311 @@
+W7 integrated candidate 562d1c78f2df1343cf9a9e3e3f91a115be2069ac
+Full logs retained locally; hashes and exact argv in verification.json.
+This file contains selected, not complete, output. No original execution/emulation.
+
+$ make -j2 -C continuation BUILD=/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation_sanitize /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor_sanitize /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice_sanitize /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice_sanitize /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice_sanitize
+exit=0
+log_sha256=d75f5708080f294a747db0e6bfef4599049b77a0887a45c518014d947ef4735f
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation
+exit=0
+log_sha256=b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4
+23002 bounded aggregation assertions passed
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation_sanitize
+exit=0
+log_sha256=b3feea12614805251a7e8ab062900d0d2bae27dc22d60b1b2df8b16d95c1d3b4
+23002 bounded aggregation assertions passed
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor
+exit=0
+log_sha256=ed0f64d1540680cee3dfa2b5e8fbf12c7b690118c8e51cec6fcdc8e98cffe8ff
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor_sanitize
+exit=0
+log_sha256=ed0f64d1540680cee3dfa2b5e8fbf12c7b690118c8e51cec6fcdc8e98cffe8ff
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice
+exit=0
+log_sha256=65b32c9721f2715269a95e3881a9ecab6c1f3ee6d140337238fdde5a5393123d
+PASS test_history_slot_slice assertions=55
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice_sanitize
+exit=0
+log_sha256=65b32c9721f2715269a95e3881a9ecab6c1f3ee6d140337238fdde5a5393123d
+PASS test_history_slot_slice assertions=55
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice
+exit=0
+log_sha256=a5523651da5a80302ca7fee393ff027222f153e1f1789218a16049af76b85e75
+PASS: movement caller edges, unknowns and raw float-bit forwarding
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice_sanitize
+exit=0
+log_sha256=a5523651da5a80302ca7fee393ff027222f153e1f1789218a16049af76b85e75
+PASS: movement caller edges, unknowns and raw float-bit forwarding
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice
+exit=0
+log_sha256=431c844e192eb79c3c3682540b883984358fed4c75bfedeb7796ca3d7fbfbe11
+PASS: bounded hitgroup-3 float branch
+
+$ /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice_sanitize
+exit=0
+log_sha256=431c844e192eb79c3c3682540b883984358fed4c75bfedeb7796ca3d7fbfbe11
+PASS: bounded hitgroup-3 float branch
+
+$ python3 -B continuation/evidence/wave7/rank/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=d55acd0cde97a8e5726671721c0b41254f0bacb0ac6e62aca7bff4b5f110e5e0
+{
+  "passed": true,
+  "instructions": 162,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "Local ranking tail and constants, not runtime providers or full selector"
+}
+
+$ python3 -B continuation/evidence/wave7/abi/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=9a81d709af77c54abd174f8d68f418a098cf6864b10111f53b0504dd925ea5c8
+{
+  "passed": true,
+  "instructions": 28,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "original_execution_loading_emulation": false,
+  "scope": "One caller/register/normal-epilogue observation, not a language or full ABI claim"
+}
+
+$ python3 -B continuation/evidence/wave7/reset/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=7fb381767562a9f2814081772acbc23c7d9a0d45c5ad47848d20445277993328
+PASS: raw snapshot mutation contract distinct from metadata trace
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+UNRESOLVED: EAX provider/identity, initial table base, entry reachability, outer scheduling and reset-field semantics
+
+$ python3 -B continuation/evidence/wave7/history/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=0ca25c2dcc8608e96e7b9e2183cff328a3960c6a5ae15422b883a37650c9e7ec
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS resolver VA=0x413f88f0 length=0xc0 sha256=b8d8206f38ea7844a1db06850dd6d6a098b2fc0e989946a045ca26ecff200a92
+PASS resolver cursor/index (DEC EDI; AND EBX,EDI; store EDI), init/return, and caller/consumer anchors
+PASS initializer vector VA=0x4205afd0 bytes=0000000000000000ffffffffffffffff
+
+$ python3 -B continuation/evidence/wave7/movement/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=66222e1d5c4e2f6471798de71ab0e30e0746e1286c63f1033e332e7a7334f65c
+{
+  "caller_branch_targets": {
+    "guard_bit_set": "0x4148cc8c",
+    "predicate_al_zero": "0x4148d7b7",
+    "selector_0x1f": "0x4148d7b9",
+    "selector_0x40": "0x4148d7b9"
+  },
+  "direct_call": {
+    "displacement": "+0x184af",
+    "site": "0x4148cc7c",
+    "target": "0x414a5130"
+  },
+  "image_base": "0x412a0000",
+  "pins": [
+    {
+      "bytes": "0fb7043031db83f81f0f84660b000083f8400f845d0b0000f605b8525042017527660f6e05dc525042c745f0ffffffff83ec04660f7e0424e8af84010083c40484c00f842b0b0000",
+      "label": "caller selector, guard, float push and AL consumer",
+      "length": 72,
+      "va": "0x4148cc44"
+    },
+    {
+      "bytes": "5383ec0ca10027264231e089442408",
+      "label": "predicate entry and frame allocation",
+      "length": 15,
+      "va": "0x414a5130"
+    },
+    {
+      "bytes": "f30f104c24140f540d40a505420f2ec80f96c3",
+      "label": "predicate float load, mask, comparison and SETBE",
+      "length": 19,
+      "va": "0x414a52b7"
+    },
+    {
+      "bytes": "8b4c240831e1e88729900089d883c40c5bc3",
+      "label": "predicate AL return path",
+      "length": 18,
+      "va": "0x414a52ca"
+    },
+    {
+      "bytes": "5589e553575681ecac0200008965e4",
+      "label": "caller entry frame",
+      "length": 15,
+      "va": "0x4148cae0"
+    }
+  ],
+  "result": "passed",
+  "source": "workspace/work/nl_handoff_2026-11-06/nl.bin",
+  "source_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e"
+}
+
+$ python3 -B continuation/evidence/wave7/damage/verify_source_bytes.py --handoff /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10
+exit=0
+log_sha256=1410a7f922ab18d34c81d1b4f866f8641376324726474a7b2a1a29d059758d56
+PASS source identity: nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e, DLL resource bytes match
+PASS 21 exact instruction anchors; 16 decoded by objdump
+PASS hitgroup index 2 -> 0x413709bb; coefficient is binary32 1.25; return/store anchors match
+
+$ make -j2 -C continuation check HANDOFF=/tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10 BUILD=/tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build
+exit=0
+log_sha256=e8e95842c4f08891cd549e9b2f892742e9cf697c2d74d7965624e3b6b99c89bc
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_actor_scalar_pipeline
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation
+23002 bounded aggregation assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_message_fields
+bounded_message_fields: 352 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_charge_state
+PASS: 3490 charge-state checks
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice
+PASS: bounded hitgroup-3 float branch
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slice
+PASS history slice: 22 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice
+PASS test_history_slot_slice assertions=55
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_lifecycle_seed_slice
+PASS lifecycle_seed_slice: 2820 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_marker_pipeline
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice
+PASS: movement caller edges, unknowns and raw float-bit forwarding
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_lifecycle
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_pipeline
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_release_state_slice
+21291 release-state assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_resolved_scalar_helper
+PASS resolved_scalar_helper: 53 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_actor_scalar_pipeline_sanitize
+PASS actor_scalar_pipeline: 119 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_aggregation_sanitize
+23002 bounded aggregation assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_bounded_message_fields_sanitize
+bounded_message_fields: 352 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_charge_state_sanitize
+PASS: 3490 charge-state checks
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_damage_slice_sanitize
+PASS: bounded hitgroup-3 float branch
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slice_sanitize
+PASS history slice: 22 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_history_slot_slice_sanitize
+PASS test_history_slot_slice assertions=55
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_lifecycle_seed_slice_sanitize
+PASS lifecycle_seed_slice: 2820 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_marker_pipeline_sanitize
+PASS marker_pipeline: 13255 assertions
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_movement_slice_sanitize
+PASS: movement caller edges, unknowns and raw float-bit forwarding
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_lifecycle_sanitize
+position_lifecycle: 208 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_pipeline_sanitize
+position_pipeline: 20 coherent offline scenarios, 392 assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_release_state_slice_sanitize
+21291 release-state assertions passed
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_reset_predecessor_sanitize
+PASS: raw record snapshot, reset branch, byte-backed store trace, widths and bounds
+RUN /tmp/hoplite/workspace/runs/w7/integrated-562d1c7/build/test_resolved_scalar_helper_sanitize
+PASS resolved_scalar_helper: 53 assertions
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+PASS: 7 immutable source hashes, 32 byte anchors/fresh objdump instructions, 3 complete static contexts, 3 same-address reset/consumer bindings
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; windows=4; bytes=348; fresh decoded instructions=87; constants=3; handoff read-only
+Ran 8 tests in 0.003s
+OK
+PASS scalar helper: image hash; 3 reference hashes; 111 instruction bytes + fresh decodes; 3 constants; 5 direct calls
+PASS marker composition: 3 evidence pins; 19 producer anchors; 25 fresh decoded instructions; 2 producer constants
+PASS: image SHA-256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; pinned sources=8; windows=12; bytes=1039; fresh decoded instructions=257; claims with byte anchors=6
+PASS fallback provider: image; 6 sources; 767 literal references with fresh nominated decodes; 5 hashed windows / 49 fresh instructions; rel32
+PASS caller_zero_gate: 4 fresh decoded instructions; 4 byte/decode pins
+PASS caller_arguments_and_direct_call: 10 fresh decoded instructions; 10 byte/decode pins
+PASS direct_callee_entry_to_indirect_call: 65 fresh decoded instructions; 26 byte/decode pins
+PASS source SHA256 682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e
+PASS dispatch expression -> 0x5325d3e8, outside pinned image
+PASS: 5 source hashes, predecessor add/cmp/JNE, 11 reset stores, fresh objdump
+PASS nl_handoff archive and nested nl.bin pins
+PASS caller byte window SHA-256 72bab48ea792c8f4a906af85efe348288aaebaef9169c482df6fc596f83595cb
+PASS indirect call setup byte window SHA-256 2cc0b6ecc5100b19b3d6981c3d7c8505e4eb5fecc9a4c01766abd2776416fe0f
+PASS result/effect byte window SHA-256 58dbf01250553f893287c7993997ca2d910a094a3730bf2939dd74f0dfc989a5
+PASS threshold VA 0x4205A554 bytes 00 00 80 3f
+PASS fresh caller immediates compute indirect target 0x289A6D60
+PASS separate client candidate RVA/raw windows; neither runtime base is established
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS 14 raw-byte anchors; offsets=0x156de0,0x156e1a,0x156e20,0x157054,0x157062,0x157068,0x1570f3,0x1570fd,0x157102,0x157201,0x15723d,0x1588f0,0x158904,0x15892e
+PASS saved walks match fresh bytes: producer=28, resolver=11, consumer=47, constructor=40
+PASS: raw snapshot mutation contract distinct from metadata trace
+PASS: pinned image SHA256; 43 exact instruction bytes/decodes; body 25, predecessor 3, prefix 4, existing local reset 11
+PASS source DLL resource bytes equal nl.bin
+PASS nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e size=55578624
+PASS neverlose.dll sha256=c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c
+PASS resolver VA=0x413f88f0 length=0xc0 sha256=b8d8206f38ea7844a1db06850dd6d6a098b2fc0e989946a045ca26ecff200a92
+PASS resolver cursor/index (DEC EDI; AND EBX,EDI; store EDI), init/return, and caller/consumer anchors
+PASS initializer vector VA=0x4205afd0 bytes=0000000000000000ffffffffffffffff
+PASS source identity: nl.bin sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e, DLL resource bytes match
+PASS 21 exact instruction anchors; 16 decoded by objdump
+PASS hitgroup index 2 -> 0x413709bb; coefficient is binary32 1.25; return/store anchors match
+PASS 12 pinned source hashes
+PASS 2 byte windows and fresh objdump instruction boundaries
+PASS guarded static address 0x2cf551dc -> [vtable+0x10]; ownership unresolved
+PASS distinct repeated calls; first-zero skip; signed WORD -> N+1C DWORD
+PASS 16 existing geometry alternatives retained; no handle binding established
+PASS: 3 immutable source hashes, 11 zero stores/fresh objdump instructions (3 BYTE, 8 DWORD); entry and scheduling remain unresolved
+PASS W5-ESI: pinned sources/image; 383 continuous callee instructions; 5 caller instructions; 9 opaque calls; 1 local branch; 1 supported ret 4
+PASS W5-FALLBACK24: image; 2 pinned sources; 4 hashed windows; 70 fresh instructions; 3 rel32 targets; one candidate immediate/offset composition
+PASS: 6 source hashes, whole image SHA256, 14 windows, 99 instructions, 11 direct edges, 7 distinct unresolved boundaries
+PASS: 4 source hashes, 3 windows, 16 fresh i386 instructions; snapshot 0x4226723c -> 0x41c683a0 -> JMP destination 0x42032493 under raw bias 0x412a0000.
+PASS W5-LIFECYCLE: 6 reference pins; 179 instructions / 739 bytes; 4 constants
+PASS: 8 fresh windows, 354 instruction anchors, 3 constants; conditional parser, not a packet/sender
+PASS: 5 sources, 5 spans, 110 freshly decoded instructions; static consistency only; GAP02 open
+Ran 5 tests in 0.003s
+OK
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/tools/check_bundle.py
+exit=0
+log_sha256=e2110b60118b9cbff9b72ccbce69fc0d1ee60a2b75f3184892e1d4e3d42c5d2f
+{
+  "passed": true,
+  "verified_files": 960,
+  "errors": [],
+  "scope": "File integrity, not behaviour equivalence."
+}
+
+$ python3 -B /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace/orchestration/v1/approval_package/check_integrity.py --root /tmp/hoplite/workspace/runs/handoff/RAGEBOT_HANDOFF_V10/workspace
+exit=0
+log_sha256=3dc9d56e20c23a56d269ba5fec67b66d6fb945961904faf532eda3d1df7144ac
+{
+  "passed": true,
+  "checked_files": 64087,
+  "errors": [],
+  "scope": "input integrity only; no algorithmic correctness claimed"
+}
+
+$ git diff --check
+exit=0
+log_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
