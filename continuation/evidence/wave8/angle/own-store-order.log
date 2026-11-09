@@ -1,0 +1,40 @@
+Own-code post-fix static disassembly; source SHA-256:
+fb4c89abe03da166962c534694e75807a0449cbb2d33c1d93448c3db7e80ed31  continuation/src/angle_slice.cpp
+COMMAND: objdump -d -Mintel --demangle continuation/evidence/wave8/angle/.build/test_angle_slice (evaluate_angle_tail tail)
+    13cf:	4d 85 c9             	test   r9,r9
+    13d2:	74 06                	je     13da <rage::offline::evaluate_angle_tail(rage::offline::AngleTailObservations const&, rage::offline::AngleTailDestination)+0x12a>
+    13d4:	48 83 fa 17          	cmp    rdx,0x17
+    13d8:	77 06                	ja     13e0 <rage::offline::evaluate_angle_tail(rage::offline::AngleTailObservations const&, rage::offline::AngleTailDestination)+0x130>
+    13da:	4c 89 c0             	mov    rax,r8
+    13dd:	c3                   	ret
+    13de:	66 90                	xchg   ax,ax
+    13e0:	49 8b 41 0c          	mov    rax,QWORD PTR [r9+0xc]
+    13e4:	66 0f ef ff          	pxor   xmm7,xmm7
+    13e8:	f3 0f 5f 1d 80 1c 00 	maxss  xmm3,DWORD PTR [rip+0x1c80]        # 3070 <_IO_stdin_used+0x70>
+    13ef:	00
+    13f0:	0f 29 7c 24 e8       	movaps XMMWORD PTR [rsp-0x18],xmm7
+    13f5:	48 89 44 24 e8       	mov    QWORD PTR [rsp-0x18],rax
+    13fa:	0f 28 44 24 e8       	movaps xmm0,XMMWORD PTR [rsp-0x18]
+    13ff:	0f 5f 05 4a 1c 00 00 	maxps  xmm0,XMMWORD PTR [rip+0x1c4a]        # 3050 <_IO_stdin_used+0x50>
+    1406:	0f 28 d0             	movaps xmm2,xmm0
+    1409:	0f 5d 15 50 1c 00 00 	minps  xmm2,XMMWORD PTR [rip+0x1c50]        # 3060 <_IO_stdin_used+0x60>
+    1410:	66 41 0f d6 51 0c    	movq   QWORD PTR [r9+0xc],xmm2
+    1416:	0f 28 cb             	movaps xmm1,xmm3
+    1419:	49 83 40 58 02       	add    QWORD PTR [r8+0x58],0x2
+    141e:	66 0f 6c c2          	punpcklqdq xmm0,xmm2
+    1422:	41 80 78 54 00       	cmp    BYTE PTR [r8+0x54],0x0
+    1427:	f3 0f 5d 0d 51 1c 00 	minss  xmm1,DWORD PTR [rip+0x1c51]        # 3080 <_IO_stdin_used+0x80>
+    142e:	00
+    142f:	41 0f 11 40 3c       	movups XMMWORD PTR [r8+0x3c],xmm0
+    1434:	66 0f 62 d9          	punpckldq xmm3,xmm1
+    1438:	66 41 0f 7e 49 14    	movd   DWORD PTR [r9+0x14],xmm1
+    143e:	66 41 0f d6 58 4c    	movq   QWORD PTR [r8+0x4c],xmm3
+    1444:	75 05                	jne    144b <rage::offline::evaluate_angle_tail(rage::offline::AngleTailObservations const&, rage::offline::AngleTailDestination)+0x19b>
+    1446:	41 c6 40 54 01       	mov    BYTE PTR [r8+0x54],0x1
+    144b:	41 c7 00 05 00 00 00 	mov    DWORD PTR [r8],0x5
+    1452:	eb 86                	jmp    13da <rage::offline::evaluate_angle_tail(rage::offline::AngleTailObservations const&, rage::offline::AngleTailDestination)+0x12a>
+    1454:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    145b:	00 00 00
+    145e:	66 90                	xchg   ax,ax
+
+EXIT=0
