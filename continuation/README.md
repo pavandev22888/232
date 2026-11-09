@@ -58,10 +58,12 @@ make -C continuation check HANDOFF=/absolute/path/RAGEBOT_HANDOFF_V10
 - [`evidence/baseline_checks.json`](evidence/baseline_checks.json) — прогон V10–V6 предыдущего этапа.
 - [`STATUS.json`](STATUS.json) — выполненное и открытые задачи.
 - [`DECISIONS.md`](DECISIONS.md) — решения и ограничения.
-- [`ORCHESTRATION.md`](ORCHESTRATION.md) — распределение семи заданий и приёмка волны.
+- [`ORCHESTRATION.md`](ORCHESTRATION.md) — распределение заданий и приёмка первой волны.
+- [`ORCHESTRATION_WAVE2.md`](ORCHESTRATION_WAVE2.md) — задания и приёмка второй волны
+  с выбранной моделью `gpt-6.1-sol`; новые доказательства отделены в `evidence/wave2/`.
 - `evidence/gap01/`, `gap03/`, `gap04/`, `gap05/`, `gap06/` — отчёты и
   воспроизводимые проверки каждого принятого направления.
-- `evidence/parallel_verification.json` — итог текущей волны; прежние
+- `evidence/parallel_verification.json` — итог первой параллельной волны; прежние
   `baseline_checks.json` и `verification.json` относятся к предыдущему этапу.
 
 ### Не является завершённой реконструкцией

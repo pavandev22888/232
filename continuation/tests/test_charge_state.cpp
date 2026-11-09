@@ -234,6 +234,74 @@ void test_raw_mode_byte_branches()
               "raw-byte nonzero latch branch");
     }
 }
+
+void test_reset_slice_projection()
+{
+    const ChargeCapacity capacity{17, 16, 15, 9};
+    for (const bool latched : {false, true}) {
+        for (const bool guard_a : {false, true}) {
+            for (const bool enabled_d : {false, true}) {
+                for (const bool cached_result : {false, true}) {
+                    ChargeState state{latched, capacity, cached_result};
+                    SmallGateInput gate{guard_a, true, enabled_d,
+                                        0xffffffffu, 0xfffffffeu};
+                    rage::offline::apply_charge_reset_slice(state, gate);
+                    check(!state.mode_latched, "reset clears same-address latch");
+                    check(!gate.guard_c, "reset clears small-gate C byte");
+                    check(gate.previous_counter == 0,
+                          "reset clears small-gate previous DWORD");
+                    check(gate.guard_a == guard_a &&
+                          gate.enabled_d == enabled_d &&
+                          gate.current_counter == 0xffffffffu,
+                          "reset projection preserves other gate inputs");
+                    check(same(state.capacity, capacity) &&
+                          state.small_gate_result == cached_result,
+                          "reset does not recompute model outputs");
+                    rage::offline::apply_charge_reset_slice(state, gate);
+                    check(!state.mode_latched && !gate.guard_c &&
+                          gate.previous_counter == 0 &&
+                          same(state.capacity, capacity) &&
+                          state.small_gate_result == cached_result,
+                          "reset projection is idempotent");
+                }
+            }
+        }
+    }
+}
+
+void test_explicit_reset_and_relatch()
+{
+    ChargeState state{};
+    SmallGateInput gate{true, true, true, 0, 0xffffffffu};
+    const ChargeCapacityInput capacity{17, 0, false, 0};
+    rage::offline::compose_charge_model_step(state, {254, capacity, gate});
+    check(state.mode_latched && !state.small_gate_result,
+          "noncanonical even byte sets latch before explicit reset");
+
+    rage::offline::apply_charge_reset_slice(state, gate);
+    check(rage::offline::evaluate_small_charge_gate(gate, state.mode_latched),
+          "cleared latch bypasses the counter and C checks");
+    check(gate.current_counter == 0 && gate.previous_counter == 0,
+          "reset preserves current counter without decrementing it");
+
+    rage::offline::compose_charge_model_step(state, {0, capacity, gate});
+    check(!state.mode_latched && state.small_gate_result,
+          "zero observation preserves explicitly cleared latch");
+    check(same(state.capacity, {17, 15, 15, 9}),
+          "post-reset zero raw byte keeps existing capacity semantics");
+
+    gate.current_counter = 1;
+    rage::offline::compose_charge_model_step(state, {2, capacity, gate});
+    check(state.mode_latched && !state.small_gate_result,
+          "relatch observes reset previous counter in equality guard");
+    check(same(state.capacity, {17, 16, 15, 9}),
+          "relatch preserves nonzero versus low-bit distinction");
+
+    gate.current_counter = 2;
+    rage::offline::compose_charge_model_step(state, {0, capacity, gate});
+    check(state.mode_latched && state.small_gate_result,
+          "zero does not reset relatched mode and cleared C permits gate");
+}
 } // namespace
 
 int main()
@@ -243,6 +311,8 @@ int main()
     test_small_gate_conditions();
     test_composed_transition_and_latch();
     test_raw_mode_byte_branches();
+    test_reset_slice_projection();
+    test_explicit_reset_and_relatch();
     if (failures != 0) {
         std::cerr << failures << " of " << checks << " checks failed\n";
         return 1;
