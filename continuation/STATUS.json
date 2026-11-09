@@ -1,5 +1,5 @@
 {
-  "stage": "V10 continuation: typed conditional position-record chain",
+  "stage": "V10 balanced parallel continuation: three conditional offline modules",
   "full_ragebot_reconstructed": false,
   "new_readable_code_added": true,
   "implemented_local_contracts": [
@@ -7,10 +7,113 @@
     "resolved update with snapshots and metadata",
     "resolved item word store",
     "resolved reader including policy clearing",
-    "item consumer entry gate"
+    "item consumer entry gate",
+    "charge capacity with raw-byte branch semantics",
+    "set-only mode latch and separate small counter gate",
+    "local N+48 producer tail with resolved external observations",
+    "actor-position consumer with distinct copy/clear guard exits"
   ],
   "classification": "Conditional offline reconstruction with byte-anchored local chains, not full original functions",
   "verification": {
+    "report": "evidence/parallel_verification.json",
+    "log": "evidence/parallel_verification.log",
+    "native_tests": "passed",
+    "asan_ubsan": "passed",
+    "assertions_per_run": 5856,
+    "modules": 3,
+    "static_evidence": "passed",
+    "h01_byte_assertions_replayed": 162,
+    "h01_other_checks_not_replayed": 47,
+    "bundle_files": 960,
+    "restored_integrity_records": 64087,
+    "final_bundle_integrity": "passed",
+    "final_input_and_work_integrity": "passed"
+  },
+  "open_tasks": [
+    {
+      "id": "CODE01",
+      "status": "partial",
+      "change": "Assigned aggregation task unperformed; previous typed N chain preserved; broader code still incomplete"
+    },
+    {
+      "id": "GAP01",
+      "status": "open",
+      "change": "32 selected byte/provenance checks clarify candidates; Point+26, T+F4 and G425009BC first positive sources remain open"
+    },
+    {
+      "id": "GAP02",
+      "status": "open",
+      "change": "Assigned task unperformed; T+68 consumer remains open and N+68 remains separate"
+    },
+    {
+      "id": "GAP03",
+      "status": "partial",
+      "change": "Added raw-byte charge limits, set-only latch and small gate; full automaton, external guards and original call order unresolved"
+    },
+    {
+      "id": "GAP04",
+      "status": "open",
+      "change": "Static address chain and 16 PE candidates verified; no runtime module-base or binding assigned"
+    },
+    {
+      "id": "GAP05",
+      "status": "partial",
+      "change": "Added local N+48 producer and actor consumer with resolved inputs and distinct early exits; full upstream/lifecycle/sender/consumers unresolved"
+    },
+    {
+      "id": "GAP06",
+      "status": "partial",
+      "change": "Baseline-module source review, integrated native/sanitized checks, fresh 162 H01 byte checks; other 47 checks and independent external audit unresolved"
+    }
+  ],
+  "unresolved_boundaries": [
+    "Point+26, T+F4 and G425009BC first positive sources",
+    "T+68 threshold consumer and aggregation task",
+    "external entity/weapon resolution",
+    "external providers and original runtime bindings",
+    "TLS/FS guards, opaque dispatch and exceptional paths",
+    "complete N+48 upstream seed and lifecycle",
+    "complete message format and sender",
+    "remaining consumers and complete modes",
+    "original out-of-range index handler",
+    "full historical H01 protocol and independent external audit"
+  ],
+  "original_dll_execution": false,
+  "original_dll_loading": false,
+  "original_emulation": false,
+  "input_and_restored_work_modified": false,
+  "independent_audit": false,
+  "next_task": "No automatic second wave; unresolved sources, upstream N+48 observations and external proof boundaries remain listed",
+  "parallel_wave": {
+    "status": "completed_with_unperformed_tasks",
+    "baseline_commit": "20b7907",
+    "user_priority": "balanced",
+    "agents": [
+      "code01-readable-aggregation",
+      "gap01-positive-sources",
+      "gap02-threshold-consumer",
+      "gap03-charge-state",
+      "gap04-external-bindings",
+      "gap05-position-lifecycle",
+      "gap06-verification-audit"
+    ],
+    "acceptance": "Coordinator reruns checks and reviews changes before accepting claims",
+    "unperformed_tasks": {
+      "CODE01": "Assigned agent declined; no aggregation implementation or tests",
+      "GAP02": "Assigned agent declined; no T+68 implementation or tests"
+    },
+    "accepted_limited_deliverables": [
+      "GAP01",
+      "GAP03",
+      "GAP04",
+      "GAP05",
+      "GAP06"
+    ],
+    "full_tasks_closed": [],
+    "agents_still_running": 0,
+    "acceptance_report": "evidence/parallel_verification.json"
+  },
+  "baseline_verification": {
     "v10_v9_v8_v7_v6_replay": "passed",
     "bundle_files": 960,
     "restored_integrity_records": 64087,
@@ -23,57 +126,5 @@
     "constants": 5,
     "final_bundle_integrity": "passed",
     "final_input_and_work_integrity": "passed"
-  },
-  "open_tasks": [
-    {
-      "id": "CODE01",
-      "status": "partial",
-      "change": "Added typed, compiled, connected local N chain; broader Ragebot code remains incomplete"
-    },
-    {
-      "id": "GAP01",
-      "status": "open",
-      "change": "No new claim about first positive Point+26/T+F4/old +BC sources"
-    },
-    {
-      "id": "GAP02",
-      "status": "open",
-      "change": "T+68 consumer not closed; N+68 explicitly separate"
-    },
-    {
-      "id": "GAP03",
-      "status": "partial",
-      "change": "Conditional N transitions and reader branches implemented; external/opaque paths and other modules remain"
-    },
-    {
-      "id": "GAP04",
-      "status": "open",
-      "change": "Providers remain explicit external observations; no runtime binding assigned"
-    },
-    {
-      "id": "GAP05",
-      "status": "partial",
-      "change": "Storage/update/reader/item-entry chain implemented; full sender/format/consumers and marker lifecycle remain"
-    },
-    {
-      "id": "GAP06",
-      "status": "partial",
-      "change": "Fresh V10-V6 replay; new tests and byte replay; no full H01 protocol or independent observation"
-    }
-  ],
-  "unresolved_boundaries": [
-    "external entity/weapon resolution",
-    "trace implementation and original runtime bindings",
-    "TLS/FS guards and exceptional paths",
-    "full marker +48 producer/lifecycle",
-    "complete message format and sender",
-    "rest of consumers and full Ragebot modes",
-    "original out-of-range index handler"
-  ],
-  "original_dll_execution": false,
-  "original_dll_loading": false,
-  "original_emulation": false,
-  "input_and_restored_work_modified": false,
-  "independent_audit": false,
-  "next_task": "Recover the N+48 producer and actor-consumer transitions without pruning unresolved guards"
+  }
 }

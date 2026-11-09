@@ -1,0 +1,123 @@
+{
+  "recorded_at": "2026-11-09T10:30:27.915514+00:00",
+  "baseline_commit": "20b7907ea54c471fcea164f9088dc0ffb08a0b45",
+  "command": "make -C continuation check",
+  "exit_code": 0,
+  "native_tests": {
+    "passed": true,
+    "assertions_per_module": {
+      "charge_state": 3170,
+      "position_lifecycle": 85,
+      "position_records": 2601
+    },
+    "total_assertions": 5856
+  },
+  "asan_ubsan": {
+    "passed": true,
+    "assertions_per_module": {
+      "charge_state": 3170,
+      "position_lifecycle": 85,
+      "position_records": 2601
+    },
+    "total_assertions": 5856,
+    "leak_detection": true,
+    "undefined_behavior_halt_on_error": true
+  },
+  "evidence": {
+    "position_records": {
+      "passed": true,
+      "fresh_decodes": 294,
+      "constants": 5,
+      "unchanged_inventory_files": 13
+    },
+    "GAP01": {
+      "passed": true,
+      "selected_byte_assertions_and_fresh_decodes": 32,
+      "positive_sources_closed": false
+    },
+    "GAP03": {
+      "passed": true,
+      "source_hashes": 9,
+      "instruction_byte_assertions": 114,
+      "unresolved_frontier_sites": 5,
+      "full_state_machine_closed": false
+    },
+    "GAP04": {
+      "passed": true,
+      "image_hashes": 4,
+      "byte_matched_pe_candidates": 16,
+      "runtime_bindings_closed": false
+    },
+    "GAP05": {
+      "passed": true,
+      "walk_instruction_bytes": 695,
+      "fresh_decodes": 47,
+      "local_marker_stores": 1,
+      "manager_refs": 28,
+      "full_lifecycle_closed": false
+    },
+    "GAP06": {
+      "passed": true,
+      "fresh_h01_byte_assertions": 162,
+      "historical_checks": 209,
+      "other_historical_checks_not_replayed": 47,
+      "strict_old_protocol_repeated": false
+    }
+  },
+  "acceptance": {
+    "accepted_limited_deliverables": [
+      "GAP01",
+      "GAP03",
+      "GAP04",
+      "GAP05",
+      "GAP06"
+    ],
+    "unperformed": [
+      "CODE01",
+      "GAP02"
+    ],
+    "full_tasks_closed": []
+  },
+  "coordinator_corrections": [
+    "GAP03 preserves raw AL and separates nonzero from low-bit branches; composition is not original call order",
+    "GAP05 separates normal copy-marker and clear-marker guard exits and excludes opaque/index-fault paths"
+  ],
+  "final_bundle_integrity": {
+    "passed": true,
+    "verified_files": 960,
+    "errors": [],
+    "scope": "File integrity, not behaviour equivalence."
+  },
+  "final_input_and_work_integrity": {
+    "passed": true,
+    "checked_files": 64087,
+    "errors": [],
+    "scope": "input integrity only; no algorithmic correctness claimed"
+  },
+  "source_sha256": {
+    "Makefile": "e5ed2466bbdfac38e4f31c25852e7efaa42272c82dab639c0af5900e71296e83",
+    "include/rage/charge_state.hpp": "a176bce5e72bca17914efc0ee66da7c2cbbc8a8d912f7e3b30d91bd927df9558",
+    "include/rage/position_lifecycle.hpp": "b70e8e3e9e72b5e7f416e8af5c6a8b8152d6df1f49e4db9988c5342069d14d71",
+    "include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "src/charge_state.cpp": "3700344cfe178804c2f3d14e2fb670dfee46ac91e5104e9d778ab8c7e63a4ea4",
+    "src/position_lifecycle.cpp": "97001be1725726f55543d5d57ee1ee180e50811b8dd1335709e04a5f1ddbd0b0",
+    "src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "tests/test_charge_state.cpp": "7f27ab24798945a6c411a80e41f39c3f46029e1a9f4d1b58710e81554d0f19bd",
+    "tests/test_position_lifecycle.cpp": "f0eb4c5b379b9f017ae4724f0cc5a683057f6d03dd7ab6b920dca0cf06025641",
+    "tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "tests/verify_evidence.py": "1f6a3954c6da0d9b3e067256ac3d4b606cd110ff6138de7c955bce3b3a2faa1a",
+    "evidence/gap01/results.json": "e2d4407d0109edf27e797172ad95992b7a78a7661089aa446a1d8518129899ac",
+    "evidence/gap01/verify_gap01.py": "f359fe633b51e7e55799a9a7f0058ee84e0faae7841d37266ef8015bb851f692",
+    "evidence/gap03/charge_state_evidence.json": "3588343ae50703e2f9537e8e1cd46724e0fec7f16fce412296a89dc7a2511b81",
+    "evidence/gap03/verify_charge_evidence.py": "618e7dea40630b73206ad99fc65e7fa07d43e36c56128db988e15c2b147e9792",
+    "evidence/gap04/binding_ledger.json": "419b0ce3e25eb4411ed55ed49aee9596bbe0ce3ad1edae38329f6cff5e8309ac",
+    "evidence/gap04/check_bindings.py": "de04dcaccff3f5c7ce4102f78ee09b383d9eb117b83979859eb8d3d6a1e1606a",
+    "evidence/gap05/position_lifecycle.json": "54d6fd2e75624437eb1815eee53d5c7084c7f7ccf51c9db413b802df9252620f",
+    "evidence/gap05/replay_position_lifecycle.py": "0770d56dfd860cb155c1fe7e2896420bea6d69e5e299d14f67391f415acadf84",
+    "evidence/gap06/h01_byte_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "evidence/gap06/verify_h01_replay.py": "7f00b5443a3f52a95de0c2d043e33d46ddbe4cfc735ef9658e18bd17ebbc54e8",
+    "evidence/byte_anchors.json": "1784806e32a2ae149eb7b463485a53691383f16c140f861a0eda81c4d40712ba",
+    "evidence/inventory.json": "74d4c8f588a5438539c5c007fcdd259984f669faa54a4243e81370395dd74cd0"
+  },
+  "scope": "Tests of own offline C++ and static byte/provenance checks only; no original image execution/loading/emulation, runtime binding, whole function equivalence, or independent external audit."
+}

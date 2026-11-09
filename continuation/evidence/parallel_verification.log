@@ -1,0 +1,105 @@
+make: Entering directory '/tmp/hoplite/workspace/continuation'
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_charge_state.cpp -o build/test_charge_state
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_lifecycle.cpp -o build/test_position_lifecycle
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_records.cpp -o build/test_position_records
+RUN build/test_charge_state
+PASS: 3170 charge-state checks
+RUN build/test_position_lifecycle
+position_lifecycle: 85 assertions passed
+RUN build/test_position_records
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_charge_state.cpp -o build/test_charge_state_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_lifecycle.cpp -o build/test_position_lifecycle_sanitize
+g++ -Iinclude -std=c++17 -O2 -g -Wall -Wextra -Wpedantic -Werror -fno-fast-math -ffp-contract=off -O1 -fno-omit-frame-pointer -fsanitize=address,undefined src/charge_state.cpp src/position_lifecycle.cpp src/position_records.cpp tests/test_position_records.cpp -o build/test_position_records_sanitize
+RUN build/test_charge_state_sanitize
+PASS: 3170 charge-state checks
+RUN build/test_position_lifecycle_sanitize
+position_lifecycle: 85 assertions passed
+RUN build/test_position_records_sanitize
+PASS: 8 fixture groups, 2601 assertions; offline conditional contracts, not full DLL equivalence
+python3 tests/verify_evidence.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "instruction_bytes_and_fresh_decodes": 294,
+  "constants": 5,
+  "unchanged_inventory_files": 13,
+  "scope": "Bytes and instruction decoding only; not branch reachability or C++ equivalence."
+}
+python3 evidence/gap01/verify_gap01.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "image_sha256": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+  "saved_rows_rechecked": 32,
+  "fresh_objdump_decodes": 32,
+  "point26_candidate_identity": false,
+  "point26_guard": "The EBX<65 branch skips this block.",
+  "g425009bc_known_direct_stores": 2,
+  "t96_origin_status": "propagation_verified_positive_origin_open",
+  "scope": "Selected bytes/provenance only; not full source absence, reachability, or runtime behavior."
+}
+python3 evidence/gap03/verify_charge_evidence.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: 9 source hashes, 114 instruction-byte assertions, 5 unresolved frontier sites
+python3 evidence/gap04/check_bindings.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS exact hashes: client.dll, engine.dll, neverlose.dll, nl.bin
+PASS PE32 byte map: all 16 V6 candidates match; 14 client, 2 engine
+PASS 0x10076d60 wrapper call target: 0x108a6380
+PASS nl.bin caller bytes and arithmetic: call eax target = 0x289a6d60
+PASS countercandidate branch: 0x103e6d6f -> 0x103e6bc7
+PASS inventories: V5 ambiguous=14 (runtime_observed=false); V6 external requirements=16
+PASS no direct little-endian 0x289a6d60 literal in the four hashed inputs
+UNRESOLVED runtime base, module ownership, target identity, and execution/reachability
+python3 evidence/gap05/replay_position_lifecycle.py "../runs/handoff/RAGEBOT_HANDOFF_V10"
+PASS: sha256=682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e; walk instruction bytes=695; fresh decoded instructions=47; direct marker stores=1; manager refs=28
+python3 evidence/gap06/verify_h01_replay.py --handoff "../runs/handoff/RAGEBOT_HANDOFF_V10"
+{
+  "passed": true,
+  "command": "python3 continuation/evidence/gap06/verify_h01_replay.py --handoff <RAGEBOT_HANDOFF_V10>",
+  "h01": {
+    "archivedChecks": 209,
+    "archivedReportedPasses": 209,
+    "storedByteAssertions": 162,
+    "freshlyReplayedByteAssertions": 162,
+    "resource": 143,
+    "client": 19,
+    "otherHistoricalChecksNotReplayed": 47,
+    "strictOldProtocolRepeated": false
+  },
+  "inputs": {
+    "work/nl_handoff_2026-11-06/nl.bin": "682ce73b371349f87da6fd9365f8550e240dcdb97951e80445e70286275ad96e",
+    "input/dll/client.dll": "183d42fac8a4ecc24dc02edf5f09122f37fe9e7533ca093a867718b25cfdeb03",
+    "input/dll/engine.dll": "bcca98731eab8b72d1ef34fa5fe420f26ac98e8dd1d91698171d0ecd9935faa6",
+    "input/dll/neverlose.dll": "c1ce8c6d6f1172114d3cff6efe147903292be5eaa6e1c2e28495440fa8f7982c",
+    "work/RAGEBOT_FINAL_v2/evidence/verified_history_metrics_current.json": "8aae710852d062dd3460a253250831f53354b5c792ad312903da37e2462b4a94",
+    "work/recovered_nl/recovered_nl/src/nl_core.c": "ad046dc3df52a6600ed603161a29c19d26a11e38b2f76f3ac355da538f44fe1a",
+    "work/recovered_nl/recovered_nl/src/nl_rage_math.c": "6b04cdd7e12e7eedb2d99d44f5d5f2146976b6be886f82da01d8fabcd08db7b0",
+    "work/recovered_nl/recovered_nl/src/nl_netvar.c": "9072b43935b8c5ebc85610476256b71d386292a50ec328b9474a4de178d60cb6",
+    "work/recovered_nl/recovered_nl/tests/test_core.c": "b634fabc322b75c1552823dcba3ab45165f46c2c8f23f4c5d25c7315302f8f9b",
+    "work/recovered_nl/recovered_nl/tests/test_netvar.c": "6c6a8a0d15f3bfad64a274b2809f1a179131e0748d7e94e8140b4348491cdf2c",
+    "work/recovered_nl/recovered_nl/tests/test_rage_math.c": "0f1f64382f3ebe2379837b741807d9d4c4902fd2da54585c22f3b017f19afa06"
+  },
+  "scriptsAndEvidence": {
+    "orchestration/v7/verify_v7.py": "edf54449618586804747c9b90f03ae9cb02eecbad02a9c54fe9f7ac446ecb575",
+    "orchestration/v7/proof_spec.json": "b7f04f0c1e6793e0c5655eb9d106ef6a10480f5ca7d9a7462f1f6b8e1dcc3aa9",
+    "orchestration/v7/pe_data.py": "e1faa3f8a6f780b1e2e7a39fd66e34890490dc14195febb6c230aa7d19f0d41b",
+    "orchestration/v7/historical_H01_byte_evidence.json": "0897ee504a64d723e7197faba9c584f26ba58d749bbc160d9a4b2a926ff3e94e",
+    "orchestration/v7/H01_replay.json": "41b3b683cb62afa6d0fbad968b9f716039fedc1a81d277084bfe90b59c9251b9",
+    "orchestration/v1/direct/reproducibility.csv": "5cb29ac06cfaea02fcf586a94d5ce614312129ae040d3ba44c456610d43ae267"
+  },
+  "auditedSources": {
+    "continuation/include/rage/position_records.hpp": "62de359e80095b6729b7f54d9f743c6de9a4a25eb1c2a01b19992f05409e41d6",
+    "continuation/src/position_records.cpp": "55081e37b82fc41d9d396145e3104ed4306889cba602af55418a3ca6d02a7bae",
+    "continuation/tests/test_position_records.cpp": "e7129e2786564d77bcffa0615e6f3957e23abd97c19069c553b94aafef1beb97",
+    "continuation/evidence/byte_anchors.json": "1784806e32a2ae149eb7b463485a53691383f16c140f861a0eda81c4d40712ba",
+    "continuation/evidence/SOURCE_MAP.md": "b466b805f83abe89d869418d3533af097c8987d53f9b70c9c0d36a2175f349e2"
+  },
+  "v10Walks": {
+    "position_manager_initializer_walk.json": "67db0b4e270a31334905b6e74ee8ccc52b4a22be7b867b5ebc081c9f9d82194f",
+    "network_update_with_tls_tails_walk.json": "1de25a5d27c7eede50c0c1a0d3a26c27ade12e7fd406c01cb777cfd75bf968ad",
+    "record_actor_enrichment_walk.json": "957adb6309aba7ce88f86208a053b406f0a65a065699cc6469a62c4968e8b653",
+    "position_record_reader_walk.json": "07d1a93b7fefdd382910b17c49c2366bd737520ab6d7c022f6decfcb4a794aff",
+    "position_reader_caller_anchor_walk.json": "3d5071a4d2f3eeaec1093193d3336f59f8329f6bac448205978460af957079b7"
+  },
+  "scope": "Read-only hash, stored-byte, PE-offset and GNU objdump checks for the selected H01 subset; not a replay of all 209 checks or an independent external audit."
+}
+make: Leaving directory '/tmp/hoplite/workspace/continuation'
