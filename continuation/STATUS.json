@@ -108,7 +108,7 @@
   "original_emulation": false,
   "input_and_restored_work_modified": false,
   "independent_audit": false,
-  "next_task": "Use docs/TASKS.json to assign one bounded task; recommended C01 C17 scalar port and independent R01 scope inventory. W3-W4 remain completed. Keep PR open without merging.",
+  "next_task": "C01 C17 scalar helper and R01 transitive scope map are assigned in isolated worktrees. These limited tasks do not close GAP04/CODE01/GAP02 or complete the Ragebot.",
   "parallel_wave": {
     "status": "completed_with_unperformed_tasks",
     "baseline_commit": "20b7907",
